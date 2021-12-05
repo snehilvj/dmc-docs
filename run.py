@@ -13,6 +13,10 @@ from components.chips import chips
 from components.datepicker import datepicker
 from components.divider import divider
 from components.drawer import drawer
+from components.image import image
+from components.modal import modal
+from components.notifications import notifications
+from components.header import header
 
 app = Dash(__name__)
 
@@ -20,23 +24,8 @@ app = Dash(__name__)
 app.layout = dmc.Container(
     style={"padding": 20},
     children=[
-        dmc.Group(
-            position="apart",
-            children=[
-                dmc.Text(
-                    "Dash Mantine Components",
-                    variant="gradient",
-                    style={"fontSize": 35},
-                    gradient={"from": "indigo", "to": "cyan", "deg": 45},
-                ),
-                dmc.Anchor(
-                    dmc.Button("GitHub", variant="outline"),
-                    size="xl",
-                    href="https://github.com/snehilvj/dash-mantine-components",
-                ),
-            ],
-        ),
-        # components
+        header,
+        dmc.Space(h=30),
         accordion,
         affix,
         alert,
@@ -47,6 +36,9 @@ app.layout = dmc.Container(
         datepicker,
         divider,
         drawer,
+        image,
+        modal,
+        notifications,
     ],
 )
 
@@ -69,6 +61,59 @@ def restart(n_clicks, show):
 )
 def drawer(n_clicks):
     return True
+
+
+@app.callback(
+    Output("modal", "opened"),
+    Input("modal-button", "n_clicks"),
+    Input("modal-close-button", "n_clicks"),
+    Input("modal-submit-button", "n_clicks"),
+    State("modal", "opened"),
+    prevent_initial_call=True,
+)
+def modal(nc1, nc2, nc3, opened):
+    return not opened
+
+
+@app.callback(
+    Output("handler", "task"),
+    Input("show", "n_clicks"),
+    Input("update", "n_clicks"),
+    Input("hide", "n_clicks"),
+    prevent_initial_call=True,
+)
+def notifications(show_click, update_click, hide_click):
+    command = dash.callback_context.triggered[0]["prop_id"].split(".")[0]
+    task = {
+        "command": command,
+        "id": "notification",
+    }
+    if command == "show":
+        task = {
+            **task,
+            "props": {
+                "color": "violet",
+                "title": "This is a notification",
+                "message": "Notifications in Dash Apps! Great!",
+                "loading": True,
+                "disallowClose": True,
+                "autoClose": 8000,
+            },
+        }
+    elif command == "update":
+        task = {
+            **task,
+            "props": {
+                "color": "green",
+                "title": "All good",
+                "message": "Data has been loaded.",
+                "loading": False,
+                "disallowClose": False,
+                "autoClose": 3000,
+            },
+        }
+
+    return task
 
 
 if __name__ == "__main__":

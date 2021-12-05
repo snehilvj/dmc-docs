@@ -14,22 +14,14 @@ drawer = html.Div(
             children=[
                 dmc.Button("Click me!"),
                 dmc.Space(h=20),
-                dmc.SegmentedControl(
-                    data=[
-                        {"value": "react", "label": "React"},
-                        {"value": "ng", "label": "Angular"},
-                        {"value": "svelte", "label": "Svelte"},
-                        {"value": "vue", "label": "Vue"},
-                    ]
-                ),
-                dmc.Space(h=20),
                 dmc.Select(
                     data=[
                         {"value": "react", "label": "React"},
                         {"value": "ng", "label": "Angular"},
                         {"value": "svelte", "label": "Svelte"},
                         {"value": "vue", "label": "Vue"},
-                    ]
+                    ],
+                    zIndex=1006,
                 ),
                 dmc.Space(h=20),
                 dmc.DatePicker(zIndex=1005),
