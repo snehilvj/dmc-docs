@@ -1,7 +1,7 @@
 import dash
 from dash import Dash, html, Output, Input, State
-from datetime import datetime
 import dash_mantine_components as dmc
+import random
 from utils import create_component_title
 from components.accordion import accordion
 from components.affix import affix
@@ -19,6 +19,9 @@ from components.notifications import notifications
 from components.header import header
 from components.paper import paper
 from components.prism import prism
+from components.progress import progress
+from components.radiogroup import radiogroup
+from components.segmentedcontrol import segmentedcontrol
 
 app = Dash(__name__)
 
@@ -42,12 +45,14 @@ app.layout = dmc.Container(
         modal,
         notifications,
         paper,
-        prism
+        prism,
+        progress,
+        radiogroup,
+        segmentedcontrol
     ],
 )
 
 
-# callbacks
 @app.callback(
     Output("alert", "show"),
     Input("alert-button", "n_clicks"),
@@ -118,6 +123,12 @@ def notifications(show_click, update_click, hide_click):
         }
 
     return task
+
+
+@app.callback(Output("progress", "value"), Input("progress-button", "n_clicks"))
+def progress(n_clicks):
+    return random.randint(1, 100)
+
 
 
 if __name__ == "__main__":
