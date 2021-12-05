@@ -17,6 +17,8 @@ from components.image import image
 from components.modal import modal
 from components.notifications import notifications
 from components.header import header
+from components.paper import paper
+from components.prism import prism
 
 app = Dash(__name__)
 
@@ -39,6 +41,8 @@ app.layout = dmc.Container(
         image,
         modal,
         notifications,
+        paper,
+        prism
     ],
 )
 
