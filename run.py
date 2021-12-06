@@ -29,6 +29,8 @@ from components.table import table
 from components.tabs import tabs
 from components.text import text
 from components.textinput import textinput
+from components.title import title
+from components.tooltip import tooltip
 
 app = Dash(__name__)
 
@@ -64,6 +66,9 @@ app.layout = dmc.Container(
         tabs,
         text,
         textinput,
+        title,
+        tooltip,
+        dmc.Space(h=200),
     ],
 )
 
@@ -164,4 +169,4 @@ def slider_drag(value):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server()
