@@ -23,6 +23,12 @@ from components.radiogroup import radiogroup
 from components.segmentedcontrol import segmentedcontrol
 from components.select import select
 from components.slider import slider
+from components.spoiler import spoiler
+from components.switch import switch
+from components.table import table
+from components.tabs import tabs
+from components.text import text
+from components.textinput import textinput
 
 app = Dash(__name__)
 
@@ -51,7 +57,13 @@ app.layout = dmc.Container(
         radiogroup,
         segmentedcontrol,
         select,
-        slider
+        slider,
+        spoiler,
+        switch,
+        table,
+        tabs,
+        text,
+        textinput,
     ],
 )
 
