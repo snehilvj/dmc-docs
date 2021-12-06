@@ -33,7 +33,7 @@ from components.title import title
 from components.tooltip import tooltip
 
 app = Dash(__name__)
-
+server = app.server
 
 app.layout = dmc.Container(
     style={"padding": 20},
