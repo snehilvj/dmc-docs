@@ -26,4 +26,3 @@ segmentedcontrol = html.Div(
         dmc.Space(h=30),
     ]
 )
-

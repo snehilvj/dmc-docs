@@ -31,6 +31,6 @@ prism = html.Div(
                 ),
             ],
         ),
-        dmc.Space(h=30)
+        dmc.Space(h=30),
     ]
 )

@@ -51,7 +51,9 @@ paper = html.Div(
                         )
                     ],
                 )
-            ], style={"background": "#f8f9fa", "padding": 20}
-        ),dmc.Space(h=30)
+            ],
+            style={"background": "#f8f9fa", "padding": 20},
+        ),
+        dmc.Space(h=30),
     ],
 )

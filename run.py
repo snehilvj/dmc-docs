@@ -2,7 +2,6 @@ import dash
 from dash import Dash, html, Output, Input, State
 import dash_mantine_components as dmc
 import random
-from utils import create_component_title
 from components.accordion import accordion
 from components.affix import affix
 from components.alert import alert
@@ -22,6 +21,8 @@ from components.prism import prism
 from components.progress import progress
 from components.radiogroup import radiogroup
 from components.segmentedcontrol import segmentedcontrol
+from components.select import select
+from components.slider import slider
 
 app = Dash(__name__)
 
@@ -48,7 +49,9 @@ app.layout = dmc.Container(
         prism,
         progress,
         radiogroup,
-        segmentedcontrol
+        segmentedcontrol,
+        select,
+        slider
     ],
 )
 
@@ -59,7 +62,7 @@ app.layout = dmc.Container(
     State("alert", "show"),
     prevent_initial_call=True,
 )
-def restart(n_clicks, show):
+def alert(n_clicks, show):
     return not show
 
 
@@ -129,6 +132,23 @@ def notifications(show_click, update_click, hide_click):
 def progress(n_clicks):
     return random.randint(1, 100)
 
+
+@app.callback(
+    Output("slider-output", "children"),
+    Input("slider", "value"),
+    prevent_initial_call=True,
+)
+def slider(value):
+    return f"Slider value: {value}"
+
+
+@app.callback(
+    Output("slider-drag-output", "children"),
+    Input("slider", "drag_value"),
+    prevent_initial_call=True,
+)
+def slider_drag(value):
+    return f"Slider drag value: {value}"
 
 
 if __name__ == "__main__":

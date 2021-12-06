@@ -11,6 +11,6 @@ progress = html.Div(
         ),
         dmc.Space(h=20),
         dmc.Button("Update Progress with random number", id="progress-button"),
-        dmc.Space(h=30)
+        dmc.Space(h=30),
     ]
 )
