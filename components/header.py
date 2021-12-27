@@ -6,11 +6,12 @@ header = dmc.Group(
         dmc.Text(
             "Dash Mantine Components",
             variant="gradient",
-            style={"fontSize": 35},
+            style={"fontSize": 40},
             gradient={"from": "indigo", "to": "cyan", "deg": 45},
         ),
         dmc.Anchor(
-            dmc.Button("GitHub", variant="outline"),
+            "GitHub",
+            variant="link",
             size="xl",
             href="https://github.com/snehilvj/dash-mantine-components",
         ),
