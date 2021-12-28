@@ -47,7 +47,6 @@ layout = html.Div(
                                                         value="red",
                                                         searchable=False,
                                                         clearable=False,
-                                                        style={"width": 185},
                                                         data=[
                                                             {
                                                                 "label": val.title(),

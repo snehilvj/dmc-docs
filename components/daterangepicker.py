@@ -1,8 +1,8 @@
 import dash_mantine_components as dmc
 from dash import html
 
-title = "DatePicker"
-doc = dmc.DatePicker.__doc__
+title = "DateRangePicker"
+doc = dmc.DateRangePicker.__doc__
 
 
 layout = html.Div(
@@ -19,13 +19,12 @@ layout = html.Div(
                         dmc.Col(
                             children=[
                                 dmc.Center(
-                                    dmc.DatePicker(
-                                        id="datepicker-demo",
-                                        date="1996-08-21",
+                                    dmc.DateRangePicker(
+                                        id="daterangepicker-demo",
+                                        dates=["2020-09-06", "2020-09-26"],
                                         format="ddd DD MMM, YY",
-                                        label="Datepicker",
                                     ),
-                                    style={"height": 190},
+                                    style={"height": 140},
                                 )
                             ],
                             span=7,
@@ -44,7 +43,7 @@ layout = html.Div(
                                                         "Dropdown Type", size="sm"
                                                     ),
                                                     dmc.SegmentedControl(
-                                                        id="dropdown-datepicker-demo",
+                                                        id="dropdown-daterangepicker-demo",
                                                         value="popover",
                                                         size="sm",
                                                         data=[
@@ -70,7 +69,7 @@ layout = html.Div(
                                                         target="_blank",
                                                     ),
                                                     dmc.TextInput(
-                                                        id="format-datepicker-demo",
+                                                        id="format-daterangepicker-demo",
                                                         value="ddd DD MMM, YY",
                                                     ),
                                                 ],
@@ -82,36 +81,9 @@ layout = html.Div(
                                                         "Amount of Months", size="sm"
                                                     ),
                                                     dmc.TextInput(
-                                                        id="amount-datepicker-demo",
+                                                        id="amount-daterangepicker-demo",
                                                         type="number",
                                                         value="1",
-                                                    ),
-                                                ],
-                                            ),
-                                            dmc.Group(
-                                                position="apart",
-                                                children=[
-                                                    dmc.Text(
-                                                        "Initial Level", size="sm"
-                                                    ),
-                                                    dmc.SegmentedControl(
-                                                        id="initial-datepicker-demo",
-                                                        value="date",
-                                                        size="sm",
-                                                        data=[
-                                                            {
-                                                                "value": "date",
-                                                                "label": "Date",
-                                                            },
-                                                            {
-                                                                "value": "month",
-                                                                "label": "Month",
-                                                            },
-                                                            {
-                                                                "value": "year",
-                                                                "label": "Year",
-                                                            },
-                                                        ],
                                                     ),
                                                 ],
                                             ),
