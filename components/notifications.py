@@ -1,20 +1,24 @@
-from dash import html
 import dash_mantine_components as dmc
-from utils import create_component_title
+from dash import html
 
-notifications = html.Div(
-    [
-        create_component_title("Notifications"),
+title = "Notifications"
+doc = dmc.NotificationsProvider.__doc__ + "\n\n\n" + dmc.NotificationHandler.__doc__
+
+layout = html.Div(
+    children=[
+        dmc.Text("Simple", color="dimmed"),
+        dmc.Space(h=10),
         dmc.NotificationsProvider(
-            dmc.NotificationHandler(id="handler"), autoClose=False, position="top-right"
+            dmc.NotificationHandler(id="notifications-demo-handler"),
+            autoClose=False,
+            position="top-right",
         ),
         dmc.Group(
             [
-                dmc.Button("Show notifications", id="show"),
-                dmc.Button("Update notifications", id="update"),
-                dmc.Button("Hide notifications", id="hide"),
+                dmc.Button("Show notifications", id="show-notifications-demo"),
+                dmc.Button("Update notifications", id="update-notifications-demo"),
+                dmc.Button("Hide notifications", id="hide-notifications-demo"),
             ]
         ),
-        dmc.Space(h=30),
     ]
 )
