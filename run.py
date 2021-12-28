@@ -8,6 +8,8 @@ import callbacks
 from app import app
 from components.header import header
 
+server = app.server
+
 components = [
     "Accordion",
     "Affix",
