@@ -4,7 +4,6 @@ from dash import html
 title = "DateRangePicker"
 doc = dmc.DateRangePicker.__doc__
 
-
 layout = html.Div(
     children=[
         dmc.Text("Interactive Demo", color="dimmed"),
