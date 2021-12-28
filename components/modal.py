@@ -44,5 +44,15 @@ layout = html.Div(
                 for label in ["lg", "378px", "55%", "full"]
             ]
         ),
+        dmc.Space(h=20),
+        dmc.Prism(
+            language="python",
+            code="""modals = [
+    dmc.Modal(size="lg"),
+    dmc.Modal(size=378),
+    dmc.Modal(size="55%"),
+    dmc.Modal(size="full"),
+]""",
+        ),
     ]
 )

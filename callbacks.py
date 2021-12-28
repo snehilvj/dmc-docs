@@ -349,14 +349,14 @@ def modal_size_demo(nc0, nc1, nc2, nc3):
 
 ####### notifications #######
 @app.callback(
-    Output("handler", "task"),
-    Input("show", "n_clicks"),
-    Input("update", "n_clicks"),
-    Input("hide", "n_clicks"),
+    Output("notifications-demo-handler", "task"),
+    Input("show-notifications-demo", "n_clicks"),
+    Input("update-notifications-demo", "n_clicks"),
+    Input("hide-notifications-demo", "n_clicks"),
     prevent_initial_call=True,
 )
 def notifications(show_click, update_click, hide_click):
-    command = dash.callback_context.triggered[0]["prop_id"].split(".")[0]
+    command = dash.callback_context.triggered[0]["prop_id"].split("-")[0]
     task = {
         "command": command,
         "id": "notification",
