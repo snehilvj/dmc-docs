@@ -1,11 +1,11 @@
 import dash_mantine_components as dmc
 from dash import html
-from utils import create_component_title
 
-modal = html.Div(
-    [
-        create_component_title("Modal"),
-        dmc.Button("Open Modal", id="modal-button"),
+title = "Modal"
+doc = dmc.Modal.__doc__
+
+layout = html.Div(
+    children=[
         dmc.Modal(
             [
                 dmc.Text("I am in a modal component."),
@@ -24,8 +24,25 @@ modal = html.Div(
                 ),
             ],
             title="New Modal",
-            id="modal",
+            id="modal-demo",
         ),
-        dmc.Space(h=30),
+        dmc.Text("Simple", color="dimmed"),
+        dmc.Space(h=10),
+        dmc.Group(
+            [
+                dmc.Button("Open Modal", id="modal-demo-button"),
+                dmc.Switch(label="Centered", id="centered-modal-demo"),
+            ]
+        ),
+        dmc.Space(h=50),
+        dmc.Text("Sizes", color="dimmed"),
+        dmc.Space(h=10),
+        dmc.Modal(id="modal-size-demo", children=[dmc.Space(h=200)]),
+        dmc.Group(
+            children=[
+                dmc.Button(label, id=f"{label}-button-modal", variant="outline")
+                for label in ["lg", "378px", "55%", "full"]
+            ]
+        ),
     ]
 )

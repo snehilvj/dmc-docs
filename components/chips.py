@@ -26,7 +26,7 @@ layout = html.Div(
                                             {"value": "svelte", "label": "Svelte"},
                                             {"value": "vue", "label": "Vue"},
                                         ],
-                                        value="vue",
+                                        value="react",
                                     ),
                                     style={"height": 275},
                                 )
