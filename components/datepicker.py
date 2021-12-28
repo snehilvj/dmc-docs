@@ -13,7 +13,6 @@ layout = html.Div(
             padding="md",
             children=[
                 dmc.Grid(
-                    align="stretch",
                     children=[
                         dmc.Col(
                             children=[

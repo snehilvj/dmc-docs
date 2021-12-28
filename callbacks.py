@@ -1,8 +1,11 @@
-from dash import Input, Output, State
 import random
 
+import dash
+from dash import Input, Output, State
 from dash.exceptions import PreventUpdate
+
 from app import app
+
 
 ####### alert #######
 @app.callback(
@@ -308,23 +311,43 @@ def initial_daterangepicker_demo(initial):
     State("overlay-drawer-demo", "checked"),
     prevent_initial_call=True,
 )
-def drawer(n_clicks, position, size, title, noOverlay):
+def drawer_demo(n_clicks, position, size, title, noOverlay):
     return True, position, size, title, noOverlay
 
 
 ####### modal #######
 @app.callback(
-    Output("modal", "opened"),
-    Input("modal-button", "n_clicks"),
+    Output("modal-demo", "opened"),
+    Output("modal-demo", "centered"),
+    Input("modal-demo-button", "n_clicks"),
     Input("modal-close-button", "n_clicks"),
     Input("modal-submit-button", "n_clicks"),
-    State("modal", "opened"),
+    State("modal-demo", "opened"),
+    State("centered-modal-demo", "checked"),
     prevent_initial_call=True,
 )
-def modal(nc1, nc2, nc3, opened):
-    return not opened
+def modal_demo(nc1, nc2, nc3, opened, centered):
+    return not opened, centered
 
 
+@app.callback(
+    Output("modal-size-demo", "opened"),
+    Output("modal-size-demo", "size"),
+    Input("lg-button-modal", "n_clicks"),
+    Input("378px-button-modal", "n_clicks"),
+    Input(r"55%-button-modal", "n_clicks"),
+    Input("full-button-modal", "n_clicks"),
+    prevent_initial_call=True,
+)
+def modal_size_demo(nc0, nc1, nc2, nc3):
+    ctx = dash.callback_context
+    if ctx.triggered:
+        button_id = ctx.triggered[0]["prop_id"].split(".")[0]
+        return True, button_id.split("-")[0]
+    raise PreventUpdate
+
+
+####### notifications #######
 @app.callback(
     Output("handler", "task"),
     Input("show", "n_clicks"),
