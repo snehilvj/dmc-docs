@@ -170,6 +170,58 @@ def label_checkbox_demo(label):
     return label
 
 
+####### chips #######
+@app.callback(
+    Output("chips-demo", "variant"),
+    Input("variant-chips-demo", "value"),
+)
+def variant_chips_demo(variant):
+    return variant
+
+
+@app.callback(
+    Output("chips-demo", "color"),
+    Input("color-chips-demo", "value"),
+)
+def color_chips_demo(color):
+    return color
+
+
+@app.callback(
+    Output("chips-demo", "radius"),
+    Input("radius-chips-demo", "value"),
+)
+def radius_chips_demo(radius):
+    return radius
+
+
+@app.callback(
+    Output("chips-demo", "size"),
+    Input("size-chips-demo", "value"),
+)
+def size_chips_demo(size):
+    return size
+
+
+@app.callback(
+    Output("chips-demo", "spacing"),
+    Input("spacing-chips-demo", "value"),
+)
+def spacing_chips_demo(spacing):
+    return spacing
+
+
+@app.callback(
+    Output("chips-demo", "multiple"),
+    Output("chips-demo", "value"),
+    Input("multiple-chips-demo", "checked"),
+)
+def multiple_chips_demo(multiple):
+    if multiple:
+        return multiple, ["vue", "react"]
+    return multiple, "react"
+
+
 ####### datepicker #######
 @app.callback(
     Output("datepicker-demo", "dropdownType"),
@@ -244,14 +296,23 @@ def initial_daterangepicker_demo(initial):
 
 ####### drawer #######
 @app.callback(
-    Output("drawer", "opened"),
-    Input("drawer-button", "n_clicks"),
+    Output("drawer-demo", "opened"),
+    Output("drawer-demo", "position"),
+    Output("drawer-demo", "size"),
+    Output("drawer-demo", "title"),
+    Output("drawer-demo", "noOverlay"),
+    Input("drawer-demo-button", "n_clicks"),
+    State("position-drawer-demo", "value"),
+    State("size-drawer-demo", "value"),
+    State("title-drawer-demo", "value"),
+    State("overlay-drawer-demo", "checked"),
     prevent_initial_call=True,
 )
-def drawer(n_clicks):
-    return True
+def drawer(n_clicks, position, size, title, noOverlay):
+    return True, position, size, title, noOverlay
 
 
+####### modal #######
 @app.callback(
     Output("modal", "opened"),
     Input("modal-button", "n_clicks"),

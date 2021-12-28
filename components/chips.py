@@ -4,7 +4,6 @@ from dash import html
 title = "Chips"
 doc = dmc.Chips.__doc__
 
-
 layout = html.Div(
     children=[
         dmc.Text("Interactive Demo", color="dimmed"),
@@ -106,25 +105,16 @@ layout = html.Div(
                                                         size="sm",
                                                         data=[
                                                             {
-                                                                "value": "xs",
-                                                                "label": "xs",
-                                                            },
-                                                            {
-                                                                "value": "sm",
-                                                                "label": "sm",
-                                                            },
-                                                            {
-                                                                "value": "md",
-                                                                "label": "md",
-                                                            },
-                                                            {
-                                                                "value": "lg",
-                                                                "label": "lg",
-                                                            },
-                                                            {
-                                                                "value": "xl",
-                                                                "label": "xl",
-                                                            },
+                                                                "value": s,
+                                                                "label": s,
+                                                            }
+                                                            for s in [
+                                                                "xs",
+                                                                "sm",
+                                                                "md",
+                                                                "lg",
+                                                                "xl",
+                                                            ]
                                                         ],
                                                     ),
                                                 ],
@@ -139,25 +129,16 @@ layout = html.Div(
                                                         size="sm",
                                                         data=[
                                                             {
-                                                                "value": "xs",
-                                                                "label": "xs",
-                                                            },
-                                                            {
-                                                                "value": "sm",
-                                                                "label": "sm",
-                                                            },
-                                                            {
-                                                                "value": "md",
-                                                                "label": "md",
-                                                            },
-                                                            {
-                                                                "value": "lg",
-                                                                "label": "lg",
-                                                            },
-                                                            {
-                                                                "value": "xl",
-                                                                "label": "xl",
-                                                            },
+                                                                "value": s,
+                                                                "label": s,
+                                                            }
+                                                            for s in [
+                                                                "xs",
+                                                                "sm",
+                                                                "md",
+                                                                "lg",
+                                                                "xl",
+                                                            ]
                                                         ],
                                                     ),
                                                 ],
@@ -172,25 +153,16 @@ layout = html.Div(
                                                         size="sm",
                                                         data=[
                                                             {
-                                                                "value": "xs",
-                                                                "label": "xs",
-                                                            },
-                                                            {
-                                                                "value": "sm",
-                                                                "label": "sm",
-                                                            },
-                                                            {
-                                                                "value": "md",
-                                                                "label": "md",
-                                                            },
-                                                            {
-                                                                "value": "lg",
-                                                                "label": "lg",
-                                                            },
-                                                            {
-                                                                "value": "xl",
-                                                                "label": "xl",
-                                                            },
+                                                                "value": s,
+                                                                "label": s,
+                                                            }
+                                                            for s in [
+                                                                "xs",
+                                                                "sm",
+                                                                "md",
+                                                                "lg",
+                                                                "xl",
+                                                            ]
                                                         ],
                                                     ),
                                                 ],

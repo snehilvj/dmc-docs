@@ -4,7 +4,6 @@ from dash import html
 title = "Alert"
 doc = dmc.Alert.__doc__
 
-
 layout = html.Div(
     children=[
         dmc.Text("Interactive Demo", color="dimmed"),
