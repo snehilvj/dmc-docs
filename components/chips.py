@@ -1,34 +1,213 @@
 import dash_mantine_components as dmc
 from dash import html
-from utils import create_component_title
 
-chips = html.Div(
-    [
-        create_component_title("Chips"),
-        dmc.Chips(
-            color="orange",
-            variant="outline",
-            data=[
-                {"value": "react", "label": "React"},
-                {"value": "ng", "label": "Angular"},
-                {"value": "svelte", "label": "Svelte"},
-                {"value": "vue", "label": "Vue"},
+title = "Chips"
+doc = dmc.Chips.__doc__
+
+
+layout = html.Div(
+    children=[
+        dmc.Text("Interactive Demo", color="dimmed"),
+        dmc.Space(h=10),
+        dmc.Paper(
+            withBorder=True,
+            padding="md",
+            children=[
+                dmc.Grid(
+                    align="stretch",
+                    children=[
+                        dmc.Col(
+                            children=[
+                                dmc.Center(
+                                    dmc.Chips(
+                                        id="chips-demo",
+                                        data=[
+                                            {"value": "react", "label": "React"},
+                                            {"value": "ng", "label": "Angular"},
+                                            {"value": "svelte", "label": "Svelte"},
+                                            {"value": "vue", "label": "Vue"},
+                                        ],
+                                        value="vue",
+                                    ),
+                                    style={"height": 275},
+                                )
+                            ],
+                            span=8,
+                        ),
+                        dmc.Col(
+                            children=[
+                                dmc.Center(
+                                    dmc.Group(
+                                        direction="column",
+                                        grow=True,
+                                        children=[
+                                            dmc.Group(
+                                                position="apart",
+                                                children=[
+                                                    dmc.Text("Color", size="sm"),
+                                                    dmc.Select(
+                                                        id="color-chips-demo",
+                                                        value="blue",
+                                                        searchable=False,
+                                                        clearable=False,
+                                                        data=[
+                                                            {
+                                                                "label": val.title(),
+                                                                "value": val,
+                                                            }
+                                                            for val in [
+                                                                "dark",
+                                                                "gray",
+                                                                "red",
+                                                                "pink",
+                                                                "grape",
+                                                                "violet",
+                                                                "indigo",
+                                                                "blue",
+                                                                "cyan",
+                                                                "teal",
+                                                                "green",
+                                                                "lime",
+                                                                "yellow",
+                                                                "orange",
+                                                            ]
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                            dmc.Group(
+                                                position="apart",
+                                                children=[
+                                                    dmc.Text("Variant", size="sm"),
+                                                    dmc.SegmentedControl(
+                                                        id="variant-chips-demo",
+                                                        value="outline",
+                                                        size="sm",
+                                                        data=[
+                                                            {
+                                                                "value": "outline",
+                                                                "label": "Outline",
+                                                            },
+                                                            {
+                                                                "value": "filled",
+                                                                "label": "Filled",
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                            dmc.Group(
+                                                position="apart",
+                                                children=[
+                                                    dmc.Text("Radius", size="sm"),
+                                                    dmc.SegmentedControl(
+                                                        id="radius-chips-demo",
+                                                        value="xl",
+                                                        size="sm",
+                                                        data=[
+                                                            {
+                                                                "value": "xs",
+                                                                "label": "xs",
+                                                            },
+                                                            {
+                                                                "value": "sm",
+                                                                "label": "sm",
+                                                            },
+                                                            {
+                                                                "value": "md",
+                                                                "label": "md",
+                                                            },
+                                                            {
+                                                                "value": "lg",
+                                                                "label": "lg",
+                                                            },
+                                                            {
+                                                                "value": "xl",
+                                                                "label": "xl",
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                            dmc.Group(
+                                                position="apart",
+                                                children=[
+                                                    dmc.Text("Spacing", size="sm"),
+                                                    dmc.SegmentedControl(
+                                                        id="spacing-chips-demo",
+                                                        value="xs",
+                                                        size="sm",
+                                                        data=[
+                                                            {
+                                                                "value": "xs",
+                                                                "label": "xs",
+                                                            },
+                                                            {
+                                                                "value": "sm",
+                                                                "label": "sm",
+                                                            },
+                                                            {
+                                                                "value": "md",
+                                                                "label": "md",
+                                                            },
+                                                            {
+                                                                "value": "lg",
+                                                                "label": "lg",
+                                                            },
+                                                            {
+                                                                "value": "xl",
+                                                                "label": "xl",
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                            dmc.Group(
+                                                position="apart",
+                                                children=[
+                                                    dmc.Text("Size", size="sm"),
+                                                    dmc.SegmentedControl(
+                                                        id="size-chips-demo",
+                                                        value="sm",
+                                                        size="sm",
+                                                        data=[
+                                                            {
+                                                                "value": "xs",
+                                                                "label": "xs",
+                                                            },
+                                                            {
+                                                                "value": "sm",
+                                                                "label": "sm",
+                                                            },
+                                                            {
+                                                                "value": "md",
+                                                                "label": "md",
+                                                            },
+                                                            {
+                                                                "value": "lg",
+                                                                "label": "lg",
+                                                            },
+                                                            {
+                                                                "value": "xl",
+                                                                "label": "xl",
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                            dmc.Switch(
+                                                label="Multiple",
+                                                id="multiple-chips-demo",
+                                            ),
+                                        ],
+                                    )
+                                )
+                            ],
+                            span=4,
+                        ),
+                    ],
+                )
             ],
-            value="vue",
         ),
-        dmc.Space(h=20),
-        dmc.Chips(
-            color="red",
-            multiple=True,
-            variant="filled",
-            data=[
-                {"value": "react", "label": "React"},
-                {"value": "ng", "label": "Angular"},
-                {"value": "svelte", "label": "Svelte"},
-                {"value": "vue", "label": "Vue"},
-            ],
-            value=["vue", "ng"],
-        ),
-        dmc.Space(h=30),
     ]
 )

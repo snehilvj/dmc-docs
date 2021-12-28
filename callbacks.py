@@ -1,8 +1,10 @@
 from dash import Input, Output, State
 import random
+
+from dash.exceptions import PreventUpdate
 from app import app
 
-
+####### alert #######
 @app.callback(
     Output("alert-demo", "color"),
     Input("color-alert-demo", "value"),
@@ -45,6 +47,7 @@ def alert(n_clicks, show):
     return not show
 
 
+####### badge #######
 @app.callback(
     Output("badge-demo", "variant"),
     Input("variant-badge-demo", "value"),
@@ -85,6 +88,7 @@ def children_badge_demo(children):
     return children
 
 
+####### button #######
 @app.callback(
     Output("button-demo", "variant"),
     Input("variant-button-demo", "value"),
@@ -141,6 +145,104 @@ def children_button_demo(children):
     return children
 
 
+####### checkbox #######
+@app.callback(
+    Output("checkbox-demo", "color"),
+    Input("color-checkbox-demo", "value"),
+)
+def color_checkbox_demo(color):
+    return color
+
+
+@app.callback(
+    Output("checkbox-demo", "size"),
+    Input("size-checkbox-demo", "value"),
+)
+def size_checkbox_demo(size):
+    return size
+
+
+@app.callback(
+    Output("checkbox-demo", "label"),
+    Input("label-checkbox-demo", "value"),
+)
+def label_checkbox_demo(label):
+    return label
+
+
+####### datepicker #######
+@app.callback(
+    Output("datepicker-demo", "dropdownType"),
+    Input("dropdown-datepicker-demo", "value"),
+)
+def dropdown_datepicker_demo(dropdown):
+    return dropdown
+
+
+@app.callback(
+    Output("datepicker-demo", "format"),
+    Input("format-datepicker-demo", "value"),
+)
+def format_datepicker_demo(format):
+    return format
+
+
+@app.callback(
+    Output("datepicker-demo", "amountOfMonths"),
+    Input("amount-datepicker-demo", "value"),
+)
+def amount_datepicker_demo(amount):
+    if amount:
+        return int(amount)
+    else:
+        raise PreventUpdate
+
+
+@app.callback(
+    Output("datepicker-demo", "initialLevel"),
+    Input("initial-datepicker-demo", "value"),
+)
+def initial_datepicker_demo(initial):
+    return initial
+
+
+####### daterangepicker #######
+@app.callback(
+    Output("daterangepicker-demo", "dropdownType"),
+    Input("dropdown-daterangepicker-demo", "value"),
+)
+def dropdown_daterangepicker_demo(dropdown):
+    return dropdown
+
+
+@app.callback(
+    Output("daterangepicker-demo", "format"),
+    Input("format-daterangepicker-demo", "value"),
+)
+def format_daterangepicker_demo(format):
+    return format
+
+
+@app.callback(
+    Output("daterangepicker-demo", "amountOfMonths"),
+    Input("amount-daterangepicker-demo", "value"),
+)
+def amount_daterangepicker_demo(amount):
+    if amount:
+        return int(amount)
+    else:
+        raise PreventUpdate
+
+
+@app.callback(
+    Output("daterangepicker-demo", "initialLevel"),
+    Input("initial-daterangepicker-demo", "value"),
+)
+def initial_daterangepicker_demo(initial):
+    return initial
+
+
+####### drawer #######
 @app.callback(
     Output("drawer", "opened"),
     Input("drawer-button", "n_clicks"),
