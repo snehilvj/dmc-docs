@@ -1,28 +1,46 @@
 import dash_mantine_components as dmc
-from dash import html
+from dash import html, dcc
+from reusable_components import (
+    ComponentBlock,
+    ComponentDescription,
+    ComponentName,
+    ComponentReference,
+    OnlyComponentBlock,
+    SubText,
+    Title,
+)
+from utils import parse_apidocs
 
-title = "Badge"
-doc = dmc.Badge.__doc__
+description, apidocs = parse_apidocs(dmc.Badge.__doc__)
 
 layout = html.Div(
     children=[
-        dmc.Text("Interactive Demo", color="dimmed"),
-        dmc.Space(h=10),
-        dmc.Paper(
-            withBorder=True,
-            padding="md",
-            children=[
+        ComponentName("Badge"),
+        ComponentDescription(description),
+        Title("Interactive Demo"),
+        SubText(
+            "You can customize your badge and then just copy the auto generated code."
+        ),
+        OnlyComponentBlock(
+            [
                 dmc.Grid(
                     align="stretch",
                     children=[
                         dmc.Col(
                             children=[
                                 dmc.Center(
-                                    dmc.Badge("Badge", id="badge-demo"),
+                                    dmc.Badge(
+                                        "Badge",
+                                        id="badge-demo",
+                                        variant="filled",
+                                        color="blue",
+                                        radius="xl",
+                                        size="md",
+                                    ),
                                     style={"height": 240},
                                 )
                             ],
-                            span=8,
+                            span=7,
                         ),
                         dmc.Col(
                             children=[
@@ -37,7 +55,7 @@ layout = html.Div(
                                                     dmc.Text("Variant", size="sm"),
                                                     dmc.Select(
                                                         id="variant-badge-demo",
-                                                        value="light",
+                                                        value="filled",
                                                         searchable=False,
                                                         clearable=False,
                                                         data=[
@@ -152,43 +170,60 @@ layout = html.Div(
                                     )
                                 )
                             ],
-                            span=4,
+                            span=5,
                         ),
                     ],
                 )
             ],
         ),
+        html.Div(id="badge-code-output"),
         dmc.Space(h=50),
-        dmc.Text("With Gradient", color="dimmed"),
-        dmc.Space(h=10),
-        dmc.Group(
-            children=[
-                dmc.Badge(
-                    "Indigo cyan",
-                    variant="gradient",
-                    gradient={"from": "indigo", "to": "cyan"},
-                ),
-                dmc.Badge(
-                    "Lime green",
-                    variant="gradient",
-                    gradient={"from": "teal", "to": "lime", "deg": 105},
-                ),
-                dmc.Badge(
-                    "Teal blue",
-                    variant="gradient",
-                    gradient={"from": "teal", "to": "blue", "deg": 60},
-                ),
-                dmc.Badge(
-                    "Orange red",
-                    variant="gradient",
-                    gradient={"from": "orange", "to": "red"},
-                ),
-                dmc.Badge(
-                    "Grape pink",
-                    variant="gradient",
-                    gradient={"from": "grape", "to": "pink", "deg": 35},
-                ),
-            ]
+        ComponentBlock(
+            title="With Gradient",
+            caption="You can also customize the gradient fill of the badge.",
+            code="""import dash_mantine_components as dmc
+
+component = dmc.Group(
+    children=[
+        dmc.Badge(
+            "Indigo cyan",
+            variant="gradient",
+            gradient={"from": "indigo", "to": "cyan"},
         ),
+        dmc.Badge(
+            "Lime green",
+            variant="gradient",
+            gradient={"from": "teal", "to": "lime", "deg": 105},
+        ),
+        dmc.Badge(
+            "Teal blue",
+            variant="gradient",
+            gradient={"from": "teal", "to": "blue", "deg": 60},
+        ),
+        dmc.Badge(
+            "Orange red",
+            variant="gradient",
+            gradient={"from": "orange", "to": "red"},
+        ),
+        dmc.Badge(
+            "Grape pink",
+            variant="gradient",
+            gradient={"from": "grape", "to": "pink", "deg": 35},
+        ),
+    ]
+)""",
+        ),
+        ComponentBlock(
+            title="Badge within a Button",
+            caption=dcc.Markdown("You can put badge in a button's `children`."),
+            code="""import dash_mantine_components as dmc
+
+component = dmc.Button(
+    children=[
+        "Notifications", dmc.Badge("2", radius="sm", style={"marginLeft": 7})
+    ]
+)""",
+        ),
+        ComponentReference(apidocs),
     ]
 )

@@ -11,7 +11,7 @@ header = html.Div(
                 dmc.Text(
                     "Dash Mantine Components",
                     variant="gradient",
-                    style={"fontSize": 30},
+                    style={"fontSize": 40},
                     gradient={"from": "indigo", "to": "cyan", "deg": 45},
                 ),
                 dcc.Link(

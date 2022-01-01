@@ -5,137 +5,85 @@ from dash import Input, Output, State
 from dash.exceptions import PreventUpdate
 
 from app import app
-
-
-####### alert #######
-@app.callback(
-    Output("alert-demo", "color"),
-    Input("color-alert-demo", "value"),
-)
-def color_alert_demo(color):
-    return color
-
-
-@app.callback(
-    Output("alert-demo", "children"),
-    Input("children-alert-demo", "value"),
-)
-def children_alert_demo(children):
-    return children
-
-
-@app.callback(
-    Output("alert-demo", "title"),
-    Input("title-alert-demo", "value"),
-)
-def title_alert_demo(title):
-    return title
-
-
-@app.callback(
-    Output("alert-demo", "withCloseButton"),
-    Input("close-alert-demo", "checked"),
-)
-def close_alert_demo(withCloseButton):
-    return withCloseButton
+from reusable_components.component_block import OnlyCodeBlock
 
 
 ####### badge #######
 @app.callback(
+    Output("badge-code-output", "children"),
     Output("badge-demo", "variant"),
-    Input("variant-badge-demo", "value"),
-)
-def variant_badge_demo(variant):
-    return variant
-
-
-@app.callback(
     Output("badge-demo", "color"),
-    Input("color-badge-demo", "value"),
-)
-def color_badge_demo(color):
-    return color
-
-
-@app.callback(
     Output("badge-demo", "radius"),
-    Input("radius-badge-demo", "value"),
-)
-def radius_badge_demo(radius):
-    return radius
-
-
-@app.callback(
     Output("badge-demo", "size"),
-    Input("size-badge-demo", "value"),
-)
-def size_badge_demo(size):
-    return size
-
-
-@app.callback(
     Output("badge-demo", "children"),
+    Input("variant-badge-demo", "value"),
+    Input("color-badge-demo", "value"),
+    Input("radius-badge-demo", "value"),
+    Input("size-badge-demo", "value"),
     Input("children-badge-demo", "value"),
 )
-def children_badge_demo(children):
-    return children
+def children_badge_demo(variant, color, radius, size, children):
+    return [
+        OnlyCodeBlock(
+            code=f"""import dash_mantine_components as dmc
+
+dmc.Badge(
+    "{children}",
+    variant="{variant}",
+    color="{color}",
+    radius="{radius}",
+    size="{size}"
+)"""
+        ),
+        variant,
+        color,
+        radius,
+        size,
+        children,
+    ]
 
 
 ####### button #######
 @app.callback(
+    Output("button-code-output", "children"),
     Output("button-demo", "variant"),
-    Input("variant-button-demo", "value"),
-)
-def variant_button_demo(variant):
-    return variant
-
-
-@app.callback(
     Output("button-demo", "color"),
-    Input("color-button-demo", "value"),
-)
-def color_button_demo(color):
-    return color
-
-
-@app.callback(
     Output("button-demo", "radius"),
-    Input("radius-button-demo", "value"),
-)
-def radius_button_demo(radius):
-    return radius
-
-
-@app.callback(
     Output("button-demo", "size"),
-    Input("size-button-demo", "value"),
-)
-def size_button_demo(size):
-    return size
-
-
-@app.callback(
     Output("button-demo", "loading"),
-    Input("loading-button-demo", "checked"),
-)
-def loading_button_demo(loading):
-    return loading
-
-
-@app.callback(
     Output("button-demo", "compact"),
-    Input("compact-button-demo", "checked"),
-)
-def compact_button_demo(compact):
-    return compact
-
-
-@app.callback(
     Output("button-demo", "children"),
+    Input("variant-button-demo", "value"),
+    Input("color-button-demo", "value"),
+    Input("radius-button-demo", "value"),
+    Input("size-button-demo", "value"),
+    Input("loading-button-demo", "checked"),
+    Input("compact-button-demo", "checked"),
     Input("children-button-demo", "value"),
 )
-def children_button_demo(children):
-    return children
+def children_badge_demo(variant, color, radius, size, loading, compact, children):
+    return [
+        OnlyCodeBlock(
+            code=f"""import dash_mantine_components as dmc
+
+dmc.Button(
+    "{children}",
+    variant="filled",
+    color="{color}",
+    radius="{radius}",
+    size="{size}",
+    loading={loading},
+    compact={compact},
+)"""
+        ),
+        variant,
+        color,
+        radius,
+        size,
+        loading,
+        compact,
+        children,
+    ]
 
 
 ####### checkbox #######

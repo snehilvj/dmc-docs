@@ -1,5 +1,5 @@
 import dash_mantine_components as dmc
-from dash import html, dcc
+from dash import dcc, html
 from reusable_components import (
     ComponentBlock,
     ComponentDescription,
@@ -7,8 +7,8 @@ from reusable_components import (
     ComponentReference,
     OnlyCodeBlock,
     OnlyComponentBlock,
-    Title,
     SubText,
+    Title,
 )
 from utils import parse_apidocs
 
