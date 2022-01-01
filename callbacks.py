@@ -40,16 +40,6 @@ def close_alert_demo(withCloseButton):
     return withCloseButton
 
 
-@app.callback(
-    Output("alert", "show"),
-    Input("alert-button", "n_clicks"),
-    State("alert", "show"),
-    prevent_initial_call=True,
-)
-def alert(n_clicks, show):
-    return not show
-
-
 ####### badge #######
 @app.callback(
     Output("badge-demo", "variant"),

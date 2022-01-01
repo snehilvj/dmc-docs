@@ -79,32 +79,10 @@ def page(pathname):
     else:
         pathname = pathname.lstrip("/")
 
-    try:
-        module = importlib.import_module(f"components.{pathname.lower()}")
-        return html.Div(
-            children=[
-                dmc.Text(
-                    module.title,
-                    size="xl",
-                    style={"fontSize": 30, "marginBottom": 10},
-                ),
-                module.layout,
-                dmc.Space(h=50),
-                dmc.Text("Keyword arguments", color="dimmed"),
-                dmc.Space(h=10),
-                dmc.Prism(
-                    language="git",
-                    code=module.doc,
-                    noCopy=True,
-                    style={"whiteSpace": "pre-wrap"},
-                ),
-                dmc.Space(h=50),
-            ],
-        )
-    except ImportError:
-        return dmc.Alert(
-            "Sorry, this page doesn't exist right now!", color="red", show=True
-        )
+    module = importlib.import_module(f"components.{pathname.lower()}")
+    return html.Div(
+        children=[module.layout],
+    )
 
 
 if __name__ == "__main__":
