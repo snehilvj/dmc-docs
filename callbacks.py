@@ -88,79 +88,68 @@ dmc.Button(
 
 ####### checkbox #######
 @app.callback(
-    Output("checkbox-demo", "color"),
+    Output("checkbox-color", "color"),
     Input("color-checkbox-demo", "value"),
 )
 def color_checkbox_demo(color):
     return color
 
 
-@app.callback(
-    Output("checkbox-demo", "size"),
-    Input("size-checkbox-demo", "value"),
-)
-def size_checkbox_demo(size):
-    return size
-
-
-@app.callback(
-    Output("checkbox-demo", "label"),
-    Input("label-checkbox-demo", "value"),
-)
-def label_checkbox_demo(label):
-    return label
-
-
 ####### chips #######
+
+data_string = """data = [
+        {"value": "react", "label": "React"},
+        {"value": "ng", "label": "Angular"},
+        {"value": "svelte", "label": "Svelte"},
+        {"value": "vue", "label": "Vue"},
+    ]"""
+
+
 @app.callback(
+    Output("chips-code-output", "children"),
     Output("chips-demo", "variant"),
-    Input("variant-chips-demo", "value"),
-)
-def variant_chips_demo(variant):
-    return variant
-
-
-@app.callback(
     Output("chips-demo", "color"),
-    Input("color-chips-demo", "value"),
-)
-def color_chips_demo(color):
-    return color
-
-
-@app.callback(
     Output("chips-demo", "radius"),
-    Input("radius-chips-demo", "value"),
-)
-def radius_chips_demo(radius):
-    return radius
-
-
-@app.callback(
     Output("chips-demo", "size"),
-    Input("size-chips-demo", "value"),
-)
-def size_chips_demo(size):
-    return size
-
-
-@app.callback(
+    Output("chips-demo", "multiple"),
     Output("chips-demo", "spacing"),
+    Input("variant-chips-demo", "value"),
+    Input("color-chips-demo", "value"),
+    Input("radius-chips-demo", "value"),
+    Input("size-chips-demo", "value"),
+    Input("multiple-chips-demo", "checked"),
     Input("spacing-chips-demo", "value"),
 )
-def spacing_chips_demo(spacing):
-    return spacing
+def children_badge_demo(variant, color, radius, size, multiple, spacing):
+    return [
+        OnlyCodeBlock(
+            code=f"""import dash_mantine_components as dmc
+
+dmc.Chips(
+    {data_string}
+    color="{color}",
+    radius="{radius}",
+    size="{size}",
+    spacing="{spacing}",
+    variant="{variant}",
+    multiple={multiple},
+)"""
+        ),
+        variant,
+        color,
+        radius,
+        size,
+        multiple,
+        spacing,
+    ]
 
 
 @app.callback(
-    Output("chips-demo", "multiple"),
     Output("chips-demo", "value"),
     Input("multiple-chips-demo", "checked"),
 )
 def multiple_chips_demo(multiple):
-    if multiple:
-        return multiple, ["vue", "react"]
-    return multiple, "react"
+    return ["vue", "react"] if multiple else "react"
 
 
 ####### datepicker #######

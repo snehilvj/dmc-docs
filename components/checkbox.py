@@ -1,117 +1,148 @@
 import dash_mantine_components as dmc
-from dash import html
+from dash import html, dcc
+from reusable_components import (
+    ComponentBlock,
+    ComponentDescription,
+    ComponentName,
+    ComponentReference,
+    OnlyComponentBlock,
+    OnlyCodeBlock,
+    SubText,
+    Title,
+)
+from utils import parse_apidocs
 
-title = "Checkbox"
-doc = dmc.Checkbox.__doc__
+description, apidocs = parse_apidocs(dmc.Checkbox.__doc__)
 
 layout = html.Div(
     children=[
-        dmc.Text("Interactive Demo", color="dimmed"),
-        dmc.Space(h=10),
-        dmc.Paper(
-            withBorder=True,
-            padding="md",
-            children=[
-                dmc.Grid(
-                    align="stretch",
-                    children=[
-                        dmc.Col(
-                            children=[
-                                dmc.Center(
-                                    dmc.Checkbox(
-                                        label="I agree to sell my privacy",
-                                        id="checkbox-demo",
-                                        checked=True,
-                                    ),
-                                    style={"height": 140},
-                                )
-                            ],
-                            span=8,
+        ComponentName("Checkbox"),
+        ComponentDescription(description),
+        ComponentBlock(
+            title="Simple checkbox",
+            caption=dcc.Markdown("Use the property `checked` in the callbacks."),
+            code="""import dash_mantine_components as dmc
+from dash import html, Output, Input
+
+component = html.Div([
+    dmc.Checkbox(
+        id="checkbox",
+        label="I agree to sell my privacy",
+    ),
+    dmc.Space(h=10),
+    dmc.Text(id="checkbox-output"),
+])
+
+
+@app.callback(
+    Output("checkbox-output", "children"),
+    Input("checkbox", "checked")
+)
+def checkbox(checked):
+    return "True" if checked else "False" """,
+        ),
+        Title("Different sizes"),
+        SubText(
+            dcc.Markdown(
+                "Choose from one of the following sizes: `xs, sm, md, lg, xl`."
+            )
+        ),
+        OnlyComponentBlock(
+            [
+                html.Div(
+                    [
+                        dmc.Checkbox(
+                            label="I agree to sell my privacy",
+                            size="xs",
+                            class_name="checkbox",
+                            checked=True,
                         ),
-                        dmc.Col(
-                            children=[
-                                dmc.Center(
-                                    dmc.Group(
-                                        direction="column",
-                                        grow=True,
-                                        children=[
-                                            dmc.Group(
-                                                position="apart",
-                                                children=[
-                                                    dmc.Text("Color", size="sm"),
-                                                    dmc.Select(
-                                                        id="color-checkbox-demo",
-                                                        value="blue",
-                                                        searchable=False,
-                                                        clearable=False,
-                                                        data=[
-                                                            {
-                                                                "label": val.title(),
-                                                                "value": val,
-                                                            }
-                                                            for val in [
-                                                                "dark",
-                                                                "gray",
-                                                                "red",
-                                                                "pink",
-                                                                "grape",
-                                                                "violet",
-                                                                "indigo",
-                                                                "blue",
-                                                                "cyan",
-                                                                "teal",
-                                                                "green",
-                                                                "lime",
-                                                                "yellow",
-                                                                "orange",
-                                                            ]
-                                                        ],
-                                                    ),
-                                                ],
-                                            ),
-                                            dmc.Group(
-                                                position="apart",
-                                                children=[
-                                                    dmc.Text("Size", size="sm"),
-                                                    dmc.SegmentedControl(
-                                                        id="size-checkbox-demo",
-                                                        value="sm",
-                                                        size="sm",
-                                                        data=[
-                                                            {
-                                                                "value": s,
-                                                                "label": s,
-                                                            }
-                                                            for s in [
-                                                                "xs",
-                                                                "sm",
-                                                                "md",
-                                                                "lg",
-                                                                "xl",
-                                                            ]
-                                                        ],
-                                                    ),
-                                                ],
-                                            ),
-                                            dmc.Group(
-                                                position="apart",
-                                                children=[
-                                                    dmc.Text("Label", size="sm"),
-                                                    dmc.TextInput(
-                                                        id="label-checkbox-demo",
-                                                        value="I agree to sell my privacy",
-                                                    ),
-                                                ],
-                                            ),
-                                        ],
-                                    )
-                                )
+                        dmc.Checkbox(
+                            label="I agree to sell my privacy",
+                            size="sm",
+                            class_name="checkbox",
+                            checked=True,
+                        ),
+                        dmc.Checkbox(
+                            label="I agree to sell my privacy",
+                            size="md",
+                            class_name="checkbox",
+                            checked=True,
+                        ),
+                        dmc.Checkbox(
+                            label="I agree to sell my privacy",
+                            size="lg",
+                            class_name="checkbox",
+                            checked=True,
+                        ),
+                        dmc.Checkbox(
+                            label="I agree to sell my privacy", size="xl", checked=True
+                        ),
+                    ]
+                )
+            ]
+        ),
+        OnlyCodeBlock(
+            """import dash_mantine_components as dmc
+from dash import html
+
+html.Div(
+    [
+        dmc.Checkbox(label="I agree to sell my privacy", size="xs", checked=True),
+        dmc.Checkbox(label="I agree to sell my privacy", size="sm", checked=True),
+        dmc.Checkbox(label="I agree to sell my privacy", size="md", checked=True),
+        dmc.Checkbox(label="I agree to sell my privacy", size="lg", checked=True),
+        dmc.Checkbox(label="I agree to sell my privacy", size="xl", checked=True),
+    ]
+)"""
+        ),
+        dmc.Space(h=40),
+        Title("Different colors"),
+        SubText(dcc.Markdown("Set checkbox color using the `color` prop.")),
+        OnlyComponentBlock(
+            [
+                dmc.Group(
+                    position="apart",
+                    children=[
+                        dmc.Checkbox(
+                            id="checkbox-color",
+                            label="Use me as a boolean input",
+                            checked=True,
+                            color="green",
+                        ),
+                        dmc.Select(
+                            id="color-checkbox-demo",
+                            value="green",
+                            searchable=False,
+                            clearable=False,
+                            data=[
+                                {
+                                    "label": val.title(),
+                                    "value": val,
+                                }
+                                for val in [
+                                    "dark",
+                                    "gray",
+                                    "red",
+                                    "pink",
+                                    "grape",
+                                    "violet",
+                                    "indigo",
+                                    "blue",
+                                    "cyan",
+                                    "teal",
+                                    "green",
+                                    "lime",
+                                    "yellow",
+                                    "orange",
+                                ]
                             ],
-                            span=4,
                         ),
                     ],
                 )
-            ],
+            ]
         ),
+        dmc.Space(h=40),
+        ComponentReference(apidocs),
     ]
 )

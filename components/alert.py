@@ -87,14 +87,14 @@ from dash import html, Output, Input, State
 
 component = html.Div([
     dmc.Alert(
-            "Something terrible happened! You made a mistake and there is no going back, your data was lost forever! ",
-            title="Bummer!",
-            id="alert",
-            color="red",
-            withCloseButton=True,
-        ),
-        dmc.Space(h=20),
-        dmc.Button("Toggle alert", id="alert-button"),
+        "Something terrible happened! You made a mistake and there is no going back, your data was lost forever! ",
+        title="Bummer!",
+        id="alert",
+        color="red",
+        withCloseButton=True,
+    ),
+    dmc.Space(h=20),
+    dmc.Button("Toggle alert", id="alert-button"),
 ])
 
 
@@ -117,14 +117,14 @@ from dash import html, Output, Input, State
 
 component = html.Div([
     dmc.Alert(
-            "This alert will dismiss itself after 3 seconds! ",
-            title="Auto Dismissing Alert!",
-            id="alert-auto",
-            color="violet",
-            duration=3000
-        ),
-        dmc.Space(h=20),
-        dmc.Button("Show alert", id="alert-auto-button"),
+        "This alert will dismiss itself after 3 seconds! ",
+        title="Auto Dismissing Alert!",
+        id="alert-auto",
+        color="violet",
+        duration=3000
+    ),
+    dmc.Space(h=20),
+    dmc.Button("Show alert", id="alert-auto-button"),
 ])
 
 

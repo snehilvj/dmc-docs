@@ -17,7 +17,7 @@ def OnlyComponentBlock(components):
 
 def ComponentBlock(title, caption, code):
     scope = {"app": app}
-    code_to_display = code.replace("component = dmc.", "dmc.", 1)
+    code_to_display = code.replace("component = ", "", 1)
     try:
         exec(code, scope)
     except Exception as e:
