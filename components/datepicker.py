@@ -25,7 +25,7 @@ layout = html.Div(
             title="Simple DatePicker Example",
             caption=dcc.Markdown(
                 "This is a simple example of DatePicker tied to a callback. You can either use strings in a valid "
-                "datetime format such as `YYYY-MM-DD` or use the date object from datetime library. "
+                "datetime format such as `YYYY-MM-DD` or use the date object from datetime library."
             ),
             code="""import dash_mantine_components as dmc
 from datetime import datetime, date
