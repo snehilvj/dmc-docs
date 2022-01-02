@@ -2,10 +2,16 @@ import random
 
 import dash
 from dash import Input, Output, State
-from dash.exceptions import PreventUpdate
 
 from app import app
 from reusable_components.component_block import OnlyCodeBlock
+
+data_string = """data = [
+        {"value": "react", "label": "React"},
+        {"value": "ng", "label": "Angular"},
+        {"value": "svelte", "label": "Svelte"},
+        {"value": "vue", "label": "Vue"},
+    ]"""
 
 
 ####### badge #######
@@ -96,15 +102,6 @@ def color_checkbox_demo(color):
 
 
 ####### chips #######
-
-data_string = """data = [
-        {"value": "react", "label": "React"},
-        {"value": "ng", "label": "Angular"},
-        {"value": "svelte", "label": "Svelte"},
-        {"value": "vue", "label": "Vue"},
-    ]"""
-
-
 @app.callback(
     Output("chips-code-output", "children"),
     Output("chips-demo", "variant"),
@@ -152,78 +149,6 @@ def multiple_chips_demo(multiple):
     return ["vue", "react"] if multiple else "react"
 
 
-####### datepicker #######
-@app.callback(
-    Output("datepicker-demo", "dropdownType"),
-    Input("dropdown-datepicker-demo", "value"),
-)
-def dropdown_datepicker_demo(dropdown):
-    return dropdown
-
-
-@app.callback(
-    Output("datepicker-demo", "format"),
-    Input("format-datepicker-demo", "value"),
-)
-def format_datepicker_demo(format):
-    return format
-
-
-@app.callback(
-    Output("datepicker-demo", "amountOfMonths"),
-    Input("amount-datepicker-demo", "value"),
-)
-def amount_datepicker_demo(amount):
-    if amount:
-        return int(amount)
-    else:
-        raise PreventUpdate
-
-
-@app.callback(
-    Output("datepicker-demo", "initialLevel"),
-    Input("initial-datepicker-demo", "value"),
-)
-def initial_datepicker_demo(initial):
-    return initial
-
-
-####### daterangepicker #######
-@app.callback(
-    Output("daterangepicker-demo", "dropdownType"),
-    Input("dropdown-daterangepicker-demo", "value"),
-)
-def dropdown_daterangepicker_demo(dropdown):
-    return dropdown
-
-
-@app.callback(
-    Output("daterangepicker-demo", "format"),
-    Input("format-daterangepicker-demo", "value"),
-)
-def format_daterangepicker_demo(format):
-    return format
-
-
-@app.callback(
-    Output("daterangepicker-demo", "amountOfMonths"),
-    Input("amount-daterangepicker-demo", "value"),
-)
-def amount_daterangepicker_demo(amount):
-    if amount:
-        return int(amount)
-    else:
-        raise PreventUpdate
-
-
-@app.callback(
-    Output("daterangepicker-demo", "initialLevel"),
-    Input("initial-daterangepicker-demo", "value"),
-)
-def initial_daterangepicker_demo(initial):
-    return initial
-
-
 ####### drawer #######
 @app.callback(
     Output("drawer-demo", "opened"),
@@ -240,38 +165,6 @@ def initial_daterangepicker_demo(initial):
 )
 def drawer_demo(n_clicks, position, size, title, noOverlay):
     return True, position, size, title, noOverlay
-
-
-####### modal #######
-@app.callback(
-    Output("modal-demo", "opened"),
-    Output("modal-demo", "centered"),
-    Input("modal-demo-button", "n_clicks"),
-    Input("modal-close-button", "n_clicks"),
-    Input("modal-submit-button", "n_clicks"),
-    State("modal-demo", "opened"),
-    State("centered-modal-demo", "checked"),
-    prevent_initial_call=True,
-)
-def modal_demo(nc1, nc2, nc3, opened, centered):
-    return not opened, centered
-
-
-@app.callback(
-    Output("modal-size-demo", "opened"),
-    Output("modal-size-demo", "size"),
-    Input("lg-button-modal", "n_clicks"),
-    Input("378px-button-modal", "n_clicks"),
-    Input(r"55%-button-modal", "n_clicks"),
-    Input("full-button-modal", "n_clicks"),
-    prevent_initial_call=True,
-)
-def modal_size_demo(nc0, nc1, nc2, nc3):
-    ctx = dash.callback_context
-    if ctx.triggered:
-        button_id = ctx.triggered[0]["prop_id"].split(".")[0]
-        return True, button_id.split("-")[0]
-    raise PreventUpdate
 
 
 ####### notifications #######
