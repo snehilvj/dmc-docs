@@ -42,12 +42,12 @@ component = html.Div([
         dates=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
     ),
     dmc.Space(h=10),
-    dmc.Text(id="selected-date"),
+    dmc.Text(id="selected-date-date-range-picker"),
 ])
 
 
 @app.callback(
-    Output('selected-date', 'children'),
+    Output('selected-date-date-range-picker', 'children'),
     Input('date-range-picker', 'dates'))
 def update_output(dates):
     prefix = 'You have selected: '
@@ -124,7 +124,7 @@ from datetime import datetime, timedelta
 from dash import Output, Input
 
 component = dmc.DateRangePicker(
-    id="datepicker-error",
+    id="datepicker-range-error",
     dates=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
     label="Date",
     required=True,
@@ -133,8 +133,8 @@ component = dmc.DateRangePicker(
 
 
 @app.callback(
-    Output("datepicker-error", "error"),
-    Input("datepicker-error", "dates")
+    Output("datepicker-range-error", "error"),
+    Input("datepicker-range-error", "dates")
 )
 def datepicker_error(dates):
     start = datetime.strptime(dates[0],"%Y-%M-%d").day

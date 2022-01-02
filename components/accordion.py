@@ -50,6 +50,7 @@ component = html.Div(
     children=[
         dmc.Accordion(
             id="accordion",
+            state={"0": False, "1": True},
             children=[
                 dmc.AccordionItem(
                     "Content 1",

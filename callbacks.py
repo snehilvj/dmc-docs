@@ -2,6 +2,7 @@ import random
 
 import dash
 from dash import Input, Output
+from dash.exceptions import PreventUpdate
 
 from app import app
 from reusable_components.component_block import OnlyCodeBlock
@@ -12,6 +13,15 @@ data_string = """data = [
         {"value": "svelte", "label": "Svelte"},
         {"value": "vue", "label": "Vue"},
     ]"""
+
+
+####### navbar search #######
+@app.callback(Output("url", "pathname"), Input("component-select", "value"))
+def open_components_page(value):
+    if value:
+        return f"/{value.lower()}"
+    else:
+        raise PreventUpdate
 
 
 ####### badge #######
