@@ -18,7 +18,7 @@ layout = html.Div(
         ComponentBlock(
             title="Simple Accordion Example",
             caption=dcc.Markdown(
-                "This is a simple example showing how you can use accordion. You can also pass a `description` along "
+                "This is a basic example showing how you can use accordion. You can also pass a `description` along "
                 "with the `label`. "
             ),
             code="""import dash_mantine_components as dmc

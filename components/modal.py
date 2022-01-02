@@ -18,7 +18,7 @@ layout = html.Div(
         ComponentBlock(
             title="Simple Example",
             caption=dcc.Markdown(
-                "This is simple example of dmc.Modal. You can also customize it by setting the "
+                "This is a basic example of dmc.Modal. You can also customize it by setting the "
                 "desired `radius` or `padding`."
             ),
             code="""import dash_mantine_components as dmc
@@ -72,10 +72,10 @@ component = html.Div([
     dmc.Modal(title="Size: 55%", id="modal-size-55", size="55%"),
     dmc.Modal(title="Size: full", id="modal-size-full", size="full"),
     dmc.Group([
-        dmc.Button("lg", variant="outline", id="lg-modal-button"),
-        dmc.Button("378px", variant="outline", id="378-modal-button"),
-        dmc.Button("55%", variant="outline", id="55-modal-button"),
-        dmc.Button("full", variant="outline", id="full-modal-button"),
+        dmc.Button("lg", id="lg-modal-button"),
+        dmc.Button("378px", id="378-modal-button"),
+        dmc.Button("55%", id="55-modal-button"),
+        dmc.Button("full", id="full-modal-button"),
     ]),
 ])
 

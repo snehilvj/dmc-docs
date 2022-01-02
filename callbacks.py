@@ -1,7 +1,7 @@
 import random
 
 import dash
-from dash import Input, Output, State
+from dash import Input, Output
 
 from app import app
 from reusable_components.component_block import OnlyCodeBlock
@@ -147,24 +147,6 @@ dmc.Chips(
 )
 def multiple_chips_demo(multiple):
     return ["vue", "react"] if multiple else "react"
-
-
-####### drawer #######
-@app.callback(
-    Output("drawer-demo", "opened"),
-    Output("drawer-demo", "position"),
-    Output("drawer-demo", "size"),
-    Output("drawer-demo", "title"),
-    Output("drawer-demo", "noOverlay"),
-    Input("drawer-demo-button", "n_clicks"),
-    State("position-drawer-demo", "value"),
-    State("size-drawer-demo", "value"),
-    State("title-drawer-demo", "value"),
-    State("overlay-drawer-demo", "checked"),
-    prevent_initial_call=True,
-)
-def drawer_demo(n_clicks, position, size, title, noOverlay):
-    return True, position, size, title, noOverlay
 
 
 ####### notifications #######
