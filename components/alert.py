@@ -1,5 +1,6 @@
 import dash_mantine_components as dmc
 from dash import dcc, html
+
 from reusable_components import (
     ComponentBlock,
     ComponentDescription,
@@ -80,7 +81,8 @@ component = html.Div([
         ComponentBlock(
             title="Dismissable Alerts",
             caption=dcc.Markdown(
-                "The alerts can be closed either programmatically by toggling the `hide` property or by clicking on the close button on the alert if enabled with `withCloseButton=True`."
+                "The alerts can be closed either programmatically by toggling the `hide` property or by clicking on "
+                "the close button on the alert if enabled with `withCloseButton=True`. "
             ),
             code="""import dash_mantine_components as dmc
 from dash import html, Output, Input, State

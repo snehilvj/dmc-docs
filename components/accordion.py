@@ -1,5 +1,6 @@
 import dash_mantine_components as dmc
 from dash import dcc, html
+
 from reusable_components import (
     ComponentBlock,
     ComponentDescription,
@@ -17,7 +18,8 @@ layout = html.Div(
         ComponentBlock(
             title="Simple Accordion Example",
             caption=dcc.Markdown(
-                "This is a simple example showing how you can use accordion. You can also pass a `description` along with the `label`."
+                "This is a simple example showing how you can use accordion. You can also pass a `description` along "
+                "with the `label`. "
             ),
             code="""import dash_mantine_components as dmc
 

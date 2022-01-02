@@ -1,5 +1,6 @@
 import dash_mantine_components as dmc
 from dash import html
+
 from reusable_components import (
     ComponentBlock,
     ComponentDescription,

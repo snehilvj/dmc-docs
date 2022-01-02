@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
-from app import app
 from dash import html
 
+from app import app
 from .title import SubText, Title
 
 
@@ -15,7 +15,7 @@ def OnlyComponentBlock(components):
     )
 
 
-def ComponentBlock(title, caption, code):
+def ComponentBlock(code, title="", caption=""):
     scope = {"app": app}
     code_to_display = code.replace("component = ", "", 1)
     try:
