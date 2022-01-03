@@ -65,7 +65,7 @@ header = dmc.Affix(
                     style={"height": 75},
                 )
             ],
-            shadow="md",
+            shadow="sm",
         ),
     ],
     position={"top": 0, "left": 0},

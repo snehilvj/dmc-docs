@@ -84,7 +84,7 @@ def children_badge_demo(variant, color, radius, size, loading, compact, children
 
 dmc.Button(
     "{children}",
-    variant="filled",
+    variant="{variant}",
     color="{color}",
     radius="{radius}",
     size="{size}",

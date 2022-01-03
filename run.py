@@ -1,4 +1,5 @@
 import importlib
+from os import environ
 
 import dash_mantine_components as dmc
 from dash import dcc, html
@@ -59,4 +60,4 @@ def page(pathname):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=environ.get("DMC_DEBUG", False))

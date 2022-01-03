@@ -13,7 +13,7 @@ components = [
     # "Image",
     "Modal",
     # "MultiSelect",
-    "Notifications",
+    # "Notifications",
     # "Paper",
     # "Prism",
     # "Progress",
