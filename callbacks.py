@@ -5,14 +5,6 @@ from dash import Input, Output
 from dash.exceptions import PreventUpdate
 
 
-data_string = """data = [
-        {"value": "react", "label": "React"},
-        {"value": "ng", "label": "Angular"},
-        {"value": "svelte", "label": "Svelte"},
-        {"value": "vue", "label": "Vue"},
-    ]"""
-
-
 ####### button #######
 
 
@@ -20,51 +12,6 @@ data_string = """data = [
 
 
 ####### chips #######
-@app.callback(
-    Output("chips-code-output", "children"),
-    Output("chips-demo", "variant"),
-    Output("chips-demo", "color"),
-    Output("chips-demo", "radius"),
-    Output("chips-demo", "size"),
-    Output("chips-demo", "multiple"),
-    Output("chips-demo", "spacing"),
-    Input("variant-chips-demo", "value"),
-    Input("color-chips-demo", "value"),
-    Input("radius-chips-demo", "value"),
-    Input("size-chips-demo", "value"),
-    Input("multiple-chips-demo", "checked"),
-    Input("spacing-chips-demo", "value"),
-)
-def children_badge_demo(variant, color, radius, size, multiple, spacing):
-    return [
-        OnlyCodeBlock(
-            code=f"""import dash_mantine_components as dmc
-
-dmc.Chips(
-    {data_string}
-    color="{color}",
-    radius="{radius}",
-    size="{size}",
-    spacing="{spacing}",
-    variant="{variant}",
-    multiple={multiple},
-)"""
-        ),
-        variant,
-        color,
-        radius,
-        size,
-        multiple,
-        spacing,
-    ]
-
-
-@app.callback(
-    Output("chips-demo", "value"),
-    Input("multiple-chips-demo", "checked"),
-)
-def multiple_chips_demo(multiple):
-    return ["vue", "react"] if multiple else "react"
 
 
 ####### notifications #######
