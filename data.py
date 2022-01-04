@@ -11,7 +11,7 @@ data = [
     "Divider",
     "Drawer",
     # "Image",
-    # "Modal",
+    "Modal",
     # "MultiSelect",
     # "Notifications",
     # "Paper",
