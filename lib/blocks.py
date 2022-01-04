@@ -63,7 +63,10 @@ def PageHeader():
                 style={"paddingTop": 1, "marginLeft": 20, "marginRight": 20},
                 children=[
                     dmc.Anchor(
-                        "Dash Mantine Components", variant="gradient", size="xl", href="/"
+                        "Dash Mantine Components",
+                        variant="gradient",
+                        size="xl",
+                        href="/",
                     ),
                     dmc.Group(
                         [

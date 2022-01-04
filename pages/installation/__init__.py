@@ -29,7 +29,8 @@ app.layout = PageBlock(
         Heading("Basic Usage"),
         Text(
             "Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official "
-            "Dash components. You can get the below output by running the following code."),
+            "Dash components. You can get the below output by running the following code."
+        ),
         CodeBlock(__file__, "example.py", app),
     ],
 )

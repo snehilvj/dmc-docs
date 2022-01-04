@@ -4,7 +4,7 @@ data = [
     "Alert",
     "Badge",
     "Button",
-    # "Checkbox",
+    "Checkbox",
     # "Chips",
     # "DatePicker",
     # "DateRangePicker",

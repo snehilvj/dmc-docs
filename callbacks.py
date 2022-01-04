@@ -17,12 +17,6 @@ data_string = """data = [
 
 
 ####### checkbox #######
-@app.callback(
-    Output("checkbox-color", "color"),
-    Input("color-checkbox-demo", "value"),
-)
-def color_checkbox_demo(color):
-    return color
 
 
 ####### chips #######
