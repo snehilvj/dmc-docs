@@ -8,7 +8,7 @@ data = [
     "Chips",
     "DatePicker",
     "DateRangePicker",
-    # "Divider",
+    "Divider",
     # "Drawer",
     # "Image",
     # "Modal",
