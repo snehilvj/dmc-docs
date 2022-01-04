@@ -14,46 +14,6 @@ data_string = """data = [
 
 
 ####### button #######
-@app.callback(
-    Output("button-code-output", "children"),
-    Output("button-demo", "variant"),
-    Output("button-demo", "color"),
-    Output("button-demo", "radius"),
-    Output("button-demo", "size"),
-    Output("button-demo", "loading"),
-    Output("button-demo", "compact"),
-    Output("button-demo", "children"),
-    Input("variant-button-demo", "value"),
-    Input("color-button-demo", "value"),
-    Input("radius-button-demo", "value"),
-    Input("size-button-demo", "value"),
-    Input("loading-button-demo", "checked"),
-    Input("compact-button-demo", "checked"),
-    Input("children-button-demo", "value"),
-)
-def children_badge_demo(variant, color, radius, size, loading, compact, children):
-    return [
-        OnlyCodeBlock(
-            code=f"""import dash_mantine_components as dmc
-
-dmc.Button(
-    "{children}",
-    variant="{variant}",
-    color="{color}",
-    radius="{radius}",
-    size="{size}",
-    loading={loading},
-    compact={compact},
-)"""
-        ),
-        variant,
-        color,
-        radius,
-        size,
-        loading,
-        compact,
-        children,
-    ]
 
 
 ####### checkbox #######

@@ -6,22 +6,22 @@ from lib.blocks import (
 )
 from lib.blueprints import DmcDash
 
-app = DmcDash(__name__, "badge")
+app = DmcDash(__name__, "button")
 
 app.layout = DocsBlock(
-    component_name="Badge",
+    component_name="Button",
     children=[
-        Text("Display badge, pill or tag."),
+        Text("Render button or link with button styles from mantine theme."),
         Heading("Interactive Demo"),
         Text(
-            "You can customize your badge and then just copy the auto generated code."
+            "You can customize your Button and then just copy the auto generated code."
         ),
         CodeBlock(__file__, "interactive.py", app, prism=False),
         Heading("With Gradient"),
-        Text("You can also customize the gradient fill of the badge."),
+        Text("You can also customize the gradient fill of the button."),
         CodeBlock(__file__, "gradient.py", app),
-        Heading("Badge within a Button"),
-        Text("You can put badge in a button's `children`."),
+        Heading("Full width button"),
+        Text("Pass `fullWidth=True` for a full width button."),
         CodeBlock(__file__, "button.py", app),
     ],
 )

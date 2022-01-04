@@ -3,7 +3,7 @@ data = [
     "Affix",
     "Alert",
     "Badge",
-    # "Button",
+    "Button",
     # "Checkbox",
     # "Chips",
     # "DatePicker",

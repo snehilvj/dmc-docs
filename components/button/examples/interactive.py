@@ -4,19 +4,19 @@ from dash import html, Input, Output
 component = html.Div(
     [
         dmc.SimpleGrid(
-            cols=5,
+            cols=6,
             spacing="xl",
             children=[
                 dmc.Text(label, size="sm", style={"marginBottom": 3})
-                for label in ["Variant", "Color", "Radius", "Size", "Children"]
+                for label in ["Variant", "Color", "Radius", "Size", "Children", ""]
             ],
         ),
         dmc.SimpleGrid(
-            cols=5,
+            cols=6,
             spacing="xl",
             children=[
                 dmc.Select(
-                    id="variant-badge-demo",
+                    id="variant-button-demo",
                     value="filled",
                     searchable=False,
                     clearable=False,
@@ -26,16 +26,17 @@ component = html.Div(
                             "value": val,
                         }
                         for val in [
-                            "light",
                             "filled",
                             "outline",
-                            "dot",
+                            "light",
                             "gradient",
+                            "white",
+                            "default",
                         ]
                     ],
                 ),
                 dmc.Select(
-                    id="color-badge-demo",
+                    id="color-button-demo",
                     value="blue",
                     searchable=False,
                     clearable=False,
@@ -63,8 +64,8 @@ component = html.Div(
                     ],
                 ),
                 dmc.SegmentedControl(
-                    id="radius-badge-demo",
-                    value="xl",
+                    id="radius-button-demo",
+                    value="sm",
                     size="sm",
                     data=[
                         {
@@ -81,8 +82,8 @@ component = html.Div(
                     ],
                 ),
                 dmc.SegmentedControl(
-                    id="size-badge-demo",
-                    value="md",
+                    id="size-button-demo",
+                    value="sm",
                     size="sm",
                     data=[
                         {
@@ -99,8 +100,13 @@ component = html.Div(
                     ],
                 ),
                 dmc.TextInput(
-                    id="children-badge-demo",
-                    value="Badge",
+                    id="children-button-demo",
+                    value="Settings",
+                ),
+                dmc.Switch(
+                    label="Compact",
+                    id="compact-button-demo",
+                    checked=False,
                 ),
             ],
         ),
@@ -108,17 +114,19 @@ component = html.Div(
             cols=2,
             children=[
                 dmc.Center(
-                    dmc.Badge(
-                        "Badge",
-                        id="badge-demo",
+                    dmc.Button(
+                        "Settings",
+                        id="button-demo",
                         variant="filled",
                         color="blue",
-                        radius="xl",
-                        size="md",
+                        radius="sm",
+                        size="sm",
+                        loading=False,
+                        compact=False,
                     ),
                 ),
                 dmc.Prism(
-                    id="badge-code-output",
+                    id="button-code-output",
                     code="",
                     language="python",
                     style={"marginTop": 20},
@@ -130,32 +138,36 @@ component = html.Div(
 
 
 @app.callback(
-    Output("badge-code-output", "code"),
-    Output("badge-demo", "variant"),
-    Output("badge-demo", "color"),
-    Output("badge-demo", "radius"),
-    Output("badge-demo", "size"),
-    Output("badge-demo", "children"),
-    Input("variant-badge-demo", "value"),
-    Input("color-badge-demo", "value"),
-    Input("radius-badge-demo", "value"),
-    Input("size-badge-demo", "value"),
-    Input("children-badge-demo", "value"),
+    Output("button-code-output", "code"),
+    Output("button-demo", "variant"),
+    Output("button-demo", "color"),
+    Output("button-demo", "radius"),
+    Output("button-demo", "size"),
+    Output("button-demo", "compact"),
+    Output("button-demo", "children"),
+    Input("variant-button-demo", "value"),
+    Input("color-button-demo", "value"),
+    Input("radius-button-demo", "value"),
+    Input("size-button-demo", "value"),
+    Input("compact-button-demo", "checked"),
+    Input("children-button-demo", "value"),
 )
-def children_badge_demo(variant, color, radius, size, children):
+def children_badge_demo(variant, color, radius, size, compact, children):
     return [
         f"""import dash_mantine_components as dmc
 
-dmc.Badge(
+dmc.Button(
     "{children}",
     variant="{variant}",
     color="{color}",
     radius="{radius}",
-    size="{size}"
+    size="{size}",
+    compact={compact},
 )""",
         variant,
         color,
         radius,
         size,
+        compact,
         children,
     ]
