@@ -49,19 +49,22 @@ app.layout = DocsBlock(
         CodeBlock(__file__, "formats.py", app),
         Heading("DatePicker clear and Overlay mode"),
         Text(
-            """dmc.DatePicker is clearable by default. You can change this behaviour by setting the `clearable` prop 
-            to `False`.\ndmc.DatePicker also supports opening date picker as an overlay instead of the normal popover 
-            mode. To enable that, set the type `dropdownType` prop to `modal`. """
+            "dmc.DatePicker is clearable by default. You can change this behaviour by setting the `clearable` prop to "
+            "`False`.\ndmc.DatePicker also supports opening date picker as an overlay instead of the normal popover "
+            "mode. To enable that, set the type `dropdownType` prop to `modal`. "
         ),
         CodeBlock(__file__, "dropdown_type.py", app),
         Heading("Amount of months"),
         Text(
-            """You can display more than one months in date picker dropdown by setting the `amountOfMonths` prop to the desired value."""
+            "You can display more than one months in date picker dropdown by setting the `amountOfMonths` prop to the "
+            "desired value. "
         ),
         CodeBlock(__file__, "amount_months.py", app),
         Heading("Error Display"),
         Text(
-            """You can convey errors in your date picker by setting the `error` prop. For instance, in the below example we try to convey the user that its a required field and the date can't be an odd date. Since it's a required field, we also set `clearable=False`."""
+            "You can convey errors in your date picker by setting the `error` prop. For instance, in the below "
+            "example we try to convey the user that its a required field and the date can't be an odd date. Since "
+            "it's a required field, we also set `clearable=False`. "
         ),
         CodeBlock(__file__, "errors.py", app),
     ],

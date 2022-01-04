@@ -7,7 +7,7 @@ data = [
     "Checkbox",
     "Chips",
     "DatePicker",
-    # "DateRangePicker",
+    "DateRangePicker",
     # "Divider",
     # "Drawer",
     # "Image",
