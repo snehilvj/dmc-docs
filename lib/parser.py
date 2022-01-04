@@ -10,6 +10,7 @@ def load_example(file, app, run):
     with open(file, "r") as f:
         example = f.read()
         source = example.replace("component = ", "", 1)
+        example = example.replace("app.layout = ", "component = ", 1)
 
         # remove lines from source that should not be displayed in the docs
         if NO_DISPLAY in source:
@@ -20,11 +21,11 @@ def load_example(file, app, run):
         # remove lines from example that should not be executed
         if NO_EXEC in example:
             example = "\n".join(
-                [line for line in source.splitlines() if NO_DISPLAY not in line]
+                [line for line in example.splitlines() if NO_EXEC not in line]
             )
 
         # remove tags
-        source = source.replace(f"  {NO_EXEC}", "")
+        source = source.replace(f" {NO_EXEC}", "")
 
         if run:
             try:
