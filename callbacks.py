@@ -4,8 +4,6 @@ import dash
 from dash import Input, Output
 from dash.exceptions import PreventUpdate
 
-from app import app
-from reusable_components.component_block import OnlyCodeBlock
 
 data_string = """data = [
         {"value": "react", "label": "React"},
@@ -13,50 +11,6 @@ data_string = """data = [
         {"value": "svelte", "label": "Svelte"},
         {"value": "vue", "label": "Vue"},
     ]"""
-
-
-####### navbar search #######
-@app.callback(Output("url", "pathname"), Input("component-select", "value"))
-def open_components_page(value):
-    if value:
-        return f"/{value.lower()}"
-    else:
-        raise PreventUpdate
-
-
-####### badge #######
-@app.callback(
-    Output("badge-code-output", "children"),
-    Output("badge-demo", "variant"),
-    Output("badge-demo", "color"),
-    Output("badge-demo", "radius"),
-    Output("badge-demo", "size"),
-    Output("badge-demo", "children"),
-    Input("variant-badge-demo", "value"),
-    Input("color-badge-demo", "value"),
-    Input("radius-badge-demo", "value"),
-    Input("size-badge-demo", "value"),
-    Input("children-badge-demo", "value"),
-)
-def children_badge_demo(variant, color, radius, size, children):
-    return [
-        OnlyCodeBlock(
-            code=f"""import dash_mantine_components as dmc
-
-dmc.Badge(
-    "{children}",
-    variant="{variant}",
-    color="{color}",
-    radius="{radius}",
-    size="{size}"
-)"""
-        ),
-        variant,
-        color,
-        radius,
-        size,
-        children,
-    ]
 
 
 ####### button #######

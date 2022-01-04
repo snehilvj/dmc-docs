@@ -11,7 +11,7 @@ from reusable_components import (
     OnlyComponentBlock,
     OnlyCodeBlock,
 )
-from utils import parse_apidocs
+from data import parse_apidocs
 
 description, apidocs = parse_apidocs(dmc.Divider.__doc__)
 

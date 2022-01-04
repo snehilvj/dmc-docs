@@ -10,7 +10,7 @@ from reusable_components import (
     SubText,
     Title,
 )
-from utils import parse_apidocs
+from data import parse_apidocs
 
 description, apidocs = parse_apidocs(dmc.Button.__doc__)
 

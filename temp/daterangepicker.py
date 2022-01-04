@@ -12,7 +12,7 @@ from reusable_components import (
     Title,
     SubText,
 )
-from utils import parse_apidocs
+from data import parse_apidocs
 
 description, apidocs = parse_apidocs(dmc.DateRangePicker.__doc__)
 date_formats = pd.read_csv(Path(__file__).parent.joinpath("date_formats.csv"))

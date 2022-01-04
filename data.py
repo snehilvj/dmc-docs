@@ -1,17 +1,17 @@
-components = [
+data = [
     "Accordion",
     "Affix",
     "Alert",
     "Badge",
-    "Button",
-    "Checkbox",
-    "Chips",
-    "DatePicker",
-    "DateRangePicker",
-    "Divider",
-    "Drawer",
+    # "Button",
+    # "Checkbox",
+    # "Chips",
+    # "DatePicker",
+    # "DateRangePicker",
+    # "Divider",
+    # "Drawer",
     # "Image",
-    "Modal",
+    # "Modal",
     # "MultiSelect",
     # "Notifications",
     # "Paper",
@@ -30,9 +30,3 @@ components = [
     # "Title",
     # "Tooltip",
 ]
-
-
-def parse_apidocs(docs):
-    header, api = docs.split("Keyword arguments:")
-    desc = "\n".join(header.split("\n")[1:])
-    return desc, api.strip()

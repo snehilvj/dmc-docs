@@ -1,63 +1,23 @@
 import importlib
 from os import environ
 
-import dash_mantine_components as dmc
-from dash import dcc, html
-from dash.dependencies import Input, Output
+from dash import Output, Input
+from flask import Flask
 
-import callbacks
-from app import app
-from components.header import header
-from home_layout import home_layout
-from utils import components
+from data import data
 
-server = app.server
+server = Flask(__name__)
 
-app.layout = html.Div(
-    [
-        dcc.Location(id="url"),
-        header,
-        dmc.Container(
-            size="lg",
-            style={"paddingTop": 80},
-            children=[
-                dmc.Space(h=20),
-                dmc.Grid(
-                    children=[
-                        dmc.Col(
-                            span=3,
-                            children=[
-                                dmc.Anchor("Getting Started", href="/"),
-                                dmc.Space(h=20),
-                                dmc.Text("Components", color="dimmed"),
-                                dmc.Space(h=10),
-                                dmc.Group(
-                                    children=[
-                                        dmc.Anchor(cmp, href=f"/{cmp.lower()}")
-                                        for cmp in components
-                                    ],
-                                    direction="column",
-                                    spacing="xs",
-                                ),
-                            ],
-                        ),
-                        dmc.Col(span=9, id="page-content"),
-                    ]
-                ),
-            ],
-        ),
-    ]
-)
-
-
-@app.callback(Output("page-content", "children"), Input("url", "pathname"))
-def page(pathname):
-    if pathname == "/":
-        return home_layout
-    pathname = pathname.lstrip("/")
-    module = importlib.import_module(f"components.{pathname}")
-    return module.layout
-
+for component in data:
+    print(f"Registering docs for {component}.")
+    module = importlib.import_module(f"components.{component.lower()}")
+    app = module.app
+    app.init_app(server)
+    # register callback for component select/search in the header
+    app.callback(Output("url", "pathname"), Input("select-component", "value"))(
+        lambda value: value
+    )
+    server.register_blueprint(app)
 
 if __name__ == "__main__":
-    app.run_server(debug=environ.get("DMC_DEBUG", False))
+    server.run(debug=environ.get("DMC_DEBUG", False))
