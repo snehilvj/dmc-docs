@@ -13,7 +13,9 @@ app.layout = DocsBlock(
         ),
         CodeBlock(__file__, "interactive.py", app, prism=False),
         Heading("Callbacks"),
-        Text("The `value` property is a list of items if `multiple=True` else a single item"),
-        CodeBlock(__file__, "callbacks.py", app)
+        Text(
+            "The `value` property is a list of items if `multiple=True` else a single item"
+        ),
+        CodeBlock(__file__, "callbacks.py", app),
     ],
 )

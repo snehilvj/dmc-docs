@@ -2,16 +2,6 @@ import random
 
 import dash
 from dash import Input, Output
-from dash.exceptions import PreventUpdate
-
-
-####### button #######
-
-
-####### checkbox #######
-
-
-####### chips #######
 
 
 ####### notifications #######

@@ -6,7 +6,7 @@ data = [
     "Button",
     "Checkbox",
     "Chips",
-    # "DatePicker",
+    "DatePicker",
     # "DateRangePicker",
     # "Divider",
     # "Drawer",
