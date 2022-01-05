@@ -3,6 +3,7 @@ from lib.blocks import (
     Heading,
     CodeBlock,
     DocsBlock,
+    ComponentDescription,
 )
 from lib.blueprints import DmcDash
 
@@ -11,7 +12,7 @@ app = DmcDash(__name__, "accordion")
 app.layout = DocsBlock(
     component_name="Accordion",
     children=[
-        Text("Divide content into collapsible sections."),
+        ComponentDescription("Divide content into collapsible sections."),
         Heading("Simple Example", id="simple-example"),
         Text(
             "This is a basic example showing how you can use accordion. You can also pass a `description` along with "

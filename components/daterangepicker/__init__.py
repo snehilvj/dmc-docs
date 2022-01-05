@@ -8,6 +8,7 @@ from lib.blocks import (
     Heading,
     CodeBlock,
     DocsBlock,
+    ComponentDescription,
 )
 from lib.blueprints import DmcDash
 
@@ -17,14 +18,14 @@ date_formats = pd.read_csv(Path(__file__).parents[2].joinpath("date_formats.csv"
 app.layout = DocsBlock(
     component_name="DateRangePicker",
     children=[
-        Text("Capture dates range from user."),
-        Heading("Simple Example"),
+        ComponentDescription("Capture dates range from user."),
+        Heading("Simple Example", id="simple-example"),
         Text(
             "This is a simple example of DateRangePicker tied to a callback. You can either use strings in a valid "
             "datetime format such as `YYYY-MM-DD` or use the date object from datetime library. "
         ),
         CodeBlock(__file__, "simple.py", app),
-        Heading("Date formats"),
+        Heading("Date Formats", id="date-formats"),
         Text(
             "Use `format` property to change the format of the date displayed in the dmc.DateRangePicker. You can use "
             "any permutation from the below table to achieve the desired date format. Note: This is not the format of "
@@ -46,22 +47,22 @@ app.layout = DocsBlock(
                 )
             ],
         ),
-        Heading("Date Format Examples"),
+        Heading("Date Format Examples", id="date-format-examples"),
         CodeBlock(__file__, "formats.py", app),
-        Heading("DateRangePicker clear and Overlay mode"),
+        Heading("clear and Overlay mode", id="clear-overlay"),
         Text(
             "dmc.DateRangePicker is clearable by default. You can change this behaviour by setting the `clearable` "
             "prop to `False`.\ndmc.DateRangePicker also supports opening dmc.DateRangePicker as an overlay instead of "
             "the normal popover mode. To enable that, set the type `dropdownType` prop to `modal`. "
         ),
         CodeBlock(__file__, "dropdown_type.py", app),
-        Heading("Amount of months"),
+        Heading("Amount of months", id="amount-of-months"),
         Text(
             "You can display more than one months in dmc.DateRangePicker dropdown by setting the `amountOfMonths` "
             "prop to the desired value. "
         ),
         CodeBlock(__file__, "amount_months.py", app),
-        Heading("Error Display"),
+        Heading("Error Display", id="error"),
         Text(
             "You can convey errors in your dmc.DateRangePicker by setting the `error` prop. For instance, "
             "in the below example we try to convey the user that its a required field and the difference between the "

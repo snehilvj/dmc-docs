@@ -23,6 +23,19 @@ def Text(string, **kwargs):
     )
 
 
+def ComponentDescription(string, **kwargs):
+    return dmc.Text(
+        dcc.Markdown(string),
+        color="gray",
+        style={
+            "marginBottom": 25,
+            "marginTop": -15,
+            "fontSize": 18,
+        },
+        **kwargs,
+    )
+
+
 def ComponentReference(component_name):
     docs = get_component_reference(component_name)
     return html.Div(
@@ -102,13 +115,14 @@ def PageHeader():
 
 def SideNav():
     sidebar_elements = [
-        dmc.Anchor(component, href=f"/{component.lower()}") for component in data
+        dmc.Anchor(component, size="sm", href=f"/{component.lower()}")
+        for component in data
     ]
 
     return dmc.Navbar(
         fixed=True,
         position={"top": 70},
-        width={"base": 300},
+        width={"base": 250},
         children=[
             dmc.ScrollArea(
                 style={"height": "calc(100% - 70px)"},
@@ -126,7 +140,9 @@ def SideNav():
                                         spacing="xs",
                                         children=[
                                             dmc.Anchor(
-                                                "Installation", href="/installation"
+                                                "Installation",
+                                                href="/installation",
+                                                size="sm",
                                             ),
                                         ],
                                     )
@@ -160,22 +176,23 @@ def TableOfContents(children):
     toc = []
     for child in children:
         if isinstance(child, dmc.Title) and child.class_name == "toc":
-            toc.append(dmc.Anchor(child.children, size="sm", href=f"#{child.id}"))
+            toc.append(
+                dmc.Anchor(
+                    child.children,
+                    style={"text-transform": "capitalize"},
+                    href=f"#{child.id}",
+                    size="sm",
+                )
+            )
+    toc.append(dmc.Anchor("Keyword Arguments", href="#keyword-arguments", size="sm"))
 
     return dmc.Navbar(
         position={"top": 90, "right": 0},
         fixed=True,
-        width={"base": 300},
+        width={"base": 280},
         style={"paddingRight": 30},
         children=[
-            dmc.Group(
-                [
-                    html.I(className="bi bi-card-heading"),
-                    dmc.Text("Table of Contents", size="md"),
-                ],
-                style={"marginBottom": 10},
-                spacing="xs",
-            ),
+            dmc.Text("Table of Contents", style={"marginBottom": 20}, weight=500),
             dmc.Group(direction="column", spacing="xs", children=toc),
         ],
     )

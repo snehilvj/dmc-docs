@@ -5,6 +5,7 @@ from lib.blocks import (
     Heading,
     PageBlock,
     CodeBlock,
+    ComponentDescription,
 )
 from lib.blueprints import DmcDash
 
@@ -13,7 +14,9 @@ app = DmcDash(__name__, "installation")
 app.layout = PageBlock(
     title="Installation",
     children=[
-        Text("You can install dash_mantine_components using pip or poetry."),
+        ComponentDescription(
+            "You can install dash_mantine_components using pip or poetry."
+        ),
         Heading("Pip", id="pip"),
         dmc.Prism(
             code="pip install dash_mantine_components",
