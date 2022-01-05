@@ -84,7 +84,8 @@ def PageHeader():
                         href="/",
                     ),
                     dmc.Group(
-                        [
+                        id="header-right-section",
+                        children=[
                             dmc.Select(
                                 id="select-component",
                                 style={"width": 300},
@@ -120,6 +121,7 @@ def SideNav():
     ]
 
     return dmc.Navbar(
+        id="components-navbar",
         fixed=True,
         position={"top": 70},
         width={"base": 250},
@@ -187,6 +189,7 @@ def TableOfContents(children):
     toc.append(dmc.Anchor("Keyword Arguments", href="#keyword-arguments", size="sm"))
 
     return dmc.Navbar(
+        id="toc-navbar",
         position={"top": 90, "right": 0},
         fixed=True,
         width={"base": 280},
@@ -209,7 +212,12 @@ def PageBlock(title, children):
             dcc.Location(id="url"),
             PageHeader(),
             SideNav(),
-            dmc.Container(children=children),
+            dmc.Container(
+                fluid=True,
+                padding="lg",
+                id="main-content",
+                children=children,
+            ),
             TableOfContents(children),
         ],
     )

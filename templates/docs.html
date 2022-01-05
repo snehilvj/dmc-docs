@@ -16,6 +16,38 @@
             scroll-behavior: smooth;
             scroll-padding-top: 90px
         }
+
+        #main-content {
+            margin-right: 300px;
+            margin-left: 300px;
+            max-width: 1100px;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            #toc-navbar {
+                display: none;
+            }
+
+            #main-content {
+                margin-right: 0;
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            #components-navbar {
+                display: none;
+            }
+
+            #main-content {
+                margin-left: 0;
+            }
+        }
+
+        @media only screen and (max-width: 672px) {
+            #header-right-section {
+                display: none;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
