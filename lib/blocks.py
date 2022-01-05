@@ -11,8 +11,10 @@ def ComponentName(string, **kwargs):
     return dmc.Text(string, style={"fontSize": 40, "fontWeight": 300}, **kwargs)
 
 
-def Heading(string, **kwargs):
-    return dmc.Title(string, order=5, style={"marginBottom": 10}, **kwargs)
+def Heading(string, id, **kwargs):
+    return dmc.Title(
+        string, order=5, class_name="toc", id=id, style={"marginBottom": 10}, **kwargs
+    )
 
 
 def Text(string, **kwargs):
@@ -25,7 +27,7 @@ def ComponentReference(component_name):
     docs = get_component_reference(component_name)
     return html.Div(
         [
-            Heading("Keyword Arguments"),
+            Heading("Keyword Arguments", id="keyword-arguments"),
             dmc.Prism(code=docs, language="git", style={"marginBottom": 50}),
         ]
     )
@@ -104,10 +106,9 @@ def SideNav():
     ]
 
     return dmc.Navbar(
-        position="left",
         fixed=True,
+        position={"top": 70},
         width={"base": 300},
-        style={"top": 70},
         children=[
             dmc.ScrollArea(
                 style={"height": "calc(100% - 70px)"},
@@ -155,18 +156,44 @@ def SideNav():
     )
 
 
+def TableOfContents(children):
+    toc = []
+    for child in children:
+        if isinstance(child, dmc.Title) and child.class_name == "toc":
+            toc.append(dmc.Anchor(child.children, size="sm", href=f"#{child.id}"))
+
+    return dmc.Navbar(
+        position={"top": 90, "right": 0},
+        fixed=True,
+        width={"base": 300},
+        style={"paddingRight": 30},
+        children=[
+            dmc.Group(
+                [
+                    html.I(className="bi bi-card-heading"),
+                    dmc.Text("Table of Contents", size="md"),
+                ],
+                style={"marginBottom": 10},
+                spacing="xs",
+            ),
+            dmc.Group(direction="column", spacing="xs", children=toc),
+        ],
+    )
+
+
 def PageBlock(title, children):
     children = [ComponentName(title)] + children
 
     return dmc.Container(
         fluid=True,
         padding="lg",
-        style={"marginTop": 80},
+        style={"marginTop": 90},
         children=[
             dcc.Location(id="url"),
             PageHeader(),
             SideNav(),
-            html.Div(style={"marginLeft": 340, "marginRight": 20}, children=children),
+            dmc.Container(children=children),
+            TableOfContents(children),
         ],
     )
 
