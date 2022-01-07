@@ -4,7 +4,7 @@ click==8.0.3
 dash==2.0.0
 dash-core-components==2.0.0
 dash-html-components==2.0.0
-dash-mantine-components==0.2.1
+dash-mantine-components==0.2.2
 dash-table==5.0.0
 Flask==2.0.2
 Flask-Compress==1.10.1
@@ -24,5 +24,5 @@ regex==2021.11.10
 six==1.16.0
 tenacity==8.0.1
 tomli==1.2.2
-typing-extensions==4.0.1
+typing_extensions==4.0.1
 Werkzeug==2.0.2

@@ -1,111 +1,34 @@
 import importlib
+from os import environ
 
-import dash_mantine_components as dmc
-from dash import dcc, html
-from dash.dependencies import Input, Output
+from dash import Output, Input
+from flask import Flask, redirect
 
-import callbacks
-from app import app
-from components.header import header
+from data import component_list
 
-server = app.server
-
-components = [
-    "Accordion",
-    "Affix",
-    "Alert",
-    "Badge",
-    "Button",
-    "Checkbox",
-    "Chips",
-    "DatePicker",
-    "DateRangePicker",
-    "Divider",
-    "Drawer",
-    "Image",
-    "Modal",
-    # "MultiSelect",
-    "Notifications",
-    # "Paper",
-    # "Prism",
-    # "Progress",
-    # "RadioGroup",
-    # "SegmentedControl",
-    # "Select",
-    # "Slider",
-    # "Spoiler",
-    # "Switch",
-    # "Table",
-    # "Tabs",
-    # "Text",
-    # "TextInput",
-    # "Title",
-    # "Tooltip",
-]
+server = Flask(__name__)
 
 
-app.layout = dmc.Container(
-    size="lg",
-    children=[
-        header,
-        dcc.Location(id="url"),
-        dmc.Space(h=20),
-        dmc.Grid(
-            children=[
-                dmc.Col(
-                    span=3,
-                    children=[
-                        dmc.Group(
-                            children=[
-                                dmc.Anchor(cmp, href=f"/{cmp.lower()}")
-                                for cmp in components
-                            ],
-                            direction="column",
-                            spacing="xs",
-                        )
-                    ],
-                ),
-                dmc.Col(span=9, id="page-content"),
-            ]
-        ),
-    ],
-)
+@server.get("/")
+def home():
+    return redirect("/installation", 302)
 
 
-@app.callback(Output("page-content", "children"), Input("url", "pathname"))
-def page(pathname):
-    if pathname == "/":
-        pathname = "Accordion"
-    else:
-        pathname = pathname.lstrip("/")
-
-    try:
-        module = importlib.import_module(f"components.{pathname.lower()}")
-        return html.Div(
-            children=[
-                dmc.Text(
-                    module.title,
-                    size="xl",
-                    style={"fontSize": 30, "marginBottom": 10},
-                ),
-                module.layout,
-                dmc.Space(h=50),
-                dmc.Text("Keyword arguments", color="dimmed"),
-                dmc.Space(h=10),
-                dmc.Prism(
-                    language="git",
-                    code=module.doc,
-                    noCopy=True,
-                    style={"whiteSpace": "pre-wrap"},
-                ),
-                dmc.Space(h=50),
-            ],
+def register_blueprints(type_, blueprint_names):
+    for name in blueprint_names:
+        print(f"Registering {name}.")
+        module = importlib.import_module(f"{type_}.{name.lower()}")
+        app = module.app
+        app.init_app(server)
+        # register callback for component select/search in the header
+        app.callback(Output("url", "pathname"), Input("select-component", "value"))(
+            lambda value: value
         )
-    except ImportError:
-        return dmc.Alert(
-            "Sorry, this page doesn't exist right now!", color="red", show=True
-        )
+        server.register_blueprint(app)
 
+
+register_blueprints("components", component_list)
+register_blueprints("pages", ["Installation"])
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    server.run(debug=environ.get("DMC_DEBUG", False))

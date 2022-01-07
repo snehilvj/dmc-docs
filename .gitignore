@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -129,3 +128,4 @@ dmypy.json
 .pyre/
 
 .DS_Store
+.idea
