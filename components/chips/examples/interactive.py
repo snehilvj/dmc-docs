@@ -1,165 +1,102 @@
 import dash_mantine_components as dmc
 from dash import html, Input, Output
 
-data_string = """data = [
-        {"value": "react", "label": "React"},
-        {"value": "ng", "label": "Angular"},
-        {"value": "svelte", "label": "Svelte"},
-        {"value": "vue", "label": "Vue"},
-    ]"""
+
+import dash_mantine_components as dmc
+from dash import html, Input, Output
+
+from lib.blocks import DemoSelect, MantineThemeColorSwatches, DemoSlider
 
 component = html.Div(
     [
-        dmc.SimpleGrid(
-            cols=6,
-            spacing="xl",
-            children=[
-                dmc.Text(label, size="sm", style={"marginBottom": 3})
-                for label in ["Color", "Variant", "Radius", "Size", "Spacing", ""]
-            ],
-        ),
-        dmc.SimpleGrid(
-            cols=6,
-            spacing="xl",
-            children=[
-                dmc.Select(
-                    id="color-chips-demo",
-                    value="blue",
-                    searchable=False,
-                    clearable=False,
-                    data=[
-                        {
-                            "label": val.title(),
-                            "value": val,
-                        }
-                        for val in [
-                            "dark",
-                            "gray",
-                            "red",
-                            "pink",
-                            "grape",
-                            "violet",
-                            "indigo",
-                            "blue",
-                            "cyan",
-                            "teal",
-                            "green",
-                            "lime",
-                            "yellow",
-                            "orange",
-                        ]
-                    ],
-                ),
-                dmc.SegmentedControl(
-                    id="variant-chips-demo",
-                    value="outline",
-                    size="sm",
-                    data=[
-                        {
-                            "value": "outline",
-                            "label": "Outline",
-                        },
-                        {
-                            "value": "filled",
-                            "label": "Filled",
-                        },
-                    ],
-                ),
-                dmc.SegmentedControl(
-                    id="radius-chips-demo",
-                    value="xl",
-                    size="sm",
-                    data=[
-                        {
-                            "value": s,
-                            "label": s,
-                        }
-                        for s in [
-                            "xs",
-                            "sm",
-                            "md",
-                            "lg",
-                            "xl",
-                        ]
-                    ],
-                ),
-                dmc.SegmentedControl(
-                    id="size-chips-demo",
-                    value="sm",
-                    size="sm",
-                    data=[
-                        {
-                            "value": s,
-                            "label": s,
-                        }
-                        for s in [
-                            "xs",
-                            "sm",
-                            "md",
-                            "lg",
-                            "xl",
-                        ]
-                    ],
-                ),
-                dmc.SegmentedControl(
-                    id="spacing-chips-demo",
-                    value="xs",
-                    size="sm",
-                    data=[
-                        {
-                            "value": s,
-                            "label": s,
-                        }
-                        for s in [
-                            "xs",
-                            "sm",
-                            "md",
-                            "lg",
-                            "xl",
-                        ]
-                    ],
-                ),
-                dmc.Switch(
-                    label="Multiple",
-                    id="multiple-chips-demo",
-                    checked=False,
-                ),
-            ],
-        ),
-        dmc.SimpleGrid(
-            cols=2,
+        html.Div(
+            style={"display": "flex"},
             children=[
                 dmc.Center(
-                    dmc.Chips(
-                        id="chips-demo",
-                        data=[
-                            {"value": "react", "label": "React"},
-                            {"value": "ng", "label": "Angular"},
-                            {"value": "svelte", "label": "Svelte"},
-                            {"value": "vue", "label": "Vue"},
-                        ],
-                        value="react",
-                        color="blue",
-                        radius="xl",
-                        size="sm",
-                        spacing="xs",
-                        variant="outline",
-                        multiple=False,
-                    ),
+                    style={"flex": 1},
+                    children=[
+                        dmc.Chips(
+                            id="chips-demo",
+                            data=[
+                                {"value": "react", "label": "React"},
+                                {"value": "ng", "label": "Angular"},
+                                {"value": "svelte", "label": "Svelte"},
+                                {"value": "vue", "label": "Vue"},
+                            ],
+                            value="react",
+                            color="blue",
+                            radius="xl",
+                            size="sm",
+                            spacing="xs",
+                            variant="outline",
+                            multiple=False,
+                        ),
+                    ],
                 ),
-                dmc.Prism(
-                    id="chips-code-output",
-                    code="",
-                    language="python",
-                    style={"marginTop": 20},
+                dmc.Group(
+                    style={"width": 200},
+                    direction="column",
+                    grow=True,
+                    children=[
+                        DemoSelect(
+                            id="variant-chips-demo",
+                            value="filled",
+                            label="Variant",
+                            data=["filled", "outline"],
+                        ),
+                        MantineThemeColorSwatches(id="color-chips-demo"),
+                        DemoSlider(
+                            id="radius-chips-demo", label="Radius", initial_value=5
+                        ),
+                        DemoSlider(id="size-chips-demo", label="Size", initial_value=2),
+                        DemoSlider(
+                            id="spacing-chips-demo", label="Spacing", initial_value=1
+                        ),
+                        dmc.Switch(
+                            label="Multiple",
+                            id="multiple-chips-demo",
+                            checked=False,
+                        ),
+                    ],
                 ),
             ],
+        ),
+        dmc.Prism(
+            id="chips-code-output", code="", language="python", style={"marginTop": 30}
         ),
     ]
 )
 
 
-@app.callback(
+app.clientside_callback(
+    """
+    function(variant, color, radius, size, multiple, spacing) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Chips(
+    data = [
+        {"value": "react", "label": "React"},
+        {"value": "ng", "label": "Angular"},
+        {"value": "svelte", "label": "Svelte"},
+        {"value": "vue", "label": "Vue"},
+    ],
+    color="${window.colorMap[color]}",
+    radius="${window.sizeMap[radius]}",
+    size="${window.sizeMap[size]}",
+    spacing="${window.sizeMap[spacing]}",
+    variant="${variant}",
+    multiple=${multiple ? "True" : "False"},
+)`,
+        variant,
+        window.colorMap[color],
+        window.sizeMap[radius],
+        window.sizeMap[size],
+        multiple,
+        window.sizeMap[spacing]
+        ];
+    }
+    """,
     Output("chips-code-output", "code"),
     Output("chips-demo", "variant"),
     Output("chips-demo", "color"),
@@ -169,31 +106,11 @@ component = html.Div(
     Output("chips-demo", "spacing"),
     Input("variant-chips-demo", "value"),
     Input("color-chips-demo", "value"),
-    Input("radius-chips-demo", "value"),
-    Input("size-chips-demo", "value"),
+    Input("radius-chips-demo", "drag_value"),
+    Input("size-chips-demo", "drag_value"),
     Input("multiple-chips-demo", "checked"),
-    Input("spacing-chips-demo", "value"),
+    Input("spacing-chips-demo", "drag_value"),
 )
-def children_badge_demo(variant, color, radius, size, multiple, spacing):
-    return [
-        f"""import dash_mantine_components as dmc
-
-dmc.Chips(
-    {data_string}
-    color="{color}",
-    radius="{radius}",
-    size="{size}",
-    spacing="{spacing}",
-    variant="{variant}",
-    multiple={multiple},
-)""",
-        variant,
-        color,
-        radius,
-        size,
-        multiple,
-        spacing,
-    ]
 
 
 @app.callback(

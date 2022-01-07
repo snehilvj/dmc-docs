@@ -1,4 +1,4 @@
-data = [
+component_list = [
     "Accordion",
     "Affix",
     "Alert",

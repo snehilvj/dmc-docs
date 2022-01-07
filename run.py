@@ -4,7 +4,7 @@ from os import environ
 from dash import Output, Input
 from flask import Flask, redirect
 
-from data import data
+from data import component_list
 
 server = Flask(__name__)
 
@@ -27,7 +27,7 @@ def register_blueprints(type_, blueprint_names):
         server.register_blueprint(app)
 
 
-register_blueprints("components", data)
+register_blueprints("components", component_list)
 register_blueprints("pages", ["Installation"])
 
 if __name__ == "__main__":

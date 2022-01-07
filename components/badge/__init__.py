@@ -15,9 +15,18 @@ app.layout = DocsBlock(
         ComponentDescription("Display badge, pill or tag."),
         Heading("Simple Example", id="simple-example"),
         Text(
-            "You can customize your badge and then just copy the auto generated code."
+            "You can create badges with different variants by setting the `variant` prop."
         ),
-        CodeBlock(__file__, "interactive.py", app, prism=False),
+        CodeBlock(__file__, "variant.py", app),
+        Heading("Colors", id="colors"),
+        Text("Change the color of the badge by choosing from one of the theme colors."),
+        CodeBlock(__file__, "colors.py", app),
+        Heading("Radius", id="radius"),
+        Text("You can set the radius of the badge using the `radius` prop."),
+        CodeBlock(__file__, "radius.py", app),
+        Heading("Size", id="size"),
+        Text("You can set the size of the badge using the `size` prop."),
+        CodeBlock(__file__, "size.py", app),
         Heading("With Gradient", id="gradient"),
         Text("You can also customize the gradient fill of the badge."),
         CodeBlock(__file__, "gradient.py", app),

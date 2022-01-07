@@ -3,7 +3,7 @@ from pathlib import Path
 import dash_mantine_components as dmc
 from dash import html, dcc
 
-from data import data
+from data import component_list
 from lib.parser import get_component_reference, load_example
 
 
@@ -67,6 +67,77 @@ def CodeBlock(file, example_name, app, run=True, prism=True):
     )
 
 
+def MantineThemeColorSwatches(id):
+    return dmc.ColorPicker(
+        id=id,
+        value="#228ae6",
+        withPicker=False,
+        swatchesPerRow=7,
+        swatches=[
+            "#25262b",
+            "#868e96",
+            "#fa5252",
+            "#e64980",
+            "#be4bdb",
+            "#7950f2",
+            "#4c6ef5",
+            "#228ae6",
+            "#15abbf",
+            "#12b886",
+            "#3fbf57",
+            "#82c91e",
+            "#fab005",
+            "#fc7d14",
+        ],
+    )
+
+
+def DemoSlider(id, label, initial_value):
+    return dmc.InputWrapper(
+        label=label,
+        children=[
+            html.Div(
+                [
+                    dmc.Slider(
+                        id=id,
+                        drag_value=initial_value,
+                        value=initial_value,
+                        marks=[
+                            {"value": 1},
+                            {"value": 2},
+                            {"value": 3},
+                            {"value": 4},
+                            {"value": 5},
+                        ],
+                        min=1,
+                        max=5,
+                        size="sm",
+                        label="""(value) => window.sizeMap[value]""",
+                    )
+                ],
+                style={"padding": "0 5px"},
+            )
+        ],
+    )
+
+
+def DemoSelect(id, value, label, data):
+    return dmc.Select(
+        id=id,
+        value=value,
+        label=label,
+        searchable=False,
+        clearable=False,
+        data=[
+            {
+                "label": val.title(),
+                "value": val,
+            }
+            for val in data
+        ],
+    )
+
+
 def PageHeader():
     return dmc.Header(
         height=70,
@@ -96,7 +167,7 @@ def PageHeader():
                                         "label": component,
                                         "value": f"/{component.lower()}",
                                     }
-                                    for component in data
+                                    for component in component_list
                                 ],
                             ),
                             html.A(
@@ -106,7 +177,7 @@ def PageHeader():
                                 ),
                                 href="https://github.com/snehilvj/dash-mantine-components",
                             ),
-                        ]
+                        ],
                     ),
                 ],
             )
@@ -117,7 +188,7 @@ def PageHeader():
 def SideNav():
     sidebar_elements = [
         dmc.Anchor(component, size="sm", href=f"/{component.lower()}")
-        for component in data
+        for component in component_list
     ]
 
     return dmc.Navbar(
@@ -174,7 +245,7 @@ def SideNav():
     )
 
 
-def TableOfContents(children):
+def TableOfContents(children, title):
     toc = []
     for child in children:
         if isinstance(child, dmc.Title) and child.class_name == "toc":
@@ -186,7 +257,11 @@ def TableOfContents(children):
                     size="sm",
                 )
             )
-    toc.append(dmc.Anchor("Keyword Arguments", href="#keyword-arguments", size="sm"))
+
+    if title in component_list:
+        toc.append(
+            dmc.Anchor("Keyword Arguments", href="#keyword-arguments", size="sm")
+        )
 
     return dmc.Navbar(
         id="toc-navbar",
@@ -213,12 +288,11 @@ def PageBlock(title, children):
             PageHeader(),
             SideNav(),
             dmc.Container(
-                fluid=True,
                 padding="lg",
                 id="main-content",
                 children=children,
             ),
-            TableOfContents(children),
+            TableOfContents(children, title),
         ],
     )
 
