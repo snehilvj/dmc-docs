@@ -5,15 +5,7 @@ app = Dash(__name__)  # no-exec
 
 app.layout = dmc.Alert(
     [
-        "Hi from Dash Mantine Components. Please support us on",
-        dmc.Anchor(
-            "GitHub",
-            href="https://github.com/snehilvj/dash-mantine-components",
-            style={"marginLeft": 5},
-            size="sm",
-            color="violet",
-        ),
-        ".",
+        "Hi from Dash Mantine Components. You can create some great looking dashboards using me!"
     ],
     title="Welcome!",
     color="violet",

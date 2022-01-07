@@ -16,17 +16,17 @@ app.layout = PageBlock(
     title="Installation",
     children=[
         ComponentDescription(
-            "You can install dash_mantine_components using pip or poetry."
+            "You can install dash-mantine-components using pip or poetry."
         ),
         Heading("Pip", id="pip"),
         dmc.Prism(
-            code="pip install dash_mantine_components",
+            code="pip install dash-mantine-components",
             language="markdown",
             style={"marginBottom": 40},
         ),
         Heading("Poetry", id="poetry"),
         dmc.Prism(
-            code="poetry add dash_mantine_components",
+            code="poetry add dash-mantine-components",
             language="markdown",
             style={"marginBottom": 40},
         ),
@@ -37,27 +37,49 @@ app.layout = PageBlock(
         ),
         CodeBlock(__file__, "example.py", app),
         Heading("Raise Issue", id="raise-issue"),
-        Text("If you think this page should exist, please create an issue"),
-        html.A(
+        Text(
+            "If you find any issues with any components or the documentation, please create an issue."
+        ),
+        dmc.Group(
             [
-                dmc.Button(
+                html.A(
                     [
-                        html.I(
-                            className="bi bi-box-arrow-up-right",
-                            style={"marginRight": 10},
+                        dmc.Button(
+                            [
+                                html.I(
+                                    className="bi bi-box-arrow-up-right",
+                                    style={"marginRight": 10},
+                                ),
+                                "Create Issue on Dash Mantine Components",
+                            ],
+                            variant="outline",
+                            color="dark",
                         ),
-                        "Create Issue on GitHub",
                     ],
-                    variant="outline",
-                    color="dark",
+                    href="https://github.com/snehilvj/dash-mantine-components/issues/new",
                 ),
-            ],
-            href="https://github.com/snehilvj/dash-mantine-components/issues/new",
+                html.A(
+                    [
+                        dmc.Button(
+                            [
+                                html.I(
+                                    className="bi bi-file-earmark-text-fill",
+                                    style={"marginRight": 10},
+                                ),
+                                "Create Issue on Docs",
+                            ],
+                            variant="outline",
+                            color="dark",
+                        ),
+                    ],
+                    href="https://github.com/snehilvj/dmc-demo/issues/new",
+                ),
+            ]
         ),
         dmc.Space(h=20),
         Heading("Support", id="support"),
         Text(
-            "Now that you are here anyway, please consider giving **dash-mantine-components** a star on GitHub"
+            "Now that you are here anyway, please consider giving **dash-mantine-components** a star on GitHub."
         ),
         html.A(
             [
@@ -71,6 +93,6 @@ app.layout = PageBlock(
             ],
             href="https://github.com/snehilvj/dash-mantine-components",
         ),
-        dmc.Space(h=50)
+        dmc.Space(h=50),
     ],
 )

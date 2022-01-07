@@ -305,7 +305,7 @@ def PageBlock(title, children):
                 children=children,
             ),
             TableOfContents(children, title),
-            dmc.Space(h=200)
+            dmc.Space(h=200),
         ],
     )
 
