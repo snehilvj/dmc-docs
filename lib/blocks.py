@@ -13,7 +13,12 @@ def ComponentName(string, **kwargs):
 
 def Heading(string, id, **kwargs):
     return dmc.Title(
-        string, order=5, class_name="toc", id=id, style={"marginBottom": 10}, **kwargs
+        string,
+        order=5,
+        class_name="toc",
+        id=id,
+        style={"marginBottom": 10, "marginTop": 20},
+        **kwargs,
     )
 
 
@@ -41,7 +46,9 @@ def ComponentReference(component_name):
     return html.Div(
         [
             Heading("Keyword Arguments", id="keyword-arguments"),
-            dmc.Prism(code=docs, language="git", style={"marginBottom": 50}),
+            dmc.Prism(
+                code=docs, language="git", style={"marginBottom": 50}, noCopy=True
+            ),
         ]
     )
 
@@ -67,10 +74,10 @@ def CodeBlock(file, example_name, app, run=True, prism=True):
     )
 
 
-def MantineThemeColorSwatches(id):
+def MantineThemeColorSwatches(id, value="#228ae6"):
     return dmc.ColorPicker(
         id=id,
-        value="#228ae6",
+        value=value,
         withPicker=False,
         swatchesPerRow=7,
         swatches=[
@@ -146,13 +153,18 @@ def PageHeader():
         children=[
             dmc.Group(
                 position="apart",
-                style={"paddingTop": 1, "marginLeft": 20, "marginRight": 20},
+                style={"marginLeft": 20, "marginRight": 20},
                 children=[
-                    dmc.Anchor(
-                        "Dash Mantine Components",
-                        variant="gradient",
-                        size="xl",
-                        href="/",
+                    dmc.Group(
+                        [
+                            dmc.Anchor(
+                                "Dash Mantine Components",
+                                variant="gradient",
+                                size="xl",
+                                href="/",
+                            ),
+                            dmc.Badge(dmc.__version__, color="cyan", variant="outline"),
+                        ]
                     ),
                     dmc.Group(
                         id="header-right-section",
@@ -293,6 +305,7 @@ def PageBlock(title, children):
                 children=children,
             ),
             TableOfContents(children, title),
+            dmc.Space(h=200)
         ],
     )
 

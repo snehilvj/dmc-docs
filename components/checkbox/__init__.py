@@ -15,7 +15,7 @@ app.layout = DocsBlock(
         ComponentDescription("Capture boolean input from user."),
         Heading("Simple Example", id="simple-example"),
         Text("Use the property `checked` in the callbacks."),
-        CodeBlock(__file__, "simple.py", app, prism=False),
+        CodeBlock(__file__, "simple.py", app),
         Heading("Different sizes", id="sizes"),
         Text("Choose from one of the following sizes: `xs, sm, md, lg, xl`."),
         CodeBlock(__file__, "sizes.py", app),

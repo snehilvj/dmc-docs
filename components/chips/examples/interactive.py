@@ -1,10 +1,6 @@
 import dash_mantine_components as dmc
 from dash import html, Input, Output
 
-
-import dash_mantine_components as dmc
-from dash import html, Input, Output
-
 from lib.blocks import DemoSelect, MantineThemeColorSwatches, DemoSlider
 
 component = html.Div(
@@ -66,7 +62,6 @@ component = html.Div(
         ),
     ]
 )
-
 
 app.clientside_callback(
     """
