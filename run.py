@@ -1,34 +1,90 @@
-import importlib
-from os import environ
+import dash_labs as dl
+from dash import Dash, Output, Input, callback_context as ctx
+from dash_iconify import DashIconify
+import dash_mantine_components as dmc
 
-from dash import Output, Input
-from flask import Flask, redirect
+from lib.appshell import AppShell
 
-from data import component_list
+app = Dash(__name__, plugins=[dl.plugins.pages])
 
-server = Flask(__name__)
+app.layout = AppShell(dl.plugins.page_container)
+
+app.clientside_callback(
+    """
+    function(value) {
+        if (value) {
+            document.getElementById(value).click()
+        }
+        return value
+    }
+    """,
+    Output("dummy-container-for-header-select", "children"),
+    Input("select-component", "value"),
+)
+
+# noinspection PyProtectedMember
+app.clientside_callback(
+    """
+    function(children) {
+        return null
+    }
+    """,
+    Output("select-component", "value"),
+    Input(dl.plugins.pages._ID_CONTENT, "children"),
+)
+
+app.clientside_callback(
+    """
+    function(checked) {
+        return {colorScheme: checked ? "dark" : "light"}
+    }
+    """,
+    Output("theme-demo", "theme"),
+    Input("dark-theme-switch", "checked"),
+    prevent_initial_call=True,
+)
 
 
-@server.get("/")
-def home():
-    return redirect("/installation", 302)
+@app.callback(
+    Output("home-notifications-container", "children"),
+    Input("default-notification", "n_clicks"),
+    Input("green-icon-notification", "n_clicks"),
+    Input("10-sec-notification", "n_clicks"),
+    Input("orange-loading-notification", "n_clicks"),
+    prevent_initial_call=True,
+)
+def notify(nc1, nc2, nc3, nc4):
+    if nc1 or nc2 or nc3 or nc4:
+        button_id = ctx.triggered[0]["prop_id"].split(".")[0]
+        props = {
+            "action": "show",
+            "id": button_id + "notified",
+        }
 
+        if button_id == "default-notification":
+            props["title"] = "Default Notification"
+            props["message"] = "Notifications in Dash is awesome!"
 
-def register_blueprints(type_, blueprint_names):
-    for name in blueprint_names:
-        print(f"Registering {name}.")
-        module = importlib.import_module(f"{type_}.{name.lower()}")
-        app = module.app
-        app.init_app(server)
-        # register callback for component select/search in the header
-        app.callback(Output("url", "pathname"), Input("select-component", "value"))(
-            lambda value: value
-        )
-        server.register_blueprint(app)
+        elif button_id == "green-icon-notification":
+            props["title"] = "Green Icon"
+            props["message"] = "Your work as been saved."
+            props["icon"] = [DashIconify(icon="radix-icons:check-circled")]
+            props["color"] = "green"
 
+        elif button_id == "10-sec-notification":
+            props["title"] = "10 sec timeout"
+            props["message"] = "This notification will dismiss itself after 10 secs."
+            props["color"] = "violet"
+            props["autoClose"] = 10000
 
-register_blueprints("components", component_list)
-register_blueprints("pages", ["Installation"])
+        else:
+            props["title"] = "Loading data"
+            props["message"] = "The app is loading data, please wait."
+            props["color"] = "orange"
+            props["loading"] = True
+
+        return dmc.Notification(**props)
+
 
 if __name__ == "__main__":
-    server.run(debug=environ.get("DMC_DEBUG", False))
+    app.server.run(debug=True)

@@ -1,0 +1,44 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px
+}
+
+#main-content {
+    margin-right: 300px;
+    margin-left: 300px;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 1500px) {
+    #toc-navbar {
+        display: none;
+    }
+
+    #main-content {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #components-navbar {
+        display: none;
+    }
+
+    #main-content {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #header-right-section {
+        display: none;
+    }
+}
+
+.mantine-Prism-line.token-line {
+    width: auto
+}
+
+.home-page-buttons {
+    text-decoration: none;
+}
