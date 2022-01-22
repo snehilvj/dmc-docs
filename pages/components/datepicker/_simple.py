@@ -14,6 +14,7 @@ component = html.Div(
             minDate=date(2020, 8, 5),
             maxDate=date(2022, 9, 19),
             value=datetime.now().date(),
+            style={"width": 200},
         ),
         dmc.Space(h=10),  # no-prism
         dmc.Text(id="selected-date"),
