@@ -203,4 +203,4 @@ def multiple_chips_demo(multiple):
 
 
 if __name__ == "__main__":
-    app.server.run(debug=True)
+    app.run_server(debug=True)
