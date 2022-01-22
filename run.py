@@ -7,6 +7,7 @@ from lib.appshell import AppShell
 
 app = Dash(__name__, plugins=[dl.plugins.pages])
 app.layout = AppShell(dl.plugins.page_container)
+server = app.server
 
 app.clientside_callback(
     """

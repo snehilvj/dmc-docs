@@ -15,7 +15,6 @@ component = html.Div(
             maxDate=date(2022, 9, 19),
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
             style={"width": 330},
-
         ),
         dmc.Space(h=10),  # no-prism
         dmc.Text(id="selected-date-date-range-picker"),

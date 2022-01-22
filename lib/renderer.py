@@ -52,13 +52,12 @@ class DmcRenderer(AstRenderer):
 
     def list(self, children, ordered, level, start=None):
         return {
-            "block-name": "list",
-            "type": "ordered" if ordered else "unordered",
-            "children": children,
+            "block-name": "paragraph",
+            "text": "\n".join(children),
         }
 
     def list_item(self, children, level):
-        return children[0]
+        return f"* {''.join(children)}"
 
     def strong(self, text):
         return f"**{''.join(text)}**"

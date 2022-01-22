@@ -11,7 +11,6 @@ component = dmc.DateRangePicker(
     required=True,
     clearable=False,
     style={"width": 330},
-
 )
 
 
