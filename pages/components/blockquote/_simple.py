@@ -5,5 +5,5 @@ component = dmc.Blockquote(
     "Doth mother know you weareth her drapes?",
     cite="- Ironman",
     icon=[DashIconify(icon="codicon:flame", width=30)],
-    color="red"
+    color="red",
 )
