@@ -59,7 +59,11 @@ def ExecCodeBlock(file, run, prism):
             if run
             else None
         ),
-        (dmc.Prism(source, language="python", style={"marginBottom": 50}) if prism else None),
+        (
+            dmc.Prism(source, language="python", style={"marginBottom": 50})
+            if prism
+            else None
+        ),
     ]
 
     return layout
