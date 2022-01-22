@@ -30,7 +30,7 @@ def Heading(text, id):
         text,
         order=5,
         id=id,
-        style={"marginBottom": 10, "marginTop": 30},
+        style={"marginBottom": 10, "marginTop": 30, "text-transform": "capitalize"},
     )
 
 

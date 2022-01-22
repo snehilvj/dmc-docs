@@ -58,9 +58,7 @@ component = html.Div(
             ],
         ),
         dmc.Prism(
-            "",
-            id="chips-code-output", language="python", style={"marginTop": 30}
+            "", id="chips-code-output", language="python", style={"marginTop": 30}
         ),
     ]
 )
-

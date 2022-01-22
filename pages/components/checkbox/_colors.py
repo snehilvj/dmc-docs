@@ -24,4 +24,3 @@ component = html.Div(
         ),
     ]
 )
-
