@@ -148,5 +148,62 @@ dmc.Checkbox(
 )
 
 
+
+app.clientside_callback(
+    """
+    function(variant, color, radius, size, multiple, spacing) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Chips(
+    data = [
+        {"value": "react", "label": "React"},
+        {"value": "ng", "label": "Angular"},
+        {"value": "svelte", "label": "Svelte"},
+        {"value": "vue", "label": "Vue"},
+    ],
+    color="${window.colorMap[color]}",
+    radius="${window.sizeMap[radius]}",
+    size="${window.sizeMap[size]}",
+    spacing="${window.sizeMap[spacing]}",
+    variant="${variant}",
+    multiple=${multiple ? "True" : "False"},
+)`,
+        variant,
+        window.colorMap[color],
+        window.sizeMap[radius],
+        window.sizeMap[size],
+        multiple,
+        window.sizeMap[spacing]
+        ];
+    }
+    """,
+    Output("chips-code-output", "children"),
+    Output("chips-demo", "variant"),
+    Output("chips-demo", "color"),
+    Output("chips-demo", "radius"),
+    Output("chips-demo", "size"),
+    Output("chips-demo", "multiple"),
+    Output("chips-demo", "spacing"),
+    Input("variant-chips-demo", "value"),
+    Input("color-chips-demo", "value"),
+    Input("radius-chips-demo", "value"),
+    Input("size-chips-demo", "value"),
+    Input("multiple-chips-demo", "checked"),
+    Input("spacing-chips-demo", "value"),
+)
+
+
+@app.callback(
+    Output("chips-demo", "value"),
+    Input("multiple-chips-demo", "checked"),
+)
+def multiple_chips_demo(multiple):
+    return ["vue", "react"] if multiple else "react"
+
+
+
+
+
 if __name__ == "__main__":
     app.server.run(debug=True)
