@@ -6,7 +6,6 @@ import dash_mantine_components as dmc
 from lib.appshell import AppShell
 
 app = Dash(__name__, plugins=[dl.plugins.pages])
-
 app.layout = AppShell(dl.plugins.page_container)
 
 app.clientside_callback(
@@ -84,6 +83,49 @@ def notify(nc1, nc2, nc3, nc4):
             props["loading"] = True
 
         return dmc.Notification(**props)
+
+
+app.clientside_callback(
+    """
+    function(variant, color, radius, size, compact, loading, children) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Button(
+    "${children}",
+    variant="${variant}",
+    color="${window.colorMap[color]}",
+    radius="${window.sizeMap[radius]}",
+    size="${window.sizeMap[size]}"
+    compact=${compact ? "True" : "False"},
+    loading=${loading ? "True" : "False"},
+)`,
+        variant,
+        window.colorMap[color],
+        window.sizeMap[radius],
+        window.sizeMap[size],
+        compact,
+        loading,
+        children
+        ];
+    }
+    """,
+    Output("button-code-output", "children"),
+    Output("button-demo", "variant"),
+    Output("button-demo", "color"),
+    Output("button-demo", "radius"),
+    Output("button-demo", "size"),
+    Output("button-demo", "compact"),
+    Output("button-demo", "loading"),
+    Output("button-demo", "children"),
+    Input("variant-button-demo", "value"),
+    Input("color-button-demo", "value"),
+    Input("radius-button-demo", "value"),
+    Input("size-button-demo", "value"),
+    Input("compact-button-demo", "checked"),
+    Input("loading-button-demo", "checked"),
+    Input("children-button-demo", "value"),
+)
 
 
 if __name__ == "__main__":
