@@ -127,6 +127,26 @@ dmc.Button(
     Input("children-button-demo", "value"),
 )
 
+app.clientside_callback(
+    """
+    function(color) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Checkbox(
+    label="Use me as a boolean input",
+    checked=True,
+    color="${window.colorMap[color]}"
+)`,
+        window.colorMap[color]
+    ];
+    }
+    """,
+    Output("checkbox-code-output", "children"),
+    Output("checkbox-color", "color"),
+    Input("color-checkbox-demo", "value"),
+)
+
 
 if __name__ == "__main__":
     app.server.run(debug=True)
