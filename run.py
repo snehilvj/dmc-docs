@@ -1,11 +1,15 @@
 import dash_labs as dl
+import dash_mantine_components as dmc
 from dash import Dash, Output, Input, callback_context as ctx
 from dash_iconify import DashIconify
-import dash_mantine_components as dmc
 
 from lib.appshell import AppShell
 
-app = Dash(__name__, plugins=[dl.plugins.pages])
+app = Dash(
+    __name__,
+    plugins=[dl.plugins.pages],
+    external_scripts=["https://www.googletagmanager.com/gtag/js?id=G-4PJELX1C4W"],
+)
 app.layout = AppShell(dl.plugins.page_container)
 server = app.server
 
@@ -147,7 +151,6 @@ dmc.Checkbox(
     Output("checkbox-color", "color"),
     Input("color-checkbox-demo", "value"),
 )
-
 
 app.clientside_callback(
     """

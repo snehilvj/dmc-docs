@@ -7,5 +7,5 @@ component = dmc.Breadcrumbs(
         dcc.Link("Home", href="/"),
         dcc.Link("Dash Mantine Components", href="/"),
         dcc.Link("Breadcrumbs", href="/components/breadcrumbs"),
-    ]
+    ],
 )
