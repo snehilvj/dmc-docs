@@ -62,7 +62,7 @@ def notify(nc1, nc2, nc3, nc4):
         button_id = ctx.triggered[0]["prop_id"].split(".")[0]
         props = {
             "action": "show",
-            "id": button_id + "notified",
+            "id": button_id + "-notified",
         }
 
         if button_id == "default-notification":
@@ -206,4 +206,4 @@ def multiple_chips_demo(multiple):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True, dev_tools_hot_reload=False)
