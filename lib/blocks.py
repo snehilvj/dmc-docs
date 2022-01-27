@@ -30,7 +30,7 @@ def Heading(text, id):
         text,
         order=5,
         id=id,
-        style={"marginBottom": 10, "marginTop": 30, "text-transform": "capitalize"},
+        style={"marginBottom": 10, "marginTop": 30, "textTransform": "capitalize"},
     )
 
 
@@ -93,7 +93,7 @@ def TableOfContents(toc):
         children.append(
             dmc.Anchor(
                 content["text"],
-                style={"text-transform": "capitalize", "textDecoration": "none"},
+                style={"textTransform": "capitalize", "textDecoration": "none"},
                 href=f"#{content['id']}",
                 size="sm",
             )

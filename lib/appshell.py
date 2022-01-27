@@ -123,6 +123,7 @@ def side_nav():
                         children=[
                             dmc.Group(
                                 direction="column",
+                                spacing="xs",
                                 children=[
                                     dcc.Link(
                                         dmc.Text(name, size="sm", color="blue"),

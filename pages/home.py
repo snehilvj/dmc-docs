@@ -215,7 +215,7 @@ notifications_demo_layout = html.Div(
                         ),
                         dcc.Link(
                             dmc.Text("More about notifications here.", color="blue"),
-                            href="/components/notifications",
+                            href="/components/notification",
                             className="home-page-buttons",
                         ),
                     ]
@@ -232,6 +232,7 @@ def show_notifications(n_clicks):
     return dmc.Notification(
         id="notification",
         color="green",
+        action="show",
         icon=[DashIconify(icon="radix-icons:check-circled")]
     )""",
                     language="python",

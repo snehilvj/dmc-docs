@@ -9,11 +9,15 @@ def load_example(file, run=True):
     path = Path.cwd().joinpath("pages", file)
     example = path.read_text()
     scope = {}
+
     source = example.replace("component = ", "", 1)
+    source = source.replace("layout = ", "app.layout = ", 1)
     source = source.replace("callback", "app.callback").replace(
         "@callback", "@app.callback"
     )
+
     example = example.replace("app.layout = ", "component = ", 1)
+    example = example.replace("layout = ", "component = ", 1)
 
     # remove lines from source that should not be displayed in the docs
     if NO_PRISM in source:
