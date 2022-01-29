@@ -3,6 +3,8 @@ from pathlib import Path
 import dash_mantine_components as dmc
 import pandas as pd
 
+from lib.utils import render_html_table
+
 date_formats = pd.read_csv(Path.cwd().joinpath("date_formats.csv"))
 
 component = dmc.Container(
@@ -13,8 +15,10 @@ component = dmc.Container(
             withBorder=True,
             children=[
                 dmc.Table(
-                    rows=date_formats.values,
-                    columns=date_formats.columns,
+                    render_html_table(
+                        columns=date_formats.columns,
+                        rows=date_formats.values,
+                    )
                 )
             ],
         )
