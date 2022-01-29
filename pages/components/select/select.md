@@ -22,7 +22,7 @@ Set `searchable` prop to enable search in Select and use `nothingFound` prop to 
 
 ### Clearable
 
-Set `clearable` prop to enable clearing select value.
+Set `clearable` prop to enable clearing selected value.
 
 > example:components/select/_clearable.py
 
