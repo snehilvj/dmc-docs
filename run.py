@@ -205,5 +205,32 @@ def multiple_chips_demo(multiple):
     return ["vue", "react"] if multiple else "react"
 
 
+app.clientside_callback(
+    """
+    function(variant, color, size) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Loader(
+    variant="${variant}",
+    color="${window.colorMap[color]}",
+    size="${window.sizeMap[size]}"
+)`,
+        variant,
+        window.colorMap[color],
+        window.sizeMap[size],
+        ];
+    }
+    """,
+    Output("loader-code-output", "children"),
+    Output("loader-demo", "variant"),
+    Output("loader-demo", "color"),
+    Output("loader-demo", "size"),
+    Input("variant-loader-demo", "value"),
+    Input("color-loader-demo", "value"),
+    Input("size-loader-demo", "value"),
+)
+
+
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
