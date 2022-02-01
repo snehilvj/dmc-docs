@@ -1,5 +1,5 @@
 import dash_mantine_components as dmc
-from dash import html, Input, Output
+from dash import html
 
 from lib.interactive import DemoSelect, MantineThemeColorSwatches, DemoSlider
 
@@ -36,7 +36,7 @@ component = html.Div(
                     children=[
                         DemoSelect(
                             id="variant-chips-demo",
-                            value="filled",
+                            value="outline",
                             label="Variant",
                             data=["filled", "outline"],
                         ),

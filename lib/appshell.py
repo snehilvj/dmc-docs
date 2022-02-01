@@ -149,6 +149,7 @@ def side_nav():
             dmc.ScrollArea(
                 style={"height": "calc(100% - 70px)"},
                 offsetScrollbars=True,
+                type="scroll",
                 children=children,
             )
         ],

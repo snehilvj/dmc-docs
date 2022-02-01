@@ -8,7 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 dash = "^2.0.0"
-dash-mantine-components = "^0.3.0"
+dash-mantine-components = "^0.4.0"
 dash-iconify = "^0.1.0"
 dash-labs = "^1.0.1"
 mistune = "^2.0.2"
