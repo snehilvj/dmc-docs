@@ -5,7 +5,12 @@ from dash_iconify import DashIconify
 
 from lib.blocks import TableOfContents, Heading, Paragraph
 
-dash.register_page(__name__, "/")
+dash.register_page(
+    __name__,
+    "/",
+    description="Dash Mantine Components is an extensive UI components library for Plotly Dash with over 55 "
+    "components and supports dark theme natively.",
+)
 
 toc = [
     {"text": "Dark Theme", "id": "dark-theme"},
