@@ -5,7 +5,7 @@ dash-core-components==2.0.0; python_version >= "3.6"
 dash-html-components==2.0.0; python_version >= "3.6"
 dash-iconify==0.1.0
 dash-labs==1.0.2; python_version >= "3.6"
-dash-mantine-components==0.4.0
+dash-mantine-components==0.4.1
 dash-table==5.0.0; python_version >= "3.6"
 dash==2.1.0; python_version >= "3.6"
 flask-compress==1.10.1; python_version >= "3.6"
