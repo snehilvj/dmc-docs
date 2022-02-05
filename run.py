@@ -232,5 +232,37 @@ dmc.Loader(
 )
 
 
+app.clientside_callback(
+    """
+    function(size, thickness, roundCaps) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.RingProgress(
+    size=${size},
+    thickness=${thickness},
+    roundCaps=${roundCaps ? "True" : "False"},
+    sections=[
+        {"value": 40, "color": "red"},
+        {"value": 15, "color": "yellow"},
+        {"value": 15, "color": "violet"},
+    ],
+)`,
+        size,
+        thickness,
+        roundCaps,
+        ];
+    }
+    """,
+    Output("ringprogress-code-output", "children"),
+    Output("ringprogress-demo", "size"),
+    Output("ringprogress-demo", "thickness"),
+    Output("ringprogress-demo", "roundCaps"),
+    Input("size-ringprogress-demo", "value"),
+    Input("thickness-ringprogress-demo", "value"),
+    Input("caps-ringprogress-demo", "checked"),
+)
+
+
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
