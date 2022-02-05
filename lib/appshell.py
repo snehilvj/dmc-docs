@@ -117,6 +117,7 @@ def side_nav():
             component = dmc.Accordion(
                 state={"0": True},
                 iconPosition="right",
+                icon=[DashIconify(icon="radix-icons:chevron-down")],
                 children=[
                     dmc.AccordionItem(
                         label=section,
