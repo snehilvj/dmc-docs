@@ -42,7 +42,7 @@ class DmcRenderer(AstRenderer):
         elif "snippet" in params and len(params) == 3:
             return {"block-name": "snippet", "file": params[1], "language": params[2]}
         else:
-            raise Exception("Problem in DmcRenderer!")
+            raise Exception("Invalid component!")
 
     def block_text(self, text):
         return "".join(text)
