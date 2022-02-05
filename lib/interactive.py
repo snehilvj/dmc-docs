@@ -69,3 +69,21 @@ def DemoSlider(id, label, initial_value):
             )
         ],
     )
+
+
+def DemoSegmentedControl(id, label, values, initial_value):
+    return dmc.InputWrapper(
+        label=label,
+        children=[
+            html.Div(
+                [
+                    dmc.SegmentedControl(
+                        id=id,
+                        fullWidth=True,
+                        value=initial_value,
+                        data=[{"label": val, "value": val.lower()} for val in values],
+                    )
+                ],
+            )
+        ],
+    )

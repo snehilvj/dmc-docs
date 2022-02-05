@@ -298,5 +298,48 @@ dmc.Paper(
     Input("border-paper-demo", "checked"),
 )
 
+
+app.clientside_callback(
+    """
+    function(color, radius, position, placement, withArrow) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Tooltip(
+    label="Tooltip",
+    withArrow=${withArrow ? "True" : "False"},
+    position="${position}",
+    placement="${placement}",
+    color="${window.colorMap[color]}",
+    children=[
+        dmc.Button(
+            "Tooltip",
+            variant="outline",
+            size="xl",
+        )
+    ],
+)`,
+        window.colorMap[color],
+        window.sizeMap[radius],
+        position,
+        placement,
+        withArrow
+        ];
+    }
+    """,
+    Output("tooltip-code-output", "children"),
+    Output("tooltip-demo", "color"),
+    Output("tooltip-demo", "radius"),
+    Output("tooltip-demo", "position"),
+    Output("tooltip-demo", "placement"),
+    Output("tooltip-demo", "withArrow"),
+    Input("color-tooltip-demo", "value"),
+    Input("radius-tooltip-demo", "value"),
+    Input("position-tooltip-demo", "value"),
+    Input("placement-tooltip-demo", "value"),
+    Input("arrow-tooltip-demo", "checked"),
+)
+
+
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
