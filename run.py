@@ -231,7 +231,6 @@ dmc.Loader(
     Input("size-loader-demo", "value"),
 )
 
-
 app.clientside_callback(
     """
     function(size, thickness, roundCaps) {
@@ -263,6 +262,41 @@ dmc.RingProgress(
     Input("caps-ringprogress-demo", "checked"),
 )
 
+app.clientside_callback(
+    """
+    function(radius, padding, shadow, withBorder) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Paper(
+    children=[
+        dmc.Text(
+            "Paper is the most basic ui component. Use it to create cards, dropdowns, "
+            "modals and other components that require background with shadow "
+        )
+    ],
+    radius="${window.sizeMap[radius]}",
+    padding="${window.sizeMap[padding]}",
+    shadow="${window.sizeMap[shadow]}",
+    withBorder=${withBorder ? "True" : "False"},
+)`,
+        window.sizeMap[radius],
+        window.sizeMap[padding],
+        window.sizeMap[shadow],
+        withBorder
+        ];
+    }
+    """,
+    Output("paper-code-output", "children"),
+    Output("paper-demo", "radius"),
+    Output("paper-demo", "padding"),
+    Output("paper-demo", "shadow"),
+    Output("paper-demo", "withBorder"),
+    Input("radius-paper-demo", "value"),
+    Input("padding-paper-demo", "value"),
+    Input("shadow-paper-demo", "value"),
+    Input("border-paper-demo", "checked"),
+)
 
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
