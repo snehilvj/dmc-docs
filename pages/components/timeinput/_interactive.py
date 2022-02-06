@@ -12,17 +12,16 @@ component = html.Div(
                     style={"flex": 1},
                     children=[
                         dmc.TimeInput(
-                            "Input Props",
                             id="timeinput-demo",
-                            label="My label",
-                            description="My description",
-                            error="error",
+                            label="Start Time",
+                            description="This is a description.",
                             variant="default",
                             radius="sm",
                             size="sm",
                             withSeconds=False,
                             disabled=False,
                             required=True,
+                            style={"width": 150}
                         ),
                     ],
                 ),
@@ -31,24 +30,9 @@ component = html.Div(
                     direction="column",
                     grow=True,
                     children=[
-                        dmc.TextInput(
-                            id="label-timeinput-demo",
-                            value="My label",
-                            label="Label",
-                        ),
-                        dmc.TextInput(
-                            id="description-timeinput-demo",
-                            value="My description",
-                            label="Description",
-                        ),
-                        dmc.TextInput(
-                            id="error-timeinput-demo",
-                            value=None,
-                            label="Error",
-                        ),
                         DemoSelect(
                             id="variant-timeinput-demo",
-                            value="filled",
+                            value="default",
                             label="Variant",
                             data=["default", "filled", "unstyled", "headless"],
                         ),
@@ -59,8 +43,8 @@ component = html.Div(
                             id="size-timeinput-demo", label="Size", initial_value=2
                         ),
                         dmc.Switch(
-                            label="With seconds",
-                            id="withseconds-timeinput-demo",
+                            label="With Seconds",
+                            id="seconds-timeinput-demo",
                             checked=False,
                         ),
                         dmc.Switch(
