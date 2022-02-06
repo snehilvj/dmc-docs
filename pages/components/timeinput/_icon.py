@@ -4,7 +4,8 @@ from dash_iconify import DashIconify
 component = dmc.Group(
     children=[
         dmc.TimeInput(
-            label="Enter Time:", icon=[DashIconify(icon="akar-icons:clock")],
+            label="Enter Time:",
+            icon=[DashIconify(icon="akar-icons:clock")],
         ),
         dmc.TimeInput(
             label="Enter Time:",
