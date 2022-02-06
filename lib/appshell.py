@@ -57,7 +57,7 @@ def page_header():
                             dmc.Image(src="/assets/logo_header.png", width=30),
                             dcc.Link(
                                 dmc.Text(
-                                    "Dash Mantine Components", color="blue", size="xl"
+                                    "Dash Mantine Components", color="dark", size="xl"
                                 ),
                                 href="/",
                                 style={"textDecoration": "none"},
@@ -71,9 +71,75 @@ def page_header():
                         ]
                     ),
                     dmc.Group(
-                        id="header-right-section",
                         position="right",
                         children=[
+                            html.A(
+                                dmc.Button(
+                                    dmc.Text(
+                                        "Source Code",
+                                        color="dark",
+                                        weight="lighter",
+                                        size="sm",
+                                    ),
+                                    radius="xl",
+                                    variant="light",
+                                    color="gray",
+                                    rightIcon=[
+                                        DashIconify(
+                                            icon="radix-icons:github-logo",
+                                            color="black",
+                                            width=20,
+                                        )
+                                    ],
+                                ),
+                                href="https://github.com/snehilvj/dash-mantine-components",
+                                className="hide-sm"
+                            ),
+                            html.A(
+                                dmc.Button(
+                                    dmc.Text(
+                                        "Discord",
+                                        color="dark",
+                                        weight="lighter",
+                                        size="sm",
+                                    ),
+                                    radius="xl",
+                                    variant="light",
+                                    color="gray",
+                                    rightIcon=[
+                                        DashIconify(
+                                            icon="fa-brands:discord",
+                                            width=20,
+                                            color="#7289da",
+                                        )
+                                    ],
+                                ),
+                                href="https://discord.gg/KuJkh4Pyq5",
+                                className="hide-sm"
+
+                            ),
+                            html.A(
+                                dmc.Button(
+                                    dmc.Text(
+                                        "Docs",
+                                        color="dark",
+                                        weight="lighter",
+                                        size="sm",
+                                    ),
+                                    radius="xl",
+                                    variant="light",
+                                    color="gray",
+                                    rightIcon=[
+                                        DashIconify(
+                                            icon="iconoir:google-docs",
+                                            width=20,
+                                        )
+                                    ],
+                                ),
+                                href="https://github.com/snehilvj/dmc-docs",
+                                className="hide-sm"
+
+                            ),
                             dmc.Select(
                                 id="select-component",
                                 style={"width": 300},
@@ -90,28 +156,6 @@ def page_header():
                                     for component in dash.page_registry.values()
                                     if component["module"] not in ["pages.home"]
                                 ],
-                            ),
-                            html.A(
-                                DashIconify(
-                                    icon="radix-icons:github-logo",
-                                    color="black",
-                                    width=30,
-                                    style={
-                                        "marginBottom": "-7px",
-                                    },
-                                ),
-                                href="https://github.com/snehilvj/dash-mantine-components",
-                            ),
-                            html.A(
-                                DashIconify(
-                                    icon="fa-brands:discord",
-                                    width=30,
-                                    color="#7289da",
-                                    style={
-                                        "marginBottom": "-7px",
-                                    },
-                                ),
-                                href="https://discord.gg/KuJkh4Pyq5",
                             ),
                         ],
                     ),
@@ -144,7 +188,7 @@ def side_nav():
                                 spacing="xs",
                                 children=[
                                     dcc.Link(
-                                        dmc.Text(name, size="sm", color="blue"),
+                                        dmc.Text(name, size="sm", color="gray"),
                                         href=path,
                                         id=name,
                                         style={"textDecoration": "none"},
