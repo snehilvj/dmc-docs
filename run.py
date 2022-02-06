@@ -341,14 +341,11 @@ dmc.Tooltip(
 
 app.clientside_callback(
     """
-    function(label, description, error, variant, radius, size, withSeconds, disabled, required) {
+    function(variant, radius, size, withSeconds, disabled, required) {
         return [
             `import dash_mantine_components as dmc
 
 dmc.TimeInput(
-    label="${label}",
-    description="${description}",
-    error="${error}",    
     variant="${variant}",    
     radius="${window.sizeMap[radius]}",
     size="${window.sizeMap[size]}"
@@ -356,9 +353,6 @@ dmc.TimeInput(
     disabled=${disabled ? "True" : "False"},
     required=${required ? "True" : "False"},
 )`,
-        label,
-        description,
-        error,
         variant,    
         window.sizeMap[radius],
         window.sizeMap[size],
@@ -369,22 +363,16 @@ dmc.TimeInput(
     }
     """,
     Output("timeinput-code-output", "children"),
-    Output("timeinput-demo", "label"),
-    Output("timeinput-demo", "description"),
-    Output("timeinput-demo", "error"),
     Output("timeinput-demo", "variant"),
     Output("timeinput-demo", "radius"),
     Output("timeinput-demo", "size"),
     Output("timeinput-demo", "withSeconds"),
     Output("timeinput-demo", "disabled"),
     Output("timeinput-demo", "required"),
-    Input("label-timeinput-demo", "value"),
-    Input("description-timeinput-demo", "value"),
-    Input("error-timeinput-demo", "value"),
     Input("variant-timeinput-demo", "value"),
     Input("radius-timeinput-demo", "value"),
     Input("size-timeinput-demo", "value"),
-    Input("withseconds-timeinput-demo", "checked"),
+    Input("seconds-timeinput-demo", "checked"),
     Input("disabled-timeinput-demo", "checked"),
     Input("required-timeinput-demo", "checked"),
 )
