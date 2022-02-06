@@ -21,7 +21,7 @@ component = html.Div(
                             withSeconds=False,
                             disabled=False,
                             required=True,
-                            style={"width": 150}
+                            style={"width": 150},
                         ),
                     ],
                 ),
