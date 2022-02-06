@@ -29,8 +29,8 @@ html {
     }
 }
 
-@media only screen and (max-width: 835px) {
-    #header-right-section {
+@media only screen and (max-width: 1160px) {
+    .hide-sm {
         display: none;
     }
 }
