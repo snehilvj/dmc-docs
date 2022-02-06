@@ -29,7 +29,7 @@ html {
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 835px) {
     #header-right-section {
         display: none;
     }

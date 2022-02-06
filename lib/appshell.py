@@ -54,6 +54,7 @@ def page_header():
                 children=[
                     dmc.Group(
                         [
+                            dmc.Image(src="/assets/logo_header.png", width=30),
                             dcc.Link(
                                 dmc.Text(
                                     "Dash Mantine Components", color="blue", size="xl"
@@ -61,7 +62,12 @@ def page_header():
                                 href="/",
                                 style={"textDecoration": "none"},
                             ),
-                            dmc.Badge(dmc.__version__, color="gray", variant="outline"),
+                            dmc.Badge(
+                                dmc.__version__,
+                                color="gray",
+                                variant="light",
+                                radius="xs",
+                            ),
                         ]
                     ),
                     dmc.Group(
@@ -95,6 +101,17 @@ def page_header():
                                     },
                                 ),
                                 href="https://github.com/snehilvj/dash-mantine-components",
+                            ),
+                            html.A(
+                                DashIconify(
+                                    icon="fa-brands:discord",
+                                    width=30,
+                                    color="#7289da",
+                                    style={
+                                        "marginBottom": "-7px",
+                                    },
+                                ),
+                                href="https://discord.gg/KuJkh4Pyq5",
                             ),
                         ],
                     ),

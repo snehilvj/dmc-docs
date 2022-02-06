@@ -418,5 +418,50 @@ dmc.RadioGroup(
     Input("required-radio-demo", "checked"),
 )
 
+
+app.clientside_callback(
+    """
+    function(color, variant, tabPadding, orientation, position, grow) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Tabs(
+    [
+        dmc.Tab("Gallery tab content", label="Gallery"),
+        dmc.Tab("Messages tab content", label="Messages"),
+        dmc.Tab("Settings tab content", label="Settings"),
+    ],
+    color="${window.colorMap[color]}",
+    variant="${variant}",
+    tabPadding="${window.sizeMap[tabPadding]}",
+    orientation="${orientation}",
+    position="${position}",
+    grow=${grow ? "True" : "False"},
+)`,
+        window.colorMap[color],
+        variant,
+        window.sizeMap[tabPadding],
+        orientation,
+        position,
+        grow
+        ];
+    }
+    """,
+    Output("tabs-code-output", "children"),
+    Output("tabs-demo", "color"),
+    Output("tabs-demo", "variant"),
+    Output("tabs-demo", "tabPadding"),
+    Output("tabs-demo", "orientation"),
+    Output("tabs-demo", "position"),
+    Output("tabs-demo", "grow"),
+    Input("color-tabs-demo", "value"),
+    Input("variant-tabs-demo", "value"),
+    Input("padding-tabs-demo", "value"),
+    Input("orientation-tabs-demo", "value"),
+    Input("position-tabs-demo", "value"),
+    Input("grow-tabs-demo", "checked"),
+)
+
+
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
