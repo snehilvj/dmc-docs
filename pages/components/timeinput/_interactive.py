@@ -32,7 +32,9 @@ component = html.Div(
                     grow=True,
                     children=[
                         dmc.TextInput(
-                            id="label-timeinput-demo", value="My label", label="Label",
+                            id="label-timeinput-demo",
+                            value="My label",
+                            label="Label",
                         ),
                         dmc.TextInput(
                             id="description-timeinput-demo",
@@ -40,7 +42,9 @@ component = html.Div(
                             label="Description",
                         ),
                         dmc.TextInput(
-                            id="error-timeinput-demo", value=None, label="Error",
+                            id="error-timeinput-demo",
+                            value=None,
+                            label="Error",
                         ),
                         DemoSelect(
                             id="variant-timeinput-demo",

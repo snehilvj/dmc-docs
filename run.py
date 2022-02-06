@@ -298,7 +298,6 @@ dmc.Paper(
     Input("border-paper-demo", "checked"),
 )
 
-
 app.clientside_callback(
     """
     function(color, radius, position, placement, withArrow) {
@@ -339,7 +338,6 @@ dmc.Tooltip(
     Input("placement-tooltip-demo", "value"),
     Input("arrow-tooltip-demo", "checked"),
 )
-
 
 app.clientside_callback(
     """
@@ -391,7 +389,46 @@ dmc.TimeInput(
     Input("required-timeinput-demo", "checked"),
 )
 
+app.clientside_callback(
+    """
+    function(variant, spacing, size, color, required) {
+        return [
+            `import dash_mantine_components as dmc
 
+dmc.RadioGroup(
+    data=[
+        {"value": "react", "label": "React"},
+        {"value": "ng", "label": "Angular"},
+        {"value": "svelte", "label": "Svelte"},
+        {"value": "vue", "label": "Vue"},
+    ],
+    color="${window.colorMap[color]}",
+    size="${window.sizeMap[size]}",
+    spacing="${window.sizeMap[spacing]}",
+    label="Select your favorite framework/library",
+    description="This is anonymous",
+    required=${required ? "True" : "False"},
+)`,
+        variant,
+        window.sizeMap[spacing],
+        window.sizeMap[size],
+        window.colorMap[color],
+        required
+        ];
+    }
+    """,
+    Output("radio-code-output", "children"),
+    Output("radio-demo", "variant"),
+    Output("radio-demo", "spacing"),
+    Output("radio-demo", "size"),
+    Output("radio-demo", "color"),
+    Output("radio-demo", "required"),
+    Input("variant-radio-demo", "value"),
+    Input("spacing-radio-demo", "value"),
+    Input("size-radio-demo", "value"),
+    Input("color-radio-demo", "value"),
+    Input("required-radio-demo", "checked"),
+)
 
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
