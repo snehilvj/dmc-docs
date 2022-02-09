@@ -93,7 +93,7 @@ def page_header():
                                     ],
                                 ),
                                 href="https://github.com/snehilvj/dash-mantine-components",
-                                className="hide-sm"
+                                className="hide-sm",
                             ),
                             html.A(
                                 dmc.Button(
@@ -115,8 +115,7 @@ def page_header():
                                     ],
                                 ),
                                 href="https://discord.gg/KuJkh4Pyq5",
-                                className="hide-sm"
-
+                                className="hide-sm",
                             ),
                             html.A(
                                 dmc.Button(
@@ -137,8 +136,7 @@ def page_header():
                                     ],
                                 ),
                                 href="https://github.com/snehilvj/dmc-docs",
-                                className="hide-sm"
-
+                                className="hide-sm",
                             ),
                             dmc.Select(
                                 id="select-component",

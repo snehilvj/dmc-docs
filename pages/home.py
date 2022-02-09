@@ -86,7 +86,7 @@ app.layout = dmc.MantineProvider(
                         ),
                         dcc.Link(
                             dmc.Text("More about dark theme here.", color="blue"),
-                            href="/components/mantineprovider",
+                            href="/components/mantine-provider",
                             className="home-page-buttons",
                         ),
                     ]

@@ -96,7 +96,7 @@ def TableOfContents(toc):
                 style={"textTransform": "capitalize", "textDecoration": "none"},
                 href=f"#{content['id']}",
                 size="sm",
-                color="gray"
+                color="gray",
             )
         )
 
