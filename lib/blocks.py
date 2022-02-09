@@ -2,6 +2,7 @@ from pathlib import Path
 
 import dash_mantine_components as dmc
 from dash import dcc
+from dash_iconify import DashIconify
 
 from lib.parser import load_example
 
@@ -76,8 +77,11 @@ def SnippetBlock(file, language):
 
 
 def ApiDoc(component):
-    comp = getattr(dmc, component)
-    component_doc = comp.__doc__
+    if component == "DashIconify":
+        component_doc = DashIconify.__doc__
+    else:
+        comp = getattr(dmc, component)
+        component_doc = comp.__doc__
     docs = component_doc.split("Keyword arguments:")[-1]
     docs = docs.lstrip("\n\n")
 
@@ -96,7 +100,7 @@ def TableOfContents(toc):
                 style={"textTransform": "capitalize", "textDecoration": "none"},
                 href=f"#{content['id']}",
                 size="sm",
-                color="gray"
+                color="gray",
             )
         )
 
