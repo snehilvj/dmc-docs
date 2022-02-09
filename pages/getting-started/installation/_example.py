@@ -3,7 +3,7 @@ from dash import Dash  # no-run
 
 app = Dash(__name__)  # no-run
 
-app.layout = dmc.Alert(
+layout = dmc.Alert(
     [
         "Hi from Dash Mantine Components. You can create some great looking dashboards using me!"
     ],

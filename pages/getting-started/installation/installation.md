@@ -8,7 +8,7 @@ Installation | You can install dash-mantine-components usage _pip_ or _poetry_.
 
 > snippet:getting-started/installation/poetry.sh:bash
 
-### Basic Usage
+### Simple Usage
 
 Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash components.
 
