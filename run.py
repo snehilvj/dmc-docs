@@ -463,5 +463,40 @@ dmc.Tabs(
 )
 
 
+app.clientside_callback(
+    """
+    function(position, direction, spacing, grow) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Group(
+    [
+        dmc.Button(val, variant="outline", fullWidth=True)
+        for val in ["1", "2", "3"]
+    ],
+    position="${position}",
+    direction="${direction}",
+    spacing="${window.sizeMap[spacing]}",
+    grow=${grow ? "True" : "False"},
+)`,
+        position,
+        direction,
+        window.sizeMap[spacing],
+        grow
+        ];
+    }
+    """,
+    Output("group-code-output", "children"),
+    Output("group-demo", "position"),
+    Output("group-demo", "direction"),
+    Output("group-demo", "spacing"),
+    Output("group-demo", "grow"),
+    Input("position-group-demo", "value"),
+    Input("direction-group-demo", "value"),
+    Input("spacing-group-demo", "value"),
+    Input("grow-group-demo", "checked"),
+)
+
+
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
