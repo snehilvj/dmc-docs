@@ -98,6 +98,28 @@ def page_header():
                             html.A(
                                 dmc.Button(
                                     dmc.Text(
+                                        "Docs",
+                                        color="dark",
+                                        weight="lighter",
+                                        size="sm",
+                                    ),
+                                    radius="xl",
+                                    variant="light",
+                                    color="gray",
+                                    rightIcon=[
+                                        DashIconify(
+                                            icon="radix-icons:github-logo",
+                                            color="black",
+                                            width=20,
+                                        )
+                                    ],
+                                ),
+                                href="https://github.com/snehilvj/dmc-docs",
+                                className="hide-sm",
+                            ),
+                            html.A(
+                                dmc.Button(
+                                    dmc.Text(
                                         "Discord",
                                         color="dark",
                                         weight="lighter",
@@ -115,27 +137,6 @@ def page_header():
                                     ],
                                 ),
                                 href="https://discord.gg/KuJkh4Pyq5",
-                                className="hide-sm",
-                            ),
-                            html.A(
-                                dmc.Button(
-                                    dmc.Text(
-                                        "Docs",
-                                        color="dark",
-                                        weight="lighter",
-                                        size="sm",
-                                    ),
-                                    radius="xl",
-                                    variant="light",
-                                    color="gray",
-                                    rightIcon=[
-                                        DashIconify(
-                                            icon="iconoir:google-docs",
-                                            width=20,
-                                        )
-                                    ],
-                                ),
-                                href="https://github.com/snehilvj/dmc-docs",
                                 className="hide-sm",
                             ),
                             dmc.Select(
