@@ -498,5 +498,33 @@ dmc.Group(
 )
 
 
+app.clientside_callback(
+    """
+    function(color, radius, size) {
+        return [
+            `import dash_mantine_components as dmc
+
+dmc.Switch(
+    label="I agree to sell my privacy.",
+    color="${window.colorMap[color]}",
+    radius="${window.sizeMap[radius]}",
+    size="${window.sizeMap[size]}"
+)`,
+        window.colorMap[color],
+        window.sizeMap[radius],
+        window.sizeMap[size],
+        ];
+    }
+    """,
+    Output("switch-code-output", "children"),
+    Output("switch-demo", "color"),
+    Output("switch-demo", "radius"),
+    Output("switch-demo", "size"),
+    Input("color-switch-demo", "value"),
+    Input("radius-switch-demo", "value"),
+    Input("size-switch-demo", "value"),
+)
+
+
 if __name__ == "__main__":
     app.run_server(debug=True, dev_tools_hot_reload=False)
