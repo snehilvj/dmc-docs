@@ -65,8 +65,8 @@ def page_header():
                             dmc.Badge(
                                 dmc.__version__,
                                 color="gray",
-                                variant="light",
-                                radius="xs",
+                                variant="outline",
+                                radius="xl",
                             ),
                         ]
                     ),

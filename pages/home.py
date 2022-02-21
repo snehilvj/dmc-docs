@@ -257,7 +257,7 @@ issue_layout = html.Div(
             children=[
                 html.Div(
                     [
-                        Heading("Raise Issue", id="raise-issue"),
+                        Heading("Create Issue", id="raise-issue"),
                         dmc.Space(h=5),
                         Paragraph(
                             "If you find any issues with any components or the documentation, please create an issue."
