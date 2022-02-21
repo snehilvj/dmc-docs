@@ -1,25 +1,25 @@
 brotli==1.0.9; python_version >= "3.6"
-click==8.0.3; python_version >= "3.6"
+click==8.0.4; python_version >= "3.6"
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and platform_system == "Windows" or platform_system == "Windows" and python_version >= "3.6" and python_full_version >= "3.5.0"
 dash-core-components==2.0.0; python_version >= "3.6"
 dash-html-components==2.0.0; python_version >= "3.6"
 dash-iconify==0.1.0
 dash-labs==1.0.2; python_version >= "3.6"
-dash-mantine-components==0.4.1
+dash-mantine-components==0.5.0
 dash-table==5.0.0; python_version >= "3.6"
-dash==2.1.0; python_version >= "3.6"
+dash==2.2.0; python_version >= "3.6"
 flask-compress==1.10.1; python_version >= "3.6"
-flask==2.0.2; python_version >= "3.6"
+flask==2.0.3; python_version >= "3.6"
 gunicorn==20.1.0; python_version >= "3.5"
-itsdangerous==2.0.1; python_version >= "3.6"
+itsdangerous==2.1.0; python_version >= "3.7"
 jinja2==3.0.3; python_version >= "3.6"
-markupsafe==2.0.1; python_version >= "3.6"
+markupsafe==2.1.0; python_version >= "3.7"
 mistune==2.0.2
-numpy==1.22.1
-pandas==1.4.0; python_version >= "3.8"
-plotly==5.5.0; python_version >= "3.6"
+numpy==1.22.2
+pandas==1.4.1; python_version >= "3.8"
+plotly==5.6.0; python_version >= "3.6"
 python-dateutil==2.8.2; python_version >= "3.8" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.8"
 pytz==2021.3; python_version >= "3.8"
 six==1.16.0; python_version >= "3.8" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.8"
 tenacity==8.0.1; python_version >= "3.6"
-werkzeug==2.0.2; python_version >= "3.6"
+werkzeug==2.0.3; python_version >= "3.6"
