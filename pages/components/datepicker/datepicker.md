@@ -19,6 +19,13 @@ date picker in a callback. That will always follow: `YYYY-MM-DD`.
 
 > example:components/datepicker/_formats.py
 
+### Localization
+
+DatePicker component uses dayjs behind the scenes. So you can easily customize locale by including required locale data
+and setting the `locale` prop.
+
+> example:components/datepicker/_locale.py
+
 ### Clear and Overlay Mode
 
 dmc.DatePicker is clearable by default. You can change this behaviour by setting the `clearable` prop to `False`.
