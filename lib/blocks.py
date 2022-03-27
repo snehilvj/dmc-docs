@@ -54,7 +54,7 @@ def ExecCodeBlock(file, run, prism):
             dmc.Paper(
                 component,
                 withBorder=True,
-                padding="xl",
+                p="xl",
                 style={"marginBottom": 10},
             )
             if run

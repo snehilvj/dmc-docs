@@ -4,7 +4,7 @@ component = dmc.Center(
     [
         dmc.Tooltip(
             label="⌘ + K",
-            delay=1000,
+            closeDelay=1000,
             children=[dmc.Button("Search", variant="outline")],
         )
     ]

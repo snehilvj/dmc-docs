@@ -269,7 +269,7 @@ dmc.RingProgress(
 
 app.clientside_callback(
     """
-    function(radius, padding, shadow, withBorder) {
+    function(radius, p, shadow, withBorder) {
         return [
             `import dash_mantine_components as dmc
 
@@ -281,12 +281,12 @@ dmc.Paper(
         )
     ],
     radius="${window.sizeMap[radius]}",
-    padding="${window.sizeMap[padding]}",
+    p="${window.sizeMap[p]}",
     shadow="${window.sizeMap[shadow]}",
     withBorder=${withBorder ? "True" : "False"},
 )`,
         window.sizeMap[radius],
-        window.sizeMap[padding],
+        window.sizeMap[p],
         window.sizeMap[shadow],
         withBorder
         ];
@@ -294,7 +294,7 @@ dmc.Paper(
     """,
     Output("paper-code-output", "children"),
     Output("paper-demo", "radius"),
-    Output("paper-demo", "padding"),
+    Output("paper-demo", "p"),
     Output("paper-demo", "shadow"),
     Output("paper-demo", "withBorder"),
     Input("radius-paper-demo", "value"),
@@ -384,7 +384,7 @@ dmc.TimeInput(
 
 app.clientside_callback(
     """
-    function(variant, spacing, size, color, required) {
+    function(orientation, spacing, size, color, required) {
         return [
             `import dash_mantine_components as dmc
 
@@ -398,11 +398,12 @@ dmc.RadioGroup(
     color="${window.colorMap[color]}",
     size="${window.sizeMap[size]}",
     spacing="${window.sizeMap[spacing]}",
+    orientation="${orientation}",
     label="Select your favorite framework/library",
     description="This is anonymous",
     required=${required ? "True" : "False"},
 )`,
-        variant,
+        orientation,
         window.sizeMap[spacing],
         window.sizeMap[size],
         window.colorMap[color],
@@ -411,7 +412,7 @@ dmc.RadioGroup(
     }
     """,
     Output("radio-code-output", "children"),
-    Output("radio-demo", "variant"),
+    Output("radio-demo", "orientation"),
     Output("radio-demo", "spacing"),
     Output("radio-demo", "size"),
     Output("radio-demo", "color"),

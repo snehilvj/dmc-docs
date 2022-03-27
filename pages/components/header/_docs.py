@@ -5,7 +5,7 @@ component = dmc.Header(
     height=70,
     # Set fixed to True in your app.
     # fixed=True,
-    padding="md",
+    p="md",
     children=[
         dmc.Group(
             position="apart",
