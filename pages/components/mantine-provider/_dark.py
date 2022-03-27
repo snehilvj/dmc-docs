@@ -20,7 +20,7 @@ component = dmc.MantineProvider(
                     ],
                 )
             ],
-            padding="md",
+            p="md",
         )
     ],
 )

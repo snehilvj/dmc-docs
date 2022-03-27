@@ -23,6 +23,7 @@ component = html.Div(
                             color="blue",
                             size="sm",
                             spacing="md",
+                            orientation="horizontal",
                             label="Select your favorite framework/library",
                             description="This is anonymous",
                             required=True,
@@ -36,7 +37,7 @@ component = html.Div(
                     children=[
                         DemoSegmentedControl(
                             id="variant-radio-demo",
-                            label="Variant",
+                            label="Orientation",
                             values=["Horizontal", "Vertical"],
                             initial_value="horizontal",
                         ),

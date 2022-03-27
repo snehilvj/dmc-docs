@@ -16,7 +16,7 @@ def AppShell(children):
                 [
                     dmc.Container(
                         fluid=True,
-                        padding="lg",
+                        p="lg",
                         style={"marginTop": 90},
                         children=[
                             html.Div(
@@ -30,7 +30,7 @@ def AppShell(children):
                             page_header(),
                             side_nav(),
                             dmc.Container(
-                                padding="lg",
+                                p="lg",
                                 id="main-content",
                                 children=children,
                             ),
@@ -46,7 +46,7 @@ def page_header():
     return dmc.Header(
         height=70,
         fixed=True,
-        padding="md",
+        p="md",
         children=[
             dmc.Group(
                 position="apart",
@@ -208,7 +208,6 @@ def side_nav():
         width={"base": 250},
         children=[
             dmc.ScrollArea(
-                style={"height": "calc(100% - 70px)"},
                 offsetScrollbars=True,
                 type="scroll",
                 children=children,

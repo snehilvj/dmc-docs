@@ -7,8 +7,8 @@ following ways:
 
 * programmatically (using callbacks)
 * by clicking on the cross button (if not disabled using `hideCloseButton` prop)
-* by clicking outside the drawer area (if not disabled using `noCloseOnClickOutside` prop)
-* by pressing the ESC key (if not disabled using `noCloseOnEscape` prop)
+* by clicking outside the drawer area (if not disabled using `closeOnClickOutside` prop)
+* by pressing the ESC key (if not disabled using `closeOnEscape` prop)
 
 > example:components/drawer/_simple.py
 

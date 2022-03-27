@@ -9,7 +9,7 @@ dash.register_page(
     __name__,
     "/",
     description="Dash Mantine Components is an extensive UI components library for Plotly Dash with over 55 "
-    "components and supports dark theme natively.",
+                "components and supports dark theme natively.",
 )
 
 toc = [
@@ -25,7 +25,7 @@ options = [{"value": val, "label": val} for val in ["React", "Dash", "Flask", "V
 banner_layout = html.Div(
     [
         dmc.Paper(
-            padding="xl",
+            p="xl",
             children=[
                 dmc.Center(
                     dmc.Group(
@@ -95,7 +95,7 @@ app.layout = dmc.MantineProvider(
                     id="theme-demo",
                     children=[
                         dmc.Paper(
-                            padding="lg",
+                            p="lg",
                             withBorder=True,
                             children=[
                                 dmc.Group(

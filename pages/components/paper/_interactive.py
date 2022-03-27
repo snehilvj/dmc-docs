@@ -20,7 +20,7 @@ component = html.Div(
                             ],
                             id="paper-demo",
                             radius="sm",
-                            padding="lg",
+                            p="lg",
                             shadow="sm",
                             withBorder=False,
                         ),
