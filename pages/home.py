@@ -1,357 +1,209 @@
 import dash
 import dash_mantine_components as dmc
+import requests
 from dash import html, dcc
 from dash_iconify import DashIconify
 
-from lib.blocks import TableOfContents, Heading, Paragraph
+from lib.appshell import create_table_of_contents
 
 dash.register_page(
     __name__,
     "/",
-    description="Dash Mantine Components is an extensive UI components library for Plotly Dash with over 55 "
-                "components and supports dark theme natively.",
+    title="Dash Mantine Components",
+    description="Official documentation and collection of ready-made Plotly Dash Components created using Dash "
+    "Mantine Components. Dash Mantine Components is an extensive UI components library for Plotly Dash "
+    "with over 70 components which support dark theme natively.",
 )
 
-toc = [
-    {"text": "Dark Theme", "id": "dark-theme"},
-    {"text": "Notifications", "id": "notifications"},
-    {"text": "Raise Issue", "id": "raise-issue"},
-    {"text": "Support", "id": "support"},
-]
 
-options = [{"value": val, "label": val} for val in ["React", "Dash", "Flask", "Vue"]]
+def create_title(title, id):
+    return dmc.Text(title, align="center", style={"fontSize": 30}, id=id)
 
 
-banner_layout = html.Div(
-    [
+def create_head(text):
+    return dmc.Text(text, align="center", style={"margin": "10px 0"})
+
+
+def create_contributors_avatars():
+    resp = requests.get(
+        "https://api.github.com/repos/snehilvj/dash-mantine-components/contributors",
+        headers={"authorization": "token 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"},
+    )
+    contributors = resp.json()
+    children = []
+    for user in contributors:
+        avatar = dmc.Tooltip(
+            html.A(dmc.Avatar(src=user["avatar_url"]), href=user["html_url"]),
+            label=user["login"],
+            position="bottom",
+        )
+        children.append(avatar)
+
+    return dmc.Group(children, position="center")
+
+
+def Tile(icon, heading, description, href):
+    return dcc.Link(
         dmc.Paper(
-            p="xl",
+            p="lg",
+            withBorder=True,
+            children=dmc.Group(
+                direction="column",
+                spacing=0,
+                align="center",
+                children=[
+                    dmc.ThemeIcon(
+                        DashIconify(icon=icon, height=20),
+                        size=40,
+                        radius=40,
+                        variant="light",
+                    ),
+                    dmc.Text(
+                        heading,
+                        style={"marginTop": 20, "marginBottom": 10},
+                    ),
+                    dmc.Text(
+                        description,
+                        color="dimmed",
+                        align="center",
+                        size="sm",
+                        style={"lineHeight": 1.6, "marginBottom": 10},
+                    ),
+                ],
+            ),
+            style={"marginBottom": 30},
+        ),
+        href=href,
+        style={"textDecoration": "none"},
+    )
+
+
+layout = html.Div(
+    [
+        dmc.Container(
+            size="lg",
+            style={"marginTop": 30},
             children=[
-                dmc.Center(
-                    dmc.Group(
-                        direction="column",
-                        position="center",
-                        children=[
-                            dmc.Image(src="/assets/logo.png", width=250),
-                            html.Div(
-                                [
-                                    dmc.Text(
-                                        """Dash Mantine Components is an extensive dash components library with over 50 
-                                    components and supports dark theme natively.""",
-                                        align="center",
-                                    )
-                                ],
-                                style={"width": 600},
+                create_title(
+                    "Give Your Dash Apps an Upgrade with Dash Mantine Components",
+                    id="features",
+                ),
+                create_head("With more than 70 components from Mantine React Library"),
+                dmc.Group(
+                    [
+                        dcc.Link(
+                            [
+                                dmc.Button("Get Started"),
+                            ],
+                            href="/getting-started/installation",
+                        ),
+                        html.A(
+                            dmc.Button(
+                                "Join Discord",
+                                variant="outline",
+                                leftIcon=[DashIconify(icon="bi:discord", width=20)],
                             ),
-                            dcc.Link(
-                                [
-                                    dmc.Button("Get Started"),
-                                ],
-                                href="/getting-started/installation",
+                            href="https://discord.gg/KuJkh4Pyq5",
+                        ),
+                        html.A(
+                            dmc.Button(
+                                "Github",
+                                variant="outline",
+                                color="gray",
+                                leftIcon=[DashIconify(icon="bi:github", width=20)],
                             ),
-                        ],
-                    )
+                            href="https://github.com/snehilvj/dash-mantine-components",
+                        ),
+                    ],
+                    position="center",
+                    style={"marginTop": 20, "marginBottom": 90},
+                ),
+            ],
+        ),
+        dmc.Container(
+            size="lg",
+            px=0,
+            py=0,
+            children=[
+                dmc.SimpleGrid(
+                    cols=3,
+                    breakpoints=[
+                        {"maxWidth": "xs", "cols": 1},
+                        {"maxWidth": "sm", "cols": 2},
+                    ],
+                    children=[
+                        Tile(
+                            icon="bi:calendar-day",
+                            heading="Best DatePickers out there!",
+                            description="Easily switch between different years and months while looking great too.",
+                            href="/components/datepicker",
+                        ),
+                        Tile(
+                            icon="ic:outline-palette",
+                            heading="Dark Theme Support",
+                            description="Use dark theme across all components with no additional steps.",
+                            href="/components/mantine-provider",
+                        ),
+                        Tile(
+                            icon="mi:notification",
+                            heading="Notifications System",
+                            description="Mantine has a great notifications system, and now you get that in dash apps "
+                            "too.",
+                            href="/components/notification",
+                        ),
+                        Tile(
+                            icon="akar-icons:grid",
+                            heading="Responsive Grid System",
+                            description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
+                            href="/components/grid",
+                        ),
+                        Tile(
+                            icon="eos-icons:content-new",
+                            heading="Unique Components",
+                            description="Enhance your apps with components such as Segmented Control only available "
+                            "with DMC.",
+                            href="/components/segmented-control",
+                        ),
+                        Tile(
+                            icon="fluent:text-description-24-filled",
+                            heading="Better Inputs",
+                            description="Add label, description, errors, etc. easily to all inputs.",
+                            href="/components/textinput",
+                        ),
+                    ],
                 )
             ],
         ),
+        dmc.Space(h=20),
+        create_title("Contributors", id="contributors"),
+        create_head(
+            dmc.Anchor(
+                "Become a contributor",
+                underline=False,
+                href="https://github.com/snehilvj/dash-mantine-components",
+            )
+        ),
         dmc.Space(h=10),
-    ]
-)
-
-dark_theme_demo_layout = html.Div(
-    [
-        Heading("Dark Theme", id="dark-theme"),
-        dmc.SimpleGrid(
-            breakpoints=[{"maxWidth": 860, "cols": 1}],
-            cols=2,
-            children=[
-                html.Div(
-                    [
-                        Paragraph(
-                            "Mantine provides native dark theme support so does Dash Mantine Components. Flip the "
-                            "switch to see dark theme in action. "
-                        ),
-                        dmc.Switch(label="Enable Dark Theme", id="dark-theme-switch"),
-                        dmc.Prism(
-                            """import dash_mantine_components as dmc
-
-app.layout = dmc.MantineProvider(
-    theme={"colorScheme": "dark"},
-    children=[
-        # dash children here
-    ]
-)""",
-                            language="python",
-                            style={"marginTop": 20, "marginBottom": 20},
-                        ),
-                        dcc.Link(
-                            dmc.Text("More about dark theme here.", color="blue"),
-                            href="/components/mantine-provider",
-                            className="home-page-buttons",
-                        ),
-                    ]
-                ),
-                dmc.MantineProvider(
-                    id="theme-demo",
+        create_contributors_avatars(),
+        dmc.Space(h=40),
+        dmc.Center(
+            [
+                dmc.Group(
+                    spacing="xs",
                     children=[
-                        dmc.Paper(
-                            p="lg",
-                            withBorder=True,
-                            children=[
-                                dmc.Group(
-                                    grow=True,
-                                    spacing="xl",
-                                    direction="column",
-                                    children=[
-                                        dmc.Group(
-                                            grow=True,
-                                            children=[
-                                                dmc.DateRangePicker(
-                                                    label="Select a range",
-                                                    amountOfMonths=2,
-                                                    style={},
-                                                ),
-                                                dmc.DatePicker(
-                                                    placeholder="Pick a date",
-                                                    label="DatePicker",
-                                                    required=True,
-                                                    style={},
-                                                    value="2022-09-26",
-                                                ),
-                                            ],
-                                        ),
-                                        dmc.Group(
-                                            grow=True,
-                                            children=[
-                                                dmc.MultiSelect(
-                                                    placeholder="Select frameworks",
-                                                    data=options,
-                                                    label="Multiselect",
-                                                    required=True,
-                                                    value=["Dash", "Flask"],
-                                                ),
-                                                dmc.Select(
-                                                    placeholder="Pick one",
-                                                    label="Select",
-                                                    data=options,
-                                                    value="React",
-                                                ),
-                                            ],
-                                        ),
-                                        dmc.Space(h=10),
-                                        dmc.Slider(
-                                            value=69,
-                                            labelAlwaysOn=True,
-                                        ),
-                                        dmc.Center(
-                                            [
-                                                dmc.Chips(
-                                                    data=options,
-                                                    variant="outline",
-                                                    value="Dash",
-                                                )
-                                            ]
-                                        ),
-                                        dmc.Group(
-                                            position="center",
-                                            children=[
-                                                dmc.Switch(
-                                                    label="Toggle switch", checked=True
-                                                ),
-                                                dmc.Checkbox(
-                                                    label="I agree to sell my privacy",
-                                                    checked=True,
-                                                ),
-                                            ],
-                                        ),
-                                        dmc.SegmentedControl(
-                                            data=options, value="Vue", fullWidth=True
-                                        ),
-                                    ],
-                                )
-                            ],
-                        )
+                        dmc.Text("Made with"),
+                        DashIconify(icon="clarity:heart-line", width=20, color="red"),
+                        dmc.Text("by Snehil Vijay"),
                     ],
-                ),
+                )
             ],
+            style={"height": 100},
         ),
-        dmc.Space(h=10),
+        create_table_of_contents(
+            [
+                ("#features", "Features", ""),
+                ("#contributors", "Contributors", ""),
+            ]
+        ),
     ]
 )
-
-
-notifications_demo_layout = html.Div(
-    [
-        Heading("Notifications", id="notifications"),
-        dmc.SimpleGrid(
-            breakpoints=[{"maxWidth": 860, "cols": 1}],
-            cols=2,
-            children=[
-                html.Div(
-                    [
-                        Paragraph("A fully featured notifications system"),
-                        dmc.Group(
-                            style={"marginTop": 20, "marginBottom": 20},
-                            children=[
-                                dmc.Button(
-                                    "Default",
-                                    variant="outline",
-                                    id="default-notification",
-                                ),
-                                dmc.Button(
-                                    "Green with icon",
-                                    color="green",
-                                    variant="outline",
-                                    id="green-icon-notification",
-                                ),
-                                dmc.Button(
-                                    "10 sec timeout",
-                                    variant="outline",
-                                    color="violet",
-                                    id="10-sec-notification",
-                                ),
-                                dmc.Button(
-                                    "Loading state",
-                                    variant="outline",
-                                    color="orange",
-                                    id="orange-loading-notification",
-                                ),
-                            ],
-                        ),
-                        dcc.Link(
-                            dmc.Text("More about notifications here.", color="blue"),
-                            href="/components/notification",
-                            className="home-page-buttons",
-                        ),
-                    ]
-                ),
-                dmc.Prism(
-                    """import dash_mantine_components as dmc
-from dash_iconify import DashIconify
-
-
-@app.callback(
-    Output("container", "children"), Input("button", "n_clicks")
-)
-def show_notifications(n_clicks):
-    return dmc.Notification(
-        id="notification",
-        color="green",
-        action="show",
-        icon=[DashIconify(icon="radix-icons:check-circled")]
-    )""",
-                    language="python",
-                ),
-            ],
-        ),
-        dmc.Space(h=10),
-    ]
-)
-
-
-issue_layout = html.Div(
-    [
-        dmc.SimpleGrid(
-            breakpoints=[{"maxWidth": 860, "cols": 1}],
-            cols=2,
-            children=[
-                html.Div(
-                    [
-                        Heading("Create Issue", id="raise-issue"),
-                        dmc.Space(h=5),
-                        Paragraph(
-                            "If you find any issues with any components or the documentation, please create an issue."
-                        ),
-                        dmc.Group(
-                            [
-                                html.A(
-                                    [
-                                        dmc.Button(
-                                            "Create Issue for dmc",
-                                            variant="outline",
-                                            color="dark",
-                                            leftIcon=[
-                                                DashIconify(
-                                                    icon="radix-icons:external-link",
-                                                )
-                                            ],
-                                        ),
-                                    ],
-                                    href="https://github.com/snehilvj/dash-mantine-components/issues/new",
-                                    className="home-page-buttons",
-                                ),
-                                html.A(
-                                    [
-                                        dmc.Button(
-                                            "Create Issue for docs",
-                                            variant="outline",
-                                            color="dark",
-                                            leftIcon=[
-                                                DashIconify(
-                                                    icon="radix-icons:file-text",
-                                                )
-                                            ],
-                                        ),
-                                    ],
-                                    href="https://github.com/snehilvj/dmc-demo/issues/new",
-                                    className="home-page-buttons",
-                                ),
-                            ]
-                        ),
-                    ]
-                ),
-                html.Div(
-                    children=[
-                        Heading("Support", id="support"),
-                        dmc.Space(h=5),
-                        Paragraph(
-                            "Now that you are here, please consider giving **dash-mantine-components** a star on "
-                            "GitHub. "
-                        ),
-                        html.A(
-                            [
-                                dmc.Button(
-                                    "Star Dash Mantine Components on GitHub",
-                                    variant="outline",
-                                    leftIcon=[
-                                        DashIconify(
-                                            icon="radix-icons:star",
-                                        )
-                                    ],
-                                ),
-                            ],
-                            href="https://github.com/snehilvj/dash-mantine-components",
-                            className="home-page-buttons",
-                        ),
-                    ],
-                ),
-            ],
-        ),
-        dmc.Space(h=10),
-    ]
-)
-
-
-made_with_love_layout = dmc.Center(
-    [
-        dmc.Group(
-            spacing="xs",
-            children=[
-                dmc.Text("Made with"),
-                DashIconify(icon="clarity:heart-line", width=15, color="red"),
-                dmc.Text("by Snehil Vijay"),
-            ],
-        )
-    ],
-    style={"height": 150},
-)
-
-
-layout = [
-    banner_layout,
-    dark_theme_demo_layout,
-    notifications_demo_layout,
-    issue_layout,
-    made_with_love_layout,
-    TableOfContents(toc),
-]

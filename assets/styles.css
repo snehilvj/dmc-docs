@@ -1,12 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
+
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px
+    scroll-padding-top: 90px;
 }
 
-#main-content {
-    margin-right: 300px;
-    margin-left: 300px;
+.demo-container {
+    display: flex;
     max-width: 100%;
+    overflow: hidden;
+}
+
+.demo-preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+}
+
+.demo-controls {
+    width: 250px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.demo-control {
+    margin: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+    .demo-container {
+        flex-direction: column;
+    }
+
+    .demo-controls {
+        width: 100%;
+    }
+}
+
+#wrapper {
+    padding: 10px;
+    margin-left: 320px;
+    margin-right: 320px;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -14,31 +50,22 @@ html {
         display: none;
     }
 
-    #main-content {
+    #wrapper {
         margin-right: 0;
     }
 }
+
 
 @media only screen and (max-width: 1200px) {
     #components-navbar {
         display: none;
     }
 
-    #main-content {
+    #wrapper {
         margin-left: 0;
     }
 }
 
-@media only screen and (max-width: 1160px) {
-    .hide-sm {
-        display: none;
-    }
-}
-
-.mantine-Prism-line.token-line {
-    width: auto
-}
-
-.home-page-buttons {
-    text-decoration: none;
+#components-navbar, #toc-navbar {
+    padding-top: 20px;
 }
