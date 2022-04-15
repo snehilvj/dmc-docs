@@ -20,6 +20,7 @@ navbar_icons = {
     "Feedback": "radix-icons:info-circled",
     "Overlay": "radix-icons:stack",
     "Navigation": "radix-icons:hamburger-menu",
+    "Typography": "radix-icons:letter-case-capitalize"
 }
 
 
@@ -40,12 +41,12 @@ def create_header(nav_data):
                                 [
                                     dmc.MediaQuery(
                                         create_home_link("Dash Mantine Components"),
-                                        smallerThan=582,
+                                        smallerThan="sm",
                                         styles={"display": "none"},
                                     ),
                                     dmc.MediaQuery(
                                         create_home_link("DMC"),
-                                        largerThan=582,
+                                        largerThan="sm",
                                         styles={"display": "none"},
                                     ),
                                 ],
@@ -85,10 +86,10 @@ def create_header(nav_data):
                                         dmc.ThemeIcon(
                                             DashIconify(
                                                 icon="bi:github",
-                                                width=20,
+                                                width=22,
                                             ),
                                             radius=30,
-                                            size=30,
+                                            size=36,
                                             variant="outline",
                                         ),
                                         label="Source Code",
@@ -100,10 +101,10 @@ def create_header(nav_data):
                                         dmc.ThemeIcon(
                                             DashIconify(
                                                 icon="bi:discord",
-                                                width=20,
+                                                width=22,
                                             ),
                                             radius=30,
-                                            size=30,
+                                            size=36,
                                             variant="outline",
                                         ),
                                         label="Discord",
@@ -158,7 +159,7 @@ def create_main_nav_link(icon, label, href):
             [
                 dmc.ThemeIcon(
                     DashIconify(icon=icon, width=20),
-                    size=30,
+                    size=36,
                     radius=30,
                 ),
                 dmc.Text(label, color="gray"),
