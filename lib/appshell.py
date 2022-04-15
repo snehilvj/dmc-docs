@@ -40,12 +40,12 @@ def create_header(nav_data):
                                 [
                                     dmc.MediaQuery(
                                         create_home_link("Dash Mantine Components"),
-                                        smallerThan="xs",
+                                        smallerThan=582,
                                         styles={"display": "none"},
                                     ),
                                     dmc.MediaQuery(
                                         create_home_link("DMC"),
-                                        largerThan="xs",
+                                        largerThan=582,
                                         styles={"display": "none"},
                                     ),
                                 ],
@@ -302,11 +302,13 @@ clientside_callback(
 )
 
 clientside_callback(
-    """
-    function(data) {
-        return {colorScheme: data ? data["colorScheme"] : light, "fontFamily": "'Inter', sans-serif", primaryColor: "indigo"}
-    }
-    """,
+    """function(data) { 
+        return {
+            colorScheme: data ? data["colorScheme"] : light,
+            fontFamily: "'Inter', sans-serif", 
+            primaryColor: "indigo"
+        }
+    }""",
     Output("theme-provider", "theme"),
     Input("theme-info-storage", "data"),
     prevent_initial_callback=True,
