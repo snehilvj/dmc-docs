@@ -20,7 +20,7 @@ navbar_icons = {
     "Feedback": "radix-icons:info-circled",
     "Overlay": "radix-icons:stack",
     "Navigation": "radix-icons:hamburger-menu",
-    "Typography": "radix-icons:letter-case-capitalize"
+    "Typography": "radix-icons:letter-case-capitalize",
 }
 
 
