@@ -255,6 +255,7 @@ def create_appshell(nav_data):
         styles={
             "Button": {"root": {"fontWeight": 400}},
             "Alert": {"title": {"fontWeight": 500}},
+            "AvatarsGroup": {"truncated": {"fontWeight": 500}}
         },
         withGlobalStyles=True,
         withNormalizeCSS=True,

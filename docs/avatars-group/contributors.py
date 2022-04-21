@@ -14,7 +14,7 @@ def create_contributors_list():
         avatar = dmc.Avatar(src=user["avatar_url"])
         children.append(avatar)
 
-    return dmc.AvatarGroup(children, limit=3, size=50)
+    return dmc.AvatarsGroup(children, limit=3, size=50)
 
 
 component = create_contributors_list()

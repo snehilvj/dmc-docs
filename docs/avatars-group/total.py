@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-component = dmc.AvatarGroup(
+component = dmc.AvatarsGroup(
     total=7,
     limit=2,
     size="lg",
