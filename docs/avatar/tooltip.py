@@ -4,7 +4,8 @@ from dash import html
 component = html.A(
     dmc.Tooltip(
         dmc.Avatar(
-            src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+            src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes"
+            "-computer-wallpaper-thumbnail.png",
             size="lg",
             radius="xl",
         ),

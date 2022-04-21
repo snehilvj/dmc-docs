@@ -2,7 +2,7 @@ from collections import defaultdict
 
 import dash_labs as dl
 import dash_mantine_components as dmc
-from dash import Output, Input, State, clientside_callback, html, dcc
+from dash import Output, Input, clientside_callback, html, dcc
 from dash_iconify import DashIconify
 
 
@@ -16,7 +16,7 @@ def create_home_link(label):
 
 navbar_icons = {
     "Data Display": "radix-icons:dashboard",
-    "Inputs": "radix-icons:input",
+    "Inputs & Buttons": "radix-icons:input",
     "Feedback": "radix-icons:info-circled",
     "Overlay": "radix-icons:stack",
     "Navigation": "radix-icons:hamburger-menu",
@@ -85,7 +85,7 @@ def create_header(nav_data):
                                     dmc.Tooltip(
                                         dmc.ThemeIcon(
                                             DashIconify(
-                                                icon="bi:github",
+                                                icon="radix-icons:github-logo",
                                                 width=22,
                                             ),
                                             radius=30,
@@ -111,12 +111,9 @@ def create_header(nav_data):
                                     ),
                                     href="https://discord.gg/KuJkh4Pyq5",
                                 ),
-                                dmc.SegmentedControl(
-                                    id="theme-switcher",
-                                    data=[
-                                        {"label": x, "value": x.lower()}
-                                        for x in ["Light", "Dark"]
-                                    ],
+                                dmc.ThemeSwitcher(
+                                    id="color-scheme-toggle",
+                                    style={"cursor": "pointer"},
                                 ),
                             ],
                         ),
@@ -159,10 +156,11 @@ def create_main_nav_link(icon, label, href):
             [
                 dmc.ThemeIcon(
                     DashIconify(icon=icon, width=20),
-                    size=36,
+                    size=30,
                     radius=30,
+                    variant="outline",
                 ),
-                dmc.Text(label, color="gray"),
+                dmc.Text(label, size="sm", color="gray"),
             ]
         ),
         href=href,
@@ -173,7 +171,7 @@ def create_main_nav_link(icon, label, href):
 def create_navbar(nav_data):
     main_links = dmc.Group(
         direction="column",
-        style={"paddingLeft": 15},
+        spacing="sm",
         children=[
             create_main_nav_link(
                 icon="fluent:rocket-20-regular",
@@ -181,7 +179,7 @@ def create_navbar(nav_data):
                 href="/getting-started",
             ),
             create_main_nav_link(
-                icon="line-md:iconify1",
+                icon="fluent:icons-20-regular",
                 label="Dash Iconify",
                 href="/dashiconify",
             ),
@@ -196,39 +194,37 @@ def create_navbar(nav_data):
 
     links = []
     for section, items in sorted(sections.items()):
-        component = dmc.Accordion(
-            state={"0": True},
-            iconPosition="right",
-            disableIconRotation=True,
-            offsetIcon=True,
-            children=[
-                dmc.AccordionItem(
-                    label=section,
-                    icon=[DashIconify(icon=navbar_icons[section])],
-                    children=dmc.Group(
-                        direction="column",
-                        spacing="xs",
-                        children=[
-                            dcc.Link(
-                                dmc.Text(name, size="sm", color="gray"),
-                                href=path,
-                                id=name,
-                                style={"textDecoration": "none"},
-                            )
-                            for name, path in items
-                        ],
+        links.append(
+            dmc.Divider(
+                labelPosition="left",
+                label=[
+                    DashIconify(
+                        icon=navbar_icons[section], width=15, style={"marginRight": 10}
                     ),
-                )
-            ],
+                    section,
+                ],
+                style={"marginTop": 20, "marginBottom": 20},
+            )
         )
-
-        links.append(component)
+        links.extend(
+            [
+                dcc.Link(
+                    dmc.Text(name, size="sm", color="gray"),
+                    href=path,
+                    id=name,
+                    style={"textDecoration": "none"},
+                )
+                for name, path in items
+            ]
+        )
 
     children = [
         dmc.Group(
             grow=True,
             position="left",
+            spacing="xs",
             direction="column",
+            style={"paddingLeft": 20, "paddingRight": 20},
             children=[main_links] + links,
         ),
     ]
@@ -265,7 +261,6 @@ def create_appshell(nav_data):
         children=[
             create_header(nav_data),
             create_navbar(nav_data),
-            dcc.Store(id="theme-info-storage", storage_type="local"),
             dcc.Location(id="url"),
             html.Div(
                 id="wrapper",
@@ -281,36 +276,14 @@ def create_appshell(nav_data):
 
 
 clientside_callback(
-    """
-    function(url, data) {
-        const val = data ? data["colorScheme"] : "light"
-        return val
-    }
-    """,
-    Output("theme-switcher", "value"),
-    Input("url", "pathname"),
-    State("theme-info-storage", "data"),
-)
-
-clientside_callback(
-    """
-    function(colorScheme) {
-        return {colorScheme, fontFamily: "'Inter', sans-serif",  primaryColor: "indigo"}
-    }
-    """,
-    Output("theme-info-storage", "data"),
-    Input("theme-switcher", "value"),
-)
-
-clientside_callback(
-    """function(data) { 
+    """function(colorScheme) { 
         return {
-            colorScheme: data ? data["colorScheme"] : light,
+            colorScheme,
             fontFamily: "'Inter', sans-serif", 
             primaryColor: "indigo"
         }
     }""",
     Output("theme-provider", "theme"),
-    Input("theme-info-storage", "data"),
+    Input("color-scheme-toggle", "value"),
     prevent_initial_callback=True,
 )
