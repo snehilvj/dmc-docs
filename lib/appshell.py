@@ -10,7 +10,7 @@ def create_home_link(label):
     return dmc.Text(
         label,
         size="xl",
-        color="indigo",
+        color="gray",
     )
 
 
@@ -92,6 +92,7 @@ def create_header(nav_data):
                                             radius=30,
                                             size=36,
                                             variant="outline",
+                                            color="gray",
                                         ),
                                         label="Source Code",
                                     ),
