@@ -21,6 +21,7 @@ navbar_icons = {
     "Overlay": "radix-icons:stack",
     "Navigation": "radix-icons:hamburger-menu",
     "Typography": "radix-icons:letter-case-capitalize",
+    "Layout": "radix-icons:container",
 }
 
 
@@ -225,7 +226,7 @@ def create_navbar(nav_data):
             spacing="xs",
             direction="column",
             style={"paddingLeft": 20, "paddingRight": 20},
-            children=[main_links] + links,
+            children=[main_links] + links + [dmc.Space(h=20)],
         ),
     ]
 
@@ -255,7 +256,7 @@ def create_appshell(nav_data):
         styles={
             "Button": {"root": {"fontWeight": 400}},
             "Alert": {"title": {"fontWeight": 500}},
-            "AvatarsGroup": {"truncated": {"fontWeight": 500}}
+            "AvatarsGroup": {"truncated": {"fontWeight": 500}},
         },
         withGlobalStyles=True,
         withNormalizeCSS=True,
