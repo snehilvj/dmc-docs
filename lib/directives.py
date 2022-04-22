@@ -100,7 +100,7 @@ class Admonition(BaseDirective):
             "raw": {
                 "title": value,
                 "text": text,
-                "icon": options.get("icon", None),
+                "icon": options.get("icon"),
                 "color": options.get("color", "true"),
             },
         }
