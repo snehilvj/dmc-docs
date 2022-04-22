@@ -53,9 +53,7 @@ component = dmc.Header(
                                     searchable=True,
                                     clearable=True,
                                     icon=[
-                                        DashIconify(
-                                            icon="radix-icons:magnifying-glass"
-                                        )
+                                        DashIconify(icon="radix-icons:magnifying-glass")
                                     ],
                                 ),
                                 smallerThan="md",
@@ -74,7 +72,7 @@ component = dmc.Header(
                                         color="gray",
                                     ),
                                     label="Source Code",
-                                    position="bottom"
+                                    position="bottom",
                                 ),
                                 href="https://github.com/snehilvj/dash-mantine-components",
                             ),
@@ -90,8 +88,7 @@ component = dmc.Header(
                                         variant="outline",
                                     ),
                                     label="Discord",
-                                    position="bottom"
-
+                                    position="bottom",
                                 ),
                                 href="https://discord.gg/KuJkh4Pyq5",
                             ),

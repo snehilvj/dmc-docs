@@ -85,16 +85,17 @@ def create_configurator(demo, controls, center=True):
                 Input(cid, "checked" if component_type == "Switch" else "value")
             )
 
-    # create callback
-    clientside_callback(
-        """
-        function(...kwargs) {
-            return Object.values(kwargs)
-        }
-        """,
-        callback_outputs,
-        callback_inputs,
-    )
+    if callback_outputs:
+        # create callback
+        clientside_callback(
+            """
+            function(...kwargs) {
+                return Object.values(kwargs)
+            }
+            """,
+            callback_outputs,
+            callback_inputs,
+        )
 
     # create panel
     return html.Div(
