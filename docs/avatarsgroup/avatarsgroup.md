@@ -1,5 +1,5 @@
 ---
-name: Avatars Group
+name: AvatarsGroup
 section: Data Display
 head: Display user profile image, initials or fallback icon.
 description: Use AvatarsGroup to display stack Avatar components.
@@ -10,13 +10,13 @@ component: AvatarsGroup
 
 Use AvatarsGroup to stack Avatar components, set `limit` prop to truncate the stack.
 
-.. exec-code-block::docs.avatars-group.simple
+.. exec-code-block::docs.avatarsgroup.simple
 
 To override truncated avatars length set `total` prop:
 
-.. exec-code-block::docs.avatars-group.total
+.. exec-code-block::docs.avatarsgroup.total
 
 ##### Gallery
 
-.. gallery-block::docs.avatars-group.contributors
-    :label: Show contributors in a github project
+.. gallery-block::docs.avatarsgroup.contributors
+    :label: Show contributors in a GitHub project
