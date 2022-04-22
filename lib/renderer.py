@@ -75,7 +75,8 @@ class DmcRenderer(AstRenderer):
         return dmc.List(
             children,
             type="ordered" if ordered else "unordered",
-            spacing="xs",
+            spacing=5,
+            size="sm",
             class_name="renderer-list",
         )
 
