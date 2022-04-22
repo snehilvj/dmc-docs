@@ -110,7 +110,11 @@ layout = html.Div(
                                 "Github",
                                 variant="outline",
                                 color="gray",
-                                leftIcon=[DashIconify(icon="radix-icons:github-logo", width=20)],
+                                leftIcon=[
+                                    DashIconify(
+                                        icon="radix-icons:github-logo", width=20
+                                    )
+                                ],
                             ),
                             href="https://github.com/snehilvj/dash-mantine-components",
                         ),
