@@ -1,5 +1,4 @@
 import dash_mantine_components as dmc
+from dash import html
 
-component = dmc.Affix(
-    dmc.Button("I'm in an Affix Component"), position={"bottom": 20, "right": 20}
-)
+component = html.Div([dmc.Kbd("⌘"), " + ", dmc.Kbd("shift"), " + ", dmc.Kbd("M")])

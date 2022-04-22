@@ -77,6 +77,7 @@ class DmcRenderer(AstRenderer):
             type="ordered" if ordered else "unordered",
             spacing=5,
             size="sm",
+            withPadding=True,
             class_name="renderer-list",
         )
 
