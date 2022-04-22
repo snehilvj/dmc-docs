@@ -75,13 +75,16 @@ class DmcRenderer(AstRenderer):
         return dmc.List(
             children,
             type="ordered" if ordered else "unordered",
-            size="sm",
-            spacing="sm",
+            spacing="xs",
             class_name="renderer-list",
         )
 
     def list_item(self, text, level):
-        return dmc.ListItem(text[0].children)
+        if isinstance(text[0], list):
+            children = text[0]
+        else:
+            children = text[0].children
+        return dmc.ListItem(children)
 
 
 markdown = create_markdown(
