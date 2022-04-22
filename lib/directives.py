@@ -76,11 +76,11 @@ class GalleryBlock(BaseDirective):
         tab1 = dmc.Tab(
             dmc.Paper(component, withBorder=True, p="xl"),
             label=label,
-            icon=[DashIconify(icon="ic:baseline-output", width=17)],
+            icon=[DashIconify(icon="radix-icons:enter")],
         )
         source = create_prism(imported.__file__)
         tab2 = dmc.Tab(
-            source, label="Code", icon=[DashIconify(icon="ic:baseline-code", width=17)]
+            source, label="Code", icon=[DashIconify(icon="radix-icons:code")]
         )
         return dmc.Tabs(
             [tab1, tab2], variant="outline", style={"marginBottom": 20, "marginTop": 20}

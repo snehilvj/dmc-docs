@@ -33,4 +33,4 @@ demo = dmc.Group(
     position="left",
 )
 
-component = create_configurator(demo, controls, align_center=False)
+component = create_configurator(demo, controls, center=False)

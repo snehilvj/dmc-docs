@@ -34,7 +34,7 @@ color_picker_callback_func = """function(color) {
 }"""
 
 
-def create_configurator(demo, controls, align_center=True):
+def create_configurator(demo, controls, center=True):
     # callback setup
     dmc_controls = []  # right pane
     callback_outputs = []
@@ -103,7 +103,7 @@ def create_configurator(demo, controls, align_center=True):
             html.Div(
                 html.Div(demo),
                 className="demo-preview",
-                style=({"alignItems": "center"} if align_center else {}),
+                style=({"alignItems": "center"} if center else {}),
             ),
             html.Div(className="demo-controls", children=dmc_controls),
         ],

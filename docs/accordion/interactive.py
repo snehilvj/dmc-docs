@@ -36,4 +36,4 @@ demo = dmc.Accordion(
     ],
 )
 
-component = create_configurator(demo, controls, align_center=False)
+component = create_configurator(demo, controls, center=False)

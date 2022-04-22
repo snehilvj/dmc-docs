@@ -161,7 +161,7 @@ def create_main_nav_link(icon, label, href):
                     DashIconify(icon=icon, width=18),
                     size=30,
                     radius=30,
-                    variant="filled",
+                    variant="light",
                 ),
                 dmc.Text(label, size="sm", color="gray"),
             ]
@@ -182,7 +182,7 @@ def create_navbar(nav_data):
                 href="/getting-started",
             ),
             create_main_nav_link(
-                icon="radix-icons:avatar",
+                icon="radix-icons:blending-mode",
                 label="Dash Iconify",
                 href="/dashiconify",
             ),

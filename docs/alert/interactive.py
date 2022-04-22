@@ -28,4 +28,4 @@ demo = dmc.Alert(
     color="red",
 )
 
-component = create_configurator(demo, controls, align_center=False)
+component = create_configurator(demo, controls, center=False)
