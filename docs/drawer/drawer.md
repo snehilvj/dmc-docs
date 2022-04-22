@@ -8,7 +8,6 @@ component: Drawer
 
 ##### Simple Example
 
-Simple Example
 This is a basic example of dmc.Drawer. Set the `opened` property to open the drawer. The drawer can be closed in the
 following ways:
 

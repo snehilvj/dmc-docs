@@ -1,8 +1,6 @@
 import dash_mantine_components as dmc
 
-highlight = {
-    "border": f"1px solid {dmc.theme.DEFAULT_COLORS['blue'][3]}"
-}
+highlight = {"border": f"1px solid {dmc.theme.DEFAULT_COLORS['blue'][3]}"}
 
 component = dmc.Group(
     direction="column",
