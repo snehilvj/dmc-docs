@@ -9,7 +9,7 @@ controls = [
         "property": "variant",
         "component": "SegmentedControl",
         "data": ["oval", "bars", "dots"],
-        "value": "oval"
+        "value": "oval",
     },
 ]
 
