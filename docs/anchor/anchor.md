@@ -10,4 +10,4 @@ component: Anchor
 
 dmc.Anchor is a wrapper around dmc.Text component with root component: a. It takes the same props as dmc.Text.
 
-.. exec-code-block::docs.anchor.simple
+.. exec-block::docs.anchor.simple

@@ -13,7 +13,7 @@ etc. and whether it's position will be fixed.
 
 Set `fixed` prop to True if you want to fix the position of the header just like in this docs.
 
-.. exec-code-block::docs.header.simple
+.. exec-block::docs.header.simple
 
 ##### Gallery
 

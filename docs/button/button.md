@@ -8,26 +8,26 @@ component: Button
 
 ##### Interactive Demo
 
-.. exec-code-block::docs.button.interactive
+.. exec-block::docs.button.interactive
     :prism: false
 
 ##### Variants
 
 Button supports the following variants: default, subtle, gradient, filled, light, outline etc.
 
-.. exec-code-block::docs.button.variant
+.. exec-block::docs.button.variant
 
 ##### Icons Support
 
 You can add icons in your button with leftIcon and rightIcon props. Dash Iconify is recommended.
 
-.. exec-code-block::docs.button.icons
+.. exec-block::docs.button.icons
 
 ##### Colors
 
 Change the color of the button by choosing from one of the theme colors.
 
-.. exec-code-block::docs.button.colors
+.. exec-block::docs.button.colors
 
 You can play more with the colors and variants in the interactive demo at the top.
 
@@ -41,7 +41,7 @@ To use gradient as Button background:
 * `color-from` and `color-to` are colors from Mantine's theme colors.
 * `deg` is linear gradient deg.
 
-.. exec-code-block::docs.button.gradient
+.. exec-block::docs.button.gradient
 
 ##### Radius and Size
 
@@ -64,4 +64,4 @@ dmc.Group(
 
 Pass `fullWidth=True` for a full width button.
 
-.. exec-code-block::docs.button.full
+.. exec-block::docs.button.full

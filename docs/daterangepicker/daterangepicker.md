@@ -11,7 +11,7 @@ component: DateRangePicker
 This is a simple example of DateRangePicker tied to a callback. You can either use strings in a valid datetime format 
 such as `YYYY-MM-DD` or use the date object from datetime library.
 
-.. exec-code-block::docs.daterangepicker.simple
+.. exec-block::docs.daterangepicker.simple
 
 DateRangePicker component supports the same props as [DatePicker](/components/datepicker) component.
 

@@ -8,24 +8,24 @@ component: Checkbox
 
 ##### Interactive Demo
 
-.. exec-code-block::docs.checkbox.interactive
+.. exec-block::docs.checkbox.interactive
     :prism: false
 
 ##### Simple Usage
 
 Use the property `checked` in the callbacks.
 
-.. exec-code-block::docs.checkbox.simple
+.. exec-block::docs.checkbox.simple
 
 ##### Different Sizes
 
 Choose from one of the following sizes: xs, sm, md, lg, xl.
 
-.. exec-code-block::docs.checkbox.sizes
+.. exec-block::docs.checkbox.sizes
 
 ##### Different Colors
 
 Set checkbox color using the `color` prop.
 
-.. exec-code-block::docs.checkbox.colors
+.. exec-block::docs.checkbox.colors
 

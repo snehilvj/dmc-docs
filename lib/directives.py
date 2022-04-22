@@ -28,7 +28,7 @@ class BaseDirective(Directive):
 
 
 class ExecCodeBlock(BaseDirective):
-    directive_name = "exec-code-block"
+    directive_name = "exec-block"
 
     def parse(self, block, m, state):
         value = m.group("value")

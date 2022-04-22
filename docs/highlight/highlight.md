@@ -14,7 +14,7 @@ Pass main string as children to Highlight component and string part that should 
 If main string does not include highlight part, it will be ignored. Component ignores trailing whitespace and
 highlights all matched characters sequence.
 
-.. exec-code-block::docs.highlight.simple
+.. exec-block::docs.highlight.simple
 
 ##### Colors
 
@@ -30,17 +30,17 @@ component = dmc.Highlight(
 )
 ```
 
-.. exec-code-block::docs.highlight.interactive
+.. exec-block::docs.highlight.interactive
     :prism: false
 
 ##### Highlight Multiple String
 
 To highlight multiple substrings, provide an array of values.
 
-.. exec-code-block::docs.highlight.multiple
+.. exec-block::docs.highlight.multiple
 
 ##### Text Props
 
 Highlight component supports same props as Text component.
 
-.. exec-code-block::docs.highlight.text
+.. exec-block::docs.highlight.text

@@ -16,4 +16,4 @@ Component accepts these props:
  * `padding` – controls horizontal padding of container 
  * `fluid` – overwrites `size` prop and sets max width to 100%
 
-.. exec-code-block::docs.container.simple
+.. exec-block::docs.container.simple

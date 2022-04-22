@@ -10,4 +10,4 @@ component: JsonInput
 
 JsonInput is based on Textarea component, it includes json validation logic and option to format input value on blur.
 
-.. exec-code-block::docs.jsoninput.simple
+.. exec-block::docs.jsoninput.simple

@@ -10,7 +10,7 @@ component: Avatar
 
 Use Avatar to display user profile pictures. It supports images, icons, or letters.
 
-.. exec-code-block::docs.avatar.simple
+.. exec-block::docs.avatar.simple
 
 ##### Size and Radius
 
@@ -26,7 +26,7 @@ dmc.Avatar(src="/assets/avatar.jpeg", size=50, radius="xl"),
 dmc.Avatar(src="/assets/avatar.jpeg", size="xl", radius=20),
 ```
 
-.. exec-code-block::docs.avatar.interactive
+.. exec-block::docs.avatar.interactive
     :prism: false
 
 ##### Gallery

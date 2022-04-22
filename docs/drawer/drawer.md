@@ -17,17 +17,17 @@ following ways:
 * by clicking outside the drawer area (if not disabled using `closeOnClickOutside` prop)
 * by pressing the ESC key (if not disabled using `closeOnEscape` prop)
 
-.. exec-code-block::docs.drawer.simple
+.. exec-block::docs.drawer.simple
 
 ##### Different Sizes
 
 Set the size of the drawer using the `size` prop.
 
-.. exec-code-block::docs.drawer.sizes
+.. exec-block::docs.drawer.sizes
 
 ##### Placement
 
 By default, Drawer will start to appear from the left, but this position can be customized by setting the `position` 
 prop.
 
-.. exec-code-block::docs.drawer.placement
+.. exec-block::docs.drawer.placement

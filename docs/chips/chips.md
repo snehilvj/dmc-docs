@@ -8,17 +8,17 @@ component: Chips
 
 ##### Interactive Demo
 
-.. exec-code-block::docs.chips.interactive
+.. exec-block::docs.chips.interactive
     :prism: false
 
 ##### Callbacks
 
 The `value` property is a list of items if `multiple=True` else a single item.
 
-.. exec-code-block::docs.chips.callback
+.. exec-block::docs.chips.callback
 
 ##### Multiple
 
 Set `multiple` prop to enable multiple chips selection.
 
-.. exec-code-block::docs.chips.multiple
+.. exec-block::docs.chips.multiple
