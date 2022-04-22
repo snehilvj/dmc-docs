@@ -95,7 +95,7 @@ layout = html.Div(
                             [
                                 dmc.Button("Get Started"),
                             ],
-                            href="/getting-started/installation",
+                            href="/getting-started",
                         ),
                         html.A(
                             dmc.Button(
@@ -110,7 +110,7 @@ layout = html.Div(
                                 "Github",
                                 variant="outline",
                                 color="gray",
-                                leftIcon=[DashIconify(icon="bi:github", width=20)],
+                                leftIcon=[DashIconify(icon="radix-icons:github-logo", width=20)],
                             ),
                             href="https://github.com/snehilvj/dash-mantine-components",
                         ),
@@ -133,39 +133,39 @@ layout = html.Div(
                     ],
                     children=[
                         Tile(
-                            icon="bi:calendar-day",
+                            icon="radix-icons:calendar",
                             heading="Best DatePickers out there!",
                             description="Easily switch between different years and months while looking great too.",
                             href="/components/datepicker",
                         ),
                         Tile(
-                            icon="ic:outline-palette",
+                            icon="radix-icons:blending-mode",
                             heading="Dark Theme Support",
                             description="Use dark theme across all components with no additional steps.",
-                            href="/components/mantine-provider",
+                            href="/components/mantineprovider",
                         ),
                         Tile(
-                            icon="mi:notification",
+                            icon="radix-icons:bell",
                             heading="Notifications System",
                             description="Mantine has a great notifications system, and now you get that in dash apps "
                             "too.",
                             href="/components/notification",
                         ),
                         Tile(
-                            icon="akar-icons:grid",
+                            icon="radix-icons:dashboard",
                             heading="Responsive Grid System",
                             description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
                             href="/components/grid",
                         ),
                         Tile(
-                            icon="eos-icons:content-new",
+                            icon="radix-icons:star",
                             heading="Unique Components",
                             description="Enhance your apps with components such as Segmented Control only available "
                             "with DMC.",
-                            href="/components/segmented-control",
+                            href="/components/segmentedcontrol",
                         ),
                         Tile(
-                            icon="fluent:text-description-24-filled",
+                            icon="radix-icons:text-align-left",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
                             href="/components/textinput",
@@ -192,7 +192,7 @@ layout = html.Div(
                     spacing="xs",
                     children=[
                         dmc.Text("Made with"),
-                        DashIconify(icon="clarity:heart-line", width=20, color="red"),
+                        DashIconify(icon="radix-icons:heart", width=20, color="red"),
                         dmc.Text("by Snehil Vijay"),
                     ],
                 )

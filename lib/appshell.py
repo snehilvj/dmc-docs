@@ -183,7 +183,7 @@ def create_navbar(nav_data):
                 href="/getting-started",
             ),
             create_main_nav_link(
-                icon="radix-icons:blending-mode",
+                icon="radix-icons:iconjar-logo",
                 label="Dash Iconify",
                 href="/dashiconify",
             ),
@@ -228,7 +228,7 @@ def create_navbar(nav_data):
             position="left",
             spacing="xs",
             direction="column",
-            style={"paddingLeft": 20, "paddingRight": 20},
+            style={"paddingLeft": 30, "paddingRight": 20},
             children=[main_links] + links + [dmc.Space(h=20)],
         ),
     ]
