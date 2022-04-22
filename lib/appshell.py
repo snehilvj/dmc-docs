@@ -22,6 +22,7 @@ navbar_icons = {
     "Navigation": "radix-icons:hamburger-menu",
     "Typography": "radix-icons:letter-case-capitalize",
     "Layout": "radix-icons:container",
+    "Miscellaneous": "radix-icons:component-1",
 }
 
 
@@ -160,7 +161,7 @@ def create_main_nav_link(icon, label, href):
                     DashIconify(icon=icon, width=20),
                     size=30,
                     radius=30,
-                    variant="outline",
+                    variant="filled",
                 ),
                 dmc.Text(label, size="sm", color="gray"),
             ]
@@ -176,12 +177,12 @@ def create_navbar(nav_data):
         spacing="sm",
         children=[
             create_main_nav_link(
-                icon="fluent:rocket-20-regular",
+                icon="radix-icons:rocket",
                 label="Getting Started",
                 href="/getting-started",
             ),
             create_main_nav_link(
-                icon="fluent:icons-20-regular",
+                icon="radix-icons:image",
                 label="Dash Iconify",
                 href="/dashiconify",
             ),
