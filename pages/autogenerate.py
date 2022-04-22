@@ -54,7 +54,7 @@ for file in files:
     layout = []
 
     # add title
-    title = dmc.Text(meta.name, style={"fontSize": 35, "fontWeight": 300})
+    title = dmc.Text(meta.name, style={"fontSize": 30, "fontWeight": 300})
     layout.append(title)
 
     # add head
@@ -63,7 +63,6 @@ for file in files:
         color="gray",
         style={
             "marginBottom": 25,
-            "fontSize": 18,
         },
     )
     layout.append(head)
