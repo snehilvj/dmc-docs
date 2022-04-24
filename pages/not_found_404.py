@@ -1,5 +1,6 @@
 import dash
 import dash_mantine_components as dmc
+from dash_extensions import Lottie
 
 dash.register_page(__name__, path="/404")
 
@@ -7,7 +8,12 @@ layout = dmc.Group(
     direction="column",
     align="center",
     children=[
-        dmc.Text("404", color="indigo", style={"fontSize": 40}),
+        Lottie(
+            options=dict(loop=True, autoplay=True),
+            isClickToPauseDisabled=True,
+            url="https://assets5.lottiefiles.com/packages/lf20_kcsr6fcp.json",
+            width="40%",
+        ),
         dmc.Text(
             [
                 "If you think this page should exist, create an issue ",
