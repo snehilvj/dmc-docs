@@ -20,7 +20,7 @@ def update_progress(n):
     progress = min(n % 110, 100)
     color = "red"
     if progress >= 20:
-        color="blue"
+        color = "blue"
     if progress >= 40:
         color = "cyan"
     if progress >= 70:
