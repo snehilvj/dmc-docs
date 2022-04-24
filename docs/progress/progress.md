@@ -1,0 +1,62 @@
+---
+name: Progress
+section: Feedback
+head: Give user feedback for status of the task.
+description: Use the Progress component to give feedback to the user about the status of a task with label, sections, etc.
+component: Progress
+---
+
+##### Interactive Demo
+
+.. exec-block::docs.progress.interactive
+    :prism: false
+
+##### Simple Example
+
+Progress component has one required prop: `value` – filled bar width in %. You can change bar color by passing `color`
+prop (by default theme.primaryColor will be used).
+
+.. exec-block::docs.progress.simple
+
+##### Multiple sections
+
+Multiple sections can be displayed instead of just one single bar.
+
+.. exec-block::docs.progress.sections
+
+##### Size
+
+Size controls progress bar height. Progress has predefined sizes: xs, sm, etc. Alternatively, you can use a number to
+set height in px.
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Progress(size="sm")
+
+dmc.Progress(size=20)
+```
+
+##### Radius
+
+Radius controls border-radius of body and filled part.
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Progress(radius="lg")
+
+dmc.Progress(radius=10)
+```
+
+##### With Label
+
+Labels can be provided for single bars as well as different sections.
+
+.. exec-block::docs.progress.labels
+
+##### Gallery
+
+.. gallery-block::docs.progress.interval
+    :label: Color changing progress bar
+    :center: false
