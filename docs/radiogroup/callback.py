@@ -13,6 +13,7 @@ component = html.Div(
             ],
             value="react",
             label="Select your favorite framework/library",
+            size="sm",
         ),
         dmc.Space(h=10),
         dmc.Text(id="radio-output"),
