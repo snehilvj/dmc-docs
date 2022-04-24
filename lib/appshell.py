@@ -72,7 +72,8 @@ def create_header(nav_data):
                                         data=[
                                             component["name"]
                                             for component in nav_data
-                                            if component["name"] not in ["Home", "Not found 404"]
+                                            if component["name"]
+                                            not in ["Home", "Not found 404"]
                                         ],
                                         icon=[
                                             DashIconify(
