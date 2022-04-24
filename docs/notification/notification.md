@@ -21,6 +21,22 @@ In order to show notifications in your app, just send these instructions as chil
 ##### Updating Notifications
 
 Each notification is identified with an `id`. In order to update/hide a notification, use this `id` along with the 
-action.
+`action` prop.
 
 .. exec-block::docs.notification.update
+
+##### Caveats
+
+If you are not using the `icon` prop in your Notification call, you may come across an issue where you are not able
+to open a notification multiple times. This is a limitation currently. However, there's a very simple fix for it.
+
+If you have a simple string in your `message` prop, just wrap it in a list.
+
+```python
+# instead of message = "This is a notification"
+message = ["This is a notification"]
+```
+
+You can see the difference below:
+
+.. exec-block::docs.notification.caveat

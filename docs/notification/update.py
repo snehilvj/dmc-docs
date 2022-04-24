@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 from dash import Output, Input, html, callback_context as ctx, no_update, callback
 from dash_iconify import DashIconify
 
-component = dmc.NotificationsProvider(
+component = html.Div(
     [
         html.Div(id="notify-container"),
         dmc.Group(
@@ -36,7 +36,7 @@ def notify(nc1, nc2):
             return dmc.Notification(
                 id="my-notification",
                 title="Process initiated",
-                message="The process has started.",
+                message=["The process has started."],
                 loading=True,
                 color="orange",
                 action="show",

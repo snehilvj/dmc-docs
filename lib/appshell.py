@@ -264,17 +264,21 @@ def create_appshell(nav_data):
         withGlobalStyles=True,
         withNormalizeCSS=True,
         children=[
-            create_header(nav_data),
-            create_navbar(nav_data),
-            dcc.Location(id="url"),
-            html.Div(
-                id="wrapper",
-                children=dmc.Container(
-                    id="main-content",
-                    size="lg",
-                    pt=90,
-                    children=dl.plugins.page_container,
-                ),
+            dmc.NotificationsProvider(
+                [
+                    create_header(nav_data),
+                    create_navbar(nav_data),
+                    dcc.Location(id="url"),
+                    html.Div(
+                        id="wrapper",
+                        children=dmc.Container(
+                            id="main-content",
+                            size="lg",
+                            pt=90,
+                            children=dl.plugins.page_container,
+                        ),
+                    ),
+                ]
             ),
         ],
     )

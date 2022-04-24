@@ -2,7 +2,20 @@ import dash_mantine_components as dmc
 from dash import Output, Input, html, callback
 from dash_iconify import DashIconify
 
-component = dmc.NotificationsProvider(
+"""
+Wrap your layout inside a NotificationsProvider for your app.
+
+app.layout = dmc.NotificationsProvider(
+    html.Div(
+        [
+            html.Div(id="notifications-container"),
+            dmc.Button("Show Notification", id="notify"),
+        ]
+    )
+)
+"""
+
+component = html.Div(
     [
         html.Div(id="notifications-container"),
         dmc.Button("Show Notification", id="notify"),
