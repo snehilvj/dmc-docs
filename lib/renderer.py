@@ -55,7 +55,7 @@ class DmcRenderer(AstRenderer):
         return html.Th(text) if is_head else html.Td(text)
 
     def paragraph(self, text):
-        return dmc.Text(text, class_name="renderer-text")
+        return dmc.Text(text, style={"fontSize": 15}, class_name="renderer-text")
 
     def text(self, text):
         return text
@@ -65,7 +65,11 @@ class DmcRenderer(AstRenderer):
 
     def link(self, link, children=None, title=None):
         return dmc.Anchor(
-            children[0], href=link, underline=False, class_name="renderer-anchor"
+            children[0],
+            href=link,
+            underline=False,
+            style={"fontSize": 15},
+            class_name="renderer-anchor",
         )
 
     def codespan(self, text):
