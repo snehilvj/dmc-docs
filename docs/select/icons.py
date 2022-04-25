@@ -8,6 +8,5 @@ component = dmc.Select(
     required=True,
     style={"width": 200},
     icon=[DashIconify(icon="radix-icons:magnifying-glass")],
-    rightSection=[DashIconify(icon="radix-icons:chevron-down")]
+    rightSection=[DashIconify(icon="radix-icons:chevron-down")],
 )
-
