@@ -57,7 +57,7 @@ While going through this documentation, you will come across interactive demos m
     :prism: false
 
 Note that this documentation has some additional styling applied to it. So when you actually use these components, they 
-might look a bit different. You can check out [MantineProvider]("/components/mantine-provider) for more details on
+might look a bit different. You can check out [MantineProvider]("/components/mantineprovider) for more details on
 theming and customizations.
 
 Here's how you can add the same styling to your apps:
