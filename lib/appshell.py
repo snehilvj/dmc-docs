@@ -186,7 +186,7 @@ def create_navbar(nav_data):
             create_main_nav_link(
                 icon="radix-icons:iconjar-logo",
                 label="Dash Iconify",
-                href="/dashiconify",
+                href="/dash-iconify",
             ),
         ],
     )

@@ -25,7 +25,7 @@ You can also install `dash-mantine-components` with conda through the conda-forg
 conda install -c conda-forge dash-mantine-components
 ```
 
-##### Basic Usage
+##### Simple Usage
 
 Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash 
 components.

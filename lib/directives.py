@@ -107,5 +107,5 @@ class Admonition(BaseDirective):
 
     def render(self, title, text, icon, color):
         return dmc.Alert(
-            title=title, children=text, icon=[DashIconify(icon=icon)], color=color
+            title=title, children=text, icon=[DashIconify(icon=icon)], color=color, style={"marginBottom": 10}
         )
