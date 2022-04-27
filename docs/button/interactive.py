@@ -21,21 +21,9 @@ controls = [
     {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
     {"property": "size", "component": "DemoSlider", "value": "sm"},
     {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {
-        "property": "loading",
-        "component": "Switch",
-        "checked": False,
-    },
-    {
-        "property": "compact",
-        "component": "Switch",
-        "checked": False,
-    },
-    {
-        "property": "disabled",
-        "component": "Switch",
-        "checked": False,
-    },
+    {"property": "loading", "component": "Switch", "checked": False},
+    {"property": "compact", "component": "Switch", "checked": False},
+    {"property": "disabled", "component": "Switch", "checked": False},
 ]
 
 demo = dmc.Button("Settings")
