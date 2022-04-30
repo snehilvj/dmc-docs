@@ -106,11 +106,11 @@ def create_header(nav_data):
                                             DashIconify(
                                                 icon="bi:discord",
                                                 width=22,
+                                                color="#7289da",
                                             ),
                                             radius=30,
                                             size=36,
                                             variant="outline",
-                                            color="gray",
                                         ),
                                         label="Discord",
                                     ),

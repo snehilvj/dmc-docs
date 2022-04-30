@@ -59,3 +59,4 @@ dmc.Table(
 ```
 
 .. exec-block::docs.table.striped
+    :prism: false
