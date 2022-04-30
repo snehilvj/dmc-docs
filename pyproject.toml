@@ -17,6 +17,7 @@ requests = "^2.27.1"
 pydantic = "^1.9.0"
 python-frontmatter = "^1.0.0"
 dash-extensions = "^0.1.0"
+pandas = "^1.4.2"
 
 [tool.poetry.dev-dependencies]
 black = "^21.12b0"

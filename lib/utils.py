@@ -2,7 +2,7 @@ import random
 
 import dash_mantine_components as dmc
 import plotly.graph_objects as go
-from dash import dcc
+from dash import dcc, html
 
 
 def create_figure():
@@ -37,3 +37,11 @@ def create_figure():
 
 def create_graph():
     return dcc.Graph(figure=create_figure(), config={"displayModeBar": False})
+
+
+def create_table(df):
+    columns, values = df.columns, df.values
+    header = [html.Tr([html.Th(col) for col in columns])]
+    rows = [html.Tr([html.Td(cell) for cell in row]) for row in values]
+    table = [html.Thead(header), html.Tbody(rows)]
+    return table
