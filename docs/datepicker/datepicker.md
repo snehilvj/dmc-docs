@@ -11,7 +11,7 @@ component: DatePicker
 This is a simple example of DatePicker tied to a callback. You can either use strings in a valid datetime format such
 as `YYYY-MM-DD` or use the date object from datetime library.
 
-.. exec-block::docs.datepicker.simple
+.. exec::docs.datepicker.simple
 
 ##### Date formats
 
@@ -36,7 +36,7 @@ date picker in a callback. That will always follow: `YYYY-MM-DD`.
 
 ##### Date Format Examples
 
-.. exec-block::docs.datepicker.formats
+.. exec::docs.datepicker.formats
 
 ##### Localization
 
@@ -54,7 +54,7 @@ scripts = [
 app = Dash(__name__, external_scripts=scripts)
 ```
 
-.. exec-block::docs.datepicker.locale
+.. exec::docs.datepicker.locale
 
 ##### Clear and Overlay Mode
 
@@ -62,13 +62,13 @@ dmc.DatePicker is clearable by default. You can change this behaviour by setting
 dmc.DatePicker also supports opening date picker as an overlay instead of the normal popover mode. To enable that, set
 the type `dropdownType` prop to `modal`.
 
-.. exec-block::docs.datepicker.modal
+.. exec::docs.datepicker.modal
 
 ##### Amount of months
 
 You can display more than one month in date picker dropdown by setting the `amountOfMonths` prop to the desired value.
 
-.. exec-block::docs.datepicker.amount
+.. exec::docs.datepicker.amount
 
 ##### Error Display
 
@@ -76,4 +76,4 @@ You can convey errors in your date picker by setting the `error` prop. For insta
 convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
 set `clearable=False`.
 
-.. exec-block::docs.datepicker.errors
+.. exec::docs.datepicker.errors

@@ -10,4 +10,4 @@ component: Affix
 
 Look at the bottom right!
 
-.. exec-block::docs.affix.simple
+.. exec::docs.affix.simple

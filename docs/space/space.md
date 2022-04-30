@@ -11,4 +11,4 @@ component: Space
 Space component can be customized with two props: `h` and `w`, shortcuts for height and width. These can take either 
 values from Mantine's theme i.e. xs, sm, md, lg, xl or number.
 
-.. exec-block::docs.space.simple
+.. exec::docs.space.simple

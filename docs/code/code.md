@@ -10,19 +10,19 @@ component: Code
 
 By default, Code component renders inline `code` html element.
 
-.. exec-block::docs.code.inline
+.. exec::docs.code.inline
 
 ##### Block Code
 
 To render code in `pre` element set the `block` prop.
 
-.. exec-block::docs.code.block
+.. exec::docs.code.block
 
 ##### Colors
 
 By default, code has gray color, you can change it to any color from Mantine's theme colors using the `color` prop.
 
-.. exec-block::docs.code.colors
+.. exec::docs.code.colors
 
 ##### Syntax Highlighting
 

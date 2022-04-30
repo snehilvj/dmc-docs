@@ -8,4 +8,4 @@ component: Center
 
 ##### Simple Example
 
-.. exec-block::docs.center.simple
+.. exec::docs.center.simple

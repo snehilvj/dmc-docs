@@ -53,7 +53,7 @@ code for some inspiration.
 
 While going through this documentation, you will come across interactive demos meant to show an overview as well as the overall effect of different combinations of a component's props.
 
-.. exec-block::docs.getting-started.interactive
+.. exec::docs.getting-started.interactive
     :prism: false
 
 Note that this documentation has some additional styling applied to it. So when you actually use these components, they 

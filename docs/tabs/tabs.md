@@ -29,7 +29,7 @@ dmc.Tabs(
 )
 ```
 
-.. exec-block::docs.tabs.interactive
+.. exec::docs.tabs.interactive
     :prism: false
 
 ##### Tabs Position
@@ -50,18 +50,18 @@ dmc.Tabs(
 )
 ```
 
-.. exec-block::docs.tabs.position
+.. exec::docs.tabs.position
     :prism: false
 
 ##### Content As Callback
 
 Attach a callback to the Tabs `value` prop and update a container's `children` property in your callback.
 
-.. exec-block::docs.tabs.callback
+.. exec::docs.tabs.callback
 
 ##### Content As Tab Children
 
 Instead of displaying the content through a callback, you can embed the content directly as the `children` property in
 the Tab component.
 
-.. exec-block::docs.tabs.content
+.. exec::docs.tabs.content

@@ -11,7 +11,7 @@ component: SegmentedControl
 SegmentedControl is usually used as an alternative to Tabs (to switch views) and RadioGroup (to capture user feedback
 limited to certain options)
 
-.. exec-block::docs.segmentedcontrol.simple
+.. exec::docs.segmentedcontrol.simple
 
 ##### Data Prop
 
@@ -47,20 +47,20 @@ dmc.SegmentedControl(
 )
 ```
 
-.. exec-block::docs.segmentedcontrol.full
+.. exec::docs.segmentedcontrol.full
     :prism: false
 
 ##### Sizes
 
 SegmentedControl supports 5 sizes: xs, sm, md, lg, xl. Size controls font-size and padding properties.
 
-.. exec-block::docs.segmentedcontrol.sizes
+.. exec::docs.segmentedcontrol.sizes
 
 ##### Radius
 
 xs, sm, md, lg, xl radius values are defined in theme.radius. Alternatively, you can use a number to set radius in px.
 
-.. exec-block::docs.segmentedcontrol.radius
+.. exec::docs.segmentedcontrol.radius
 
 ##### Color
 
@@ -76,5 +76,5 @@ dmc.SegmentedControl(
 )
 ```
 
-.. exec-block::docs.segmentedcontrol.colors
+.. exec::docs.segmentedcontrol.colors
     :prism: false

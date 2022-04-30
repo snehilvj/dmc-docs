@@ -13,10 +13,10 @@ etc. and whether it's position will be fixed.
 
 Set `fixed` prop to True if you want to fix the position of the navbar just like in this docs.
 
-.. exec-block::docs.navbar.simple
+.. exec::docs.navbar.simple
 
 ##### Gallery
 
-.. gallery-block::docs.navbar.docs
+.. gallery::docs.navbar.docs
     :label: Navbar similar to these docs
     :center: false

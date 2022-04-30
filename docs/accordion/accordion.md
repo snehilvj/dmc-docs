@@ -8,35 +8,35 @@ component: Accordion
 
 ##### Interactive Demo
 
-.. exec-block::docs.accordion.interactive
+.. exec::docs.accordion.interactive
     :prism: false
 
 ##### Simple Example
 
 This is a basic example showing how you can use accordion. You can also pass a `description` along with the `label`.
 
-.. exec-block::docs.accordion.simple
+.. exec::docs.accordion.simple
 
 ##### Customizing Icons
 
 You can customize icons in your accordion with `icon`, `iconSize` and `iconPosition` props.
 
-.. exec-block::docs.accordion.default
+.. exec::docs.accordion.default
 
 ##### Callbacks and State Management
 
 A `state` is associated with each Accordion component. Click on any section to see how it looks.
 
-.. exec-block::docs.accordion.state
+.. exec::docs.accordion.state
 
 ##### Multiple Items
 
 Pass `multiple=True` flag to allow opening multiple items.
 
-.. exec-block::docs.accordion.multiple
+.. exec::docs.accordion.multiple
 
 ##### Gallery
 
-.. gallery-block::docs.accordion.icons
+.. gallery::docs.accordion.icons
     :center: false
     :label: Customizing accordion with icons

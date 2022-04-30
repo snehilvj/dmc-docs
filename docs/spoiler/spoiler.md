@@ -14,4 +14,4 @@ will just render children.
 
 Props `hideLabel` and `showLabel` are required - they are used as spoiler toggle button label in corresponding state.
 
-.. exec-block::docs.spoiler.simple
+.. exec::docs.spoiler.simple

@@ -28,17 +28,17 @@ dmc.SimpleGrid(
 
 ```
 
-.. exec-block::docs.simplegrid.simple
+.. exec::docs.simplegrid.simple
     :prism: false
 
 ##### Breakpoints
 
 Provide an array to `breakpoints` prop to define responsive behavior:
 
-* `maxWidth` or `minWidth` – max-width or min-width at which media query will work
-* `cols` – number of columns per row at given max-width
-* `spacing` – optional spacing at given max-width, if not provided spacing from component prop will be used instead
+* `maxWidth` or `minWidth` - max-width or min-width at which media query will work
+* `cols` - number of columns per row at given max-width
+* `spacing` - optional spacing at given max-width, if not provided spacing from component prop will be used instead
 
 Resize browser to see breakpoints behavior.
 
-.. exec-block::docs.simplegrid.responsive
+.. exec::docs.simplegrid.responsive

@@ -19,5 +19,5 @@ position inside Group:
 
 ##### Interactive Demo
 
-.. exec-block::docs.group.interactive
+.. exec::docs.group.interactive
     :prism: false

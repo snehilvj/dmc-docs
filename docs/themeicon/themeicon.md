@@ -22,14 +22,14 @@ dmc.ThemeIcon(
 )
 ```
 
-.. exec-block::docs.themeicon.interactive
+.. exec::docs.themeicon.interactive
     :prism: false
 
 ##### Colors
 
 ThemeIcon supports all colors from Mantine's theme colors.
 
-.. exec-block::docs.themeicon.colors
+.. exec::docs.themeicon.colors
 
 ##### Gradient Variant
 
@@ -41,4 +41,4 @@ To use gradient as ThemeIcon background:
 * `color-from` and `color-to` are colors from Mantine's theme colors.
 * `deg` is linear gradient deg.
 
-.. exec-block::docs.themeicon.gradient
+.. exec::docs.themeicon.gradient

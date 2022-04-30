@@ -10,13 +10,13 @@ component: AvatarsGroup
 
 Use AvatarsGroup to stack Avatar components, set `limit` prop to truncate the stack.
 
-.. exec-block::docs.avatarsgroup.simple
+.. exec::docs.avatarsgroup.simple
 
 To override truncated avatars length set `total` prop:
 
-.. exec-block::docs.avatarsgroup.total
+.. exec::docs.avatarsgroup.total
 
 ##### Gallery
 
-.. gallery-block::docs.avatarsgroup.contributors
+.. gallery::docs.avatarsgroup.contributors
     :label: Show contributors in a GitHub project

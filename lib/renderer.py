@@ -4,7 +4,7 @@ from dash import html
 from mistune import AstRenderer, create_markdown
 from mistune.directives import DirectiveToc
 
-from lib.directives import ExecCodeBlock, GalleryBlock, Admonition
+from lib.directives import ExecBlock, GalleryBlock, Admonition
 
 
 def toc_plugin_patch(text, level, state):
@@ -95,5 +95,5 @@ class DmcRenderer(AstRenderer):
 
 markdown = create_markdown(
     renderer=DmcRenderer(),
-    plugins=["table", ExecCodeBlock(), Admonition(), GalleryBlock(), DirectiveToc()],
+    plugins=["table", ExecBlock(), Admonition(), GalleryBlock(), DirectiveToc()],
 )

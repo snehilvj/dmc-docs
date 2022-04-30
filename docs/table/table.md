@@ -12,7 +12,7 @@ Use Table component to add Mantine styled tables in your app. use `dmc.Table` as
 when constructing your table with dash-html-components i.e. `html.Th`, `html.Tr`, `html.Td`, `html.Tbody` and 
 `html.Thead`.
 
-.. exec-block::docs.table.simple
+.. exec::docs.table.simple
 
 ##### Spacing
 
@@ -29,7 +29,7 @@ dmc.Table(
 )
 ```
 
-.. exec-block::docs.table.spacing
+.. exec::docs.table.spacing
     :prism: false
 
 A simple function can be written to construct this table directly from a dataframe.
@@ -58,5 +58,5 @@ dmc.Table(
 )
 ```
 
-.. exec-block::docs.table.striped
+.. exec::docs.table.striped
     :prism: false

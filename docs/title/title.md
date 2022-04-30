@@ -11,4 +11,4 @@ component: Title
 Use Title component to render h1-h6 headings with Mantine theme styles. By default, Title has no margins and paddings.
 Pass the `order` prop to render specific element (h1-h6), default order is 1.
 
-.. exec-block::docs.title.simple
+.. exec::docs.title.simple

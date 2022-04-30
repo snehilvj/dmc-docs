@@ -13,17 +13,17 @@ library.
 
 Use the `format` prop to specify 12 or 24 hour display and the `withSeconds` prop to display seconds.
 
-.. exec-block::docs.timeinput.simple
+.. exec::docs.timeinput.simple
 
 ##### Input Props
 
 TimeInput supports all props from Input and InputWrapper components such as `radius`, `size`, `required`, etc.
 
-.. exec-block::docs.timeinput.input
+.. exec::docs.timeinput.input
     :prism: false
 
 ##### Invalid State And Error
 
 You can display an error with a red border and add an error message.
 
-.. exec-block::docs.timeinput.error
+.. exec::docs.timeinput.error

@@ -10,22 +10,22 @@ component: Modal
 
 This is a basic example of dmc.Modal. You can also customize it by setting the desired `radius` or `padding`.
 
-.. exec-block::docs.modal.simple
+.. exec::docs.modal.simple
 
 ##### Different Sizes
 
 Set the size of the modal using the `size` prop.
 
-.. exec-block::docs.modal.sizes
+.. exec::docs.modal.sizes
 
 ##### Vertically Centered Modal
 
 To vertically center the modal, set `centered=True`.
 
-.. exec-block::docs.modal.vertical
+.. exec::docs.modal.vertical
 
 ##### Modal With Overflow
 
 You can control modal vertical overflow behavior by setting `overflow` prop.
 
-.. exec-block::docs.modal.overflow
+.. exec::docs.modal.overflow

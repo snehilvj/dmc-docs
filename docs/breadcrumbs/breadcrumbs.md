@@ -10,4 +10,4 @@ component: Breadcrumbs
 
 Breadcrumbs accept any react nodes as children and places given separator (defaults to `/`) between them.
 
-.. exec-block::docs.breadcrumbs.simple
+.. exec::docs.breadcrumbs.simple

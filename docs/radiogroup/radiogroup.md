@@ -11,14 +11,14 @@ component: RadioGroup
 Use RadioGroup when you need to capture user feedback limited to small set of options. It can be customized using
 `color`, `spacing`, `size`, etc.
 
-.. exec-block::docs.radiogroup.interactive
+.. exec::docs.radiogroup.interactive
     :prism: false
 
 ##### Callbacks
 
 Use the `value` prop for callbacks.
 
-.. exec-block::docs.radiogroup.callback
+.. exec::docs.radiogroup.callback
 
 ##### Size
 

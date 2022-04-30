@@ -11,8 +11,8 @@ component: LoadingOverlay
 By default, Loader will be rendered with theme.primaryColor. A Loader can be customized with `color`, `size`, and
 `variant` props.
 
-.. exec-block::docs.loadingoverlay.simple
+.. exec::docs.loadingoverlay.simple
 
 ##### Customizing Loader
 
-.. exec-block::docs.loadingoverlay.customize
+.. exec::docs.loadingoverlay.customize

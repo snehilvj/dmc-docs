@@ -16,14 +16,14 @@ component: Notification
 dmc.Notification is not like your conventional dash components. They are more like "instructions" than components. 
 In order to show notifications in your app, just send these instructions as children to any div in your callbacks.
 
-.. exec-block::docs.notification.simple
+.. exec::docs.notification.simple
 
 ##### Updating Notifications
 
 Each notification is identified with an `id`. In order to update/hide a notification, use this `id` along with the 
 `action` prop.
 
-.. exec-block::docs.notification.update
+.. exec::docs.notification.update
 
 ##### Caveats
 
@@ -39,4 +39,4 @@ message = ["This is a notification"]
 
 You can see the difference below:
 
-.. exec-block::docs.notification.caveat
+.. exec::docs.notification.caveat

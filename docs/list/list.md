@@ -8,14 +8,14 @@ component: List
 
 ##### Simple Example
 
-.. exec-block::docs.list.simple
+.. exec::docs.list.simple
 
 ##### Interactive Demo
 
-.. exec-block::docs.list.interactive
+.. exec::docs.list.interactive
     :prism: false
 
 ##### Gallery
 
-.. gallery-block::docs.list.icons
+.. gallery::docs.list.icons
     :label: List with icons

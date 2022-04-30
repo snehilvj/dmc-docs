@@ -8,21 +8,21 @@ component: Progress
 
 ##### Interactive Demo
 
-.. exec-block::docs.progress.interactive
+.. exec::docs.progress.interactive
     :prism: false
 
 ##### Simple Example
 
-Progress component has one required prop: `value` – filled bar width in %. You can change bar color by passing `color`
+Progress component has one required prop: `value` - filled bar width in %. You can change bar color by passing `color`
 prop (by default theme.primaryColor will be used).
 
-.. exec-block::docs.progress.simple
+.. exec::docs.progress.simple
 
 ##### Multiple sections
 
 Multiple sections can be displayed instead of just one single bar.
 
-.. exec-block::docs.progress.sections
+.. exec::docs.progress.sections
 
 ##### Size
 
@@ -53,10 +53,10 @@ dmc.Progress(radius=10)
 
 Labels can be provided for single bars as well as different sections.
 
-.. exec-block::docs.progress.labels
+.. exec::docs.progress.labels
 
 ##### Gallery
 
-.. gallery-block::docs.progress.interval
+.. gallery::docs.progress.interval
     :label: Color changing progress bar
     :center: false

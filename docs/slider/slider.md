@@ -8,14 +8,14 @@ component: Slider
 
 ##### Interactive Demo
 
-.. exec-block::docs.slider.interactive
+.. exec::docs.slider.interactive
     :prism: false
 
 ##### Simple Usage
 
 Use the `value` prop to get the value of the slider.
 
-.. exec-block::docs.slider.simple
+.. exec::docs.slider.simple
 
 ##### Update Mode
 
@@ -24,13 +24,13 @@ the `updatemode` to "drag" instead of "mouseup" (default).
 
 Below is a slider with `updatemode` set to "drag", observe how the output text changes as you drag the slider handle.
 
-.. exec-block::docs.slider.drag
+.. exec::docs.slider.drag
 
 ##### Min, Max, and Step
 
 You can set `min`, `max` and `step` values for Slider component. This will work even for negative and decimal values.
 
-.. exec-block::docs.slider.step
+.. exec::docs.slider.step
 
 ##### Marks
 
@@ -43,5 +43,5 @@ marks = [
 ]
 ```
 
-.. exec-block::docs.slider.marks
+.. exec::docs.slider.marks
     :prism: false

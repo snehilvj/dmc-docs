@@ -11,7 +11,7 @@ component: MantineProvider
 All mantine components support dark color scheme natively without any additional steps. To use dark color scheme wrap
 your application in MantineProvider and specify colorScheme.
 
-.. exec-block::docs.mantineprovider.dark
+.. exec::docs.mantineprovider.dark
 
 ##### Global Styles
 

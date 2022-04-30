@@ -10,11 +10,11 @@ component: Blockquote
 
 A simple blockquote can be created by just passing the main message and `cite` prop.
 
-.. exec-block::docs.blockquote.simple
+.. exec::docs.blockquote.simple
 
 ##### With Icon
 
 Icons can be provided via `icon` prop and its color can be customized using the `color` prop.
 Here's an example using DashIconify.
 
-.. exec-block::docs.blockquote.icon
+.. exec::docs.blockquote.icon

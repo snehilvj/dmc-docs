@@ -9,10 +9,7 @@ controls = [
         "data": ["light", "filled", "outline", "dot", "gradient"],
         "value": "light",
     },
-    {
-        "property": "color",
-        "component": "ColorPicker",
-    },
+    {"property": "color", "component": "ColorPicker"},
     {"property": "size", "component": "DemoSlider", "value": "md"},
     {"property": "radius", "component": "DemoSlider", "value": "xl"},
 ]

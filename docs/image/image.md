@@ -11,8 +11,8 @@ component: Image
 Image component is a wrapper around img element with option to change object fit, radius and placeholder and provide
 caption.
 
-.. exec-block::docs.image.simple
+.. exec::docs.image.simple
 
 ##### Placeholder
 
-.. exec-block::docs.image.placeholder
+.. exec::docs.image.placeholder

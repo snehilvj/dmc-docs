@@ -13,10 +13,10 @@ etc. and whether it's position will be fixed.
 
 Set `fixed` prop to True if you want to fix the position of the header just like in this docs.
 
-.. exec-block::docs.header.simple
+.. exec::docs.header.simple
 
 ##### Gallery
 
-.. gallery-block::docs.header.docs
+.. gallery::docs.header.docs
     :label: Responsive Header similar to these docs
     :center: false

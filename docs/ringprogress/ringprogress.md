@@ -12,7 +12,7 @@ Set `sections` prop to an array of:
 * `value` - number between 0 and 100 - amount of space filled by segment
 * `color` - segment color from theme or any other css color value
 
-.. exec-block::docs.ringprogress.simple
+.. exec::docs.ringprogress.simple
 
 ##### Size, Thickness And Rounded Caps
 
@@ -33,10 +33,10 @@ dmc.RingProgress(
 )
 ```
 
-.. exec-block::docs.ringprogress.interactive
+.. exec::docs.ringprogress.interactive
     :prism: false
 
 ##### Gallery
 
-.. gallery-block::docs.ringprogress.interval
+.. gallery::docs.ringprogress.interval
     :label: Color changing ring progress bar

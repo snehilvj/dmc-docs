@@ -11,7 +11,7 @@ component: Paper
 Paper component renders white (or theme.colors.dark[7] for dark theme) background with shadow, border-radius and
 padding from theme.
 
-.. exec-block::docs.paper.interactive
+.. exec::docs.paper.interactive
     :prism: false
 
 ##### Shadow

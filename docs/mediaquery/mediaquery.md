@@ -10,13 +10,13 @@ component: MediaQuery
 
 MediaQuery component adds styles to child element if given media query matches.
 
-.. exec-block::docs.mediaquery.query
+.. exec::docs.mediaquery.query
 
 ##### LargerThan and SmallerThan props
 
 `largerThan` and `smallerThan` props lets you use Mantine's theme.breakpoints. Change the width of your browser window 
 to see this component in action.
 
-.. exec-block::docs.mediaquery.breakpoints
+.. exec::docs.mediaquery.breakpoints
 
 These docs are made responsive by using MediaQuery wherever possible.

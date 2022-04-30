@@ -27,8 +27,8 @@ class BaseDirective(Directive):
         raise NotImplementedError()
 
 
-class ExecCodeBlock(BaseDirective):
-    directive_name = "exec-block"
+class ExecBlock(BaseDirective):
+    directive_name = "exec"
 
     def parse(self, block, m, state):
         value = m.group("value")
@@ -52,7 +52,7 @@ class ExecCodeBlock(BaseDirective):
 
 
 class GalleryBlock(BaseDirective):
-    directive_name = "gallery-block"
+    directive_name = "gallery"
 
     def parse(self, block, m, state):
         value = m.group("value")

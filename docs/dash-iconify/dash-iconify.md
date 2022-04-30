@@ -26,7 +26,7 @@ poetry add dash-iconify
 
 DashIconify component can be customized with `width`, `height`, `rotate` and `flip` props.
 
-.. exec-block::docs.dash-iconify.props
+.. exec::docs.dash-iconify.props
 
 
 ##### Usage With Dmc
@@ -39,4 +39,4 @@ the look and feel of your apps.
     :icon: radix-icons:info-circled
     Make sure you are passing these extra components in a list, otherwise you will get an error from dash.
 
-.. exec-block::docs.dash-iconify.dmc
+.. exec::docs.dash-iconify.dmc

@@ -10,7 +10,7 @@ component: MultiSelect
 
 MultiSelect component allows user to pick any number of option from the given data.
 
-.. exec-block::docs.multiselect.simple
+.. exec::docs.multiselect.simple
 
 ##### Data Prop
 
@@ -36,23 +36,23 @@ data = [
 Set `searchable` prop to enable search in MultiSelect and use `nothingFound` prop to show a label when no option
 matches the search.
 
-.. exec-block::docs.multiselect.searchable
+.. exec::docs.multiselect.searchable
 
 ##### Clearable
 
 Set `clearable` prop to enable clearing selected values.
 
-.. exec-block::docs.multiselect.clearable
+.. exec::docs.multiselect.clearable
 
 ##### Max Selected Values
 
 You can specify the maximum number of values that can be selected.
 
-.. exec-block::docs.multiselect.max-selected
+.. exec::docs.multiselect.max-selected
 
 ##### Invalid State And Error
 
 You can let the user know if the selected value is invalid. In the example below, you will get an error message if you
 select less than 2 currency pairs.
 
-.. exec-block::docs.multiselect.error
+.. exec::docs.multiselect.error

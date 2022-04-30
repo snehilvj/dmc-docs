@@ -8,7 +8,7 @@ component: Switch
 
 ##### Interactive Demo
 
-.. exec-block::docs.switch.interactive
+.. exec::docs.switch.interactive
     :prism: false
 
 ##### Radius and Size
@@ -30,7 +30,7 @@ dmc.Switch(
 
 Use the property `checked` to use dmc.Switch in callbacks.
 
-.. exec-block::docs.switch.callback
+.. exec::docs.switch.callback
 
 ##### Inner Labels
 
@@ -44,5 +44,5 @@ dmc.Switch(
 )
 ```
 
-.. exec-block::docs.switch.label
+.. exec::docs.switch.label
     :prism: false

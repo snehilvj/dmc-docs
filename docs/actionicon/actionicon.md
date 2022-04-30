@@ -11,7 +11,7 @@ component: ActionIcon
 ActionIcon component is an alternative to Button component. It can be customized with Mantine styles and used with its
 `n_clicks` property.
 
-.. exec-block::docs.actionicon.simple
+.. exec::docs.actionicon.simple
 
 ##### Children
 
@@ -34,13 +34,13 @@ dmc.ActionIcon(
 
 ActionIcon has 6 variants: hover, default, transparent, filled, light and outline.
 
-.. exec-block::docs.actionicon.variant
+.. exec::docs.actionicon.variant
 
 ##### Colors
 
 ActionIcon supports all colors from Mantine's theme.
 
-.. exec-block::docs.actionicon.colors
+.. exec::docs.actionicon.colors
 
 ##### Radius and Size
 

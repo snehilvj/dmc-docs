@@ -11,9 +11,9 @@ component: Loader
 By default, Loader will be rendered with theme.primaryColor. A Loader can be customized with `color`, `size`, and
 `variant` props.
 
-.. exec-block::docs.loader.simple
+.. exec::docs.loader.simple
 
 ##### Interactive Demo
 
-.. exec-block::docs.loader.interactive
+.. exec::docs.loader.interactive
     :prism: false
