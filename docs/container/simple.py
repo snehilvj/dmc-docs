@@ -1,7 +1,12 @@
 import dash_mantine_components as dmc
 from dash import html
 
-style = {"height": 100, "border": "1px solid gray", "marginTop": 20, "marginBottom": 20}
+style = {
+    "height": 100,
+    "border": f"1px solid {dmc.theme.DEFAULT_COLORS['indigo'][4]}",
+    "marginTop": 20,
+    "marginBottom": 20,
+}
 
 component = html.Div(
     children=[

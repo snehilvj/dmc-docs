@@ -17,25 +17,14 @@ controls = [
         "data": ["start", "center", "end"],
         "value": "center",
     },
-      {
-        "property": "withArrow",
-        "component": "Switch",
-        "checked": True,
-    },
-
+    {"property": "withArrow", "component": "Switch", "checked": True},
 ]
 
 demo = dmc.Tooltip(
     label="Tooltip",
     opened=True,
     withArrow=True,
-    children=[
-        dmc.Button(
-            "Tooltip",
-            variant="outline",
-            size="xl",
-        )
-    ],
+    children=[dmc.Button("Tooltip", variant="outline", size="xl")],
 )
 
 component = create_configurator(demo, controls)

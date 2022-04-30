@@ -9,7 +9,7 @@ controls = [
 ]
 
 style = {
-    "backgroundColor": dmc.theme.DEFAULT_COLORS["indigo"][4],
+    "border": f"1px solid {dmc.theme.DEFAULT_COLORS['indigo'][4]}",
     "textAlign": "center",
 }
 
