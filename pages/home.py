@@ -1,3 +1,5 @@
+from os import environ
+
 import dash
 import dash_mantine_components as dmc
 import requests
@@ -27,7 +29,7 @@ def create_head(text):
 def create_contributors_avatars():
     resp = requests.get(
         "https://api.github.com/repos/snehilvj/dash-mantine-components/contributors",
-        headers={"authorization": "token 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"},
+        headers={"authorization": f"token {environ['CONTRIB_TOKEN']}"},
     )
     contributors = resp.json()
     children = []

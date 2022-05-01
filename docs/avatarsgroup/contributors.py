@@ -1,3 +1,5 @@
+from os import environ
+
 import dash_mantine_components as dmc
 import requests
 
@@ -5,7 +7,7 @@ import requests
 def create_contributors_list():
     resp = requests.get(
         "https://api.github.com/repos/snehilvj/dash-mantine-components/contributors",
-        headers={"authorization": "token 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"},
+        headers={"authorization": f"token {environ['CONTRIB_TOKEN']}"},
     )
     contributors = resp.json()
 
