@@ -172,7 +172,7 @@ layout = html.Div(
                             icon="radix-icons:text-align-left",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
-                            href="/components/textinput",
+                            href="/components/select",
                         ),
                     ],
                 )

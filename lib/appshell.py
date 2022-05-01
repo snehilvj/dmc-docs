@@ -34,6 +34,7 @@ def create_header(nav_data):
         children=[
             dmc.Container(
                 fluid=True,
+                style={"paddingRight": 12, "paddingLeft": 12},
                 children=dmc.Group(
                     position="apart",
                     align="flex-start",
@@ -53,7 +54,7 @@ def create_header(nav_data):
                                     ),
                                 ],
                                 href="/",
-                                style={"paddingTop": 5, "textDecoration": "none"},
+                                style={"paddingTop": 3, "textDecoration": "none"},
                             ),
                         ),
                         dmc.Group(
@@ -279,6 +280,10 @@ def create_appshell(nav_data):
                             children=dl.plugins.page_container,
                         ),
                     ),
+                    html.Div(
+                        id="dummy-container-for-header-select",
+                        style={"display": "none"},
+                    ),
                 ]
             ),
         ],
@@ -296,4 +301,28 @@ clientside_callback(
     Output("theme-provider", "theme"),
     Input("color-scheme-toggle", "value"),
     prevent_initial_callback=True,
+)
+
+# noinspection PyProtectedMember
+clientside_callback(
+    """
+    function(children) {
+        return null
+    }
+    """,
+    Output("select-component", "value"),
+    Input(dl.plugins.pages._ID_CONTENT, "children"),
+)
+
+clientside_callback(
+    """
+    function(value) {
+        if (value) {
+            document.getElementById(value).click()
+        }
+        return value
+    }
+    """,
+    Output("dummy-container-for-header-select", "children"),
+    Input("select-component", "value"),
 )
