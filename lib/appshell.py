@@ -86,34 +86,28 @@ def create_header(nav_data):
                                     styles={"display": "none"},
                                 ),
                                 html.A(
-                                    dmc.Tooltip(
-                                        dmc.ThemeIcon(
-                                            DashIconify(
-                                                icon="radix-icons:github-logo",
-                                                width=22,
-                                            ),
-                                            radius=30,
-                                            size=36,
-                                            variant="outline",
-                                            color="gray",
+                                    dmc.ThemeIcon(
+                                        DashIconify(
+                                            icon="radix-icons:github-logo",
+                                            width=22,
                                         ),
-                                        label="Source Code",
+                                        radius=30,
+                                        size=36,
+                                        variant="outline",
+                                        color="gray",
                                     ),
                                     href="https://github.com/snehilvj/dash-mantine-components",
                                 ),
                                 html.A(
-                                    dmc.Tooltip(
-                                        dmc.ThemeIcon(
-                                            DashIconify(
-                                                icon="bi:discord",
-                                                width=22,
-                                                color="#7289da",
-                                            ),
-                                            radius=30,
-                                            size=36,
-                                            variant="outline",
+                                    dmc.ThemeIcon(
+                                        DashIconify(
+                                            icon="bi:discord",
+                                            width=22,
+                                            color="#7289da",
                                         ),
-                                        label="Discord",
+                                        radius=30,
+                                        size=36,
+                                        variant="outline",
                                     ),
                                     href="https://discord.gg/KuJkh4Pyq5",
                                 ),
