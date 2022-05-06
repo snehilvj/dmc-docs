@@ -94,7 +94,6 @@ for file in files:
         path_prefix + make_endpoint(meta.name),
         name=meta.name,
         title="Dash Mantine Components - " + meta.name,
-        description=meta.description,
         section=meta.section,
         layout=layout,
     )
