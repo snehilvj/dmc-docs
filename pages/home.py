@@ -32,7 +32,6 @@ def create_contributors_avatars():
         headers={"authorization": f"token {environ['CONTRIB_TOKEN']}"},
     )
     contributors = resp.json()
-    print(contributors)
     children = []
     for user in contributors:
         avatar = dmc.Tooltip(

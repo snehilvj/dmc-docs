@@ -10,7 +10,6 @@ def create_contributors_list():
         headers={"authorization": f"token {environ['CONTRIB_TOKEN']}"},
     )
     contributors = resp.json()
-    print(contributors)
 
     children = []
     for user in contributors:
