@@ -190,7 +190,7 @@ layout = html.Div(
             )
         ),
         dmc.Space(h=10),
-        create_contributors_avatars(),
+        (create_contributors_avatars() if "CONTRIB_TOKEN" in environ else None),
         dmc.Space(h=40),
         dmc.Center(
             [
