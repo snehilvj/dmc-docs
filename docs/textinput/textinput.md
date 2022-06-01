@@ -36,11 +36,3 @@ Adds icon on the left side of input.
 Adds icon to the right section of input.
 
 .. exec::docs.textinput.right_section
-
-[//]: # (##### Accessibility)
-
-[//]: # ()
-[//]: # (Provide `aria-label` in case you use component without label for screen reader support.)
-
-[//]: # ()
-[//]: # (.. exec::docs.textinput.accessibility)
