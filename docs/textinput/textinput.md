@@ -7,15 +7,11 @@ description: Capture string input from user.
 component: TextInput
 ---
 
-##### Usage
+##### Interactive Demo
 
-.. exec::docs.textinput.usage
-
+.. exec::docs.textinput.interactive
     :prism: false
 
-##### Controlled
-
-.. exec::docs.textinput.controlled
 
 ##### Invalid State and Error
 
@@ -41,8 +37,10 @@ Adds icon to the right section of input.
 
 .. exec::docs.textinput.right_section
 
-##### Accessibility
+[//]: # (##### Accessibility)
 
-Provide `aria-label` in case you use component without label for screen reader support.
+[//]: # ()
+[//]: # (Provide `aria-label` in case you use component without label for screen reader support.)
 
-.. exec::docs.textinput.accessibility
+[//]: # ()
+[//]: # (.. exec::docs.textinput.accessibility)
