@@ -13,5 +13,6 @@ component = dmc.Group(
             error="Enter a valid email",
         ),
     ],
-    direction="center",
+    position="center",
+    direction="column",
 )

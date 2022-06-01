@@ -9,43 +9,40 @@ component: TextInput
 
 ##### Usage
 
-.. exec-code-block::docs.textinput.usage
+.. exec::docs.textinput.usage
+
     :prism: false
 
 ##### Controlled
 
-.. exec-code-block::docs.textinput.controlled
+.. exec::docs.textinput.controlled
 
 ##### Invalid State and Error
 
 Display an error with a red border and add an error message.
 
-.. exec-code-block::docs.textinput.state
+.. exec::docs.textinput.error
 
 ##### Disabled State
 
 Disable user text input.
 
-.. exec-code-block::docs.textinput.disabled
+.. exec::docs.textinput.disabled
 
 ##### With Icon
 
 Adds icon on the left side of input.
 
-.. exec-code-block::docs.textinput.icon
+.. exec::docs.textinput.icon
 
-##### With right section
+##### With rightSection
 
 Adds icon to the right section of input.
 
-.. exec-code-block::docs.textinput.right_section
-
-##### Get input ref
-
-.. exec-code-block::docs.textinput.ref
+.. exec::docs.textinput.right_section
 
 ##### Accessibility
 
 Provide `aria-label` in case you use component without label for screen reader support.
 
-.. exec-code-block::docs.textinput.accessibility
+.. exec::docs.textinput.accessibility

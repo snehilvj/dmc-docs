@@ -11,8 +11,10 @@ component = dmc.Group(
         dmc.TextInput(
             label="Disabled with value:",
             style={"width": 150},
-            disabled='With Value'
+            disabled=True,
+            error='Provide Error Message Here',
         ),
     ],
-    direction="center",
+    position="center",
+    direction="column"
 )
