@@ -8,7 +8,7 @@ from mistune.directives import Directive
 
 
 def create_prism(file):
-    source = Path(file).read_text()
+    source = Path(file).read_text(encoding="utf-8")
     source = source.replace("component = ", "", 1)
     return dmc.Prism(source, language="python")
 
