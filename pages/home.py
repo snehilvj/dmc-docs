@@ -8,14 +8,7 @@ from dash_iconify import DashIconify
 
 from lib.appshell import create_table_of_contents
 
-dash.register_page(
-    __name__,
-    "/",
-    title="Dash Mantine Components",
-    description="Official documentation and collection of ready-made Plotly Dash Components created using Dash "
-    "Mantine Components. Dash Mantine Components is an extensive UI components library for Plotly Dash "
-    "with over 70 components which support dark theme natively.",
-)
+dash.register_page(__name__, "/", title="Dash Mantine Components")
 
 
 def create_title(title, id):
