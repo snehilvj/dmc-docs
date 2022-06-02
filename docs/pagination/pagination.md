@@ -12,15 +12,20 @@ component: Pagination
 .. exec::docs.pagination.interactive
     :prism: false
 
-##### Siblings
+##### Siblings, Page, Grow, and Position
 
-Display an error with a red border and add an error message.
+Control amount of active item siblings, active page, flex-grow property, position
+with the following props:
+* `siblings` - default is 1
+* `page` - default is 1
+* `grow` - default is False
+* `position` - default is left
 
-.. exec::docs.pagination.siblings
+.. exec::docs.pagination.siblings_page_grow_position
 
 ##### Boundaries
 
-Disable user text input.
+Control amount of items displayed after previous and before next buttons with `boundaries` prop:
 
 .. exec::docs.pagination.boundaries
 

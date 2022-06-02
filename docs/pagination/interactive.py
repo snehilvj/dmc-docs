@@ -3,7 +3,6 @@ from lib.configurator import create_configurator
 
 controls = [
 
-
     {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
     {"property": "size", "component": "DemoSlider", "value": "lg"},
     {"property": "radius", "component": "DemoSlider", "value": "sm"},
@@ -17,17 +16,6 @@ controls = [
         "value": 10,
         "min": 1,
         "max": 15,
-        "step": 1,
-
-    },
-
-    {
-        "property": "boundaries",
-        "component": "NumberInput",
-        "description": "Adjust amount of elements visible on left/right edges",
-        "value": 5,
-        "min": 1,
-        "max": 10,
         "step": 1,
 
     },
@@ -47,11 +35,6 @@ controls = [
 
 demo = dmc.Pagination(
     total=10,
-    # direction="column",
-    # withControls=False,
-    # withEdges=False,
-    grow=True,
-    align="stretch"
 )
 
 component = create_configurator(demo, controls)
