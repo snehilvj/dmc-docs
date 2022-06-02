@@ -19,4 +19,4 @@ def create_contributors_list():
     return dmc.AvatarsGroup(children, limit=3, size=50)
 
 
-component = create_contributors_list()
+component = create_contributors_list() if "CONTRIB_TOKEN" in environ else None
