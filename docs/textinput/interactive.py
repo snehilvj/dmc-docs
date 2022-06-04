@@ -2,8 +2,9 @@ import dash_mantine_components as dmc
 from lib.configurator import create_configurator
 
 controls = [
-    {"property": "placeholder", "component": "TextInput", "placeholder": "Your Name"},
-    {"property": "description", "component": "TextInput", "description": "Description"},
+    {"property": "label", "component": "TextInput", "value": "Label"},
+    {"property": "placeholder", "component": "TextInput", "value": "Place Holder"},
+    {"property": "description", "component": "TextInput", "value": "Description"},
     {"property": "error", "component": "TextInput"},
     {
         "property": "variant",
@@ -25,7 +26,6 @@ controls = [
 
 demo = dmc.TextInput(
     label='Full name',
-    placeholder='Your name'
 )
 
 component = create_configurator(demo, controls)
