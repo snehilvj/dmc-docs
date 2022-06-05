@@ -1,18 +1,10 @@
 import dash_mantine_components as dmc
 
-component = dmc.Group(
+component = dmc.Stack(
     children=[
+        dmc.TextInput(label="Your Email:", style={"width": 200}, error=True),
         dmc.TextInput(
-            label="Your Email:",
-            style={"width": 150},
-            error=True
-        ),
-        dmc.TextInput(
-            label="Your Email:",
-            style={"width": 150},
-            error="Enter a valid email",
+            label="Your Email:", style={"width": 200}, error="Enter a valid email"
         ),
     ],
-    position="center",
-    direction="column",
 )

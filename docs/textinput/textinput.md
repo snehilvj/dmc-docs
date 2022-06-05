@@ -1,9 +1,8 @@
 ---
 name: TextInput
-
 section: Inputs & Buttons
-head: Capture string input from user
-description: Capture string input from user.
+head: Capture string input from user.
+description: Use TextInput component to capture string input from user. Customize the input with label, description, error message etc.
 component: TextInput
 ---
 
@@ -12,27 +11,35 @@ component: TextInput
 .. exec::docs.textinput.interactive
     :prism: false
 
-
 ##### Invalid State and Error
 
-Display an error with a red border and add an error message.
+Use `error` prop to convey an error with an error message and a red border around the input.
+
+Note: Dash adds thick red outline to the input element with `:invalid` pseudo-class. This conflicts with Mantine. 
+In order to correct this, just add the following css to your app.
+
+```css
+input:invalid {
+    outline: none !important;
+}
+```
 
 .. exec::docs.textinput.error
 
 ##### Disabled State
 
-Disable user text input.
+Convey disabled input with `disabled` prop.
 
 .. exec::docs.textinput.disabled
 
 ##### With Icon
 
-Adds icon on the left side of input.
+Add icon to the left side of the input.
 
 .. exec::docs.textinput.icon
 
-##### With rightSection
+##### With right section
 
-Adds icon to the right section of input.
+Add icon or loading indicator to the right section of the input.
 
-.. exec::docs.textinput.right_section
+.. exec::docs.textinput.right

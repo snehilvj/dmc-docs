@@ -69,3 +69,7 @@ html {
 #components-navbar, #toc-navbar {
     padding-top: 20px;
 }
+
+input:invalid {
+    outline: none !important;
+}
