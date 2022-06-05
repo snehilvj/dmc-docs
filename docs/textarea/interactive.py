@@ -5,13 +5,13 @@ controls = [
     {
         "property": "placeholder",
         "component": "TextInput",
-        "value": "Your Name",
+        "value": "Your comment",
         "placeholder": "Placeholder",
     },
     {
         "property": "label",
         "component": "TextInput",
-        "value": "Full Name",
+        "value": "Your comment",
         "placeholder": "Label",
     },
     {"property": "description", "component": "TextInput", "placeholder": "Description"},
@@ -21,6 +21,6 @@ controls = [
     {"property": "required", "component": "Switch", "checked": True},
 ]
 
-demo = dmc.TextInput(label="Full Name", placeholder="Your Name", required=True)
+demo = dmc.Textarea(label="Your comment", placeholder="Your comment", required=True)
 
-component = create_configurator(demo, controls)
+component = create_configurator(demo, controls, center=False)

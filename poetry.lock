@@ -141,7 +141,7 @@ python-versions = ">=3.6.*"
 
 [[package]]
 name = "dash-mantine-components"
-version = "0.9.0"
+version = "0.10.1"
 description = "Plotly Dash components based on Mantine"
 category = "main"
 optional = false
@@ -490,7 +490,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ad540ca080588fc6519dbe5caae0fe86e3d2ce1d84ad0e5d7a56516bb18c24aa"
+content-hash = "c2f3323f8b9794e3dc381d79abe3b13f20fbee2bc8b22047b8724cebd430284d"
 
 [metadata.files]
 black = [
@@ -585,8 +585,8 @@ dash-labs = [
     {file = "dash_labs-1.0.3-py3-none-any.whl", hash = "sha256:474a3503c3c1edbfb6a856c78cdf478e59ea8ac6dde4db9aae88f65f05e2b21a"},
 ]
 dash-mantine-components = [
-    {file = "dash_mantine_components-0.9.0-py3-none-any.whl", hash = "sha256:aad6911fe5453d3f078b132078693b216fac279200674163fcb5e4e32458f8d7"},
-    {file = "dash_mantine_components-0.9.0.tar.gz", hash = "sha256:570b66834c830902881f3ef14596be0a33dcc98d36b4231f80381c02fc50aa41"},
+    {file = "dash_mantine_components-0.10.1-py3-none-any.whl", hash = "sha256:38a5a4b1484fdc4f89e07a6e7f0a2b2ee64ac47bae7ec4f511fa076caa66f011"},
+    {file = "dash_mantine_components-0.10.1.tar.gz", hash = "sha256:ffbdac64dc1d6c5e6113b4bced902dd38a29f4ce5dbe2380fe6a4c9e3a0b9f1f"},
 ]
 dash-table = [
     {file = "dash_table-5.0.0.tar.gz", hash = "sha256:18624d693d4c8ef2ddec99a6f167593437a7ea0bf153aa20f318c170c5bc7308"},
