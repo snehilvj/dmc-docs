@@ -1,9 +1,0 @@
-previewsEnabled: true
-previewsExpireAfterDays: 3
-services:
-  - type: web
-    previewPlan: starter
-    name: dmc-docs
-    env: python
-    startCommand: gunicorn run:server
-    buildCommand: pip install -r requirements.txt
