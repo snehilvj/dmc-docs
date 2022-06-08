@@ -72,7 +72,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "dash"
-version = "2.3.0"
+version = "2.5.0"
 description = "A Python framework for building reactive web-apps. Developed by Plotly."
 category = "main"
 optional = false
@@ -88,7 +88,7 @@ plotly = ">=5.0.0"
 
 [package.extras]
 celery = ["redis (>=3.5.3)", "celery[redis] (>=5.1.2)"]
-ci = ["black (==21.6b0)", "dash-flow-example (==0.0.5)", "dash-dangerously-set-inner-html", "flake8 (==3.9.2)", "flaky (==3.7.0)", "flask-talisman (==0.8.1)", "mimesis", "mock (==4.0.3)", "numpy", "preconditions", "pylint (==2.10.2)", "pytest-mock (==3.2.0)", "pytest-sugar (==0.9.4)", "isort (==4.3.21)", "orjson (==3.5.4)", "pyarrow (<3)", "pandas (==1.1.5)", "xlrd (<2)", "orjson (==3.6.3)", "pyarrow", "openpyxl", "pandas (>=1.4.0)", "xlrd (>=2.0.1)"]
+ci = ["dash-flow-example (==0.0.5)", "dash-dangerously-set-inner-html", "flake8 (==3.9.2)", "flaky (==3.7.0)", "flask-talisman (==1.0.0)", "mimesis", "mock (==4.0.3)", "numpy", "preconditions", "pylint (==2.13.5)", "pytest-mock", "pytest-sugar (==0.9.4)", "pytest-rerunfailures", "black (==21.6b0)", "isort (==4.3.21)", "orjson (==3.5.4)", "pyarrow (<3)", "pandas (==1.1.5)", "xlrd (<2)", "black (==22.3.0)", "orjson (==3.6.7)", "pyarrow", "openpyxl", "pandas (>=1.4.0)", "xlrd (>=2.0.1)"]
 dev = ["coloredlogs (>=15.0.1)", "fire (>=0.4.0)", "PyYAML (>=5.4.1)"]
 diskcache = ["diskcache (>=5.2.1)", "multiprocess (>=0.70.12)", "psutil (>=5.8.0)"]
 testing = ["beautifulsoup4 (>=4.8.2)", "lxml (>=4.6.2)", "percy (>=2.0.2)", "pytest (>=6.0.2)", "requests[security] (>=2.21.0)", "selenium (>=3.141.0)", "waitress (>=1.4.4)", "cryptography (<3.4)"]
@@ -132,16 +132,8 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "dash-labs"
-version = "1.0.3"
-description = "Experimental enhancements for potential inclusion in Dash"
-category = "main"
-optional = false
-python-versions = ">=3.6.*"
-
-[[package]]
 name = "dash-mantine-components"
-version = "0.10.1"
+version = "0.10.2"
 description = "Plotly Dash components based on Mantine"
 category = "main"
 optional = false
@@ -490,7 +482,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "c2f3323f8b9794e3dc381d79abe3b13f20fbee2bc8b22047b8724cebd430284d"
+content-hash = "cfc003ca01c2423215a5ecaaadb7492bdc5a3c3b2d1d6e31970df88c7594e347"
 
 [metadata.files]
 black = [
@@ -563,8 +555,8 @@ colorama = [
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 dash = [
-    {file = "dash-2.3.0-py3-none-any.whl", hash = "sha256:1a25ff4bc0602231034f9fc632ed0c5effee9971e610c40236bec54831de6ee2"},
-    {file = "dash-2.3.0.tar.gz", hash = "sha256:bdfd227303f487f821ad10bc011ba6a88ccf397402f3b0fb4f0a66047cafad10"},
+    {file = "dash-2.5.0-py3-none-any.whl", hash = "sha256:aaec03c6944b73873e1651989d5f32482735b18862b95fe727dff13b6b5028e4"},
+    {file = "dash-2.5.0.tar.gz", hash = "sha256:816e78b6d41c04076e83b4858348d164e380eb6fa50e6770d51c7ac9a4b20879"},
 ]
 dash-core-components = [
     {file = "dash_core_components-2.0.0.tar.gz", hash = "sha256:c6733874af975e552f95a1398a16c2ee7df14ce43fa60bb3718a3c6e0b63ffee"},
@@ -580,13 +572,9 @@ dash-iconify = [
     {file = "dash_iconify-0.1.0-py3-none-any.whl", hash = "sha256:267693fb16492f87945a8ee160a320156e61bba23a3ee6372def0d9cedcebb89"},
     {file = "dash_iconify-0.1.0.tar.gz", hash = "sha256:c705a0b6c0b8a0a0e2b49fe80d5a3a8649c739632c02286c06c667fb0849c935"},
 ]
-dash-labs = [
-    {file = "dash-labs-1.0.3.tar.gz", hash = "sha256:5be2e5568e4831330648bf68cb39507d9622adaa66a32a38cd61eb7242594cb8"},
-    {file = "dash_labs-1.0.3-py3-none-any.whl", hash = "sha256:474a3503c3c1edbfb6a856c78cdf478e59ea8ac6dde4db9aae88f65f05e2b21a"},
-]
 dash-mantine-components = [
-    {file = "dash_mantine_components-0.10.1-py3-none-any.whl", hash = "sha256:38a5a4b1484fdc4f89e07a6e7f0a2b2ee64ac47bae7ec4f511fa076caa66f011"},
-    {file = "dash_mantine_components-0.10.1.tar.gz", hash = "sha256:ffbdac64dc1d6c5e6113b4bced902dd38a29f4ce5dbe2380fe6a4c9e3a0b9f1f"},
+    {file = "dash_mantine_components-0.10.2-py3-none-any.whl", hash = "sha256:e63ea6c623260e0f84ac4aee9c1928272adf3ca20478fd80bafce04eff017f8f"},
+    {file = "dash_mantine_components-0.10.2.tar.gz", hash = "sha256:5ec838653b856ae55869b7c661b7d74d2799c1259aa3ebaf57346c6a2f7282ea"},
 ]
 dash-table = [
     {file = "dash_table-5.0.0.tar.gz", hash = "sha256:18624d693d4c8ef2ddec99a6f167593437a7ea0bf153aa20f318c170c5bc7308"},
