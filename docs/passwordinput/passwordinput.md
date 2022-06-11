@@ -2,39 +2,42 @@
 name: PasswordInput
 
 section: Inputs & Buttons
-head: Capture password from user with option to toggle visibility
-description: Capture password from user with option to toggle visibility
+head: Capture password from user with an option to toggle visibility.
+description: Use PasswordInput to capture password from user with an option to toggle visibility.
 component: PasswordInput
 ---
 
 ##### Interactive Demo
 
+Use PasswordInput when you need to capture password from user. Component provides an option to toggle password 
+visibility, if you do not want this feature, use [TextInput](/components/textinput) component with `type="password"`.
+
 .. exec::docs.passwordinput.interactive
     :prism: false
 
-##### Password Strength
-
-Password strength meter example with [Progress](/components/progress) and 
-[List](/components/list) components:
-
-.. exec::docs.passwordinput.password_requirement
-
-
 ##### Invalid State and Error
 
-Display an error with a red border and add an error message.
+Use `error` prop to convey an error with an error message and a red border around the input.
+
+Note: Dash adds thick red outline to the input element with `:invalid` pseudo-class. This conflicts with Mantine. 
+In order to correct this, just add the following css to your app.
+
+```css
+input:invalid {
+    outline: none !important;
+}
+```
 
 .. exec::docs.passwordinput.error
 
 ##### Disabled State
 
-In disabled state, button to toggle password visibility id not displayed:
+Convey disabled input with `disabled` prop.
 
 .. exec::docs.passwordinput.disabled
 
 ##### With Icon
 
-Adds icon on the left side of input.
+Add icon to the left side of the input.
 
 .. exec::docs.passwordinput.icon
-

@@ -1,17 +1,19 @@
 import dash_mantine_components as dmc
 
 
-component = dmc.Group(
+component = dmc.Stack(
     [
         dmc.PasswordInput(
+            label="Your password",
             placeholder="Your password",
-            style={"width": 200},
+            style={"width": 250},
             error=True,
         ),
         dmc.PasswordInput(
-            placeholder="Your password", style={"width": 200}, error="Invalid Password"
+            label="Your password",
+            placeholder="Your password",
+            style={"width": 250},
+            error="Invalid Password",
         ),
     ],
-    direction="column",
-    position="center",
 )

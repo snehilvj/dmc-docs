@@ -1,38 +1,37 @@
 import dash_mantine_components as dmc
-from dash import html
+
 from lib.configurator import create_configurator
-from dash_iconify import DashIconify
-
-variants = {"Default": "default", "Filled": "filled", "Unstyled": "unstyled"}
-
 
 controls = [
-    {"property": "placeholder", "component": "TextInput", "value": "Password"},
+    {
+        "property": "placeholder",
+        "component": "TextInput",
+        "value": "Password",
+        "placeholder": "Placeholder",
+    },
+    {
+        "property": "label",
+        "component": "TextInput",
+        "value": "Password",
+        "placeholder": "Label",
+    },
     {
         "property": "description",
         "component": "TextInput",
-        "value": "Password must include at least..",
-        "style": {"width": 350},
+        "placeholder": "Description",
+        "value": "Password must include at least one letter, number and special character",
     },
-    {"property": "label", "component": "TextInput", "value": "Password"},
-    {"property": "error", "component": "TextInput"},
-    {
-        "property": "variant",
-        "component": "Select",
-        "data": [
-            {"value": f"{value}", "label": f"{key}"} for key, value in variants.items()
-        ],
-        "value": "default",
-    },
+    {"property": "error", "component": "TextInput", "placeholder": "Error"},
     {"property": "size", "component": "DemoSlider", "value": "sm"},
     {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "disabled", "component": "Switch", "checked": False},
     {"property": "required", "component": "Switch", "checked": True},
 ]
 
 demo = dmc.PasswordInput(
-    icon=[DashIconify(icon="bi:shield-lock")], style={"width": 350}
+    label="Password",
+    placeholder="Password",
+    description="Password must include at least one letter, number and special character",
+    required=True,
 )
-
 
 component = create_configurator(demo, controls)
