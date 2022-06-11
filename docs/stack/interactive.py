@@ -1,51 +1,34 @@
 import dash_mantine_components as dmc
+from dash import html
+
 from lib.configurator import create_configurator
 
-aligns = {
-    "Stretch": "stretch",
-    "Center": "center",
-    "Flex-End": "flex-end",
-    "Flex-Start": "flex-start",
-}
-
-justifies = {
-    "Space-between": "space-between",
-    "Space-around": "space-around",
-    "Center": "center",
-    "Flex-End": "flex-end",
-    "Flex-Start": "flex-start",
-}
 
 controls = [
     {
         "property": "align",
         "component": "Select",
-        "data": [
-            {"value": f"{value}", "label": f"{key}"} for key, value in aligns.items()
-        ],
-        "value": "center",
+        "data": ["stretch", "center", "flex-end", "flex-start"],
+        "value": "stretch",
     },
     {
         "property": "justify",
         "component": "Select",
-        "data": [
-            {"value": f"{value}", "label": f"{key}"} for key, value in justifies.items()
-        ],
+        "data": ["space-between", "space-around", "center", "flex-end", "flex-start"],
         "value": "center",
     },
     {"property": "spacing", "component": "DemoSlider", "value": "sm"},
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
 ]
 
 demo = dmc.Stack(
     [
-        dmc.Button("1", variant="outline"),
-        dmc.Button("2", variant="outline"),
-        dmc.Button("3", variant="outline"),
+        dmc.Button("1", fullWidth=True, variant="outline"),
+        dmc.Button("2", fullWidth=True, variant="outline"),
+        dmc.Button("3", fullWidth=True, variant="outline"),
     ],
-    align="flex-end",
-    spacing="xl",
-    justify="flex-start",
+    style={"height": 200},
+    align="stretch",
+    justify="center",
 )
 
-component = create_configurator(demo, controls)
+component = create_configurator(demo, controls, center=False)

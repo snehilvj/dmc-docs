@@ -7,4 +7,5 @@ component = dmc.Stack(
         dmc.Button("3", variant="outline"),
     ],
     align="center",
+    spacing="xl",
 )
