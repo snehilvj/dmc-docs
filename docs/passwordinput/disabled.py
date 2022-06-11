@@ -8,7 +8,6 @@ component = dmc.Group(
             style={"width": 200},
             disabled=True,
         ),
-
         dmc.PasswordInput(
             label="Disabled with value",
             value="Password",
@@ -17,5 +16,5 @@ component = dmc.Group(
         ),
     ],
     direction="column",
-    position="center"
+    position="center",
 )

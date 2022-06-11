@@ -2,8 +2,6 @@ import dash_mantine_components as dmc
 from lib.configurator import create_configurator
 
 controls = [
-
-
     {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
     {"property": "size", "component": "DemoSlider", "value": "lg"},
     {"property": "radius", "component": "DemoSlider", "value": "sm"},
@@ -18,9 +16,7 @@ controls = [
         "min": 1,
         "max": 15,
         "step": 1,
-
     },
-
     {
         "property": "boundaries",
         "component": "NumberInput",
@@ -29,20 +25,16 @@ controls = [
         "min": 1,
         "max": 10,
         "step": 1,
-
     },
-
     {
-        "property": "direction", "component": "SegmentedControl",
+        "property": "direction",
+        "component": "SegmentedControl",
         "data": [
-
             {"value": "row", "label": "Row"},
             {"value": "column", "label": "Column"},
-
         ],
-        "value": "row"
+        "value": "row",
     },
-
 ]
 
 demo = dmc.Pagination(
@@ -51,7 +43,7 @@ demo = dmc.Pagination(
     # withControls=False,
     # withEdges=False,
     grow=True,
-    align="stretch"
+    align="stretch",
 )
 
 component = create_configurator(demo, controls)

@@ -1,20 +1,12 @@
 ---
 name: Timeline
 section: Data Display
-head: Display list of events in chronological order
-description: Use Timeline to list events in chronological order.
+head: Display list of events in chronological order.
+description: Use the Timeline and TimelineItem components to display a list of events in chronological order.
 component: Timeline
 ---
 
-
-##### Simple Example
-
-This is a basic example showing how you can use timeline.
-
-.. exec::docs.timeline.simple
-
-
-##### Interactive Demo
+##### Usage
 
 Control timeline appearance with the following props:
 
@@ -25,14 +17,15 @@ Control timeline appearance with the following props:
 - `bulletSize` – bullet width, height and border-radius in px
 - `align` – defines line and bullets position relative to content, also sets text-align
 
+.. exec::docs.timeline.simple
+    :center: true
+
+##### Interactive Demo
 
 .. exec::docs.timeline.interactive
     :prism: false
 
-
-
 ##### Gallery
 
 .. gallery::docs.timeline.icons
-    :center: false
     :label: Customizing timeline bullets with icons

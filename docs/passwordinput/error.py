@@ -8,13 +8,10 @@ component = dmc.Group(
             style={"width": 200},
             error=True,
         ),
-
         dmc.PasswordInput(
-            placeholder="Your password",
-            style={"width": 200},
-            error="Invalid Password"
+            placeholder="Your password", style={"width": 200}, error="Invalid Password"
         ),
     ],
     direction="column",
-    position="center"
+    position="center",
 )

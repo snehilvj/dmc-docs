@@ -2,52 +2,71 @@ import dash_mantine_components as dmc
 
 
 component = dmc.Timeline(
-    [
+    active=1,
+    bulletSize=15,
+    lineWidth=2,
+    children=[
         dmc.TimelineItem(
-            [
-                dmc.Text(
-                    "You've created 'fix-notification' branch",
-                    color="dimmed",
-                    size="sm",
-                ),
-                dmc.Text("2 hours ago", size="xs"),
-            ],
             title="New Branch",
-        ),
-        dmc.TimelineItem(
-            [
+            children=[
                 dmc.Text(
-                    "You've pushed 23 commits to 'fix-notification' branch",
+                    [
+                        "You've created new branch ",
+                        dmc.Anchor("fix-notification", href="#", size="sm"),
+                        " from master",
+                    ],
                     color="dimmed",
                     size="sm",
                 ),
-                dmc.Text("42 minutes ago", size="xs"),
             ],
+        ),
+        dmc.TimelineItem(
             title="Commits",
-        ),
-        dmc.TimelineItem(
-            [
+            children=[
                 dmc.Text(
-                    "You've submitted a pull request 'Fix incorrect notification message (#178)'",
+                    [
+                        "You've pushed 23 commits to ",
+                        dmc.Anchor("fix-notification", href="#", size="sm"),
+                    ],
                     color="dimmed",
                     size="sm",
                 ),
-                dmc.Text("32 minutes ago", size="xs"),
             ],
+        ),
+        dmc.TimelineItem(
             title="Pull Request",
             lineVariant="dashed",
+            children=[
+                dmc.Text(
+                    [
+                        "You've submitted a pull request ",
+                        dmc.Anchor(
+                            "Fix incorrect notification message (#178)",
+                            href="#",
+                            size="sm",
+                        ),
+                    ],
+                    color="dimmed",
+                    size="sm",
+                ),
+            ],
         ),
         dmc.TimelineItem(
             [
                 dmc.Text(
-                    "Snehil left a comment on your pull request",
+                    [
+                        dmc.Anchor(
+                            "Ann Marie Ward",
+                            href="https://github.com/AnnMarieW",
+                            size="sm",
+                        ),
+                        " left a comment on your pull request",
+                    ],
                     color="dimmed",
                     size="sm",
                 ),
-                dmc.Text("12 minutes ago", size="xs"),
             ],
             title="Code Review",
         ),
     ],
-    active=3,
 )

@@ -6,11 +6,9 @@ component = dmc.Group(
         dmc.PasswordInput(
             label="Your password:",
             style={"width": 250},
-            placeholder='Your password',
-            icon=[DashIconify(icon='bi:shield-lock')],
+            placeholder="Your password",
+            icon=[DashIconify(icon="bi:shield-lock")],
         ),
-
     ],
     position="center",
 )
-

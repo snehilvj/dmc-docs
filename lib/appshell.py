@@ -73,7 +73,7 @@ def create_header(nav_data):
                                             component["name"]
                                             for component in nav_data
                                             if component["name"]
-                                               not in ["Home", "Not found 404"]
+                                            not in ["Home", "Not found 404"]
                                         ],
                                         icon=[
                                             DashIconify(
@@ -221,7 +221,7 @@ def create_navbar(nav_data):
         dmc.Group(
             grow=True,
             position="left",
-            spacing="xs",
+            spacing="sm",
             direction="column",
             style={"paddingLeft": 30, "paddingRight": 20},
             children=[main_links] + links + [dmc.Space(h=20)],

@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 
-component = dmc.Group([
-
+component = dmc.Group(
+    [
         dmc.Pagination(
             total=20,
             # direction="column",
@@ -9,9 +9,8 @@ component = dmc.Group([
             # withEdges=False,
             grow=True,
             align="stretch",
-            siblings=1
+            siblings=1,
         ),
-
         dmc.Pagination(
             total=20,
             # direction="column",
@@ -19,9 +18,8 @@ component = dmc.Group([
             # withEdges=False,
             grow=True,
             align="stretch",
-            siblings=2
+            siblings=2,
         ),
-
         dmc.Pagination(
             total=20,
             # direction="column",
@@ -29,7 +27,7 @@ component = dmc.Group([
             # withEdges=False,
             grow=True,
             align="stretch",
-            siblings=3
-        )
+            siblings=3,
+        ),
     ]
 )
