@@ -48,7 +48,7 @@ class ExecBlock(BaseDirective):
             source = create_prism(imported.__file__)
             source.style = {"marginTop": 10}
             components.append(source)
-        return html.Div(components, style={"marginBottom": 10})
+        return html.Div(components, style={"marginBottom": 10, "marginTop": 20})
 
 
 class GalleryBlock(BaseDirective):
