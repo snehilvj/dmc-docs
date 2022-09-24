@@ -129,7 +129,7 @@ layout = html.Div(
                                     DashIconify(icon="akar-icons:heart", width=19)
                                 ],
                             ),
-                            href="https://github.com/sponsors/snehilvj/button",
+                            href="https://github.com/sponsors/snehilvj",
                         ),
                     ],
                     position="center",
