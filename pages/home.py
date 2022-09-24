@@ -120,6 +120,17 @@ layout = html.Div(
                             ),
                             href="https://github.com/snehilvj/dash-mantine-components",
                         ),
+                        html.A(
+                            dmc.Button(
+                                "Sponsor",
+                                variant="outline",
+                                color="red",
+                                leftIcon=[
+                                    DashIconify(icon="akar-icons:heart", width=19)
+                                ],
+                            ),
+                            href="https://github.com/sponsors/snehilvj/button",
+                        ),
                     ],
                     position="center",
                     style={"marginTop": 20, "marginBottom": 90},
@@ -198,7 +209,7 @@ layout = html.Div(
                     spacing="xs",
                     children=[
                         dmc.Text("Made with"),
-                        DashIconify(icon="radix-icons:heart", width=20, color="red"),
+                        DashIconify(icon="akar-icons:heart", width=20, color="red"),
                         dmc.Text("by Snehil Vijay"),
                     ],
                 )
