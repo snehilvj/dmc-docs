@@ -103,7 +103,7 @@ def create_header(nav_data):
                                                 DashIconify(
                                                     icon="akar-icons:heart", width=18
                                                 ),
-                                                variant="default",
+                                                variant="outline",
                                                 size="lg",
                                             ),
                                             target="_blank",
@@ -115,7 +115,7 @@ def create_header(nav_data):
                                                     icon="radix-icons:github-logo",
                                                     width=20,
                                                 ),
-                                                variant="default",
+                                                variant="outline",
                                                 size="lg",
                                             ),
                                             target="_blank",
@@ -129,7 +129,7 @@ def create_header(nav_data):
                             ),
                             dmc.ActionIcon(
                                 DashIconify(icon="radix-icons:sun", width=18),
-                                variant="default",
+                                variant="outline",
                                 size="lg",
                                 id="color-scheme-toggle",
                             ),
@@ -219,6 +219,35 @@ def create_side_navbar(nav_data):
             ],
         ),
         smallerThan="lg",
+        styles={"display": "none"},
+    )
+
+
+def create_table_of_contents(toc_items):
+    children = []
+    for url, name, _ in toc_items:
+        children.append(
+            dmc.Anchor(
+                name,
+                style={"textTransform": "capitalize", "textDecoration": "none"},
+                href=url,
+                size="sm",
+                color="gray",
+            )
+        )
+
+    heading = dmc.Text("Table of Contents", mb=10, weight=500)
+    toc = dmc.Stack([heading, *children], spacing=0, px=25, mt=20)
+
+    return dmc.MediaQuery(
+        dmc.Aside(
+            id="toc-navbar",
+            position={"top": 70, "right": 0},
+            fixed=True,
+            width={"base": 300},
+            children=toc,
+        ),
+        smallerThan=1500,
         styles={"display": "none"},
     )
 
