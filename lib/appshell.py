@@ -204,22 +204,18 @@ def create_side_nave_content(nav_data):
 
 
 def create_side_navbar(nav_data):
-    return dmc.MediaQuery(
-        dmc.Navbar(
-            id="components-navbar",
-            fixed=True,
-            position={"top": 70},
-            width={"base": 300},
-            children=[
-                dmc.ScrollArea(
-                    offsetScrollbars=True,
-                    type="scroll",
-                    children=create_side_nave_content(nav_data),
-                )
-            ],
-        ),
-        smallerThan="lg",
-        styles={"display": "none"},
+    return dmc.Navbar(
+        fixed=True,
+        id="components-navbar",
+        position={"top": 70},
+        width={"base": 300},
+        children=[
+            dmc.ScrollArea(
+                offsetScrollbars=True,
+                type="scroll",
+                children=create_side_nave_content(nav_data),
+            )
+        ],
     )
 
 
@@ -232,23 +228,19 @@ def create_table_of_contents(toc_items):
                 style={"textTransform": "capitalize", "textDecoration": "none"},
                 href=url,
                 size="sm",
-                color="gray",
+                variant="text",
             )
         )
 
     heading = dmc.Text("Table of Contents", mb=10, weight=500)
-    toc = dmc.Stack([heading, *children], spacing=0, px=25, mt=20)
+    toc = dmc.Stack([heading, *children], spacing="xs", px=25, mt=20)
 
-    return dmc.MediaQuery(
-        dmc.Aside(
-            id="toc-navbar",
-            position={"top": 70, "right": 0},
-            fixed=True,
-            width={"base": 300},
-            children=toc,
-        ),
-        smallerThan=1500,
-        styles={"display": "none"},
+    return dmc.Aside(
+        position={"top": 70, "right": 0},
+        fixed=True,
+        id="toc-navbar",
+        width={"base": 300},
+        children=toc,
     )
 
 
@@ -263,8 +255,11 @@ def create_appshell(nav_data):
         withGlobalStyles=True,
         withNormalizeCSS=True,
         children=[
+            dcc.Location(id="url"),
             create_header(nav_data),
             create_side_navbar(nav_data),
-            page_container,
+            html.Div(
+                dmc.Container(size="lg", pt=90, children=page_container), id="wrapper"
+            ),
         ],
     )
