@@ -86,7 +86,7 @@ def create_header(nav_data):
                                         component["name"]
                                         for component in nav_data
                                         if component["name"]
-                                        not in ["Home", "Not found 404"]
+                                           not in ["Home", "Not found 404"]
                                     ],
                                     icon=DashIconify(
                                         icon="radix-icons:magnifying-glass"
@@ -128,7 +128,7 @@ def create_header(nav_data):
                                 styles={"display": "none"},
                             ),
                             dmc.ActionIcon(
-                                DashIconify(icon="radix-icons:sun", width=18),
+                                DashIconify(icon="radix-icons:moon", width=18),
                                 variant="outline",
                                 size="lg",
                                 id="color-scheme-toggle",
@@ -246,20 +246,54 @@ def create_table_of_contents(toc_items):
 
 def create_appshell(nav_data):
     return dmc.MantineProvider(
-        theme={
-            "colorScheme": "light",
-            "fontFamily": "'Inter', sans-serif",
-            "primaryColor": "indigo",
-            "components": {"Button": {"styles": {"root": {"fontWeight": 400}}}},
-        },
+        dmc.MantineProvider(
+            theme={
+                "fontFamily": "'Inter', sans-serif",
+                "primaryColor": "indigo",
+                "components": {"Button": {"styles": {"root": {"fontWeight": 400}}}},
+            },
+            inherit=True,
+            children=[
+                dcc.Location(id="url"),
+                create_header(nav_data),
+                create_side_navbar(nav_data),
+                html.Div(
+                    dmc.Container(size="lg", pt=90, children=page_container),
+                    id="wrapper",
+                ),
+                html.Div(
+                    id="dummy-container-for-header-select",
+                    style={"display": "none"},
+                ),
+            ],
+        ),
+        theme={"colorScheme": "light"},
+        id="mantine-docs-theme-provider",
         withGlobalStyles=True,
         withNormalizeCSS=True,
-        children=[
-            dcc.Location(id="url"),
-            create_header(nav_data),
-            create_side_navbar(nav_data),
-            html.Div(
-                dmc.Container(size="lg", pt=90, children=page_container), id="wrapper"
-            ),
-        ],
     )
+
+
+# noinspection PyProtectedMember
+clientside_callback(
+    """
+    function(children) {
+        return null
+    }
+    """,
+    Output("select-component", "value"),
+    Input("_pages_content", "children"),
+)
+
+clientside_callback(
+    """
+    function(value) {
+        if (value) {
+            document.getElementById(value).click()
+        }
+        return value
+    }
+    """,
+    Output("dummy-container-for-header-select", "children"),
+    Input("select-component", "value"),
+)
