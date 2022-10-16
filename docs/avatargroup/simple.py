@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-component = dmc.AvatarsGroup(
+component = dmc.AvatarGroup(
     children=[
         dmc.Avatar(src="https://avatars.githubusercontent.com/u/91216500?v=4"),
         dmc.Avatar(),
