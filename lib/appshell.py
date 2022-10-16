@@ -82,11 +82,12 @@ def create_header(nav_data):
                                     nothingFound="No match found",
                                     searchable=True,
                                     clearable=True,
+
                                     data=[
                                         component["name"]
                                         for component in nav_data
                                         if component["name"]
-                                           not in ["Home", "Not found 404"]
+                                        not in ["Home", "Not found 404"]
                                     ],
                                     icon=DashIconify(
                                         icon="radix-icons:magnifying-glass"
@@ -105,6 +106,7 @@ def create_header(nav_data):
                                                 ),
                                                 variant="outline",
                                                 size="lg",
+                                                color="red"
                                             ),
                                             target="_blank",
                                             href="https://github.com/sponsors/snehilvj",
@@ -115,7 +117,7 @@ def create_header(nav_data):
                                                     icon="radix-icons:github-logo",
                                                     width=20,
                                                 ),
-                                                variant="outline",
+                                                variant="default",
                                                 size="lg",
                                             ),
                                             target="_blank",
@@ -131,6 +133,7 @@ def create_header(nav_data):
                                 DashIconify(icon="mdi:theme-light-dark", width=18),
                                 variant="outline",
                                 size="lg",
+                                color="yellow",
                                 id="color-scheme-toggle",
                             ),
                             dmc.MediaQuery(
@@ -240,6 +243,7 @@ def create_table_of_contents(toc_items):
         fixed=True,
         id="toc-navbar",
         width={"base": 300},
+        zIndex=10,
         children=toc,
     )
 
@@ -250,7 +254,11 @@ def create_appshell(nav_data):
             theme={
                 "fontFamily": "'Inter', sans-serif",
                 "primaryColor": "indigo",
-                "components": {"Button": {"styles": {"root": {"fontWeight": 400}}}},
+                "components": {
+                    "Button": {"styles": {"root": {"fontWeight": 400}}},
+                    "Alert": {"styles": {"title": {"fontWeight": 500}}},
+                    "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+                },
             },
             inherit=True,
             children=[

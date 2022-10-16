@@ -23,7 +23,7 @@ def create_title(title, id):
 
 
 def create_head(text):
-    return dmc.Text(text, align="center", style={"margin": "10px 0"})
+    return dmc.Text(text, align="center", my=10, mx=0)
 
 
 def create_contributors_avatars():
@@ -35,7 +35,7 @@ def create_contributors_avatars():
     children = []
     for user in contributors:
         avatar = dmc.Tooltip(
-            html.A(dmc.Avatar(src=user["avatar_url"]), href=user["html_url"]),
+            dmc.Anchor(dmc.Avatar(src=user["avatar_url"]), href=user["html_url"]),
             label=user["login"],
             position="bottom",
         )
@@ -45,12 +45,11 @@ def create_contributors_avatars():
 
 
 def Tile(icon, heading, description, href):
-    return dcc.Link(
+    return dmc.Anchor(
         dmc.Paper(
             p="lg",
             withBorder=True,
-            children=dmc.Group(
-                direction="column",
+            children=dmc.Stack(
                 spacing=0,
                 align="center",
                 children=[
@@ -60,23 +59,21 @@ def Tile(icon, heading, description, href):
                         radius=40,
                         variant="light",
                     ),
-                    dmc.Text(
-                        heading,
-                        style={"marginTop": 20, "marginBottom": 10},
-                    ),
+                    dmc.Text(heading, mb=10, mt=20),
                     dmc.Text(
                         description,
                         color="dimmed",
                         align="center",
                         size="sm",
-                        style={"lineHeight": 1.6, "marginBottom": 10},
+                        mb=10,
+                        style={"lineHeight": 1.6},
                     ),
                 ],
             ),
-            style={"marginBottom": 30},
+            mb=30,
         ),
         href=href,
-        style={"textDecoration": "none"},
+        underline=False,
     )
 
 
@@ -84,7 +81,7 @@ layout = html.Div(
     [
         dmc.Container(
             size="lg",
-            style={"marginTop": 30},
+            mt=30,
             children=[
                 create_title(
                     "Give Your Dash Apps an Upgrade with Dash Mantine Components",
@@ -93,13 +90,13 @@ layout = html.Div(
                 create_head("With more than 70 components from Mantine React Library"),
                 dmc.Group(
                     [
-                        dcc.Link(
+                        dmc.Anchor(
                             [
                                 dmc.Button("Get Started"),
                             ],
                             href="/getting-started",
                         ),
-                        html.A(
+                        dmc.Anchor(
                             dmc.Button(
                                 "Join Discord",
                                 variant="outline",
@@ -107,7 +104,7 @@ layout = html.Div(
                             ),
                             href="https://discord.gg/KuJkh4Pyq5",
                         ),
-                        html.A(
+                        dmc.Anchor(
                             dmc.Button(
                                 "Github",
                                 variant="outline",
@@ -120,7 +117,7 @@ layout = html.Div(
                             ),
                             href="https://github.com/snehilvj/dash-mantine-components",
                         ),
-                        html.A(
+                        dmc.Anchor(
                             dmc.Button(
                                 "Sponsor",
                                 variant="outline",
