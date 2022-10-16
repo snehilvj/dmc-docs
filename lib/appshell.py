@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 import dash_mantine_components as dmc
-from dash import Output, Input, clientside_callback, html, dcc, page_container
+from dash import Output, Input, clientside_callback, html, dcc, page_container, State
 from dash_iconify import DashIconify
 
 
@@ -128,7 +128,7 @@ def create_header(nav_data):
                                 styles={"display": "none"},
                             ),
                             dmc.ActionIcon(
-                                DashIconify(icon="radix-icons:moon", width=18),
+                                DashIconify(icon="mdi:theme-light-dark", width=18),
                                 variant="outline",
                                 size="lg",
                                 id="color-scheme-toggle",
@@ -254,7 +254,7 @@ def create_appshell(nav_data):
             },
             inherit=True,
             children=[
-                dcc.Location(id="url"),
+                dcc.Store(id="theme-store", storage_type="local"),
                 create_header(nav_data),
                 create_side_navbar(nav_data),
                 html.Div(
@@ -272,6 +272,31 @@ def create_appshell(nav_data):
         withGlobalStyles=True,
         withNormalizeCSS=True,
     )
+
+
+clientside_callback(
+    """function(data) { return data }""",
+    Output("mantine-docs-theme-provider", "theme"),
+    Input("theme-store", "data"),
+)
+
+
+clientside_callback(
+    """function(n_clicks, data) {
+        if (data) {
+            if (n_clicks) {
+                const scheme = data["colorScheme"] == "dark" ? "light" : "dark"
+                return { colorScheme: scheme } 
+            }
+            return dash_clientside.no_update
+        } else {
+            return { colorScheme: "light" }
+        }
+    }""",
+    Output("theme-store", "data"),
+    Input("color-scheme-toggle", "n_clicks"),
+    State("theme-store", "data"),
+)
 
 
 # noinspection PyProtectedMember
