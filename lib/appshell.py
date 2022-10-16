@@ -82,9 +82,11 @@ def create_header(nav_data):
                                     nothingFound="No match found",
                                     searchable=True,
                                     clearable=True,
-
                                     data=[
-                                        component["name"]
+                                        {
+                                            "label": component["name"],
+                                            "value": component["path"],
+                                        }
                                         for component in nav_data
                                         if component["name"]
                                         not in ["Home", "Not found 404"]
@@ -106,7 +108,7 @@ def create_header(nav_data):
                                                 ),
                                                 variant="outline",
                                                 size="lg",
-                                                color="red"
+                                                color="red",
                                             ),
                                             target="_blank",
                                             href="https://github.com/sponsors/snehilvj",
@@ -141,6 +143,7 @@ def create_header(nav_data):
                                     DashIconify(
                                         icon="radix-icons:hamburger-menu", width=18
                                     ),
+                                    id="drawer-hamburger-button",
                                     variant="outline",
                                     size="lg",
                                 ),
@@ -194,9 +197,7 @@ def create_side_nave_content(nav_data):
         )
         links.extend(
             [
-                dmc.Anchor(
-                    dmc.Text(name, size="sm"), href=path, id=name, variant="text"
-                )
+                dmc.Anchor(dmc.Text(name, size="sm"), href=path, variant="text")
                 for name, path in items
             ]
         )
@@ -216,6 +217,25 @@ def create_side_navbar(nav_data):
             dmc.ScrollArea(
                 offsetScrollbars=True,
                 type="scroll",
+                children=create_side_nave_content(nav_data),
+            )
+        ],
+    )
+
+
+def create_navbar_drawer(nav_data):
+    return dmc.Drawer(
+        size=300,
+        id="components-navbar-drawer",
+        overlayOpacity=0.55,
+        overlayBlur=3,
+        zIndex=9,
+        children=[
+            dmc.ScrollArea(
+                offsetScrollbars=True,
+                type="scroll",
+                style={"height": "100%"},
+                pt=20,
                 children=create_side_nave_content(nav_data),
             )
         ],
@@ -263,15 +283,13 @@ def create_appshell(nav_data):
             inherit=True,
             children=[
                 dcc.Store(id="theme-store", storage_type="local"),
+                dcc.Location(id="url"),
                 create_header(nav_data),
                 create_side_navbar(nav_data),
+                create_navbar_drawer(nav_data),
                 html.Div(
                     dmc.Container(size="lg", pt=90, children=page_container),
                     id="wrapper",
-                ),
-                html.Div(
-                    id="dummy-container-for-header-select",
-                    style={"display": "none"},
                 ),
             ],
         ),
@@ -283,7 +301,7 @@ def create_appshell(nav_data):
 
 
 clientside_callback(
-    """function(data) { return data }""",
+    """ function(data) { return data } """,
     Output("mantine-docs-theme-provider", "theme"),
     Input("theme-store", "data"),
 )
@@ -309,11 +327,7 @@ clientside_callback(
 
 # noinspection PyProtectedMember
 clientside_callback(
-    """
-    function(children) {
-        return null
-    }
-    """,
+    """ function(children) { return null } """,
     Output("select-component", "value"),
     Input("_pages_content", "children"),
 )
@@ -322,11 +336,18 @@ clientside_callback(
     """
     function(value) {
         if (value) {
-            document.getElementById(value).click()
+            return value
         }
-        return value
     }
     """,
-    Output("dummy-container-for-header-select", "children"),
+    Output("url", "pathname"),
     Input("select-component", "value"),
+)
+
+
+clientside_callback(
+    """function(n_clicks) { return true }""",
+    Output("components-navbar-drawer", "opened"),
+    Input("drawer-hamburger-button", "n_clicks"),
+    prevent_initial_call=True,
 )
