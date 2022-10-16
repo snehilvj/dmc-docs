@@ -14,42 +14,41 @@ def create_home_link(label):
     )
 
 
-def create_github_button():
-    return dmc.MediaQuery(
-        dmc.Anchor(
-            dmc.Button(
-                "Github",
-                variant="outline",
-                leftIcon=DashIconify(icon="radix-icons:github-logo", width=18),
-            ),
-            href="https://github.com/sponsors/snehilvj",
+def create_main_nav_link(icon, label, href):
+    return dmc.Anchor(
+        dmc.Group(
+            [
+                dmc.ThemeIcon(
+                    DashIconify(icon=icon, width=18),
+                    size=30,
+                    radius=30,
+                    variant="light",
+                ),
+                dmc.Text(label, size="sm"),
+            ]
         ),
-        smallerThan="sm",
-        styles={"display": "none"},
+        href=href,
+        variant="text",
     )
 
 
-def create_sponsor_button():
-    return dmc.MediaQuery(
-        dmc.Anchor(
-            dmc.Button(
-                "Sponsor",
-                variant="outline",
-                color="red",
-                leftIcon=DashIconify(icon="akar-icons:heart", width=18),
-            ),
-            href="https://github.com/sponsors/snehilvj",
-        ),
-        smallerThan="sm",
-        styles={"display": "none"},
-    )
+navbar_icons = {
+    "Data Display": "radix-icons:dashboard",
+    "Inputs & Buttons": "radix-icons:input",
+    "Feedback": "radix-icons:info-circled",
+    "Overlay": "radix-icons:stack",
+    "Navigation": "radix-icons:hamburger-menu",
+    "Typography": "radix-icons:letter-case-capitalize",
+    "Layout": "radix-icons:container",
+    "Miscellaneous": "radix-icons:mix",
+}
 
 
 def create_header(nav_data):
     return dmc.Header(
         height=70,
         fixed=True,
-        pl=25, pr=25,
+        px=25,
         children=[
             dmc.Group(
                 grow=True,
@@ -59,62 +58,90 @@ def create_header(nav_data):
                         [
                             dmc.MediaQuery(
                                 create_home_link("Dash Mantine Components"),
-                                smallerThan="md",
+                                smallerThan="lg",
                                 styles={"display": "none"},
                             ),
                             dmc.MediaQuery(
                                 create_home_link("DMC"),
-                                largerThan="md",
+                                largerThan="lg",
                                 styles={"display": "none"},
                             ),
-                        ], justify="center", style={"height": 70}
+                        ],
+                        justify="center",
+                        style={"height": 70},
                     ),
                     dmc.Group(
                         position="right",
                         spacing="xl",
                         children=[
-                            # dmc.MediaQuery(
-                            #     dmc.Select(
-                            #         id="select-component",
-                            #         style={"width": 250},
-                            #         placeholder="Search",
-                            #         nothingFound="No match found",
-                            #         searchable=True,
-                            #         clearable=True,
-                            #         data=[
-                            #             component["name"]
-                            #             for component in nav_data
-                            #             if component["name"]
-                            #             not in ["Home", "Not found 404"]
-                            #         ],
-                            #         icon=DashIconify(
-                            #             icon="radix-icons:magnifying-glass"
-                            #         ),
-                            #     ),
-                            #     smallerThan="sm",
-                            #     styles={"display": "none"},
-                            # ),
-                            create_github_button(),
-                            create_sponsor_button(),
-                            dmc.Switch(
-                                id="color-scheme-toggle",
+                            dmc.MediaQuery(
+                                dmc.Select(
+                                    id="select-component",
+                                    style={"width": 250},
+                                    placeholder="Search",
+                                    nothingFound="No match found",
+                                    searchable=True,
+                                    clearable=True,
+                                    data=[
+                                        component["name"]
+                                        for component in nav_data
+                                        if component["name"]
+                                        not in ["Home", "Not found 404"]
+                                    ],
+                                    icon=DashIconify(
+                                        icon="radix-icons:magnifying-glass"
+                                    ),
+                                ),
+                                smallerThan="lg",
+                                styles={"display": "none"},
+                            ),
+                            dmc.MediaQuery(
+                                dmc.Group(
+                                    [
+                                        dmc.Anchor(
+                                            dmc.ActionIcon(
+                                                DashIconify(
+                                                    icon="akar-icons:heart", width=18
+                                                ),
+                                                variant="default",
+                                                size="lg",
+                                            ),
+                                            target="_blank",
+                                            href="https://github.com/sponsors/snehilvj",
+                                        ),
+                                        dmc.Anchor(
+                                            dmc.ActionIcon(
+                                                DashIconify(
+                                                    icon="radix-icons:github-logo",
+                                                    width=20,
+                                                ),
+                                                variant="default",
+                                                size="lg",
+                                            ),
+                                            target="_blank",
+                                            href="https://github.com/snehilvj",
+                                        ),
+                                    ],
+                                    spacing="xl",
+                                ),
+                                smallerThan="sm",
+                                styles={"display": "none"},
+                            ),
+                            dmc.ActionIcon(
+                                DashIconify(icon="radix-icons:sun", width=18),
+                                variant="default",
                                 size="lg",
-                                radius="sm",
-                                offLabel=DashIconify(
-                                    icon="radix-icons:sun", width=16
-                                ),
-                                onLabel=DashIconify(
-                                    icon="radix-icons:moon", width=16
-                                ),
+                                id="color-scheme-toggle",
                             ),
                             dmc.MediaQuery(
                                 dmc.ActionIcon(
                                     DashIconify(
-                                        icon="radix-icons:hamburger-menu", width=30
+                                        icon="radix-icons:hamburger-menu", width=18
                                     ),
-                                    id="small-navbar",
+                                    variant="outline",
+                                    size="lg",
                                 ),
-                                largerThan="sm",
+                                largerThan="lg",
                                 styles={"display": "none"},
                             ),
                         ],
@@ -122,6 +149,77 @@ def create_header(nav_data):
                 ],
             )
         ],
+    )
+
+
+def create_side_nave_content(nav_data):
+    main_links = dmc.Stack(
+        spacing="sm",
+        mt=20,
+        children=[
+            create_main_nav_link(
+                icon="radix-icons:rocket",
+                label="Getting Started",
+                href="/getting-started",
+            ),
+            create_main_nav_link(
+                icon="radix-icons:iconjar-logo",
+                label="Dash Iconify",
+                href="/dash-iconify",
+            ),
+        ],
+    )
+    # create component links
+    sections = defaultdict(list)
+    for entry in nav_data:
+        if "section" in entry and entry["section"] not in ["Getting Started"]:
+            sections[entry["section"]].append((entry["name"], entry["path"]))
+
+    links = []
+    for section, items in sorted(sections.items()):
+        links.append(
+            dmc.Divider(
+                labelPosition="left",
+                label=[
+                    DashIconify(
+                        icon=navbar_icons[section], width=15, style={"marginRight": 10}
+                    ),
+                    section,
+                ],
+                my=20,
+            )
+        )
+        links.extend(
+            [
+                dmc.Anchor(
+                    dmc.Text(name, size="sm"), href=path, id=name, variant="text"
+                )
+                for name, path in items
+            ]
+        )
+
+    return dmc.Stack(
+        spacing="sm", children=[main_links, *links, dmc.Space(h=20)], px=25
+    )
+
+
+def create_side_navbar(nav_data):
+    return dmc.MediaQuery(
+        dmc.Navbar(
+            id="components-navbar",
+            fixed=True,
+            position={"top": 70},
+            width={"base": 300},
+            children=[
+                dmc.ScrollArea(
+                    offsetScrollbars=True,
+                    type="scroll",
+                    children=create_side_nave_content(nav_data),
+                )
+            ],
+        ),
+        smallerThan="lg",
+        styles={"display": "none"},
     )
 
 
@@ -135,5 +233,9 @@ def create_appshell(nav_data):
         },
         withGlobalStyles=True,
         withNormalizeCSS=True,
-        children=[create_header(nav_data), page_container],
+        children=[
+            create_header(nav_data),
+            create_side_navbar(nav_data),
+            page_container,
+        ],
     )
