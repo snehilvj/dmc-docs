@@ -46,7 +46,7 @@ class ExecBlock(BaseDirective):
         ]
         if prism == "true":
             source = create_prism(imported.__file__)
-            source.style = {"marginTop": 10}
+            source.mt = 10
             components.append(source)
         return html.Div(components, style={"marginBottom": 10, "marginTop": 20})
 
@@ -73,17 +73,33 @@ class GalleryBlock(BaseDirective):
         if center == "true":
             component = dmc.Center(component)
 
-        tab1 = dmc.Tab(
-            dmc.Paper(component, withBorder=True, p="xl"),
-            label=label,
-            icon=[DashIconify(icon="radix-icons:enter")],
-        )
         source = create_prism(imported.__file__)
-        tab2 = dmc.Tab(
-            source, label="Code", icon=[DashIconify(icon="radix-icons:code")]
-        )
+
         return dmc.Tabs(
-            [tab1, tab2], variant="outline", style={"marginBottom": 20, "marginTop": 20}
+            [
+                dmc.TabsList(
+                    [
+                        dmc.Tab(
+                            label,
+                            value="component",
+                            icon=DashIconify(icon="radix-icons:enter"),
+                        ),
+                        dmc.Tab(
+                            "Code",
+                            value="code",
+                            icon=DashIconify(icon="radix-icons:code"),
+                        ),
+                    ],
+                    mb=10,
+                ),
+                dmc.TabsPanel(
+                    dmc.Paper(component, withBorder=True, p="xl"), value="component"
+                ),
+                dmc.TabsPanel(source, value="code"),
+            ],
+            variant="outline",
+            value="component",
+            my=20,
         )
 
 
@@ -111,5 +127,5 @@ class Admonition(BaseDirective):
             children=text,
             icon=[DashIconify(icon=icon)],
             color=color,
-            style={"marginBottom": 10},
+            mb=10,
         )
