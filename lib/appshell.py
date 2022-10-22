@@ -197,7 +197,7 @@ def create_side_nave_content(nav_data):
         )
         links.extend(
             [
-                dmc.Anchor(dmc.Text(name, size="sm"), href=path, variant="text")
+                dmc.Anchor(name, size="sm", href=path, variant="text")
                 for name, path in items
             ]
         )
@@ -246,17 +246,15 @@ def create_table_of_contents(toc_items):
     children = []
     for url, name, _ in toc_items:
         children.append(
-            dmc.Anchor(
-                name,
+            html.A(
+                dmc.Text(name, color="dimmed", size="sm", variant="text"),
                 style={"textTransform": "capitalize", "textDecoration": "none"},
                 href=url,
-                size="sm",
-                variant="text",
             )
         )
 
     heading = dmc.Text("Table of Contents", mb=10, weight=500)
-    toc = dmc.Stack([heading, *children], spacing="xs", px=25, mt=20)
+    toc = dmc.Stack([heading, *children], spacing=4, px=25, mt=20)
 
     return dmc.Aside(
         position={"top": 70, "right": 0},
