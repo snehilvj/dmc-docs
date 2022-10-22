@@ -15,18 +15,18 @@ DEFAULT_PROPS = {
 
 color_picker_callback_func = """function(color) {
     const colorMap = {
-        "#2c2e33": "dark",
-        "#aeb5bd": "gray",
+        "#2C2E33": "dark",
+        "#adb5bd": "gray",
         "#ff6b6b": "red",
         "#f06595": "pink",
         "#cc5de8": "grape",
         "#845ef7": "violet",
         "#5c7cfa": "indigo",
         "#329af0": "blue",
-        "#21b7cf": "cyan",
+        "#22b8cf": "cyan",
         "#20c997": "teal",
         "#51cf66": "green",
-        "#94d92e": "lime",
+        "#94d82d": "lime",
         "#fcc419": "yellow",
         "#ff922b": "orange",
     };
@@ -57,15 +57,11 @@ def create_configurator(demo, controls, center=True):
         # create component
         component = component_class(id=cid, **conf)
 
-        # wrap in InputWrapper if needed
-        if component_type in ["SegmentedControl", "Slider"]:
-            component = dmc.InputWrapper(html.Div(component), label=prop)
-
         # set the label
         component.label = prop[0].upper() + prop[1:]
 
         # add style
-        component.style = {"marginTop": 0 if i == 0 else 15}
+        component.mt = 0 if i == 0 else 15
 
         # add component to right pane
         dmc_controls.append(component)
