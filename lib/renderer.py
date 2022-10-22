@@ -21,16 +21,16 @@ mistune.directives.toc.record_toc_heading = toc_plugin_patch
 class DmcRenderer(AstRenderer):
     def theading(self, children, level, tid):
         text = children[0]
-        return dmc.Title(text, order=level, id=tid, class_name="renderer-title")
+        return dmc.Title(text, order=level, id=tid, className="renderer-title")
 
     def thematic_break(self):
         return dmc.Divider()
 
     def block_quote(self, text):
-        return dmc.Blockquote(text[0].children, class_name="renderer-quote")
+        return dmc.Blockquote(text[0].children, className="renderer-quote")
 
     def block_code(self, children, info=None):
-        return dmc.Prism(children, language=info, class_name="renderer-code")
+        return dmc.Prism(children, language=info, className="renderer-code")
 
     def newline(self):
         return
@@ -38,7 +38,7 @@ class DmcRenderer(AstRenderer):
     def table(self, text):
         return dmc.Group(
             dmc.Paper(dmc.Table(text, highlightOnHover=True), withBorder=True),
-            class_name="renderer-table",
+            className="renderer-table",
             position="center",
         )
 
@@ -55,7 +55,7 @@ class DmcRenderer(AstRenderer):
         return html.Th(text) if is_head else html.Td(text)
 
     def paragraph(self, text):
-        return dmc.Text(text, style={"fontSize": 15}, class_name="renderer-text")
+        return dmc.Text(text, style={"fontSize": 15}, className="renderer-text")
 
     def text(self, text):
         return text
@@ -69,7 +69,7 @@ class DmcRenderer(AstRenderer):
             href=link,
             underline=False,
             style={"fontSize": 15},
-            class_name="renderer-anchor",
+            className="renderer-anchor",
         )
 
     def codespan(self, text):
@@ -82,7 +82,7 @@ class DmcRenderer(AstRenderer):
             spacing=5,
             size="sm",
             withPadding=True,
-            class_name="renderer-list",
+            className="renderer-list",
         )
 
     def list_item(self, text, level):
@@ -90,7 +90,7 @@ class DmcRenderer(AstRenderer):
             children = text[0]
         else:
             children = text[0].children
-        return dmc.ListItem(children)
+        return dmc.ListItem(dmc.Text(children))
 
 
 markdown = create_markdown(
