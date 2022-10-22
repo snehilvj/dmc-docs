@@ -4,8 +4,7 @@ from dash_extensions import Lottie
 
 dash.register_page(__name__, path="/404")
 
-layout = dmc.Group(
-    direction="column",
+layout = dmc.Stack(
     align="center",
     children=[
         Lottie(

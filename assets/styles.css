@@ -9,7 +9,6 @@ input:invalid {
     outline: none !important;
 }
 
-
 #wrapper {
     padding: 10px;
     margin-left: 320px;
@@ -25,7 +24,6 @@ input:invalid {
         margin-right: 0;
     }
 }
-
 
 @media only screen and (max-width: 1200px) {
     #components-navbar {
