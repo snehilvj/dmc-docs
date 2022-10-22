@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 import dash_mantine_components as dmc
 import mistune
 from dash import html
@@ -67,6 +69,7 @@ class DmcRenderer(AstRenderer):
         return dmc.Anchor(
             children[0],
             href=link,
+            target="_blank" if bool(urlparse(link).netloc) else "_self",
             underline=False,
             style={"fontSize": 15},
             className="renderer-anchor",
