@@ -3,7 +3,7 @@ from os import environ
 import dash
 import dash_mantine_components as dmc
 import requests
-from dash import html, dcc
+from dash import html
 from dash_iconify import DashIconify
 
 from lib.appshell import create_table_of_contents
@@ -91,46 +91,43 @@ layout = html.Div(
                 dmc.Group(
                     [
                         dmc.Anchor(
-                            [
-                                dmc.Button("Get Started"),
-                            ],
+                            dmc.Button("Get Started"),
                             href="/getting-started",
                         ),
                         dmc.Anchor(
                             dmc.Button(
                                 "Join Discord",
                                 variant="outline",
-                                leftIcon=[DashIconify(icon="bi:discord", width=20)],
+                                leftIcon=DashIconify(icon="bi:discord", width=20),
                             ),
                             href="https://discord.gg/KuJkh4Pyq5",
+                            target="_blank",
                         ),
                         dmc.Anchor(
                             dmc.Button(
                                 "Github",
-                                variant="outline",
-                                color="gray",
-                                leftIcon=[
-                                    DashIconify(
-                                        icon="radix-icons:github-logo", width=20
-                                    )
-                                ],
+                                variant="default",
+                                leftIcon=DashIconify(
+                                    icon="radix-icons:github-logo", width=20
+                                ),
                             ),
                             href="https://github.com/snehilvj/dash-mantine-components",
+                            target="_blank",
                         ),
                         dmc.Anchor(
                             dmc.Button(
                                 "Sponsor",
                                 variant="outline",
                                 color="red",
-                                leftIcon=[
-                                    DashIconify(icon="akar-icons:heart", width=19)
-                                ],
+                                leftIcon=DashIconify(icon="akar-icons:heart", width=19),
                             ),
                             href="https://github.com/sponsors/snehilvj",
+                            target="_blank",
                         ),
                     ],
                     position="center",
-                    style={"marginTop": 20, "marginBottom": 90},
+                    mt=20,
+                    mb=90,
                 ),
             ],
         ),
@@ -195,6 +192,7 @@ layout = html.Div(
                 "Become a contributor",
                 underline=False,
                 href="https://github.com/snehilvj/dash-mantine-components",
+                target="_blank",
             )
         ),
         dmc.Space(h=10),
