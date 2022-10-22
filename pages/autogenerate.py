@@ -9,6 +9,7 @@ from mistune.directives import extract_toc_items
 from pydantic import BaseModel
 
 from lib.appshell import create_table_of_contents
+from lib.propdef import propdefs_to_exclude
 from lib.renderer import markdown
 
 
@@ -37,9 +38,19 @@ def create_kwargs(component):
         comp = getattr(dmc, component)
         component_doc = comp.__doc__
     docs = component_doc.split("Keyword arguments:")[-1]
-    docs = docs.lstrip("\n\n")
+    for to_replace in propdefs_to_exclude.split("\n"):
+        docs = docs.replace(to_replace, "")
+    lines = docs.split("\n")
+    new = []
+    for line in lines:
+        if not line:
+            continue
+        if line.startswith("- ") and line.endswith("):"):
+            line = "\n" + line
+        new.append(line)
+    docs = "\n".join(new)
     kwargs = dmc.Prism(docs, language="git", noCopy=True)
-    heading = markdown.parse("##### Keyword Arguments")
+    heading = markdown.parse(f"###### {component}")
     heading.append(kwargs)
     return heading
 
@@ -73,8 +84,18 @@ for file in files:
 
     # add keyword arguments section
     if meta.component:
-        section = create_kwargs(meta.component)
-        layout.extend(section)
+        layout.extend(
+            markdown.parse(
+                """##### Keyword Arguments
+
+Along with the prop mentioned below, all dmc components also support margin and padding props such as `m`, `mx`, 
+`my`, `p`, `pb`, `pt`, etc."""
+            )
+        )
+        comps = meta.component.split(", ")
+        for comp in comps:
+            section = create_kwargs(comp)
+            layout.extend(section)
 
     # extract and append TOC
     toc_items = extract_toc_items(markdown, rem)
