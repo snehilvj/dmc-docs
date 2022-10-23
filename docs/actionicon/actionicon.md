@@ -6,9 +6,14 @@ description: Use this component as an alternative to buttons when you just want 
 component: ActionIcon
 ---
 
+##### Interactive Demo
+
+.. exec::docs.actionicon.interactive
+    :prism: false
+
 ##### Usage
 
-ActionIcon component is an alternative to Button component. It can be customized with Mantine styles and used with its
+ActionIcon component is an alternative to [Button](/components/button) component. It can be customized with Mantine styles and used with its
 `n_clicks` property.
 
 .. exec::docs.actionicon.simple
@@ -18,7 +23,7 @@ ActionIcon component is an alternative to Button component. It can be customized
 ActionIcon accepts any React node as child. It does not control the icon size, you need to specify it manually on icon
 component (such as DashIconify) to match ActionIcon size.
 
-For example if you were to use DashIconify, you can set the icon size like this:
+For example, if you were to use DashIconify, you can set the icon size like this:
 
 ```python
 import dash_mantine_components as dmc
@@ -32,7 +37,7 @@ dmc.ActionIcon(
 
 ##### Variants
 
-ActionIcon has 6 variants: hover, default, transparent, filled, light and outline.
+ActionIcon has 6 variants: subtle, filled, outline, light, default, transparent, gradient.
 
 .. exec::docs.actionicon.variant
 
