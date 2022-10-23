@@ -10,8 +10,7 @@ component = html.Div(
             color="violet",
             duration=3000,
         ),
-        dmc.Space(h=20),
-        dmc.Button("Show alert", id="alert-auto-button"),
+        dmc.Button("Show alert", id="alert-auto-button", mt=20),
     ]
 )
 
