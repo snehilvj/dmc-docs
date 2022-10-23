@@ -5,12 +5,10 @@ from dash_iconify import DashIconify
 
 component = dmc.Group(
     [
-        dmc.DatePicker(
-            value=date.today(), icon=[DashIconify(icon="clarity:date-line")]
-        ),
+        dmc.DatePicker(value=date.today(), icon=DashIconify(icon="clarity:date-line")),
         dmc.Button(
             "Open Settings",
-            leftIcon=[DashIconify(icon="carbon:settings-check", width=20)],
+            leftIcon=DashIconify(icon="carbon:settings-check", width=20),
         ),
     ]
 )

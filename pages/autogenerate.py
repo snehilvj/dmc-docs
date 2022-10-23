@@ -20,6 +20,7 @@ class Meta(BaseModel):
     head: str
     description: str
     component: Optional[str]
+    dmc: bool = True
 
 
 directory = "docs"
@@ -84,14 +85,14 @@ for file in files:
 
     # add keyword arguments section
     if meta.component:
-        layout.extend(
-            markdown.parse(
-                """##### Keyword Arguments
-
-Along with the prop mentioned below, all dmc components also support margin and padding props such as `m`, `mx`, 
-`my`, `p`, `pb`, `pt`, etc."""
+        layout.extend(markdown.parse("##### Keyword Arguments"))
+        if meta.dmc:
+            layout.extend(
+                markdown.parse(
+                    """Along with the prop mentioned below, all dmc components also support margin and padding props 
+                    such as `m`, `mx`, `my`, `p`, `pb`, `pt`, etc. """
+                )
             )
-        )
         comps = meta.component.split(", ")
         for comp in comps:
             section = create_kwargs(comp)
@@ -107,7 +108,7 @@ Along with the prop mentioned below, all dmc components also support margin and 
     # add space
     layout.append(dmc.Space(h=50))
 
-    path_prefix = "/components/" if meta.component else "/"
+    path_prefix = "/components/" if meta.dmc else "/"
 
     # register with dash
     dash.register_page(
