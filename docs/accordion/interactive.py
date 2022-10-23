@@ -4,34 +4,58 @@ from lib.configurator import create_configurator
 
 controls = [
     {
-        "property": "iconPosition",
-        "component": "SegmentedControl",
+        "property": "chevronPosition",
+        "component": "DemoSegmentedControl",
         "data": ["left", "right"],
         "value": "left",
     },
-    {"property": "offsetIcon", "component": "Switch", "checked": True},
     {
-        "property": "disableIconRotation",
+        "property": "variant",
+        "component": "Select",
+        "data": ["default", "contained", "filled", "separated"],
+        "value": "default",
+    },
+    {
+        "property": "disableChevronRotation",
         "component": "Switch",
         "checked": False,
     },
-    {"property": "multiple", "component": "Switch", "checked": False},
+    {
+        "property": "radius",
+        "component": "DemoSlider",
+        "value": "sm",
+    },
 ]
 
 demo = dmc.Accordion(
     children=[
         dmc.AccordionItem(
-            "Colors, fonts, shadows and many other parts are customizable to fit your design needs",
-            label="Customization",
+            [
+                dmc.AccordionControl("Customization"),
+                dmc.AccordionPanel(
+                    "Colors, fonts, shadows and many other parts are customizable to fit your design needs"
+                ),
+            ],
+            value="customization",
         ),
         dmc.AccordionItem(
-            "Configure temp appearance and behavior with vast amount of settings or overwrite any part of component "
-            "styles",
-            label="Flexibility",
+            [
+                dmc.AccordionControl("Flexibility"),
+                dmc.AccordionPanel(
+                    "Configure temp appearance and behavior with vast amount of settings or overwrite any part of "
+                    "component styles "
+                ),
+            ],
+            value="flexibility",
         ),
         dmc.AccordionItem(
-            "With new :focus-visible pseudo-class focus ring appears only when user navigates with keyboard",
-            label="No annoying focus ring",
+            [
+                dmc.AccordionControl("No annoying focus ring"),
+                dmc.AccordionPanel(
+                    "With new :focus-visible pseudo-class focus ring appears only when user navigates with keyboard"
+                ),
+            ],
+            value="focus",
         ),
     ],
 )

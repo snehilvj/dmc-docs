@@ -1,6 +1,9 @@
 import dash_mantine_components as dmc
+from dash_iconify import DashIconify
 
 component = dmc.Accordion(
+    chevron=DashIconify(icon="ant-design:plus-outlined"),
+    disableChevronRotation=True,
     children=[
         dmc.AccordionItem(
             [
