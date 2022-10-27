@@ -13,10 +13,8 @@ colors = [
     "orange",
 ]
 
-component = dmc.Group(
-    direction="column",
+component = dmc.Stack(
     spacing="xs",
-    position="center",
     children=[
         dmc.Group(
             [dmc.Badge(color, variant=variant, color=color) for color in colors],
