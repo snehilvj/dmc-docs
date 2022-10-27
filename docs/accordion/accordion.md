@@ -41,8 +41,6 @@ Pass `multiple=True` flag to allow opening multiple items.
 
 .. exec::docs.accordion.multiple
 
-##### Gallery
+##### Custom Accordion Label
 
-.. gallery::docs.accordion.label
-    :center: false
-    :label: Custom label with dmc.AccordionControl
+.. exec::docs.accordion.label
