@@ -11,7 +11,6 @@ component = html.Div(
             label="Date Range",
             description="You can also provide a description",
             minDate=date(2020, 8, 5),
-            maxDate=date(2022, 9, 19),
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
             style={"width": 330},
         ),

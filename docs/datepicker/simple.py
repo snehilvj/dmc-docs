@@ -11,7 +11,6 @@ component = html.Div(
             label="Start Date",
             description="You can also provide a description",
             minDate=date(2020, 8, 5),
-            maxDate=date(2022, 9, 19),
             value=datetime.now().date(),
             style={"width": 200},
         ),

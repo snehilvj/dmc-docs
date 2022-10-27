@@ -3,7 +3,7 @@ name: DatePicker
 section: Inputs & Buttons
 head: Capture date inputs from user.
 description: Best DatePicker and DateRangePicker components out there. Helps you easily switch between different months, years along with locale support.
-component: DatePicker
+component: DatePicker, DateRangePicker
 ---
 
 ##### Simple Example
@@ -12,6 +12,12 @@ This is a simple example of DatePicker tied to a callback. You can either use st
 as `YYYY-MM-DD` or use the date object from datetime library.
 
 .. exec::docs.datepicker.simple
+
+##### DateRangePicker
+
+DateRangePicker component supports the same props as DatePicker component.
+
+.. exec::docs.datepicker.range
 
 ##### Date formats
 
