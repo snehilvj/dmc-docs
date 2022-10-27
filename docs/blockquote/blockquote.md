@@ -15,6 +15,6 @@ A simple blockquote can be created by just passing the main message and `cite` p
 ##### With Icon
 
 Icons can be provided via `icon` prop and its color can be customized using the `color` prop.
-Here's an example using DashIconify.
+Here's an example using [DashIconify](/dash-iconify).
 
 .. exec::docs.blockquote.icon
