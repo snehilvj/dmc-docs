@@ -9,8 +9,3 @@ component: Kbd
 ##### Simple Example
 
 .. exec::docs.kbd.simple
-
-##### Gallery
-
-.. gallery::docs.kbd.search
-    :label: Keyboard shortcut in a TextInput
