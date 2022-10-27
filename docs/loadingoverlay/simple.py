@@ -7,9 +7,7 @@ from dash_iconify import DashIconify
 component = html.Div(
     style={"width": 200},
     children=dmc.LoadingOverlay(
-        dmc.Group(
-            direction="column",
-            grow=True,
+        dmc.Stack(
             id="loading-form",
             children=[
                 dmc.TextInput(
