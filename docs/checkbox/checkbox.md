@@ -3,7 +3,7 @@ name: Checkbox
 section: Inputs & Buttons
 head: Capture boolean input from user.
 description: Use Checkbox component to capture boolean input from user.
-component: Checkbox
+component: Checkbox, CheckboxGroup
 ---
 
 ##### Interactive Demo
@@ -29,3 +29,9 @@ Set checkbox color using the `color` prop.
 
 .. exec::docs.checkbox.colors
 
+##### CheckboxGroup
+
+Use CheckboxGroup component to create inputs with multiple checkbox elements and label, description, etc. You can 
+customize the `size`, `offset`, `orientation`, etc. Use `value` property in callbacks.
+
+.. exec::docs.checkbox.group

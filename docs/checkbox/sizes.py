@@ -1,7 +1,6 @@
 import dash_mantine_components as dmc
 
-component = dmc.Group(
-    direction="column",
+component = dmc.Stack(
     children=[
         dmc.Checkbox(label="I agree to sell my privacy", size="xs", checked=True),
         dmc.Checkbox(label="I agree to sell my privacy", size="sm", checked=True),
