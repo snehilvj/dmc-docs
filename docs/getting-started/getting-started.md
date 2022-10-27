@@ -49,7 +49,7 @@ if __name__ == "__main__":
 ##### Documentation
 
 This entire documentation has been created almost entirely using Dash Mantine Components. You can check out the source
-code for some inspiration.
+code [here](https://github.com/snehilvj/dmc-docs) for some inspiration.
 
 While going through this documentation, you will come across interactive demos meant to show an overview as well as the overall effect of different combinations of a component's props.
 
@@ -76,11 +76,15 @@ app = Dash(
 
 app.layout = dmc.MantineProvider(
     theme={
-        "colorScheme": "light",
         "fontFamily": "'Inter', sans-serif",
         "primaryColor": "indigo",
+        "components": {
+            "Button": {"styles": {"root": {"fontWeight": 400}}},
+            "Alert": {"styles": {"title": {"fontWeight": 500}}},
+            "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+        },
     },
-    styles={"Button": {"root": {"fontWeight": 400}}},
+    inherit=True,
     withGlobalStyles=True,
     withNormalizeCSS=True,
     children=[dmc.Button("Settings")],
@@ -89,9 +93,3 @@ app.layout = dmc.MantineProvider(
 if __name__ == "__main__":
     app.run_server()
 ```
-
-##### Gallery
-
-For some components you will also find a dedicated section showcasing some ready-made components along with their
-source code. Any [contributions](https://github.com/snehilvj/dash-mantine-components) to this section or docs in 
-general is highly appreciated.
