@@ -3,7 +3,7 @@ name: List
 section: Typography
 head: Display ordered or unordered list.
 description: Use List component to show ordered and unordered lists with icon support.
-component: List
+component: List, ListItem
 ---
 
 ##### Simple Example
@@ -15,7 +15,6 @@ component: List
 .. exec::docs.list.interactive
     :prism: false
 
-##### Gallery
+##### With Icons
 
-.. gallery::docs.list.icons
-    :label: List with icons
+.. exec::docs.list.icons
