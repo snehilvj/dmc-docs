@@ -65,9 +65,3 @@ dmc.Group(
 Pass `fullWidth=True` for a full width button.
 
 .. exec::docs.button.full
-
-##### Gallery
-
-.. gallery::docs.button.loading
-    :label: Loading state in button
-    :center: false
