@@ -3,7 +3,7 @@ name: Grid
 section: Layout
 head: Flexbox grid system with variable amount of columns.
 description: Use Grid component to create layouts with a flexbox grid system with variable amount of columns.
-component: Grid
+component: Grid, Col
 ---
 
 ##### Usage
