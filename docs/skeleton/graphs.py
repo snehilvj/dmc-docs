@@ -10,8 +10,8 @@ component = html.Div(
         dmc.Skeleton(
             visible=False,
             children=html.Div(id="skeleton-graph-container", children=create_graph()),
+            mb=10,
         ),
-        dmc.Space(h=10),
         dmc.Button("Click Me!", id="graph-skeleton-button"),
     ]
 )
