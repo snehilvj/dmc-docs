@@ -51,7 +51,6 @@ select less than 2 currency pairs.
 
 .. exec::docs.select.error
 
-##### Gallery
+##### With Icons
 
-.. gallery::docs.select.icons
-    :label: Select with icons
+.. exec::docs.select.icons
