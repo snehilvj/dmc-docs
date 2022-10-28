@@ -6,9 +6,7 @@ component = dmc.MantineProvider(
     theme={"colorScheme": "dark"},
     children=[
         dmc.Paper(
-            dmc.Group(
-                grow=True,
-                direction="column",
+            dmc.Stack(
                 children=[
                     dmc.DatePicker(
                         style={"width": 200},
