@@ -6,7 +6,7 @@ component = html.Div(
         dmc.Button("Open Modal", id="modal-demo-button"),
         dmc.Modal(
             title="New Modal",
-            id="modal",
+            id="modal-simple",
             children=[
                 dmc.Text("I am in a modal component."),
                 dmc.Space(h=20),
@@ -29,11 +29,11 @@ component = html.Div(
 
 
 @callback(
-    Output("modal", "opened"),
+    Output("modal-simple", "opened"),
     Input("modal-demo-button", "n_clicks"),
     Input("modal-close-button", "n_clicks"),
     Input("modal-submit-button", "n_clicks"),
-    State("modal", "opened"),
+    State("modal-simple", "opened"),
     prevent_initial_call=True,
 )
 def modal_demo(nc1, nc2, nc3, opened):
