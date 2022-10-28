@@ -21,6 +21,7 @@ class Meta(BaseModel):
     description: str
     component: Optional[str]
     dmc: bool = True
+    props: bool = True
 
 
 directory = "docs"
@@ -86,7 +87,7 @@ for file in files:
     # add keyword arguments section
     if meta.component:
         layout.extend(markdown.parse("##### Keyword Arguments"))
-        if meta.dmc:
+        if meta.props:
             layout.extend(
                 markdown.parse(
                     """Along with the props mentioned below, all dmc components also support margin and padding props 

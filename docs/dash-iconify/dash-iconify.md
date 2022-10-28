@@ -5,6 +5,7 @@ head: Based on Iconify, this dash component library brings over 100,000 vector i
 description: Add icons to your dash apps the simplest and the most efficient way.
 component: DashIconify
 dmc: false
+props: false
 ---
 
 ##### Why Use This?
