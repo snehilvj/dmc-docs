@@ -1,26 +1,23 @@
 import dash_mantine_components as dmc
 from dash import html, Output, Input, callback
 
+data = [["react", "React"], ["ng", "Angular"], ["svelte", "Svelte"], ["vue", "Vue"]]
+
 component = html.Div(
     [
         dmc.RadioGroup(
-            id="radiogroup",
-            data=[
-                {"value": "react", "label": "React"},
-                {"value": "ng", "label": "Angular"},
-                {"value": "svelte", "label": "Svelte"},
-                {"value": "vue", "label": "Vue"},
-            ],
+            [dmc.Radio(l, value=k) for k, l in data],
+            id="radiogroup-simple",
             value="react",
             label="Select your favorite framework/library",
             size="sm",
+            mt=10,
         ),
-        dmc.Space(h=10),
         dmc.Text(id="radio-output"),
     ]
 )
 
 
-@callback(Output("radio-output", "children"), Input("radiogroup", "value"))
+@callback(Output("radio-output", "children"), Input("radiogroup-simple", "value"))
 def choose_framework(value):
     return value
