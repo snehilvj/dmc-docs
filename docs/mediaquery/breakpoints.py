@@ -2,9 +2,7 @@ import dash_mantine_components as dmc
 
 highlight = {"border": f"1px solid {dmc.theme.DEFAULT_COLORS['blue'][3]}"}
 
-component = dmc.Group(
-    direction="column",
-    spacing=5,
+component = dmc.Stack(
     children=[
         dmc.MediaQuery("larger than lg", largerThan="lg", styles=highlight),
         dmc.MediaQuery("smaller than lg", smallerThan="lg", styles=highlight),
