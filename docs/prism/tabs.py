@@ -1,22 +1,38 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
+
 component = dmc.Tabs(
-    variant="outline",
-    children=[
-        dmc.Tab(
-            label="styles.css",
-            icon=[DashIconify(icon="vscode-icons:file-type-css", width=20)],
-            children=[
-                dmc.Prism(
-                    """@font-face {
+    [
+        dmc.TabsList(
+            [
+                dmc.Tab(
+                    "styles.css",
+                    icon=DashIconify(icon="vscode-icons:file-type-css", width=20),
+                    value="styles",
+                ),
+                dmc.Tab(
+                    "decorator.py",
+                    icon=DashIconify(icon="vscode-icons:file-type-python", width=20),
+                    value="decorator",
+                ),
+                dmc.Tab(
+                    "component.jsx",
+                    icon=DashIconify(icon="vscode-icons:file-type-reactts", width=20),
+                    value="component",
+                ),
+            ]
+        ),
+        dmc.TabsPanel(
+            dmc.Prism(
+                """@font-face {
   font-family: Chunkfive; src: url('Chunkfive.otf');
 }
 
 body, .usertext {
   color: #F0F0F0; background: #600;
   font-family: Chunkfive, sans;
-  --heading-1: 30px/32px Helvetica, sans-serif;
+  --head-1: 30px/32px Helvetica, sans-serif;
 }
 
 @import url(print.css);
@@ -25,16 +41,13 @@ body, .usertext {
     content: attr(href)
   }
 }""",
-                    language="css",
-                )
-            ],
+                language="css",
+            ),
+            value="styles",
         ),
-        dmc.Tab(
-            label="decorator.py",
-            icon=[DashIconify(icon="vscode-icons:file-type-python", width=20)],
-            children=[
-                dmc.Prism(
-                    """@requires_authorization
+        dmc.TabsPanel(
+            dmc.Prism(
+                """@requires_authorization
 def somefunc(param1='', param2=0):
     r'''A docstring'''
     if param1 > param2: # interesting
@@ -46,23 +59,22 @@ class SomeClass:
 
 >>> message = '''interpreter
 ... prompt'''""",
-                    language="python",
-                )
-            ],
+                language="python",
+            ),
+            value="decorator",
         ),
-        dmc.Tab(
-            label="component.jsx",
-            icon=[DashIconify(icon="vscode-icons:file-type-reactts", width=20)],
-            children=[
-                dmc.Prism(
-                    """import { Button } from '@mantine/core';
+        dmc.TabsPanel(
+            dmc.Prism(
+                """import { Button } from '@mantine/core';
 
 function Demo() {
   return <Button>Hello</Button>
 }""",
-                    language="tsx",
-                )
-            ],
+                language="tsx",
+            ),
+            value="component",
         ),
     ],
+    value="styles",
+    variant="outline",
 )
