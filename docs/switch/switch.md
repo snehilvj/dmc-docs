@@ -46,3 +46,13 @@ dmc.Switch(
 
 .. exec::docs.switch.label
     :prism: false
+
+##### Icon Labels
+
+You can also add icons in the switch labels.
+
+.. exec::docs.switch.icons
+
+##### Thumb Icon
+
+.. exec::docs.switch.thumb
