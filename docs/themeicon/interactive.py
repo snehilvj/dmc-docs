@@ -6,7 +6,7 @@ from lib.configurator import create_configurator
 controls = [
     {
         "property": "variant",
-        "component": "SegmentedControl",
+        "component": "DemoSegmentedControl",
         "data": ["filled", "light", "outline"],
         "value": "filled",
     },

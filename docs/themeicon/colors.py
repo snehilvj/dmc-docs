@@ -14,10 +14,8 @@ colors = [
     "orange",
 ]
 
-component = dmc.Group(
-    direction="column",
+component = dmc.Stack(
     spacing="xs",
-    position="center",
     children=[
         dmc.Group(
             [
