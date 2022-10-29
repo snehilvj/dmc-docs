@@ -7,12 +7,12 @@ component = dmc.Stack(
         dmc.TextInput(
             style={"width": 200},
             placeholder="9876543210",
-            rightSection=[DashIconify(icon="emojione-v1:mobile-phone")],
+            rightSection=DashIconify(icon="emojione-v1:mobile-phone"),
         ),
         dmc.TextInput(
             style={"width": 200},
             placeholder="9876543210",
-            rightSection=[dmc.Loader(size="xs")],
+            rightSection=dmc.Loader(size="xs"),
         ),
     ],
 )
