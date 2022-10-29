@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-component = dmc.Group(
+component = dmc.Stack(
     children=[
         dmc.TimeInput(label="Enter Time:", style={"width": 100}, error=True),
         dmc.TimeInput(
@@ -10,5 +10,4 @@ component = dmc.Group(
             withSeconds=True,
         ),
     ],
-    direction="column",
 )
