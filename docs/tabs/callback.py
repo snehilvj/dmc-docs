@@ -6,21 +6,25 @@ from lib.utils import create_graph
 component = html.Div(
     [
         dmc.Tabs(
-            id="tabs-example",
-            active=1,
-            children=[
-                dmc.Tab(label="Tab One"),
-                dmc.Tab(label="Tab Two"),
+            [
+                dmc.TabsList(
+                    [
+                        dmc.Tab("Tab one", value="1"),
+                        dmc.Tab("Tab two", value="2"),
+                    ]
+                ),
             ],
+            id="tabs-example",
+            value="1",
         ),
-        html.Div(id="tabs-content"),
+        html.Div(id="tabs-content", style={"paddingTop": 10}),
     ]
 )
 
 
-@callback(Output("tabs-content", "children"), Input("tabs-example", "active"))
+@callback(Output("tabs-content", "children"), Input("tabs-example", "value"))
 def render_content(active):
-    if active == 0:
+    if active == "1":
         return [dmc.Text("Tab One selected"), create_graph()]
     else:
         return [dmc.Text("Tab Two selected"), create_graph()]
