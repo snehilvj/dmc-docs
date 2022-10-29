@@ -33,7 +33,7 @@ controls = [
     },
     {
         "property": "align",
-        "component": "SegmentedControl",
+        "component": "DemoSegmentedControl",
         "data": ["left", "right"],
         "value": "left",
     },
