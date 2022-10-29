@@ -3,7 +3,7 @@ name: Slider
 section: Inputs & Buttons
 head: Capture user feedback from a range of values.
 description: Use Slider component to capture user feedback from a range of values.
-component: Slider
+component: Slider, RangeSlider
 ---
 
 ##### Interactive Demo
@@ -16,6 +16,10 @@ component: Slider
 Use the `value` prop to get the value of the slider.
 
 .. exec::docs.slider.simple
+
+##### Range Slider
+
+.. exec::docs.slider.range
 
 ##### Update Mode
 

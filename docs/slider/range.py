@@ -3,9 +3,9 @@ from dash import callback, html, Output, Input
 
 component = html.Div(
     [
-        dmc.Slider(
-            id="slider-callback",
-            value=26,
+        dmc.RangeSlider(
+            id="range-slider-callback",
+            value=[26, 50],
             marks=[
                 {"value": 20, "label": "20%"},
                 {"value": 50, "label": "50%"},
@@ -13,11 +13,13 @@ component = html.Div(
             ],
             mb=35,
         ),
-        dmc.Text(id="slider-output"),
+        dmc.Text(id="range-slider-output"),
     ]
 )
 
 
-@callback(Output("slider-output", "children"), Input("slider-callback", "value"))
+@callback(
+    Output("range-slider-output", "children"), Input("range-slider-callback", "value")
+)
 def update_value(value):
-    return f"You have selected: {value}"
+    return f"You have selected: [{value[0]}, {value[1]}]"
