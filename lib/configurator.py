@@ -34,13 +34,13 @@ color_picker_callback_func = """function(color) {
 }"""
 
 
-def create_configurator(demo, controls, center=True):
+def create_configurator(demo, controls, center=True, cid=None):
     # callback setup
     dmc_controls = []  # right pane
     callback_outputs = []
     callback_inputs = []
 
-    demo.id = str(uuid.uuid4())
+    demo.id = cid or str(uuid.uuid4())
 
     # create control components
     for i, conf in enumerate(controls):
