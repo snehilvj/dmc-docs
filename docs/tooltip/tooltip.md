@@ -11,13 +11,12 @@ component: Tooltip
 .. exec::docs.tooltip.interactive
     :prism: false
 
-##### Position and Placement
+##### Position
 
 Tooltip position relative to target element is defined by:
 
-* `position` - tooltip side - top, bottom, right or left, defaults to top
-* `placement` - tooltip placement relative to position - start, center or end, defaults to center
-* `gutter` - space between tooltip and target element in px, defaults to 5px
+* `position` - tooltip side
+* `offset` - space between tooltip and target element in px, can be negative
 
 ```python
 import dash_mantine_components as dmc
@@ -25,8 +24,7 @@ import dash_mantine_components as dmc
 dmc.Tooltip(
     label="This is a tooltip",
     position="right",
-    placement="center",
-    gutter=3,
+    offset=3,
     children=[...]
 )
 ```
@@ -39,7 +37,7 @@ dmc.Tooltip(
 Tooltip arrow is controlled by:
 
 * `withArrow` - set to True if arrow should be rendered
-* `arrowSize` - arrow size in px, defaults to 4px
+* `arrowSize` - arrow size in px
 
 .. exec::docs.tooltip.arrow
 
@@ -99,3 +97,9 @@ You can delay tooltip open/close events by setting `openDelay` and `closeDelay` 
 and reset if user moves mouse over/out of target element before delay is expired.
 
 .. exec::docs.tooltip.delay
+
+##### Floating Tooltip
+
+dmc.FloatingTooltip component has the same API as dmc.Tooltip component but tooltip will follow mouse.
+
+.. exec::docs.tooltip.floating

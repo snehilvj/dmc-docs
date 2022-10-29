@@ -4,18 +4,24 @@ component = dmc.Group(
     position="center",
     children=[
         dmc.Tooltip(
-            children=[dmc.Button(f"{position}-{placement}", variant="outline")],
+            children=[dmc.Button(position, variant="outline")],
             withArrow=True,
-            label=f"{position}-{placement}",
+            label=position,
             position=position,
-            placement=placement,
         )
         for position in [
             "top",
-            "bottom",
             "right",
+            "bottom",
             "left",
+            "top-end",
+            "top-start",
+            "right-end",
+            "right-start",
+            "bottom-end",
+            "bottom-start",
+            "left-end",
+            "left-start",
         ]
-        for placement in ["start", "center", "end"]
     ],
 )

@@ -8,7 +8,6 @@ component = dmc.Group(
             transition=transition,
             label=transition,
             transitionDuration=300,
-            transitionTimingFunction="ease",
         )
         for transition in [
             "fade",
