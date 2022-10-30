@@ -3,6 +3,7 @@ name: Getting Started
 section: Getting Started
 head: Installation instructions and basic usage.
 description: Install dash-mantine-components using pip, poetry, or conda.
+dmc: false
 ---
 
 ##### PyPI
