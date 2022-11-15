@@ -137,7 +137,7 @@ python-versions = "*"
 
 [[package]]
 name = "dash-mantine-components"
-version = "0.11.0a1"
+version = "0.11.0a2"
 description = "Plotly Dash Components based on Mantine"
 category = "main"
 optional = false
@@ -516,7 +516,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "88cd23b9b6239b97d308baed48b17527a1e516d1b3f4867035a0a7a591a22edf"
+content-hash = "ae41b8503feabe0302ac51a363ec218305a745185bfc455295743d867846ce41"
 
 [metadata.files]
 black = [
