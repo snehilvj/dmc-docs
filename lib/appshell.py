@@ -34,7 +34,7 @@ def create_main_nav_link(icon, label, href):
 
 navbar_icons = {
     "Data Display": "radix-icons:dashboard",
-    "Inputs & Buttons": "radix-icons:input",
+    "Inputs": "radix-icons:input",
     "Feedback": "radix-icons:info-circled",
     "Overlay": "radix-icons:stack",
     "Navigation": "radix-icons:hamburger-menu",

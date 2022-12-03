@@ -1,6 +1,6 @@
 ---
 name: RadioGroup
-section: Inputs & Buttons
+section: Inputs
 head: Capture user feedback limited to small set of options.
 description: RadioGroup component gives user radio inputs to allow only one selection from a small set of options. 
 component: RadioGroup

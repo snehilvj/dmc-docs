@@ -1,6 +1,6 @@
 ---
 name: MultiSelect
-section: Inputs & Buttons
+section: Inputs
 head: Custom searchable multi select.
 description: MultiSelect enables users to select multiple options in a dropdown. 
 component: MultiSelect

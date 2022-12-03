@@ -1,6 +1,6 @@
 ---
 name: DatePicker
-section: Inputs & Buttons
+section: Inputs
 head: Capture date inputs from user.
 description: Best DatePicker and DateRangePicker components out there. Helps you easily switch between different months, years along with locale support.
 component: DatePicker, DateRangePicker
