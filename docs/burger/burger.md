@@ -1,6 +1,6 @@
 ---
 name: Burger 
-section: Buttons
+section: Navigation 
 head: Open/close navigation button.
 description: Use the dmc.Burger component to toggle navigation menus.
 component: Burger

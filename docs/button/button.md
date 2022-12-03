@@ -1,6 +1,6 @@
 ---
 name: Button
-section: Inputs & Buttons
+section: Buttons
 head: Render button or link with button styles from mantine theme.
 description: DMC alternative to html <button>.
 component: Button

@@ -1,6 +1,6 @@
 ---
 name: ActionIcon
-section: Inputs & Buttons
+section: Buttons
 head: Icon button to indicate secondary action.
 description: Use this component as an alternative to buttons when you just want to use an icon.
 component: ActionIcon
