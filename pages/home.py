@@ -125,31 +125,31 @@ layout = html.Div(
                     ],
                     children=[
                         Tile(
-                            icon="material-symbols:calendar-month-rounded",
+                            icon="material-symbols:calendar-month-outline-rounded",
                             heading="Best DatePickers out there!",
                             description="Switch between different years and months while looking great too.",
                             href="/components/datepicker",
                         ),
                         Tile(
-                            icon="material-symbols:format-color-fill-rounded",
+                            icon="material-symbols:colorize-outline-rounded",
                             heading="Dark Theme Support",
                             description="Use dark theme across all components with no additional steps.",
                             href="/components/mantineprovider",
                         ),
                         Tile(
-                            icon="material-symbols:sd-card-alert-rounded",
+                            icon="material-symbols:sd-card-alert-outline-rounded",
                             heading="Notifications System",
                             description="A great notifications system now in dash apps too.",
                             href="/components/notification",
                         ),
                         Tile(
-                            icon="material-symbols:dashboard-rounded",
+                            icon="material-symbols:dashboard-outline-rounded",
                             heading="Responsive Grid System",
                             description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
                             href="/components/grid",
                         ),
                         Tile(
-                            icon="material-symbols:magic-button",
+                            icon="material-symbols:auto-awesome-outline-rounded",
                             heading="Unique Components",
                             description="Components such as Segmented Control only available in DMC.",
                             href="/components/segmentedcontrol",

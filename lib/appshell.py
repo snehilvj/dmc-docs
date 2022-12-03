@@ -18,11 +18,8 @@ def create_main_nav_link(icon, label, href):
     return dmc.Anchor(
         dmc.Group(
             [
-                dmc.ThemeIcon(
-                    DashIconify(icon=icon, width=18),
-                    size=30,
-                    radius=30,
-                    variant="light",
+                DashIconify(
+                    icon=icon, width=20, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
                 ),
                 dmc.Text(label, size="sm"),
             ]
@@ -158,12 +155,12 @@ def create_side_nave_content(nav_data):
         mt=20,
         children=[
             create_main_nav_link(
-                icon="radix-icons:rocket",
+                icon="material-symbols:rocket-launch-rounded",
                 label="Getting Started",
                 href="/getting-started",
             ),
             create_main_nav_link(
-                icon="radix-icons:iconjar-logo",
+                icon="material-symbols:cookie-rounded",
                 label="Dash Iconify",
                 href="/dash-iconify",
             ),
