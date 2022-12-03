@@ -90,7 +90,7 @@ for file in files:
         if meta.props:
             layout.extend(
                 markdown.parse(
-                    """Along with the props mentioned below, all dmc components also support margin and padding props 
+                    """Along with the props mentioned below, these dmc components also support margin and padding props 
                     such as `m`, `mx`, `my`, `p`, `pb`, `pt`, etc. """
                 )
             )
