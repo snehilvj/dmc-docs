@@ -71,13 +71,7 @@ for file in files:
     layout.append(title)
 
     # add head
-    head = dmc.Text(
-        meta.head,
-        color="gray",
-        style={
-            "marginBottom": 25,
-        },
-    )
+    head = dmc.Text(meta.head, mb=25)
     layout.append(head)
 
     # render markdown into dmc components
