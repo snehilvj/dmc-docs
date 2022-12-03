@@ -41,6 +41,7 @@ navbar_icons = {
     "Typography": "radix-icons:letter-case-capitalize",
     "Layout": "radix-icons:container",
     "Miscellaneous": "radix-icons:mix",
+    "Buttons": "radix-icons:button",
 }
 
 
