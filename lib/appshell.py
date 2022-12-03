@@ -257,6 +257,7 @@ def create_table_of_contents(toc_items):
         width={"base": 300},
         zIndex=10,
         children=toc,
+        withBorder=False,
     )
 
 

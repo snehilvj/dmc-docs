@@ -1,6 +1,7 @@
 from os import environ
 
 import dash
+from dash.dash import Dash
 import dash_mantine_components as dmc
 import requests
 from dash import html
@@ -45,35 +46,24 @@ def create_contributors_avatars():
 
 
 def Tile(icon, heading, description, href):
-    return dmc.Anchor(
-        dmc.Paper(
-            p="lg",
-            withBorder=True,
-            children=dmc.Stack(
-                spacing=0,
-                align="center",
-                children=[
-                    dmc.ThemeIcon(
-                        DashIconify(icon=icon, height=20),
-                        size=40,
-                        radius=40,
-                        variant="light",
-                    ),
-                    dmc.Text(heading, mb=10, mt=20),
-                    dmc.Text(
-                        description,
-                        color="dimmed",
-                        align="center",
-                        size="sm",
-                        mb=10,
-                        style={"lineHeight": 1.6},
-                    ),
-                ],
+    return dmc.Card(
+        radius="md",
+        p="xl",
+        withBorder=True,
+        m=5,
+        children=[
+            DashIconify(
+                icon=icon, height=40, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
             ),
-            mb=30,
-        ),
-        href=href,
-        underline=False,
+            dmc.Text(heading, size="lg", mt="lg"),
+            dmc.Divider(
+                style={"width": 50},
+                size="sm",
+                color=dmc.theme.DEFAULT_COLORS["indigo"][5],
+                my=10,
+            ),
+            dmc.Text(description, size="sm", color="dimmed", mt="sm"),
+        ],
     )
 
 
@@ -105,17 +95,6 @@ layout = html.Div(
                         ),
                         dmc.Anchor(
                             dmc.Button(
-                                "Github",
-                                variant="default",
-                                leftIcon=DashIconify(
-                                    icon="radix-icons:github-logo", width=20
-                                ),
-                            ),
-                            href="https://github.com/snehilvj/dash-mantine-components",
-                            target="_blank",
-                        ),
-                        dmc.Anchor(
-                            dmc.Button(
                                 "Sponsor",
                                 variant="outline",
                                 color="red",
@@ -126,7 +105,7 @@ layout = html.Div(
                         ),
                     ],
                     position="center",
-                    mt=20,
+                    mt=30,
                     mb=90,
                 ),
             ],
@@ -135,48 +114,48 @@ layout = html.Div(
             size="lg",
             px=0,
             py=0,
+            my=40,
             children=[
                 dmc.SimpleGrid(
                     cols=3,
+                    mt=100,
                     breakpoints=[
                         {"maxWidth": "xs", "cols": 1},
-                        {"maxWidth": "sm", "cols": 2},
+                        {"maxWidth": "xl", "cols": 2},
                     ],
                     children=[
                         Tile(
-                            icon="radix-icons:calendar",
+                            icon="material-symbols:calendar-month-rounded",
                             heading="Best DatePickers out there!",
-                            description="Easily switch between different years and months while looking great too.",
+                            description="Switch between different years and months while looking great too.",
                             href="/components/datepicker",
                         ),
                         Tile(
-                            icon="radix-icons:blending-mode",
+                            icon="material-symbols:format-color-fill-rounded",
                             heading="Dark Theme Support",
                             description="Use dark theme across all components with no additional steps.",
                             href="/components/mantineprovider",
                         ),
                         Tile(
-                            icon="radix-icons:bell",
+                            icon="material-symbols:sd-card-alert-rounded",
                             heading="Notifications System",
-                            description="Mantine has a great notifications system, and now you get that in dash apps "
-                            "too.",
+                            description="A great notifications system now in dash apps too.",
                             href="/components/notification",
                         ),
                         Tile(
-                            icon="radix-icons:dashboard",
+                            icon="material-symbols:dashboard-rounded",
                             heading="Responsive Grid System",
                             description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
                             href="/components/grid",
                         ),
                         Tile(
-                            icon="radix-icons:star",
+                            icon="material-symbols:magic-button",
                             heading="Unique Components",
-                            description="Enhance your apps with components such as Segmented Control only available "
-                            "with DMC.",
+                            description="Components such as Segmented Control only available in DMC.",
                             href="/components/segmentedcontrol",
                         ),
                         Tile(
-                            icon="radix-icons:text-align-left",
+                            icon="material-symbols:power-input-rounded",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
                             href="/components/select",
