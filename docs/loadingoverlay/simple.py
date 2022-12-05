@@ -13,12 +13,12 @@ component = html.Div(
                 dmc.TextInput(
                     label="Username",
                     placeholder="Your username",
-                    icon=[DashIconify(icon="radix-icons:person")],
+                    icon=DashIconify(icon="radix-icons:person"),
                 ),
                 dmc.TextInput(
                     label="Password",
                     placeholder="Your password",
-                    icon=[DashIconify(icon="radix-icons:lock-closed")],
+                    icon=DashIconify(icon="radix-icons:lock-closed"),
                 ),
                 dmc.Checkbox(
                     label="Remember me",

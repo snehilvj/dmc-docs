@@ -15,6 +15,6 @@ controls = [
     {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
 ]
 
-demo = dmc.ThemeIcon(children=[DashIconify(icon="tabler:photo")])
+demo = dmc.ThemeIcon(children=DashIconify(icon="tabler:photo"))
 
 component = create_configurator(demo, controls)

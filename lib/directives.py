@@ -125,7 +125,7 @@ class Admonition(BaseDirective):
         return dmc.Alert(
             title=title,
             children=text,
-            icon=[DashIconify(icon=icon)],
+            icon=DashIconify(icon=icon),
             color=color,
             mb=10,
         )
