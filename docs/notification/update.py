@@ -36,7 +36,7 @@ def notify(nc1, nc2):
             return dmc.Notification(
                 id="my-notification",
                 title="Process initiated",
-                message=["The process has started."],
+                message="The process has started.",
                 loading=True,
                 color="orange",
                 action="show",
@@ -50,5 +50,5 @@ def notify(nc1, nc2):
                 message="The process has started.",
                 color="green",
                 action="update",
-                icon=[DashIconify(icon="akar-icons:circle-check")],
+                icon=DashIconify(icon="akar-icons:circle-check"),
             )

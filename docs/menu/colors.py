@@ -24,5 +24,6 @@ component = dmc.Menu(
                 ),
             ]
         ),
-    ], trigger="hover"
+    ],
+    trigger="hover",
 )

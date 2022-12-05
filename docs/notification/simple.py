@@ -34,5 +34,5 @@ def show(n_clicks):
         id="simple-notify",
         action="show",
         message="Notifications in Dash, Awesome!",
-        icon=[DashIconify(icon="ic:round-celebration")],
+        icon=DashIconify(icon="ic:round-celebration"),
     )

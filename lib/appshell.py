@@ -274,12 +274,16 @@ def create_appshell(nav_data):
             children=[
                 dcc.Store(id="theme-store", storage_type="local"),
                 dcc.Location(id="url"),
-                create_header(nav_data),
-                create_side_navbar(nav_data),
-                # create_navbar_drawer(nav_data),
-                html.Div(
-                    dmc.Container(size="lg", pt=90, children=page_container),
-                    id="wrapper",
+                dmc.NotificationsProvider(
+                    [
+                        create_header(nav_data),
+                        create_side_navbar(nav_data),
+                        # create_navbar_drawer(nav_data),
+                        html.Div(
+                            dmc.Container(size="lg", pt=90, children=page_container),
+                            id="wrapper",
+                        ),
+                    ]
                 ),
             ],
         ),
