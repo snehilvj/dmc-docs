@@ -19,7 +19,7 @@ def create_main_nav_link(icon, label, href):
         dmc.Group(
             [
                 DashIconify(
-                    icon=icon, width=20, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
+                    icon=icon, width=23, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
                 ),
                 dmc.Text(label, size="sm"),
             ]

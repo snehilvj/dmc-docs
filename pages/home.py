@@ -53,9 +53,9 @@ def Tile(icon, heading, description, href):
         m=5,
         children=[
             DashIconify(
-                icon=icon, height=40, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
+                icon=icon, height=20, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
             ),
-            dmc.Text(heading, size="lg", mt="lg"),
+            dmc.Text(heading, size="lg", mt="md"),
             dmc.Divider(
                 style={"width": 50},
                 size="sm",
@@ -124,43 +124,44 @@ layout = html.Div(
                         {"maxWidth": "xl", "cols": 2},
                     ],
                     children=[
-                        Tile(
-                            icon="material-symbols:calendar-month-outline-rounded",
+                       Tile(
+                            icon="radix-icons:calendar",
                             heading="Best DatePickers out there!",
-                            description="Switch between different years and months while looking great too.",
+                            description="Easily switch between different years and months while looking great too.",
                             href="/components/datepicker",
                         ),
                         Tile(
-                            icon="material-symbols:colorize-outline-rounded",
+                            icon="radix-icons:blending-mode",
                             heading="Dark Theme Support",
                             description="Use dark theme across all components with no additional steps.",
                             href="/components/mantineprovider",
                         ),
                         Tile(
-                            icon="material-symbols:sd-card-alert-outline-rounded",
+                            icon="radix-icons:bell",
                             heading="Notifications System",
-                            description="A great notifications system now in dash apps too.",
+                            description="Mantine has a great notifications system, and now you get that in dash apps "
+                            "too.",
                             href="/components/notification",
                         ),
                         Tile(
-                            icon="material-symbols:dashboard-outline-rounded",
+                            icon="radix-icons:dashboard",
                             heading="Responsive Grid System",
                             description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
                             href="/components/grid",
                         ),
                         Tile(
-                            icon="material-symbols:auto-awesome-outline-rounded",
+                            icon="radix-icons:star",
                             heading="Unique Components",
-                            description="Components such as Segmented Control only available in DMC.",
+                            description="Enhance your apps with components such as Segmented Control only available "
+                            "with DMC.",
                             href="/components/segmentedcontrol",
                         ),
                         Tile(
-                            icon="material-symbols:power-input-rounded",
+                            icon="radix-icons:text-align-left",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
                             href="/components/select",
-                        ),
-                    ],
+                        ),                    ],
                 )
             ],
         ),
