@@ -8,7 +8,7 @@ dash-core-components==2.0.0; python_version >= "3.7" and python_version < "4"
 dash-extensions==0.1.6; python_version >= "3.7" and python_version < "4"
 dash-html-components==2.0.0; python_version >= "3.7" and python_version < "4"
 dash-iconify==0.1.2
-dash-mantine-components==0.11.0a2
+dash-mantine-components==0.11.0a3
 dash-table==5.0.0; python_version >= "3.7" and python_version < "4"
 dash==2.6.2; python_version >= "3.6"
 editorconfig==0.12.3; python_version >= "3.7" and python_version < "4"
