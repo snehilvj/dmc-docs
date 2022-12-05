@@ -124,7 +124,7 @@ layout = html.Div(
                         {"maxWidth": "xl", "cols": 2},
                     ],
                     children=[
-                       Tile(
+                        Tile(
                             icon="radix-icons:calendar",
                             heading="Best DatePickers out there!",
                             description="Easily switch between different years and months while looking great too.",
@@ -161,7 +161,8 @@ layout = html.Div(
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
                             href="/components/select",
-                        ),                    ],
+                        ),
+                    ],
                 )
             ],
         ),
