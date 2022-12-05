@@ -3,7 +3,7 @@ import dash_mantine_components as dmc
 
 component = dmc.Menu(
     [
-        dmc.MenuTarget(dmc.Button("Click for options!")),
+        dmc.MenuTarget(dmc.Button("Hover for options!")),
         dmc.MenuDropdown(
             [
                 dmc.MenuLabel("Application"),

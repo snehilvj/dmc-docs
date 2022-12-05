@@ -42,7 +42,7 @@ Menu dropdown can be animated with any of the premade transitions.
 
 .. exec::docs.menu.custom
 
-##### Icons, rightSection, and colors
+##### Icons, Right Section, and Colors
 
 Menu component can be customised by changing icons, right section and even colors. Here's an example.
 
