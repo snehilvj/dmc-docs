@@ -1,6 +1,6 @@
 ---
 name: SegmentedControl
-section: Inputs & Buttons
+section: Inputs
 head: Horizontal control made of multiple segments, alternative to RadioGroup.
 description: SegmentedControl is an alternative to RadioGroup and allows users to select an option from a small set of options. 
 component: SegmentedControl

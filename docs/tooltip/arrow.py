@@ -12,9 +12,9 @@ component = dmc.Group(
             dmc.Button("With size", variant="outline"),
             label="Arrow with size",
             withArrow=True,
-            arrowSize=3,
+            arrowSize=6,
             opened=True,
         ),
     ],
-    style={"marginTop": 25},
+    mt=25,
 )

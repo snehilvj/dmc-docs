@@ -6,20 +6,19 @@ component = html.Div(
         dmc.Alert(
             "Something terrible happened! You made a mistake and there is no going back, your data was lost forever! ",
             title="Bummer!",
-            id="alert",
+            id="alert-dismiss",
             color="red",
             withCloseButton=True,
         ),
-        dmc.Space(h=20),
-        dmc.Button("Toggle alert", id="alert-button"),
+        dmc.Button("Toggle alert", id="alert-button", mt=20),
     ]
 )
 
 
 @callback(
-    Output("alert", "hide"),
+    Output("alert-dismiss", "hide"),
     Input("alert-button", "n_clicks"),
-    State("alert", "hide"),
+    State("alert-dismiss", "hide"),
     prevent_initial_call=True,
 )
 def alert(n_clicks, hide):

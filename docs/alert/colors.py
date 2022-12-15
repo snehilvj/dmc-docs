@@ -2,9 +2,7 @@ import dash_mantine_components as dmc
 
 message = "Something happened! You made a mistake and there is no going back!"
 
-component = dmc.Group(
-    direction="column",
-    grow=True,
+component = dmc.Stack(
     children=[
         dmc.Alert(message, title="Primary", color="blue"),
         dmc.Alert(message, title="Secondary", color="gray"),

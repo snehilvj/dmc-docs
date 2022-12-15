@@ -5,6 +5,36 @@ html {
     scroll-padding-top: 90px;
 }
 
+input:invalid {
+    outline: none !important;
+}
+
+#wrapper {
+    padding: 10px;
+    margin-left: 320px;
+    margin-right: 320px;
+}
+
+@media only screen and (max-width: 1500px) {
+    #toc-navbar {
+        display: none;
+    }
+
+    #wrapper {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #components-navbar {
+        display: none;
+    }
+
+    #wrapper {
+        margin-left: 0;
+    }
+}
+
 .demo-container {
     display: flex;
     max-width: 100%;
@@ -39,37 +69,4 @@ html {
     }
 }
 
-#wrapper {
-    padding: 10px;
-    margin-left: 320px;
-    margin-right: 320px;
-}
 
-@media only screen and (max-width: 1500px) {
-    #toc-navbar {
-        display: none;
-    }
-
-    #wrapper {
-        margin-right: 0;
-    }
-}
-
-
-@media only screen and (max-width: 1200px) {
-    #components-navbar {
-        display: none;
-    }
-
-    #wrapper {
-        margin-left: 0;
-    }
-}
-
-#components-navbar, #toc-navbar {
-    padding-top: 20px;
-}
-
-input:invalid {
-    outline: none !important;
-}

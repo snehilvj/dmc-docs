@@ -12,8 +12,8 @@ component = html.Div(
                 {"value": "svelte", "label": "Svelte"},
                 {"value": "vue", "label": "Vue"},
             ],
+            mt=10,
         ),
-        dmc.Space(h=10),
         dmc.Text(id="segmented-value"),
     ]
 )

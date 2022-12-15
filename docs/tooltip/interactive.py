@@ -8,14 +8,21 @@ controls = [
     {
         "property": "position",
         "component": "Select",
-        "data": ["top", "left", "right", "bottom"],
+        "data": [
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "top-end",
+            "top-start",
+            "right-end",
+            "right-start",
+            "bottom-end",
+            "bottom-start",
+            "left-end",
+            "left-start",
+        ],
         "value": "top",
-    },
-    {
-        "property": "placement",
-        "component": "SegmentedControl",
-        "data": ["start", "center", "end"],
-        "value": "center",
     },
     {"property": "withArrow", "component": "Switch", "checked": True},
 ]

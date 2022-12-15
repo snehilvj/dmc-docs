@@ -54,6 +54,8 @@ import dash_mantine_components as dmc
 dmc.Table(
     striped=True,
     highlightOnHover=True,
+    withBorder=True,
+    withColumnBorders=True,
     children=[...]
 )
 ```

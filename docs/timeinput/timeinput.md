@@ -1,6 +1,6 @@
 ---
 name: TimeInput
-section: Inputs & Buttons
+section: Inputs
 head: Capture time input from user.
 description: Use the TimeInput component to capture time input from user.
 component: TimeInput

@@ -3,7 +3,7 @@ name: Grid
 section: Layout
 head: Flexbox grid system with variable amount of columns.
 description: Use Grid component to create layouts with a flexbox grid system with variable amount of columns.
-component: Grid
+component: Grid, Col
 ---
 
 ##### Usage
@@ -68,3 +68,17 @@ dmc.Grid(
 
 .. exec::docs.grid.justify
     :prism: false
+
+##### Auto Sized Columns
+
+All columns in a row with `span` or a `breakpoint` of `auto` will have equal size, growing as much as they can to fill the row.
+In this example, the second column takes up 50% of the row while the other two columns automatically resize to fill the remaining space.
+
+.. exec::docs.grid.auto
+
+##### Fit Content
+
+If you set `span` or a `breakpoint` to `content`, the column's size will automatically adjust to match the width of its content.
+
+.. exec::docs.grid.fit
+

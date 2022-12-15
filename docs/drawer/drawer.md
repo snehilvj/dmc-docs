@@ -30,3 +30,9 @@ By default, Drawer will start to appear from the left, but this position can be 
 prop.
 
 .. exec::docs.drawer.placement
+
+##### Transition
+
+You can customize transition, timing function and duration for Drawer transition.
+
+.. exec::docs.drawer.transition

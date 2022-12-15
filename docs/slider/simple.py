@@ -11,8 +11,8 @@ component = html.Div(
                 {"value": 50, "label": "50%"},
                 {"value": 80, "label": "80%"},
             ],
+            mb=35,
         ),
-        dmc.Space(h=35),
         dmc.Text(id="slider-output"),
     ]
 )

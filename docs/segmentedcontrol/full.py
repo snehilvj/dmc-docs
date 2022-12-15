@@ -5,7 +5,7 @@ from lib.configurator import create_configurator
 controls = [
     {
         "property": "orientation",
-        "component": "SegmentedControl",
+        "component": "DemoSegmentedControl",
         "value": "horizontal",
         "data": ["horizontal", "vertical"],
     },

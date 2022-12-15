@@ -7,20 +7,18 @@ from dash_iconify import DashIconify
 component = html.Div(
     style={"width": 200},
     children=dmc.LoadingOverlay(
-        dmc.Group(
-            direction="column",
-            grow=True,
+        dmc.Stack(
             id="loading-form",
             children=[
                 dmc.TextInput(
                     label="Username",
                     placeholder="Your username",
-                    icon=[DashIconify(icon="radix-icons:person")],
+                    icon=DashIconify(icon="radix-icons:person"),
                 ),
                 dmc.TextInput(
                     label="Password",
                     placeholder="Your password",
-                    icon=[DashIconify(icon="radix-icons:lock-closed")],
+                    icon=DashIconify(icon="radix-icons:lock-closed"),
                 ),
                 dmc.Checkbox(
                     label="Remember me",

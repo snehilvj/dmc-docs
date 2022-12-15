@@ -13,4 +13,5 @@ component = html.A(
         position="bottom",
     ),
     href="https://www.linkedin.com/in/snehilvj/",
+    target="_blank",
 )

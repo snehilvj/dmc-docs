@@ -7,7 +7,7 @@ controls = [
     {"property": "size", "component": "DemoSlider", "value": "md"},
     {
         "property": "variant",
-        "component": "SegmentedControl",
+        "component": "DemoSegmentedControl",
         "data": ["oval", "bars", "dots"],
         "value": "oval",
     },

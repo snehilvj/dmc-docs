@@ -14,10 +14,8 @@ colors = [
     "orange",
 ]
 
-component = dmc.Group(
-    direction="column",
+component = dmc.Stack(
     spacing="xs",
-    position="center",
     children=[
         dmc.Group(
             [
@@ -30,6 +28,6 @@ component = dmc.Group(
             ],
             position="center",
         )
-        for variant in ["transparent", "outline", "light", "filled"]
+        for variant in ["subtle", "filled", "outline", "light" "transparent"]
     ],
 )

@@ -14,13 +14,13 @@ component: Pagination
 
 ##### Siblings
 
-Display an error with a red border and add an error message.
+Control the number of active item siblings with `siblings` prop.
 
 .. exec::docs.pagination.siblings
 
 ##### Boundaries
 
-Disable user text input.
+Control the number of items displayed after previous(<) and before next(>) buttons with `boundaries` prop.
 
 .. exec::docs.pagination.boundaries
 

@@ -6,7 +6,7 @@ component = html.Div(
         dmc.Button("Open Drawer", id="drawer-demo-button"),
         dmc.Drawer(
             title="Drawer Example",
-            id="drawer",
+            id="drawer-simple",
             padding="md",
         ),
     ]
@@ -14,7 +14,7 @@ component = html.Div(
 
 
 @callback(
-    Output("drawer", "opened"),
+    Output("drawer-simple", "opened"),
     Input("drawer-demo-button", "n_clicks"),
     prevent_initial_call=True,
 )

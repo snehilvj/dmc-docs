@@ -4,8 +4,16 @@ from lib.utils import create_graph
 
 component = dmc.Tabs(
     [
-        dmc.Tab(label="Tab one", children=create_graph()),
-        dmc.Tab(label="Tab two", children=create_graph()),
-        dmc.Tab(label="Tab three", children=create_graph()),
-    ]
+        dmc.TabsList(
+            [
+                dmc.Tab("Tab one", value="1"),
+                dmc.Tab("Tab two", value="2"),
+                dmc.Tab("Tab three", value="3"),
+            ]
+        ),
+        dmc.TabsPanel(create_graph(), value="1"),
+        dmc.TabsPanel(create_graph(), value="2"),
+        dmc.TabsPanel(create_graph(), value="3"),
+    ],
+    value="1",
 )

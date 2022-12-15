@@ -24,6 +24,18 @@ Multiple sections can be displayed instead of just one single bar.
 
 .. exec::docs.progress.sections
 
+##### With Label
+
+Labels can be provided for single bars as well as different sections.
+
+.. exec::docs.progress.labels
+
+##### Section Tooltips
+
+Hover on the sections to see tooltips in action.
+
+.. exec::docs.progress.tooltip
+
 ##### Size
 
 Size controls progress bar height. Progress has predefined sizes: xs, sm, etc. Alternatively, you can use a number to
@@ -48,15 +60,3 @@ dmc.Progress(radius="lg")
 
 dmc.Progress(radius=10)
 ```
-
-##### With Label
-
-Labels can be provided for single bars as well as different sections.
-
-.. exec::docs.progress.labels
-
-##### Gallery
-
-.. gallery::docs.progress.interval
-    :label: Color changing progress bar
-    :center: false

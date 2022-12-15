@@ -19,7 +19,7 @@ def create_figure():
                 go.Bar(
                     x=list(range(10)),
                     y=[random.randint(200, 1000) for _ in range(10)],
-                    name=u"Montréal",
+                    name="Montréal",
                     marker={"line": {"width": 0}},
                     marker_color=dmc.theme.DEFAULT_COLORS["indigo"][4],
                 ),

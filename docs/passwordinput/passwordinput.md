@@ -1,7 +1,7 @@
 ---
 name: PasswordInput
 
-section: Inputs & Buttons
+section: Inputs
 head: Capture password from user with an option to toggle visibility.
 description: Use PasswordInput to capture password from user with an option to toggle visibility.
 component: PasswordInput

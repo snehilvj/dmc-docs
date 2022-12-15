@@ -21,6 +21,8 @@ controls = [
     {"property": "required", "component": "Switch", "checked": True},
 ]
 
-demo = dmc.TextInput(label="Full Name", placeholder="Your Name", required=True)
+demo = dmc.TextInput(
+    label="Full Name", placeholder="Your Name", style={"width": 300}, required=True
+)
 
 component = create_configurator(demo, controls)

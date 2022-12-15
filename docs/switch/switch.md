@@ -1,6 +1,6 @@
 ---
 name: Switch
-section: Inputs & Buttons
+section: Inputs
 head: Capture boolean input from user.
 description: Use the Switch component to capture boolean input from user.
 component: Switch
@@ -46,3 +46,13 @@ dmc.Switch(
 
 .. exec::docs.switch.label
     :prism: false
+
+##### Icon Labels
+
+You can also add icons in the switch labels.
+
+.. exec::docs.switch.icons
+
+##### Thumb Icon
+
+.. exec::docs.switch.thumb

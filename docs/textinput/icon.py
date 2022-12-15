@@ -5,5 +5,5 @@ component = dmc.TextInput(
     label="Your Email",
     style={"width": 200},
     placeholder="Your Email",
-    icon=[DashIconify(icon="ic:round-alternate-email")],
+    icon=DashIconify(icon="ic:round-alternate-email"),
 )

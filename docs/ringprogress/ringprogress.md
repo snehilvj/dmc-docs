@@ -14,6 +14,17 @@ Set `sections` prop to an array of:
 
 .. exec::docs.ringprogress.simple
 
+
+##### Section Tooltips
+
+Hover on the sections to see tooltips in action.
+
+.. exec::docs.ringprogress.tooltip
+
+##### With label
+
+.. exec::docs.ringprogress.label
+
 ##### Size, Thickness And Rounded Caps
 
 Use `size`, `thickness`, `roundCaps` props to customize the component.
@@ -35,8 +46,3 @@ dmc.RingProgress(
 
 .. exec::docs.ringprogress.interactive
     :prism: false
-
-##### Gallery
-
-.. gallery::docs.ringprogress.interval
-    :label: Color changing ring progress bar

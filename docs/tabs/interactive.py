@@ -5,33 +5,33 @@ from lib.configurator import create_configurator
 controls = [
     {
         "property": "variant",
-        "component": "SegmentedControl",
-        "data": [
-            "default",
-            "outline",
-            "pills",
-        ],
+        "component": "DemoSegmentedControl",
+        "data": ["default", "outline", "pills"],
         "value": "default",
     },
     {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "tabPadding", "component": "DemoSlider", "value": "xs"},
     {
         "property": "orientation",
-        "component": "SegmentedControl",
-        "data": [
-            "horizontal",
-            "vertical",
-        ],
+        "component": "DemoSegmentedControl",
+        "data": ["horizontal", "vertical"],
         "value": "horizontal",
     },
 ]
 
 demo = dmc.Tabs(
     [
-        dmc.Tab("Gallery tab content", label="Gallery"),
-        dmc.Tab("Messages tab content", label="Messages"),
-        dmc.Tab("Settings tab content", label="Settings"),
-    ]
+        dmc.TabsList(
+            [
+                dmc.Tab("Gallery", value="gallery"),
+                dmc.Tab("Messages", value="messages"),
+                dmc.Tab("Settings", value="settings"),
+            ]
+        ),
+        dmc.TabsPanel("Gallery tab content", value="gallery", pt="xs"),
+        dmc.TabsPanel("Messages tab content", value="messages", pt="xs"),
+        dmc.TabsPanel("Settings tab content", value="settings", pt="xs"),
+    ],
+    value="gallery",
 )
 
 component = create_configurator(demo, controls, center=False)

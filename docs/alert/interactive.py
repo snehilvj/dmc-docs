@@ -4,15 +4,11 @@ from dash_iconify import DashIconify
 from lib.configurator import create_configurator
 
 controls = [
-    {
-        "property": "color",
-        "component": "ColorPicker",
-        "value": "#ff6b6b",
-    },
+    {"property": "color", "component": "ColorPicker", "value": "#ff6b6b"},
     {"property": "withCloseButton", "component": "Switch", "checked": False},
     {
         "property": "variant",
-        "component": "SegmentedControl",
+        "component": "DemoSegmentedControl",
         "data": ["light", "filled", "outline"],
         "value": "light",
     },
@@ -20,11 +16,9 @@ controls = [
 ]
 
 demo = dmc.Alert(
-    icon=[DashIconify(icon="radix-icons:cross-circled")],
+    icon=DashIconify(icon="radix-icons:cross-circled"),
     title="Bummer",
-    children=[
-        "Something terrible happened! You made a mistake and there is no going back, your data was lost forever!"
-    ],
+    children="Something terrible happened! You made a mistake and there is no going back, your data was lost forever!",
     color="red",
 )
 

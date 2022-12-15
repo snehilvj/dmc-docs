@@ -1,6 +1,6 @@
 ---
 name: RadioGroup
-section: Inputs & Buttons
+section: Inputs
 head: Capture user feedback limited to small set of options.
 description: RadioGroup component gives user radio inputs to allow only one selection from a small set of options. 
 component: RadioGroup
@@ -8,8 +8,8 @@ component: RadioGroup
 
 ##### Interactive Demo
 
-Use RadioGroup when you need to capture user feedback limited to small set of options. It can be customized using
-`color`, `spacing`, `size`, etc.
+Use RadioGroup when you need to capture user feedback limited to small set of options. It can be customized using 
+`spacing`, `size`, etc.
 
 .. exec::docs.radiogroup.interactive
     :prism: false
@@ -29,3 +29,9 @@ import dash_mantine_components as dmc
 
 dmc.RadioGroup(size="lg")
 ```
+
+##### Color
+
+In a RadioGroup component, the color property is not customized at the individual Radio level.
+
+.. exec::docs.radiogroup.color

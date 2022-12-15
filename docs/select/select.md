@@ -1,6 +1,6 @@
 ---
 name: Select
-section: Inputs & Buttons
+section: Inputs
 head: Custom searchable select.
 description: Select enables users to select an option in a dropdown. 
 component: Select
@@ -51,7 +51,6 @@ select less than 2 currency pairs.
 
 .. exec::docs.select.error
 
-##### Gallery
+##### With Icons
 
-.. gallery::docs.select.icons
-    :label: Select with icons
+.. exec::docs.select.icons

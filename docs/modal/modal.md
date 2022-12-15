@@ -4,6 +4,7 @@ section: Overlay
 head: Modal with optional header.
 description: Use Modal component to show a dialog box or a popup window on the top of the current page. 
 component: Modal
+props: false
 ---
 
 ##### Simple Example

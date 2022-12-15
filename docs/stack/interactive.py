@@ -9,7 +9,7 @@ controls = [
         "property": "align",
         "component": "Select",
         "data": ["stretch", "center", "flex-end", "flex-start"],
-        "value": "stretch",
+        "value": "flex-start",
     },
     {
         "property": "justify",
@@ -22,12 +22,12 @@ controls = [
 
 demo = dmc.Stack(
     [
-        dmc.Button("1", fullWidth=True, variant="outline"),
-        dmc.Button("2", fullWidth=True, variant="outline"),
-        dmc.Button("3", fullWidth=True, variant="outline"),
+        dmc.Button("1", variant="outline"),
+        dmc.Button("2", variant="outline"),
+        dmc.Button("3", variant="outline"),
     ],
     style={"height": 200},
-    align="stretch",
+    align="flex-start",
     justify="center",
 )
 

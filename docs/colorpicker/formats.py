@@ -11,7 +11,7 @@ component = html.Div(
                     id="format-select",
                     data=[
                         {"label": fmt.upper(), "value": fmt}
-                        for fmt in ["hex", "rgb", "rgba", "hsl", "hsla"]
+                        for fmt in ["hex", "hexa", "rgb", "rgba", "hsl", "hsla"]
                     ],
                     value="hex",
                 ),

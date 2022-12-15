@@ -3,6 +3,9 @@ name: Dash Iconify
 section: Getting Started
 head: Based on Iconify, this dash component library brings over 100,000 vector icons to your apps.
 description: Add icons to your dash apps the simplest and the most efficient way.
+component: DashIconify
+dmc: false
+props: false
 ---
 
 ##### Why Use This?
@@ -31,12 +34,7 @@ DashIconify component can be customized with `width`, `height`, `rotate` and `fl
 
 ##### Usage With Dmc
 
-Dash Mantine components support passing components other than `children`. You can use DashIconify to further enhance
-the look and feel of your apps.
-
-.. admonition::Passing components other than children
-    :color: yellow
-    :icon: radix-icons:info-circled
-    Make sure you are passing these extra components in a list, otherwise you will get an error from dash.
+Although dash-iconify can be used with any dash components library, be it, dash-mantine-components, dash-core-components
+or dash-bootstrap-components, dmc provides direct hooks for adding icons to enhance the look and feel of your apps.
 
 .. exec::docs.dash-iconify.dmc

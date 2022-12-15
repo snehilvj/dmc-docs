@@ -18,7 +18,7 @@ dmc.ThemeIcon(
     size="xl",
     color="indigo",
     variant="filled",
-    children=[DashIconify(icon="tabler:photo", width=25)]
+    children=DashIconify(icon="tabler:photo", width=25)
 )
 ```
 

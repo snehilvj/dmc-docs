@@ -1,9 +1,10 @@
 from os import environ
 
 import dash
+from dash.dash import Dash
 import dash_mantine_components as dmc
 import requests
-from dash import html, dcc
+from dash import html
 from dash_iconify import DashIconify
 
 from lib.appshell import create_table_of_contents
@@ -23,7 +24,7 @@ def create_title(title, id):
 
 
 def create_head(text):
-    return dmc.Text(text, align="center", style={"margin": "10px 0"})
+    return dmc.Text(text, align="center", my=10, mx=0)
 
 
 def create_contributors_avatars():
@@ -35,7 +36,7 @@ def create_contributors_avatars():
     children = []
     for user in contributors:
         avatar = dmc.Tooltip(
-            html.A(dmc.Avatar(src=user["avatar_url"]), href=user["html_url"]),
+            dmc.Anchor(dmc.Avatar(src=user["avatar_url"]), href=user["html_url"]),
             label=user["login"],
             position="bottom",
         )
@@ -45,38 +46,24 @@ def create_contributors_avatars():
 
 
 def Tile(icon, heading, description, href):
-    return dcc.Link(
-        dmc.Paper(
-            p="lg",
-            withBorder=True,
-            children=dmc.Group(
-                direction="column",
-                spacing=0,
-                align="center",
-                children=[
-                    dmc.ThemeIcon(
-                        DashIconify(icon=icon, height=20),
-                        size=40,
-                        radius=40,
-                        variant="light",
-                    ),
-                    dmc.Text(
-                        heading,
-                        style={"marginTop": 20, "marginBottom": 10},
-                    ),
-                    dmc.Text(
-                        description,
-                        color="dimmed",
-                        align="center",
-                        size="sm",
-                        style={"lineHeight": 1.6, "marginBottom": 10},
-                    ),
-                ],
+    return dmc.Card(
+        radius="md",
+        p="xl",
+        withBorder=True,
+        m=5,
+        children=[
+            DashIconify(
+                icon=icon, height=20, color=dmc.theme.DEFAULT_COLORS["indigo"][5]
             ),
-            style={"marginBottom": 30},
-        ),
-        href=href,
-        style={"textDecoration": "none"},
+            dmc.Text(heading, size="lg", mt="md"),
+            dmc.Divider(
+                style={"width": 50},
+                size="sm",
+                color=dmc.theme.DEFAULT_COLORS["indigo"][5],
+                my=10,
+            ),
+            dmc.Text(description, size="sm", color="dimmed", mt="sm"),
+        ],
     )
 
 
@@ -84,7 +71,7 @@ layout = html.Div(
     [
         dmc.Container(
             size="lg",
-            style={"marginTop": 30},
+            mt=30,
             children=[
                 create_title(
                     "Give Your Dash Apps an Upgrade with Dash Mantine Components",
@@ -93,47 +80,33 @@ layout = html.Div(
                 create_head("With more than 70 components from Mantine React Library"),
                 dmc.Group(
                     [
-                        dcc.Link(
-                            [
-                                dmc.Button("Get Started"),
-                            ],
+                        dmc.Anchor(
+                            dmc.Button("Get Started"),
                             href="/getting-started",
                         ),
-                        html.A(
+                        dmc.Anchor(
                             dmc.Button(
                                 "Join Discord",
                                 variant="outline",
-                                leftIcon=[DashIconify(icon="bi:discord", width=20)],
+                                leftIcon=DashIconify(icon="bi:discord", width=20),
                             ),
                             href="https://discord.gg/KuJkh4Pyq5",
+                            target="_blank",
                         ),
-                        html.A(
-                            dmc.Button(
-                                "Github",
-                                variant="outline",
-                                color="gray",
-                                leftIcon=[
-                                    DashIconify(
-                                        icon="radix-icons:github-logo", width=20
-                                    )
-                                ],
-                            ),
-                            href="https://github.com/snehilvj/dash-mantine-components",
-                        ),
-                        html.A(
+                        dmc.Anchor(
                             dmc.Button(
                                 "Sponsor",
                                 variant="outline",
                                 color="red",
-                                leftIcon=[
-                                    DashIconify(icon="akar-icons:heart", width=19)
-                                ],
+                                leftIcon=DashIconify(icon="akar-icons:heart", width=19),
                             ),
                             href="https://github.com/sponsors/snehilvj",
+                            target="_blank",
                         ),
                     ],
                     position="center",
-                    style={"marginTop": 20, "marginBottom": 90},
+                    mt=30,
+                    mb=90,
                 ),
             ],
         ),
@@ -141,12 +114,14 @@ layout = html.Div(
             size="lg",
             px=0,
             py=0,
+            my=40,
             children=[
                 dmc.SimpleGrid(
                     cols=3,
+                    mt=100,
                     breakpoints=[
                         {"maxWidth": "xs", "cols": 1},
-                        {"maxWidth": "sm", "cols": 2},
+                        {"maxWidth": "xl", "cols": 2},
                     ],
                     children=[
                         Tile(
@@ -198,6 +173,7 @@ layout = html.Div(
                 "Become a contributor",
                 underline=False,
                 href="https://github.com/snehilvj/dash-mantine-components",
+                target="_blank",
             )
         ),
         dmc.Space(h=10),
@@ -209,7 +185,7 @@ layout = html.Div(
                     spacing="xs",
                     children=[
                         dmc.Text("Made with"),
-                        DashIconify(icon="akar-icons:heart", width=20, color="red"),
+                        DashIconify(icon="akar-icons:heart", width=19, color="red"),
                         dmc.Text("by Snehil Vijay"),
                     ],
                 )

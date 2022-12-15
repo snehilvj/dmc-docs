@@ -4,6 +4,7 @@ section: Miscellaneous
 head: MantineProvider component allows you to change theme globally.
 description: Use MantineProvider component to enable dark theme in your app globally.
 component: MantineProvider
+props: false
 ---
 
 ##### Dark Theme
@@ -28,7 +29,7 @@ component = dmc.MantineProvider(withGlobalStyles=True, theme={"colorScheme": "da
 ##### Further Customization
 
 You can further customize your theme such as theme colors, shadows, etc. Refer to
-[mantine.dev](https://mantine.dev/theming/mantine-provider/) for more information.
+[mantine.dev](https://mantine.dev/theming/theme-object/) for more information.
 
 ```python
 import dash_mantine_components as dmc
@@ -38,7 +39,7 @@ dmc.MantineProvider(
         "colorScheme": "dark",
         # add your colors
         "colors": {
-            "deep-blue": ["#E9EDFC", "#C1CCF6", "#99ABF0" "..."],
+            "deepBlue": ["#E9EDFC", "#C1CCF6", "#99ABF0" "..."], # 10 color elements
         },
         "shadows": {
             # other shadows (xs, sm, lg) will be merged from default theme
@@ -58,27 +59,38 @@ dmc.MantineProvider(
 )
 ```
 
-##### Usage in dmc-docs
+##### Usage in DMC docs
 
-MantineProvider is used to customize theme for these docs as well. The theming is more or less inline with below. You 
-need to load fonts separately.
+MantineProvider is used to customize theme for these docs as well. The theming is more or less inline with below.
 
 ```python
 import dash_mantine_components as dmc
+from dash import Dash
 
-layout = dmc.MantineProvider(
+app = Dash(
+    __name__,
+    external_stylesheets=[
+        # include google fonts
+        "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;900&display=swap"
+    ],
+)
+
+app.layout = dmc.MantineProvider(
     theme={
-        "colorScheme": "light",
         "fontFamily": "'Inter', sans-serif",
         "primaryColor": "indigo",
+        "components": {
+            "Button": {"styles": {"root": {"fontWeight": 400}}},
+            "Alert": {"styles": {"title": {"fontWeight": 500}}},
+            "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+        },
     },
-    styles={
-        "Button": {"root": {"fontWeight": 400}},
-        "Alert": {"title": {"fontWeight": 500}},
-        "AvatarsGroup": {"truncated": {"fontWeight": 500}},
-    },
+    inherit=True,
     withGlobalStyles=True,
     withNormalizeCSS=True,
-    children=[],
+    children=[...],
 )
+
+if __name__ == "__main__":
+    app.run_server()
 ```

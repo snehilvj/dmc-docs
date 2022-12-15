@@ -3,8 +3,22 @@ name: Notification
 section: Feedback
 head: Show dynamic notifications and alerts to user, part of notifications system.
 description: dmc has an excellent Notifications System, which can be used to generate client side notifications.
-component: Notification
+component: Notification, NotificationsProvider
+props: false
 ---
+
+Wrap your layout inside NotificationsProvider to be able to use Notifications in your dash apps. If you are using MantineProvider, then NotificationsProvider must be placed inside.
+You can customize the positioning of your notifications, auto close duration, etc. through this component.
+
+```python
+import dash_mantine_components as dmc
+
+layout = dmc.MantineProvider(
+    dmc.NotificationsProvider([
+        # children
+    ])
+)
+```
 
 .. admonition::Note
     :color: yellow
@@ -25,18 +39,3 @@ Each notification is identified with an `id`. In order to update/hide a notifica
 
 .. exec::docs.notification.update
 
-##### Caveats
-
-If you are not using the `icon` prop in your Notification call, you may come across an issue where you are not able
-to open a notification multiple times. This is a limitation currently. However, there's a very simple fix for it.
-
-If you have a simple string in your `message` prop, just wrap it in a list.
-
-```python
-# instead of message = "This is a notification"
-message = ["This is a notification"]
-```
-
-You can see the difference below:
-
-.. exec::docs.notification.caveat

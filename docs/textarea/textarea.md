@@ -1,6 +1,6 @@
 ---
 name: Textarea
-section: Inputs & Buttons
+section: Inputs
 head: Renders textarea with optional autosize variant.
 description: Use Textarea component to capture string input in a text area with an auto-size variant. Customize the input with label, description, error message etc.
 component: Textarea

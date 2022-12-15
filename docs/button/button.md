@@ -1,9 +1,9 @@
 ---
 name: Button
-section: Inputs & Buttons
+section: Buttons
 head: Render button or link with button styles from mantine theme.
 description: DMC alternative to html <button>.
-component: Button
+component: Button, ButtonGroup
 ---
 
 ##### Interactive Demo
@@ -66,8 +66,7 @@ Pass `fullWidth=True` for a full width button.
 
 .. exec::docs.button.full
 
-##### Gallery
+##### Button Group
 
-.. gallery::docs.button.loading
-    :label: Loading state in button
-    :center: false
+.. exec::docs.button.group
+

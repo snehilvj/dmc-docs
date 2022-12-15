@@ -5,9 +5,13 @@ from dash_iconify import DashIconify
 component = html.Div(
     [
         dmc.ActionIcon(
-            DashIconify(icon="clarity:settings-line"), id="action-icon", n_clicks=0
+            DashIconify(icon="clarity:settings-line", width=20),
+            size="lg",
+            variant="filled",
+            id="action-icon",
+            n_clicks=0,
+            mb=10,
         ),
-        dmc.Space(h=10),
         dmc.Text(id="action-output"),
     ]
 )

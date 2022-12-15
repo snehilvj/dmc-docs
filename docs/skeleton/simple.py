@@ -1,8 +1,6 @@
 import dash_mantine_components as dmc
 
-component = dmc.Group(
-    direction="column",
-    grow=True,
+component = dmc.Stack(
     spacing="xs",
     children=[
         dmc.Skeleton(height=50, circle=True),
