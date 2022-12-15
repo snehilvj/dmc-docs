@@ -42,6 +42,23 @@ navbar_icons = {
 }
 
 
+def create_header_link(icon, href, size=22, color="indigo"):
+    return dmc.Anchor(
+        dmc.ThemeIcon(
+            DashIconify(
+                icon=icon,
+                width=size,
+            ),
+            variant="outline",
+            radius=30,
+            size=36,
+            color=color,
+        ),
+        href=href,
+        target="_blank",
+    )
+
+
 def create_header(nav_data):
     return dmc.Header(
         height=70,
@@ -67,7 +84,7 @@ def create_header(nav_data):
                                 ),
                             ],
                             span="content",
-                            pt=20,
+                            pt=12,
                         ),
                         dmc.Col(
                             span="auto",
@@ -99,46 +116,36 @@ def create_header(nav_data):
                                         smallerThan="md",
                                         styles={"display": "none"},
                                     ),
-                                    dmc.Anchor(
-                                        DashIconify(
-                                            icon="openmoji:money-bag", width=39
-                                        ),
-                                        target="_blank",
-                                        href="https://github.com/sponsors/snehilvj",
-                                        mt=8,
+                                    create_header_link(
+                                        "radix-icons:github-logo",
+                                        "https://github.com/snehilvj/dash-mantine-components",
                                     ),
-                                    dmc.Anchor(
-                                        DashIconify(icon="openmoji:linkedin", width=39),
-                                        href="https://www.linkedin.com/in/snehilvj/",
-                                        target="_blank",
-                                        mt=8,
-                                    ),
-                                    dmc.Anchor(
-                                        DashIconify(icon="openmoji:twitter", width=39),
-                                        href="https://twitter.com/snehilvj",
-                                        target="_blank",
-                                        mt=8,
-                                    ),
-                                    dmc.Anchor(
-                                        DashIconify(icon="openmoji:github", width=39),
-                                        href="https://github.com/snehilvj/dash-mantine-components",
-                                        target="_blank",
-                                        mt=8,
+                                    create_header_link(
+                                        "bi:discord", "https://discord.gg/KuJkh4Pyq5"
                                     ),
                                     dmc.ActionIcon(
                                         DashIconify(
-                                            icon="openmoji:last-quarter-moon", width=39
+                                            icon="radix-icons:blending-mode", width=22
                                         ),
-                                        variant="transparent",
-                                        size="xl",
+                                        variant="outline",
+                                        radius=30,
+                                        size=36,
                                         color="yellow",
                                         id="color-scheme-toggle",
                                     ),
-                                    # dmc.MediaQuery(
-                                    #     dmc.Burger(id="drawer-hamburger-button", opened=False),
-                                    #     largerThan="lg",
-                                    #     styles={"display": "none"},
-                                    # ),
+                                    dmc.MediaQuery(
+                                        dmc.ActionIcon(
+                                            DashIconify(
+                                                icon="radix-icons:hamburger-menu",
+                                                width=18,
+                                            ),
+                                            id="drawer-hamburger-button",
+                                            variant="outline",
+                                            size=36,
+                                        ),
+                                        largerThan="lg",
+                                        styles={"display": "none"},
+                                    ),
                                 ],
                             ),
                         ),
@@ -278,7 +285,7 @@ def create_appshell(nav_data):
                     [
                         create_header(nav_data),
                         create_side_navbar(nav_data),
-                        # create_navbar_drawer(nav_data),
+                        create_navbar_drawer(nav_data),
                         html.Div(
                             dmc.Container(size="lg", pt=90, children=page_container),
                             id="wrapper",
@@ -338,10 +345,9 @@ clientside_callback(
     Input("select-component", "value"),
 )
 
-
-# clientside_callback(
-#     """function(opened) { return opened }""",
-#     Output("components-navbar-drawer", "opened"),
-#     Input("drawer-hamburger-button", "opened"),
-#     prevent_initial_call=True,
-# )
+clientside_callback(
+    """function(n_clicks) { return true }""",
+    Output("components-navbar-drawer", "opened"),
+    Input("drawer-hamburger-button", "n_clicks"),
+    prevent_initial_call=True,
+)

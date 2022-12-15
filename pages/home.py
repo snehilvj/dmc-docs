@@ -185,7 +185,7 @@ layout = html.Div(
                     spacing="xs",
                     children=[
                         dmc.Text("Made with"),
-                        DashIconify(icon="akar-icons:heart", width=20, color="red"),
+                        DashIconify(icon="akar-icons:heart", width=19, color="red"),
                         dmc.Text("by Snehil Vijay"),
                     ],
                 )
