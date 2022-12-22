@@ -30,15 +30,11 @@ component = dmc.Card(
         dmc.Text(
             children=[
                 dmc.Text(
-                    [
-                        dmc.Text(
-                            "200+ images uploaded",
-                            color="blue",
-                            style={"display": "inline"},
-                        ),
-                        " since last visit, review them to select which one should be added to your gallery",
-                    ]
+                    "200+ images uploaded",
+                    color="blue",
+                    style={"display": "inline"},
                 ),
+                " since last visit, review them to select which one should be added to your gallery",
             ],
             mt="sm",
             color="dimmed",
