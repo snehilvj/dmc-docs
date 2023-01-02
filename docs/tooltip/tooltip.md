@@ -45,7 +45,7 @@ Tooltip arrow is controlled by:
 
 By default, tooltip white-space property is set to nowrap. To change that use:
 
-* `wrapLines` - to enable line breaks
+* `multiline` - to enable line breaks
 * `width` - to define tooltip width in px
 
 .. exec::docs.tooltip.multiline
