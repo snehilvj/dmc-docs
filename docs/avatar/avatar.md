@@ -4,6 +4,7 @@ section: Data Display
 head: Display user profile image, initials or fallback icon.
 description: Use Avatar to display user profile pictures. It supports images, icons, or letters. Use AvatarGroup to display stack Avatar components.
 component: Avatar, AvatarGroup
+styles: true
 ---
 
 ##### Simple Usage

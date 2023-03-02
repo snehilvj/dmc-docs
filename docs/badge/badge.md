@@ -4,6 +4,7 @@ section: Data Display
 head: Display badge, pill or tag.
 description: Use Badges to show indicators, numerical or otherwise.
 component: Badge
+styles: true
 ---
 
 ##### Interactive Demo
@@ -40,3 +41,7 @@ You can set the size of the badge using the `size` prop.
 You can set the radius of the badge using the `radius` prop.
 
 .. exec::docs.badge.radius
+
+##### Left section and right section
+
+.. exec::docs.badge.section
