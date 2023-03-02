@@ -4,7 +4,13 @@ section: Data Display
 head: Display list of events in chronological order.
 description: Use the Timeline and TimelineItem components to display a list of events in chronological order.
 component: Timeline, TimelineItem
+styles: true
 ---
+
+##### Interactive Demo
+
+.. exec::docs.timeline.interactive
+    :prism: false
 
 ##### Usage
 
@@ -18,8 +24,3 @@ Control timeline appearance with the following props:
 
 .. exec::docs.timeline.simple
     :center: true
-
-##### Interactive Demo
-
-.. exec::docs.timeline.interactive
-    :prism: false
