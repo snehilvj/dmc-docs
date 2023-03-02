@@ -4,6 +4,7 @@ section: Inputs
 head: Alternative to Select and RadioGroup.
 description: Use Chip as an alternative to Select or RadioGroup.
 component: Chip, ChipGroup
+styles: true
 ---
 
 ##### Interactive Demo
@@ -26,3 +27,7 @@ Set `multiple` property in ChipGroup to enable multiple chips selection.
 For Chip component, `checked` property can be used in the callbacks and `value` property for ChipGroup.
 
 .. exec::docs.chip.callback
+
+##### Styles API
+
+.. exec::docs.chip.styles
