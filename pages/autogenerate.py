@@ -9,8 +9,8 @@ from mistune.directives import extract_toc_items
 from pydantic import BaseModel
 
 from lib.appshell import create_table_of_contents
-from lib.propdef import propdefs_to_exclude
 from lib.renderer import markdown
+from lib.utils import create_styles_api_table
 
 
 # front matter model
@@ -22,6 +22,7 @@ class Meta(BaseModel):
     component: Optional[str]
     dmc: bool = True
     props: bool = True
+    styles: bool = False
 
 
 directory = "docs"
@@ -40,17 +41,6 @@ def create_kwargs(component):
         comp = getattr(dmc, component)
         component_doc = comp.__doc__
     docs = component_doc.split("Keyword arguments:")[-1]
-    for to_replace in propdefs_to_exclude.split("\n"):
-        docs = docs.replace(to_replace, "")
-    lines = docs.split("\n")
-    new = []
-    for line in lines:
-        if not line:
-            continue
-        if line.startswith("- ") and line.endswith("):"):
-            line = "\n" + line
-        new.append(line)
-    docs = "\n".join(new)
     kwargs = dmc.Prism(docs, language="git", noCopy=True)
     heading = markdown.parse(f"###### {component}")
     heading.append(kwargs)
@@ -64,46 +54,80 @@ for file in files:
     # validate meta
     meta = Meta(**matter)
 
-    layout = []
+    headers = []
+    docs_tab = []
+    kwargs_tab = [dmc.Space(h=20)]
+    styles_tab = [dmc.Space(h=20)]
 
     # add title
     title = dmc.Text(meta.name, style={"fontSize": 30, "fontWeight": 300})
-    layout.append(title)
+    headers.append(title)
 
     # add head
     head = dmc.Text(meta.head, mb=25)
-    layout.append(head)
+    headers.append(head)
 
     # render markdown into dmc components
     docs_page = markdown.parse(rem)
-    layout.extend(docs_page)
+    docs_tab.extend(docs_page)
 
     # add keyword arguments section
     if meta.component:
-        layout.extend(markdown.parse("##### Keyword Arguments"))
         if meta.props:
-            layout.extend(
+            kwargs_tab.extend(
                 markdown.parse(
-                    """Along with the props mentioned below, these dmc components also support margin and padding props 
-                    such as `m`, `mx`, `my`, `p`, `pb`, `pt`, etc. """
+                    """Along with the props mentioned below, these dmc components also Mantine style props such as 
+                    `m`, `mx`, `my`, `p`, etc. Click [here](/style-props) for more information. """
                 )
             )
         comps = meta.component.split(", ")
         for comp in comps:
             section = create_kwargs(comp)
-            layout.extend(section)
+            kwargs_tab.extend(section)
 
     # extract and append TOC
     toc_items = extract_toc_items(markdown, rem)
-    if meta.component:
-        toc_items.append(("#keyword-arguments", "Keyword Arguments", ""))
     toc = create_table_of_contents(toc_items)
-    layout.append(toc)
-
-    # add space
-    layout.append(dmc.Space(h=50))
+    docs_tab.append(toc)
 
     path_prefix = "/components/" if meta.dmc else "/"
+
+    if meta.styles:
+        styles_tab.append(create_styles_api_table(meta.name))
+        styles_tab.append(
+            dmc.Anchor(
+                "Click here for more information on using the styles API.",
+                href="/styles-api",
+            )
+        )
+
+    layout = (
+        [
+            *headers,
+            dmc.Tabs(
+                [
+                    dmc.TabsList(
+                        [
+                            dmc.Tab("Documentation", value="docs"),
+                            dmc.Tab("Component Props", value="props"),
+                            dmc.Tab("Styles API", value="styles")
+                            if meta.styles
+                            else None,
+                        ]
+                    ),
+                    dmc.TabsPanel(docs_tab, value="docs"),
+                    dmc.TabsPanel(kwargs_tab, value="props"),
+                    dmc.TabsPanel(styles_tab, value="styles") if meta.styles else None,
+                ],
+                value="docs",
+                variant="outline",
+                mt=40,
+                mb=50,
+            ),
+        ]
+        if meta.component
+        else headers + docs_tab
+    )
 
     # register with dash
     dash.register_page(

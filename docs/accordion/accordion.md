@@ -37,7 +37,7 @@ A `state` is associated with each Accordion component. Click on any section to s
 
 ##### Multiple Items
 
-Use dmc.AccordionMultiple too allow opening multiple items.
+Use dmc.AccordionMultiple to allow opening multiple items.
 
 .. exec::docs.accordion.multiple
 

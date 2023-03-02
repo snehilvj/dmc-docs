@@ -5,7 +5,7 @@ from lib.configurator import create_configurator
 style = {
     "border": f"1px solid {dmc.theme.DEFAULT_COLORS['indigo'][4]}",
     "textAlign": "center",
-    "margin": 2
+    "margin": 2,
 }
 
 controls = [
