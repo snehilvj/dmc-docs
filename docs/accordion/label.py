@@ -4,7 +4,7 @@ from dash import html
 characters_list = [
     {
         "id": "bender",
-        "image": "https://img.icons8.com/color/344/pretty-woman.png",
+        "image": "https://img.icons8.com/clouds/256/000000/futurama-bender.png",
         "label": "Bender Bending Rodríguez",
         "description": "Fascinated with cooking, though has no sense of taste",
         "content": "Bender Bending Rodríguez, (born September 4, 2996), designated Bending Unit 22, and commonly "
@@ -13,7 +13,7 @@ characters_list = [
     },
     {
         "id": "carol",
-        "image": "https://img.icons8.com/color/344/businesswoman.png",
+        "image": "https://img.icons8.com/clouds/256/000000/futurama-mom.png",
         "label": "Carol Miller",
         "description": "One of the richest people on Earth",
         "content": "Carol Miller (born January 30, 2880), better known as Mom, is the evil chief executive officer "
@@ -23,7 +23,7 @@ characters_list = [
     },
     {
         "id": "homer",
-        "image": "https://img.icons8.com/color/344/doctor-male--v1.png",
+        "image": "https://img.icons8.com/clouds/256/000000/homer-simpson.png",
         "label": "Homer Simpson",
         "description": "Overweight, lazy, and often ignorant",
         "content": "Homer Jay Simpson (born May 12) is the main protagonist and one of the five main characters of "

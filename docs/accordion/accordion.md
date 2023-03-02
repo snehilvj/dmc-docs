@@ -4,6 +4,7 @@ section: Data Display
 head: Divide content into collapsible sections.
 description: Use the Accordion and AccordionX components to toggle between hiding and showing large amount of content.
 component: Accordion, AccordionMultiple, AccordionControl, AccordionItem, AccordionPanel
+styles: true
 ---
 
 ##### Interactive Demo
@@ -44,3 +45,7 @@ Use dmc.AccordionMultiple to allow opening multiple items.
 ##### Custom Accordion Label
 
 .. exec::docs.accordion.label
+
+##### Styles API
+
+.. exec::docs.accordion.styles
