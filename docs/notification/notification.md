@@ -5,7 +5,10 @@ head: Show dynamic notifications and alerts to user, part of notifications syste
 description: dmc has an excellent Notifications System, which can be used to generate client side notifications.
 component: Notification, NotificationsProvider
 props: false
+styles: true
 ---
+
+##### Note
 
 Wrap your layout inside NotificationsProvider to be able to use Notifications in your dash apps. If you are using MantineProvider, then NotificationsProvider must be placed inside.
 You can customize the positioning of your notifications, auto close duration, etc. through this component.
