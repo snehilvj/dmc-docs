@@ -4,6 +4,7 @@ section: Inputs
 head: Capture boolean input from user.
 description: Use Checkbox component to capture boolean input from user.
 component: Checkbox, CheckboxGroup
+styles: true
 ---
 
 ##### Interactive Demo
@@ -28,6 +29,10 @@ Choose from one of the following sizes: xs, sm, md, lg, xl.
 Set checkbox color using the `color` prop.
 
 .. exec::docs.checkbox.colors
+
+##### Label with link
+
+.. exec::docs.checkbox.link
 
 ##### CheckboxGroup
 

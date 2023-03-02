@@ -17,6 +17,7 @@ component = html.Div(
                 dmc.Checkbox(label="Svelte", value="svelte"),
                 dmc.Checkbox(label="Angular", value="angular"),
             ],
+            value=["react", "vue"],
         ),
         dmc.Text(id="checkbox-group-output"),
     ]
