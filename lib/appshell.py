@@ -156,7 +156,7 @@ def create_header(nav_data):
     )
 
 
-def create_side_nave_content(nav_data):
+def create_side_nav_content(nav_data):
     main_links = dmc.Stack(
         spacing="sm",
         mt=20,
@@ -215,7 +215,7 @@ def create_side_navbar(nav_data):
             dmc.ScrollArea(
                 offsetScrollbars=True,
                 type="scroll",
-                children=create_side_nave_content(nav_data),
+                children=create_side_nav_content(nav_data),
             )
         ],
     )
@@ -232,9 +232,9 @@ def create_navbar_drawer(nav_data):
             dmc.ScrollArea(
                 offsetScrollbars=True,
                 type="scroll",
-                style={"height": "100%"},
+                style={"height": "100vh"},
                 pt=20,
-                children=create_side_nave_content(nav_data),
+                children=create_side_nav_content(nav_data),
             )
         ],
     )
