@@ -1,10 +1,9 @@
 from os import environ
 
 import dash
-from dash.dash import Dash
 import dash_mantine_components as dmc
 import requests
-from dash import html
+from dash import dcc, html
 from dash_iconify import DashIconify
 
 from lib.appshell import create_table_of_contents
@@ -65,7 +64,6 @@ def Tile(icon, heading, description, href):
             dmc.Text(description, size="sm", color="dimmed", mt="sm"),
         ],
     )
-
 
 layout = html.Div(
     [
@@ -167,6 +165,33 @@ layout = html.Div(
             ],
         ),
         dmc.Space(h=20),
+        create_title("Sponsors", id="sponsors"),
+        create_head(
+            dmc.Anchor(
+                "Become a sponsor",
+                underline=False,
+                href="https://github.com/sponsors/snehilvj",
+                target="_blank",
+            )
+        ),
+        dmc.Space(h=10),
+        dmc.Group(
+            [
+                dcc.Link(
+                    dmc.Image(
+                        src="https://avatars.githubusercontent.com/u/14855837?s=200&v=4",
+                        alt="ascend.io",
+                        height=100,
+                        fit="contain"
+
+                    ),
+                    href="http://www.ascend.io",
+                    target="_blank",
+                )
+            ],
+            position="center"
+        ),
+        dmc.Space(h=40),
         create_title("Contributors", id="contributors"),
         create_head(
             dmc.Anchor(
@@ -195,8 +220,10 @@ layout = html.Div(
         create_table_of_contents(
             [
                 ("#features", "Features", ""),
+                ("#sponsors", "Sponsors", ""),
                 ("#contributors", "Contributors", ""),
             ]
         ),
     ]
 )
+

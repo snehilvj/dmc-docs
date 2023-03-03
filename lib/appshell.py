@@ -200,9 +200,7 @@ def create_side_nav_content(nav_data):
             ]
         )
 
-    return dmc.Stack(
-        spacing=0, children=[main_links, *links, dmc.Space(h=20)], px=25
-    )
+    return dmc.Stack(spacing=0, children=[main_links, *links, dmc.Space(h=20)], px=25)
 
 
 def create_side_navbar(nav_data):
