@@ -4,6 +4,7 @@ section: Inputs
 head: Inline color picker.
 description: Use Colorpicker for color inputs in various formats such as hex, rgb, hsl etc.
 component: ColorPicker
+styles: color-picker
 ---
 
 ##### Simple Example

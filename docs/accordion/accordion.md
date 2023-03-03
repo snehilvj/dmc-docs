@@ -4,7 +4,7 @@ section: Data Display
 head: Divide content into collapsible sections.
 description: Use the Accordion and AccordionX components to toggle between hiding and showing large amount of content.
 component: Accordion, AccordionMultiple, AccordionControl, AccordionItem, AccordionPanel
-styles: true
+styles: accordion
 ---
 
 ##### Interactive Demo

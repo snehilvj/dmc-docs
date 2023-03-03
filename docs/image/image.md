@@ -4,7 +4,7 @@ section: Data Display
 head: Image with optional placeholder for loading and error state.
 description: dmc alternative for html.Img with placeholder for loading and error states.
 component: Image, BackgroundImage
-styles: true
+styles: image
 ---
 
 ##### Simple Example

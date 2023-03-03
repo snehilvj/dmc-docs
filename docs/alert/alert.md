@@ -4,7 +4,7 @@ section: Feedback
 head: Attract user attention with important static message.
 description: Use Alerts to attract user attention with static messages.
 component: Alert
-styles: true
+styles: alert
 ---
 
 ##### Interactive Demo

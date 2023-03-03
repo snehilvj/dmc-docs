@@ -22,7 +22,8 @@ class Meta(BaseModel):
     component: Optional[str]
     dmc: bool = True
     props: bool = True
-    styles: bool = False
+    styles: str = ""
+    category: str = "core"
 
 
 directory = "docs"
@@ -93,7 +94,7 @@ for file in files:
     path_prefix = "/components/" if meta.dmc else "/"
 
     if meta.styles:
-        styles_tab.append(create_styles_api_table(meta.name))
+        styles_tab.extend(create_styles_api_table(meta.category, meta.styles))
         styles_tab.append(
             dmc.Anchor(
                 "Click here for more information on using the styles API.",

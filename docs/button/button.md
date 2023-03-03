@@ -4,7 +4,7 @@ section: Buttons
 head: Render button or link with button styles from mantine theme.
 description: DMC alternative to html <button>.
 component: Button, ButtonGroup
-styles: true
+styles: button
 ---
 
 ##### Interactive Demo

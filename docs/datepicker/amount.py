@@ -9,7 +9,7 @@ component = dmc.Group(
         dmc.DateRangePicker(
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
             amountOfMonths=2,
-            label="3 months",
+            label="2 months",
             style={"width": 330},
         ),
     ],

@@ -4,7 +4,7 @@ section: Feedback
 head: Give user feedback for status of the task with circle diagram.
 description: Use the RingProgress component to give feedback to the user about the status of a task with label, sections, etc.
 component: RingProgress
-styles: true
+styles: ring-progress
 ---
 
 ##### Simple Example

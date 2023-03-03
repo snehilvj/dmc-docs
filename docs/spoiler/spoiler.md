@@ -4,7 +4,7 @@ section: Data Display
 head: Hide long sections of content under spoiler.
 description: Use the Spoiler component to hide long sections of content.
 component: Spoiler
-styles: true
+styles: spoiler
 ---
 
 ##### Simple Example

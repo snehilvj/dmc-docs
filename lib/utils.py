@@ -4,6 +4,7 @@ import dash_mantine_components as dmc
 import pandas as pd
 import plotly.graph_objects as go
 import requests
+from bs4 import BeautifulSoup
 from dash import dcc
 from dash import html
 from requests.adapters import HTTPAdapter, Retry
@@ -57,32 +58,31 @@ def create_table(df):
     return table
 
 
-def get_styles_api_dict(component):
-    url = f"https://raw.githubusercontent.com/mantinedev/mantine/master/src/mantine-styles-api/src/styles-api/{component}.styles-api.ts"
-    req = session.get(url)
-    data = req.text.split("\n")
-    while True:
-        line = data.pop(0)
-        if "export" in line:
-            data.pop(-2)
-            break
-    d = {}
-    for e in data:
-        if ":" in e:
-            name, desc = e.split(":")
-            d[name.strip()] = desc.lstrip(" '").rstrip("',")
-        elif e.strip().startswith("..."):
-            comp = e.strip().strip("...").rstrip(",")
-            d.update(**get_styles_api_dict(comp))
-    return d
+def create_styles_api_table(category, component):
+    url = f'https://v5.mantine.dev/{category}/{component}/?t=styles-api'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    tables = soup.find_all('table')
+    dataframes = []
+    for table in tables:
+        headers = []
+        for th in table.find_all('th'):
+            headers.append(th.text.strip())
+        rows = []
+        for tr in table.find_all('tr'):
+            row = []
+            for td in tr.find_all('td'):
+                row.append(td.text.strip())
+            if row:
+                rows.append(row)
+        df = pd.DataFrame(rows, columns=headers)
+        dataframes.append(df)
 
-
-def create_styles_api_table(component):
-    styles = get_styles_api_dict(component)
-    df = pd.DataFrame(styles.items(), columns=["Name", "Description"])
-    df["Static Selector"] = f".mantine-{component}-" + df["Name"]
-    df = df[["Name", "Static Selector", "Description"]]
-    return dmc.Table(create_table(df), withBorder=True, mb=20)
+    layout = []
+    for df in dataframes:
+        if "Static selector" in df.columns:
+            layout.append(dmc.Table(create_table(df), withBorder=True, mb=20))
+    return layout
 
 
 exclude_prop_names = [

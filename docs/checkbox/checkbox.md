@@ -4,7 +4,7 @@ section: Inputs
 head: Capture boolean input from user.
 description: Use Checkbox component to capture boolean input from user.
 component: Checkbox, CheckboxGroup
-styles: true
+styles: checkbox
 ---
 
 ##### Interactive Demo

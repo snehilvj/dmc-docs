@@ -4,7 +4,7 @@ section: Feedback
 head: Give user feedback for status of the task.
 description: Use the Progress component to give feedback to the user about the status of a task with label, sections, etc.
 component: Progress
-styles: true
+styles: progress
 ---
 
 ##### Interactive Demo

@@ -4,7 +4,7 @@ section: Inputs
 head: Alternative to Select and RadioGroup.
 description: Use Chip as an alternative to Select or RadioGroup.
 component: Chip, ChipGroup
-styles: true
+styles: chip
 ---
 
 ##### Interactive Demo

@@ -4,7 +4,7 @@ section: Data Display
 head: Display badge, pill or tag.
 description: Use Badges to show indicators, numerical or otherwise.
 component: Badge
-styles: true
+styles: badge
 ---
 
 ##### Interactive Demo
