@@ -1,41 +1,48 @@
-brotli==1.0.9; python_version >= "3.6"
-cachelib==0.9.0; python_version >= "3.7" and python_version < "4"
-certifi==2022.9.24; python_version >= "3.7" and python_version < "4"
-charset-normalizer==2.1.1; python_version >= "3.7" and python_version < "4" and python_full_version >= "3.6.0"
-click==8.1.3; python_version >= "3.7"
-colorama==0.4.6; python_version >= "3.7" and python_full_version < "3.0.0" and platform_system == "Windows" or platform_system == "Windows" and python_version >= "3.7" and python_full_version >= "3.7.0"
-dash-core-components==2.0.0; python_version >= "3.7" and python_version < "4"
-dash-extensions==0.1.6; python_version >= "3.7" and python_version < "4"
-dash-html-components==2.0.0; python_version >= "3.7" and python_version < "4"
-dash-iconify==0.1.2
-dash-mantine-components==0.11.1
-dash-table==5.0.0; python_version >= "3.7" and python_version < "4"
-dash==2.6.2; python_version >= "3.6"
-editorconfig==0.12.3; python_version >= "3.7" and python_version < "4"
-flask-caching==2.0.0; python_version >= "3.7" and python_version < "4"
-flask-compress==1.13; python_version >= "3.7" and python_version < "4"
-flask==2.1.2; python_version >= "3.7" and python_version < "4"
-gunicorn==20.1.0; python_version >= "3.5"
-idna==3.4; python_version >= "3.7" and python_version < "4"
-importlib-metadata==5.0.0; python_version < "3.10" and python_version >= "3.7"
-itsdangerous==2.1.2; python_version >= "3.7"
-jinja2==3.1.2; python_version >= "3.7"
-jsbeautifier==1.14.7; python_version >= "3.7" and python_version < "4"
-markupsafe==2.1.1; python_version >= "3.7"
-mistune==2.0.4
-more-itertools==8.14.0; python_version >= "3.7" and python_version < "4"
-numpy==1.23.4
-pandas==1.5.1; python_version >= "3.8"
-plotly==5.11.0; python_version >= "3.7" and python_version < "4"
-pydantic==1.10.2; python_version >= "3.7"
-python-dateutil==2.8.2; python_version >= "3.8" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.8"
-python-frontmatter==1.0.0
-pytz==2022.5; python_version >= "3.8"
-pyyaml==6.0; python_version >= "3.6"
-requests==2.28.1; python_version >= "3.7" and python_version < "4"
-six==1.16.0; python_version >= "3.8" and python_full_version < "3.0.0" and python_version < "4" or python_version >= "3.8" and python_version < "4" and python_full_version >= "3.3.0"
-tenacity==8.1.0; python_version >= "3.6"
-typing-extensions==4.4.0; python_version >= "3.7"
-urllib3==1.26.12; python_version >= "3.7" and python_full_version < "3.0.0" and python_version < "4" or python_full_version >= "3.6.0" and python_version < "4" and python_version >= "3.7"
-werkzeug==2.2.2; python_version >= "3.7"
-zipp==3.10.0; python_version < "3.10" and python_version >= "3.7"
+beautifulsoup4==4.11.2
+black @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/11/4c/fc/cd6d885e9f5be135b161e365b11312cff5920d7574c8446833d7a9b1a3/black-22.3.0-cp38-cp38-macosx_10_9_x86_64.whl
+Brotli @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/14/12/d8/d0577f7141e8f4285a34f55e63cb9cb99b7355e007071faea95a69c37c/Brotli-1.0.9-cp38-cp38-macosx_10_9_x86_64.whl
+cachelib @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/40/63/13/fe8694f5489201ac5afc1845672fd448456de4ebd4d5b1ec88b27fda7e/cachelib-0.9.0-py3-none-any.whl
+certifi @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/4c/ca/11/a4b6ad6425a544a21c80fe68e16e3831d3d482b50ca9576c2a952f8b1f/certifi-2022.9.24-py3-none-any.whl
+charset-normalizer @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/ce/75/30/4d49a256ccdfd2ccd9e1f6d335c3e7f1114ee9d1297e6aa6bde2f6deae/charset_normalizer-2.1.1-py3-none-any.whl
+click @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/bd/9c/91/fc982221d93312eb60d91ed31ec2945771bec0eb111953316ae8293dce/click-8.1.3-py3-none-any.whl
+dash @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/05/e7/1f/07d7096242d92a98de08a94feda0fed6b7f4dc535ad86c12939d4d6621/dash-2.6.2-py3-none-any.whl
+dash-core-components==2.0.0
+dash-extensions @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/0e/9e/90/c78f7970152bc3d0aced715154cc0c0f8ad491c0a70d41696c3a1f9b9b/dash_extensions-0.1.6-py3-none-any.whl
+dash-html-components==2.0.0
+dash-iconify @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/24/a0/cf/19a10095fedd19a692c78d762c29f009c9aca8bc976e0a5b8e11be9653/dash_iconify-0.1.2-py3-none-any.whl
+dash-mantine-components @ file:///Users/snehilvijay/Projects/dash-mantine-components/dist/dash_mantine_components-0.12.0-py3-none-any.whl
+dash-table==5.0.0
+docstring-parser==0.15
+EditorConfig @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/ac/e2/b8/2db7541551e8b699d03b306c4cbfd08990257feb0a627b5e3d05d2df88/EditorConfig-0.12.3-py3-none-any.whl
+Flask @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/a5/0f/c7/2e0c902bfd384958968c3df5693b61c15302062bd604b789684156cd8e/Flask-2.1.2-py3-none-any.whl
+Flask-Caching @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/b9/b8/f1/99051ad904cf024123f8c9846e6d81d0641aabf629dd3ce4479eac641c/Flask_Caching-2.0.0-py3-none-any.whl
+Flask-Compress @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/16/fb/4a/0995bfceb75cf198a472b5ef877d1913c020bf08bbab98a987f689c70c/Flask_Compress-1.13-py3-none-any.whl
+gunicorn @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/eb/33/9c/43e158642e15413395d933fef80bb16fa6b50a6ed8dd157f506b6b2c03/gunicorn-20.1.0-py3-none-any.whl
+idna @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/16/15/44/cca0e0c3c9cc74731a4729bf2edfa1adcc24fb9f63a9578a3af5992311/idna-3.4-py3-none-any.whl
+importlib-metadata @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/86/d2/4f/c6898930fe79c4988724304102bf1ed30fea49c6a5691dca22dfd725e3/importlib_metadata-5.0.0-py3-none-any.whl
+itsdangerous @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/a0/eb/86/3b57c01995c6daad9f3b47aba7edb72501b915276f47ccf22efe74a37e/itsdangerous-2.1.2-py3-none-any.whl
+Jinja2 @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/33/db/47/0926a99dba6f131e3566591eed52f286b44bcfddcbe351f4116fc4d26f/Jinja2-3.1.2-py3-none-any.whl
+jsbeautifier @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/81/c3/38/a728d82d291a73e1cbd2fdb83549c233429476c002e88ae6e022e71b19/jsbeautifier-1.14.7.tar.gz
+MarkupSafe @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/91/9b/05/057ca2faee421138dc11ac5f4cb36ea552ed73db287de0c4c41f15b365/MarkupSafe-2.1.1-cp38-cp38-macosx_10_9_x86_64.whl
+mistune @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/2f/63/97/c12d938652a4c09d3ae0541957a2863f8e561c273a40b86ae40bbf88f0/mistune-2.0.4-py2.py3-none-any.whl
+more-itertools @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/3b/ff/d2/4d1dada32b8ddd0072aab84ce2da25529660f75df77518710ec7947b2e/more_itertools-8.14.0-py3-none-any.whl
+mypy-extensions @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/b6/a0/b0/a5dc9acd6fd12aba308634f21bb7cf0571448f20848797d7ecb327aa12/mypy_extensions-0.4.3-py2.py3-none-any.whl
+numpy @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/2d/b7/4a/fae9c0666a57b242731a7cb4d922a2b80c38d9fdaa2006c7c561ecc5ab/numpy-1.23.4-cp38-cp38-macosx_10_9_x86_64.whl
+pandas @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/a4/9f/d7/8ef4411f64a069e2aea4964acd1961e0016db3ac9e7e8be80d71fc5446/pandas-1.5.1-cp38-cp38-macosx_10_9_x86_64.whl
+pathspec @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/fa/6d/17/3575f8d023a9e0161afa305db1768a5a12170d81503dfe38578827d8a8/pathspec-0.10.1-py3-none-any.whl
+platformdirs @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/b5/2d/85/5731320d09aa7d79d5fe59f4499ce7adb2ef1a32312399e35a105d5229/platformdirs-2.5.2-py3-none-any.whl
+plotly @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/08/67/67/ea5c088b61768958c75a317a64235e5ef551e33869816d84e81132c9cd/plotly-5.11.0-py2.py3-none-any.whl
+pydantic @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/85/4e/93/95b97cc44476727dc694bf0675788b74cf335f75bcd4e2606a8429a1a4/pydantic-1.10.2-cp38-cp38-macosx_10_9_x86_64.whl
+python-dateutil @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/0f/f1/e2/e1d3399cea26388e2ed5b93ea3e7c137d2b4027c5ba14c64ab839294ed/python_dateutil-2.8.2-py2.py3-none-any.whl
+python-frontmatter @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/64/7c/fc/6403431a371ad05e645cdf7536afd8fb2b3b2037bdf51c00849aa59452/python_frontmatter-1.0.0-py3-none-any.whl
+pytz @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/85/1d/9a/50fda5625464846ec66d7ce4e25b38c6c46c89ced5de267e41a9a957e2/pytz-2022.5-py2.py3-none-any.whl
+PyYAML @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/f0/ae/ac/3d7d408acba599bb6f26145f4ccfa63e42769a71f67bc8d5b643946261/PyYAML-6.0-cp38-cp38-macosx_10_9_x86_64.whl
+requests @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/73/b6/11/8a5136f9e1ac320567e50227250ded8bfa8942970419dd6c48eea64899/requests-2.28.1-py3-none-any.whl
+six @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/48/e6/04/8118155ae3ec3a16dd2a213bbf7a7d8a62c596b2e90f73a22c896269f1/six-1.16.0-py2.py3-none-any.whl
+soupsieve==2.4
+tenacity @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/d4/aa/a5/2671c789f41d7210764aa948f2c9730db200867598ff43d61dfe277a5f/tenacity-8.1.0-py3-none-any.whl
+tomli @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/36/bd/11/98fa2af866c73d00f2498ade62c7fcf28db8656714b7b7a44e9cb2f855/tomli-2.0.1-py3-none-any.whl
+typing-extensions @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/ee/e8/69/53e1643581fdd5761336e7a2ee82742b171fa57ab9dbed6d15593e5d0b/typing_extensions-4.4.0-py3-none-any.whl
+urllib3 @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/e2/2d/de/8bc4a68962550c71ea370c0c532cdd75773405c71b6351ab70a6f10fe6/urllib3-1.26.12-py2.py3-none-any.whl
+Werkzeug @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/b4/b3/25/805f3a89c25e4338875f66e6e28099b068c6e90dfdb61affa29ee46439/Werkzeug-2.2.2-py3-none-any.whl
+zipp @ file:///Users/snehilvijay/Library/Caches/pypoetry/artifacts/95/54/ef/012b5e2446b72b2c07fac743326d3fff506fd6999d3c5e05a879790bd0/zipp-3.10.0-py3-none-any.whl

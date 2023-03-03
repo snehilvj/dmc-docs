@@ -18,14 +18,6 @@ pip install dash-mantine-components
 poetry add dash-mantine-components
 ```
 
-##### Anaconda
-
-You can also install `dash-mantine-components` with conda through the conda-forge channel.
-
-```bash
-conda install -c conda-forge dash-mantine-components
-```
-
 ##### Simple Usage
 
 Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash 
