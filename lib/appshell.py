@@ -195,13 +195,13 @@ def create_side_nav_content(nav_data):
         )
         links.extend(
             [
-                dmc.Anchor(name, size="sm", href=path, variant="text")
+                dmc.NavLink(label=name, href=path, styles={"root": {"height": 32}})
                 for name, path in items
             ]
         )
 
     return dmc.Stack(
-        spacing="sm", children=[main_links, *links, dmc.Space(h=20)], px=25
+        spacing=0, children=[main_links, *links, dmc.Space(h=20)], px=25
     )
 
 
