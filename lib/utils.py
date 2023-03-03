@@ -59,19 +59,19 @@ def create_table(df):
 
 
 def create_styles_api_table(category, component):
-    url = f'https://v5.mantine.dev/{category}/{component}/?t=styles-api'
+    url = f"https://v5.mantine.dev/{category}/{component}/?t=styles-api"
     response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
-    tables = soup.find_all('table')
+    soup = BeautifulSoup(response.content, "html.parser")
+    tables = soup.find_all("table")
     dataframes = []
     for table in tables:
         headers = []
-        for th in table.find_all('th'):
+        for th in table.find_all("th"):
             headers.append(th.text.strip())
         rows = []
-        for tr in table.find_all('tr'):
+        for tr in table.find_all("tr"):
             row = []
-            for td in tr.find_all('td'):
+            for td in tr.find_all("td"):
                 row.append(td.text.strip())
             if row:
                 rows.append(row)

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import Optional
 
@@ -93,7 +94,7 @@ for file in files:
 
     path_prefix = "/components/" if meta.dmc else "/"
 
-    if meta.styles:
+    if meta.styles and os.environ.get("LOAD_STYLES"):
         styles_tab.extend(create_styles_api_table(meta.category, meta.styles))
         styles_tab.append(
             dmc.Anchor(
