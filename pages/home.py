@@ -65,6 +65,7 @@ def Tile(icon, heading, description, href):
         ],
     )
 
+
 layout = html.Div(
     [
         dmc.Container(
@@ -181,15 +182,14 @@ layout = html.Div(
                     dmc.Image(
                         src="https://avatars.githubusercontent.com/u/14855837?s=200&v=4",
                         alt="ascend.io",
-                        height=100,
-                        fit="contain"
-
+                        height=85,
+                        fit="contain",
                     ),
                     href="http://www.ascend.io",
                     target="_blank",
                 )
             ],
-            position="center"
+            position="center",
         ),
         dmc.Space(h=40),
         create_title("Contributors", id="contributors"),
@@ -226,4 +226,3 @@ layout = html.Div(
         ),
     ]
 )
-
