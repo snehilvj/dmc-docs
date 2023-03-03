@@ -4,6 +4,7 @@ section: Typography
 head: Display ordered or unordered list.
 description: Use List component to show ordered and unordered lists with icon support.
 component: List, ListItem
+styles: list
 ---
 
 ##### Simple Example

@@ -4,6 +4,7 @@ section: Navigation
 head: Separate list of react nodes with given separator.
 description: Breadcrumbs is a navigation component that is used to indicate current page's location within a navigational hierarchy.
 component: Breadcrumbs
+styles: breadcrumbs
 ---
 
 ##### Simple Example

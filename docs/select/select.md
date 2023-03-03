@@ -4,6 +4,7 @@ section: Inputs
 head: Custom searchable select.
 description: Select enables users to select an option in a dropdown. 
 component: Select
+styles: select
 ---
 
 ##### Simple Example

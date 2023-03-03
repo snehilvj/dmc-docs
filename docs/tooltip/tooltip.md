@@ -4,6 +4,7 @@ section: Overlay
 head: Renders tooltip at given element on mouse over or any other event.
 description: Use Tooltip component to render tooltip at given element on mouse over or any other event
 component: Tooltip
+styles: tooltip
 ---
 
 ##### Interactive Demo

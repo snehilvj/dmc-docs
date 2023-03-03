@@ -4,6 +4,7 @@ section: Navigation
 head: Switch between different views.
 description: Use the Tab and Tabs component to switch between views.
 component: Tabs, TabsList, TabsPanel, Tab
+styles: tabs
 ---
 
 ##### Usage

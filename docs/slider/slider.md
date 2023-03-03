@@ -4,6 +4,7 @@ section: Inputs
 head: Capture user feedback from a range of values.
 description: Use Slider component to capture user feedback from a range of values.
 component: Slider, RangeSlider
+styles: slider
 ---
 
 ##### Interactive Demo

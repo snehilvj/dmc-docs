@@ -4,6 +4,7 @@ section: Inputs
 head: Capture boolean input from user.
 description: Use the Switch component to capture boolean input from user.
 component: Switch
+styles: switch
 ---
 
 ##### Interactive Demo

@@ -4,6 +4,7 @@ section: Inputs
 head: Capture number input from user.
 description: Use NumberInput to provide a field for entering numbers in your app with ability to set min, max and step.
 component: NumberInput
+styles: number-input
 ---
 
 ##### Simple Example

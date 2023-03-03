@@ -4,6 +4,7 @@ section: Overlay
 head: Display overlay area at any side of the screen.
 description: Use Drawer component to create collapsible sidebars.
 component: Drawer
+styles: drawer
 ---
 
 ##### Simple Example

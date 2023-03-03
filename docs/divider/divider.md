@@ -4,6 +4,7 @@ section: Miscellaneous
 head: Horizontal line with optional label or vertical divider.
 description: Use Divider component as an alternative to html.Hr.
 component: Divider
+styles: divider
 ---
 
 ##### Simple Example

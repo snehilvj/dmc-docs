@@ -4,6 +4,7 @@ section: Typography
 head: Blockquote with optional cite.
 description: Use the Blockquote to display quotes with optional cite and icon.
 component: Blockquote
+styles: blockquote
 ---
 
 ##### Simple Example

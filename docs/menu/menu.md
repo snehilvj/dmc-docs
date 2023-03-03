@@ -5,6 +5,7 @@ head: Combine a list of secondary actions into single interactive area.
 description: Use the Menu and MenuX components to show an interactive menu dropdown with links and buttons.
 component: Menu, MenuTarget, MenuDropdown, MenuItem, MenuDivider, MenuLabel
 props: false
+styles: menu
 ---
 
 ##### Simple Example

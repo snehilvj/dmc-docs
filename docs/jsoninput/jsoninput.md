@@ -4,6 +4,7 @@ section: Inputs
 head: Capture json data from user.
 description: JsonInput is based on Textarea component, it includes json validation logic and option to format input value on blur.
 component: JsonInput
+styles: json-input
 ---
 
 ##### Simple Example

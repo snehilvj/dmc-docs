@@ -1,10 +1,10 @@
 ---
 name: PasswordInput
-
 section: Inputs
 head: Capture password from user with an option to toggle visibility.
 description: Use PasswordInput to capture password from user with an option to toggle visibility.
 component: PasswordInput
+styles: password-input
 ---
 
 ##### Interactive Demo

@@ -4,6 +4,7 @@ section: Inputs
 head: Capture string input from user.
 description: Use TextInput component to capture string input from user. Customize the input with label, description, error message etc.
 component: TextInput
+styles: text-input
 ---
 
 ##### Interactive Demo

@@ -4,6 +4,7 @@ section: Overlay
 head: Display popover section when target element is hovered.
 description: Use HoverCard component to show more information in a popover.
 component: HoverCard, HoverCardDropdown, HoverCardTarget
+styles: hover-card
 ---
 
 ##### Simple Example

@@ -4,6 +4,7 @@ section: Typography
 head: Code highlight with Mantine theme colors and styles.
 description: Use Prism component for highlighting code snippets with syntax highlighting for different languages like python, cpp, javascript, etc.
 component: Prism
+styles: prism
 ---
 
 ##### Simple Usage

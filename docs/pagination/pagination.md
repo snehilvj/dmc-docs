@@ -1,10 +1,10 @@
 ---
 name: Pagination
-
 section: Navigation
 head: Display active page and navigate between multiple pages
 description: Display active page and navigate between multiple pages
 component: Pagination
+styles: pagination
 ---
 
 ##### Interactive Demo
