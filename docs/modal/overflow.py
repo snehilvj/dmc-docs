@@ -14,12 +14,14 @@ component = html.Div(
             id="modal-outside",
             title="Outside Overflow",
             overflow="outside",
+            zIndex=10000,
             children=[dmc.Text(paragraph)],
         ),
         dmc.Modal(
             id="modal-inside",
             title="Inside Overflow",
             overflow="inside",
+            zIndex=10000,
             children=[dmc.Text(paragraph)],
         ),
         dmc.Group(

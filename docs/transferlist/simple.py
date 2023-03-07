@@ -20,11 +20,13 @@ initial_values = [
     ],
 ]
 
-component = html.Div([
-    dmc.TransferList(id="transfer-list-simple", value=initial_values),
-    dmc.Text(id="transfer-list-values-1", mt=20),
-    dmc.Text(id="transfer-list-values-2", mt=20)
-])
+component = html.Div(
+    [
+        dmc.TransferList(id="transfer-list-simple", value=initial_values),
+        dmc.Text(id="transfer-list-values-1", mt=20),
+        dmc.Text(id="transfer-list-values-2", mt=20),
+    ]
+)
 
 
 @callback(
