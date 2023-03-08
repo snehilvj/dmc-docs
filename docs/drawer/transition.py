@@ -10,6 +10,7 @@ component = html.Div(
             padding="md",
             transition="rotate-left",
             transitionDuration=250,
+            zIndex=10000,
             transitionTimingFunction="ease",
         ),
     ]
