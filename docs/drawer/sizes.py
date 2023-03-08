@@ -3,11 +3,29 @@ from dash import html, Output, Input, State, callback
 
 component = html.Div(
     [
-        dmc.Drawer(title="Size: md", id="drawer-size-md", padding="md", size="md"),
-        dmc.Drawer(title="Size: 450px", id="drawer-size-450", padding="md", size=450),
-        dmc.Drawer(title="Size: 55%", id="drawer-size-55", padding="md", size="55%"),
         dmc.Drawer(
-            title="Size: full", id="drawer-size-full", padding="md", size="full"
+            title="Size: md", id="drawer-size-md", padding="md", size="md", zIndex=10000
+        ),
+        dmc.Drawer(
+            title="Size: 450px",
+            id="drawer-size-450",
+            padding="md",
+            size=450,
+            zIndex=10000,
+        ),
+        dmc.Drawer(
+            title="Size: 55%",
+            id="drawer-size-55",
+            padding="md",
+            size="55%",
+            zIndex=10000,
+        ),
+        dmc.Drawer(
+            title="Size: full",
+            id="drawer-size-full",
+            padding="md",
+            size="full",
+            zIndex=10000,
         ),
         dmc.Group(
             [

@@ -8,6 +8,7 @@ component = html.Div(
             title="Drawer Example",
             id="drawer-simple",
             padding="md",
+            zIndex=10000,
         ),
     ]
 )
