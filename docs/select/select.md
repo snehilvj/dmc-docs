@@ -11,6 +11,15 @@ styles: select
 
 Select component allows user to pick one option from the given data.
 
+Note: Dash adds some css by default which can lead you to see some ugly red box when setting the `required` prop to 
+True. Use the below css snippet to counteract it.
+
+```css
+input:invalid {
+    outline: none !important;
+}
+```
+
 .. exec::docs.select.simple
 
 ##### Data Prop
