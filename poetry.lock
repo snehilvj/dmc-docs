@@ -152,7 +152,7 @@ python-versions = "*"
 
 [[package]]
 name = "dash-mantine-components"
-version = "0.12.0"
+version = "0.12.1"
 description = "Plotly Dash Components based on Mantine"
 category = "main"
 optional = false
