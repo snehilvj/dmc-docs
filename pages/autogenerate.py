@@ -128,7 +128,7 @@ for file in files:
             ),
         ]
         if meta.component
-        else headers + docs_tab
+        else headers + docs_tab + [dmc.Space(h=50)]
     )
 
     # register with dash

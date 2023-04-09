@@ -85,6 +85,7 @@ def create_styles_api_table(category, component):
     return layout
 
 
+# _py_component_gen
 exclude_prop_names = [
     "unstyled",
     "bg",

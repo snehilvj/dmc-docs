@@ -26,6 +26,7 @@ def create_main_nav_link(icon, label, href):
         ),
         href=href,
         variant="text",
+        mb=5,
     )
 
 
@@ -167,6 +168,16 @@ def create_side_nav_content(nav_data):
                 href="/getting-started",
             ),
             create_main_nav_link(
+                icon="material-symbols:style",
+                label="Styles API",
+                href="/styles-api",
+            ),
+            create_main_nav_link(
+                icon="material-symbols:measuring-tape-rounded",
+                label="Style Props",
+                href="/style-props",
+            ),
+            create_main_nav_link(
                 icon="material-symbols:cookie-rounded",
                 label="Dash Iconify",
                 href="/dash-iconify",
@@ -176,7 +187,11 @@ def create_side_nav_content(nav_data):
     # create component links
     sections = defaultdict(list)
     for entry in nav_data:
-        if "section" in entry and entry["section"] not in ["Getting Started"]:
+        if "section" in entry and entry["section"] not in [
+            "Getting Started",
+            "Styles API",
+            "Style Props",
+        ]:
             sections[entry["section"]].append((entry["name"], entry["path"]))
 
     links = []
@@ -305,7 +320,6 @@ clientside_callback(
     Input("theme-store", "data"),
 )
 
-
 clientside_callback(
     """function(n_clicks, data) {
         if (data) {
@@ -322,7 +336,6 @@ clientside_callback(
     Input("color-scheme-toggle", "n_clicks"),
     State("theme-store", "data"),
 )
-
 
 # noinspection PyProtectedMember
 clientside_callback(
