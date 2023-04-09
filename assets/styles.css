@@ -69,4 +69,13 @@ input:invalid {
     }
 }
 
+.dmc-bar {
+    background-image: linear-gradient(to right, yellow, orange);
+}
 
+.dmc-thumb {
+    border-color: orange;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+}

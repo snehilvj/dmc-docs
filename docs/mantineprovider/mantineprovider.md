@@ -26,6 +26,16 @@ import dash_mantine_components as dmc
 component = dmc.MantineProvider(withGlobalStyles=True, theme={"colorScheme": "dark"})
 ```
 
+##### Custom Colors
+
+You can add custom colors using MantineProvider, other than the ones found in dmc.theme.DEFAULT_COLORS.
+Use [this](https://omatsuri.app/color-shades-generator) tool to generate 10 shades of the color you like. Mantine's
+styling system needs 10 shades for any color so that it can use the right one depending on the colorScheme.
+
+You can also use the same color 10 times but using the tool will give you better results.
+
+.. exec::docs.mantineprovider.colors
+
 ##### Further Customization
 
 You can further customize your theme such as theme colors, shadows, etc. Refer to

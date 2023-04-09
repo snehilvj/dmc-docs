@@ -11,8 +11,8 @@ styles: select
 
 Select component allows user to pick one option from the given data.
 
-Note: Dash adds some css by default which can lead you to see some ugly red box when setting the `required` prop to 
-True. Use the below css snippet to counteract it.
+Note: Dash adds some css by default which can lead you to see an ugly red box when setting the `required` or `error` 
+prop to True. Use the below css snippet to counteract it.
 
 ```css
 input:invalid {
@@ -53,6 +53,13 @@ matches the search.
 Set `clearable` prop to enable clearing selected values.
 
 .. exec::docs.select.clearable
+
+##### Creatable
+
+Set `creatable` and `searchable` props to enable creating new select item. Following select has no data pre-filled, so
+you can go ahead and create your own options.
+
+.. exec::docs.select.creatable
 
 ##### Invalid State And Error
 
