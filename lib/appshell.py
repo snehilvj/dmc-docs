@@ -293,7 +293,7 @@ def create_appshell(nav_data):
             inherit=True,
             children=[
                 dcc.Store(id="theme-store", storage_type="local"),
-                dcc.Location(id="url"),
+                dcc.Location(id="url", refresh="callback-nav"),
                 dmc.NotificationsProvider(
                     [
                         create_header(nav_data),
@@ -339,7 +339,12 @@ clientside_callback(
 
 # noinspection PyProtectedMember
 clientside_callback(
-    """ function(children) { return null } """,
+    """
+    function(children) { 
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return null
+    }
+    """,
     Output("select-component", "value"),
     Input("_pages_content", "children"),
 )

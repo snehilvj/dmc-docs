@@ -1,5 +1,4 @@
 beautifulsoup4==4.11.2; python_full_version >= "3.6.0"
-brotli==1.0.9; python_version >= "3.6"
 cachelib==0.9.0; python_version >= "3.7" and python_version < "4"
 certifi==2022.9.24; python_version >= "3.7" and python_version < "4"
 charset-normalizer==2.1.1; python_version >= "3.7" and python_version < "4" and python_full_version >= "3.6.0"
@@ -11,10 +10,9 @@ dash-html-components==2.0.0; python_version >= "3.7" and python_version < "4"
 dash-iconify==0.1.2
 dash-mantine-components==0.12.1
 dash-table==5.0.0; python_version >= "3.7" and python_version < "4"
-dash==2.6.2; python_version >= "3.6"
+dash==2.9.2; python_version >= "3.6"
 editorconfig==0.12.3; python_version >= "3.7" and python_version < "4"
 flask-caching==2.0.0; python_version >= "3.7" and python_version < "4"
-flask-compress==1.13; python_version >= "3.7" and python_version < "4"
 flask==2.1.2; python_version >= "3.7" and python_version < "4"
 gunicorn==20.1.0; python_version >= "3.5"
 idna==3.4; python_version >= "3.7" and python_version < "4"

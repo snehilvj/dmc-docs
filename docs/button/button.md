@@ -24,6 +24,13 @@ You can add icons in your button with leftIcon and rightIcon props. Dash Iconify
 
 .. exec::docs.button.icons
 
+##### Loading State
+
+Starting with dash version 2.9.2, you can use duplicate callback outputs. Here's an example that lets you easily show
+loading state and at the same time, disable the button.
+
+.. exec::docs.button.loading
+
 ##### Colors
 
 Change the color of the button by choosing from one of the theme colors.
@@ -70,4 +77,3 @@ Pass `fullWidth=True` for a full width button.
 ##### Button Group
 
 .. exec::docs.button.group
-
