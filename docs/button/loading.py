@@ -2,7 +2,7 @@ import uuid
 from time import sleep
 
 import dash_mantine_components as dmc
-from dash import html, callback, Output, Input
+from dash import html, callback, Output, Input, clientside_callback
 from dash_iconify import DashIconify
 
 component = html.Div(
@@ -16,14 +16,16 @@ component = html.Div(
     ]
 )
 
-
-@callback(
+clientside_callback(
+    """
+    function updateLoadingState(n_clicks) {
+        return true
+    }
+    """,
     Output("loading-button", "loading", allow_duplicate=True),
     Input("loading-button", "n_clicks"),
     prevent_initial_call=True,
 )
-def update_loading_state(n_clicks):
-    return True
 
 
 @callback(
