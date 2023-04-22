@@ -4,3 +4,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-4PJELX1C4W');
+
+setTimeout(function(){
+ ethicalads.load()
+}, 5000);

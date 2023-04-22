@@ -58,8 +58,8 @@ for file in files:
 
     headers = []
     docs_tab = []
-    kwargs_tab = [dmc.Space(h=20)]
-    styles_tab = [dmc.Space(h=20)]
+    kwargs_tab = [create_table_of_contents([]), dmc.Space(h=20)]
+    styles_tab = [create_table_of_contents([]), dmc.Space(h=20)]
 
     # add title
     title = dmc.Text(meta.name, style={"fontSize": 30, "fontWeight": 300})

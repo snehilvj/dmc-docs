@@ -264,8 +264,19 @@ def create_table_of_contents(toc_items):
             )
         )
 
-    heading = dmc.Text("Table of Contents", mb=10, weight=500)
-    toc = dmc.Stack([heading, *children], spacing=4, px=25, mt=20)
+    heading = dmc.Text("Table of Contents", mb=10, weight=500) if children else None
+
+    ad = html.Div(
+        **{
+            "data-ea-publisher": "dash-mantine-componentscom",
+            "data-ea-manual": True,
+            "data-ea-type": "text",
+        },
+        className="flat",
+        style={"marginBottom": 25, "marginLeft": -15}
+    )
+
+    toc = dmc.Stack([ad, heading, *children], spacing=4, px=25, mt=20)
 
     return dmc.Aside(
         position={"top": 70, "right": 0},
@@ -341,6 +352,7 @@ clientside_callback(
 clientside_callback(
     """
     function(children) { 
+        ethicalads.load();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return null
     }
