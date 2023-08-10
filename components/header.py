@@ -47,7 +47,7 @@ def create_version_menu():
                 dmc.Button(
                     "0.13",
                     size="xs",
-                    leftIcon=DashIconify(icon="carbon:version", width=15),
+                    leftIcon=DashIconify(icon="mingcute:version-fill", width=15),
                 )
             ),
             dmc.MenuDropdown(

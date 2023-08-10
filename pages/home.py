@@ -73,9 +73,7 @@ layout = html.Div(
                     "Give your Dash apps an upgrade with Dash Mantine Components",
                     id="features",
                 ),
-                create_heading(
-                    "With more than 80 components from Mantine React Library"
-                ),
+                dmc.Highlight("With more than 80 components from Mantine React Library", align="center", mt=10, mb=20, mx=0, highlight=["more than 80 components"]),
                 dmc.Group(
                     [
                         dmc.Anchor(dmc.Button("Get Started"), href="/getting-started"),
