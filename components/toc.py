@@ -25,7 +25,7 @@ class TableOfContents(TOC):
         ]
 
         heading = dmc.Text(title, mb=10, weight=500) if links else None
-        content = dmc.Stack([heading, *links], spacing=4, px=25, mt=20)
+        content = dmc.Stack([heading, *links], spacing=6, px=25, mt=20)
 
         return dmc.Aside(
             position={"top": 70, "right": 0},
