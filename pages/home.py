@@ -6,7 +6,7 @@ import requests
 from dash import dcc, html
 from dash_iconify import DashIconify
 
-from components.toc import create_toc
+from components.toc import TableOfContents
 from lib.constants import PAGE_TITLE_PREFIX, PRIMARY_COLOR
 
 dash.register_page(
@@ -73,7 +73,14 @@ layout = html.Div(
                     "Give your Dash apps an upgrade with Dash Mantine Components",
                     id="features",
                 ),
-                dmc.Highlight("With more than 80 components from Mantine React Library", align="center", mt=10, mb=20, mx=0, highlight=["more than 80 components"]),
+                dmc.Highlight(
+                    "With more than 80 components from Mantine React Library",
+                    align="center",
+                    mt=10,
+                    mb=20,
+                    mx=0,
+                    highlight=["more than 80 components"],
+                ),
                 dmc.Group(
                     [
                         dmc.Anchor(dmc.Button("Get Started"), href="/getting-started"),
@@ -209,12 +216,18 @@ layout = html.Div(
             ],
             h=100,
         ),
-        create_toc(
-            [
-                ("#features", "Features", ""),
-                ("#sponsors", "Sponsors", ""),
-                ("#contributors", "Contributors", ""),
-            ]
+        TableOfContents.render(
+            None,
+            None,
+            "Table Of Contents",
+            None,
+            **{
+                "table_of_contents": [
+                    (3, "Features", "features"),
+                    (3, "Sponsors", "sponsors"),
+                    (3, "Contributors", "contributors"),
+                ]
+            },
         ),
     ]
 )
