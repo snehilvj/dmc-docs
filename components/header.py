@@ -1,4 +1,5 @@
 import dash_mantine_components as dmc
+from dash import Output, Input, clientside_callback
 from dash_iconify import DashIconify
 
 from lib.constants import PRIMARY_COLOR
@@ -136,3 +137,30 @@ def create_header(data):
             )
         ],
     )
+
+
+clientside_callback(
+    """
+    function(value) {
+        console.log(value)
+        if (value) {
+            return value
+        }
+    }
+    """,
+    Output("url", "pathname"),
+    Input("select-component", "value"),
+)
+
+# noinspection PyProtectedMember
+clientside_callback(
+    """
+    function(children) { 
+        ethicalads.load();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return null
+    }
+    """,
+    Output("select-component", "value"),
+    Input("_pages_content", "children"),
+)

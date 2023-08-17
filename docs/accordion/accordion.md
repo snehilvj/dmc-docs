@@ -9,6 +9,8 @@ package: dash_mantine_components
 
 ## Accordion
 
+Use the Accordion and AccordionX components to toggle between hiding and showing large amount of content.
+
 ### Introduction
 
 .. exec::docs.accordion.interactive
@@ -105,6 +107,17 @@ dmc.AccordionControl(children=[...], disabled=True)
 ### Styles API
 
 .. exec::docs.accordion.styles
+
+| Name      | Static selector              | Description                               |
+|-----------|------------------------------|-------------------------------------------|
+| item      | .mantine-Accordion-item      | Accordion item wrapper                    |
+| itemTitle | .mantine-Accordion-itemTitle | Optional heading element wrapping control |
+| control   | .mantine-Accordion-control   | Control root                              |
+| label     | .mantine-Accordion-label     | Control label                             |
+| icon      | .mantine-Accordion-icon      | Control icon                              |
+| chevron   | .mantine-Accordion-chevron   | Control chevron icon                      |
+| panel     | .mantine-Accordion-panel     | Panel root                                |
+| content   | .mantine-Accordion-content   | Panel content                             |
 
 ### Keyword Arguments
 

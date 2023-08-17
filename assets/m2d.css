@@ -1,22 +1,22 @@
 h2.m2d-heading {
     font-weight: 300;
     font-size: 30px;
-    margin-bottom: 30px;
 }
 
 h3.m2d-heading, h5.m2d-heading {
     font-weight: 500;
-    margin-top: 35px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
- h4.m2d-heading {
+h4.m2d-heading {
     font-weight: 400;
     margin-bottom: 10px;
 }
 
 h3.m2d-heading {
     font-weight: 400;
+    font-size: 20px;
 }
 
 .m2d-paragraph, .m2d-list {
@@ -36,7 +36,7 @@ h3.m2d-heading {
 }
 
 .m2d-block-exec {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .m2d-strong {
@@ -57,5 +57,18 @@ h3.m2d-heading {
 }
 
 .m2d-block-kwargs td:nth-child(1) {
+    width: 200px;
+}
+
+.m2d-table > thead > tr > th {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.m2d-table td:nth-child(3) {
+    width: 500px;
+}
+
+.m2d-table td:nth-child(1) {
     width: 200px;
 }

@@ -7,8 +7,6 @@ from dash import (
     dcc,
     page_container,
     State,
-    ALL,
-    MATCH,
 )
 
 from components.header import create_header
@@ -81,17 +79,4 @@ clientside_callback(
     Output("theme-store", "data"),
     Input("color-scheme-toggle", "n_clicks"),
     State("theme-store", "data"),
-)
-
-clientside_callback(
-    """
-    function(value) {
-        console.log(value)
-        if (value) {
-            return value
-        }
-    }
-    """,
-    Output("url", "pathname"),
-    Input("select-component", "value"),
 )

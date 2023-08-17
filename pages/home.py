@@ -219,7 +219,7 @@ layout = html.Div(
         TableOfContents.render(
             None,
             None,
-            "Table Of Contents",
+            "Table of Contents",
             None,
             **{
                 "table_of_contents": [
