@@ -24,7 +24,22 @@ class Configurator:
         return str(uuid.uuid4())[:5]
 
     def add_colorpicker(self, target_prop: str, value: str):
-        mapping = {'dark': '#2C2E33', 'gray': '#adb5bd', 'red': '#ff6b6b', 'pink': '#f06595', 'grape': '#cc5de8', 'violet': '#845ef7', 'indigo': '#5c7cfa', 'blue': '#329af0', 'cyan': '#22b8cf', 'teal': '#20c997', 'green': '#51cf66', 'lime': '#94d82d', 'yellow': '#fcc419', 'orange': '#ff922b'}
+        mapping = {
+            "dark": "#2C2E33",
+            "gray": "#adb5bd",
+            "red": "#ff6b6b",
+            "pink": "#f06595",
+            "grape": "#cc5de8",
+            "violet": "#845ef7",
+            "indigo": "#5c7cfa",
+            "blue": "#329af0",
+            "cyan": "#22b8cf",
+            "teal": "#20c997",
+            "green": "#51cf66",
+            "lime": "#94d82d",
+            "yellow": "#fcc419",
+            "orange": "#ff922b",
+        }
         cid = self.new_id
         clientside_callback(
             ClientsideFunction(namespace="clientside", function_name="colorCallback"),

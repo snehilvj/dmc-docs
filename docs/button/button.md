@@ -12,11 +12,21 @@ package: dash_mantine_components
 .. exec::docs.button.interactive
     :code: false
 
-### Variants
-
-Button supports the following variants: default, subtle, gradient, filled, light, outline etc.
+### Variant
 
 .. exec::docs.button.variant
+
+#### Gradient Variant
+
+To use gradient as Button background:
+
+* set `variant` prop to "gradient"
+* set `gradient` prop to `{ "from": "color-from", "to": "color-to", "deg": 135}`, where
+
+* `color-from` and `color-to` are colors from Mantine's theme colors.
+* `deg` is linear gradient deg.
+
+.. exec::docs.button.gradient
 
 ### Icons Support
 
@@ -33,23 +43,14 @@ loading state and at the same time, disable the button.
 
 ### Colors
 
-Change the color of the button by choosing from one of the theme colors.
+```python
+import dash_mantine_components as dmc
+
+dmc.Button("Settings", color="red")
+```
 
 .. exec::docs.button.colors
-
-You can play more with the colors and variants in the interactive demo at the top.
-
-### With Gradient
-
-To use gradient as Button background:
-
-* set `variant` prop to "gradient"
-* set `gradient` prop to `{ "from": "color-from", "to": "color-to", "deg": 135}`, where
-
-* `color-from` and `color-to` are colors from Mantine's theme colors.
-* `deg` is linear gradient deg.
-
-.. exec::docs.button.gradient
+    :code: false
 
 ### Radius and Size
 

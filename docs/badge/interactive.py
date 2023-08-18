@@ -6,7 +6,9 @@ target = dmc.Badge("Badge")
 
 configurator = Configurator(target)
 
-configurator.add_select("variant", ["light", "filled", "outline", "dot", "gradient"], "light")
+configurator.add_select(
+    "variant", ["light", "filled", "outline", "dot", "gradient"], "light"
+)
 configurator.add_colorpicker("color", "blue")
 configurator.add_slider("size", "md")
 configurator.add_slider("radius", "xl")
