@@ -1,19 +1,14 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {
-        "property": "variant",
-        "component": "Select",
-        "data": ["light", "filled", "outline", "dot", "gradient"],
-        "value": "light",
-    },
-    {"property": "color", "component": "ColorPicker"},
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-    {"property": "radius", "component": "DemoSlider", "value": "xl"},
-]
+target = dmc.Badge("Badge")
 
-demo = dmc.Badge("Badge")
+configurator = Configurator(target)
 
-component = create_configurator(demo, controls)
+configurator.add_select("variant", ["light", "filled", "outline", "dot", "gradient"], "light")
+configurator.add_colorpicker("color", "blue")
+configurator.add_slider("size", "md")
+configurator.add_slider("radius", "xl")
+
+component = configurator.panel

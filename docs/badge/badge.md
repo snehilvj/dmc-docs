@@ -14,31 +14,28 @@ package: dash_mantine_components
 
 ### Variants
 
-You can create badges with different `variants` by setting the variant prop.
-
 .. exec::docs.badge.variant
 
 ### Colors
 
-Change the color of the badge by choosing from one of the theme colors.
+```python
+import dash_mantine_components as dmc
+
+dmc.Badge("Orange", color="orange")
+```
 
 .. exec::docs.badge.colors
+    :code: false
 
-### With Gradient
-
-You can also customize the gradient fill of the badge.
+### Gradient variant
 
 .. exec::docs.badge.gradient
 
 ### Size
 
-You can set the size of the badge using the `size` prop.
-
 .. exec::docs.badge.size
 
 ### Radius
-
-You can set the radius of the badge using the `radius` prop.
 
 .. exec::docs.badge.radius
 
