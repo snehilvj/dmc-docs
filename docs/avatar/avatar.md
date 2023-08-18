@@ -9,8 +9,6 @@ package: dash_mantine_components
 
 ### Simple Usage
 
-Use Avatar to display user profile pictures. It supports images, icons, or letters.
-
 .. exec::docs.avatar.simple
 
 ### Size and Radius
