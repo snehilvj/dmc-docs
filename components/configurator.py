@@ -102,7 +102,8 @@ class Configurator:
             dmc.Select(id=cid, data=data, label=create_label(target_prop), value=value)
         )
 
-    def create_panel(self, target_center: bool = True):
+    @property
+    def panel(self):
         if self.outputs and self.inputs:
             clientside_callback(
                 ClientsideFunction(

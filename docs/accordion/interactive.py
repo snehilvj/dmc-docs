@@ -44,4 +44,4 @@ configurator.add_select(
 configurator.add_switch("disableChevronRotation", False)
 configurator.add_slider("radius", "sm")
 
-component = configurator.create_panel(target_center=False)
+component = configurator.panel

@@ -33,7 +33,8 @@ class TableOfContents(TOC):
                 "data-ea-type": "text",
             },
             className="flat",
-            mb=25, ml=-15
+            mb=25,
+            ml=-15
         )
 
         content = dmc.Stack([ad, heading, *links], spacing=6, px=25, mt=20)
