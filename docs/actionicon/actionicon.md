@@ -7,10 +7,6 @@ package: dash_mantine_components
 
 .. toc::
 
-## ActionIcon
-
-Use ActionIcon as an alternative to buttons when you just want to use an icon.
-
 ### Introduction
 
 .. exec::docs.actionicon.interactive
@@ -79,4 +75,5 @@ dmc.Group(
 ### Keyword Arguments
 
 #### ActionIcon
+
 .. kwargs::ActionIcon

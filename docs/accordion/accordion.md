@@ -7,10 +7,6 @@ package: dash_mantine_components
 
 .. toc::
 
-## Accordion
-
-Use the Accordion and AccordionX components to toggle between hiding and showing large amount of content.
-
 ### Introduction
 
 .. exec::docs.accordion.interactive
@@ -122,13 +118,17 @@ dmc.AccordionControl(children=[...], disabled=True)
 ### Keyword Arguments
 
 #### Accordion
+
 .. kwargs::Accordion
 
 #### AccordionControl
+
 .. kwargs::AccordionControl
 
 #### AccordionItem
+
 .. kwargs::AccordionItem
 
 #### AccordionPanel
+
 .. kwargs::AccordionPanel

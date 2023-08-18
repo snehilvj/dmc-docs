@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import dash
-import dash_mantine_components
+import dash_mantine_components as dmc
 import frontmatter
 from markdown2dash import Admonition, BlockExec, Image
 from markdown2dash import parse
@@ -36,6 +36,11 @@ for file in files:
         content,
         directives=[Admonition(), Kwargs(), BlockExec(), TableOfContents(), Image()],
     )
+
+    # add heading and description to the layout
+    section = [dmc.Title(metadata.name, order=2, className="m2d-heading"),
+               dmc.Text(metadata.description, className="m2d-paragraph")]
+    layout = section + layout
 
     # register with dash
     dash.register_page(
