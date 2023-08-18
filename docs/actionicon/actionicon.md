@@ -39,6 +39,9 @@ dmc.ActionIcon(
 ### Variants
 
 ```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
 dmc.ActionIcon(
     DashIconify(icon="clarity:settings-line"), color="blue", variant="subtle"
 )
@@ -50,6 +53,9 @@ dmc.ActionIcon(
 ### Colors
 
 ```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
 dmc.ActionIcon(
     DashIconify(icon="icomoon-free:sun"),
     variant="outline",
@@ -63,6 +69,8 @@ dmc.ActionIcon(
 ### Radius and Size
 
 ```python
+import dash_mantine_components as dmc
+
 dmc.Group(
     [
         dmc.ActionIcon(size="sm", children=[...]),

@@ -17,6 +17,8 @@ package: dash_mantine_components
 Set `multiple=True` to enable opening multiple items.
 
 ```python
+import dash_mantine_components as dmc
+
 dmc.Accordion(
     children=[...],
     multiple=True
@@ -35,6 +37,7 @@ dmc.Accordion(
 You can use [dash-iconify](/dash-iconify) to change the chevron icon.
 
 ```python
+import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 dmc.Accordion(
@@ -54,6 +57,8 @@ dmc.Accordion(
 ### Change transition
 
 ```python
+import dash_mantine_components as dmc
+
 dmc.Accordion(
     children=[...],
     transitionDuration=1000
@@ -68,6 +73,8 @@ dmc.Accordion(
 Provide a default value using the `value` prop.
 
 ```python
+import dash_mantine_components as dmc
+
 dmc.Accordion(
     children=[...],
     value="flexibility"
@@ -77,6 +84,8 @@ dmc.Accordion(
 If `multiple` is `True`, then value will be a list:
 
 ```python
+import dash_mantine_components as dmc
+
 dmc.Accordion(
     children=[...],
     value=["flexibility", ]
@@ -94,6 +103,8 @@ dmc.Accordion(
 Set `disabled=True` in dmc.AccordionControl to disable it. 
 
 ```python
+import dash_mantine_components as dmc
+
 dmc.AccordionControl(children=[...], disabled=True)
 ```
 

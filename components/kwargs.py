@@ -10,6 +10,7 @@ mapping = {
     "boolean | number | string | dict | list": "dict",
     "a value equal to: ": "",
     "a list of or a singular dash component, string or number": "any",
+    "dict with strings as keys and values of type dict": "dict",
 }
 
 

@@ -38,8 +38,10 @@ for file in files:
     )
 
     # add heading and description to the layout
-    section = [dmc.Title(metadata.name, order=2, className="m2d-heading"),
-               dmc.Text(metadata.description, className="m2d-paragraph")]
+    section = [
+        dmc.Title(metadata.name, order=2, className="m2d-heading"),
+        dmc.Text(metadata.description, className="m2d-paragraph"),
+    ]
     layout = section + layout
 
     # register with dash
