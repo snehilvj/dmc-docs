@@ -18,9 +18,7 @@ Create an alert with the main message (`children`), the `title`, and the `color`
 
 .. exec::docs.alert.simple
 
-### Different colors
-
-Set the color using `color` argument.
+### Colors
 
 .. exec::docs.alert.colors
 

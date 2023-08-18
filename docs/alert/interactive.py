@@ -1,25 +1,19 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#ff6b6b"},
-    {"property": "withCloseButton", "component": "Switch", "checked": False},
-    {
-        "property": "variant",
-        "component": "DemoSegmentedControl",
-        "data": ["light", "filled", "outline"],
-        "value": "light",
-    },
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-]
-
-demo = dmc.Alert(
+target = dmc.Alert(
     icon=DashIconify(icon="radix-icons:cross-circled"),
     title="Bummer",
     children="Something terrible happened! You made a mistake and there is no going back, your data was lost forever!",
-    color="red",
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+
+configurator.add_colorpicker("color", "red")
+configurator.add_switch("withCloseButton", False)
+configurator.add_segmented_control("variant", ["light", "filled", "outline"], "light")
+configurator.add_slider("radius", "sm")
+
+component = configurator.panel

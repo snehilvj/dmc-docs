@@ -15,7 +15,7 @@ configurator.add_select(
     ["filled", "outline", "light", "subtle", "default", "transparent"],
     "filled",
 )
-configurator.add_colorpicker("color", "#34c6ef5")
+configurator.add_colorpicker("color", "orange")
 configurator.add_slider("size", "lg")
 configurator.add_slider("radius", "sm")
 configurator.add_switch("loading", False)
