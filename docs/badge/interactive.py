@@ -2,9 +2,11 @@ import dash_mantine_components as dmc
 
 from components.configurator import Configurator
 
-target = dmc.Badge("Badge")
+TARGET_ID = "interactive-badge"
 
-configurator = Configurator(target)
+target = dmc.Center(dmc.Badge("Badge", id=TARGET_ID))
+
+configurator = Configurator(target, TARGET_ID)
 
 configurator.add_select(
     "variant", ["light", "filled", "outline", "dot", "gradient"], "light"
