@@ -1,7 +1,7 @@
 import copy
 
 from lib.configurator import create_configurator
-from docs.timeline.simple import component as timeline
+from temp.timeline.simple import component as timeline
 
 controls = [
     {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
