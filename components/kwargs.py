@@ -1,6 +1,3 @@
-import dash_mantine_components as dmc
-from dash.development.base_component import Component
-from dash_mantine_react_table import DashMantineReactTable
 from markdown2dash import Kwargs as KwargsBase
 
 from lib.constants import PROPS_TO_EXCLUDE

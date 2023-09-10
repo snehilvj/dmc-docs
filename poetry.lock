@@ -1,4 +1,15 @@
 [[package]]
+name = "annotated-types"
+version = "0.5.0"
+description = "Reusable constraint types to use with typing.Annotated"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+typing-extensions = {version = ">=4.0.0", markers = "python_version < \"3.9\""}
+
+[[package]]
 name = "ansi2html"
 version = "1.8.0"
 description = ""
@@ -311,6 +322,33 @@ packaging = "*"
 tenacity = ">=6.2.0"
 
 [[package]]
+name = "pydantic"
+version = "2.3.0"
+description = "Data validation using Python type hints"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+annotated-types = ">=0.4.0"
+pydantic-core = "2.6.3"
+typing-extensions = ">=4.6.1"
+
+[package.extras]
+email = ["email-validator (>=2.0.0)"]
+
+[[package]]
+name = "pydantic-core"
+version = "2.6.3"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
+
+[[package]]
 name = "python-frontmatter"
 version = "1.0.0"
 description = "Parse and manage posts with YAML (or other) frontmatter"
@@ -440,9 +478,10 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "937cae2e766e586d9ffc8541914d1d6cd706a787219c55080bc136c48ef21472"
+content-hash = "933cc73da54c37ec9f7be478d4498710363cb09e0c229ea001066a5b4ac5f3c8"
 
 [metadata.files]
+annotated-types = []
 ansi2html = []
 black = []
 certifi = []
@@ -471,6 +510,8 @@ packaging = []
 pathspec = []
 platformdirs = []
 plotly = []
+pydantic = []
+pydantic-core = []
 python-frontmatter = []
 pyyaml = []
 requests = []
