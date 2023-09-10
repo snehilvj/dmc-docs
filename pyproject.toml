@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dmc-docs"
-version = "0.1.0"
+version = "0.2.0"
 description = "Official documentation for Dash Mantine Components library. This documentation is entirely created using components from dash-mantine-components."
 authors = ["Snehil Vijay <snehilvj@outlook.com>"]
 license = "MIT"
@@ -11,9 +11,9 @@ dash = "^2.0.0"
 dash-iconify = "^0.1.0"
 gunicorn = "^20.1.0"
 requests = "^2.27.1"
-dash-mantine-components = "0.13.0a2"
-markdown2dash = "^0.1.0a2"
 python-frontmatter = "^1.0.0"
+dash-mantine-components = "0.13.0a3"
+markdown2dash = "0.1.0a3"
 
 [tool.poetry.dev-dependencies]
 black = "22.3.0"
