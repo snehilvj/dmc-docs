@@ -9,12 +9,15 @@ component = html.Div(
             description="This is anonymous",
             withAsterisk=True,
             mb=10,
-            children=
-                dmc.Group([dmc.Checkbox(label="React", value="react"),
-                           dmc.Checkbox(label="Vue", value="vue"),
-                           dmc.Checkbox(label="Svelte", value="svelte"),
-                           dmc.Checkbox(label="Angular", value="angular"),
-                           ], mt=10),
+            children=dmc.Group(
+                [
+                    dmc.Checkbox(label="React", value="react"),
+                    dmc.Checkbox(label="Vue", value="vue"),
+                    dmc.Checkbox(label="Svelte", value="svelte"),
+                    dmc.Checkbox(label="Angular", value="angular"),
+                ],
+                mt=10,
+            ),
             value=["react", "vue"],
         ),
         dmc.Text(id="checkbox-group-output"),

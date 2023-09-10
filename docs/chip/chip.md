@@ -14,6 +14,8 @@ package: dash_mantine_components
 
 ### ChipGroup
 
+Use dmc.Group or dmc.Stack to customize the orientation and spacing of the dmc.Chip components.
+
 .. exec::docs.chip.group
 
 ### Multiple
@@ -31,8 +33,6 @@ For Chip component, `checked` property can be used in the callbacks and `value` 
 ### Styles API
 
 .. exec::docs.chip.styles
-
-### Styles API
 
 | Name        | Static selector           | Description                                             |
 |:------------|:--------------------------|:--------------------------------------------------------|
