@@ -282,12 +282,36 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "numpy"
+version = "1.20.0"
+description = "NumPy is the fundamental package for array computing with Python."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "packaging"
 version = "23.1"
 description = "Core utilities for Python packages"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "pandas"
+version = "1.0.0"
+description = "Powerful data structures for data analysis, time series, and statistics"
+category = "main"
+optional = false
+python-versions = ">=3.6.1"
+
+[package.dependencies]
+numpy = ">=1.13.3"
+python-dateutil = ">=2.6.1"
+pytz = ">=2017.2"
+
+[package.extras]
+test = ["pytest (>=4.0.2)", "pytest-xdist", "hypothesis (>=3.58)"]
 
 [[package]]
 name = "pathspec"
@@ -349,6 +373,17 @@ python-versions = ">=3.7"
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
+name = "python-dateutil"
+version = "2.8.2"
+description = "Extensions to the standard Python datetime module"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
 name = "python-frontmatter"
 version = "1.0.0"
 description = "Parse and manage posts with YAML (or other) frontmatter"
@@ -362,6 +397,14 @@ PyYAML = "*"
 [package.extras]
 docs = ["sphinx"]
 test = ["pytest", "toml", "pyaml"]
+
+[[package]]
+name = "pytz"
+version = "2023.3.post1"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pyyaml"
@@ -478,7 +521,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "933cc73da54c37ec9f7be478d4498710363cb09e0c229ea001066a5b4ac5f3c8"
+content-hash = "9e9b968dcf7cf34e27b215ca03656d07a146e916eb172fdb9e4b05f30108fcb8"
 
 [metadata.files]
 annotated-types = []
@@ -506,13 +549,17 @@ markupsafe = []
 mistune = []
 mypy-extensions = []
 nest-asyncio = []
+numpy = []
 packaging = []
+pandas = []
 pathspec = []
 platformdirs = []
 plotly = []
 pydantic = []
 pydantic-core = []
+python-dateutil = []
 python-frontmatter = []
+pytz = []
 pyyaml = []
 requests = []
 retrying = []

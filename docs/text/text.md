@@ -20,12 +20,6 @@ theme.colors.gray[6] in light.
 
 ### Gradient
 
-To use gradient as text color, set `variant` to gradient, and `gradient` to
-`{ "from": "color-from", "to": "color-to", "deg": 135 }`, where:
-
-* color-from and color-to are colors from theme.colors
-* deg is linear gradient deg
-
 .. exec::docs.text.gradient
 
 ### Keyword Arguments
