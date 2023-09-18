@@ -9,8 +9,6 @@ package: dash_mantine_components
 
 ### Usage
 
-Group allows you to compose any elements and components in a flex container.
-
 .. exec::docs.group.interactive
     :code: false
 
