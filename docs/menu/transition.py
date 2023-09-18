@@ -16,5 +16,5 @@ component = dmc.Menu(
             ]
         ),
     ],
-    transitionProps={"transition": 'rotate-right', "duration": 150}
+    transitionProps={"transition": "rotate-right", "duration": 150},
 )

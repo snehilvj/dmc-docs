@@ -124,7 +124,9 @@ class Configurator:
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
         self.controls.append(
-            dmc.NumberInput(id=cid, value=value, label=create_label(target_prop), **kwargs)
+            dmc.NumberInput(
+                id=cid, value=value, label=create_label(target_prop), **kwargs
+            )
         )
 
     @property
