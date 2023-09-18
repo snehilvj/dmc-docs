@@ -11,7 +11,7 @@ package: dash_mantine_components
 
 .. exec::docs.list.simple
 
-### Introduction
+### Interactive Demo
 
 .. exec::docs.list.interactive
     :code: false
