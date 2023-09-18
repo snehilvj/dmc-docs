@@ -13,9 +13,9 @@ Container is the most basic layout element, it centers content horizontally and 
 theme.
 
 Component accepts these props:
- * `size` - controls default max width
- * `padding` - controls horizontal padding of container 
- * `fluid` - overwrites `size` prop and sets max width to 100%
+
+  * `size` – controls default max width 
+  * `fluid` – overwrites size prop and sets max width to 100%
 
 .. exec::docs.container.simple
 
