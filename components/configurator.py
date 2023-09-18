@@ -118,6 +118,15 @@ class Configurator:
             dmc.Select(id=cid, data=data, label=create_label(target_prop), value=value)
         )
 
+    def add_number_input(self, target_prop: str, value: int, **kwargs):
+        cid = self.new_id
+        self.outputs.append(Output(self.target_id, target_prop))
+        self.inputs.append((Input(cid, "value")))
+        setattr(self.target, target_prop, value)
+        self.controls.append(
+            dmc.NumberInput(id=cid, value=value, label=create_label(target_prop), **kwargs)
+        )
+
     @property
     def panel(self):
         if self.outputs and self.inputs:
