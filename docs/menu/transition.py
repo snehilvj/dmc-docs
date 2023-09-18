@@ -1,5 +1,5 @@
-from dash_iconify import DashIconify
 import dash_mantine_components as dmc
+from dash_iconify import DashIconify
 
 component = dmc.Menu(
     [
@@ -16,6 +16,5 @@ component = dmc.Menu(
             ]
         ),
     ],
-    transition="rotate-right",
-    transitionDuration=150,
+    transitionProps={"transition": 'rotate-right', "duration": 150}
 )

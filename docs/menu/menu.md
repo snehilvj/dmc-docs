@@ -16,11 +16,11 @@ When MenuItem is used as a button, you can write callbacks on it.
 
 ### Menu on Hover
 
-Set `trigger="hover"` to reveal dropdown when user hovers over menu target and dropdown. `closeDelay` and `openDelay` props can be used to control open and close delay in ms.
+Set `trigger` to `hover` to reveal dropdown when user hovers over menu target and dropdown. `closeDelay` and `openDelay` props can be used to control open and close delay in ms.
 Note that:
 
 * If you set `closeDelay=0` then menu will close before user will reach dropdown, so set `offset=0` to remove space between target element and dropdown.
-* Menu with `trigger="hover"` is not accessible - users that navigate with keyboard will not be able to use it.
+* Menu with hover trigger is not accessible - users that navigate with keyboard will not be able to use it.
 
 ```python
 import dash_mantine_components as dmc
@@ -38,7 +38,7 @@ Menu dropdown can be animated with any of the premade transitions.
 
 .. exec::docs.menu.transition
 
-### Cutom component as Target
+### Custom component as Target
 
 .. exec::docs.menu.custom
 
