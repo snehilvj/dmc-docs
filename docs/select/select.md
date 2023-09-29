@@ -61,6 +61,12 @@ you can go ahead and create your own options.
 
 .. exec::docs.select.creatable
 
+
+### Grouping Items
+
+.. exec::docs.select.grouping
+
+
 ### Invalid State And Error
 
 You can let the user know if the selected value is invalid. In the example below, you will get an error message if you
