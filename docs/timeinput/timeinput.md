@@ -12,7 +12,7 @@ package: dash_mantine_components
 This is a simple example of the TimeInput. You can enter a valid time string or use the date object from datetime 
 library.
 
-Use the `format` prop to specify 12 or 24 hour display and the `withSeconds` prop to display seconds.
+Use the  `withSeconds` prop to display seconds.
 
 .. exec::docs.timeinput.simple
 
@@ -20,7 +20,7 @@ Use the `format` prop to specify 12 or 24 hour display and the `withSeconds` pro
 
 TimeInput supports all props from Input and InputWrapper components such as `radius`, `size`, `required`, etc.
 
-.. exec::docs.timeinput.input
+.. exec::docs.timeinput.interactive
     :code: false
 
 ### Invalid State And Error
