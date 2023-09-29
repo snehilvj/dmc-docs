@@ -18,12 +18,12 @@ Control timeline appearance with the following props:
 
 - `active` - index of current active element, all elements before this index will be highlighted with color
 - `color` - color from theme that should be used to highlight active items, defaults to theme.primaryColor
-- `lineWidth` - controls line width and bullet border, value is in px
-- `bulletSize` - bullet width, height and border-radius in px
-- `align` - defines line and bullets position relative to content, also sets text-align
+- `lineWidth` - controls line width and bullet border
+- `bulletSize` - bullet width, height and border-radius
+- `align` - defines line and bullets position relative to content, also sets textAlign
 
 .. exec::docs.timeline.simple
-    :center: true
+    
 
 ### Styles API
 

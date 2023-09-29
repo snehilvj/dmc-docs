@@ -1,7 +1,10 @@
 import dash_mantine_components as dmc
+from components.configurator import Configurator
 
+TARGET_ID = "interactive-timeline"
 
-component = dmc.Timeline(
+target = dmc.Timeline(
+    id=TARGET_ID,
     active=1,
     bulletSize=15,
     lineWidth=2,
@@ -56,7 +59,7 @@ component = dmc.Timeline(
                 dmc.Text(
                     [
                         dmc.Anchor(
-                            "Ann Marie Ward",
+                            "AnnMarieW",
                             href="https://github.com/AnnMarieW",
                             size="sm",
                         ),
@@ -70,3 +73,15 @@ component = dmc.Timeline(
         ),
     ],
 )
+
+
+configurator =  Configurator(target, TARGET_ID)
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("radius", "xl")
+configurator.add_number_input("active", 2, **{"min":-1, "max":3})
+configurator.add_switch("reverseActive", False)
+configurator.add_number_input("lineWidth", 4, **{"min":0, "max":8})
+configurator.add_number_input("bulletSize", 20, **{"min":12, "max":30, "step":2})
+configurator.add_segmented_control("align", ["left", "right"], "left")
+
+component = configurator.panel
