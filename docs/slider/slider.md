@@ -65,18 +65,7 @@ marks = [
 | mark        | .mantine-Slider-mark        | Mark displayed on the track                            |
 | markFilled  | .mantine-Slider-markFilled  | Styles added to mark when it is located in filled area |
 | markLabel   | .mantine-Slider-markLabel   | Mark label, displayed below track                      |
-| Name        | Static selector                  | Description                                            |
-|:------------|:---------------------------------|:-------------------------------------------------------|
-| root        | .mantine-RangeSlider-root        | Root element                                           |
-| track       | .mantine-RangeSlider-track       | Track element, contains all other elements             |
-| bar         | .mantine-RangeSlider-bar         | Filled part of the track                               |
-| thumb       | .mantine-RangeSlider-thumb       | Main control                                           |
-| dragging    | .mantine-RangeSlider-dragging    | Styles added to thumb while dragging                   |
-| label       | .mantine-RangeSlider-label       | Label element, displayed above thumb                   |
-| markWrapper | .mantine-RangeSlider-markWrapper | Wrapper around mark, contains mark and mark label      |
-| mark        | .mantine-RangeSlider-mark        | Mark displayed on the track                            |
-| markFilled  | .mantine-RangeSlider-markFilled  | Styles added to mark when it is located in filled area |
-| markLabel   | .mantine-RangeSlider-markLabel   | Mark label, displayed below track                      |
+
 
 ### Keyword Arguments
 
