@@ -1,5 +1,4 @@
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from components.configurator import Configurator
 

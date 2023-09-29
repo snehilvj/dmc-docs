@@ -10,7 +10,6 @@ package: dash_mantine_components
 ### Basic usage
 
 .. exec::docs.stepper.basic
-    :center: true
 
 ### Color, radius and size
 
@@ -59,7 +58,7 @@ You can replace step icon by setting `icon` prop on Step component. To change co
 You can also change completed icon for each step, for example, to indicate error state.
 
 .. exec::docs.stepper.icons
-    :center: true
+
 
 ### Vertical orientation
 
