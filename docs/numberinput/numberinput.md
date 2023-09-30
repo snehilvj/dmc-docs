@@ -7,6 +7,11 @@ package: dash_mantine_components
 
 .. toc::
 
+### Introduction
+
+
+.. exec::docs.numberinput.interactive
+
 ### Simple Example
 
 .. exec::docs.numberinput.simple
@@ -31,6 +36,25 @@ To use decimal steps set following props:
 You can use DashIconify to add icon to the NumberInput.
 
 .. exec::docs.numberinput.icon
+
+
+### Decimal/Thousands separator
+
+To change the separators set decimalSeparator and thousandsSeparator props:
+
+.. exec::docs.numberinput.separator
+
+
+
+### Remove controls
+
+Controls are not rendered in these cases:
+
+- `hideControls` prop is set to `True`
+- Input is disabled
+- `variant` prop is set to "unstyled"
+
+.. exec::docs.numberinput.controls
 
 ### Styles API
 
