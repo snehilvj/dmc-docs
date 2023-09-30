@@ -7,35 +7,43 @@ package: dash_mantine_components
 
 .. toc::
 
-### Introduction
 
-Use RadioGroup when you need to capture user feedback limited to small set of options. It can be customized using 
-`spacing`, `size`, etc.
-
-.. exec::docs.radiogroup.interactive
-    :code: false
-
-### Callbacks
+### Simple Usage
 
 Use the `value` prop for callbacks.
 
 .. exec::docs.radiogroup.callback
 
-### Size
+### Radio
 
-You can set the size of the component from one of xs, sm, md, lg and xl using the `size` prop.
+Each Radio item in a RadioGroup can be customized. The Radio component is a wrapper for input type radio.  Use Stack or Group to arrange multiple Radio items
 
-```python
-import dash_mantine_components as dmc
 
-dmc.RadioGroup(size="lg")
-```
+.. exec::docs.radiogroup.interactive
+    :code: false
+
 
 ### Color
 
-In a RadioGroup component, the color property is not customized at the individual Radio level.
+In a RadioGroup component, the color property can be customized at the individual Radio level.
 
 .. exec::docs.radiogroup.color
+
+
+### Size
+
+You can set the size of all the Radio items by using the `size` prop in the RadioGroup component.  Use one of xs, sm, md, lg and xl.
+
+
+.. exec::docs.radiogroup.size
+
+
+### Group or Stack
+
+In a RadioGroup component, the Radio items can be arranged by using the Group or Stack components.
+
+.. exec::docs.radiogroup.group
+
 
 ### Styles API
 
@@ -56,3 +64,9 @@ In a RadioGroup component, the color property is not customized at the individua
 #### RadioGroup
 
 .. kwargs::RadioGroup
+
+
+#### Radio
+
+.. kwargs::Radio
+

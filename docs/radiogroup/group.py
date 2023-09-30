@@ -6,18 +6,21 @@ data = [["react", "React"], ["ng", "Angular"], ["svelte", "Svelte"], ["vue", "Vu
 component = html.Div(
     [
         dmc.RadioGroup(
-            [dmc.Radio(l, value=k) for k, l in data],
+            children=dmc.Group([dmc.Radio(l, value=k) for k, l in data]),
             id="radiogroup-simple",
             value="react",
             label="Select your favorite framework/library",
             size="sm",
             mt=10,
         ),
-        dmc.Text(id="radio-output"),
+        dmc.RadioGroup(
+            children=dmc.Stack([dmc.Radio(l, value=k) for k, l in data]),
+            id="radiogroup-simple",
+            value="react",
+            label="Select your favorite framework/library",
+            size="sm",
+            mt=10,
+        ),
+
     ]
 )
-
-
-@callback(Output("radio-output", "children"), Input("radiogroup-simple", "value"))
-def choose_framework(value):
-    return value
