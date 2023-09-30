@@ -25,11 +25,9 @@ To vertically center the modal, set `centered=True`.
 
 .. exec::docs.modal.vertical
 
-### Modal With Overflow
+### Modal With Scroll
 
-You can control modal vertical overflow behavior by setting `overflow` prop.
-
-.. exec::docs.modal.overflow
+.. exec::docs.modal.scroll
 
 ### Styles API
 
