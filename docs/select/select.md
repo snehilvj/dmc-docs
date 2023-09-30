@@ -66,6 +66,12 @@ you can go ahead and create your own options.
 
 .. exec::docs.select.grouping
 
+### Dropdown Position
+
+By default, dropdown is placed below the input and when there is not enough space, it flips to be above the input. To
+change this behavior, set dropdownPosition prop:
+
+.. exec::docs.select.position
 
 ### Invalid State And Error
 
@@ -77,6 +83,11 @@ select less than 2 currency pairs.
 ### With Icons
 
 .. exec::docs.select.icons
+
+### Input Props
+
+.. exec::docs.select.input
+
 
 ### Styles API
 
