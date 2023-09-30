@@ -80,6 +80,16 @@ dmc.SegmentedControl(
 .. exec::docs.segmentedcontrol.colors
     :code: false
 
+
+### Transitions
+Change transition properties with:
+
+- `transitionDuration` – all transitions duration in ms (ignored if user prefers to reduce motion)
+- `transitionTimingFunction` – defaults to `theme.transitionTimingFunction`
+
+
+.. exec::docs.segmentedcontrol.transitions
+
 ### Styles API
 
 | Name          | Static selector                         | Description                                                            |
