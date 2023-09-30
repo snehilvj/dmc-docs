@@ -32,6 +32,11 @@ data = [
 ]
 ```
 
+### Grouping
+
+.. exec::docs.multiselect.grouping
+
+
 ### Searchable
 
 Set `searchable` prop to enable search in MultiSelect and use `nothingFound` prop to show a label when no option
