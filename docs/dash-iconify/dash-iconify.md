@@ -37,9 +37,3 @@ Although dash-iconify can be used with any dash components library, be it, dash-
 or dash-bootstrap-components, dmc provides direct hooks for adding icons to enhance the look and feel of your apps.
 
 .. exec::docs.dash-iconify.dmc
-
-### Keyword Arguments
-
-#### DashIconify
-
-.. kwargs::DashIconify
