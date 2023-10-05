@@ -16,9 +16,15 @@ target = dmc.Grid(
 )
 
 configurator = Configurator(target)
-configurator.add_select("justify", ["space-between", "space-around", "center", "flex-end", "flex-start"], "flex-start")
-configurator.add_select("align", ["stretch", "center", "flex-end", "flex-start"], "stretch" )
+configurator.add_select(
+    "justify",
+    ["space-between", "space-around", "center", "flex-end", "flex-start"],
+    "flex-start",
+)
+configurator.add_select(
+    "align", ["stretch", "center", "flex-end", "flex-start"], "stretch"
+)
 configurator.add_switch("grow", False)
-configurator.add_slider("gutter","md")
+configurator.add_slider("gutter", "md")
 
 component = configurator.panel

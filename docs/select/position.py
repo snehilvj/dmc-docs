@@ -10,14 +10,12 @@ target = dmc.Select(
     value="Vue",
     clearable=True,
     style={"width": 400},
-    id=TARGET_ID
+    id=TARGET_ID,
 )
-
 
 
 configurator = Configurator(target, TARGET_ID)
 
-configurator.add_select("dropdownPosition",  ["top", "bottom", "flip"], "top" )
+configurator.add_select("dropdownPosition", ["top", "bottom", "flip"], "top")
 
 component = configurator.panel
-

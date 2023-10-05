@@ -20,6 +20,7 @@ component = html.Div(
     ]
 )
 
+
 @callback(
     Output("modal-scroll", "opened"),
     Input("modal-scroll-button", "n_clicks"),

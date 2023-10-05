@@ -8,4 +8,3 @@ component = dmc.DatePicker(
     value=today,
     disabledDates=[today + timedelta(days=1), today + timedelta(days=3)],
 )
-

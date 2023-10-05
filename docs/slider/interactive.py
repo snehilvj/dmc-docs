@@ -12,7 +12,7 @@ target = dmc.Slider(
         {"value": 50, "label": "50%"},
         {"value": 80, "label": "80%"},
     ],
-    id=TARGET_ID
+    id=TARGET_ID,
 )
 
 configurator = Configurator(target, TARGET_ID)

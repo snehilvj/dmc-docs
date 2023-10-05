@@ -14,7 +14,8 @@ class Configurator:
     def __init__(self, target_component: Component, target_id: Optional[str] = None):
         self.target = target_component
         self.target_id = target_id or self.new_id
-        self.target.id = self.target_id
+        if not target_id:
+            self.target.id = self.target_id
         self.outputs = []
         self.inputs = []
         self.controls = []

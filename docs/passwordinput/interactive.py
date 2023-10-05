@@ -10,15 +10,15 @@ target = dmc.PasswordInput(
 )
 
 configurator = Configurator(target)
-configurator.add_text_input("placeholder", "Password", **{"placeholder":"Placeholder"})
-configurator.add_text_input("label",  "Enter your password", **{"placeholder":"Label"})
+configurator.add_text_input("placeholder", "Password", **{"placeholder": "Placeholder"})
+configurator.add_text_input("label", "Enter your password", **{"placeholder": "Label"})
 configurator.add_text_input(
     "description",
     "Password must include at least one letter, number and special character",
-    **{"placeholder":"Description"}
+    **{"placeholder": "Description"}
 )
-configurator.add_text_input("error","", **{"placeholder":"Error"})
-configurator.add_select("variant", ["default", "filled", "unstyled"],"filled")
+configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_select("variant", ["default", "filled", "unstyled"], "filled")
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
 configurator.add_switch("required", True)

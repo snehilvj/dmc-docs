@@ -20,14 +20,13 @@ target = dmc.Tabs(
     value="gallery",
     orientation="vertical",
     placement="right",
-    id=TARGET_ID
+    id=TARGET_ID,
 )
 
 
 configurator = Configurator(target, TARGET_ID)
 
-configurator.add_select("placement",  ["left", "right"], "right" )
+configurator.add_select("placement", ["left", "right"], "right")
 
 
 component = configurator.panel
-

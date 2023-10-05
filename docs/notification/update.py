@@ -1,4 +1,3 @@
-
 import dash_mantine_components as dmc
 from dash import Output, Input, html, callback_context as ctx, no_update, callback
 from dash_iconify import DashIconify

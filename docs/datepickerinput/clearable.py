@@ -14,6 +14,6 @@ component = dmc.Stack(
             label="Date clearable",
             style={"width": 200},
             clearable=True,
-        )
+        ),
     ]
 )

@@ -13,7 +13,7 @@ component = html.Div(
             minDate=date(2020, 8, 5),
             type="range",
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
-            maw=400
+            maw=400,
         ),
         dmc.Space(h=10),
         dmc.Text(id="selected-date-input-range-picker"),

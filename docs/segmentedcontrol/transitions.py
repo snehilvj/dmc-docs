@@ -8,10 +8,8 @@ component = dmc.Stack(
         dmc.SegmentedControl(data=data, transitionDuration=0),
         dmc.Text("500ms linear transition"),
         dmc.SegmentedControl(
-            data=data,
-            transitionDuration=500,
-            transitionTimingFunction="linear"
-        )
-     ],
+            data=data, transitionDuration=500, transitionTimingFunction="linear"
+        ),
+    ],
     align="flex-start",
 )

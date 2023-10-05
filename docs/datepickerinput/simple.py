@@ -20,7 +20,9 @@ component = html.Div(
 )
 
 
-@callback(Output("selected-date-input", "children"), Input("date-picker-input", "value"))
+@callback(
+    Output("selected-date-input", "children"), Input("date-picker-input", "value")
+)
 def update_output(d):
     prefix = "You have selected: "
     if d:

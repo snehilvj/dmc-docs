@@ -1,6 +1,6 @@
 ---
 name: Button
-description: DMC alternative to html <button>.
+description: DMC alternative to html.Button.
 endpoint: /components/button
 package: dash_mantine_components
 ---
@@ -21,10 +21,10 @@ package: dash_mantine_components
 To use gradient as Button background:
 
 * set `variant` prop to "gradient"
-* set `gradient` prop to `{ "from": "color-from", "to": "color-to", "deg": 135}`, where
+* set `gradient` prop to `{ 'from': 'color-from', 'to': 'color-to', 'deg': 135}`, where
 
-* `color-from` and `color-to` are colors from Mantine's theme colors.
-* `deg` is linear gradient deg.
+  * `color-from` and `color-to` are colors from Mantine's theme colors.
+  * `deg` is linear gradient deg.
 
 .. exec::docs.button.gradient
 

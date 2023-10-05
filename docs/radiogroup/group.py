@@ -21,6 +21,5 @@ component = html.Div(
             size="sm",
             mt=10,
         ),
-
     ]
 )

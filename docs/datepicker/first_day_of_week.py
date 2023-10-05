@@ -4,13 +4,7 @@ import dash_mantine_components as dmc
 
 component = dmc.Stack(
     [
-        dmc.DatePicker(
-            value=datetime.now().date(),
-            firstDayOfWeek=0
-        ),
-        dmc.DatePicker(
-            value=datetime.now().date(),
-            firstDayOfWeek=6
-        )
+        dmc.DatePicker(value=datetime.now().date(), firstDayOfWeek=0),
+        dmc.DatePicker(value=datetime.now().date(), firstDayOfWeek=6),
     ]
 )

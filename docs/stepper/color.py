@@ -10,7 +10,7 @@ target = dmc.Stepper(
         dmc.StepperStep(label="First step", description="Create an account"),
         dmc.StepperStep(label="Second step", description="Verify email"),
     ],
-    id=TARGET_ID
+    id=TARGET_ID,
 )
 
 configurator = Configurator(target, TARGET_ID)
@@ -20,4 +20,3 @@ configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "lg")
 
 component = configurator.panel
-

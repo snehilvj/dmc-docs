@@ -18,11 +18,12 @@ component = html.Div(
 )
 
 
-@callback(Output("selected-date-multiple", "children"), Input("date-picker-multiple", "value"))
+@callback(
+    Output("selected-date-multiple", "children"), Input("date-picker-multiple", "value")
+)
 def update_output(dates):
     prefix = "You have selected: "
     if dates:
-        return prefix +  ",   ".join(dates)
+        return prefix + ",   ".join(dates)
     else:
         return no_update
-

@@ -75,13 +75,13 @@ target = dmc.Timeline(
 )
 
 
-configurator =  Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID)
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("radius", "xl")
-configurator.add_number_input("active", 2, **{"min":-1, "max":3})
+configurator.add_number_input("active", 2, **{"min": -1, "max": 3})
 configurator.add_switch("reverseActive", False)
-configurator.add_number_input("lineWidth", 4, **{"min":0, "max":8})
-configurator.add_number_input("bulletSize", 20, **{"min":12, "max":30, "step":2})
+configurator.add_number_input("lineWidth", 4, **{"min": 0, "max": 8})
+configurator.add_number_input("bulletSize", 20, **{"min": 12, "max": 30, "step": 2})
 configurator.add_segmented_control("align", ["left", "right"], "left")
 
 component = configurator.panel

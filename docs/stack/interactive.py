@@ -15,10 +15,15 @@ target = dmc.Stack(
 
 configurator = Configurator(target)
 
-configurator.add_select("align", ["stretch", "center", "flex-end", "flex-start"], "flex-start")
-configurator.add_select("justify", ["space-between", "space-around", "center", "flex-end", "flex-start"], "center")
+configurator.add_select(
+    "align", ["stretch", "center", "flex-end", "flex-start"], "flex-start"
+)
+configurator.add_select(
+    "justify",
+    ["space-between", "space-around", "center", "flex-end", "flex-start"],
+    "center",
+)
 configurator.add_slider("spacing", "sm")
 
 
 component = configurator.panel
-

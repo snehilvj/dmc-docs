@@ -18,14 +18,18 @@ target = dmc.Tabs(
         dmc.TabsPanel("Settings tab content", value="settings", pt="xs"),
     ],
     value="gallery",
-    id=TARGET_ID
+    id=TARGET_ID,
 )
 
 
 configurator = Configurator(target, TARGET_ID)
 configurator.add_colorpicker("color", "indigo")
-configurator.add_segmented_control("variant", ["default", "outline", "pills"], "default")
+configurator.add_segmented_control(
+    "variant", ["default", "outline", "pills"], "default"
+)
 configurator.add_slider("radius", "md")
-configurator.add_segmented_control("orientation", ["horizontal", "vertical"], "horizontal")
+configurator.add_segmented_control(
+    "orientation", ["horizontal", "vertical"], "horizontal"
+)
 
 component = configurator.panel

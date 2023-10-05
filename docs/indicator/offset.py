@@ -5,5 +5,5 @@ component = dmc.Indicator(
     inline=True,
     size=16,
     offset=7,
-    position="bottom-end"
+    position="bottom-end",
 )

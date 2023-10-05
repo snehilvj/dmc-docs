@@ -12,7 +12,7 @@ target = dmc.RingProgress(
         {"value": 15, "color": "yellow"},
         {"value": 15, "color": "violet"},
     ],
-    id=TARGET_ID
+    id=TARGET_ID,
 )
 
 configurator = Configurator(target, TARGET_ID)

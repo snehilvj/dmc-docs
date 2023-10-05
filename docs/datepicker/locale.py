@@ -5,5 +5,5 @@ component = dmc.DatesProvider(
         id="fr-date-picker",
         style={"width": 200},
     ),
-    settings={"locale": "fr"}
+    settings={"locale": "fr"},
 )

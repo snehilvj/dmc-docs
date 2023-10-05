@@ -14,9 +14,9 @@ component = html.Div(
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
             style={"width": 200},
             type="multiple",
-            placeholder = "Pick dates",
-            maw = 400,
-            clearable=True
+            placeholder="Pick dates",
+            maw=400,
+            clearable=True,
         ),
         dmc.Space(h=10),
         dmc.Text(id="selected-date-input-multiple"),
@@ -24,11 +24,13 @@ component = html.Div(
 )
 
 
-@callback(Output("selected-date-input-multiple", "children"), Input("date-picker-input-multiple", "value"))
+@callback(
+    Output("selected-date-input-multiple", "children"),
+    Input("date-picker-input-multiple", "value"),
+)
 def update_output(dates):
     prefix = "You have selected: "
     if dates:
-        return prefix +  ",   ".join(dates)
+        return prefix + ",   ".join(dates)
     else:
         return no_update
-
