@@ -5,9 +5,12 @@ from dash_iconify import DashIconify
 
 component = dmc.Group(
     [
+        dmc.DatePickerInput(
+            value=date.today(), icon=DashIconify(icon="clarity:date-line")
+        ),
         dmc.Alert(
             icon=DashIconify(icon="radix-icons:cross-circled"),
-            children="Error",
+            children="There seems to be an error!",
             color="red",
         ),
         dmc.Button(
