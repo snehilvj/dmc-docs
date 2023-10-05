@@ -24,6 +24,7 @@ def create_appshell(data):
                     "Button": {"styles": {"root": {"fontWeight": 400}}},
                     "Alert": {"styles": {"title": {"fontWeight": 500}}},
                     "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+                    "Badge": {"styles": {"root": {"fontWeight": 500}}},
                     "Table": {
                         "defaultProps": {
                             "highlightOnHover": True,

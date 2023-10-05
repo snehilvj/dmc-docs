@@ -17,6 +17,23 @@ Burger component renders open/close menu button. If it's burger state is clicked
 
 .. exec::docs.burger.color
 
+### Size
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Group(
+    [
+        dmc.Burger(),
+        dmc.Burger(size="xs"),
+        dmc.Burger(size="md"),
+    ]
+)
+```
+
+.. exec::docs.burger.size
+    :code: false
+
 ### Styles API
 
 | Name   | Static selector        | Description         |
