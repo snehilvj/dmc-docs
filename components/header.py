@@ -148,7 +148,7 @@ clientside_callback(
         }
     }
     """,
-    Output("url", "pathname"),
+    Output("url", "href"),
     Input("select-component", "value"),
 )
 
