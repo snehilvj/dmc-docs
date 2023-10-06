@@ -24,7 +24,7 @@ component = html.Div(
 )
 def update_output(dates):
     prefix = "You have selected from "
-    if dates:
+    if None not in dates:
         return prefix + "   to   ".join(dates)
     else:
         raise PreventUpdate
