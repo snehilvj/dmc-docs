@@ -7,13 +7,14 @@ TARGET_ID = "indicator-interactive"
 
 target = dmc.Center(
     dmc.Indicator(
-        dmc.Avatar(DashIconify(icon="ci-mail", height=75), variant="outline"),
+        dmc.Avatar(
+            DashIconify(icon="fluent:mail-48-filled", height=75), variant="outline"
+        ),
         id=TARGET_ID,
     )
 )
 
 configurator = Configurator(target, TARGET_ID)
-#
 configurator.add_colorpicker("color", "indigo")
 configurator.add_select(
     "position",

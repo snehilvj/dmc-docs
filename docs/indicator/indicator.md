@@ -11,17 +11,15 @@ package: dash_mantine_components
 
 Use Indicator to display element at the corner of another element.
 
-
 .. exec::docs.indicator.interactive
     :code: false
 
 ### Simple Example
 
-When the target element has a fixed width, set inline prop to add display: inline-block; styles to Indicator container. Alternatively, you can set width and height with style prop if you still want the root element to keep display: block.
+When the target element has a fixed width, set inline prop to add display: inline-block; styles to Indicator container.
+Alternatively, you can set width and height with style prop if you still want the root element to keep display: block.
 
 .. exec::docs.indicator.simple
-
-
 
 ### Offset
 

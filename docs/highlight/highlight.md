@@ -34,7 +34,7 @@ component = dmc.Highlight(
 .. exec::docs.highlight.interactive
     :code: false
 
-### Highlight Multiple String
+### Highlight Multiple Strings
 
 To highlight multiple substrings, provide an array of values.
 
