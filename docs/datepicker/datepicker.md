@@ -10,7 +10,7 @@ package: dash_mantine_components
 .. admonition::Note
     :color: yellow
     :icon: radix-icons:info-circled
-    To include an Input field for the DatePicker, use DatePickerInput.  The DatePickerInput supports all props for DatePicker shown on this page.
+    To include an Input field for the DatePicker, use DatePickerInput.
 
 ### Simple Example
 

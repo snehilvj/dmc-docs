@@ -5,5 +5,6 @@ import dash_mantine_components as dmc
 component = dmc.DatePickerInput(
     value=datetime.now().date(),
     dropdownType="modal",
-    style={"width": 200},
+    w=200,
+    modalProps={"zIndex": 2000},
 )

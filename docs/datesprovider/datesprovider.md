@@ -15,6 +15,7 @@ The DatesProvider component lets you set various settings that are shared across
 - `firstDayOfWeek` – number from 0 to 6, where 0 is Sunday and 6 is Saturday. Default value is 1 – Monday.
 - `weekendDays` – an array of numbers from 0 to 6, where 0 is Sunday and 6 is Saturday. Default value is [0, 6] – Saturday and Sunday.
 
+### Locale
 
 .. exec::docs.datesprovider.simple
 

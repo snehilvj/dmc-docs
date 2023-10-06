@@ -7,12 +7,6 @@ package: dash_mantine_components
 
 .. toc::
 
-
-### DatePicker props
-DatePickerInput supports all props from DatePicker, read through its documentation to learn about all component features that are not listed on this page.
-
-
-
 ### Simple Example
 
 This is a simple example of DatePickerInput tied to a callback. You can either use strings in a valid datetime format such
@@ -21,19 +15,20 @@ as `YYYY-MM-DD` or use the date object from datetime library.
 .. exec::docs.datepickerinput.simple
 
 ### Multiple dates
+
 Set type="multiple" to allow user to pick multiple dates.  Note that `value` is a list.
 
 .. exec::docs.datepickerinput.multiple
 
 ### Dates range
+
 Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
 .. exec::docs.datepickerinput.range
 
-
 ### Open picker in modal
-By default, DatePicker is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
 
+By default, DatePicker is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
 
 .. exec::docs.datepickerinput.modal
 
@@ -62,7 +57,6 @@ date picker in a callback. That will always follow: `YYYY-MM-DD`.
 
 .. exec::docs.datepickerinput.formats
 
-
 ### Clearable
 
 Set clearable=True prop to display clear button in the right section. Note that if you set rightSection prop, clear button will not be displayed.
@@ -79,30 +73,9 @@ set `clearable=False`.
 
 ### Localization
 
-DatePickerInput component uses dayjs behind the scenes. So you can easily customize locale by including required locale data
-and setting the `locale` prop. Make sure to include proper localization file from dayjs library.
-
-Wrap the DatePickerInput with the DatesProvider.  See the DatesProvider component for more details.
-
-```python
-from dash import Dash
-
-scripts = [
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/fr.min.js",
-]
-
-app = Dash(__name__, external_scripts=scripts)
-```
-
-.. exec::docs.datepickerinput.locale
-
+For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
 
 ### Keyword Arguments
-
-#### DatePicker
-
-.. kwargs::DatePicker
 
 #### DatePickerInput
 
