@@ -5,7 +5,7 @@ component = dmc.Group(
     children=[
         dmc.Tooltip(
             children=[dmc.Badge(transition)],
-            transitionProps={"transition": transition, "transitionDuration": 300},
+            transitionProps={"transition": transition, "duration": 300},
             label=transition,
         )
         for transition in [

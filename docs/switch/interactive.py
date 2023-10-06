@@ -4,7 +4,7 @@ from components.configurator import Configurator
 
 TARGET_ID = "interactive-switch"
 
-target = dmc.Switch(label="I agree to sell my privacy", checked=True, id=TARGET_ID)
+target = dmc.Center(dmc.Switch(label="I agree to sell my privacy", checked=True, id=TARGET_ID))
 
 configurator = Configurator(target, TARGET_ID)
 

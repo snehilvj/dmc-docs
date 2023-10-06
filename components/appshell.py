@@ -25,6 +25,8 @@ def create_appshell(data):
                     "Alert": {"styles": {"title": {"fontWeight": 500}}},
                     "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
                     "Badge": {"styles": {"root": {"fontWeight": 500}}},
+                    "Progress": {"styles": {"label": {"fontWeight": 500}}},
+                    "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
                     "Table": {
                         "defaultProps": {
                             "highlightOnHover": True,
