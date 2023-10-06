@@ -9,7 +9,6 @@ package: dash_mantine_components
 
 ### Introduction
 
-
 .. exec::docs.numberinput.interactive
     :code: false
 
@@ -38,14 +37,11 @@ You can use DashIconify to add icon to the NumberInput.
 
 .. exec::docs.numberinput.icon
 
-
 ### Decimal/Thousands separator
 
 To change the separators set decimalSeparator and thousandsSeparator props:
 
 .. exec::docs.numberinput.separator
-
-
 
 ### Remove controls
 

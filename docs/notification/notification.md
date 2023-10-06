@@ -10,11 +10,11 @@ package: dash_mantine_components
 .. admonition::Note
     :color: yellow
     :icon: radix-icons:info-circled
-    In order to show notifications in your apps, you need to add Notifications() to your app layout.
+    In order to show notifications in your apps, you need to add dmc.Notifications() to your app layout.
 
 ### Simple Example
 
-To enable the Notifications System, include the `dmc.Notifications()` component in your app layout. 
+To enable the Notifications System, include the `dmc.Notifications()` component anywhere in your app layout. 
 
 The `dmc.Notification` is not like your conventional dash components. They are more like "instructions" than components. 
 In order to show notifications in your app, just send these instructions as children to any div in your callbacks.
@@ -36,7 +36,6 @@ layout = dmc.MantineProvider(
     ])
 )
 ```
-
 
 ### Updating Notifications
 

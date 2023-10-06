@@ -131,6 +131,7 @@ class Configurator:
         )
 
     def add_text_input(self, target_prop: str, value: str, **kwargs):
+        kwargs.setdefault("debounce", 100)
         cid = self.new_id
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
