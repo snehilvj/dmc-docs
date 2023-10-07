@@ -1,7 +1,13 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-excluded_links = ["/404", "/getting-started", "/styles-api" , "/style-props", "/dash-iconify"]
+excluded_links = [
+    "/404",
+    "/components/getting-started",
+    "/components/styles-api" ,
+    "/components/style-props",
+    "/components/dash-iconify"
+]
 
 
 def create_main_nav_link(icon, label, href):
