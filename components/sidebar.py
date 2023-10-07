@@ -1,3 +1,4 @@
+from dash import clientside_callback, Input, Output
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
@@ -95,3 +96,9 @@ def create_navbar_drawer(nav_data):
         ],
     )
 
+clientside_callback(
+    """function(n_clicks) { return true }""",
+    Output("components-navbar-drawer", "opened"),
+    Input("drawer-hamburger-button", "n_clicks"),
+    prevent_initial_call=True,
+)
