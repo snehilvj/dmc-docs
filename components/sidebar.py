@@ -3,10 +3,10 @@ from dash_iconify import DashIconify
 
 excluded_links = [
     "/404",
-    "/components/getting-started",
-    "/components/styles-api" ,
-    "/components/style-props",
-    "/components/dash-iconify"
+    "/getting-started",
+    "/styles-api" ,
+    "/style-props",
+    "/dash-iconify"
 ]
 
 
