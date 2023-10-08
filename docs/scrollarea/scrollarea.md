@@ -9,6 +9,18 @@ package: dash_mantine_components
 
 ### Introduction
 
+The ScrollArea component works well with light and dark color schemes and supports the following props:
+
+- `type` defines scrollbars behavior:
+    - `hover` – scrollbars are visible on hover
+    - `scroll` – scrollbars are visible on scroll
+    - `auto` – similar to overflow: auto – scrollbars are always visible when the content is overflowing
+    - `always` – same as auto but scrollbars are always visible regardless of whether the content is overflowing
+    - `never` – scrollbars are always hidden
+- `offsetScrollbars` – offset scrollbars with padding
+- `scrollbarSize` – scrollbar size, controls scrollbar and thumb width/height
+- `scrollHideDelay` – delay in ms to hide scrollbars, applicable only when type is hover or scroll
+
 This example has a vertical scroll bar. 
 
 .. exec::docs.scrollarea.interactive
