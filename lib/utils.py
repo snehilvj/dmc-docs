@@ -52,6 +52,8 @@ def create_graph():
 
 def create_styles_api_table(category, component):
     url = f"https://v6.mantine.dev/{category}/{component}/?t=styles-api"
+
+    print(url)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
     tables = soup.find_all("table")
@@ -68,7 +70,9 @@ def create_styles_api_table(category, component):
                 row.append(td.text.strip())
             if row:
                 rows.append(row)
+        print(rows, headers)
         df = pd.DataFrame(rows, columns=headers)
         dataframes.append(df)
+    print(df)
     markdown_table = df.to_markdown(index=False)
     return markdown_table
