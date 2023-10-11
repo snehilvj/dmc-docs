@@ -10,6 +10,7 @@ package: dash_mantine_components
 ### Introduction
 
 .. exec::docs.flex.interactive
+   :code: false
    
 
 
