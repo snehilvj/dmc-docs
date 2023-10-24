@@ -1,8 +1,9 @@
 import dash_mantine_components as dmc
 
-component = dmc.DatePicker(
-    id="ru-date-picker",
-    label="Дата события",
-    locale="ru",
-    style={"width": 200},
+component = dmc.DatesProvider(
+    dmc.DatePicker(
+        id="fr-date-picker",
+        style={"width": 200},
+    ),
+    settings={"locale": "fr"}
 )

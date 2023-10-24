@@ -1,19 +1,8 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {
-        "property": "type",
-        "component": "DemoSegmentedControl",
-        "data": ["unordered", "ordered"],
-        "value": "unordered",
-    },
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-    {"property": "withPadding", "component": "Switch", "checked": False},
-]
-
-demo = dmc.List(
+target = dmc.List(
     [
         dmc.ListItem("Join our Discord Community."),
         dmc.ListItem("Install python virtual environment."),
@@ -30,4 +19,9 @@ demo = dmc.List(
     type="unordered",
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+configurator.add_segmented_control("type", ["unordered", "ordered"], "unordered")
+configurator.add_slider("size", "md")
+configurator.add_switch("withPadding", False)
+
+component = configurator.panel

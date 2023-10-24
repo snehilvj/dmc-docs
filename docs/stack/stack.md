@@ -1,19 +1,20 @@
 ---
 name: Stack
-section: Layout
-head: Compose elements and components in a vertical flex container
 description: Use Stack component to compose elements and components in a vertical flex container
-component: Stack
+endpoint: /components/stack
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 Adjust stack styles with `align`, `justify`, and `spacing` props.
 
 .. exec::docs.stack.simple
-    :prism: true
+    :code: true
 
-##### Interactive Demo
+### Introduction
 
 ```python
 import dash_mantine_components as dmc
@@ -31,4 +32,10 @@ dmc.Stack(
 ```
 
 .. exec::docs.stack.interactive
-    :prism: false
+    :code: false
+
+### Keyword Arguments
+
+#### Stack
+
+.. kwargs::Stack

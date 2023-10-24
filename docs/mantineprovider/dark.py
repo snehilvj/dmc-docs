@@ -10,7 +10,6 @@ component = dmc.MantineProvider(
                 children=[
                     dmc.DatePicker(
                         style={"width": 200},
-                        label="Select Date",
                         value=date.today(),
                     ),
                     dmc.Alert("This is an alert!", title="An Alert", color="red"),

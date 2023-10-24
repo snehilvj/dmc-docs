@@ -38,6 +38,6 @@ component = html.Div(
     Input("load-button", "n_clicks"),
     prevent_initial_call=True,
 )
-def func(n_clicks):
+def update(n_clicks):
     time.sleep(2)
     return no_update

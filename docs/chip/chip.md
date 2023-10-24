@@ -1,33 +1,54 @@
 ---
 name: Chip
-section: Inputs
-head: Alternative to Select and RadioGroup.
 description: Use Chip as an alternative to Select or RadioGroup.
-component: Chip, ChipGroup
-styles: chip
+endpoint: /components/chip
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.chip.interactive
-    :prism: false
+    :code: false
 
-##### ChipGroup
+### Chip group  
+
+
+Use dmc.Group or dmc.Stack to customize the orientation and spacing of the dmc.Chip components.
 
 .. exec::docs.chip.group
 
-##### Multiple
+### Multiple
 
 Set `multiple` property in ChipGroup to enable multiple chips selection.
 
 .. exec::docs.chip.multiple
 
-##### Callbacks
+### Callbacks
 
 For Chip component, `checked` property can be used in the callbacks and `value` property for ChipGroup.
 
 .. exec::docs.chip.callback
 
-##### Styles API
+### Styles API
 
 .. exec::docs.chip.styles
+
+| Name        | Static selector           | Description                                             |
+|:------------|:--------------------------|:--------------------------------------------------------|
+| root        | .mantine-Chip-root        | Root element                                            |
+| label       | .mantine-Chip-label       | Chip label, includes all other elements except input    |
+| input       | .mantine-Chip-input       | Chip input, hidden by default                           |
+| iconWrapper | .mantine-Chip-iconWrapper | Check icon wrapper                                      |
+| checkIcon   | .mantine-Chip-checkIcon   | Check icon, displayed when checkbox or radio is checked |
+
+### Keyword Arguments
+
+#### Chip
+
+.. kwargs::Chip
+
+#### ChipGroup
+
+.. kwargs::ChipGroup

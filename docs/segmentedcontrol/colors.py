@@ -1,11 +1,15 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [{"property": "color", "component": "ColorPicker", "value": "#5c7cfa"}]
+TARGET_ID = "interactive-segmentedControl-color"
 
-demo = dmc.SegmentedControl(
-    value="Angular", data=["React", "Angular", "Svelte", "Vue"], color="indigo"
+target = dmc.SegmentedControl(
+    value="Angular", data=["React", "Angular", "Svelte", "Vue"], color="indigo", id=TARGET_ID
 )
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_colorpicker("color", "indigo")
+
+component = configurator.panel

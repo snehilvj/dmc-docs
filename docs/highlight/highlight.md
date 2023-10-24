@@ -1,12 +1,13 @@
 ---
 name: Highlight
-section: Typography
-head: Highlight given part of a string with mark tag.
 description: Use the Highlight component to highlight a substring in a given string with mark tag.
-component: Highlight
+endpoint: /components/highlight
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 Use Highlight component to highlight a substring in a given string with mark tag.
 
@@ -16,7 +17,7 @@ highlights all matched characters sequence.
 
 .. exec::docs.highlight.simple
 
-##### Colors
+### Colors
 
 You can customize the highlight color with the `highlightColor` prop from one of colors in Mantine's theme.
 
@@ -31,16 +32,22 @@ component = dmc.Highlight(
 ```
 
 .. exec::docs.highlight.interactive
-    :prism: false
+    :code: false
 
-##### Highlight Multiple String
+### Highlight Multiple String
 
 To highlight multiple substrings, provide an array of values.
 
 .. exec::docs.highlight.multiple
 
-##### Text Props
+### Text Props
 
 Highlight component supports same props as Text component.
 
 .. exec::docs.highlight.text
+
+### Keyword Arguments
+
+#### Highlight
+
+.. kwargs::Highlight

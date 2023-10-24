@@ -1,24 +1,24 @@
 ---
 name: Textarea
-section: Inputs
-head: Renders textarea with optional autosize variant.
 description: Use Textarea component to capture string input in a text area with an auto-size variant. Customize the input with label, description, error message etc.
-component: Textarea
-styles: textarea
+endpoint: /components/textarea
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.textarea.interactive
-    :prism: false
+    :code: false
 
-##### Autosize
+### Autosize
 
 Textarea will grow until `maxRows` are reached or indefinitely if `maxRows` is not set.
 
 .. exec::docs.textarea.autosize
 
-##### Invalid State and Error
+### Invalid State and Error
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -32,3 +32,23 @@ input:invalid {
 ```
 
 .. exec::docs.textarea.error
+
+### Styles API
+
+| Name         | Static selector                | Description                                                               |
+|:-------------|:-------------------------------|:--------------------------------------------------------------------------|
+| wrapper      | .mantine-Textarea-wrapper      | Root Input element                                                        |
+| icon         | .mantine-Textarea-icon         | Input icon wrapper on the left side of the input, controlled by icon prop |
+| input        | .mantine-Textarea-input        | Main input element                                                        |
+| rightSection | .mantine-Textarea-rightSection | Input right section, controlled by rightSection prop                      |
+| root         | .mantine-Textarea-root         | Root element                                                              |
+| label        | .mantine-Textarea-label        | Label element styles, defined by label prop                               |
+| error        | .mantine-Textarea-error        | Error element styles, defined by error prop                               |
+| description  | .mantine-Textarea-description  | Description element styles, defined by description prop                   |
+| required     | .mantine-Textarea-required     | Required asterisk element styles, defined by required prop                |
+
+### Keyword Arguments
+
+#### Textarea
+
+.. kwargs::Textarea

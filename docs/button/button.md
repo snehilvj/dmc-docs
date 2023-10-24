@@ -1,45 +1,22 @@
 ---
 name: Button
-section: Buttons
-head: Render button or link with button styles from mantine theme.
 description: DMC alternative to html <button>.
-component: Button, ButtonGroup
-styles: button
+endpoint: /components/button
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.button.interactive
-    :prism: false
+    :code: false
 
-##### Variants
-
-Button supports the following variants: default, subtle, gradient, filled, light, outline etc.
+### Variant
 
 .. exec::docs.button.variant
 
-##### Icons Support
-
-You can add icons in your button with leftIcon and rightIcon props. Dash Iconify is recommended.
-
-.. exec::docs.button.icons
-
-##### Loading State
-
-Starting with dash version 2.9.2, you can use duplicate callback outputs. Here's an example that lets you easily show
-loading state and at the same time, disable the button.
-
-.. exec::docs.button.loading
-
-##### Colors
-
-Change the color of the button by choosing from one of the theme colors.
-
-.. exec::docs.button.colors
-
-You can play more with the colors and variants in the interactive demo at the top.
-
-##### With Gradient
+#### Gradient Variant
 
 To use gradient as Button background:
 
@@ -51,7 +28,31 @@ To use gradient as Button background:
 
 .. exec::docs.button.gradient
 
-##### Radius and Size
+### Icons Support
+
+You can add icons in your button with leftIcon and rightIcon props. Dash Iconify is recommended.
+
+.. exec::docs.button.icons
+
+### Loading State
+
+Starting with dash version 2.9.2, you can use duplicate callback outputs. Here's an example that lets you easily show
+loading state and at the same time, disable the button.
+
+.. exec::docs.button.loading
+
+### Colors
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Button("Settings", color="red")
+```
+
+.. exec::docs.button.colors
+    :code: false
+
+### Radius and Size
 
 Button's radius and size can be customized by setting `radius` and `size` props. Both props have predefined values:
 xs, sm, md, lg, xl. Alternatively, you can use a number to set radius, size in px.
@@ -68,12 +69,34 @@ dmc.Group(
 )
 ```
 
-##### Full Width Button
+### Full Width Button
 
 Pass `fullWidth=True` for a full width button.
 
 .. exec::docs.button.full
 
-##### Button Group
+### Button Group
 
 .. exec::docs.button.group
+
+### Styles API
+
+| Name         | Static selector              | Description                          |
+|:-------------|:-----------------------------|:-------------------------------------|
+| root         | .mantine-Button-root         | Root button element                  |
+| icon         | .mantine-Button-icon         | Shared icon styles                   |
+| leftIcon     | .mantine-Button-leftIcon     | Left icon                            |
+| rightIcon    | .mantine-Button-rightIcon    | Right icon                           |
+| centerLoader | .mantine-Button-centerLoader | Center loader                        |
+| inner        | .mantine-Button-inner        | Contains label, left and right icons |
+| label        | .mantine-Button-label        | Contains button children             |
+
+### Keyword Arguments
+
+#### Button
+
+.. kwargs::Button
+
+#### ButtonGroup
+
+.. kwargs::ButtonGroup

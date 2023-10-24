@@ -1,6 +1,7 @@
 import dash_mantine_components as dmc
 
-component = dmc.AccordionMultiple(
+component = dmc.Accordion(
+    multiple=True,
     children=[
         dmc.AccordionItem(
             [
@@ -20,15 +21,6 @@ component = dmc.AccordionMultiple(
                 ),
             ],
             value="flexibility",
-        ),
-        dmc.AccordionItem(
-            [
-                dmc.AccordionControl("No annoying focus ring"),
-                dmc.AccordionPanel(
-                    "With new :focus-visible pseudo-class focus ring appears only when user navigates with keyboard"
-                ),
-            ],
-            value="focus",
         ),
     ],
 )

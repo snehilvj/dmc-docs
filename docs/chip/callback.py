@@ -4,14 +4,13 @@ from dash import html, Output, Input, callback
 component = html.Div(
     [
         dmc.ChipGroup(
-            [
-                dmc.Chip(
-                    x,
-                    value=x,
-                    variant="outline",
-                )
-                for x in ["React", "Django", "Dash", "Vue"]
-            ],
+            dmc.Group(
+                [
+                    dmc.Chip(x, value=x, variant="outline")
+                    for x in ["React", "Django", "Dash", "Vue"]
+                ],
+                my=10,
+            ),
             id="chips-callback",
             value=["React"],
             multiple=True,

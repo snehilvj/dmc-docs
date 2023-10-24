@@ -1,19 +1,18 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {
-        "property": "variant",
-        "component": "DemoSegmentedControl",
-        "data": ["outline", "filled"],
-        "value": "outline",
-    },
-    {"property": "size", "component": "DemoSlider", "value": "sm"},
-    {"property": "radius", "component": "DemoSlider", "value": "xl"},
-]
+TARGET_ID = "interactive-chip"
 
-demo = dmc.Chip("Dash Mantine Components", checked=True, variant="outline")
+target = dmc.Center(
+    dmc.Chip("Dash Mantine Components", variant="outline", id=TARGET_ID)
+)
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_colorpicker("color", "indigo")
+configurator.add_select("variant", ["outline", "filled"], "outline")
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "xl")
+
+component = configurator.panel

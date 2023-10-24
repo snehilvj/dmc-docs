@@ -1,17 +1,16 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {
-        "property": "orientation",
-        "component": "DemoSegmentedControl",
-        "value": "horizontal",
-        "data": ["horizontal", "vertical"],
-    },
-    {"property": "fullWidth", "component": "Switch", "checked": False},
-]
 
-demo = dmc.SegmentedControl(value="Angular", data=["React", "Angular", "Svelte", "Vue"])
 
-component = create_configurator(demo, controls, center=False)
+target = dmc.SegmentedControl(value="Angular", data=["React", "Angular", "Svelte", "Vue"])
+
+configurator = Configurator(target)
+
+configurator.add_segmented_control("orientation",  ["horizontal", "vertical"], "horizontal")
+configurator.add_switch("fullWidth", False)
+
+component = configurator.panel
+
+

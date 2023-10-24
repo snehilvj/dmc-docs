@@ -1,6 +1,6 @@
 ---
 name: Styles API
-section: Styles API
+endpoint: "/styles-api"
 head: With Styles API you can overwrite styles of inner elements in Mantine components with classNames or styles props.
 description: With Styles API you can overwrite styles of inner elements in Mantine components with classNames or styles props.
 dmc: false
@@ -11,7 +11,7 @@ dmc: false
 Let's say you want to make Slider component look like this:
 
 .. exec::docs.styles-api.slider
-    :prism: false
+    :code: false
 
 By default, Slider has completely different styles. One of the ways you can achieve this look is by using `classNames`
 prop. It allows you to add class names to specific elements inside the component. Just go to "Styles API" section on the

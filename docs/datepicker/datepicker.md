@@ -1,62 +1,125 @@
 ---
 name: DatePicker
-section: Inputs
-head: Capture date inputs from user.
-description: Best DatePicker and DateRangePicker components out there. Helps you easily switch between different months, years along with locale support.
-component: DatePicker, DateRangePicker
-styles: date-picker
-category: dates
+description: Inline date, multiple dates and dates range picker. Helps you easily switch between different months, years along with locale support.
+endpoint: /components/datapicker
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
 
-This is a simple example of DatePicker tied to a callback. You can either use strings in a valid datetime format such
-as `YYYY-MM-DD` or use the date object from datetime library.
+.. admonition::Note
+    :color: yellow
+    :icon: radix-icons:info-circled
+    To include an Input field for the DatePicker, use DatePickerInput.  The DatePickerInput supports all props for DatePicker shown on this page.
+
+### Simple Example
 
 .. exec::docs.datepicker.simple
 
-##### DateRangePicker
 
-DateRangePicker component supports the same props as DatePicker component.
+
+
+### Allow deselect
+Set `allowDeselect` to allow user to deselect current selected date by clicking on it. `allowDeselect` is disregarded when type prop is range or multiple. When date is deselected the `value` will be None.
+
+
+.. exec::docs.datepicker.deselect
+
+
+
+### Multiple dates
+Set type="multiple" to allow user to pick multiple dates.
+
+.. exec::docs.datepicker.multiple
+
+
+### Dates range
+Set type="range" to allow user to pick dates range:
 
 .. exec::docs.datepicker.range
 
-##### Date formats
+### Disabled dates
+Use the `disabledDates` prop to specify days that should be disabled.
 
-Use `format` property to change the format of the date displayed in the date picker. You can use any permutation from
-the below table to achieve the desired date format. Note: This is not the format of the value you'll receive from the
-date picker in a callback. That will always follow: `YYYY-MM-DD`.
+.. exec::docs.datepicker.disabled_dates
 
-| Format | Output           | Description                           |
-|--------|------------------|---------------------------------------|
-| YY     | 18               | Two-digit year                        |
-| YYYY   | 2018             | Four-digit year                       |
-| M      | 1-12             | The month: beginning at 1             |
-| MM     | 01-12            | The month: 2-digits                   |
-| MMM    | Jan-Dec          | The abbreviated month name            |
-| MMMM   | January-December | The full month name                   |
-| D      | 1-31             | The day of the month                  |
-| DD     | 01-31            | The day of the month: 2-digits        |
-| d      | 0-6              | The day of the week: with Sunday as 0 |
-| dd     | Su-Sa            | The min name of the day of the week   |
-| ddd    | Sun-Sat          | The short name of the day of the week |
-| dddd   | Sunday-Saturday  | The name of the day of the week       |
+### Single date in range
+By default, it is not allowed to select single date as range – when user clicks the same date second time it is deselected. To change this behavior set `allowSingleDateInRange` prop. `allowSingleDateInRange` is ignored when `type` prop is not `range`.
 
-##### Date Format Examples
+.. exec::docs.datepicker.range_single
 
-.. exec::docs.datepicker.formats
+### Level
+Set `level` prop to configure initial level that will be displayed.
 
-##### Localization
+.. exec::docs.datepicker.default_level
 
-DatePicker component uses dayjs behind the scenes. So you can easily customize locale by including required locale data
-and setting the `locale` prop. Make sure to include proper localization file from dayjs library.
+### Hide outside dates
+Set `hideOutsideDates` prop to remove all dates that do not belong to the current month.
+
+.. exec::docs.datepicker.hide_outside
+
+### First day of week
+Set `firstDayOfWeek` prop to configure first day of week. The prop accepts number from 0 to 6, where 0 is Sunday and 6 is Saturday. Default value is 1 – Monday. You can also configure this option for all components with DatesProvider.
+
+.. exec::docs.datepicker.first_day_of_week
+
+### Hide weekdays
+Set `hideWeekdays` prop to hide weekdays names.
+
+.. exec::docs.datepicker.hide_weekdays
+
+### Weekend days
+Use `weekendDays` prop to configure weekend days. The prop accepts an array of numbers from 0 to 6, where 0 is Sunday and 6 is Saturday. Default value is [0, 6] – Saturday and Sunday. You can also configure this option for all components with DatesProvider.
+
+.. exec::docs.datepicker.weekend_days
+
+### Min and max date
+Set `minDate` and `maxDate` props to define min and max dates. If previous/next page is not available then corresponding control will be disabled.
+
+
+.. exec::docs.datepicker.min_max
+
+
+### Number of columns
+
+Set `numberOfColumns` prop to define number of pickers that will be rendered side by side.
+
+.. exec::docs.datepicker.amount
+
+### Max level
+Use the `maxLevel` prop to set the max level that user can go up to (decade, year, month), defaults to decade.
+
+.. exec::docs.datepicker.max_level
+
+### Size
+
+.. exec::docs.datepicker.size
+    :code: false
+
+### Change year and months controls format
+Use `yearsListFormat` and `monthsListFormat` props to change [dayjs](https://day.js.org/docs/en/display/format) format of year/month controls:
+
+.. exec::docs.datepicker.year_month_controls
+
+### Change label format
+Use decadeLabelFormat, yearLabelFormat and monthLabelFormat props to change [dayjs](https://day.js.org/docs/en/display/format) format of decade/year label:
+
+
+.. exec::docs.datepicker.label_format
+
+### Localization
+
+DatePickerInput component uses `dayjs` behind the scenes. So you can easily customize locale by including required locale data
+and setting the `locale` prop. Make sure to include proper localization file from `dayjs` library.
+
+Wrap the DatePickerInput with the DatesProvider.  See the DatesProvider component for more details.
 
 ```python
 from dash import Dash
 
 scripts = [
     "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/ru.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/fr.min.js",
 ]
 
 app = Dash(__name__, external_scripts=scripts)
@@ -64,24 +127,10 @@ app = Dash(__name__, external_scripts=scripts)
 
 .. exec::docs.datepicker.locale
 
-##### Clear and Overlay Mode
 
-dmc.DatePicker is clearable by default. You can change this behaviour by setting the `clearable` prop to `False`.
-dmc.DatePicker also supports opening date picker as an overlay instead of the normal popover mode. To enable that, set
-the type `dropdownType` prop to `modal`.
 
-.. exec::docs.datepicker.modal
+### Keyword Arguments
 
-##### Amount of months
+#### DatePicker
 
-You can display more than one month in date picker dropdown by setting the `amountOfMonths` prop to the desired value.
-
-.. exec::docs.datepicker.amount
-
-##### Error Display
-
-You can convey errors in your date picker by setting the `error` prop. For instance, in the below example we try to
-convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
-set `clearable=False`.
-
-.. exec::docs.datepicker.errors
+.. kwargs::DatePicker

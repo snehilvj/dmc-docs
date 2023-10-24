@@ -1,19 +1,18 @@
 import random
-
-import dash_mantine_components as dmc
-import pandas as pd
-import plotly.graph_objects as go
 import requests
+import pandas as pd
 from bs4 import BeautifulSoup
-from dash import dcc
-from dash import html
-from requests.adapters import HTTPAdapter, Retry
+import dash_mantine_components as dmc
+from dash import html, dcc
+import plotly.graph_objects as go
 
-session = requests.Session()
-retries = Retry(total=5, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
 
-session.mount("http://", HTTPAdapter(max_retries=retries))
-session.mount("https://", HTTPAdapter(max_retries=retries))
+def create_table(df):
+    columns, values = df.columns, df.values
+    header = [html.Tr([html.Th(col) for col in columns])]
+    rows = [html.Tr([html.Td(cell) for cell in row]) for row in values]
+    table = [html.Thead(header), html.Tbody(rows)]
+    return table
 
 
 def create_figure():
@@ -50,20 +49,16 @@ def create_graph():
     return dcc.Graph(figure=create_figure(), config={"displayModeBar": False})
 
 
-def create_table(df):
-    columns, values = df.columns, df.values
-    header = [html.Tr([html.Th(col) for col in columns])]
-    rows = [html.Tr([html.Td(cell) for cell in row]) for row in values]
-    table = [html.Thead(header), html.Tbody(rows)]
-    return table
-
 
 def create_styles_api_table(category, component):
-    url = f"https://v5.mantine.dev/{category}/{component}/?t=styles-api"
+    url = f"https://v6.mantine.dev/{category}/{component}/?t=styles-api"
+
+    print(url)
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
     tables = soup.find_all("table")
     dataframes = []
+    df=pd.DataFrame()
     for table in tables:
         headers = []
         for th in table.find_all("th"):
@@ -75,59 +70,9 @@ def create_styles_api_table(category, component):
                 row.append(td.text.strip())
             if row:
                 rows.append(row)
+        print(rows, headers)
         df = pd.DataFrame(rows, columns=headers)
         dataframes.append(df)
-
-    layout = []
-    for df in dataframes:
-        if "Static selector" in df.columns:
-            layout.append(dmc.Table(create_table(df), withBorder=True, mb=20))
-    return layout
-
-
-# _py_component_gen
-exclude_prop_names = [
-    "unstyled",
-    "bg",
-    "bgp",
-    "bgr",
-    "bgsz",
-    "bottom",
-    "c",
-    "display",
-    "ff",
-    "fs",
-    "fw",
-    "fz",
-    "h",
-    "w",
-    "inset",
-    "left",
-    "lh",
-    "lts",
-    "m",
-    "mah",
-    "maw",
-    "mb",
-    "mih",
-    "miw",
-    "ml",
-    "mr",
-    "mt",
-    "mx",
-    "my",
-    "opacity",
-    "p",
-    "pb",
-    "pl",
-    "pos",
-    "pr",
-    "pt",
-    "px",
-    "py",
-    "right",
-    "ta",
-    "td",
-    "top",
-    "tt",
-]
+    print(df)
+    markdown_table = df.to_markdown(index=False)
+    return markdown_table

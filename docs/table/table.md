@@ -1,12 +1,13 @@
 ---
 name: Table
-section: Typography
-head: Render table with theme styles.
 description: Use the Table component to display tables with Mantine's theme styles. An alternative to html.Table
-component: Table
+endpoint: /components/table
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 Use Table component to add Mantine styled tables in your app. use `dmc.Table` as a drop-in replacement for `html.Table` 
 when constructing your table with dash-html-components i.e. `html.Th`, `html.Tr`, `html.Td`, `html.Tbody` and 
@@ -14,7 +15,7 @@ when constructing your table with dash-html-components i.e. `html.Th`, `html.Tr`
 
 .. exec::docs.table.simple
 
-##### Spacing
+### Spacing
 
 To control spacing use `horizontalSpacing` and `verticalSpacing` props. Both props support spacing from Mantine's theme
 and number values to set cell padding in px.
@@ -30,7 +31,7 @@ dmc.Table(
 ```
 
 .. exec::docs.table.spacing
-    :prism: false
+    :code: false
 
 A simple function can be written to construct this table directly from a dataframe.
 
@@ -46,7 +47,7 @@ def create_table(df):
     return table
 ```
 
-##### Striped and Rows Hover
+### Striped and Rows Hover
 
 ```python
 import dash_mantine_components as dmc
@@ -61,4 +62,10 @@ dmc.Table(
 ```
 
 .. exec::docs.table.striped
-    :prism: false
+    :code: false
+
+### Keyword Arguments
+
+#### Table
+
+.. kwargs::Table

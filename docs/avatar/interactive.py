@@ -1,12 +1,12 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-]
+target = dmc.Avatar(src="/assets/avatar.jpeg")
 
-demo = dmc.Avatar(src="/assets/avatar.jpeg")
+configurator = Configurator(target)
 
-component = create_configurator(demo, controls)
+configurator.add_slider("radius", "sm")
+configurator.add_slider("size", "md")
+
+component = configurator.panel

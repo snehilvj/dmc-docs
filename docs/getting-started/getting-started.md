@@ -1,10 +1,11 @@
 ---
 name: Getting Started
-section: Getting Started
-head: Installation instructions and basic usage.
+endpoint: /getting-started
 description: Install dash-mantine-components using pip, poetry, or conda.
 dmc: false
 ---
+
+.. toc::
 
 ##### PyPI
 
@@ -47,7 +48,7 @@ code [here](https://github.com/snehilvj/dmc-docs) for some inspiration.
 While going through this documentation, you will come across interactive demos meant to show an overview as well as the overall effect of different combinations of a component's props.
 
 .. exec::docs.getting-started.interactive
-    :prism: false
+   :code: false
 
 Note that this documentation has some additional styling applied to it. So when you actually use these components, they 
 might look a bit different. You can check out [MantineProvider](/components/mantineprovider) for more details on

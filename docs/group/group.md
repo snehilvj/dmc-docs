@@ -1,14 +1,19 @@
 ---
 name: Group
-section: Layout
-head: Compose elements and components in a horizontal flex container.
 description: Use Group component to place components in a horizontal flex container.
-component: Group
+endpoint: /components/group
+package: dash_mantine_components
 ---
 
-##### Usage
+.. toc::
 
-Group allows you to compose any elements and components in a flex container.
+### Usage
 
 .. exec::docs.group.interactive
-    :prism: false
+    :code: false
+
+### Keyword Arguments
+
+#### Group
+
+.. kwargs::Group
