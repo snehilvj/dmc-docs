@@ -53,6 +53,11 @@ Controls are not rendered in these cases:
 
 .. exec::docs.numberinput.controls
 
+### Clearing NumberInput
+
+The NumberInput's `value` has type `number | ''`. That means its value can either be a number or an empty string. Empty string indicates that the input is empty.
+So if you want to programmatically clear the NumberInput value, set it to an empty string ('').
+
 ### Styles API
 
 | Name         | Static selector                   | Description                                                               |
