@@ -1,18 +1,25 @@
 ---
 name: LoadingOverlay
-section: Overlay
-head: Overlay over given container with centered Loader from Mantine theme.
 description: Use LoadingOverlay component to disable user interactions and indicate loading state.
-component: LoadingOverlay
+endpoint: /components/loadingoverlay
+package: dash_mantine_components
 ---
 
-##### Simple Usage
+.. toc::
+
+### Simple Usage
 
 By default, Loader will be rendered with theme.primaryColor. A Loader can be customized with `color`, `size`, and
 `variant` props.
 
 .. exec::docs.loadingoverlay.simple
 
-##### Customizing Loader
+### Customizing Loader
 
 .. exec::docs.loadingoverlay.customize
+
+### Keyword Arguments
+
+#### LoadingOverlay
+
+.. kwargs::LoadingOverlay

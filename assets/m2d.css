@@ -1,0 +1,75 @@
+h2.m2d-heading {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+h3.m2d-heading, h5.m2d-heading {
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h4.m2d-heading {
+    font-weight: 400;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+h3.m2d-heading {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.m2d-paragraph, .m2d-list {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.m2d-block-code {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.m2d-block-exec > *:first-child {
+    margin-bottom: 10px;
+}
+
+.m2d-block-exec {
+    margin-bottom: 20px;
+}
+
+.m2d-strong {
+    font-weight: 500
+}
+
+.m2d-block-kwargs {
+    margin-bottom: 30px;
+}
+
+.m2d-block-kwargs > thead > tr > th {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.m2d-block-kwargs td:nth-child(3) {
+    width: 250px;
+}
+
+.m2d-block-kwargs td:nth-child(1) {
+    width: 200px;
+}
+
+.m2d-table > thead > tr > th {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.m2d-table td:nth-child(3) {
+    width: 500px;
+}
+
+.m2d-table td:nth-child(1) {
+    width: 200px;
+}

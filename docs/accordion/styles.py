@@ -34,29 +34,22 @@ component = dmc.Accordion(
         ),
     ],
     styles={
-        "root": {
-            "backgroundColor": dmc.theme.DEFAULT_COLORS["gray"][0],
-            "borderRadius": 5,
-        },
+        "root": {"borderRadius": 5},
         "item": {
-            "backgroundColor": dmc.theme.DEFAULT_COLORS["gray"][0],
             "border": "1px solid transparent",
             "position": "relative",
             "zIndex": 0,
             "transition": "transform 150ms ease",
             "&[data-active]": {
                 "transform": "scale(1.03)",
-                "backgroundColor": "white",
                 "boxShadow": 5,
-                "borderColor": dmc.theme.DEFAULT_COLORS["gray"][2],
+                "borderColor": dmc.theme.DEFAULT_COLORS["gray"][6],
                 "borderRadius": 5,
                 "zIndex": 1,
             },
         },
         "chevron": {
-            "&[data-rotate]": {
-                "transform": "rotate(-90deg)",
-            },
+            "&[data-rotate]": {"transform": "rotate(-90deg)"},
         },
     },
 )

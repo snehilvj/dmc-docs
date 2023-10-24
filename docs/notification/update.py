@@ -29,7 +29,7 @@ component = html.Div(
 )
 def notify(nc1, nc2):
     if not ctx.triggered:
-        raise PreventUpdate
+        return no_update
     else:
         button_id = ctx.triggered_id
         if "show" in button_id:
@@ -41,7 +41,6 @@ def notify(nc1, nc2):
                 color="orange",
                 action="show",
                 autoClose=False,
-                disallowClose=True,
             )
         else:
             return dmc.Notification(

@@ -1,87 +1,101 @@
 ---
 name: DatePicker
-section: Inputs
-head: Capture date inputs from user.
-description: Best DatePicker and DateRangePicker components out there. Helps you easily switch between different months, years along with locale support.
-component: DatePicker, DateRangePicker
-styles: date-picker
-category: dates
+description: Inline date, multiple dates and dates range picker. Helps you easily switch between different months, years along with locale support.
+endpoint: /components/datepicker
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
 
-This is a simple example of DatePicker tied to a callback. You can either use strings in a valid datetime format such
-as `YYYY-MM-DD` or use the date object from datetime library.
+.. admonition::Note
+    :color: yellow
+    :icon: radix-icons:info-circled
+    To include an Input field for the DatePicker, use DatePickerInput.
+
+### Simple Example
 
 .. exec::docs.datepicker.simple
 
-##### DateRangePicker
+### Allow deselect
 
-DateRangePicker component supports the same props as DatePicker component.
+Set `allowDeselect` to allow user to deselect current selected date by clicking on it. `allowDeselect` is disregarded when type prop is range or multiple. When date is deselected the `value` will be None.
+
+```python
+from datetime import datetime
+
+import dash_mantine_components as dmc
+
+component = dmc.DatePicker(
+    value=datetime.now().date(),
+    allowDeselect=True,
+)
+```
+
+### Multiple dates
+
+.. exec::docs.datepicker.multiple
+
+### Range of dates
 
 .. exec::docs.datepicker.range
 
-##### Date formats
+By default, it is not allowed to select single date as range – when user clicks the same date second time it is deselected.
+To change this behavior set `allowSingleDateInRange` prop. `allowSingleDateInRange` is ignored when `type` prop is not `range`.
 
-Use `format` property to change the format of the date displayed in the date picker. You can use any permutation from
-the below table to achieve the desired date format. Note: This is not the format of the value you'll receive from the
-date picker in a callback. That will always follow: `YYYY-MM-DD`.
+### Disabled dates
 
-| Format | Output           | Description                           |
-|--------|------------------|---------------------------------------|
-| YY     | 18               | Two-digit year                        |
-| YYYY   | 2018             | Four-digit year                       |
-| M      | 1-12             | The month: beginning at 1             |
-| MM     | 01-12            | The month: 2-digits                   |
-| MMM    | Jan-Dec          | The abbreviated month name            |
-| MMMM   | January-December | The full month name                   |
-| D      | 1-31             | The day of the month                  |
-| DD     | 01-31            | The day of the month: 2-digits        |
-| d      | 0-6              | The day of the week: with Sunday as 0 |
-| dd     | Su-Sa            | The min name of the day of the week   |
-| ddd    | Sun-Sat          | The short name of the day of the week |
-| dddd   | Sunday-Saturday  | The name of the day of the week       |
-
-##### Date Format Examples
-
-.. exec::docs.datepicker.formats
-
-##### Localization
-
-DatePicker component uses dayjs behind the scenes. So you can easily customize locale by including required locale data
-and setting the `locale` prop. Make sure to include proper localization file from dayjs library.
+Use the `disabledDates` prop to specify days that should be disabled.
 
 ```python
-from dash import Dash
+from datetime import datetime, timedelta
 
-scripts = [
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/ru.min.js",
-]
+import dash_mantine_components as dmc
 
-app = Dash(__name__, external_scripts=scripts)
+today = datetime.now().date()
+
+component = dmc.DatePicker(
+    value=today,
+    disabledDates=[today + timedelta(days=1), today + timedelta(days=3)],
+)
 ```
 
-.. exec::docs.datepicker.locale
+### Weekend days
 
-##### Clear and Overlay Mode
+Use `weekendDays` prop to configure weekend days. The prop accepts an array of numbers from 0 to 6, where 0 is Sunday and 6 is Saturday.
+Default value is [0, 6] – Saturday and Sunday. You can also configure this option for all components with DatesProvider.
 
-dmc.DatePicker is clearable by default. You can change this behaviour by setting the `clearable` prop to `False`.
-dmc.DatePicker also supports opening date picker as an overlay instead of the normal popover mode. To enable that, set
-the type `dropdownType` prop to `modal`.
+```python
+from datetime import datetime
 
-.. exec::docs.datepicker.modal
+import dash_mantine_components as dmc
 
-##### Amount of months
+component = dmc.DatePicker(
+    value=datetime.now().date(), weekendDays=[5, 6, 0], firstDayOfWeek=0
+)
+```
 
-You can display more than one month in date picker dropdown by setting the `amountOfMonths` prop to the desired value.
+### Min and max date
 
-.. exec::docs.datepicker.amount
+Set `minDate` and `maxDate` props to define min and max dates. If previous/next page is not available then corresponding control will be disabled.
 
-##### Error Display
+```python
+from datetime import date
 
-You can convey errors in your date picker by setting the `error` prop. For instance, in the below example we try to
-convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
-set `clearable=False`.
+import dash_mantine_components as dmc
 
-.. exec::docs.datepicker.errors
+component = dmc.DatePicker(
+    minDate=date(2023, 8, 1),
+    maxDate=date(2023, 8, 15),
+    value="2023-08-11",
+)
+```
+
+### Localization
+
+For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
+
+### Keyword Arguments
+
+#### DatePicker
+
+.. kwargs::DatePicker

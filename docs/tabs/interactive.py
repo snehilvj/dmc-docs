@@ -1,24 +1,10 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from components.configurator import Configurator
 
-controls = [
-    {
-        "property": "variant",
-        "component": "DemoSegmentedControl",
-        "data": ["default", "outline", "pills"],
-        "value": "default",
-    },
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {
-        "property": "orientation",
-        "component": "DemoSegmentedControl",
-        "data": ["horizontal", "vertical"],
-        "value": "horizontal",
-    },
-]
+TARGET_ID = "interactive-tabs"
 
-demo = dmc.Tabs(
+target = dmc.Tabs(
     [
         dmc.TabsList(
             [
@@ -32,6 +18,18 @@ demo = dmc.Tabs(
         dmc.TabsPanel("Settings tab content", value="settings", pt="xs"),
     ],
     value="gallery",
+    id=TARGET_ID,
 )
 
-component = create_configurator(demo, controls, center=False)
+
+configurator = Configurator(target, TARGET_ID)
+configurator.add_colorpicker("color", "indigo")
+configurator.add_segmented_control(
+    "variant", ["default", "outline", "pills"], "default"
+)
+configurator.add_slider("radius", "md")
+configurator.add_segmented_control(
+    "orientation", ["horizontal", "vertical"], "horizontal"
+)
+
+component = configurator.panel

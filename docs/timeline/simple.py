@@ -56,7 +56,7 @@ component = dmc.Timeline(
                 dmc.Text(
                     [
                         dmc.Anchor(
-                            "Ann Marie Ward",
+                            "AnnMarieW",
                             href="https://github.com/AnnMarieW",
                             size="sm",
                         ),

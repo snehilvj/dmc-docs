@@ -4,11 +4,11 @@ data = [
     ["react", "React", "blue"],
     ["ng", "Angular", "orange"],
     ["svelte", "Svelte", "red"],
-    ["vue", "Vue", "green"],
+    ["dash", "Dash", "green"],
 ]
 
 component = dmc.RadioGroup(
-    [dmc.Radio(l, value=k, color=c) for k, l, c in data],
+    children=dmc.Stack([dmc.Radio(l, value=k, color=c) for k, l, c in data]),
     value="ng",
     size="sm",
 )

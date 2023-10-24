@@ -1,12 +1,13 @@
 ---
 name: SimpleGrid
-section: Layout
-head: Responsive grid where each item takes equal amount of space.
 description: Use SimpleGrid component to create a grid where each column takes equal width. You can use it to create responsive layouts.
-component: SimpleGrid
+endpoint: /components/simplegrid
+package: dash_mantine_components
 ---
 
-##### Simple Usage
+.. toc::
+
+### Simple Usage
 
 SimpleGrid is a simple flexbox container where each child is treated as a column. Each column takes equal amount of
 space and unlike Grid component you do not control column span, instead you specify number of columns per row.
@@ -29,9 +30,9 @@ dmc.SimpleGrid(
 ```
 
 .. exec::docs.simplegrid.simple
-    :prism: false
+    :code: false
 
-##### Breakpoints
+### Breakpoints
 
 Provide an array to `breakpoints` prop to define responsive behavior:
 
@@ -42,3 +43,9 @@ Provide an array to `breakpoints` prop to define responsive behavior:
 Resize browser to see breakpoints behavior.
 
 .. exec::docs.simplegrid.responsive
+
+### Keyword Arguments
+
+#### SimpleGrid
+
+.. kwargs::SimpleGrid

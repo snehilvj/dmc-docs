@@ -1,20 +1,20 @@
 ---
 name: MantineProvider
-section: Miscellaneous
-head: MantineProvider component allows you to change theme globally.
 description: Use MantineProvider component to enable dark theme in your app globally.
-component: MantineProvider
-props: false
+endpoint: /components/mantineprovider
+package: dash_mantine_components
 ---
 
-##### Dark Theme
+.. toc::
+
+### Dark Theme
 
 All mantine components support dark color scheme natively without any additional steps. To use dark color scheme wrap
 your application in MantineProvider and specify colorScheme.
 
 .. exec::docs.mantineprovider.dark
 
-##### Global Styles
+### Global Styles
 
 theme.colors.dark[7] shade is considered to be the body background color and theme.colors.dark[0] shade as text color
 with dark color scheme. You can create these styles on your own or add them by setting withGlobalStyles prop on 
@@ -26,7 +26,7 @@ import dash_mantine_components as dmc
 component = dmc.MantineProvider(withGlobalStyles=True, theme={"colorScheme": "dark"})
 ```
 
-##### Custom Colors
+### Custom Colors
 
 You can add custom colors using MantineProvider, other than the ones found in dmc.theme.DEFAULT_COLORS.
 Use [this](https://omatsuri.app/color-shades-generator) tool to generate 10 shades of the color you like. Mantine's
@@ -36,7 +36,7 @@ You can also use the same color 10 times but using the tool will give you better
 
 .. exec::docs.mantineprovider.colors
 
-##### Further Customization
+### Further Customization
 
 You can further customize your theme such as theme colors, shadows, etc. Refer to
 [mantine.dev](https://mantine.dev/theming/theme-object/) for more information.
@@ -69,7 +69,7 @@ dmc.MantineProvider(
 )
 ```
 
-##### Usage in DMC docs
+### Usage in DMC docs
 
 MantineProvider is used to customize theme for these docs as well. The theming is more or less inline with below.
 
@@ -104,3 +104,9 @@ app.layout = dmc.MantineProvider(
 if __name__ == "__main__":
     app.run_server()
 ```
+
+### Keyword Arguments
+
+#### MantineProvider
+
+.. kwargs::MantineProvider

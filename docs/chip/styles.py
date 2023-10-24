@@ -12,7 +12,12 @@ styles = {
 }
 
 component = dmc.ChipGroup(
-    [dmc.Chip(x, value=x, styles=styles) for x in ["React", "Django", "Dash", "Vue"]],
+    dmc.Group(
+        [
+            dmc.Chip(x, value=x, styles=styles)
+            for x in ["React", "Django", "Dash", "Vue"]
+        ]
+    ),
     multiple=True,
     value=["React", "Dash"],
 )

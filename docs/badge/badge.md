@@ -1,47 +1,59 @@
 ---
 name: Badge
-section: Data Display
-head: Display badge, pill or tag.
 description: Use Badges to show indicators, numerical or otherwise.
-component: Badge
-styles: badge
+endpoint: /components/badge
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.badge.interactive
-    :prism: false
+    :code: false
 
-##### Variants
-
-You can create badges with different `variants` by setting the variant prop.
+### Variants
 
 .. exec::docs.badge.variant
 
-##### Colors
+### Colors
 
-Change the color of the badge by choosing from one of the theme colors.
+```python
+import dash_mantine_components as dmc
+
+dmc.Badge("Orange", color="orange")
+```
 
 .. exec::docs.badge.colors
+    :code: false
 
-##### With Gradient
-
-You can also customize the gradient fill of the badge.
+### Gradient variant
 
 .. exec::docs.badge.gradient
 
-##### Size
-
-You can set the size of the badge using the `size` prop.
+### Size
 
 .. exec::docs.badge.size
 
-##### Radius
-
-You can set the radius of the badge using the `radius` prop.
+### Radius
 
 .. exec::docs.badge.radius
 
-##### Left section and right section
+### Left section and right section
 
 .. exec::docs.badge.section
+
+### Styles API
+
+| Name         | Static selector             | Description                                   |
+|:-------------|:----------------------------|:----------------------------------------------|
+| root         | .mantine-Badge-root         | Root element                                  |
+| inner        | .mantine-Badge-inner        | Badge label container, contains children      |
+| leftSection  | .mantine-Badge-leftSection  | Left section, controlled by leftSectionProp   |
+| rightSection | .mantine-Badge-rightSection | Right section, controlled by rightSectionProp |
+
+### Keyword Arguments
+
+#### Badge
+
+.. kwargs::Badge

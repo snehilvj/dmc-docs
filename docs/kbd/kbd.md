@@ -1,11 +1,18 @@
 ---
 name: Kbd
-section: Data Display
-head: Display keyboard button or keys combination.
 description: Use Kbd to show keyboard shortcuts, etc.
-component: Kbd
+endpoint: /components/kbd
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 .. exec::docs.kbd.simple
+
+### Keyword Arguments
+
+#### Kbd
+
+.. kwargs::Kbd

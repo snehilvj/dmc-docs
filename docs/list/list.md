@@ -1,21 +1,40 @@
 ---
 name: List
-section: Typography
-head: Display ordered or unordered list.
 description: Use List component to show ordered and unordered lists with icon support.
-component: List, ListItem
-styles: list
+endpoint: /components/list
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 .. exec::docs.list.simple
 
-##### Interactive Demo
+### Interactive Demo
 
 .. exec::docs.list.interactive
-    :prism: false
+    :code: false
 
-##### With Icons
+### With Icons
 
 .. exec::docs.list.icons
+
+### Styles API
+
+| Name        | Static selector           | Description                                                              |
+|:------------|:--------------------------|:-------------------------------------------------------------------------|
+| root        | .mantine-List-root        | Root element (ul or ol)                                                  |
+| item        | .mantine-List-item        | List element (li)                                                        |
+| itemWrapper | .mantine-List-itemWrapper | Wraps icon and item item content, used to align custom icon with content |
+| itemIcon    | .mantine-List-itemIcon    | Icon wrapper element                                                     |
+
+### Keyword Arguments
+
+#### List
+
+.. kwargs::List
+
+#### ListItem
+
+.. kwargs::ListItem

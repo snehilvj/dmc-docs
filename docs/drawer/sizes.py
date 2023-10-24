@@ -24,7 +24,7 @@ component = html.Div(
             title="Size: full",
             id="drawer-size-full",
             padding="md",
-            size="full",
+            size="100%",
             zIndex=10000,
         ),
         dmc.Group(
