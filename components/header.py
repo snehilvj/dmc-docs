@@ -129,6 +129,19 @@ def create_header(data):
                                         id="color-scheme-toggle",
                                         size="lg",
                                     ),
+                                    dmc.MediaQuery(
+                                        dmc.ActionIcon(
+                                            DashIconify(
+                                                icon="radix-icons:hamburger-menu",
+                                                width=18,
+                                            ),
+                                            id="drawer-hamburger-button",
+                                            variant="outline",
+                                            size=36,
+                                        ),
+                                        largerThan="lg",
+                                        styles={"display": "none"},
+                                    ),
                                 ],
                             ),
                         ),
@@ -148,7 +161,7 @@ clientside_callback(
         }
     }
     """,
-    Output("url", "pathname"),
+    Output("url", "href"),
     Input("select-component", "value"),
 )
 

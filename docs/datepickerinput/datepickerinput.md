@@ -1,7 +1,7 @@
 ---
 name: DatePickerInput
 description: Date, multiple dates and dates range picker input. Helps you easily switch between different months, years along with locale support.
-endpoint: /components/datapickerinput
+endpoint: /components/datepickerinput
 package: dash_mantine_components
 ---
 

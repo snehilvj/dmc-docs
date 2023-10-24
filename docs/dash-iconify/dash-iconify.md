@@ -1,7 +1,7 @@
 ---
 name: Dash Iconify
 description: Add icons to your dash apps the simplest and the most efficient way.
-endpoint: /components/dash-iconify
+endpoint: /dash-iconify
 package: dash_mantine_components
 ---
 

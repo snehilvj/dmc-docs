@@ -1,5 +1,7 @@
 import random
-
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
 import dash_mantine_components as dmc
 from dash import html, dcc
 import plotly.graph_objects as go
@@ -45,3 +47,32 @@ def create_figure():
 
 def create_graph():
     return dcc.Graph(figure=create_figure(), config={"displayModeBar": False})
+
+
+
+def create_styles_api_table(category, component):
+    url = f"https://v6.mantine.dev/{category}/{component}/?t=styles-api"
+
+    print(url)
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, "html.parser")
+    tables = soup.find_all("table")
+    dataframes = []
+    df=pd.DataFrame()
+    for table in tables:
+        headers = []
+        for th in table.find_all("th"):
+            headers.append(th.text.strip())
+        rows = []
+        for tr in table.find_all("tr"):
+            row = []
+            for td in tr.find_all("td"):
+                row.append(td.text.strip())
+            if row:
+                rows.append(row)
+        print(rows, headers)
+        df = pd.DataFrame(rows, columns=headers)
+        dataframes.append(df)
+    print(df)
+    markdown_table = df.to_markdown(index=False)
+    return markdown_table

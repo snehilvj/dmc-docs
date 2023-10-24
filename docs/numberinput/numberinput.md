@@ -11,6 +11,7 @@ package: dash_mantine_components
 
 
 .. exec::docs.numberinput.interactive
+    :code: false
 
 ### Simple Example
 
