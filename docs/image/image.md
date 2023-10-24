@@ -18,7 +18,7 @@ caption.
 
 .. exec::docs.image.placeholder
 
-### BackgroundImage
+### Background image
 
 Use BackgroundImage component when you need to display image below any content. Component sets background-image to 
 given `src`, background-size to cover and background-position to center.

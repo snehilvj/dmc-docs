@@ -14,7 +14,7 @@ Use the `value` prop for callbacks.
 
 .. exec::docs.radiogroup.callback
 
-### Radio
+### Radio group
 
 Each Radio item in a RadioGroup can be customized. The Radio component is a wrapper for input type radio.  Use Stack or Group to arrange multiple Radio items
 

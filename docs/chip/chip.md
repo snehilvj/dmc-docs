@@ -12,7 +12,8 @@ package: dash_mantine_components
 .. exec::docs.chip.interactive
     :code: false
 
-### ChipGroup
+### Chip group  
+
 
 Use dmc.Group or dmc.Stack to customize the orientation and spacing of the dmc.Chip components.
 

@@ -35,6 +35,6 @@ package: dash_mantine_components
 
 .. kwargs::List
 
-#### ListItem
+#### List item
 
 .. kwargs::ListItem

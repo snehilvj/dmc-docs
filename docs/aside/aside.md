@@ -18,6 +18,6 @@ Set `fixed` prop to True if you want to fix the position of the component just l
 
 ### Keyword Arguments
 
-#### Aside
+### Aside
 
 .. kwargs::Aside

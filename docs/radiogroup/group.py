@@ -7,7 +7,6 @@ component = html.Div(
     [
         dmc.RadioGroup(
             children=dmc.Group([dmc.Radio(l, value=k) for k, l in data]),
-            id="radiogroup-simple",
             value="react",
             label="Select your favorite framework/library",
             size="sm",
@@ -15,7 +14,6 @@ component = html.Div(
         ),
         dmc.RadioGroup(
             children=dmc.Stack([dmc.Radio(l, value=k) for k, l in data]),
-            id="radiogroup-simple",
             value="react",
             label="Select your favorite framework/library",
             size="sm",

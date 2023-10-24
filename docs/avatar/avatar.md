@@ -28,7 +28,7 @@ dmc.Avatar(src="/assets/avatar.jpeg", size="xl", radius=20),
 .. exec::docs.avatar.interactive
     :code: false
 
-### AvatarGroup
+### Avatar group
 
 Use AvatarGroup to stack Avatar components.
 

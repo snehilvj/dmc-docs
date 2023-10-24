@@ -34,7 +34,7 @@ Set checkbox color using the `color` prop.
 
 .. exec::docs.checkbox.link
 
-### CheckboxGroup
+### Checkbox group
 
 Use CheckboxGroup component to create inputs with multiple checkbox elements and label, description, etc. You can use either
 the dmc.Group or dmc.Stack to customize the orientation and spacing of checkbox elements.
