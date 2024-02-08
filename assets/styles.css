@@ -25,7 +25,7 @@ input:invalid {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1199px) {
     #components-navbar {
         display: none;
     }
