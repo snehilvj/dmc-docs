@@ -75,20 +75,15 @@ def create_content(data):
 
 
 def create_navbar(data):
-    return dmc.AppShellNavbar(
-        id="components-navbar",
-        top=70,
-        zIndex=500,
-        w={"base": 300},
-        children=create_content(data),
-    )
+    return dmc.AppShellNavbar(children=create_content(data))
 
 
 def create_navbar_drawer(data):
     return dmc.Drawer(
         id="components-navbar-drawer",
         overlayProps={"opacity": 0.55, "blur": 3},
-        zIndex=1200,
-        size=300,
+        zIndex=1500,
+        pt=20,
+        size="100%",
         children=create_content(data),
     )

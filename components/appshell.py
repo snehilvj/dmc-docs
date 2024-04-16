@@ -40,11 +40,21 @@ def create_appshell(data):
                     create_header(data),
                     create_navbar(data),
                     create_navbar_drawer(data),
-                    html.Div(
-                        dmc.Container(size="lg", pt=90, children=page_container),
-                        id="wrapper",
-                    ),
-                ]
+                    dmc.AppShellMain(children=page_container),
+                ],
+                header={"height": 70},
+                padding="xl",
+                zIndex=1400,
+                navbar={
+                    "width": 300,
+                    "breakpoint": "sm",
+                    "collapsed": {"mobile": True},
+                },
+                aside={
+                    "width": 300,
+                    "breakpoint": "xl",
+                    "collapsed": {"desktop": False, "mobile": True},
+                },
             ),
         ],
     )

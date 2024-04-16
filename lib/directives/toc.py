@@ -38,14 +38,5 @@ class TOC(TableOfContents):
             ml=-15
         )
 
-        content = dmc.Stack([ad, heading, *links], gap=6, px=25, mt=20)
-
-        return dmc.AppShellAside(
-            top=70,
-            right=0,
-            id="toc-navbar",
-            w={"base": 300},
-            zIndex=10,
-            children=content,
-            withBorder=False,
-        )
+        content = dmc.Stack([ad, heading, *links], gap=6, px=25)
+        return dmc.AppShellAside(children=content, withBorder=False)
