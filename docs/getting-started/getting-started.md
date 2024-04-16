@@ -7,7 +7,7 @@ dmc: false
 
 .. toc::
 
-##### PyPI
+### PyPI
 
 You can install `dash-mantine-components` from PyPI via pip or poetry.
 
@@ -19,7 +19,7 @@ pip install dash-mantine-components
 poetry add dash-mantine-components
 ```
 
-##### Simple Usage
+### Simple Usage
 
 Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash 
 components.
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     app.run_server()
 ```
 
-##### Documentation
+### Documentation
 
 This entire documentation has been created almost entirely using Dash Mantine Components. You can check out the source
 code [here](https://github.com/snehilvj/dmc-docs) for some inspiration.
@@ -60,29 +60,35 @@ Here's how you can add the same styling to your apps:
 import dash_mantine_components as dmc
 from dash import Dash
 
-app = Dash(
-    __name__,
-    external_stylesheets=[
-        # include google fonts
-        "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;900&display=swap"
-    ],
-)
+app = Dash(__name__)
 
 app.layout = dmc.MantineProvider(
-    theme={
-        "fontFamily": "'Inter', sans-serif",
-        "primaryColor": "indigo",
-        "components": {
-            "Button": {"styles": {"root": {"fontWeight": 400}}},
-            "Alert": {"styles": {"title": {"fontWeight": 500}}},
-            "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
-        },
-    },
-    inherit=True,
-    withGlobalStyles=True,
-    withNormalizeCSS=True,
-    children=[dmc.Button("Settings")],
-)
+     forceColorScheme="light",
+     theme={
+         "primaryColor": "indigo",
+         "fontFamily": "'Inter', sans-serif",
+         "components": {
+             "Button": {"defaultProps": {"fw": 400}},
+             "Alert": {"styles": {"title": {"fontWeight": 500}}},
+             "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+             "Badge": {"styles": {"root": {"fontWeight": 500}}},
+             "Progress": {"styles": {"label": {"fontWeight": 500}}},
+             "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
+             "CodeHighlightTabs": {"styles": {"file": {"padding": 12}}},
+             "Table": {
+                 "defaultProps": {
+                     "highlightOnHover": True,
+                     "withTableBorder": True,
+                     "verticalSpacing": "sm",
+                     "horizontalSpacing": "md",
+                 }
+             },
+         },
+     },
+     children=[
+         # content
+     ],
+ )
 
 if __name__ == "__main__":
     app.run_server()

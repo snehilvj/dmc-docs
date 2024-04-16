@@ -6,7 +6,9 @@ description: With style props you can add responsive styles to any Mantine compo
 dmc: false
 ---
 
-##### Supported props
+.. toc::
+
+### Supported props
 
 Style props add styles to the root element, if you want to style nested elements use [Styles API](/styles-api) instead.
 

@@ -15,8 +15,8 @@ def create_link(icon, href):
 
 def create_version_menu():
     versions = {
-        "0.12": "http://v12.dash-mantine-components.com",
-        "0.13": "http://v13.dash-mantine-components.com",
+        "0.12": "https://dmc-docs-0-12.onrender.com",
+        "0.13": "https://dmc-docs-0-13.onrender.com",
     }
     return dmc.Menu(
         [

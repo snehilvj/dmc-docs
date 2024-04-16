@@ -8,6 +8,6 @@ component = dmc.Group(
             w=200,
             h=100,
             fallbackSrc="https://placehold.co/600x400?text=Placeholder",
-        )
+        ),
     ],
 )

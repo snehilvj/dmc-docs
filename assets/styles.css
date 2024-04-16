@@ -88,3 +88,8 @@ input:invalid {
     width: 20px;
     background-color: white;
 }
+
+.mantine-Table-th {
+    font-size: 15px;
+    font-weight: 500;
+}

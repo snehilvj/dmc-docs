@@ -7,8 +7,12 @@ component = dmc.Menu(
         dmc.MenuDropdown(
             [
                 dmc.MenuLabel("Application"),
-                dmc.MenuItem("Settings", leftSection=DashIconify(icon="tabler:settings")),
-                dmc.MenuItem("Messages", leftSection=DashIconify(icon="tabler:message")),
+                dmc.MenuItem(
+                    "Settings", leftSection=DashIconify(icon="tabler:settings")
+                ),
+                dmc.MenuItem(
+                    "Messages", leftSection=DashIconify(icon="tabler:message")
+                ),
                 dmc.MenuItem("Gallery", leftSection=DashIconify(icon="tabler:photo")),
                 dmc.MenuItem("Search", leftSection=DashIconify(icon="tabler:search")),
                 dmc.MenuDivider(),
