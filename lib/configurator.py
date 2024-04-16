@@ -26,7 +26,7 @@ class Configurator:
 
     def add_colorpicker(self, target_prop: str, value: str):
         colors = dmc.DEFAULT_THEME["colors"]
-        mapping = {color: [color][5] for color in colors}
+        mapping = {color: codes[5] for color, codes in colors.items()}
         cid = self.new_id
         clientside_callback(
             ClientsideFunction(namespace="clientside", function_name="colorCallback"),
@@ -37,8 +37,9 @@ class Configurator:
         self.controls.append(
             dmc.ColorPicker(
                 id=cid,
+                size="sm",
                 withPicker=False,
-                swatches=[color[5] for color in dmc.DEFAULT_THEME["colors"].values()],
+                swatches=list(mapping.values()),
                 swatchesPerRow=7,
                 value=mapping[value],
             )
@@ -58,28 +59,32 @@ class Configurator:
         cid = self.new_id
         clientside_callback(
             ClientsideFunction(namespace="clientside", function_name="sliderCallback"),
-            Output(self.target_id, target_prop),
+            [Output(self.target_id, target_prop), Output(cid, "label")],
             Input(cid, "value"),
         )
         setattr(self.target, target_prop, mapping[value])
-        self.controls.append(
-            dmc.Slider(
-                min=1,
-                max=5,
-                value=mapping[value],
-                id=cid,
-                label=None,
-                updatemode="drag",
-                styles={"markLabel": {"display": "none"}},
-                marks=[
-                    {"value": 1, "label": "xs"},
-                    {"value": 2, "label": "sm"},
-                    {"value": 3, "label": "md"},
-                    {"value": 4, "label": "lg"},
-                    {"value": 5, "label": "xl"},
-                ],
-            )
+        control = dmc.Stack(
+            [
+                dmc.Text(create_label(target_prop), size="sm", fw=500),
+                dmc.Slider(
+                    min=1,
+                    max=5,
+                    value=mapping[value],
+                    id=cid,
+                    updatemode="drag",
+                    styles={"markLabel": {"display": "none"}},
+                    marks=[
+                        {"value": 1, "label": "xs"},
+                        {"value": 2, "label": "sm"},
+                        {"value": 3, "label": "md"},
+                        {"value": 4, "label": "lg"},
+                        {"value": 5, "label": "xl"},
+                    ],
+                ),
+            ],
+            gap=0,
         )
+        self.controls.append(control)
 
     def add_segmented_control(self, target_prop: str, data: List[str], value: str):
         cid = self.new_id
@@ -137,7 +142,7 @@ class Configurator:
             [
                 dmc.GridCol(self.target, span="auto", p=20, miw=400),
                 dmc.GridCol(
-                    dmc.Stack(self.controls, gap="md", maw="100%", w=250, p=20),
+                    dmc.Stack(self.controls, gap="md", maw="100%", w=240, p=20),
                     span="content",
                 ),
             ],

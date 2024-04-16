@@ -186,7 +186,7 @@ layout = html.Div(
         #             target="_blank",
         #         )
         #     ],
-        #     pos="center",
+        #     justify="center",
         # ),
         dmc.Space(h=40),
         create_title("Contributors", id="contributors"),

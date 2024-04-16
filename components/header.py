@@ -62,7 +62,7 @@ def create_search(data):
             if component["name"] not in ["Home", "Not found 404"]
         ],
         visibleFrom="sm",
-        comboboxProps={"zIndex": 2000}
+        comboboxProps={"zIndex": 2000},
     )
 
 
