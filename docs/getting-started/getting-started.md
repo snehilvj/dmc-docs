@@ -22,7 +22,13 @@ poetry add dash-mantine-components
 ### Simple Usage
 
 Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash 
-components.
+components. 
+
+.. admonition::Don't Forget!
+   :icon: radix-icons:info-circled
+   :color: red
+
+   It's required that you wrap your app with a dmc.MantineProvider, else dash will complain.
 
 ```python
 import dash_mantine_components as dmc
@@ -30,14 +36,37 @@ from dash import Dash
 
 app = Dash(__name__)
 
-app.layout = dmc.Alert(
-    "Hi from Dash Mantine Components. You can create some great looking dashboards using me!",
-    title="Welcome!",
-    color="violet",
+app.layout = dmc.MantineProvider(
+    dmc.Alert(
+       "Hi from Dash Mantine Components. You can create some great looking dashboards using me!",
+       title="Welcome!",
+       color="violet",
+    )
 )
 
 if __name__ == "__main__":
     app.run_server()
+```
+
+### Extensions
+
+Most of the styling is already included but if you are using components like DatePicker, Carousel, or CodeHighlight, then 
+you need to include css for them separately.
+
+```python
+from dash import Dash
+
+# below covers all the stylesheets, you can pick as per your need.
+stylesheets = [
+    "https://unpkg.com/@mantine/dates@7/styles.css",
+    "https://unpkg.com/@mantine/code-highlight@7/styles.css",
+    "https://unpkg.com/@mantine/charts@7/styles.css",
+    "https://unpkg.com/@mantine/carousel@7/styles.css",
+    "https://unpkg.com/@mantine/notifications@7/styles.css",
+    "https://unpkg.com/@mantine/nprogress@7/styles.css",
+]
+
+app = Dash(__name__, external_stylesheets=stylesheets)
 ```
 
 ### Documentation
