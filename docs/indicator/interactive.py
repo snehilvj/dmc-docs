@@ -1,5 +1,4 @@
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from lib.configurator import Configurator
 
@@ -8,7 +7,9 @@ TARGET_ID = "indicator-interactive"
 target = dmc.Center(
     dmc.Indicator(
         dmc.Avatar(
-            DashIconify(icon="fluent:mail-48-filled", height=75), variant="outline"
+            size="lg",
+            radius="sm",
+            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png",
         ),
         id=TARGET_ID,
     )
@@ -31,9 +32,7 @@ configurator.add_select(
     ],
     "top-end",
 )
-configurator.add_text_input("label", "4")
-configurator.add_number_input("size", 15)
-configurator.add_number_input("offset", 0)
+configurator.add_number_input("size", 10)
 configurator.add_slider("radius", "xl")
 configurator.add_switch("processing", False)
 configurator.add_switch("withBorder", False)

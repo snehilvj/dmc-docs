@@ -14,16 +14,16 @@ Use Indicator to display element at the corner of another element.
 .. exec::docs.indicator.interactive
     :code: false
 
-### Simple Example
+### Inline
 
-When the target element has a fixed width, set inline prop to add display: inline-block; styles to Indicator container.
-Alternatively, you can set width and height with style prop if you still want the root element to keep display: block.
+When the target element has a fixed width, set `inline` prop to add `display: inline-block;` styles to Indicator container.
+Alternatively, you can set width and height with `style` prop if you still want the root element to keep `display: block`.
 
-.. exec::docs.indicator.simple
+.. exec::docs.indicator.inline
 
 ### Offset
 
-Set offset to change indicator position. It is useful when Indicator component is used with children that have border-radius:
+Set `offset` to change indicator position. It is useful when Indicator component is used with children that have border-radius:
 
 .. exec::docs.indicator.offset
 
@@ -33,13 +33,10 @@ Set offset to change indicator position. It is useful when Indicator component i
 
 ### Styles API
 
-
-| Name        | Static selector                | Description                                                |
-|:------------|:-------------------------------|:-----------------------------------------------------------|
-| root        | .mantine-Indicator-root        | Root element                                               |
-| common      | .mantine-Indicator-common      | Indicator Common                                           |
-| indicator   | .mantine-Indicator-indicator   | Indicator badge                                            |
-| processing  | .mantine-Indicator-processing  | Indicator Processing                                       |
+| Name      | Static selector              | Description       |
+|:----------|:-----------------------------|:------------------|
+| root      | .mantine-Indicator-root      | Root element      |
+| indicator | .mantine-Indicator-indicator | Indicator element |
 
 ### Keyword Arguments
 

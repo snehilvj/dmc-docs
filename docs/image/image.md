@@ -35,14 +35,13 @@ given `src`, background-size to cover and background-position to center.
 
 ### Styles API
 
-| Name         | Static selector             | Description                               |
-|:-------------|:----------------------------|:------------------------------------------|
-| root         | .mantine-Image-root         | Root element                              |
-| imageWrapper | .mantine-Image-imageWrapper | Wraps image and placeholder               |
-| placeholder  | .mantine-Image-placeholder  | Placeholder wrapper                       |
-| figure       | .mantine-Image-figure       | figure element, wrap image and figcaption |
-| image        | .mantine-Image-image        | img element                               |
-| caption      | .mantine-Image-caption      | figcaption element                        |
+| Name         | Static selector          | Description                               |
+|:-------------|:-------------------------|:------------------------------------------|
+| root         | .mantine-Image-root      | Root element                              |
+
+| Name         | Static selector          | Description                               |
+|:-------------|:-------------------------|:------------------------------------------|
+| root         | .mantine-Background-root | Root element                              |
 
 ### Keyword Arguments
 
