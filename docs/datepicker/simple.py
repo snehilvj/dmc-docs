@@ -12,7 +12,7 @@ component = html.Div(
             description="You can also provide a description",
             minDate=date(2020, 8, 5),
             value=datetime.now().date(),  # or string in the format "YYYY-MM-DD"
-            style={"width": 200},
+            w=250,
         ),
         dmc.Space(h=10),
         dmc.Text(id="selected-date-input"),

@@ -17,6 +17,26 @@ The DatesProvider component lets you set various settings that are shared across
 
 ### Locale
 
+DatePicker component uses [dayjs](https://day.js.org) behind the scenes. So you can easily customize locale by including
+required locale data and setting the `locale`. Make sure to include proper localization file from dayjs library.
+
+```python
+from dash import Dash
+
+scripts = [
+    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/ru.min.js",
+]
+
+app = Dash(__name__, external_scripts=scripts)
+```
+
+.. admonition::Localization Quirk
+    :color: orange
+    :icon: radix-icons:info-circled
+
+    As of now, localization doesn't come into effect with the initial value. If you can help, raise a PR!
+
 .. exec::docs.datesprovider.simple
 
 ### Keyword Arguments

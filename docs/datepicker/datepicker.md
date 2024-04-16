@@ -32,34 +32,21 @@ By default, DatePicker is rendered inside Popover. You can change that to Modal 
 
 .. exec::docs.datepicker.modal
 
-### Value formats
+### Number of columns
 
-Use `format` property to change the format of the date displayed in the date picker. You can use any permutation from
-the below table to achieve the desired date format. Note: This is not the format of the value you'll receive from the
-date picker in a callback. That will always follow: `YYYY-MM-DD`.
+.. exec::docs.datepicker.columns
 
-| Format | Output           | Description                           |
-|--------|------------------|---------------------------------------|
-| YY     | 18               | Two-digit year                        |
-| YYYY   | 2018             | Four-digit year                       |
-| M      | 1-12             | The month: beginning at 1             |
-| MM     | 01-12            | The month: 2-digits                   |
-| MMM    | Jan-Dec          | The abbreviated month name            |
-| MMMM   | January-December | The full month name                   |
-| D      | 1-31             | The day of the month                  |
-| DD     | 01-31            | The day of the month: 2-digits        |
-| d      | 0-6              | The day of the week: with Sunday as 0 |
-| dd     | Su-Sa            | The min name of the day of the week   |
-| ddd    | Sun-Sat          | The short name of the day of the week |
-| dddd   | Sunday-Saturday  | The name of the day of the week       |
+### Value format
 
-### Value Format Examples
+Use `format` property to change the format of the date displayed in the date input field.
 
 .. exec::docs.datepicker.formats
 
+Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label.
+
 ### Clearable
 
-Set clearable=True prop to display clear button in the right section. Note that if you set rightSection prop, clear button will not be displayed.
+Set `clearable=True` prop to display clear button in the right section. Note that if you set `rightSection` prop, clear button will not be displayed.
 
 .. exec::docs.datepicker.clearable
 
@@ -74,6 +61,41 @@ set `clearable=False`.
 ### Localization
 
 For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
+
+### Styles API
+
+| Name                      | Static selector                                    | Description                                                          |
+|:--------------------------|:---------------------------------------------------|:---------------------------------------------------------------------|
+| wrapper                   | .mantine-DatePickerInput-wrapper                   | Root element of the Input                                            |
+| input                     | .mantine-DatePickerInput-input                     | Input element                                                        |
+| section                   | .mantine-DatePickerInput-section                   | Left and right sections                                              |
+| root                      | .mantine-DatePickerInput-root                      | Root element                                                         |
+| label                     | .mantine-DatePickerInput-label                     | Label element                                                        |
+| required                  | .mantine-DatePickerInput-required                  | Required asterisk element, rendered inside label                     |
+| description               | .mantine-DatePickerInput-description               | Description element                                                  |
+| error                     | .mantine-DatePickerInput-error                     | Error element                                                        |
+| calendarHeader            | .mantine-DatePickerInput-calendarHeader            | Calendar header root element                                         |
+| calendarHeaderControl     | .mantine-DatePickerInput-calendarHeaderControl     | Previous/next calendar header controls                               |
+| calendarHeaderControlIcon | .mantine-DatePickerInput-calendarHeaderControlIcon | Icon of previous/next calendar header controls                       |
+| calendarHeaderLevel       | .mantine-DatePickerInput-calendarHeaderLevel       | Level control (changes levels when clicked, month -> year -> decade) |
+| levelsGroup               | .mantine-DatePickerInput-levelsGroup               | Group of decades levels                                              |
+| yearsList                 | .mantine-DatePickerInput-yearsList                 | Years list table element                                             |
+| yearsListRow              | .mantine-DatePickerInput-yearsListRow              | Years list row element                                               |
+| yearsListCell             | .mantine-DatePickerInput-yearsListCell             | Years list cell element                                              |
+| yearsListControl          | .mantine-DatePickerInput-yearsListControl          | Button used to pick months and years                                 |
+| monthsList                | .mantine-DatePickerInput-monthsList                | Years list table element                                             |
+| monthsListRow             | .mantine-DatePickerInput-monthsListRow             | Years list row element                                               |
+| monthsListCell            | .mantine-DatePickerInput-monthsListCell            | Years list cell element                                              |
+| monthsListControl         | .mantine-DatePickerInput-monthsListControl         | Button used to pick months and years                                 |
+| monthThead                | .mantine-DatePickerInput-monthThead                | thead element of month table                                         |
+| monthRow                  | .mantine-DatePickerInput-monthRow                  | tr element of month table                                            |
+| monthTbody                | .mantine-DatePickerInput-monthTbody                | tbody element of month table                                         |
+| monthCell                 | .mantine-DatePickerInput-monthCell                 | td element of month table                                            |
+| month                     | .mantine-DatePickerInput-month                     | Month table element                                                  |
+| weekdaysRow               | .mantine-DatePickerInput-weekdaysRow               | Weekdays tr element                                                  |
+| weekday                   | .mantine-DatePickerInput-weekday                   | Weekday th element                                                   |
+| day                       | .mantine-DatePickerInput-day                       | Month day control                                                    |
+| placeholder               | .mantine-DatePickerInput-placeholder               | Placeholder element                                                  |
 
 ### Keyword Arguments
 

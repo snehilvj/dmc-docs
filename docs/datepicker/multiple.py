@@ -15,7 +15,7 @@ component = html.Div(
             style={"width": 400},
             type="multiple",
             placeholder="Pick dates",
-            maw=400,
+            maw=300,
             clearable=True,
         ),
         dmc.Space(h=10),

@@ -7,7 +7,7 @@ component = html.Div(
             id="dateinput2",
             label="Enter a date",
             description="You can type a date or select from the calendar",
-            style={"width": 350},
+            w=250,
         ),
         dmc.Space(h=10),
         dmc.Text(id="selected-dateinput2"),

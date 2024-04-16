@@ -1,8 +1,11 @@
+from datetime import datetime, timedelta
+
 import dash_mantine_components as dmc
 
 component = dmc.DateInput(
-    minDate="2023-10-05",
-    maxDate="2023-10-15",
+    minDate=datetime.now(),
+    maxDate=datetime.now() + timedelta(days=7),
     placeholder="Date input",
     label="Select valid date",
+    w=250,
 )

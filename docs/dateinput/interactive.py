@@ -4,9 +4,7 @@ from lib.configurator import Configurator
 
 TARGET_ID = "interactive-date-input"
 target = dmc.Center(
-    dmc.DateInput(
-        label="Enter date", placeholder="Enter date", style={"width": 350}, id=TARGET_ID
-    )
+    dmc.DateInput(label="Enter date", placeholder="Enter date", w=250, id=TARGET_ID)
 )
 
 configurator = Configurator(target, TARGET_ID)

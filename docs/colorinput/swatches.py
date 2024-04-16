@@ -2,7 +2,8 @@ import dash_mantine_components as dmc
 
 component = dmc.ColorInput(
     label="Your favorite color",
-    value="#e05e5e", w=250,
+    value="#e05e5e",
+    w=250,
     format="hex",
     swatches=[
         "#25262b",
