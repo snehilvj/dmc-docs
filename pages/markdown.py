@@ -1,3 +1,4 @@
+import logging
 from pathlib import Path
 
 import dash
@@ -10,6 +11,9 @@ from lib.constants import PAGE_TITLE_PREFIX
 from lib.directives.kwargs import Kwargs
 from lib.directives.source import SC
 from lib.directives.toc import TOC
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 directory = "docs"
 
@@ -32,6 +36,7 @@ directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC
 parse = create_parser(directives)
 
 for file in files:
+    logger.info("Loading %s..", file)
     metadata, content = frontmatter.parse(file.read_text())
     metadata = Meta(**metadata)
     layout = parse(content)

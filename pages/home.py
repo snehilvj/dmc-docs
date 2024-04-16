@@ -42,7 +42,7 @@ def create_contributors_avatars():
         )
         children.append(avatar)
 
-    return dmc.Group(children, position="center")
+    return dmc.Group(children, justify="center")
 
 
 def create_tile(icon, heading, description, href):
