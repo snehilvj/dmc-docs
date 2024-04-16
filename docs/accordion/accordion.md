@@ -115,6 +115,7 @@ dmc.AccordionControl(children=[...], disabled=True)
 
 | Name      | Static selector              | Description                               |
 |-----------|------------------------------|-------------------------------------------|
+| root      | .mantine-Accordion-root      | Root element                              |
 | item      | .mantine-Accordion-item      | Accordion item wrapper                    |
 | itemTitle | .mantine-Accordion-itemTitle | Optional heading element wrapping control |
 | control   | .mantine-Accordion-control   | Control root                              |

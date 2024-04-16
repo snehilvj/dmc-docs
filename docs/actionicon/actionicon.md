@@ -79,6 +79,14 @@ dmc.Group(
     ]
 )
 ```
+### Styles API
+
+| Name   | Static selector            | Description                                                             |
+|--------|----------------------------|-------------------------------------------------------------------------|
+| root   | .mantine-ActionIcon-root   | Root element                                                            |
+| icon   | .mantine-ActionIcon-icon   | Inner icon wrapper                                                      |
+| loader | .mantine-ActionIcon-loader | Loader component, rendered inside root element when loading prop is set |
+
 
 ### Keyword Arguments
 

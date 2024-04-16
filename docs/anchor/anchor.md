@@ -14,6 +14,10 @@ It takes the same props as dmc.Text.
 
 .. exec::docs.anchor.simple
 
+| Name   | Static selector      | Description                                                             |
+|--------|----------------------|-------------------------------------------------------------------------|
+| root   | .mantine-Anchor-root | Root element                                                            |
+
 ### Keyword Arguments
 
 #### Anchor
