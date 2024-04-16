@@ -9,8 +9,7 @@ package: dash_mantine_components
 
 ### Simple Example
 
-This is a basic example of dmc.Drawer. Set the `opened` property to open the drawer. The drawer can be closed in the
-following ways:
+This is a basic example of dmc.Drawer. Set the `opened` property to open the drawer. The drawer can be controlled in following ways:
 
 * programmatically (using callbacks)
 * by clicking on the cross button (if not disabled using `hideCloseButton` prop)
@@ -40,16 +39,17 @@ You can customize transition, timing function and duration for Drawer transition
 
 ### Styles API
 
-| Name    | Static selector         | Description                                                              |
-|:--------|:------------------------|:-------------------------------------------------------------------------|
-| root    | .mantine-Drawer-root    | Root element                                                             |
-| inner   | .mantine-Drawer-inner   | Element used to position drawer, has fixed position, takes entire screen |
-| content | .mantine-Drawer-content | Drawer.Content root element                                              |
-| header  | .mantine-Drawer-header  | Contains title and close button                                          |
-| overlay | .mantine-Drawer-overlay | Overlay displayed under the Drawer.Content                               |
-| title   | .mantine-Drawer-title   | Drawer title (h2 tag), displayed in header                               |
-| body    | .mantine-Drawer-body    | Drawer body, displayed after header                                      |
-| close   | .mantine-Drawer-close   | Close button                                                             |
+| Name    | Static selector         | Description                                                           |
+|:--------|:------------------------|:----------------------------------------------------------------------|
+| root    | .mantine-Divider-root   | Root element                                                          |
+| label   | .mantine-Divider-label  | Label element                                                         || root | .mantine-Drawer-root | Root element |
+| inner   | .mantine-Drawer-inner   | Element used to center modal, has fixed position, takes entire screen |
+| content | .mantine-Drawer-content | `Drawer.Content` root element                                         |
+| header  | .mantine-Drawer-header  | Contains title and close button                                       |
+| overlay | .mantine-Drawer-overlay | Overlay displayed under the `Drawer.Content`                          |
+| title   | .mantine-Drawer-title   | Drawer title (h2 tag), displayed in the header                        |
+| body    | .mantine-Drawer-body    | Drawer body, displayed after header                                   |
+| close   | .mantine-Drawer-close   | Close button                                                          |
 
 ### Keyword Arguments
 

@@ -19,7 +19,7 @@ component = html.Div(
             gap="xl",
             children=[
                 dmc.RadioGroup(
-                    [dmc.Radio(label, value=value) for label, value in data],
+                    dmc.Group([dmc.Radio(label, value=value) for label, value in data]),
                     id="drawer-position-radio",
                     value="left",
                 ),

@@ -37,9 +37,10 @@ Set the Divider color from one of the colors of Mantine default theme using the 
 
 ### Styles API
 
-| Name   | Static selector        | Description                                |
-|:-------|:-----------------------|:-------------------------------------------|
-| label  | .mantine-Divider-label | Label element, horizontal orientation only |
+| Name  | Static selector        | Description   |
+|:------|:-----------------------|:--------------|
+| root  | .mantine-Divider-root  | Root element  |
+| label | .mantine-Divider-label | Label element |
 
 ### Keyword Arguments
 
