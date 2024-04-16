@@ -24,11 +24,17 @@ poetry add dash-mantine-components
 Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash 
 components. 
 
-.. admonition::Don't Forget!
+.. admonition::Don't Forget MantineProvider!
    :icon: radix-icons:info-circled
    :color: red
 
    It's required that you wrap your app with a dmc.MantineProvider, else dash will complain.
+
+.. admonition::React 18 Issue
+   :icon: radix-icons:info-circled
+   :color: red
+
+   Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before starting up the app.
 
 ```python
 import dash_mantine_components as dmc

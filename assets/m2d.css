@@ -17,7 +17,7 @@ h4.m2d-heading {
 
 h3.m2d-heading {
     font-weight: 400;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .m2d-paragraph, .m2d-list {
@@ -72,4 +72,8 @@ h3.m2d-heading {
 
 .m2d-table td:nth-child(1) {
     width: 200px;
+}
+
+.m2d-block-admonition {
+    margin: 10px 0;
 }
