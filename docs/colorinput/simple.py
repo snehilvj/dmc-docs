@@ -3,7 +3,7 @@ from dash import Output, Input, html, callback
 
 component = html.Div(
     [
-        dmc.ColorInput(id="color-input", label="Your favorite color"),
+        dmc.ColorInput(id="color-input", label="Your favorite color", w=250),
         dmc.Space(h=10),
         dmc.Text(id="selected-color-input"),
     ]

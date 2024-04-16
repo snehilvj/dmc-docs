@@ -1,6 +1,6 @@
 ---
 name: ColorInput
-description: Capture color  inputs from user.
+description: Capture color inputs from user.
 endpoint: /components/colorinput
 package: dash_mantine_components
 ---
@@ -33,7 +33,7 @@ If you need to restrict color picking to certain colors – disable color picker
 .. exec::docs.colorinput.swatches-only
 
 ### Remove or replace preview
-By default, color preview will be rendered on the left side of the input, you can remove it (withPreview=False prop) or replace with an icon.
+By default, color preview will be rendered on the left side of the input, you can remove it using `withPreview=False` or replace with an icon.
 
 .. exec::docs.colorinput.preview
 
@@ -55,43 +55,42 @@ Color picker is not focusable, users without mouse access can select color only 
 Provide `aria-labe`l in case you use component without label for screen reader support:
 
 ```python
-import dash_mantine_components
+import dash_mantine_components as dmc
 
 dmc.ColorInput(value="#ffffff")  # not ok, input is not labeled
 dmc.ColorInput(label="Pick color") # ok, input and label is connected
 dmc.ColorInput(**{"aria-label": "My input"}) # ok, label is not visible but will be announced by screen readers
-
 ```
 
 ### StylesAPI
 
-| Name          | Static selector                   | Description                                                               |
-|:--------------|:----------------------------------|:--------------------------------------------------------------------------|
-| wrapper       | .mantine-ColorInput-wrapper       | Root element                                                              |
-| icon          | .mantine-ColorInput-icon          | Input icon wrapper on the left side of the input, controlled by icon prop |
-| input         | .mantine-ColorInput-input         | Main input element                                                        |
-| rightSection  | .mantine-ColorInput-rightSection  | Input right section, controlled by rightSection prop                      |
-| root          | .mantine-ColorInput-root          | Root element                                                              |
-| label         | .mantine-ColorInput-label         | Label element styles, defined by label prop                               |
-| error         | .mantine-ColorInput-error         | Error element styles, defined by error prop                               |
-| description   | .mantine-ColorInput-description   | Description element styles, defined by description prop                   |
-| required      | .mantine-ColorInput-required      | Required asterisk element styles, defined by required prop                |
-| body          | .mantine-ColorInput-body          | Includes hue and alpha sliders and color preview                          |
-| preview       | .mantine-ColorInput-preview       | Color preview                                                             |
-| sliders       | .mantine-ColorInput-sliders       | Hue and alpha sliders wrapper                                             |
-| slider        | .mantine-ColorInput-slider        | Alpha and hue sliders                                                     |
-| sliderOverlay | .mantine-ColorInput-sliderOverlay | Hue and alpha sliders overlays                                            |
-| thumb         | .mantine-ColorInput-thumb         | Hue, alpha and saturation sliders thumbs                                  |
-| saturation    | .mantine-ColorInput-saturation    | Saturation slider                                                         |
-| swatch        | .mantine-ColorInput-swatch        | ColorSwatch component in swatches list                                    |
-| swatches      | .mantine-ColorInput-swatches      | Wrapper around all swatches                                               |
-| dropdown      | .mantine-ColorInput-dropdown      | Dropdown root element                                                     |
-| arrow         | .mantine-ColorInput-arrow         | Dropdown arrow                                                            |
-
-
+| Name              | Static selector                       | Description                                                         |
+|:------------------|:--------------------------------------|:--------------------------------------------------------------------|
+| wrapper           | .mantine-ColorInput-wrapper           | Root element                                                        |
+| input             | .mantine-ColorInput-input             | Input element                                                       |
+| section           | .mantine-ColorInput-section           | Left and right sections                                             |
+| root              | .mantine-ColorInput-root              | Root element                                                        |
+| label             | .mantine-ColorInput-label             | Label element                                                       |
+| required          | .mantine-ColorInput-required          | Required asterisk element, rendered inside label                    |
+| description       | .mantine-ColorInput-description       | Description element                                                 |
+| error             | .mantine-ColorInput-error             | Error element                                                       |
+| preview           | .mantine-ColorInput-preview           | Color preview, displayed only when `format` supports alpha channel  |
+| body              | .mantine-ColorInput-body              | Contains alpha/hue sliders and color preview                        |
+| slider            | .mantine-ColorInput-slider            | Alpha and hue sliders root                                          |
+| sliderOverlay     | .mantine-ColorInput-sliderOverlay     | Element used to display various overlays over hue and alpha sliders |
+| saturation        | .mantine-ColorInput-saturation        | Saturation picker                                                   |
+| saturationOverlay | .mantine-ColorInput-saturationOverlay | Element used to display various overlays over saturation picker     |
+| sliders           | .mantine-ColorInput-sliders           | Contains alpha and hue sliders                                      |
+| thumb             | .mantine-ColorInput-thumb             | Thumb of all sliders                                                |
+| swatch            | .mantine-ColorInput-swatch            | Color swatch                                                        |
+| swatches          | .mantine-ColorInput-swatches          | Color swatches list                                                 |
+| dropdown          | .mantine-ColorInput-dropdown          | Popover dropdown                                                    |
+| colorPreview      | .mantine-ColorInput-colorPreview      | Color swatch preview in input left section                          |
+| eyeDropperButton  | .mantine-ColorInput-eyeDropperButton  | Eye dropper button                                                  |
+| eyeDropperIcon    | .mantine-ColorInput-eyeDropperIcon    | Default eye dropper icon                                            |
 
 ### Keyword Arguments
 
-#### ColorPicker
+#### ColorInput
 
 .. kwargs::ColorInput

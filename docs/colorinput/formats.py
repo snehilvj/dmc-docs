@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-target = dmc.ColorInput(value="#C5D899", format="rgb", label="Select color")
+target = dmc.ColorInput(value="#C5D899", format="rgb", label="Select color", w=250)
 
 configurator = Configurator(target)
 

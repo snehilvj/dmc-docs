@@ -19,6 +19,12 @@ Component accepts these props:
 
 .. exec::docs.container.simple
 
+### Styles API
+
+| Name | Static selector         | Description  |
+|:-----|:------------------------|:-------------|
+| root | .mantine-Container-root | Root element |
+
 ### Keyword Arguments
 
 #### Container

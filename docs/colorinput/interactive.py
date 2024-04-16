@@ -7,7 +7,7 @@ target = dmc.Center(
     dmc.ColorInput(
         label="Your favorite color",
         placeholder="Pick color",
-        style={"width": 300},
+     w=250,
         id=TARGET_ID,
     )
 )

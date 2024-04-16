@@ -32,18 +32,19 @@ To display just the swatches and no picker, initialize the component with `withP
 
 ### Styles API
 
-| Name          | Static selector                    | Description                                      |
-|:--------------|:-----------------------------------|:-------------------------------------------------|
-| wrapper       | .mantine-ColorPicker-wrapper       | Root element                                     |
-| body          | .mantine-ColorPicker-body          | Includes hue and alpha sliders and color preview |
-| preview       | .mantine-ColorPicker-preview       | Color preview                                    |
-| sliders       | .mantine-ColorPicker-sliders       | Hue and alpha sliders wrapper                    |
-| slider        | .mantine-ColorPicker-slider        | Alpha and hue sliders                            |
-| sliderOverlay | .mantine-ColorPicker-sliderOverlay | Hue and alpha sliders overlays                   |
-| thumb         | .mantine-ColorPicker-thumb         | Hue, alpha and saturation sliders thumbs         |
-| saturation    | .mantine-ColorPicker-saturation    | Saturation slider                                |
-| swatch        | .mantine-ColorPicker-swatch        | ColorSwatch component in swatches list           |
-| swatches      | .mantine-ColorPicker-swatches      | Wrapper around all swatches                      |
+| Name              | Static selector                        | Description                                                         |
+|:------------------|:---------------------------------------|:--------------------------------------------------------------------|
+| wrapper           | .mantine-ColorPicker-wrapper           | Root element                                                        |
+| preview           | .mantine-ColorPicker-preview           | Color preview, displayed only when `format` supports alpha channel  |
+| body              | .mantine-ColorPicker-body              | Contains alpha/hue sliders and color preview                        |
+| slider            | .mantine-ColorPicker-slider            | Alpha and hue sliders root                                          |
+| sliderOverlay     | .mantine-ColorPicker-sliderOverlay     | Element used to display various overlays over hue and alpha sliders |
+| saturation        | .mantine-ColorPicker-saturation        | Saturation picker                                                   |
+| saturationOverlay | .mantine-ColorPicker-saturationOverlay | Element used to display various overlays over saturation picker     |
+| sliders           | .mantine-ColorPicker-sliders           | Contains alpha and hue sliders                                      |
+| thumb             | .mantine-ColorPicker-thumb             | Thumb of all sliders                                                |
+| swatch            | .mantine-ColorPicker-swatch            | Color swatch                                                        |
+| swatches          | .mantine-ColorPicker-swatches          | Color swatches list                                                 |
 
 ### Keyword Arguments
 
