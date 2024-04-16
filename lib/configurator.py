@@ -94,7 +94,7 @@ class Configurator:
         control = dmc.Stack(
             [
                 dmc.Text(create_label(target_prop), size="sm", fw=500),
-                dmc.SegmentedControl(id=cid, data=data, value=value, fullWidth=True)
+                dmc.SegmentedControl(id=cid, data=data, value=value, fullWidth=True),
             ],
             gap=1,
         )
