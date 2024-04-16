@@ -69,7 +69,7 @@ def create_search(data):
 def create_header(data):
     return dmc.AppShellHeader(
         h=70,
-        zIndex=1000,
+        zIndex=1400,
         px=25,
         children=[
             dmc.Stack(

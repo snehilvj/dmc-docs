@@ -66,7 +66,12 @@ def create_content(data):
         if entry["path"] not in excluded_links
     ]
 
-    return dmc.Stack(gap=0, children=[main_links, *links, dmc.Space(h=20)], px=25)
+    return dmc.ScrollArea(
+        offsetScrollbars=True,
+        type="scroll",
+        style={"height": "100%"},
+        children=dmc.Stack(gap=0, children=[main_links, *links], px=25),
+    )
 
 
 def create_navbar(data):
@@ -75,13 +80,7 @@ def create_navbar(data):
         top=70,
         zIndex=500,
         w={"base": 300},
-        children=[
-            dmc.ScrollArea(
-                offsetScrollbars=True,
-                type="scroll",
-                children=create_content(data),
-            )
-        ],
+        children=create_content(data),
     )
 
 
@@ -89,15 +88,7 @@ def create_navbar_drawer(data):
     return dmc.Drawer(
         id="components-navbar-drawer",
         overlayProps={"opacity": 0.55, "blur": 3},
-        zIndex=9,
+        zIndex=1200,
         size=300,
-        children=[
-            dmc.ScrollArea(
-                offsetScrollbars=True,
-                type="scroll",
-                style={"height": "100vh"},
-                pt=20,
-                children=create_content(data),
-            )
-        ],
+        children=create_content(data),
     )
