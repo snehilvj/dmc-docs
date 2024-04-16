@@ -15,11 +15,11 @@ Breadcrumbs accept any react nodes as children and places given separator (defau
 
 ### Styles API
 
-| Name       | Static selector                 | Description             |
-|:-----------|:--------------------------------|:------------------------|
-| root       | .mantine-Breadcrumbs-root       | Root element            |
-| breadcrumb | .mantine-Breadcrumbs-breadcrumb | Breadcrumb item wrapper |
-| separator  | .mantine-Breadcrumbs-separator  | Separator element       |
+| Name       | Static selector                 | Description                |
+|:-----------|:--------------------------------|:---------------------------|
+| root       | .mantine-Breadcrumbs-root       | Root element               |
+| breadcrumb | .mantine-Breadcrumbs-breadcrumb | Breadcrumb item wrapper    |
+| separator  | .mantine-Breadcrumbs-separator  | Separator between children |
 
 ### Keyword Arguments
 

@@ -41,6 +41,12 @@ loading state and at the same time, disable the button.
 
 .. exec::docs.button.loading
 
+### Loader Props
+
+You can customize [Loader](/components/loader) with `loaderProps` prop, it accepts all props that Loader component has:
+
+.. exec::docs.button.loader-props
+
 ### Colors
 
 ```python
@@ -69,6 +75,10 @@ dmc.Group(
 )
 ```
 
+### Compact Size
+
+.. exec::docs.button.compact
+
 ### Full Width Button
 
 Pass `fullWidth=True` for a full width button.
@@ -81,15 +91,13 @@ Pass `fullWidth=True` for a full width button.
 
 ### Styles API
 
-| Name         | Static selector              | Description                          |
-|:-------------|:-----------------------------|:-------------------------------------|
-| root         | .mantine-Button-root         | Root button element                  |
-| icon         | .mantine-Button-icon         | Shared icon styles                   |
-| leftSection     | .mantine-Button-leftSection     | Left icon                            |
-| rightSection    | .mantine-Button-rightSection    | Right icon                           |
-| centerLoader | .mantine-Button-centerLoader | Center loader                        |
-| inner        | .mantine-Button-inner        | Contains label, left and right icons |
-| label        | .mantine-Button-label        | Contains button children             |
+| Name    | Static selector         | Description                                                 |
+|:--------|:------------------------|:------------------------------------------------------------|
+| root    | .mantine-Button-root    | Root element                                                |
+| loader  | .mantine-Button-loader  | Loader component, displayed only when `loading` prop is set |
+| section | .mantine-Button-section | Left and right sections of the button                       |
+| inner   | .mantine-Button-inner   | Contains all other elements, child of the `root` element    |
+| label   | .mantine-Button-label   | Button children                                             |
 
 ### Keyword Arguments
 

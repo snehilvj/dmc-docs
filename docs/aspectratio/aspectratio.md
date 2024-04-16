@@ -11,16 +11,19 @@ package: dash_mantine_components
 
 .. exec::docs.aspectratio.simple
 
-
 ### Map embed
 
 .. exec::docs.aspectratio.map
-
 
 ### Video embed
 
 .. exec::docs.aspectratio.video
 
+### Styles API
+
+| Name | Static selector           | Description  |
+|------|---------------------------|--------------|
+| root | .mantine-AspectRatio-root | Root element |
 
 ### Keyword Arguments
 

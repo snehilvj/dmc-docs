@@ -11,6 +11,12 @@ package: dash_mantine_components
 
 .. exec::docs.center.simple
 
+### Styles API
+
+| Name | Static selector    | Description  |
+|------|--------------------|--------------|
+| root | .mantine-Card-root | Root element |
+
 ### Keyword Arguments
 
 #### Center

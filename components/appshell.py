@@ -47,7 +47,7 @@ def create_appshell(data):
                 zIndex=1400,
                 navbar={
                     "width": 300,
-                    "breakpoint": "sm",
+                    "breakpoint": "lg",
                     "collapsed": {"mobile": True},
                 },
                 aside={

@@ -28,7 +28,7 @@ dmc.Avatar(src="/assets/avatar.jpeg", size="xl", radius=20),
 .. exec::docs.avatar.interactive
     :code: false
 
-### AvatarGroup
+### Avatar Group
 
 Use AvatarGroup to stack Avatar components.
 
@@ -46,12 +46,11 @@ Here's an example of a dynamically created AvatarGroup from GitHub contributors 
 
 ### Styles API
 
-| Name            | Static selector                 | Description                                                              |
-|:----------------|:--------------------------------|:-------------------------------------------------------------------------|
-| root            | .mantine-Avatar-root            | Root element                                                             |
-| image           | .mantine-Avatar-image           | Main img tag, rendered when src is set to valid image url                |
-| placeholder     | .mantine-Avatar-placeholder     | Placeholder element, rendered when src is null or image cannot be loaded |
-| placeholderIcon | .mantine-Avatar-placeholderIcon | Default placeholder icon                                                 |
+| Name            | Static selector                 | Description                                               |
+|:----------------|:--------------------------------|:----------------------------------------------------------|
+| root            | .mantine-Avatar-root            | Root element                                              |
+| image           | .mantine-Avatar-image           | `img` element                                             |
+| placeholder     | .mantine-Avatar-placeholder     | Placeholder element, rendered when image cannot be loaded |
 
 ### Keyword Arguments
 

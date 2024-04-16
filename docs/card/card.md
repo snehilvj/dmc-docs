@@ -28,6 +28,13 @@ CardSection is a special component that is used to remove Card padding from its 
 
 .. exec::docs.card.border
 
+### Styles API
+
+| Name    | Static selector       | Description                 |
+|:--------|:----------------------|:----------------------------|
+| root    | .mantine-Card-root    | Root element                |
+| section | .mantine-Card-section | `Card.Section` root element |
+
 ### Keyword Arguments
 
 #### Card
