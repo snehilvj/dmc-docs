@@ -9,13 +9,17 @@ package: dash_mantine_components
 
 ### Simple Example
 
-Use Highlight component to highlight a substring in a given string with mark tag.
+Use Highlight component to highlight a substring in a given string with a mark tag.
 
-Pass main string as children to Highlight component and string part that should be highlighted to `highlight` prop. 
-If main string does not include highlight part, it will be ignored. Component ignores trailing whitespace and
-highlights all matched characters sequence.
+Pass the main string as children to Highlight component and string part that should be highlighted to `highlight` prop. 
+If the main string does not include `highlight` part, it will be ignored. 
+`Highlight` ignores trailing whitespace and highlights all matched characters sequences.
 
 .. exec::docs.highlight.simple
+
+### Change highlight styles
+
+.. exec::docs.highlight.styles
 
 ### Colors
 
@@ -45,6 +49,12 @@ To highlight multiple substrings, provide an array of values.
 Highlight component supports same props as Text component.
 
 .. exec::docs.highlight.text
+
+### Styles API
+
+| Name | Static selector         | Description  |
+|:-----|:------------------------|:-------------|
+| root | .mantine-Highlight-root | Root element |
 
 ### Keyword Arguments
 

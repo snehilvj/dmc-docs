@@ -7,6 +7,6 @@ target = dmc.Highlight(
 )
 
 configurator = Configurator(target)
-configurator.add_colorpicker("highlightColor", "lime")
+configurator.add_colorpicker("color", "lime")
 
 component = configurator.panel

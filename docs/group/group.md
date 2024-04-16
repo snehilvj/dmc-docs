@@ -12,6 +12,12 @@ package: dash_mantine_components
 .. exec::docs.group.interactive
     :code: false
 
+### Styles API
+
+| Name | Static selector     | Description  |
+|:-----|:--------------------|:-------------|
+| root | .mantine-Group-root | Root element |
+
 ### Keyword Arguments
 
 #### Group

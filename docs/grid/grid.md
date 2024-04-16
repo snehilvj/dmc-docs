@@ -83,6 +83,14 @@ If you set `span` or a `breakpoint` to `content`, the column's size will automat
 
 .. exec::docs.grid.fit
 
+### Styles API
+
+| Name  | Static selector     | Description             |
+|:------|:--------------------|:------------------------|
+| root  | .mantine-Grid-root  | Root element            |
+| inner | .mantine-Grid-inner | Columns wrapper         |
+| col   | .mantine-Grid-col   | `Grid.Col` root element |
+
 ### Keyword Arguments
 
 #### Grid

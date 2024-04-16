@@ -8,8 +8,8 @@ target = dmc.Group(
 )
 
 configurator = Configurator(target)
-configurator.add_select("position", ["left", "right", "center", "apart"], "left")
-configurator.add_slider("spacing", "md")
+configurator.add_select("justify", ["flex-start", "center", "flex-end", "space-around"], "center")
+configurator.add_slider("gap", "md")
 configurator.add_switch("grow", False)
 
 component = configurator.panel
