@@ -15,15 +15,16 @@ def create_appshell(data):
             "fontFamily": "'Inter', sans-serif",
             "components": {
                 "Button": {"defaultProps": {"fw": 400}},
-                "Alert": {"styles": {"title": {"fw": 500}}},
-                "AvatarGroup": {"styles": {"truncated": {"fw": 500}}},
-                "Badge": {"styles": {"root": {"fw": 500}}},
-                "Progress": {"styles": {"label": {"fw": 500}}},
-                "RingProgress": {"styles": {"label": {"fw": 500}}},
+                "Alert": {"styles": {"title": {"fontWeight": 500}}},
+                "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+                "Badge": {"styles": {"root": {"fontWeight": 500}}},
+                "Progress": {"styles": {"label": {"fontWeight": 500}}},
+                "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
+                "CodeHighlightTabs": {"styles": {"file": {"padding": 12}}},
                 "Table": {
                     "defaultProps": {
                         "highlightOnHover": True,
-                        "withBorder": True,
+                        "withTableBorder": True,
                         "verticalSpacing": "sm",
                         "horizontalSpacing": "md",
                     }
