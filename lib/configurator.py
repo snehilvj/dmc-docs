@@ -91,9 +91,14 @@ class Configurator:
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
-        self.controls.append(
-            dmc.SegmentedControl(id=cid, data=data, value=value, fullWidth=True)
+        control = dmc.Stack(
+            [
+                dmc.Text(create_label(target_prop), size="sm", fw=500),
+                dmc.SegmentedControl(id=cid, data=data, value=value, fullWidth=True)
+            ],
+            gap=1,
         )
+        self.controls.append(control)
 
     def add_select(self, target_prop: str, data: List[str], value: str):
         cid = self.new_id

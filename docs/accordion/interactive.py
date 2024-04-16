@@ -39,7 +39,7 @@ configurator = Configurator(target)
 
 configurator.add_segmented_control("chevronPosition", ["left", "right"], "left")
 configurator.add_select(
-    "variant", ["default", "contained", "filled", "separated"], "default"
+    "variant", ["default", "contained", "filled", "separated"], "separated"
 )
 configurator.add_switch("disableChevronRotation", False)
 configurator.add_slider("radius", "sm")
