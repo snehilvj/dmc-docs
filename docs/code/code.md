@@ -24,6 +24,12 @@ package: dash_mantine_components
 In case you need syntax highlight like in all code examples on this documentation, use [dmc.CodeHighlight](/components/code-highlight)
 component.
 
+### Styles API
+
+| Name         | Static selector    | Description                                   |
+|:-------------|:-------------------|:----------------------------------------------|
+| root         | .mantine-Code-root | Root element                                  |
+
 ### Keyword Arguments
 
 #### Code

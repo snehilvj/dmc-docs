@@ -45,17 +45,17 @@ Use `value` property of the checkbox group in the callbacks.
 
 ### Styles API
 
-| Name         | Static selector                | Description                             |
-|:-------------|:-------------------------------|:----------------------------------------|
-| root         | .mantine-Checkbox-root         | Root button element                     |
-| body         | .mantine-Checkbox-body         | Main element of checkbox                |
-| inner        | .mantine-Checkbox-inner        | Includes input and label                |
-| labelWrapper | .mantine-Checkbox-labelWrapper | Include label and description component |
-| input        | .mantine-Checkbox-input        | Checkbox input element                  |
-| icon         | .mantine-Checkbox-icon         | Checked or indeterminate state icon     |
-| error        | .mantine-Checkbox-error        | Error message                           |
-| description  | .mantine-Checkbox-description  | Description                             |
-| label        | .mantine-Checkbox-label        | Label                                   |
+| Name         | Static selector                | Description                                   |
+|:-------------|:-------------------------------|:----------------------------------------------|
+| root         | .mantine-Checkbox-root         | Root element                                  |
+| body         | .mantine-Checkbox-body         | Input body, contains all other elements       |
+| inner        | .mantine-Checkbox-inner        | Wrapper for `icon` and `input`                |
+| labelWrapper | .mantine-Checkbox-labelWrapper | Contains `label`, `description` and `error`   |
+| input        | .mantine-Checkbox-input        | Input element                                 |
+| icon         | .mantine-Checkbox-icon         | Checkbox icon, used to display checkmark icon |
+| error        | .mantine-Checkbox-error        | Error message displayed below the label       |
+| description  | .mantine-Checkbox-description  | Description displayed below the label         |
+| label        | .mantine-Checkbox-label        | Label element                                 |
 
 ### Keyword Arguments
 

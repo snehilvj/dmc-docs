@@ -10,6 +10,7 @@ target = dmc.Center(
 
 configurator = Configurator(target, TARGET_ID)
 
+configurator.add_segmented_control("labelPosition", ["left", "right"], "right")
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
