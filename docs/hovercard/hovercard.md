@@ -25,10 +25,10 @@ HoverCard is displayed only when mouse is over target element or dropdown, you c
 
 ### Styles API
 
-| Name     | Static selector             | Description           |
-|:---------|:----------------------------|:----------------------|
-| dropdown | .mantine-HoverCard-dropdown | Dropdown root element |
-| arrow    | .mantine-HoverCard-arrow    | Dropdown arrow        |
+| Name     | Static selector             | Description      |
+|:---------|:----------------------------|:-----------------|
+| dropdown | .mantine-HoverCard-dropdown | Dropdown element |
+| arrow    | .mantine-HoverCard-arrow    | Dropdown arrow   |
 
 ### Keyword Arguments
 

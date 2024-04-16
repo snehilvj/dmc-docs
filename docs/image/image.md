@@ -14,7 +14,15 @@ caption.
 
 .. exec::docs.image.simple
 
+### Image height
+
+In most case, you will need to set image height to prevent layout jumps when image is loading. You can do so with `h` [style](/style-props) props.
+
+.. exec::docs.image.height
+
 ### Placeholder
+
+Set `fallbackSrc` prop to display fallback image when image fails to load:
 
 .. exec::docs.image.placeholder
 
