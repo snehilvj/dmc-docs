@@ -2,17 +2,35 @@ import dash_mantine_components as dmc
 
 component = dmc.List(
     [
+        dmc.ListItem("First order item"),
+        dmc.ListItem("First order item"),
         dmc.ListItem(
-            dmc.Text(
-                [
-                    "Join our ",
-                    dmc.Anchor(
-                        "Discord", href="https://discord.gg/KuJkh4Pyq5", underline=False
-                    ),
-                    " Community.",
-                ]
-            )
+            [
+                "First order item with list",
+                dmc.List(
+                    withPadding=True,
+                    listStyleType="disc",
+                    children=[
+                        dmc.ListItem("Nested Item"),
+                        dmc.ListItem("Nested Item"),
+                        dmc.ListItem(
+                            [
+                                "Nested item with list",
+                                dmc.List(
+                                    withPadding=True,
+                                    listStyleType="disc",
+                                    children=[
+                                        dmc.ListItem("Even more nested"),
+                                        dmc.ListItem("Even more nested"),
+                                    ],
+                                ),
+                            ]
+                        ),
+                        dmc.ListItem("Nested Item"),
+                    ],
+                ),
+            ]
         ),
-        dmc.ListItem("Install python virtual environment."),
+        dmc.ListItem("First order item"),
     ]
 )

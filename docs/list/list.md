@@ -20,14 +20,19 @@ package: dash_mantine_components
 
 .. exec::docs.list.icons
 
+### Nested Lists
+
+.. exec::docs.list.nested
+
 ### Styles API
 
-| Name        | Static selector           | Description                                                              |
-|:------------|:--------------------------|:-------------------------------------------------------------------------|
-| root        | .mantine-List-root        | Root element (ul or ol)                                                  |
-| item        | .mantine-List-item        | List element (li)                                                        |
-| itemWrapper | .mantine-List-itemWrapper | Wraps icon and item item content, used to align custom icon with content |
-| itemIcon    | .mantine-List-itemIcon    | Icon wrapper element                                                     |
+| Name        | Static selector           | Description                                           |
+|:------------|:--------------------------|:------------------------------------------------------|
+| root        | .mantine-List-root        | Root element                                          |
+| item        | .mantine-List-item        | ListItem root element                                 |
+| itemIcon    | .mantine-List-itemIcon    | ListItem icon                                         |
+| itemLabel   | .mantine-List-itemLabel   | ListItem content                                      |
+| itemWrapper | .mantine-List-itemWrapper | ListItem wrapper element, container, icon and content |
 
 ### Keyword Arguments
 

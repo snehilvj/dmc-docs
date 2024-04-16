@@ -10,6 +10,6 @@ configurator = Configurator(target, TARGET_ID)
 
 configurator.add_colorpicker("color", "red")
 configurator.add_slider("size", "md")
-configurator.add_segmented_control("variant", ["oval", "bars", "dots"], "oval")
+configurator.add_segmented_control("type", ["oval", "bars", "dots"], "oval")
 
 component = configurator.panel

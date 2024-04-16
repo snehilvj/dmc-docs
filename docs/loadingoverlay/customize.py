@@ -1,25 +1,17 @@
-import time
-
 import dash_mantine_components as dmc
-from dash import html, Output, Input, callback
 
-from lib.utils import create_graph
-
-component = html.Div(
+component = dmc.Box(
     [
         dmc.LoadingOverlay(
-            loaderProps={"variant": "dots", "color": "orange", "size": "xl"}
+            loaderProps={"type": "bars", "color": "red", "size": "lg"},
+            overlayProps={"radius": 'sm', "blur": 2},
+            visible=True,
         ),
-        html.Div(create_graph(), id="loading-customize-output"),
-        dmc.Button("Click Me!", id="customize-button"),
-    ]
+        dmc.BackgroundImage(
+            dmc.Box(h=200, w=100),
+            src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid"
+                "=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
+        ),
+    ],
+    pos="relative",
 )
-
-
-@callback(
-    Output("loading-customize-output", "children"),
-    Input("customize-button", "n_clicks"),
-)
-def func(n_clicks):
-    time.sleep(2)
-    return create_graph()

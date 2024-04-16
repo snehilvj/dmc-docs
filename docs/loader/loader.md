@@ -19,6 +19,12 @@ By default, Loader will be rendered with theme.primaryColor. A Loader can be cus
 
 .. exec::docs.loader.simple
 
+### Styles API
+
+| Name        | Static selector      | Description                                      |
+|:------------|:---------------------|:-------------------------------------------------|
+| root        | .mantine-Loader-root | Root element                                     |
+
 ### Keyword Arguments
 
 #### Loader

@@ -11,6 +11,12 @@ package: dash_mantine_components
 
 .. exec::docs.kbd.simple
 
+### Styles API
+
+| Name        | Static selector   | Description                                      |
+|:------------|:------------------|:-------------------------------------------------|
+| root        | .mantine-Kbd-root | Root element                                     |
+
 ### Keyword Arguments
 
 #### Kbd
