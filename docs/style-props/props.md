@@ -1,6 +1,6 @@
 ---
 name: Style Props
-endpoint: "/style-props"
+endpoint: /style-props
 head: With style props you can add responsive styles to any Mantine component that supports these props.
 description: With style props you can add responsive styles to any Mantine component that supports these props.
 dmc: false

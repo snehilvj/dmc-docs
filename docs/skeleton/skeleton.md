@@ -9,13 +9,25 @@ package: dash_mantine_components
 
 ### Simple Usage
 
-You can use dmc.Skeleton as a placeholder for loading content.
+Use `Skeleton` to create a placeholder for loading content. `Skeleton` support the following props:
+
+- `height` - height - any valid CSS value
+- `width` - width - any valid CSS value
+- `radius` - key of `theme.radius` or any valid CSS value to set border-radius
+- `circle` - if true, width, height and border-radius will equal to value specified in `height` prop
+- `animate` - true by default, controls animation
 
 .. exec::docs.skeleton.simple
 
 ### Customizing Loader
 
 .. exec::docs.skeleton.graphs
+
+### Styles API
+
+| Name        | Static selector        | Description                                      |
+|:------------|:-----------------------|:-------------------------------------------------|
+| root        | .mantine-Skeleton-root | Root element                                     |
 
 ### Keyword Arguments
 

@@ -12,12 +12,17 @@ package: dash_mantine_components
 SimpleGrid is a simple flexbox container where each child is treated as a column. Each column takes equal amount of
 space and unlike Grid component you do not control column span, instead you specify number of columns per row.
 
+.. exec::docs.simplegrid.simple
+    :code: false
+
 ```python
 import dash_mantine_components as dmc
 from dash import html
 
 dmc.SimpleGrid(
     cols=3,
+    spacing="md",
+    verticalSpacing="md",
     children=[
         html.Div("1"),
         html.Div("2"),
@@ -29,20 +34,29 @@ dmc.SimpleGrid(
 
 ```
 
-.. exec::docs.simplegrid.simple
-    :code: false
+### Responsive Props
 
-### Breakpoints
+`cols`, `spacing` and `verticalSpacing` props support object notation for responsive values, 
+it works the same way as [style props](/style-props): the object may have `base`, `xs`, `sm`, `md`, `lg` and `xl` key, 
+and values from those keys will be applied according to current viewport width.
 
-Provide an array to `breakpoints` prop to define responsive behavior:
+`cols` prop can be understood from the below example as:
 
-* `maxWidth` or `minWidth` - max-width or min-width at which media query will work
-* `cols` - number of columns per row at given max-width
-* `spacing` - optional spacing at given max-width, if not provided spacing from component prop will be used instead
+- 1 column if viewport width is less than `sm` breakpoint
+- 2 columns if viewport width is between `sm` and `lg` breakpoints
+- 5 columns if viewport width is greater than `lg` breakpoint
+
+Same logic applies to `spacing` and `verticalSpacing` props.
 
 Resize browser to see breakpoints behavior.
 
 .. exec::docs.simplegrid.responsive
+
+### Styles API
+
+| Name        | Static selector          | Description                                      |
+|:------------|:-------------------------|:-------------------------------------------------|
+| root        | .mantine-SimpleGrid-root | Root element                                     |
 
 ### Keyword Arguments
 

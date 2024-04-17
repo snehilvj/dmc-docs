@@ -88,7 +88,7 @@ Set `clearable` prop to enable clearing selected values.
 ### Dropdown Position
 
 By default, dropdown is placed below the input and when there is not enough space, it flips to be above the input. To
-change this behavior, set dropdownPosition prop:
+change this behavior, use `comboBoxProps` prop:
 
 .. exec::docs.select.position
 

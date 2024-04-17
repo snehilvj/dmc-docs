@@ -86,6 +86,20 @@ class Configurator:
         )
         self.controls.append(control)
 
+    def add_number_slider(self, target_prop: str, value: int, **kwargs):
+        cid = self.new_id
+        self.outputs.append(Output(self.target_id, target_prop))
+        self.inputs.append((Input(cid, "value")))
+        setattr(self.target, target_prop, value)
+        control = dmc.Stack(
+            [
+                dmc.Text(create_label(target_prop), size="sm", fw=500),
+                dmc.Slider(value=value, id=cid, updatemode="drag", **kwargs),
+            ],
+            gap=0,
+        )
+        self.controls.append(control)
+
     def add_segmented_control(self, target_prop: str, data: List[str], value: str):
         cid = self.new_id
         self.outputs.append(Output(self.target_id, target_prop))

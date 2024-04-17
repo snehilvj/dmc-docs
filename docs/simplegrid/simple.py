@@ -21,7 +21,8 @@ target = dmc.SimpleGrid(
 
 configurator = Configurator(target)
 
+configurator.add_number_slider("cols", 3, min=1, max=6)
 configurator.add_slider("spacing", "md")
-configurator.add_number_input("cols", 3, min=1, max=6)
+configurator.add_slider("verticalSpacing", "md")
 
 component = configurator.panel
