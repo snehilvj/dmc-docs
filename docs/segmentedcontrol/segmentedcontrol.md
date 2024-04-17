@@ -80,26 +80,28 @@ dmc.SegmentedControl(
 .. exec::docs.segmentedcontrol.colors
     :code: false
 
-
 ### Transitions
 Change transition properties with:
 
 - `transitionDuration` – all transitions duration in ms (ignored if user prefers to reduce motion)
 - `transitionTimingFunction` – defaults to `theme.transitionTimingFunction`
 
-
 .. exec::docs.segmentedcontrol.transitions
+
+### React node as label
+
+.. exec:: docs.segmentedcontrol.react
 
 ### Styles API
 
-| Name          | Static selector                         | Description                                                            |
-|:--------------|:----------------------------------------|:-----------------------------------------------------------------------|
-| root          | .mantine-SegmentedControl-root          | Root element                                                           |
-| label         | .mantine-SegmentedControl-label         | Input label element                                                    |
-| input         | .mantine-SegmentedControl-input         | Radio input (visually hidden)                                          |
-| control       | .mantine-SegmentedControl-control       | Control wrapper, contains input and label                              |
-| controlActive | .mantine-SegmentedControl-controlActive | Active control wrapper                                                 |
-| indicator     | .mantine-SegmentedControl-indicator     | Element which indicates current active item, positioned below controls |
+| Name       | Static selector                      | Description                                             |
+|:-----------|:-------------------------------------|:--------------------------------------------------------|
+| root       | .mantine-SegmentedControl-root       | Root element                                            |
+| control    | .mantine-SegmentedControl-control    | Wrapper element for input and label                     |
+| input      | .mantine-SegmentedControl-input      | Input element hidden by default                         |
+| label      | .mantine-SegmentedControl-label      | Label element associated with input                     |
+| indicator  | .mantine-SegmentedControl-indicator  | Floating indicator that moves between items             |
+| innerLabel | .mantine-SegmentedControl-innerLabel | Wrapper of label element children                       |
 
 ### Keyword Arguments
 
