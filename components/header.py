@@ -54,6 +54,7 @@ def create_search(data):
         clearable=True,
         rightSection=dmc.Kbd("⌘ + k"),
         w=250,
+        nothingFoundMessage="Nothing Found!",
         rightSectionWidth=60,
         leftSection=DashIconify(icon="mingcute:search-3-line"),
         data=[

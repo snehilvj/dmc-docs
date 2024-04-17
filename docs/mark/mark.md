@@ -11,16 +11,15 @@ package: dash_mantine_components
 
 .. exec::docs.mark.simple
   
-This component is used in other Mantine components, for example, in Highlight:
-
-```python
-dmc.Highlight(
-    "Highlight this, definitely this and also this!", highlight="this"
-)
-```
 ### Change color
 
 .. exec::docs.mark.color
+
+### Styles API
+
+| Name        | Static selector    | Description                                      |
+|:------------|:-------------------|:-------------------------------------------------|
+| root        | .mantine-Mark-root | Root element                                     |
 
 ### Keyword Arguments
 

@@ -32,9 +32,15 @@ component = dmc.Menu(trigger="hover", openDelay=100, closeDelay=400, children=[
 ])
 ```
 
+### Menu Target
+
+Any component you specify in dmc.MenuTarget is wrapped by a dmc.Box component under the hood. So adding a margin
+to your target component will also move the dropdown away. In order to prevent this, add margin to the wrapper component
+using the prop `boxWrapperProps` in dmc.MenuTarget.
+
 ### Transitions
 
-Menu dropdown can be animated with any of the premade transitions.
+Menu dropdown can be animated with any of the ready-made transitions.
 
 .. exec::docs.menu.transition
 
@@ -50,16 +56,15 @@ Menu component can be customised by changing icons, right section and even color
 
 ### Styles API
 
-| Name             | Static selector                | Description               |
-|:-----------------|:-------------------------------|:--------------------------|
-| dropdown         | .mantine-Menu-dropdown         | Menu.Dropdown element     |
-| label            | .mantine-Menu-label            | Menu.Label root element   |
-| item             | .mantine-Menu-item             | Menu.Item root element    |
-| arrow            | .mantine-Menu-arrow            | Menu.Dropdown arrow       |
-| divider          | .mantine-Menu-divider          | Menu.Divider root element |
-| itemIcon         | .mantine-Menu-itemIcon         | Menu.Item icon            |
-| itemLabel        | .mantine-Menu-itemLabel        | Menu.Item label           |
-| itemRightSection | .mantine-Menu-itemRightSection | Menu.Item right section   |
+| Name        | Static selector           | Description                            |
+|:------------|:--------------------------|:---------------------------------------|
+| dropdown    | .mantine-Menu-dropdown    | Dropdown element                       |
+| arrow       | .mantine-Menu-arrow       | Dropdown arrow                         |
+| divider     | .mantine-Menu-divider     | `Menu.Divider` root element            |
+| label       | .mantine-Menu-label       | `Menu.Label` root element              |
+| item        | .mantine-Menu-item        | `Menu.Item` root element               |
+| itemLabel   | .mantine-Menu-itemLabel   | Label of `Menu.Item`                   |
+| itemSection | .mantine-Menu-itemSection | Left and right sections of `Menu.Item` |
 
 ### Keyword Arguments
 

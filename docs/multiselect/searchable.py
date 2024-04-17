@@ -4,4 +4,5 @@ component = dmc.MultiSelect(
     data=["React", "Angular", "Svelte", "Vue"],
     searchable=True,
     style={"width": 400},
+    nothingFoundMessage="Nothing Found!",
 )
