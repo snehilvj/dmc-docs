@@ -8,13 +8,13 @@ package: dash_mantine_components
 .. toc::
 
 .. admonition::Note
-    :color: yellow
+    :color: red
     :icon: radix-icons:info-circled
-    In order to show notifications in your apps, you need to add dmc.Notifications() to your app layout.
+    In order to show notifications in your apps, you need to add dmc.NotificationProvider() to your app layout.
 
 ### Simple Example
 
-To enable the Notifications System, include the `dmc.Notifications()` component anywhere in your app layout. 
+To enable the Notifications System, include the `dmc.NotificationProvider()` component anywhere in your app layout. 
 
 The `dmc.Notification` is not like your conventional dash components. They are more like "instructions" than components. 
 In order to show notifications in your app, just send these instructions as children to any div in your callbacks.
@@ -46,15 +46,15 @@ Each notification is identified with an `id`. In order to update/hide a notifica
 
 ### Styles API
 
-| Name        | Static selector                   | Description                                               |
-|:------------|:----------------------------------|:----------------------------------------------------------|
-| root        | .mantine-Notification-root        | Root element                                              |
-| body        | .mantine-Notification-body        | Notification body wrapper, contains title and description |
-| loader      | .mantine-Notification-loader      | Notification loader, controlled by loading prop           |
-| icon        | .mantine-Notification-icon        | Notification icon on the left, controlled by icon prop    |
-| title       | .mantine-Notification-title       | Notification title, controlled by title prop              |
-| description | .mantine-Notification-description | Notification description, controlled by children          |
-| closeButton | .mantine-Notification-closeButton | Close button                                              |
+| Name        | Static selector                   | Description                                                |
+|:------------|:----------------------------------|:-----------------------------------------------------------|
+| root        | .mantine-Notification-root        | Root element                                               |
+| loader      | .mantine-Notification-loader      | Loader component, displayed only when `loading`prop is set |
+| icon        | .mantine-Notification-icon        | Icon component, displayed only when `icon` prop is set     |
+| body        | .mantine-Notification-body        | Notification body, contains all other elements             |
+| title       | .mantine-Notification-title       | Title element, displayed only when `title` prop is set     |
+| description | .mantine-Notification-description | Description displayed below the title                      |
+| closeButton | .mantine-Notification-closeButton | Close button element                                       |
 
 ### Keyword Arguments
 

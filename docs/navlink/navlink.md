@@ -26,7 +26,7 @@ from dash_iconify import DashIconify
 
 dmc.NavLink(
     label="With right section",
-    icon=DashIconify(icon="tabler:gauge"),
+    leftSection=DashIconify(icon="tabler:gauge"),
     active=True,
     variant="filled",
     color="orange",
@@ -43,15 +43,16 @@ To create nested links put dmc.NavLink as children of another dmc.NavLink.
 
 ### Styles API
 
-| Name         | Static selector               | Description                                  |
-|:-------------|:------------------------------|:---------------------------------------------|
-| root         | .mantine-NavLink-root         | Root element                                 |
-| body         | .mantine-NavLink-body         | Contains label and description               |
-| icon         | .mantine-NavLink-icon         | Icon on the left side of the body            |
-| rightSection | .mantine-NavLink-rightSection | Section on the right side of the body        |
-| label        | .mantine-NavLink-label        | Label                                        |
-| description  | .mantine-NavLink-description  | Dimmed description displayed below the label |
-| children     | .mantine-NavLink-children     | Wrapper around nested links                  |
+| Name        | Static selector              | Description                                  |
+|:------------|:-----------------------------|:---------------------------------------------|
+| root        | .mantine-NavLink-root        | Root element                                 |
+| body        | .mantine-NavLink-body        | Contains label and description               |
+| section     | .mantine-NavLink-section     | Left and right sections                      |
+| label       | .mantine-NavLink-label       | NavLink label                                |
+| description | .mantine-NavLink-description | Dimmed description displayed below the label |
+| children    | .mantine-NavLink-children    | Wrapper around nested links                  |
+| chevron     | .mantine-NavLink-chevron     | Default chevron icon                         |
+| collapse    | .mantine-NavLink-collapse    | Nested links Collapse container              |
 
 ### Keyword Arguments
 
