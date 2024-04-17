@@ -23,7 +23,7 @@ component = html.Div(
                 }
                 for v, icon in data
             ],
-            mt=10,
+            mb=10,
         ),
         dmc.Text(id="segmented--value-data"),
     ]
