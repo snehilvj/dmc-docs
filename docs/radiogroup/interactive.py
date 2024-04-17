@@ -2,9 +2,11 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-target = dmc.Radio(label="Radio item")
+TARGET_ID = "interactive-radio"
 
-configurator = Configurator(target)
+target = dmc.Center(dmc.Radio(label="Radio item", id=TARGET_ID))
+
+configurator = Configurator(target, target_id=TARGET_ID)
 
 configurator.add_segmented_control("labelPosition", ["right", "left"], "right")
 configurator.add_text_input("label", "Radio item", **{"placeholder": "Label"})

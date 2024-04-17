@@ -3,6 +3,6 @@ from dash_iconify import DashIconify
 
 component = dmc.Rating(
     value=1,
-    emptySymbol=DashIconify(icon="fa-regular:sun"),
-    fullSymbol=DashIconify(icon="fa-regular:moon"),
+    emptySymbol=DashIconify(icon="tabler:sun"),
+    fullSymbol=DashIconify(icon="tabler:moon"),
 )

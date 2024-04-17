@@ -1,6 +1,6 @@
 ---
 name: Rating
-description: Rating component
+description: Pick and display rating
 endpoint: /components/rating
 package: dash_mantine_components
 ---
@@ -9,41 +9,31 @@ package: dash_mantine_components
 
 ### Introduction
 
-
 .. exec::docs.rating.interactive
     :code: false
-
 
 ### Read only
 
 .. exec::docs.rating.readonly
 
-
 ### Fractions
 
 .. exec::docs.rating.fractions
-
 
 ### Custom Symbol
 
 .. exec::docs.rating.icons
 
-
-### Highlight Selected Only
-
-.. exec::docs.rating.highlightselectedonly
-
-
 ### Styles API
 
-| Name        | Static selector             | Description                                |
-|:------------|:----------------------------|:-------------------------------------------|
-| root        | .mantine-Rating-root        | Root element                               |
-| symbolGroup | .mantine-Rating-symbolGroup | Container for fraction symbols             |
-| input       | .mantine-Rating-input       | Input element                              |
-| label       | .mantine-Rating-label       | Label element                              |
-| symbolBody  | .mantine-Rating-symbolBody  | Element inside label that hold symbol icon |
-
+| Name        | Static selector             | Description                                 |
+|:------------|:----------------------------|:--------------------------------------------|
+| root        | .mantine-Rating-root        | Root element                                |
+| starSymbol  | .mantine-Rating-starSymbol  | Default star icon                           |
+| input       | .mantine-Rating-input       | Item input, hidden by default               |
+| label       | .mantine-Rating-label       | Item label, used to display star icon       |
+| symbolBody  | .mantine-Rating-symbolBody  | Wrapper around star icon for centering      |
+| symbolGroup | .mantine-Rating-symbolGroup | Group of symbols, used to display fractions |
 
 ### Keyword Arguments
 
