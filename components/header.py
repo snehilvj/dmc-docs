@@ -10,6 +10,7 @@ def create_link(icon, href):
         ),
         href=href,
         target="_blank",
+        visibleFrom="xs",
     )
 
 

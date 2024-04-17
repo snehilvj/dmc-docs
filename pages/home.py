@@ -74,12 +74,12 @@ layout = html.Div(
                     id="features",
                 ),
                 dmc.Highlight(
-                    "With more than 80 components from Mantine React Library",
+                    "With more than 90 components from Mantine React Library",
                     ta="center",
                     mt=10,
                     mb=20,
                     mx=0,
-                    highlight=["more than 80 components"],
+                    highlight=["more than 90 components"],
                 ),
                 dmc.Group(
                     [

@@ -22,4 +22,5 @@ layout = dmc.Stack(
         ),
         dmc.Anchor("Go back to home ->", href="/", underline=False),
     ],
+    mt=100,
 )
