@@ -30,6 +30,19 @@ def create_appshell(data):
                     }
                 },
             },
+            "colors": {
+                "myColor": [
+                    "#EFF7A9",
+                    "#DEEA80",
+                    "#CCD962",
+                    "#C9DC2F",
+                    "#BCD113",
+                    "#ABBF02",
+                    "#9CB000",
+                    "#869800",
+                    "#728100",
+                ]
+            },
         },
         children=[
             dcc.Store(id="theme-store", storage_type="local", data="light"),
