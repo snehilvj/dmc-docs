@@ -7,6 +7,6 @@ component = dmc.NumberInput(
     value=5,
     min=0,
     step=5,
-    icon=DashIconify(icon="fa6-solid:weight-scale"),
-    style={"width": 250},
+    leftSection=DashIconify(icon="fa6-solid:weight-scale"),
+    w=250,
 )

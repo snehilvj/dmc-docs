@@ -1,13 +1,12 @@
 import dash_mantine_components as dmc
 
 component = dmc.Group(
-    position="center",
+    justify="center",
     children=[
         dmc.Tooltip(
             children=[dmc.Badge(transition)],
-            transition=transition,
+            transitionProps={"transition": transition, "duration": 300},
             label=transition,
-            transitionDuration=300,
         )
         for transition in [
             "fade",

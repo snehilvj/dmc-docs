@@ -6,9 +6,9 @@ component = dmc.Tabs(
     [
         dmc.TabsList(
             [
-                dmc.Tab("Tab one", value="1"),
-                dmc.Tab("Tab two", value="2"),
-                dmc.Tab("Tab three", value="3"),
+                dmc.TabsTab("Tab one", value="1"),
+                dmc.TabsTab("Tab two", value="2"),
+                dmc.TabsTab("Tab three", value="3"),
             ]
         ),
         dmc.TabsPanel(create_graph(), value="1"),

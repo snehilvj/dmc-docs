@@ -1,15 +1,8 @@
 import dash_mantine_components as dmc
-from lib.configurator import create_configurator
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "withControls", "component": "Switch", "checked": True},
-    {"property": "withEdges", "component": "Switch", "checked": False},
-]
+from lib.configurator import Configurator
 
-demo = dmc.Pagination(
+target = dmc.Pagination(
     total=10,
     size="md",
     radius="sm",
@@ -17,4 +10,12 @@ demo = dmc.Pagination(
     withEdges=False,
 )
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target)
+
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("size", "md")
+configurator.add_slider("radius", "sm")
+configurator.add_switch("withControls", True)
+configurator.add_switch("withEdges", False)
+
+component = configurator.panel

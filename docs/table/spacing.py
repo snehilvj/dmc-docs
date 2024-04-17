@@ -1,18 +1,23 @@
-from pathlib import Path
-
 import dash_mantine_components as dmc
-import pandas as pd
 
-from lib.configurator import create_configurator
-from lib.utils import create_table
+from lib.configurator import Configurator
 
-controls = [
-    {"property": "horizontalSpacing", "component": "DemoSlider", "value": "xs"},
-    {"property": "verticalSpacing", "component": "DemoSlider", "value": "xs"},
-]
+target = dmc.Table(
+    data={
+        "caption": "Some elements from periodic table",
+        "head": ["Element position", "Atomic mass", "Symbol", "Element name"],
+        "body": [
+            [6, 12.011, "C", "Carbon"],
+            [7, 14.007, "N", "Nitrogen"],
+            [39, 88.906, "Y", "Yttrium"],
+            [56, 137.33, "Ba", "Barium"],
+            [58, 140.12, "Ce", "Cerium"],
+        ],
+    }
+)
 
-df = pd.read_csv(Path.cwd().joinpath("docs/table/data.csv"))
+configurator = Configurator(target)
+configurator.add_slider("horizontalSpacing", "xs")
+configurator.add_slider("verticalSpacing", "xs")
 
-demo = dmc.Table(create_table(df))
-
-component = create_configurator(demo, controls, center=False)
+component = configurator.panel

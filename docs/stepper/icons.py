@@ -16,7 +16,6 @@ component = dmc.Container(
         dmc.Stepper(
             id="stepper-custom-icons",
             active=active,
-            breakpoint="sm",
             children=[
                 dmc.StepperStep(
                     label="First step",
@@ -25,7 +24,7 @@ component = dmc.Container(
                     progressIcon=get_icon(icon="material-symbols:account-circle"),
                     completedIcon=get_icon(icon="mdi:account-check"),
                     children=[
-                        dmc.Text("Step 1 content: Create an account", align="center")
+                        dmc.Text("Step 1 content: Create an account", ta="center")
                     ],
                 ),
                 dmc.StepperStep(
@@ -36,7 +35,7 @@ component = dmc.Container(
                     completedIcon=get_icon(
                         icon="material-symbols:mark-email-read-rounded"
                     ),
-                    children=[dmc.Text("Step 2 content: Verify email", align="center")],
+                    children=[dmc.Text("Step 2 content: Verify email", ta="center")],
                 ),
                 dmc.StepperStep(
                     label="Final step",
@@ -44,22 +43,20 @@ component = dmc.Container(
                     icon=get_icon(icon="material-symbols:lock-outline"),
                     progressIcon=get_icon(icon="material-symbols:lock-outline"),
                     completedIcon=get_icon(icon="material-symbols:lock-open-outline"),
-                    children=[
-                        dmc.Text("Step 3 content: Get full access", align="center")
-                    ],
+                    children=[dmc.Text("Step 3 content: Get full access", ta="center")],
                 ),
                 dmc.StepperCompleted(
                     children=[
                         dmc.Text(
                             "Completed, click back button to get to previous step",
-                            align="center",
+                            ta="center",
                         )
                     ]
                 ),
             ],
         ),
         dmc.Group(
-            position="center",
+            justify="center",
             mt="xl",
             children=[
                 dmc.Button("Back", id="back-custom-icons", variant="default"),

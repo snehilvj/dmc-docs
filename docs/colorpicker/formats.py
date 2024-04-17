@@ -4,7 +4,7 @@ from dash import html, Input, Output, callback
 component = html.Div(
     [
         dmc.Group(
-            position="apart",
+            justify="space-between",
             children=[
                 dmc.ColorPicker(id="colorpicker-format", format="hex", value="#343353"),
                 dmc.Select(

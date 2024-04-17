@@ -14,7 +14,7 @@ component = html.Div(
                             "External Link",
                             href="https://www.github.com/snehilvj",
                             target="_blank",
-                            icon=DashIconify(icon="radix-icons:external-link"),
+                            leftSection=DashIconify(icon="radix-icons:external-link"),
                         ),
                         dmc.MenuItem("Useless Button", id="useless-button", n_clicks=0),
                     ]

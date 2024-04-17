@@ -1,12 +1,13 @@
 ---
 name: ThemeIcon
-section: Data Display
-head: Render icon inside element with theme colors.
 description: Use ThemeIcon component to render icon inside element with theme colors.
-component: ThemeIcon
+endpoint: /components/themeicon
+package: dash_mantine_components
 ---
 
-##### Usage
+.. toc::
+
+### Usage
 
 ThemeIcon can be customized by setting its variant, size, radius and color.
 
@@ -23,15 +24,15 @@ dmc.ThemeIcon(
 ```
 
 .. exec::docs.themeicon.interactive
-    :prism: false
+    :code: false
 
-##### Colors
+### Colors
 
 ThemeIcon supports all colors from Mantine's theme colors.
 
 .. exec::docs.themeicon.colors
 
-##### Gradient Variant
+### Gradient Variant
 
 To use gradient as ThemeIcon background:
 
@@ -42,3 +43,15 @@ To use gradient as ThemeIcon background:
 * `deg` is linear gradient deg.
 
 .. exec::docs.themeicon.gradient
+
+### Styles API
+
+| Name        | Static selector         | Description                                      |
+|:------------|:------------------------|:-------------------------------------------------|
+| root        | .mantine-ThemeIcon-root | Root element                                     |
+
+### Keyword Arguments
+
+#### ThemeIcon
+
+.. kwargs::ThemeIcon

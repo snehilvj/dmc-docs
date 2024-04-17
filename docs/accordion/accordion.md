@@ -1,51 +1,144 @@
 ---
 name: Accordion
-section: Data Display
-head: Divide content into collapsible sections.
 description: Use the Accordion and AccordionX components to toggle between hiding and showing large amount of content.
-component: Accordion, AccordionMultiple, AccordionControl, AccordionItem, AccordionPanel
-styles: accordion
+endpoint: /components/accordion
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.accordion.interactive
-    :prism: false
+    :code: false
 
-##### Simple Example
+### Multiple Items
 
-This is a basic example showing how you can compose an accordion using dmc's Accordion and AccordionX components.  
+Set `multiple=True` to enable opening multiple items.
 
-.. exec::docs.accordion.simple
+```python
+import dash_mantine_components as dmc
 
-##### Customizing chevron
-
-You can use [dash-iconify](/dash-iconify) to change the chevron icon.
-
-.. exec::docs.accordion.chevron
-
-##### With icons
-
-You can customize icons in your accordion with `icon`, `iconSize` and `iconPosition` props.
-
-.. exec::docs.accordion.icons
-
-##### Callbacks and State Management
-
-A `state` is associated with each Accordion component. Click on any section to see how it looks.
-
-.. exec::docs.accordion.state
-
-##### Multiple Items
-
-Use dmc.AccordionMultiple to allow opening multiple items.
+dmc.Accordion(
+    children=[...],
+    multiple=True
+)
+```
 
 .. exec::docs.accordion.multiple
+    :code: false
 
-##### Custom Accordion Label
+### Custom Accordion Label
 
 .. exec::docs.accordion.label
 
-##### Styles API
+### Customizing chevron
 
-.. exec::docs.accordion.styles
+You can use [dash-iconify](/dash-iconify) to change the chevron icon.
+
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.Accordion(
+    chevron=DashIconify(icon="ant-design:plus-outlined"),
+    disableChevronRotation=True,
+    children=[...]
+)
+```
+
+.. exec::docs.accordion.chevron
+    :code: false
+
+### With icons
+
+.. exec::docs.accordion.icons
+
+### Change transition
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Accordion(
+    children=[...],
+    transitionDuration=1000
+)
+```
+
+.. exec::docs.accordion.transition
+    :code: false
+
+### Default opened items
+
+Provide a default value using the `value` prop.
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Accordion(
+    children=[...],
+    value="flexibility"
+)
+```
+
+If `multiple` is `True`, then value will be a list:
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Accordion(
+    children=[...],
+    value=["flexibility", ]
+)
+```
+
+.. exec::docs.accordion.default
+
+### Callbacks and State Management
+
+.. exec::docs.accordion.state
+
+### Disabled Item
+
+Set `disabled=True` in dmc.AccordionControl to disable it. 
+
+```python
+import dash_mantine_components as dmc
+
+dmc.AccordionControl(children=[...], disabled=True)
+```
+
+.. exec::docs.accordion.disabled
+    :code: false
+
+### Styles API
+
+| Name      | Static selector              | Description                               |
+|-----------|------------------------------|-------------------------------------------|
+| root      | .mantine-Accordion-root      | Root element                              |
+| item      | .mantine-Accordion-item      | Accordion item wrapper                    |
+| itemTitle | .mantine-Accordion-itemTitle | Optional heading element wrapping control |
+| control   | .mantine-Accordion-control   | Control root                              |
+| label     | .mantine-Accordion-label     | Control label                             |
+| icon      | .mantine-Accordion-icon      | Control icon                              |
+| chevron   | .mantine-Accordion-chevron   | Control chevron icon                      |
+| panel     | .mantine-Accordion-panel     | Panel root                                |
+| content   | .mantine-Accordion-content   | Panel content                             |
+
+### Keyword Arguments
+
+#### Accordion
+
+.. kwargs::Accordion
+
+#### AccordionControl
+
+.. kwargs::AccordionControl
+
+#### AccordionItem
+
+.. kwargs::AccordionItem
+
+#### AccordionPanel
+
+.. kwargs::AccordionPanel

@@ -1,87 +1,104 @@
 ---
 name: DatePicker
-section: Inputs
-head: Capture date inputs from user.
-description: Best DatePicker and DateRangePicker components out there. Helps you easily switch between different months, years along with locale support.
-component: DatePicker, DateRangePicker
-styles: date-picker
-category: dates
+description: Date, multiple dates and dates range picker input. Helps you easily switch between different months, years along with locale support.
+endpoint: /components/datepicker
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 This is a simple example of DatePicker tied to a callback. You can either use strings in a valid datetime format such
 as `YYYY-MM-DD` or use the date object from datetime library.
 
 .. exec::docs.datepicker.simple
 
-##### DateRangePicker
+### Multiple dates
 
-DateRangePicker component supports the same props as DatePicker component.
+Set type="multiple" to allow user to pick multiple dates.  Note that `value` is a list.
+
+.. exec::docs.datepicker.multiple
+
+### Dates range
+
+Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
 .. exec::docs.datepicker.range
 
-##### Date formats
+### Open picker in modal
 
-Use `format` property to change the format of the date displayed in the date picker. You can use any permutation from
-the below table to achieve the desired date format. Note: This is not the format of the value you'll receive from the
-date picker in a callback. That will always follow: `YYYY-MM-DD`.
-
-| Format | Output           | Description                           |
-|--------|------------------|---------------------------------------|
-| YY     | 18               | Two-digit year                        |
-| YYYY   | 2018             | Four-digit year                       |
-| M      | 1-12             | The month: beginning at 1             |
-| MM     | 01-12            | The month: 2-digits                   |
-| MMM    | Jan-Dec          | The abbreviated month name            |
-| MMMM   | January-December | The full month name                   |
-| D      | 1-31             | The day of the month                  |
-| DD     | 01-31            | The day of the month: 2-digits        |
-| d      | 0-6              | The day of the week: with Sunday as 0 |
-| dd     | Su-Sa            | The min name of the day of the week   |
-| ddd    | Sun-Sat          | The short name of the day of the week |
-| dddd   | Sunday-Saturday  | The name of the day of the week       |
-
-##### Date Format Examples
-
-.. exec::docs.datepicker.formats
-
-##### Localization
-
-DatePicker component uses dayjs behind the scenes. So you can easily customize locale by including required locale data
-and setting the `locale` prop. Make sure to include proper localization file from dayjs library.
-
-```python
-from dash import Dash
-
-scripts = [
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/ru.min.js",
-]
-
-app = Dash(__name__, external_scripts=scripts)
-```
-
-.. exec::docs.datepicker.locale
-
-##### Clear and Overlay Mode
-
-dmc.DatePicker is clearable by default. You can change this behaviour by setting the `clearable` prop to `False`.
-dmc.DatePicker also supports opening date picker as an overlay instead of the normal popover mode. To enable that, set
-the type `dropdownType` prop to `modal`.
+By default, DatePicker is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
 
 .. exec::docs.datepicker.modal
 
-##### Amount of months
+### Number of columns
 
-You can display more than one month in date picker dropdown by setting the `amountOfMonths` prop to the desired value.
+.. exec::docs.datepicker.columns
 
-.. exec::docs.datepicker.amount
+### Value format
 
-##### Error Display
+Use `format` property to change the format of the date displayed in the date input field.
+
+.. exec::docs.datepicker.formats
+
+Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label.
+
+### Clearable
+
+Set `clearable=True` prop to display clear button in the right section. Note that if you set `rightSection` prop, clear button will not be displayed.
+
+.. exec::docs.datepicker.clearable
+
+### Error Display
 
 You can convey errors in your date picker by setting the `error` prop. For instance, in the below example we try to
 convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
 set `clearable=False`.
 
 .. exec::docs.datepicker.errors
+
+### Localization
+
+For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
+
+### Styles API
+
+| Name                      | Static selector                                    | Description                                                          |
+|:--------------------------|:---------------------------------------------------|:---------------------------------------------------------------------|
+| wrapper                   | .mantine-DatePickerInput-wrapper                   | Root element of the Input                                            |
+| input                     | .mantine-DatePickerInput-input                     | Input element                                                        |
+| section                   | .mantine-DatePickerInput-section                   | Left and right sections                                              |
+| root                      | .mantine-DatePickerInput-root                      | Root element                                                         |
+| label                     | .mantine-DatePickerInput-label                     | Label element                                                        |
+| required                  | .mantine-DatePickerInput-required                  | Required asterisk element, rendered inside label                     |
+| description               | .mantine-DatePickerInput-description               | Description element                                                  |
+| error                     | .mantine-DatePickerInput-error                     | Error element                                                        |
+| calendarHeader            | .mantine-DatePickerInput-calendarHeader            | Calendar header root element                                         |
+| calendarHeaderControl     | .mantine-DatePickerInput-calendarHeaderControl     | Previous/next calendar header controls                               |
+| calendarHeaderControlIcon | .mantine-DatePickerInput-calendarHeaderControlIcon | Icon of previous/next calendar header controls                       |
+| calendarHeaderLevel       | .mantine-DatePickerInput-calendarHeaderLevel       | Level control (changes levels when clicked, month -> year -> decade) |
+| levelsGroup               | .mantine-DatePickerInput-levelsGroup               | Group of decades levels                                              |
+| yearsList                 | .mantine-DatePickerInput-yearsList                 | Years list table element                                             |
+| yearsListRow              | .mantine-DatePickerInput-yearsListRow              | Years list row element                                               |
+| yearsListCell             | .mantine-DatePickerInput-yearsListCell             | Years list cell element                                              |
+| yearsListControl          | .mantine-DatePickerInput-yearsListControl          | Button used to pick months and years                                 |
+| monthsList                | .mantine-DatePickerInput-monthsList                | Years list table element                                             |
+| monthsListRow             | .mantine-DatePickerInput-monthsListRow             | Years list row element                                               |
+| monthsListCell            | .mantine-DatePickerInput-monthsListCell            | Years list cell element                                              |
+| monthsListControl         | .mantine-DatePickerInput-monthsListControl         | Button used to pick months and years                                 |
+| monthThead                | .mantine-DatePickerInput-monthThead                | thead element of month table                                         |
+| monthRow                  | .mantine-DatePickerInput-monthRow                  | tr element of month table                                            |
+| monthTbody                | .mantine-DatePickerInput-monthTbody                | tbody element of month table                                         |
+| monthCell                 | .mantine-DatePickerInput-monthCell                 | td element of month table                                            |
+| month                     | .mantine-DatePickerInput-month                     | Month table element                                                  |
+| weekdaysRow               | .mantine-DatePickerInput-weekdaysRow               | Weekdays tr element                                                  |
+| weekday                   | .mantine-DatePickerInput-weekday                   | Weekday th element                                                   |
+| day                       | .mantine-DatePickerInput-day                       | Month day control                                                    |
+| placeholder               | .mantine-DatePickerInput-placeholder               | Placeholder element                                                  |
+
+### Keyword Arguments
+
+#### DatePicker
+
+.. kwargs::DatePicker

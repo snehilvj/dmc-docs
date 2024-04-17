@@ -1,24 +1,24 @@
 ---
 name: Textarea
-section: Inputs
-head: Renders textarea with optional autosize variant.
 description: Use Textarea component to capture string input in a text area with an auto-size variant. Customize the input with label, description, error message etc.
-component: Textarea
-styles: textarea
+endpoint: /components/textarea
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.textarea.interactive
-    :prism: false
+    :code: false
 
-##### Autosize
+### Autosize
 
 Textarea will grow until `maxRows` are reached or indefinitely if `maxRows` is not set.
 
 .. exec::docs.textarea.autosize
 
-##### Invalid State and Error
+### Invalid State and Error
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -32,3 +32,22 @@ input:invalid {
 ```
 
 .. exec::docs.textarea.error
+
+### Styles API
+
+| Name        | Static selector               | Description                                      |
+|:------------|:------------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-Textarea-wrapper     | Root element of the Input                        |
+| input       | .mantine-Textarea-input       | Input element                                    |
+| section     | .mantine-Textarea-section     | Left and right sections                          |
+| root        | .mantine-Textarea-root        | Root element                                     |
+| label       | .mantine-Textarea-label       | Label element                                    |
+| required    | .mantine-Textarea-required    | Required asterisk element, rendered inside label |
+| description | .mantine-Textarea-description | Description element                              |
+| error       | .mantine-Textarea-error       | Error element                                    |
+
+### Keyword Arguments
+
+#### Textarea
+
+.. kwargs::Textarea

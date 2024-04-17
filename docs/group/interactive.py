@@ -1,25 +1,17 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "position",
-        "component": "Select",
-        "data": [
-            "left",
-            "right",
-            "center",
-            "apart",
-        ],
-        "value": "left",
-    },
-    {"property": "spacing", "component": "DemoSlider", "value": "md"},
-    {"property": "grow", "component": "Switch", "checked": False},
-]
-
-demo = dmc.Group(
-    [dmc.Button(val, variant="outline") for val in ["1", "2", "3"]], position="left"
+target = dmc.Group(
+    [dmc.Button(val, variant="outline") for val in ["1", "2", "3"]],
+    justify="flex-start",
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+configurator.add_select(
+    "justify", ["flex-start", "center", "flex-end", "space-around"], "center"
+)
+configurator.add_slider("gap", "md")
+configurator.add_switch("grow", False)
+
+component = configurator.panel

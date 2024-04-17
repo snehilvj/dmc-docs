@@ -1,26 +1,16 @@
 import dash_mantine_components as dmc
-from lib.configurator import create_configurator
 
-controls = [
-    {
-        "property": "placeholder",
-        "component": "TextInput",
-        "value": "Your comment",
-        "placeholder": "Placeholder",
-    },
-    {
-        "property": "label",
-        "component": "TextInput",
-        "value": "Your comment",
-        "placeholder": "Label",
-    },
-    {"property": "description", "component": "TextInput", "placeholder": "Description"},
-    {"property": "error", "component": "TextInput", "placeholder": "Error"},
-    {"property": "size", "component": "DemoSlider", "value": "sm"},
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "required", "component": "Switch", "checked": True},
-]
+from lib.configurator import Configurator
 
-demo = dmc.Textarea(label="Your comment", placeholder="Your comment", required=True)
+target = dmc.Textarea(label="Your comment", placeholder="Your comment", required=True)
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+configurator.add_text_input("placeholder", "Your comment")
+configurator.add_text_input("label", "Your comment")
+configurator.add_text_input("description", "", **{"placeholder": "Description"})
+configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "sm")
+configurator.add_switch("required", True)
+
+component = configurator.panel

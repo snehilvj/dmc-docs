@@ -1,33 +1,8 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "chevronPosition",
-        "component": "DemoSegmentedControl",
-        "data": ["left", "right"],
-        "value": "left",
-    },
-    {
-        "property": "variant",
-        "component": "Select",
-        "data": ["default", "contained", "filled", "separated"],
-        "value": "default",
-    },
-    {
-        "property": "disableChevronRotation",
-        "component": "Switch",
-        "checked": False,
-    },
-    {
-        "property": "radius",
-        "component": "DemoSlider",
-        "value": "sm",
-    },
-]
-
-demo = dmc.Accordion(
+target = dmc.Accordion(
     children=[
         dmc.AccordionItem(
             [
@@ -60,4 +35,13 @@ demo = dmc.Accordion(
     ],
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+
+configurator.add_segmented_control("chevronPosition", ["left", "right"], "left")
+configurator.add_select(
+    "variant", ["default", "contained", "filled", "separated"], "separated"
+)
+configurator.add_switch("disableChevronRotation", False)
+configurator.add_slider("radius", "sm")
+
+component = configurator.panel

@@ -1,9 +1,6 @@
 import dash_mantine_components as dmc
 
-component = dmc.Center(
-    children=[
-        dmc.Image(
-            src="/assets/superman.jpeg", alt="superman", caption="Funny Meme", width=200
-        )
-    ]
+component = dmc.Image(
+    radius="md",
+    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png",
 )

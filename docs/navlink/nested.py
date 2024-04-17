@@ -12,7 +12,7 @@ component = html.Div(
     children=[
         dmc.NavLink(
             label="First parent link",
-            icon=get_icon(icon="tabler:gauge"),
+            leftSection=get_icon(icon="tabler:gauge"),
             childrenOffset=28,
             children=[
                 dmc.NavLink(label="First child link"),
@@ -30,7 +30,7 @@ component = html.Div(
         ),
         dmc.NavLink(
             label="Second parent link",
-            icon=get_icon(icon="tabler:fingerprint"),
+            leftSection=get_icon(icon="tabler:fingerprint"),
             childrenOffset=28,
             opened=True,
             children=[

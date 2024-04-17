@@ -1,11 +1,12 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {"property": "highlightColor", "component": "ColorPicker", "value": "#94d92e"},
-]
+target = dmc.Highlight(
+    "Highlight this, definitely this and also this!", highlight="this"
+)
 
-demo = dmc.Highlight("Highlight this, definitely this and also this!", highlight="this")
+configurator = Configurator(target)
+configurator.add_colorpicker("color", "lime")
 
-component = create_configurator(demo, controls)
+component = configurator.panel

@@ -1,33 +1,29 @@
-import uuid
-
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "position",
-        "component": "Select",
-        "data": ["left", "right", "center", "apart"],
-        "value": "left",
-    },
-    {"property": "grow", "component": "Switch", "checked": False},
-]
+TARGET_ID = "interactive-tabs-position"
 
-cid = str(uuid.uuid4())
-
-demo = dmc.Tabs(
+target = dmc.Tabs(
     [
         dmc.TabsList(
             [
-                dmc.Tab("Gallery", value="gallery"),
-                dmc.Tab("Messages", value="messages"),
-                dmc.Tab("Settings", value="settings"),
+                dmc.TabsTab("Gallery", value="gallery"),
+                dmc.TabsTab("Messages", value="messages"),
+                dmc.TabsTab("Settings", value="settings"),
             ],
-            id=cid,
+            id=TARGET_ID,
         ),
     ],
     value="gallery",
 )
 
-component = create_configurator(demo, controls, center=False, cid=cid)
+
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_select(
+    "justify", ["flex-start", "center", "flex-end", "space-around"], "center"
+)
+configurator.add_switch("grow", False)
+
+component = configurator.panel

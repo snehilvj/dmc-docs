@@ -1,13 +1,26 @@
 ---
 name: Affix
-section: Overlay
-head: Render react node at fixed position.
 description: Use the Affix component to show content at any fixed positon inside your app.
-component: Affix
+endpoint: /components/affix
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 Look at the bottom right!
 
 .. exec::docs.affix.simple
+
+### Styles API
+
+| Name   | Static selector     | Description                                                             |
+|--------|---------------------|-------------------------------------------------------------------------|
+| root   | .mantine-Affix-root | Root element                                                            |
+
+### Keyword Arguments
+
+#### Affix
+
+.. kwargs::Affix

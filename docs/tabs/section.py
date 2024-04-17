@@ -5,18 +5,14 @@ component = dmc.Tabs(
     [
         dmc.TabsList(
             [
-                dmc.Tab(
+                dmc.TabsTab(
                     "Messages",
                     rightSection=dmc.Badge(
-                        "6",
-                        size="xs",
-                        p=0,
-                        variant="filled",
-                        sx={"width": 16, "height": 16, "pointerEvents": "none"},
+                        "6", size="xs", p=0, variant="filled", circle=True
                     ),
                     value="messages",
                 ),
-                dmc.Tab(
+                dmc.TabsTab(
                     "Settings",
                     rightSection=DashIconify(icon="tabler:alert-circle", width=16),
                     value="settings",

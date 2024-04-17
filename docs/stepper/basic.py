@@ -10,37 +10,32 @@ component = html.Div(
         dmc.Stepper(
             id="stepper-basic-usage",
             active=active,
-            breakpoint="sm",
             children=[
                 dmc.StepperStep(
                     label="First step",
                     description="Create an account",
-                    children=dmc.Text(
-                        "Step 1 content: Create an account", align="center"
-                    ),
+                    children=dmc.Text("Step 1 content: Create an account", ta="center"),
                 ),
                 dmc.StepperStep(
                     label="Second step",
                     description="Verify email",
-                    children=dmc.Text("Step 2 content: Verify email", align="center"),
+                    children=dmc.Text("Step 2 content: Verify email", ta="center"),
                 ),
                 dmc.StepperStep(
                     label="Final step",
                     description="Get full access",
-                    children=dmc.Text(
-                        "Step 3 content: Get full access", align="center"
-                    ),
+                    children=dmc.Text("Step 3 content: Get full access", ta="center"),
                 ),
                 dmc.StepperCompleted(
                     children=dmc.Text(
                         "Completed, click back button to get to previous step",
-                        align="center",
+                        ta="center",
                     )
                 ),
             ],
         ),
         dmc.Group(
-            position="center",
+            justify="center",
             mt="xl",
             children=[
                 dmc.Button("Back", id="back-basic-usage", variant="default"),

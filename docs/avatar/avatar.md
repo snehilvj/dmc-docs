@@ -1,19 +1,17 @@
 ---
 name: Avatar
-section: Data Display
-head: Display user profile image, initials or fallback icon.
 description: Use Avatar to display user profile pictures. It supports images, icons, or letters. Use AvatarGroup to display stack Avatar components.
-component: Avatar, AvatarGroup
-styles: avatar
+endpoint: /components/avatar
+package: dash_mantine_components
 ---
 
-##### Simple Usage
+.. toc::
 
-Use Avatar to display user profile pictures. It supports images, icons, or letters.
+### Simple Usage
 
 .. exec::docs.avatar.simple
 
-##### Size and Radius
+### Size and Radius
 
 Control Avatar's height and width with `size` prop and border-radius with `radius` prop. Both props have
 predefined values: xs, sm, md, lg, xl. Alternatively, a number can be used to set radius or size in px.
@@ -28,20 +26,38 @@ dmc.Avatar(src="/assets/avatar.jpeg", size="xl", radius=20),
 ```
 
 .. exec::docs.avatar.interactive
-    :prism: false
+    :code: false
 
-##### AvatarGroup
+### Avatar Group
 
 Use AvatarGroup to stack Avatar components.
 
 .. exec::docs.avatar.group
 
-##### Avatar link with tooltip
+### Avatar link with tooltip
 
 .. exec::docs.avatar.tooltip
 
-##### Dynamically created AvatarGroup
+### Dynamically created AvatarGroup
 
-Here's an example of a dynamically created AvatarGroup from github contributors to dmc library.
+Here's an example of a dynamically created AvatarGroup from GitHub contributors to dmc library.
 
 .. exec::docs.avatar.contributors
+
+### Styles API
+
+| Name            | Static selector                 | Description                                               |
+|:----------------|:--------------------------------|:----------------------------------------------------------|
+| root            | .mantine-Avatar-root            | Root element                                              |
+| image           | .mantine-Avatar-image           | `img` element                                             |
+| placeholder     | .mantine-Avatar-placeholder     | Placeholder element, rendered when image cannot be loaded |
+
+### Keyword Arguments
+
+#### Avatar
+
+.. kwargs::Avatar
+
+#### AvatarGroup
+
+.. kwargs::AvatarGroup

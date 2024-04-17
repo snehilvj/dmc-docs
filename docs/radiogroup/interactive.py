@@ -1,26 +1,19 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "orientation",
-        "component": "DemoSegmentedControl",
-        "data": ["horizontal", "vertical"],
-        "value": "horizontal",
-    },
-    {"property": "spacing", "component": "DemoSlider", "value": "md"},
-    {"property": "size", "component": "DemoSlider", "value": "sm"},
-    {"property": "required", "component": "Switch", "checked": False},
-]
+TARGET_ID = "interactive-radio"
 
-demo = dmc.RadioGroup(
-    [dmc.Radio(x, value=x) for x in ["React", "Angular", "Dash", "Django"]],
-    size="sm",
-    spacing="md",
-    label="Select your favorite framework/library",
-    description="This is anonymous",
-    value="React",
-)
+target = dmc.Center(dmc.Radio(label="Radio item", id=TARGET_ID))
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, target_id=TARGET_ID)
+
+configurator.add_segmented_control("labelPosition", ["right", "left"], "right")
+configurator.add_text_input("label", "Radio item", **{"placeholder": "Label"})
+configurator.add_text_input("description", "", **{"placeholder": "Description"})
+configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("size", "sm")
+configurator.add_switch("disabled", False)
+
+component = configurator.panel

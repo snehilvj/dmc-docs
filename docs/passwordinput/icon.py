@@ -3,7 +3,7 @@ from dash_iconify import DashIconify
 
 component = dmc.PasswordInput(
     label="Your password:",
-    style={"width": 250},
+    w=250,
     placeholder="Your password",
-    icon=DashIconify(icon="bi:shield-lock"),
+    leftSection=DashIconify(icon="bi:shield-lock"),
 )

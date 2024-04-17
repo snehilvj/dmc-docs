@@ -1,27 +1,27 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-# fmt:off
-images = [
-  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
-  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
-  dmc.Image(radius="sm", src='https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80'),
+urls = [
+    "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
+    "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
+    "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png",
 ]
-# fmt:on
+
+images = [dmc.Image(radius="sm", src=url) for url in urls]
 
 component = dmc.Card(
     children=[
         dmc.CardSection(
             dmc.Group(
                 children=[
-                    dmc.Text("Review Pictures", weight=500),
+                    dmc.Text("Review Pictures", fw=500),
                     dmc.ActionIcon(
                         DashIconify(icon="carbon:overflow-menu-horizontal"),
                         color="gray",
                         variant="transparent",
                     ),
                 ],
-                position="apart",
+                justify="space-between",
             ),
             withBorder=True,
             inheritPadding=True,
@@ -31,18 +31,18 @@ component = dmc.Card(
             children=[
                 dmc.Text(
                     "200+ images uploaded",
-                    color="blue",
+                    c="blue",
                     style={"display": "inline"},
                 ),
                 " since last visit, review them to select which one should be added to your gallery",
             ],
             mt="sm",
-            color="dimmed",
+            c="dimmed",
             size="sm",
         ),
         dmc.CardSection(
             dmc.Image(
-                src="https://images.unsplash.com/photo-1579263477001-7a703f1974e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+                src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png",
                 mt="sm",
             ),
         ),
@@ -58,5 +58,5 @@ component = dmc.Card(
     withBorder=True,
     shadow="sm",
     radius="md",
-    style={"width": 350},
+    w=350,
 )

@@ -5,7 +5,7 @@ component = dmc.MultiSelect(
     data=["USDINR", "EURUSD", "USDTWD", "USDJPY"],
     id="multi-select-error",
     value=["USDJPY"],
-    style={"width": 400},
+    w=400,
 )
 
 

@@ -1,7 +1,6 @@
 import dash_mantine_components as dmc
 
 component = dmc.MantineProvider(
-    inherit=True,
     theme={
         "components": {
             "Badge": {

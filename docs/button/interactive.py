@@ -1,31 +1,22 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "variant",
-        "component": "Select",
-        "data": [
-            "link",
-            "filled",
-            "outline",
-            "light",
-            "gradient",
-            "white",
-            "subtle",
-            "default",
-        ],
-        "value": "filled",
-    },
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "size", "component": "DemoSlider", "value": "sm"},
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "loading", "component": "Switch", "checked": False},
-    {"property": "compact", "component": "Switch", "checked": False},
-    {"property": "disabled", "component": "Switch", "checked": False},
-]
+TARGET_ID = "button-interactive"
 
-demo = dmc.Button("Settings")
+target = dmc.Center(dmc.Button("Settings", id=TARGET_ID))
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_select(
+    "variant",
+    ["link", "filled", "outline", "light", "gradient", "subtle", "default"],
+    "filled",
+)
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "sm")
+configurator.add_switch("loading", False)
+configurator.add_switch("disabled", False)
+
+component = configurator.panel

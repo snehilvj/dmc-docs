@@ -8,10 +8,12 @@ component = html.Div(
             title="Drawer Example",
             id="drawer-fancy",
             padding="md",
-            transition="rotate-left",
-            transitionDuration=250,
+            transitionProps={
+                "transition": "rotate-left",
+                "duration": 1000,
+                "timingFunction": "ease",
+            },
             zIndex=10000,
-            transitionTimingFunction="ease",
         ),
     ]
 )

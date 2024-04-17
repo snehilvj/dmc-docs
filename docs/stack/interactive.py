@@ -1,26 +1,8 @@
 import dash_mantine_components as dmc
-from dash import html
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-
-controls = [
-    {
-        "property": "align",
-        "component": "Select",
-        "data": ["stretch", "center", "flex-end", "flex-start"],
-        "value": "flex-start",
-    },
-    {
-        "property": "justify",
-        "component": "Select",
-        "data": ["space-between", "space-around", "center", "flex-end", "flex-start"],
-        "value": "center",
-    },
-    {"property": "spacing", "component": "DemoSlider", "value": "sm"},
-]
-
-demo = dmc.Stack(
+target = dmc.Stack(
     [
         dmc.Button("1", variant="outline"),
         dmc.Button("2", variant="outline"),
@@ -31,4 +13,17 @@ demo = dmc.Stack(
     justify="center",
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+
+configurator.add_select(
+    "align", ["stretch", "center", "flex-end", "flex-start"], "flex-start"
+)
+configurator.add_select(
+    "justify",
+    ["space-between", "space-around", "center", "flex-end", "flex-start"],
+    "center",
+)
+configurator.add_slider("gap", "sm")
+
+
+component = configurator.panel

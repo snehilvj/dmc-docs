@@ -1,20 +1,18 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "variant",
-        "component": "DemoSegmentedControl",
-        "data": ["filled", "light", "outline"],
-        "value": "filled",
-    },
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-]
+TARGET_ID = "interactive-themeicon"
 
-demo = dmc.ThemeIcon(children=DashIconify(icon="tabler:photo"))
+target = dmc.Center(
+    dmc.ThemeIcon(children=DashIconify(icon="tabler:photo", width=20), id=TARGET_ID)
+)
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+configurator.add_segmented_control("variant", ["filled", "light", "outline"], "filled")
+configurator.add_slider("size", "md")
+configurator.add_slider("radius", "sm")
+configurator.add_colorpicker("color", "indigo")
+
+component = configurator.panel

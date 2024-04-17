@@ -13,7 +13,7 @@ component = html.Div(
                     dmc.Text(
                         "BackgroundImage component can be used to add any content on image. It is used for cards, "
                         "hero headers and similar components",
-                        color="yellow",
+                        c="yellow",
                     )
                 ],
             )

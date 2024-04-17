@@ -6,27 +6,28 @@ from dash.exceptions import PreventUpdate
 
 component = html.Div(
     [
-        dmc.DateRangePicker(
-            id="date-range-picker",
+        dmc.DatePicker(
+            id="date-input-range-picker",
             label="Date Range",
-            description="You can also provide a description",
+            description="Select a date range",
             minDate=date(2020, 8, 5),
+            type="range",
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
-            style={"width": 330},
+            maw=300,
         ),
         dmc.Space(h=10),
-        dmc.Text(id="selected-date-date-range-picker"),
+        dmc.Text(id="selected-date-input-range-picker"),
     ]
 )
 
 
 @callback(
-    Output("selected-date-date-range-picker", "children"),
-    Input("date-range-picker", "value"),
+    Output("selected-date-input-range-picker", "children"),
+    Input("date-input-range-picker", "value"),
 )
 def update_output(dates):
-    prefix = "You have selected: "
-    if dates:
-        return prefix + "   -   ".join(dates)
+    prefix = "You have selected from "
+    if None not in dates:
+        return prefix + "   to   ".join(dates)
     else:
         raise PreventUpdate

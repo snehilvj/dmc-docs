@@ -16,7 +16,7 @@ def create_contributors_list():
         avatar = dmc.Avatar(src=user["avatar_url"], radius="xl")
         children.append(avatar)
 
-    return dmc.AvatarGroup(children)
+    return dmc.AvatarGroup(children, id="avatar-group")
 
 
 component = create_contributors_list() if "CONTRIB_TOKEN" in environ else None

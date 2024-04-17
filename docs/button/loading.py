@@ -10,7 +10,7 @@ component = html.Div(
         dmc.Button(
             "Load from database",
             id="loading-button",
-            leftIcon=DashIconify(icon="fluent:database-plug-connected-20-filled"),
+            leftSection=DashIconify(icon="fluent:database-plug-connected-20-filled"),
         ),
         dmc.Text(id="clicked-output", mt=10),
     ]

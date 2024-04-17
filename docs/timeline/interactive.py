@@ -1,43 +1,87 @@
-import copy
+import dash_mantine_components as dmc
+from lib.configurator import Configurator
 
-from lib.configurator import create_configurator
-from docs.timeline.simple import component as timeline
+TARGET_ID = "interactive-timeline"
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "radius", "component": "DemoSlider", "value": "xl"},
-    {
-        "property": "active",
-        "component": "NumberInput",
-        "value": 1,
-        "min": 0,
-        "max": 3,
-        "step": 1,
-    },
-    {"property": "reverseActive", "component": "Switch", "checked": False},
-    {
-        "property": "lineWidth",
-        "component": "NumberInput",
-        "value": 2,
-        "min": 1,
-        "max": 8,
-        "step": 1,
-    },
-    {
-        "property": "bulletSize",
-        "component": "NumberInput",
-        "value": 15,
-        "min": 12,
-        "max": 30,
-        "step": 1,
-    },
-    {
-        "property": "align",
-        "component": "DemoSegmentedControl",
-        "data": ["left", "right"],
-        "value": "left",
-    },
-]
+target = dmc.Timeline(
+    id=TARGET_ID,
+    active=1,
+    bulletSize=15,
+    lineWidth=2,
+    children=[
+        dmc.TimelineItem(
+            title="New Branch",
+            children=[
+                dmc.Text(
+                    [
+                        "You've created new branch ",
+                        dmc.Anchor("fix-notification", href="#", size="sm"),
+                        " from master",
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+        ),
+        dmc.TimelineItem(
+            title="Commits",
+            children=[
+                dmc.Text(
+                    [
+                        "You've pushed 23 commits to ",
+                        dmc.Anchor("fix-notification", href="#", size="sm"),
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+        ),
+        dmc.TimelineItem(
+            title="Pull Request",
+            lineVariant="dashed",
+            children=[
+                dmc.Text(
+                    [
+                        "You've submitted a pull request ",
+                        dmc.Anchor(
+                            "Fix incorrect notification message (#178)",
+                            href="#",
+                            size="sm",
+                        ),
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+        ),
+        dmc.TimelineItem(
+            [
+                dmc.Text(
+                    [
+                        dmc.Anchor(
+                            "AnnMarieW",
+                            href="https://github.com/AnnMarieW",
+                            size="sm",
+                        ),
+                        " left a comment on your pull request",
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+            title="Code Review",
+        ),
+    ],
+)
 
-demo = copy.deepcopy(timeline)
-component = create_configurator(demo, controls)
+
+configurator = Configurator(target, TARGET_ID)
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("radius", "xl")
+configurator.add_number_input("active", 2, **{"min": -1, "max": 3})
+configurator.add_switch("reverseActive", False)
+configurator.add_number_input("lineWidth", 4, **{"min": 0, "max": 8})
+configurator.add_number_input("bulletSize", 20, **{"min": 12, "max": 30, "step": 2})
+configurator.add_segmented_control("align", ["left", "right"], "left")
+
+component = configurator.panel

@@ -1,20 +1,27 @@
 ---
 name: Table
-section: Typography
-head: Render table with theme styles.
 description: Use the Table component to display tables with Mantine's theme styles. An alternative to html.Table
-component: Table
+endpoint: /components/table
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
 
-Use Table component to add Mantine styled tables in your app. use `dmc.Table` as a drop-in replacement for `html.Table` 
-when constructing your table with dash-html-components i.e. `html.Th`, `html.Tr`, `html.Td`, `html.Tbody` and 
-`html.Thead`.
+### Simple Example
+
+Use Table component to add Mantine styled tables in your app. use `dmc.Table` and associated components as
+drop-in replacements for `html.Table` and associated components respectively.
 
 .. exec::docs.table.simple
 
-##### Spacing
+### data prop
+
+You can use `data` prop to automatically generate table rows from raw data. 
+`data` prop accepts an object with the following properties: `head`, `foot`, `body`, `caption`:
+
+.. exec::docs.table.data
+
+### Spacing
 
 To control spacing use `horizontalSpacing` and `verticalSpacing` props. Both props support spacing from Mantine's theme
 and number values to set cell padding in px.
@@ -25,28 +32,14 @@ import dash_mantine_components as dmc
 dmc.Table(
     verticalSpacing="sm",
     horizontalSpacing=10,
-    children=[...]
+    data={...}
 )
 ```
 
 .. exec::docs.table.spacing
-    :prism: false
+    :code: false
 
-A simple function can be written to construct this table directly from a dataframe.
-
-```python
-import dash_mantine_components as dmc
-from dash import html
-
-def create_table(df):
-    columns, values = df.columns, df.values
-    header = [html.Tr([html.Th(col) for col in columns])]
-    rows = [html.Tr([html.Td(cell) for cell in row]) for row in values]
-    table = [html.Thead(header), html.Tbody(rows)]
-    return table
-```
-
-##### Striped and Rows Hover
+### Striped and Rows Hover
 
 ```python
 import dash_mantine_components as dmc
@@ -56,9 +49,28 @@ dmc.Table(
     highlightOnHover=True,
     withBorder=True,
     withColumnBorders=True,
-    children=[...]
+    data={...}
 )
 ```
 
 .. exec::docs.table.striped
-    :prism: false
+    :code: false
+
+### Styles API
+
+| Name    | Static selector        | Description                                   |
+|:--------|:-----------------------|:----------------------------------------------|
+| table   | .mantine-Table-table   | Root `table` element (`Table` component)      |
+| thead   | .mantine-Table-thead   | `thead` element (`Table.Thead` component)     |
+| tbody   | .mantine-Table-tbody   | `tbody` element (`Table.Tbody` component)     |
+| tfoot   | .mantine-Table-tfoot   | `tfoot` element (`Table.Tfoot` component)     |
+| tr      | .mantine-Table-tr      | `tr` element (`Table.Tr` component)           |
+| th      | .mantine-Table-th      | `th` element (`Table.Th` component)           |
+| td      | .mantine-Table-td      | `td` element (`Table.Td` component)           |
+| caption | .mantine-Table-caption | `caption` element (`Table.Caption` component) |
+
+### Keyword Arguments
+
+#### Table
+
+.. kwargs::Table

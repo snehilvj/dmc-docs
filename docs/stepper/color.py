@@ -1,19 +1,22 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-    {"property": "radius", "component": "DemoSlider", "value": "xl"},
-]
+TARGET_ID = "interactive-stepper-color"
 
-demo = dmc.Stepper(
+target = dmc.Stepper(
     active=1,
     children=[
         dmc.StepperStep(label="First step", description="Create an account"),
         dmc.StepperStep(label="Second step", description="Verify email"),
     ],
+    id=TARGET_ID,
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "lg")
+
+component = configurator.panel

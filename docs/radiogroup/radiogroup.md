@@ -1,38 +1,63 @@
 ---
 name: RadioGroup
-section: Inputs
-head: Capture user feedback limited to small set of options.
-description: RadioGroup component gives user radio inputs to allow only one selection from a small set of options. 
-component: RadioGroup
-styles: radio
+description: RadioGroup component gives user radio inputs to allow only one selection from a small set of options.
+endpoint: /components/radiogroup
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
 
-Use RadioGroup when you need to capture user feedback limited to small set of options. It can be customized using 
-`spacing`, `size`, etc.
-
-.. exec::docs.radiogroup.interactive
-    :prism: false
-
-##### Callbacks
+### Simple Usage
 
 Use the `value` prop for callbacks.
 
 .. exec::docs.radiogroup.callback
 
-##### Size
+### Radio
 
-You can set the size of the component from one of xs, sm, md, lg and xl using the `size` prop.
+Each Radio item in a RadioGroup can be customized. The Radio component is a wrapper for input type radio.  Use Stack or Group to arrange multiple Radio items
 
-```python
-import dash_mantine_components as dmc
+.. exec::docs.radiogroup.interactive
+    :code: false
 
-dmc.RadioGroup(size="lg")
-```
+### Color
 
-##### Color
-
-In a RadioGroup component, the color property is not customized at the individual Radio level.
+In a RadioGroup component, the color property can be customized at the individual Radio level.
 
 .. exec::docs.radiogroup.color
+
+### Size
+
+You can set the size of all the Radio items by using the `size` prop in the RadioGroup component.  Use one of xs, sm, md, lg and xl.
+
+.. exec::docs.radiogroup.size
+
+### Group or Stack
+
+In a RadioGroup component, the Radio items can be arranged by using the Group or Stack components.
+
+.. exec::docs.radiogroup.group
+
+### Styles API
+
+| Name         | Static selector             | Description                                 |
+|:-------------|:----------------------------|:--------------------------------------------|
+| root         | .mantine-Radio-root         | Root element                                |
+| radio        | .mantine-Radio-radio        | Input element (`input[type="radio"]`)       |
+| icon         | .mantine-Radio-icon         | Radio icon, used to display checked icon    |
+| inner        | .mantine-Radio-inner        | Wrapper for `icon` and `input`              |
+| body         | .mantine-Radio-body         | Input body, contains all other elements     |
+| labelWrapper | .mantine-Radio-labelWrapper | Contains `label`, `description` and `error` |
+| label        | .mantine-Radio-label        | Label element                               |
+| description  | .mantine-Radio-description  | Description displayed below the label       |
+| error        | .mantine-Radio-error        | Error message displayed below the label     |
+
+### Keyword Arguments
+
+#### RadioGroup
+
+.. kwargs::RadioGroup
+
+#### Radio
+
+.. kwargs::Radio

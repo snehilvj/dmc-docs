@@ -1,15 +1,20 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [{"property": "iconSize", "component": "NumberInput", "value": 42}]
+TARGET_ID = "interactive-stepper-size"
 
-demo = dmc.Stepper(
+target = dmc.Stepper(
     active=1,
     children=[
         dmc.StepperStep(label="First step", description="Create an account"),
         dmc.StepperStep(label="Second step", description="Verify email"),
     ],
+    id=TARGET_ID,
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_number_input("iconSize", 42)
+
+component = configurator.panel

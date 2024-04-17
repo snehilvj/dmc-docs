@@ -1,14 +1,24 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "size", "component": "DemoSlider", "value": "sm"},
-    {"property": "radius", "component": "DemoSlider", "value": "lg"},
-    {"property": "disabled", "component": "Switch", "checked": False},
-]
+TARGET_ID = "interactive-switch"
 
-demo = dmc.Switch(label="I agree to sell my privacy", checked=True)
+target = dmc.Center(
+    dmc.Switch(label="I agree to sell my privacy", checked=True, id=TARGET_ID)
+)
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_segmented_control("labelPosition", ["right", "left"], "right")
+configurator.add_text_input(
+    "label", "I agree to sell my privacy", **{"placeholder": "Label"}
+)
+configurator.add_text_input("description", "", **{"placeholder": "Description"})
+configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "lg")
+configurator.add_colorpicker("color", "indigo")
+configurator.add_switch("disabled", False)
+
+component = configurator.panel

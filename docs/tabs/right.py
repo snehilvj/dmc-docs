@@ -4,9 +4,9 @@ component = dmc.Tabs(
     [
         dmc.TabsList(
             [
-                dmc.Tab("Gallery", value="gallery"),
-                dmc.Tab("Messages", value="messages"),
-                dmc.Tab("Settings", value="settings", ml="auto"),
+                dmc.TabsTab("Gallery", value="gallery"),
+                dmc.TabsTab("Messages", value="messages"),
+                dmc.TabsTab("Settings", value="settings", ml="auto"),
             ]
         ),
     ],

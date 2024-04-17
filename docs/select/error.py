@@ -5,7 +5,7 @@ component = dmc.Select(
     data=["USDINR", "EURUSD", "USDTWD", "USDJPY"],
     id="select-error",
     value="USDJPY",
-    style={"width": 200},
+    w=200,
 )
 
 

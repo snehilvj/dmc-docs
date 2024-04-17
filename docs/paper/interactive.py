@@ -1,15 +1,8 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "p", "component": "DemoSlider", "value": "lg"},
-    {"property": "shadow", "component": "DemoSlider", "value": "sm"},
-    {"property": "withBorder", "component": "Switch", "checked": False},
-]
-
-demo = dmc.Paper(
+target = dmc.Paper(
     children=[
         dmc.Text(
             "Paper is the most basic ui component. Use it to create cards, dropdowns, "
@@ -22,4 +15,10 @@ demo = dmc.Paper(
     withBorder=False,
 )
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target)
+configurator.add_slider("radius", "sm")
+configurator.add_slider("p", "lg")
+configurator.add_slider("shadow", "sm")
+configurator.add_switch("withBorder", False)
+
+component = configurator.panel

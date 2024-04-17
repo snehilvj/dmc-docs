@@ -15,7 +15,7 @@ colors = [
 ]
 
 component = dmc.Stack(
-    spacing="xs",
+    gap="xs",
     children=[
         dmc.Group(
             [
@@ -26,7 +26,7 @@ component = dmc.Stack(
                 )
                 for color in colors
             ],
-            position="center",
+            justify="center",
         )
         for variant in ["outline", "light", "filled"]
     ],

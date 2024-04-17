@@ -1,26 +1,47 @@
 ---
 name: Pagination
-section: Navigation
-head: Display active page and navigate between multiple pages
 description: Display active page and navigate between multiple pages
-component: Pagination
-styles: pagination
+endpoint: /components/pagination
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.pagination.interactive
-    :prism: false
+    :code: false
 
-##### Siblings
+### Siblings
 
 Control the number of active item siblings with `siblings` prop.
 
 .. exec::docs.pagination.siblings
 
-##### Boundaries
+### Boundaries
 
 Control the number of items displayed after previous(<) and before next(>) buttons with `boundaries` prop.
 
 .. exec::docs.pagination.boundaries
 
+### Styles API
+
+| Name    | Static selector             | Description                                               |
+|:--------|:----------------------------|:----------------------------------------------------------|
+| root    | .mantine-Pagination-root    | Root element                                              |
+| control | .mantine-Pagination-control | Control element: items, next/previous, first/last buttons |
+| dots    | .mantine-Pagination-dots    | Dots icon wrapper                                         |
+
+### Keyword Arguments
+
+#### Pagination
+
+.. kwargs::Pagination
+
+#### ProgressRoot
+
+.. kwargs::ProgressRoot
+
+#### ProgressSection
+
+.. kwargs::ProgressSection

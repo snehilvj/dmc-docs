@@ -10,7 +10,7 @@ component = dmc.Accordion(
                     "Personal Information",
                     icon=DashIconify(
                         icon="tabler:user",
-                        color=dmc.theme.DEFAULT_COLORS["blue"][6],
+                        color=dmc.DEFAULT_THEME["colors"]["blue"][6],
                         width=20,
                     ),
                 ),
@@ -24,7 +24,7 @@ component = dmc.Accordion(
                     "Shipping Address",
                     icon=DashIconify(
                         icon="tabler:map-pin",
-                        color=dmc.theme.DEFAULT_COLORS["red"][6],
+                        color=dmc.DEFAULT_THEME["colors"]["red"][6],
                         width=20,
                     ),
                 ),
@@ -38,7 +38,7 @@ component = dmc.Accordion(
                     "Confirmation",
                     icon=DashIconify(
                         icon="tabler:circle-check",
-                        color=dmc.theme.DEFAULT_COLORS["green"][6],
+                        color=dmc.DEFAULT_THEME["colors"]["green"][6],
                         width=20,
                     ),
                 ),

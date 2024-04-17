@@ -10,7 +10,7 @@ component = dmc.Menu(
                     "External Link",
                     href="https://www.github.com/snehilvj",
                     target="_blank",
-                    icon=DashIconify(icon="radix-icons:external-link"),
+                    leftSection=DashIconify(icon="radix-icons:external-link"),
                 ),
                 dmc.MenuItem("Useless Button", n_clicks=0),
             ]

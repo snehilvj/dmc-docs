@@ -1,18 +1,24 @@
 ---
 name: Tooltip
-section: Overlay
-head: Renders tooltip at given element on mouse over or any other event.
 description: Use Tooltip component to render tooltip at given element on mouse over or any other event
-component: Tooltip
-styles: tooltip
+endpoint: /components/tooltip
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.tooltip.interactive
-    :prism: false
+    :code: false
 
-##### Position
+### Tooltip Target
+
+Any component you specify in dmc.Tooltip is wrapped by a dmc.Box component under the hood. So adding a margin
+to your target component will also move the tooltip away. In order to prevent this, add margin to the wrapper component
+using the prop `boxWrapperProps` in dmc.Tooltip.
+
+### Position
 
 Tooltip position relative to target element is defined by:
 
@@ -31,9 +37,9 @@ dmc.Tooltip(
 ```
 
 .. exec::docs.tooltip.position
-    :prism: false
+    :code: false
 
-##### Arrow
+### Arrow
 
 Tooltip arrow is controlled by:
 
@@ -42,7 +48,7 @@ Tooltip arrow is controlled by:
 
 .. exec::docs.tooltip.arrow
 
-##### Multiline
+### Multiline
 
 By default, tooltip white-space property is set to nowrap. To change that use:
 
@@ -51,7 +57,7 @@ By default, tooltip white-space property is set to nowrap. To change that use:
 
 .. exec::docs.tooltip.multiline
 
-##### Transitions
+### Transitions
 
 Tooltip is built with Transition component, it supports the following props.
 
@@ -74,9 +80,9 @@ dmc.Tooltip(
 ```
 
 .. exec::docs.tooltip.transitions
-    :prism: false
+    :code: false
 
-##### Colors
+### Colors
 
 Tooltip supports all colors defined in Mantine's theme colors.
 
@@ -90,17 +96,35 @@ dmc.Tooltip(
 ```
 
 .. exec::docs.tooltip.colors
-    :prism: false
+    :code: false
 
-##### Close and Open Delay
+### Close and Open Delay
 
 You can delay tooltip open/close events by setting `openDelay` and `closeDelay` props in ms. Both props default to 0 
 and reset if user moves mouse over/out of target element before delay is expired.
 
 .. exec::docs.tooltip.delay
 
-##### Floating Tooltip
+### Floating Tooltip
 
 dmc.FloatingTooltip component has the same API as dmc.Tooltip component but tooltip will follow mouse.
 
 .. exec::docs.tooltip.floating
+
+### Styles API
+
+| Name    | Static selector          | Description                            |
+|:--------|:-------------------------|:---------------------------------------|
+| tooltip | .mantine-Tooltip-tooltip | Root element                           |
+| arrow   | .mantine-Tooltip-arrow   | Tooltip arrow, rendered inside tooltip |
+
+### Keyword Arguments
+
+#### Tooltip
+
+.. kwargs::Tooltip
+
+
+#### TooltipFloating
+
+.. kwargs::TooltipFloating

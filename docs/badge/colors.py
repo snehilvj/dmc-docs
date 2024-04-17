@@ -14,11 +14,11 @@ colors = [
 ]
 
 component = dmc.Stack(
-    spacing="xs",
+    gap="xs",
     children=[
         dmc.Group(
             [dmc.Badge(color, variant=variant, color=color) for color in colors],
-            position="center",
+            justify="center",
         )
         for variant in ["light", "outline", "filled", "dot"]
     ],

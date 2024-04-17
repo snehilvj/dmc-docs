@@ -3,16 +3,16 @@ from dash import Output, Input, html, callback
 from dash_iconify import DashIconify
 
 """
-Wrap your layout inside a NotificationsProvider for your app.
+Add Notifications to your app layout.
 
-app.layout = dmc.NotificationsProvider(
-    html.Div(
-        [
-            html.Div(id="notifications-container"),
-            dmc.Button("Show Notification", id="notify"),
-        ]
-    )
+app.layout = html.Div(
+    [
+        dmc.Notifications(),
+        html.Div(id="notifications-container"),
+        dmc.Button("Show Notification", id="notify"),
+    ]
 )
+
 """
 
 component = html.Div(

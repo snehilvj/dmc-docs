@@ -1,18 +1,18 @@
 ---
 name: TextInput
-section: Inputs
-head: Capture string input from user.
 description: Use TextInput component to capture string input from user. Customize the input with label, description, error message etc.
-component: TextInput
-styles: text-input
+endpoint: /components/textinput
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 .. exec::docs.textinput.interactive
-    :prism: false
+    :code: false
 
-##### Invalid State and Error
+### Invalid State and Error
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -27,20 +27,39 @@ input:invalid {
 
 .. exec::docs.textinput.error
 
-##### Disabled State
+### Disabled State
 
 Convey disabled input with `disabled` prop.
 
 .. exec::docs.textinput.disabled
 
-##### With Icon
+### With Icon
 
 Add icon to the left side of the input.
 
 .. exec::docs.textinput.icon
 
-##### With right section
+### With right section
 
 Add icon or loading indicator to the right section of the input.
 
 .. exec::docs.textinput.right
+
+### Styles API
+
+| Name        | Static selector                | Description                                      |
+|:------------|:-------------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-TextInput-wrapper     | Root element of the Input                        |
+| input       | .mantine-TextInput-input       | Input element                                    |
+| section     | .mantine-TextInput-section     | Left and right sections                          |
+| root        | .mantine-TextInput-root        | Root element                                     |
+| label       | .mantine-TextInput-label       | Label element                                    |
+| required    | .mantine-TextInput-required    | Required asterisk element, rendered inside label |
+| description | .mantine-TextInput-description | Description element                              |
+| error       | .mantine-TextInput-error       | Error element                                    |
+
+### Keyword Arguments
+
+#### TextInput
+
+.. kwargs::TextInput

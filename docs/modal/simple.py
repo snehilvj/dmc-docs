@@ -21,7 +21,7 @@ component = html.Div(
                             id="modal-close-button",
                         ),
                     ],
-                    position="right",
+                    justify="flex-end",
                 ),
             ],
         ),

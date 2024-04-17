@@ -4,5 +4,5 @@ component = dmc.Select(
     data=["React", "Angular", "Svelte", "Vue"],
     value="Vue",
     clearable=True,
-    style={"width": 200},
+    w=200,
 )

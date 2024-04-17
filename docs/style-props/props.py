@@ -1,10 +1,59 @@
-from pathlib import Path
-
 import dash_mantine_components as dmc
-import pandas as pd
 
-from lib.utils import create_table
-
-df = pd.read_csv(Path.cwd().joinpath("docs/style-props/props.csv"), index_col=None)
-
-component = dmc.Table(create_table(df), horizontalSpacing=40, withColumnBorders=True)
+component = dmc.Table(
+    horizontalSpacing=40,
+    withColumnBorders=True,
+    data={
+        "head": ["Prop", "CSS Property"],
+        "body": [
+            ["bg", "background"],
+            ["bga", "background-attachment"],
+            ["bgp", "background-position"],
+            ["bgr", "background-repeat"],
+            ["bgsz", "background-size"],
+            ["bottom", "bottom"],
+            ["c", "color"],
+            ["display", "display"],
+            ["ff", "fontFamily"],
+            ["flex", "flex"],
+            ["fs", "fontStyle"],
+            ["fw", "fontWeight"],
+            ["fz", "fontSize"],
+            ["h", "height"],
+            ["inset", "inset"],
+            ["left", "left"],
+            ["lh", "lineHeight"],
+            ["lts", "letterSpacing"],
+            ["m", "margin"],
+            ["mah", "maxHeight"],
+            ["maw", "maxWidth"],
+            ["mb", "marginBottom"],
+            ["me", "marginEnd"],
+            ["mih", "minHeight"],
+            ["miw", "minWidth"],
+            ["ml", "marginLeft"],
+            ["mr", "marginRight"],
+            ["ms", "marginStart"],
+            ["mt", "marginTop"],
+            ["mx", "marginRight, marginLeft"],
+            ["my", "marginTop, marginBottom"],
+            ["opacity", "opacity"],
+            ["p", "padding"],
+            ["pb", "paddingBottom"],
+            ["pe", "paddingEnd"],
+            ["pl", "paddingLeft"],
+            ["pos", "position"],
+            ["pr", "paddingRight"],
+            ["ps", "paddingStart"],
+            ["pt", "paddingTop"],
+            ["px", "paddingRight, paddingLeft"],
+            ["py", "paddingTop, paddingBottom"],
+            ["right", "right"],
+            ["ta", "textAlign"],
+            ["td", "textDecoration"],
+            ["top", "top"],
+            ["tt", "textTransform"],
+            ["w", "width"],
+        ],
+    },
+)

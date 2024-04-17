@@ -14,7 +14,8 @@ component = html.Div(
                 {"value": "svelte", "label": "Svelte"},
                 {"value": "vue", "label": "Vue"},
             ],
-            style={"width": 400, "marginBottom": 10},
+            w=400,
+            mb=10,
         ),
         dmc.Text(id="multi-selected-value"),
     ]

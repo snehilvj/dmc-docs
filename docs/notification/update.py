@@ -41,7 +41,6 @@ def notify(nc1, nc2):
                 color="orange",
                 action="show",
                 autoClose=False,
-                disallowClose=True,
             )
         else:
             return dmc.Notification(

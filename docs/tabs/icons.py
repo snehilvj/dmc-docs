@@ -5,14 +5,14 @@ component = dmc.Tabs(
     [
         dmc.TabsList(
             [
-                dmc.Tab(
+                dmc.TabsTab(
                     "Messages",
-                    icon=DashIconify(icon="tabler:message"),
+                    leftSection=DashIconify(icon="tabler:message"),
                     value="messages",
                 ),
-                dmc.Tab(
+                dmc.TabsTab(
                     "Settings",
-                    icon=DashIconify(icon="tabler:settings"),
+                    leftSection=DashIconify(icon="tabler:settings"),
                     value="settings",
                 ),
             ]

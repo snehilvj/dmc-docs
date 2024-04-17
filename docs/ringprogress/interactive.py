@@ -1,20 +1,10 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "size",
-        "component": "NumberInput",
-        "value": 120,
-        "min": 0,
-        "step": 10,
-    },
-    {"property": "thickness", "component": "NumberInput", "value": 12, "min": 0},
-    {"property": "roundCaps", "component": "Switch", "checked": False},
-]
+TARGET_ID = "interactive-ringprogress"
 
-demo = dmc.RingProgress(
+target = dmc.RingProgress(
     size=120,
     thickness=12,
     sections=[
@@ -22,6 +12,13 @@ demo = dmc.RingProgress(
         {"value": 15, "color": "yellow"},
         {"value": 15, "color": "violet"},
     ],
+    id=TARGET_ID,
 )
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_number_input("size", 120, **{"min": 60, "max": 400, "step": 10})
+configurator.add_number_input("thickness", 12, **{"min": 0})
+configurator.add_switch("roundCaps", False)
+
+component = configurator.panel

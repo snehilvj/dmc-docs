@@ -1,26 +1,16 @@
-import uuid
-
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "placement",
-        "component": "DemoSegmentedControl",
-        "value": "right",
-        "data": ["left", "right"],
-    },
-]
+TARGET_ID = "interactive-tabs-vertical"
 
-
-demo = dmc.Tabs(
+target = dmc.Tabs(
     [
         dmc.TabsList(
             [
-                dmc.Tab("Gallery", value="gallery"),
-                dmc.Tab("Messages", value="messages"),
-                dmc.Tab("Settings", value="settings"),
+                dmc.TabsTab("Gallery", value="gallery"),
+                dmc.TabsTab("Messages", value="messages"),
+                dmc.TabsTab("Settings", value="settings"),
             ],
         ),
         dmc.TabsPanel("Gallery tab content", value="gallery", px="xs"),
@@ -30,6 +20,13 @@ demo = dmc.Tabs(
     value="gallery",
     orientation="vertical",
     placement="right",
+    id=TARGET_ID,
 )
 
-component = create_configurator(demo, controls, center=False)
+
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_select("placement", ["left", "right"], "right")
+
+
+component = configurator.panel

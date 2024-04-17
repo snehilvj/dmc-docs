@@ -15,24 +15,12 @@ input:invalid {
     margin-right: 320px;
 }
 
-@media only screen and (max-width: 1500px) {
-    #toc-navbar {
-        display: none;
-    }
-
-    #wrapper {
-        margin-right: 0;
-    }
+:root[data-mantine-color-scheme="dark"] #dark-theme-icon {
+    display: none;
 }
 
-@media only screen and (max-width: 1200px) {
-    #components-navbar {
-        display: none;
-    }
-
-    #wrapper {
-        margin-left: 0;
-    }
+:root[data-mantine-color-scheme="light"] #light-theme-icon {
+    display: none;
 }
 
 .demo-container {
@@ -78,4 +66,9 @@ input:invalid {
     height: 20px;
     width: 20px;
     background-color: white;
+}
+
+.mantine-Table-th {
+    font-size: 15px;
+    font-weight: 500;
 }

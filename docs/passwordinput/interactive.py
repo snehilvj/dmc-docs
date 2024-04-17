@@ -1,37 +1,25 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "placeholder",
-        "component": "TextInput",
-        "value": "Password",
-        "placeholder": "Placeholder",
-    },
-    {
-        "property": "label",
-        "component": "TextInput",
-        "value": "Password",
-        "placeholder": "Label",
-    },
-    {
-        "property": "description",
-        "component": "TextInput",
-        "placeholder": "Description",
-        "value": "Password must include at least one letter, number and special character",
-    },
-    {"property": "error", "component": "TextInput", "placeholder": "Error"},
-    {"property": "size", "component": "DemoSlider", "value": "sm"},
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "required", "component": "Switch", "checked": True},
-]
-
-demo = dmc.PasswordInput(
-    label="Password",
+target = dmc.PasswordInput(
+    label="Enter your password",
     placeholder="Password",
     description="Password must include at least one letter, number and special character",
     required=True,
 )
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target)
+configurator.add_text_input("placeholder", "Password", **{"placeholder": "Placeholder"})
+configurator.add_text_input("label", "Enter your password", **{"placeholder": "Label"})
+configurator.add_text_input(
+    "description",
+    "Password must include at least one letter, number and special character",
+    **{"placeholder": "Description"}
+)
+configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "sm")
+configurator.add_switch("required", True)
+
+component = configurator.panel

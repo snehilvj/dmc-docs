@@ -1,16 +1,10 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {"property": "size", "component": "DemoSlider", "value": "md"},
-    {"property": "radius", "component": "DemoSlider", "value": "sm"},
-    {"property": "showLabelOnHover", "component": "Switch", "checked": True},
-    {"property": "labelAlwaysOn", "component": "Switch", "checked": False},
-]
+TARGET_ID = "interactive-slider"
 
-demo = dmc.Slider(
+target = dmc.Slider(
     value=69,
     updatemode="mouseup",
     marks=[
@@ -18,6 +12,15 @@ demo = dmc.Slider(
         {"value": 50, "label": "50%"},
         {"value": 80, "label": "80%"},
     ],
+    id=TARGET_ID,
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_colorpicker("color", "indigo")
+configurator.add_slider("size", "sm")
+configurator.add_slider("radius", "lg")
+configurator.add_switch("showLabelOnHover", True)
+configurator.add_switch("labelAlwaysOn", False)
+
+component = configurator.panel

@@ -2,9 +2,20 @@ import dash_mantine_components as dmc
 
 component = dmc.MultiSelect(
     data=[
-        {"value": "rick", "label": "Rick", "group": "Used to be a pickle"},
-        {"value": "morty", "label": "Morty", "group": "Never was a pickle"},
-        {"value": "summer", "label": "Summer", "group": "Never was a pickle"},
+        {
+            "group": "Frontend",
+            "items": [
+                {"value": "React", "label": "React"},
+                {"value": "Angular", "label": "Angular"},
+            ],
+        },
+        {
+            "group": "Backend",
+            "items": [
+                {"value": "Svelte", "label": "Svelte"},
+                {"value": "Vue", "label": "Vue"},
+            ],
+        },
     ],
-    style={"width": 400},
+    w=400,
 )

@@ -4,7 +4,7 @@ component = dmc.Highlight(
     "Highlight this, definitely this and also this!",
     highlight="this",
     size="lg",
-    color="green",
-    highlightColor="yellow",
-    align="center",
+    c="green",
+    color="yellow",
+    ta="center",
 )

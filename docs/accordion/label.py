@@ -41,7 +41,7 @@ def create_accordion_label(label, image, description):
                 html.Div(
                     [
                         dmc.Text(label),
-                        dmc.Text(description, size="sm", weight=400, color="dimmed"),
+                        dmc.Text(description, size="sm", fw=400, c="dimmed"),
                     ]
                 ),
             ]

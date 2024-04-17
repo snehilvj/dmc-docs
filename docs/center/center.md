@@ -1,11 +1,24 @@
 ---
 name: Center
-section: Layout
-head: Centers content vertically and horizontally.
 description: Use Center component to center content vertically and horizontally.
-component: Center
+endpoint: /components/center
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 .. exec::docs.center.simple
+
+### Styles API
+
+| Name | Static selector    | Description  |
+|------|--------------------|--------------|
+| root | .mantine-Card-root | Root element |
+
+### Keyword Arguments
+
+#### Center
+
+.. kwargs::Center

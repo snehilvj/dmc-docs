@@ -1,42 +1,75 @@
 ---
 name: MantineProvider
-section: Miscellaneous
-head: MantineProvider component allows you to change theme globally.
 description: Use MantineProvider component to enable dark theme in your app globally.
-component: MantineProvider
-props: false
+endpoint: /components/mantineprovider
+package: dash_mantine_components
 ---
 
-##### Dark Theme
+.. toc::
 
-All mantine components support dark color scheme natively without any additional steps. To use dark color scheme wrap
-your application in MantineProvider and specify colorScheme.
+### Usage
 
-.. exec::docs.mantineprovider.dark
-
-##### Global Styles
-
-theme.colors.dark[7] shade is considered to be the body background color and theme.colors.dark[0] shade as text color
-with dark color scheme. You can create these styles on your own or add them by setting withGlobalStyles prop on 
-MantineProvider, which includes them by default.
+Your app must be wrapped inside a MantineProvider, and it must be used only once.
 
 ```python
 import dash_mantine_components as dmc
 
-component = dmc.MantineProvider(withGlobalStyles=True, theme={"colorScheme": "dark"})
+app.layout = dmc.MantineProvider(
+    theme = {...},
+    children={...}
+)
 ```
 
-##### Custom Colors
+### Color Scheme
 
-You can add custom colors using MantineProvider, other than the ones found in dmc.theme.DEFAULT_COLORS.
+Color Scheme is currently controlled using the prop `forceColorScheme`.
+
+```python
+import dash_mantine_components as dmc
+
+app.layout = dmc.MantineProvider(
+    forceColorScheme="dark",
+    theme = {...},
+    children={...}
+)
+```
+
+### Custom Colors
+
+You can add custom colors using MantineProvider, other than the ones found in `dmc.DEFAULT_THEME['colors']`.
 Use [this](https://omatsuri.app/color-shades-generator) tool to generate 10 shades of the color you like. Mantine's
 styling system needs 10 shades for any color so that it can use the right one depending on the colorScheme.
 
-You can also use the same color 10 times but using the tool will give you better results.
+You can also use the same color 10 times but using the tool will give you better results. You can add more than 10 values
+as well but the extra values will not be used by Mantine.
 
 .. exec::docs.mantineprovider.colors
+    :code: false
 
-##### Further Customization
+```python
+import dash_mantine_components as dmc
+
+dmc.MantineProvider(
+    theme={
+        "colors": {
+            "myColor": [
+                "#EFF7A9",
+                "#DEEA80",
+                "#CCD962",
+                "#C9DC2F",
+                "#BCD113",
+                "#ABBF02",
+                "#9CB000",
+                "#869800",
+                "#728100",
+            ]
+        },
+    },
+    children=[dmc.Button("Custom Colors!", color="myColor")],
+)
+```
+
+### Further Customization
 
 You can further customize your theme such as theme colors, shadows, etc. Refer to
 [mantine.dev](https://mantine.dev/theming/theme-object/) for more information.
@@ -46,7 +79,6 @@ import dash_mantine_components as dmc
 
 dmc.MantineProvider(
     theme={
-        "colorScheme": "dark",
         # add your colors
         "colors": {
             "deepBlue": ["#E9EDFC", "#C1CCF6", "#99ABF0" "..."], # 10 color elements
@@ -69,38 +101,52 @@ dmc.MantineProvider(
 )
 ```
 
-##### Usage in DMC docs
+### Usage in DMC docs
 
 MantineProvider is used to customize theme for these docs as well. The theming is more or less inline with below.
 
 ```python
 import dash_mantine_components as dmc
-from dash import Dash
-
-app = Dash(
-    __name__,
-    external_stylesheets=[
-        # include google fonts
-        "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;900&display=swap"
-    ],
-)
 
 app.layout = dmc.MantineProvider(
-    theme={
-        "fontFamily": "'Inter', sans-serif",
-        "primaryColor": "indigo",
-        "components": {
-            "Button": {"styles": {"root": {"fontWeight": 400}}},
-            "Alert": {"styles": {"title": {"fontWeight": 500}}},
-            "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
-        },
-    },
-    inherit=True,
-    withGlobalStyles=True,
-    withNormalizeCSS=True,
-    children=[...],
-)
-
-if __name__ == "__main__":
-    app.run_server()
+     forceColorScheme="light",
+     theme={
+         "primaryColor": "indigo",
+         "fontFamily": "'Inter', sans-serif",
+         "components": {
+             "Button": {"defaultProps": {"fw": 400}},
+             "Alert": {"styles": {"title": {"fontWeight": 500}}},
+             "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
+             "Badge": {"styles": {"root": {"fontWeight": 500}}},
+             "Progress": {"styles": {"label": {"fontWeight": 500}}},
+             "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
+             "CodeHighlightTabs": {"styles": {"file": {"padding": 12}}},
+             "Table": {
+                 "defaultProps": {
+                     "highlightOnHover": True,
+                     "withTableBorder": True,
+                     "verticalSpacing": "sm",
+                     "horizontalSpacing": "md",
+                 }
+             },
+         },
+     },
+     children=[
+         # content
+     ],
+ )
 ```
+
+### Default theme
+
+Default theme is available as `dmc.DEFAULT_THEME`. It includes all theme properties with default values. 
+When you pass theme override to MantineProvider, it will be deeply merged with the default theme.
+
+.. exec::docs.mantineprovider.theme
+    :code: false
+
+### Keyword Arguments
+
+#### MantineProvider
+
+.. kwargs::MantineProvider

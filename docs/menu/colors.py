@@ -7,19 +7,23 @@ component = dmc.Menu(
         dmc.MenuDropdown(
             [
                 dmc.MenuLabel("Application"),
-                dmc.MenuItem("Settings", icon=DashIconify(icon="tabler:settings")),
-                dmc.MenuItem("Messages", icon=DashIconify(icon="tabler:message")),
-                dmc.MenuItem("Gallery", icon=DashIconify(icon="tabler:photo")),
-                dmc.MenuItem("Search", icon=DashIconify(icon="tabler:search")),
+                dmc.MenuItem(
+                    "Settings", leftSection=DashIconify(icon="tabler:settings")
+                ),
+                dmc.MenuItem(
+                    "Messages", leftSection=DashIconify(icon="tabler:message")
+                ),
+                dmc.MenuItem("Gallery", leftSection=DashIconify(icon="tabler:photo")),
+                dmc.MenuItem("Search", leftSection=DashIconify(icon="tabler:search")),
                 dmc.MenuDivider(),
                 dmc.MenuLabel("Danger Zone"),
                 dmc.MenuItem(
                     "Transfer my data",
-                    icon=DashIconify(icon="tabler:arrows-left-right"),
+                    leftSection=DashIconify(icon="tabler:arrows-left-right"),
                 ),
                 dmc.MenuItem(
                     "Delete my account",
-                    icon=DashIconify(icon="tabler:trash"),
+                    leftSection=DashIconify(icon="tabler:trash"),
                     color="red",
                 ),
             ]

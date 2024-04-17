@@ -1,31 +1,19 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "variant",
-        "component": "Select",
-        "data": [
-            "link",
-            "filled",
-            "outline",
-            "light",
-            "gradient",
-            "white",
-            "subtle",
-            "default",
-        ],
-        "value": "filled",
-    },
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-    {
-        "property": "loading",
-        "component": "Switch",
-        "checked": False,
-    },
-]
+TARGET_ID = "getting-started-button-interactive"
 
-demo = dmc.Button("Settings")
+target = dmc.Center(dmc.Button("Settings", id=TARGET_ID))
 
-component = create_configurator(demo, controls)
+configurator = Configurator(target, TARGET_ID)
+
+configurator.add_select(
+    "variant",
+    ["link", "filled", "outline", "light", "gradient", "subtle", "default"],
+    "filled",
+)
+configurator.add_colorpicker("color", "indigo")
+configurator.add_switch("loading", False)
+
+component = configurator.panel

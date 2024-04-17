@@ -1,13 +1,13 @@
 ---
 name: RingProgress
-section: Feedback
-head: Give user feedback for status of the task with circle diagram.
 description: Use the RingProgress component to give feedback to the user about the status of a task with label, sections, etc.
-component: RingProgress
-styles: ring-progress
+endpoint: /components/ringprogress
+package: dash_mantine_components
 ---
 
-##### Simple Example
+.. toc::
+
+### Simple Example
 
 Set `sections` prop to an array of:
 * `value` - number between 0 and 100 - amount of space filled by segment
@@ -15,23 +15,23 @@ Set `sections` prop to an array of:
 
 .. exec::docs.ringprogress.simple
 
-##### Section Tooltips
+### Section Tooltips
 
 Use `rootColor` property to change the root color.
 
 .. exec::docs.ringprogress.root
 
-##### Section Tooltips
+### Section Tooltips
 
 Hover on the sections to see tooltips in action.
 
 .. exec::docs.ringprogress.tooltip
 
-##### With label
+### With label
 
 .. exec::docs.ringprogress.label
 
-##### Size, Thickness And Rounded Caps
+### Size, Thickness And Rounded Caps
 
 Use `size`, `thickness`, `roundCaps` props to customize the component.
 
@@ -51,4 +51,19 @@ dmc.RingProgress(
 ```
 
 .. exec::docs.ringprogress.interactive
-    :prism: false
+    :code: false
+
+### Styles API
+
+| Name  | Static selector             | Description    |
+|:------|:----------------------------|:---------------|
+| root  | .mantine-RingProgress-root  | Root element   |
+| svg   | .mantine-RingProgress-svg   | svg element    |
+| curve | .mantine-RingProgress-curve | circle element |
+| label | .mantine-RingProgress-label | Label element  |
+
+### Keyword Arguments
+
+#### RingProgress
+
+.. kwargs::RingProgress

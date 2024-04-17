@@ -1,19 +1,14 @@
 import dash_mantine_components as dmc
 from dash import html
 
-from lib.configurator import create_configurator
-
-controls = [
-    {"property": "cols", "component": "NumberInput", "value": 3, "min": 1, "max": 6},
-    {"property": "spacing", "component": "DemoSlider", "value": "md"},
-]
+from lib.configurator import Configurator
 
 style = {
-    "border": f"1px solid {dmc.theme.DEFAULT_COLORS['indigo'][4]}",
+    "border": f"1px solid {dmc.DEFAULT_THEME['colors']['indigo'][4]}",
     "textAlign": "center",
 }
 
-demo = dmc.SimpleGrid(
+target = dmc.SimpleGrid(
     cols=3,
     children=[
         html.Div("1", style=style),
@@ -24,4 +19,10 @@ demo = dmc.SimpleGrid(
     ],
 )
 
-component = create_configurator(demo, controls, center=False)
+configurator = Configurator(target)
+
+configurator.add_number_slider("cols", 3, min=1, max=6)
+configurator.add_slider("spacing", "md")
+configurator.add_slider("verticalSpacing", "md")
+
+component = configurator.panel

@@ -8,7 +8,7 @@ swatches = [
 # fmt: on
 
 component = dmc.Group(
-    spacing=40,
+    gap=40,
     children=[
         dmc.ColorPicker(swatches=swatches),
         dmc.ColorPicker(swatches=swatches, swatchesPerRow=9),

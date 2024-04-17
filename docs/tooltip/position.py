@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 
 component = dmc.Group(
-    position="center",
+    justify="center",
     children=[
         dmc.Tooltip(
             children=[dmc.Button(position, variant="outline")],

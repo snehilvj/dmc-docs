@@ -1,20 +1,21 @@
 ---
 name: Paper
-section: Miscellaneous
-head: Renders white or dark background depending on color scheme.
-description: Render white or dark background depending on color scheme with Paper component with border, shadow, etc. 
-component: Paper
+description: Render white or dark background depending on color scheme with Paper component with border, shadow, etc.
+endpoint: /components/paper
+package: dash_mantine_components
 ---
 
-##### Interactive Demo
+.. toc::
+
+### Introduction
 
 Paper component renders white (or theme.colors.dark[7] for dark theme) background with shadow, border-radius and
 padding from theme.
 
 .. exec::docs.paper.interactive
-    :prism: false
+    :code: false
 
-##### Shadow
+### Shadow
 
 ```python
 import dash_mantine_components as dmc
@@ -25,7 +26,7 @@ dmc.Paper(
 )
 ```
 
-##### Padding
+### Padding
 
 ```python
 import dash_mantine_components as dmc
@@ -36,7 +37,7 @@ dmc.Paper(
 )
 ```
 
-##### Radius
+### Radius
 
 ```python
 import dash_mantine_components as dmc
@@ -46,3 +47,15 @@ dmc.Paper(
     radius="sm", # or p=10 for border-radius of 10px
 )
 ```
+
+### Styles API
+
+| Name | Static selector     | Description  |
+|:-----|:--------------------|:-------------|
+| root | .mantine-Paper-root | Root element |
+
+### Keyword Arguments
+
+#### Paper
+
+.. kwargs::Paper

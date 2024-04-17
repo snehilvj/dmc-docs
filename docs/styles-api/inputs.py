@@ -1,20 +1,19 @@
 import dash_mantine_components as dmc
 
 component = dmc.MantineProvider(
-    inherit=True,
     theme={
         "components": {
             "InputWrapper": {
                 "styles": {
                     "label": {
                         "color": "blue",
-                        "backgroundColor": dmc.theme.DEFAULT_COLORS["yellow"][1],
+                        "backgroundColor": dmc.DEFAULT_THEME["colors"]["yellow"][1],
                     },
                 }
             },
             "Input": {
                 "styles": {
-                    "input": {"borderColor": dmc.theme.DEFAULT_COLORS["violet"][4]}
+                    "input": {"borderColor": dmc.DEFAULT_THEME["colors"]["violet"][4]}
                 },
             },
         }

@@ -3,7 +3,7 @@ from dash import html
 
 style = {
     "height": 100,
-    "border": f"1px solid {dmc.theme.DEFAULT_COLORS['indigo'][4]}",
+    "border": f"1px solid {dmc.DEFAULT_THEME['colors']['indigo'][4]}",
     "marginTop": 20,
     "marginBottom": 20,
 }

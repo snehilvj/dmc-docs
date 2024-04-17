@@ -2,38 +2,34 @@ import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
 
-from lib.configurator import create_configurator
+from lib.configurator import Configurator
 
-controls = [
-    {
-        "property": "variant",
-        "component": "SegmentedControl",
-        "data": ["filled", "light", "subtle"],
-        "value": "filled",
-    },
-    {"property": "color", "component": "ColorPicker", "value": "#34c6ef5"},
-]
+TARGET_ID = "interactive-navlink"
 
 
 def get_icon(icon):
     return DashIconify(icon=icon, height=20)
 
 
-demo = html.Div(
+target = html.Div(
     [
         dmc.NavLink(
             label="With icon",
-            icon=get_icon(icon="bi:house-door-fill"),
+            leftSection=get_icon(icon="bi:house-door-fill"),
         ),
         dmc.NavLink(
             label="With right section",
-            icon=get_icon(icon="tabler:gauge"),
+            leftSection=get_icon(icon="tabler:gauge"),
             active=True,
-            id="navlink-interactive",
+            id=TARGET_ID,
             rightSection=get_icon(icon="tabler-chevron-right"),
         ),
     ],
     style={"width": 240},
 )
 
-component = create_configurator(demo, controls, cid="navlink-interactive")
+configurator = Configurator(target, TARGET_ID)
+configurator.add_segmented_control("variant", ["filled", "light", "subtle"], "filled")
+configurator.add_colorpicker("color", "indigo")
+
+component = configurator.panel

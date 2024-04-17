@@ -1,11 +1,11 @@
 import dash_mantine_components as dmc
 
 component = dmc.Stack(
-    spacing="xs",
+    gap=0,
     children=[
-        dmc.Skeleton(height=50, circle=True),
-        dmc.Skeleton(height=8),
-        dmc.Skeleton(height=8),
-        dmc.Skeleton(height=8, width="70%"),
+        dmc.Skeleton(h=50, mb="xl"),
+        dmc.Skeleton(h=8, radius="xl"),
+        dmc.Skeleton(h=8, my=6),
+        dmc.Skeleton(h=8, w="70%", radius="xl"),
     ],
 )
