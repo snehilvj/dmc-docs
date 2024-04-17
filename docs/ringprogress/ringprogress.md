@@ -55,10 +55,12 @@ dmc.RingProgress(
 
 ### Styles API
 
-| Name   | Static selector             | Description   |
-|:-------|:----------------------------|:--------------|
-| root   | .mantine-RingProgress-root  | Root element  |
-| label  | .mantine-RingProgress-label | Label element |
+| Name  | Static selector             | Description    |
+|:------|:----------------------------|:---------------|
+| root  | .mantine-RingProgress-root  | Root element   |
+| svg   | .mantine-RingProgress-svg   | svg element    |
+| curve | .mantine-RingProgress-curve | circle element |
+| label | .mantine-RingProgress-label | Label element  |
 
 ### Keyword Arguments
 

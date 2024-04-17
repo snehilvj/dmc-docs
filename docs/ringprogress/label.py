@@ -20,7 +20,13 @@ component = dmc.Group(
             id="ring-progress-label2",
             sections=[{"value": 60, "color": "green"}, {"value": 5, "color": "yellow"}],
             label=dmc.Center(
-                DashIconify(icon="tabler:circle-check", height=40, color="green")
+                dmc.ActionIcon(
+                    color="teal",
+                    variant="light",
+                    radius="xl",
+                    size="xl",
+                    children=DashIconify(icon="tabler:check", height=40),
+                )
             ),
         ),
     ]

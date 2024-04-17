@@ -5,7 +5,7 @@ component = html.Div(
     [
         dmc.RadioGroup(
             children=dmc.Group(
-                [dmc.Radio(i, value=i) for i in ["USA", "Canada", "France"]],my=10
+                [dmc.Radio(i, value=i) for i in ["USA", "Canada", "France"]], my=10
             ),
             value="USA",
             label="Size Example - small",
@@ -14,7 +14,7 @@ component = html.Div(
         ),
         dmc.RadioGroup(
             children=dmc.Group(
-                [dmc.Radio(i, value=i) for i in ["USA", "Canada", "France"]],my=10
+                [dmc.Radio(i, value=i) for i in ["USA", "Canada", "France"]], my=10
             ),
             value="USA",
             label="Size Example - large",
