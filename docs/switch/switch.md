@@ -60,18 +60,18 @@ You can also add icons in the switch labels.
 
 ### Styles API
 
-| Name         | Static selector              | Description                             |
-|:-------------|:-----------------------------|:----------------------------------------|
-| root         | .mantine-Switch-root         | Root element                            |
-| input        | .mantine-Switch-input        | Checkbox input                          |
-| labelWrapper | .mantine-Switch-labelWrapper | Include label and description component |
-| body         | .mantine-Switch-body         | Container Of Switch                     |
-| track        | .mantine-Switch-track        | Track                                   |
-| thumb        | .mantine-Switch-thumb        | Thumb of Switch                         |
-| trackLabel   | .mantine-Switch-trackLabel   | onLabel and offLabel                    |
-| error        | .mantine-Switch-error        | Error message                           |
-| description  | .mantine-Switch-description  | Description                             |
-| label        | .mantine-Switch-label        | Label                                   |
+| Name         | Static selector              | Description                                     |
+|:-------------|:-----------------------------|:------------------------------------------------|
+| root         | .mantine-Switch-root         | Root element                                    |
+| track        | .mantine-Switch-track        | Switch track, contains `thumb` and `trackLabel` |
+| trackLabel   | .mantine-Switch-trackLabel   | Label displayed inside `track`                  |
+| thumb        | .mantine-Switch-thumb        | Thumb displayed inside `track`                  |
+| input        | .mantine-Switch-input        | Input element, hidden by default                |
+| body         | .mantine-Switch-body         | Input body, contains all other elements         |
+| labelWrapper | .mantine-Switch-labelWrapper | Contains `label`, `description` and `error`     |
+| label        | .mantine-Switch-label        | Label element                                   |
+| description  | .mantine-Switch-description  | Description displayed below the label           |
+| error        | .mantine-Switch-error        | Error message displayed below the label         |
 
 ### Keyword Arguments
 
