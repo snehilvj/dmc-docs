@@ -22,11 +22,12 @@ input:invalid {
 
 .. exec::docs.select.simple
 
-### Data Prop
+### Data Format
 
 The data can be provided as either:
 * an array of strings - use when label and value are same.
 * an array of dicts with `label` and `value` properties.
+* an array of dict with `group` and `items` as keys where items are one of the previous two types.
 
 ```python
 data = ["React", "Angular", "Svelte", "Vue"]
@@ -39,11 +40,37 @@ data = [
     {"value": "Svelte", "label": "Svelte"},
     {"value": "Vue", "label": "Vue"},
 ]
+
+# or
+
+data = [
+    {"group": "Frontend", "items": ["React", "Angular"]},
+    {"group": "Backend", "items": ["Express", "Django"]}
+]
+
+# or
+
+data = [
+    {
+        "group": "Frontend",
+        "items": [
+            {"value": "React", "label": "React"},
+            {"value": "Angular", "label": "Angular"},
+        ],
+    },
+    {
+        "group": "Backend",
+        "items": [
+            {"value": "Svelte", "label": "Svelte"},
+            {"value": "Vue", "label": "Vue"},
+        ],
+    },
+]
 ```
 
 ### Searchable
 
-Set `searchable` prop to enable search in Select and use `nothingFound` prop to show a label when no option
+Set `searchable` prop to enable search in Select and use `nothingFoundMessage` prop to show a label when no option
 matches the search.
 
 .. exec::docs.select.searchable
@@ -76,30 +103,24 @@ select less than 2 currency pairs.
 
 .. exec::docs.select.icons
 
-### Input Props
-
-.. exec::docs.select.input
-
-
 ### Styles API
 
-| Name           | Static selector                | Description                                                               |
-|:---------------|:-------------------------------|:--------------------------------------------------------------------------|
-| dropdown       | .mantine-Select-dropdown       | Dropdown element                                                          |
-| item           | .mantine-Select-item           | Item element, rendered inside dropdown                                    |
-| nothingFound   | .mantine-Select-nothingFound   | Nothing found label                                                       |
-| separator      | .mantine-Select-separator      | Divider wrapper                                                           |
-| separatorLabel | .mantine-Select-separatorLabel | Separator Label                                                           |
-| itemsWrapper   | .mantine-Select-itemsWrapper   | Wraps all items in dropdown                                               |
-| wrapper        | .mantine-Select-wrapper        | Root Input element                                                        |
-| icon           | .mantine-Select-icon           | Input icon wrapper on the left side of the input, controlled by icon prop |
-| input          | .mantine-Select-input          | Main input element                                                        |
-| rightSection   | .mantine-Select-rightSection   | Input right section, controlled by rightSection prop                      |
-| root           | .mantine-Select-root           | Root element                                                              |
-| label          | .mantine-Select-label          | Label element styles, defined by label prop                               |
-| error          | .mantine-Select-error          | Error element styles, defined by error prop                               |
-| description    | .mantine-Select-description    | Description element styles, defined by description prop                   |
-| required       | .mantine-Select-required       | Required asterisk element styles, defined by required prop                |
+| Name        | Static selector             | Description                                      |
+|:------------|:----------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-Select-wrapper     | Root element of the Input                        |
+| input       | .mantine-Select-input       | Input element                                    |
+| section     | .mantine-Select-section     | Left and right sections                          |
+| root        | .mantine-Select-root        | Root element                                     |
+| label       | .mantine-Select-label       | Label element                                    |
+| required    | .mantine-Select-required    | Required asterisk element, rendered inside label |
+| description | .mantine-Select-description | Description element                              |
+| error       | .mantine-Select-error       | Error element                                    |
+| dropdown    | .mantine-Select-dropdown    | Dropdown root element                            |
+| options     | .mantine-Select-options     | Options wrapper                                  |
+| option      | .mantine-Select-option      | Option                                           |
+| empty       | .mantine-Select-empty       | Nothing found message                            |
+| group       | .mantine-Select-group       | Options group wrapper                            |
+| groupLabel  | .mantine-Select-groupLabel  | Options group label                              |
 
 ### Keyword Arguments
 

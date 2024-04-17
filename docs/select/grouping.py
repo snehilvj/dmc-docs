@@ -1,12 +1,21 @@
 import dash_mantine_components as dmc
 
 component = dmc.Select(
-    placeholder="Pick one",
     data=[
-        {"value": "rick", "label": "Rick", "group": "Used to be a pickle"},
-        {"value": "morty", "label": "Morty", "group": "Never was a pickle"},
-        {"value": "beth", "label": "Beth", "group": "Never was a pickle"},
-        {"value": "summer", "label": "Summer", "group": "Never was a pickle"},
+        {
+            "group": "Frontend",
+            "items": [
+                {"value": "React", "label": "React"},
+                {"value": "Angular", "label": "Angular"},
+            ],
+        },
+        {
+            "group": "Backend",
+            "items": [
+                {"value": "Svelte", "label": "Svelte"},
+                {"value": "Vue", "label": "Vue"},
+            ],
+        },
     ],
-    w=300,
+    w=200,
 )
