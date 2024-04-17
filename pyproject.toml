@@ -14,9 +14,6 @@ python-frontmatter = "^1.0.0"
 dash-mantine-components = "^0.14"
 markdown2dash = "^0.1"
 pydantic = "^2.3.0"
-pandas = "1.0"
-numpy = "1.20"
-beautifulsoup4 = "^4.12.2"
 gunicorn = "^21.2.0"
 
 [tool.poetry.dev-dependencies]

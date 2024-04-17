@@ -9,11 +9,17 @@ package: dash_mantine_components
 
 ### Simple Example
 
-Use Table component to add Mantine styled tables in your app. use `dmc.Table` as a drop-in replacement for `html.Table` 
-when constructing your table with dash-html-components i.e. `html.Th`, `html.Tr`, `html.Td`, `html.Tbody` and 
-`html.Thead`.
+Use Table component to add Mantine styled tables in your app. use `dmc.Table` and associated components as
+drop-in replacements for `html.Table` and associated components respectively.
 
 .. exec::docs.table.simple
+
+### data prop
+
+You can use `data` prop to automatically generate table rows from raw data. 
+`data` prop accepts an object with the following properties: `head`, `foot`, `body`, `caption`:
+
+.. exec::docs.table.data
 
 ### Spacing
 
@@ -26,26 +32,12 @@ import dash_mantine_components as dmc
 dmc.Table(
     verticalSpacing="sm",
     horizontalSpacing=10,
-    children=[...]
+    data={...}
 )
 ```
 
 .. exec::docs.table.spacing
     :code: false
-
-A simple function can be written to construct this table directly from a dataframe.
-
-```python
-import dash_mantine_components as dmc
-from dash import html
-
-def create_table(df):
-    columns, values = df.columns, df.values
-    header = [html.Tr([html.Th(col) for col in columns])]
-    rows = [html.Tr([html.Td(cell) for cell in row]) for row in values]
-    table = [html.Thead(header), html.Tbody(rows)]
-    return table
-```
 
 ### Striped and Rows Hover
 
@@ -57,12 +49,25 @@ dmc.Table(
     highlightOnHover=True,
     withBorder=True,
     withColumnBorders=True,
-    children=[...]
+    data={...}
 )
 ```
 
 .. exec::docs.table.striped
     :code: false
+
+### Styles API
+
+| Name    | Static selector        | Description                                   |
+|:--------|:-----------------------|:----------------------------------------------|
+| table   | .mantine-Table-table   | Root `table` element (`Table` component)      |
+| thead   | .mantine-Table-thead   | `thead` element (`Table.Thead` component)     |
+| tbody   | .mantine-Table-tbody   | `tbody` element (`Table.Tbody` component)     |
+| tfoot   | .mantine-Table-tfoot   | `tfoot` element (`Table.Tfoot` component)     |
+| tr      | .mantine-Table-tr      | `tr` element (`Table.Tr` component)           |
+| th      | .mantine-Table-th      | `th` element (`Table.Th` component)           |
+| td      | .mantine-Table-td      | `td` element (`Table.Td` component)           |
+| caption | .mantine-Table-caption | `caption` element (`Table.Caption` component) |
 
 ### Keyword Arguments
 

@@ -84,5 +84,3 @@ Most of the input components are based on Mantine's Input and InputWrapper compo
 styles using MantineProvider:
 
 .. exec::docs.styles-api.inputs
-
-

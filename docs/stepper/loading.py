@@ -15,13 +15,13 @@ component = html.Div(
                     label="Second step",
                     description="Verify email",
                     children=dmc.Text("Step 2 content: Verify email", ta="center"),
-                    loading=True
+                    loading=True,
                 ),
                 dmc.StepperStep(
                     label="Final step",
                     description="Get full access",
                     children=dmc.Text("Step 3 content: Get full access", ta="center"),
-                )
+                ),
             ],
         ),
     ]

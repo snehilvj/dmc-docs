@@ -1,8 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
-
-target = dmc.Table(
+component = dmc.Table(
     data={
         "caption": "Some elements from periodic table",
         "head": ["Element position", "Atomic mass", "Symbol", "Element name"],
@@ -15,9 +13,3 @@ target = dmc.Table(
         ],
     }
 )
-
-configurator = Configurator(target)
-configurator.add_slider("horizontalSpacing", "xs")
-configurator.add_slider("verticalSpacing", "xs")
-
-component = configurator.panel

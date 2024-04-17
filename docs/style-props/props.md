@@ -14,3 +14,4 @@ Style props add styles to the root element, if you want to style nested elements
 
 .. exec::docs.style-props.props
     :code: false
+    :border: false

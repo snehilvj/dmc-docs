@@ -1,26 +1,36 @@
 import dash_mantine_components as dmc
-from dash import html
 
-header = [
-    html.Thead(
-        html.Tr(
-            [
-                html.Th("Element Position"),
-                html.Th("Element Name"),
-                html.Th("Symbol"),
-                html.Th("Atomic Mass"),
-            ]
-        )
-    )
+elements = [
+    {"position": 6, "mass": 12.011, "symbol": "C", "name": "Carbon"},
+    {"position": 7, "mass": 14.007, "symbol": "N", "name": "Nitrogen"},
+    {"position": 39, "mass": 88.906, "symbol": "Y", "name": "Yttrium"},
+    {"position": 56, "mass": 137.33, "symbol": "Ba", "name": "Barium"},
+    {"position": 58, "mass": 140.12, "symbol": "Ce", "name": "Cerium"},
 ]
 
+rows = [
+    dmc.TableTr(
+        [
+            dmc.TableTd(element["position"]),
+            dmc.TableTd(element["name"]),
+            dmc.TableTd(element["symbol"]),
+            dmc.TableTd(element["mass"]),
+        ]
+    )
+    for element in elements
+]
 
-row1 = html.Tr([html.Td("6"), html.Td("Carbon"), html.Td("C"), html.Td("12.011")])
-row2 = html.Tr([html.Td("7"), html.Td("Nitrogen"), html.Td("N"), html.Td("14.007")])
-row3 = html.Tr([html.Td("39"), html.Td("Yttrium"), html.Td("Y"), html.Td("88.906")])
-row4 = html.Tr([html.Td("56"), html.Td("Barium"), html.Td("Ba"), html.Td("137.33")])
-row5 = html.Tr([html.Td("58"), html.Td("Cerium"), html.Td("Ce"), html.Td("140.12")])
+head = dmc.TableThead(
+    dmc.TableTr(
+        [
+            dmc.TableTh("Element Position"),
+            dmc.TableTh("Element Name"),
+            dmc.TableTh("Symbol"),
+            dmc.TableTh("Atomic Mass"),
+        ]
+    )
+)
+body = dmc.TableTbody(rows)
+caption = dmc.TableCaption("Some elements from periodic table")
 
-body = [html.Tbody([row1, row2, row3, row4, row5])]
-
-component = dmc.Table(header + body)
+component = dmc.Table([head, body, caption])
