@@ -53,19 +53,17 @@ marks = [
 
 ### Styles API
 
-| Name        | Static selector             | Description                                            |
-|:------------|:----------------------------|:-------------------------------------------------------|
-| root        | .mantine-Slider-root        | Root element                                           |
-| track       | .mantine-Slider-track       | Track element, contains all other elements             |
-| bar         | .mantine-Slider-bar         | Filled part of the track                               |
-| thumb       | .mantine-Slider-thumb       | Main control                                           |
-| dragging    | .mantine-Slider-dragging    | Styles added to thumb while dragging                   |
-| label       | .mantine-Slider-label       | Label element, displayed above thumb                   |
-| markWrapper | .mantine-Slider-markWrapper | Wrapper around mark, contains mark and mark label      |
-| mark        | .mantine-Slider-mark        | Mark displayed on the track                            |
-| markFilled  | .mantine-Slider-markFilled  | Styles added to mark when it is located in filled area |
-| markLabel   | .mantine-Slider-markLabel   | Mark label, displayed below track                      |
-
+| Name           | Static selector                | Description                                         |
+|:---------------|:-------------------------------|:----------------------------------------------------|
+| root           | .mantine-Slider-root           | Root element                                        |
+| label          | .mantine-Slider-label          | Thumb label                                         |
+| thumb          | .mantine-Slider-thumb          | Thumb element                                       |
+| trackContainer | .mantine-Slider-trackContainer | Wraps track element                                 |
+| track          | .mantine-Slider-track          | Slider track                                        |
+| bar            | .mantine-Slider-bar            | Track filled part                                   |
+| markWrapper    | .mantine-Slider-markWrapper    | Contains `mark` and `markLabel` elements            |
+| mark           | .mantine-Slider-mark           | Mark displayed on track                             |
+| markLabel      | .mantine-Slider-markLabel      | Label of the associated mark, displayed below track |
 
 ### Keyword Arguments
 

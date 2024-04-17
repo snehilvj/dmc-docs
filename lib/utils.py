@@ -30,7 +30,7 @@ def create_graph():
             "month": month,
             "Smartphones": random.randint(700, 1800),
             "Laptops": random.randint(100, 1000),
-            "Tablets": random.randint(200,600),
+            "Tablets": random.randint(200, 600),
             "Watches": random.randint(200, 1800),
         }
         for month in months
