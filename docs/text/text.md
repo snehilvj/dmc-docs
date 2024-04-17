@@ -22,6 +22,12 @@ theme.colors.gray[6] in light.
 
 .. exec::docs.text.gradient
 
+### Styles API
+
+| Name        | Static selector    | Description                                      |
+|:------------|:-------------------|:-------------------------------------------------|
+| root        | .mantine-Text-root | Root element                                     |
+
 ### Keyword Arguments
 
 #### Text

@@ -21,7 +21,7 @@ target = dmc.Tabs(
 
 configurator = Configurator(target, TARGET_ID)
 
-configurator.add_select("position", ["left", "right", "center", "apart"], "left")
+configurator.add_select("justify", ["flex-start", "center", "flex-end", "space-around"], "center")
 configurator.add_switch("grow", False)
 
 component = configurator.panel

@@ -27,6 +27,7 @@ def create_graph():
 
     return dmc.BarChart(
         h=500,
+        my=10,
         data=data,
         dataKey="month",
         series=[

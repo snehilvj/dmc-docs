@@ -25,6 +25,6 @@ component = html.Div(
 @callback(Output("tabs-content", "children"), Input("tabs-example", "value"))
 def render_content(active):
     if active == "1":
-        return [dmc.Text("Tab One selected"), create_graph()]
+        return [dmc.Text("Tab One selected", my=10), create_graph()]
     else:
-        return [dmc.Text("Tab Two selected"), create_graph()]
+        return [dmc.Text("Tab Two selected", my=10), create_graph()]

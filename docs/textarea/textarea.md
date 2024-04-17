@@ -35,17 +35,16 @@ input:invalid {
 
 ### Styles API
 
-| Name         | Static selector                | Description                                                               |
-|:-------------|:-------------------------------|:--------------------------------------------------------------------------|
-| wrapper      | .mantine-Textarea-wrapper      | Root Input element                                                        |
-| icon         | .mantine-Textarea-icon         | Input icon wrapper on the left side of the input, controlled by icon prop |
-| input        | .mantine-Textarea-input        | Main input element                                                        |
-| rightSection | .mantine-Textarea-rightSection | Input right section, controlled by rightSection prop                      |
-| root         | .mantine-Textarea-root         | Root element                                                              |
-| label        | .mantine-Textarea-label        | Label element styles, defined by label prop                               |
-| error        | .mantine-Textarea-error        | Error element styles, defined by error prop                               |
-| description  | .mantine-Textarea-description  | Description element styles, defined by description prop                   |
-| required     | .mantine-Textarea-required     | Required asterisk element styles, defined by required prop                |
+| Name        | Static selector               | Description                                      |
+|:------------|:------------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-Textarea-wrapper     | Root element of the Input                        |
+| input       | .mantine-Textarea-input       | Input element                                    |
+| section     | .mantine-Textarea-section     | Left and right sections                          |
+| root        | .mantine-Textarea-root        | Root element                                     |
+| label       | .mantine-Textarea-label       | Label element                                    |
+| required    | .mantine-Textarea-required    | Required asterisk element, rendered inside label |
+| description | .mantine-Textarea-description | Description element                              |
+| error       | .mantine-Textarea-error       | Error element                                    |
 
 ### Keyword Arguments
 

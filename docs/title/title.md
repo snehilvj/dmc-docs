@@ -14,6 +14,12 @@ Pass the `order` prop to render specific element (h1-h6), default order is 1.
 
 .. exec::docs.title.simple
 
+### Styles API
+
+| Name        | Static selector     | Description                                      |
+|:------------|:--------------------|:-------------------------------------------------|
+| root        | .mantine-Title-root | Root element                                     |
+
 ### Keyword Arguments
 
 #### Title

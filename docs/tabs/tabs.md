@@ -101,15 +101,14 @@ the Tab component.
 
 ### Styles API
 
-| Name            | Static selector               | Description                         |
-|:----------------|:------------------------------|:------------------------------------|
-| root            | .mantine-Tabs-root            | Root element                        |
-| tabsList        | .mantine-Tabs-tabsList        | Controls list (Tabs.List component) |
-| tab             | .mantine-Tabs-tab             | Tab control (Tabs.Tab component)    |
-| tabRightSection | .mantine-Tabs-tabRightSection | Tab control right section           |
-| tabLabel        | .mantine-Tabs-tabLabel        | Tab control label                   |
-| tabIcon         | .mantine-Tabs-tabIcon         | Tab control icon                    |
-| panel           | .mantine-Tabs-panel           | Tab panel (Tabs.Panel component)    |
+| Name       | Static selector          | Description                                     |
+|:-----------|:-------------------------|:------------------------------------------------|
+| root       | .mantine-Tabs-root       | Root element (`Tabs` component)                 |
+| list       | .mantine-Tabs-list       | List of tabs (`Tabs.List` component)            |
+| panel      | .mantine-Tabs-panel      | Panel with tab content (`Tabs.Panel` component) |
+| tab        | .mantine-Tabs-tab        | Tab button (`Tabs.Tab` component)               |
+| tabLabel   | .mantine-Tabs-tabLabel   | Label of `Tabs.Tab`                             |
+| tabSection | .mantine-Tabs-tabSection | Left and right sections of `Tabs.Tab`           |
 
 ### Keyword Arguments
 
