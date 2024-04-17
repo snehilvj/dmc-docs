@@ -2,10 +2,8 @@ import random
 
 import dash_mantine_components as dmc
 import pandas as pd
-import plotly.graph_objects as go
 import requests
 from bs4 import BeautifulSoup
-from dash import html, dcc
 
 
 def create_table(df):
@@ -16,38 +14,40 @@ def create_table(df):
     return table
 
 
-def create_figure():
-    return go.Figure(
-        {
-            "data": [
-                go.Bar(
-                    x=list(range(10)),
-                    y=[random.randint(200, 1000) for _ in range(10)],
-                    name="SF",
-                    marker={"line": {"width": 0}},
-                    marker_color=dmc.DEFAULT_THEME["colors"]["gray"][4],
-                ),
-                go.Bar(
-                    x=list(range(10)),
-                    y=[random.randint(200, 1000) for _ in range(10)],
-                    name="Montréal",
-                    marker={"line": {"width": 0}},
-                    marker_color=dmc.DEFAULT_THEME["colors"]["indigo"][4],
-                ),
-            ],
-            "layout": go.Layout(
-                paper_bgcolor="rgba(0,0,0,0)",
-                plot_bgcolor="rgba(0,0,0,0)",
-                xaxis={"showgrid": False, "zeroline": False, "visible": False},
-                yaxis={"showgrid": False, "zeroline": False, "visible": False},
-                showlegend=False,
-            ),
-        }
-    )
-
-
 def create_graph():
-    return dcc.Graph(figure=create_figure(), config={"displayModeBar": False})
+    months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+    ]
+    data = [
+        {
+            "month": month,
+            "Smartphones": random.randint(700, 1800),
+            "Laptops": random.randint(100, 1000),
+            "Tablets": random.randint(200,600),
+            "Watches": random.randint(200, 1800),
+        }
+        for month in months
+    ]
+
+    return dmc.BarChart(
+        h=500,
+        data=data,
+        dataKey="month",
+        series=[
+            {"name": "Smartphones", "color": "violet.6"},
+            {"name": "Laptops", "color": "blue.6"},
+            {"name": "Tablets", "color": "teal.6"},
+            {"name": "Watches", "color": "indigo.6"},
+        ],
+        tickLine="y",
+    )
 
 
 def create_styles_api_table(category, component):
