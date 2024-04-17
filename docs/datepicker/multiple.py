@@ -12,7 +12,7 @@ component = html.Div(
             description="Pick one or more dates",
             minDate=date(2020, 8, 5),
             value=[datetime.now().date(), datetime.now().date() + timedelta(days=5)],
-            style={"width": 400},
+            w=400,
             type="multiple",
             placeholder="Pick dates",
             maw=300,

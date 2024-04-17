@@ -35,5 +35,5 @@ component = dmc.Card(
     withBorder=True,
     shadow="sm",
     radius="md",
-    style={"width": 350},
+    w=350,
 )

@@ -8,5 +8,5 @@ component = dmc.Select(
         {"value": "beth", "label": "Beth", "group": "Never was a pickle"},
         {"value": "summer", "label": "Summer", "group": "Never was a pickle"},
     ],
-    style={"width": 300},
+    w=300,
 )

@@ -8,7 +8,7 @@ target = dmc.Center(
     dmc.NumberInput(
         label="Your age",
         placeholder="Your age",
-        style={"width": 300},
+        w=300,
         required=True,
         id=TARGET_ID,
     )

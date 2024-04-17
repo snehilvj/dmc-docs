@@ -17,5 +17,5 @@ component = dmc.MultiSelect(
             ],
         },
     ],
-    style={"width": 400},
+    w=400,
 )

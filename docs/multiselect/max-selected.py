@@ -5,5 +5,5 @@ component = dmc.MultiSelect(
     description="You can select a maximum of 3 frameworks.",
     data=["React", "Angular", "Svelte", "Vue"],
     maxValues=3,
-    style={"width": 400},
+    w=400,
 )

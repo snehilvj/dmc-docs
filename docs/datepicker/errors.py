@@ -9,7 +9,7 @@ component = dmc.DatePicker(
     label="Date",
     required=True,
     clearable=False,
-    style={"width": 200},
+    w=200,
 )
 
 

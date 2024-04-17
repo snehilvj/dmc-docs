@@ -6,5 +6,5 @@ component = dmc.NumberInput(
     stepHoldDelay=500,
     stepHoldInterval=100,
     value=0,
-    style={"width": 250},
+    w=250,
 )

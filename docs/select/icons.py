@@ -5,7 +5,7 @@ component = dmc.Select(
     data=["USDINR", "EURUSD", "USDTWD", "USDJPY"],
     value="USDJPY",
     label="Currency Pair",
-    style={"width": 200},
+    w=200,
     leftSection=DashIconify(icon="radix-icons:magnifying-glass"),
     rightSection=DashIconify(icon="radix-icons:chevron-down"),
 )

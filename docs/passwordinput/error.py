@@ -6,13 +6,13 @@ component = dmc.Stack(
         dmc.PasswordInput(
             label="Your password",
             placeholder="Your password",
-            style={"width": 250},
+            w=250,
             error=True,
         ),
         dmc.PasswordInput(
             label="Your password",
             placeholder="Your password",
-            style={"width": 250},
+            w=250,
             error="Invalid Password",
         ),
     ],

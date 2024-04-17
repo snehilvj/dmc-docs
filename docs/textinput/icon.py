@@ -3,7 +3,7 @@ from dash_iconify import DashIconify
 
 component = dmc.TextInput(
     label="Your Email",
-    style={"width": 200},
+    w=200,
     placeholder="Your Email",
     leftSection=DashIconify(icon="ic:round-alternate-email"),
 )

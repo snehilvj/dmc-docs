@@ -7,12 +7,12 @@ component = dmc.Stack(
         dmc.DatePicker(
             value=datetime.now().date(),
             label="Date not clearable",
-            style={"width": 200},
+            w=200,
         ),
         dmc.DatePicker(
             value=datetime.now().date(),
             label="Date clearable",
-            style={"width": 200},
+            w=200,
             clearable=True,
         ),
     ]

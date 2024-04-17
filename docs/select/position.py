@@ -9,7 +9,7 @@ target = dmc.Select(
     data=["React", "Angular", "Svelte", "Vue"],
     value="Vue",
     clearable=True,
-    style={"width": 400},
+    w=400,
     id=TARGET_ID,
 )
 

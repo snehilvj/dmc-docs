@@ -53,27 +53,20 @@ Controls are not rendered in these cases:
 
 .. exec::docs.numberinput.controls
 
-### Clearing NumberInput
-
-The NumberInput's `value` has type `number | ''`. That means its value can either be a number or an empty string. Empty string indicates that the input is empty.
-So if you want to programmatically clear the NumberInput value, set it to an empty string ('').
-
 ### Styles API
 
-| Name         | Static selector                   | Description                                                               |
-|:-------------|:----------------------------------|:--------------------------------------------------------------------------|
-| wrapper      | .mantine-NumberInput-wrapper      | Root Input element                                                        |
-| icon         | .mantine-NumberInput-icon         | Input icon wrapper on the left side of the input, controlled by icon prop |
-| input        | .mantine-NumberInput-input        | Main input element                                                        |
-| rightSection | .mantine-NumberInput-rightSection | Right section with up and down controls                                   |
-| root         | .mantine-NumberInput-root         | Root element                                                              |
-| label        | .mantine-NumberInput-label        | Label element styles, defined by label prop                               |
-| error        | .mantine-NumberInput-error        | Error element styles, defined by error prop                               |
-| description  | .mantine-NumberInput-description  | Description element styles, defined by description prop                   |
-| required     | .mantine-NumberInput-required     | Required asterisk element styles, defined by required prop                |
-| control      | .mantine-NumberInput-control      | Shared up and down controls styles                                        |
-| controlUp    | .mantine-NumberInput-controlUp    | Up control styles                                                         |
-| controlDown  | .mantine-NumberInput-controlDown  | Down control styles                                                       |
+| Name        | Static selector                  | Description                                      |
+|:------------|:---------------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-NumberInput-wrapper     | Root element of the Input                        |
+| input       | .mantine-NumberInput-input       | Input element                                    |
+| section     | .mantine-NumberInput-section     | Left and right sections                          |
+| root        | .mantine-NumberInput-root        | Root element                                     |
+| label       | .mantine-NumberInput-label       | Label element                                    |
+| required    | .mantine-NumberInput-required    | Required asterisk element, rendered inside label |
+| description | .mantine-NumberInput-description | Description element                              |
+| error       | .mantine-NumberInput-error       | Error element                                    |
+| controls    | .mantine-NumberInput-controls    | Increment and decrement buttons wrapper          |
+| control     | .mantine-NumberInput-control     | Increment and decrement buttons                  |
 
 ### Keyword Arguments
 
