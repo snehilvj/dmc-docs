@@ -24,7 +24,6 @@ Control timeline appearance with the following props:
 
 .. exec::docs.timeline.simple
     
-
 ### Styles API
 
 | Name        | Static selector               | Description                               |

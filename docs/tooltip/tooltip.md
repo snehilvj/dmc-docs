@@ -12,6 +12,12 @@ package: dash_mantine_components
 .. exec::docs.tooltip.interactive
     :code: false
 
+### Tooltip Target
+
+Any component you specify in dmc.Tooltip is wrapped by a dmc.Box component under the hood. So adding a margin
+to your target component will also move the tooltip away. In order to prevent this, add margin to the wrapper component
+using the prop `boxWrapperProps` in dmc.Tooltip.
+
 ### Position
 
 Tooltip position relative to target element is defined by:
@@ -107,13 +113,18 @@ dmc.FloatingTooltip component has the same API as dmc.Tooltip component but tool
 
 ### Styles API
 
-| Name    | Static selector          | Description   |
-|:--------|:-------------------------|:--------------|
-| tooltip | .mantine-Tooltip-tooltip | Tooltip body  |
-| arrow   | .mantine-Tooltip-arrow   | Tooltip arrow |
+| Name    | Static selector          | Description                            |
+|:--------|:-------------------------|:---------------------------------------|
+| tooltip | .mantine-Tooltip-tooltip | Root element                           |
+| arrow   | .mantine-Tooltip-arrow   | Tooltip arrow, rendered inside tooltip |
 
 ### Keyword Arguments
 
 #### Tooltip
 
 .. kwargs::Tooltip
+
+
+#### TooltipFloating
+
+.. kwargs::TooltipFloating

@@ -44,6 +44,12 @@ To use gradient as ThemeIcon background:
 
 .. exec::docs.themeicon.gradient
 
+### Styles API
+
+| Name        | Static selector         | Description                                      |
+|:------------|:------------------------|:-------------------------------------------------|
+| root        | .mantine-ThemeIcon-root | Root element                                     |
+
 ### Keyword Arguments
 
 #### ThemeIcon

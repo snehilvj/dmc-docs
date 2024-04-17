@@ -47,17 +47,16 @@ Add icon or loading indicator to the right section of the input.
 
 ### Styles API
 
-| Name         | Static selector                 | Description                                                               |
-|:-------------|:--------------------------------|:--------------------------------------------------------------------------|
-| wrapper      | .mantine-TextInput-wrapper      | Root Input element                                                        |
-| icon         | .mantine-TextInput-icon         | Input icon wrapper on the left side of the input, controlled by icon prop |
-| input        | .mantine-TextInput-input        | Main input element                                                        |
-| rightSection | .mantine-TextInput-rightSection | Input right section, controlled by rightSection prop                      |
-| root         | .mantine-TextInput-root         | Root element                                                              |
-| label        | .mantine-TextInput-label        | Label element styles, defined by label prop                               |
-| error        | .mantine-TextInput-error        | Error element styles, defined by error prop                               |
-| description  | .mantine-TextInput-description  | Description element styles, defined by description prop                   |
-| required     | .mantine-TextInput-required     | Required asterisk element styles, defined by required prop                |
+| Name        | Static selector                | Description                                      |
+|:------------|:-------------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-TextInput-wrapper     | Root element of the Input                        |
+| input       | .mantine-TextInput-input       | Input element                                    |
+| section     | .mantine-TextInput-section     | Left and right sections                          |
+| root        | .mantine-TextInput-root        | Root element                                     |
+| label       | .mantine-TextInput-label       | Label element                                    |
+| required    | .mantine-TextInput-required    | Required asterisk element, rendered inside label |
+| description | .mantine-TextInput-description | Description element                              |
+| error       | .mantine-TextInput-error       | Error element                                    |
 
 ### Keyword Arguments
 

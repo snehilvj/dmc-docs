@@ -31,6 +31,16 @@ You can display an error with a red border and add an error message.
 
 ### Styles API
 
+| Name        | Static selector                | Description                                      |
+|:------------|:-------------------------------|:-------------------------------------------------|
+| wrapper     | .mantine-TimeInput-wrapper     | Root element of the Input                        |
+| input       | .mantine-TimeInput-input       | Input element                                    |
+| section     | .mantine-TimeInput-section     | Left and right sections                          |
+| root        | .mantine-TimeInput-root        | Root element                                     |
+| label       | .mantine-TimeInput-label       | Label element                                    |
+| required    | .mantine-TimeInput-required    | Required asterisk element, rendered inside label |
+| description | .mantine-TimeInput-description | Description element                              |
+| error       | .mantine-TimeInput-error       | Error element                                    |
 
 ### Keyword Arguments
 
