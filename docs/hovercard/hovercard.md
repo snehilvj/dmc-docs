@@ -23,6 +23,12 @@ HoverCard is displayed only when mouse is over target element or dropdown, you c
 
 .. exec::docs.hovercard.interactive
 
+### HoverCard Target
+
+Any component you specify in dmc.HoverCardTarget is wrapped by a dmc.Box component under the hood. So adding a margin
+to your target component will also move the dropdown away. In order to prevent this, add margin to the wrapper component
+using the prop `boxWrapperProps` in dmc.HoverCardTarget.
+
 ### Styles API
 
 | Name     | Static selector             | Description      |

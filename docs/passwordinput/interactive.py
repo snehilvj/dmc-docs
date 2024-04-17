@@ -18,7 +18,6 @@ configurator.add_text_input(
     **{"placeholder": "Description"}
 )
 configurator.add_text_input("error", "", **{"placeholder": "Error"})
-configurator.add_select("variant", ["default", "filled", "unstyled"], "filled")
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
 configurator.add_switch("required", True)

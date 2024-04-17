@@ -28,6 +28,7 @@ Control the number of items displayed after previous(<) and before next(>) butto
 
 | Name    | Static selector             | Description                                               |
 |:--------|:----------------------------|:----------------------------------------------------------|
+| root    | .mantine-Pagination-root    | Root element                                              |
 | control | .mantine-Pagination-control | Control element: items, next/previous, first/last buttons |
 | dots    | .mantine-Pagination-dots    | Dots icon wrapper                                         |
 
@@ -36,3 +37,11 @@ Control the number of items displayed after previous(<) and before next(>) butto
 #### Pagination
 
 .. kwargs::Pagination
+
+#### ProgressRoot
+
+.. kwargs::ProgressRoot
+
+#### ProgressSection
+
+.. kwargs::ProgressSection

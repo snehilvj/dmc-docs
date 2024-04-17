@@ -19,22 +19,10 @@ prop (by default theme.primaryColor will be used).
 
 .. exec::docs.progress.simple
 
-### Multiple sections
-
-Multiple sections can be displayed instead of just one single bar.
-
-.. exec::docs.progress.sections
-
-### Section Tooltips
-
-Hover on the sections to see tooltips in action.
-
-.. exec::docs.progress.tooltip
-
 ### Size
 
-Size controls progress bar height. Progress has predefined sizes: xs, sm, etc. Alternatively, you can use a number to
-set height in px.
+`size` controls progress bar height. Progress has predefined sizes: xs, sm, etc.
+Alternatively, you can use a number to set height in px.
 
 ```python
 import dash_mantine_components as dmc
@@ -56,13 +44,19 @@ dmc.Progress(radius="lg")
 dmc.Progress(radius=10)
 ```
 
+### Multiple sections
+
+Multiple sections can be displayed instead of just one single bar.
+
+.. exec::docs.progress.sections
+
 ### Styles API
 
-| Name   | Static selector         | Description    |
-|:-------|:------------------------|:---------------|
-| root   | .mantine-Progress-root  | Root element   |
-| bar    | .mantine-Progress-bar   | Filled bar     |
-| label  | .mantine-Progress-label | Progress label |
+| Name    | Static selector           | Description                     |
+|:--------|:--------------------------|:--------------------------------|
+| root    | .mantine-Progress-root    | Root element                    |
+| section | .mantine-Progress-section | `Progress.Section` root element |
+| label   | .mantine-Progress-label   | `Progress.Label` root element   |
 
 ### Keyword Arguments
 

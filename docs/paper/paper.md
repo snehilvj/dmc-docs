@@ -48,6 +48,12 @@ dmc.Paper(
 )
 ```
 
+### Styles API
+
+| Name | Static selector     | Description  |
+|:-----|:--------------------|:-------------|
+| root | .mantine-Paper-root | Root element |
+
 ### Keyword Arguments
 
 #### Paper
