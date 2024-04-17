@@ -52,6 +52,12 @@ dmc.Stepper(
 )
 ```
 
+### Loading state
+
+To indicate loading state set `loading` prop on `Step` component, `Loader` will replace step icon.
+
+.. exec::docs.stepper.loading
+
 ### Custom icons
 
 You can replace step icon by setting `icon` prop on Step component. To change completed check icon set `completedIcon` on Stepper component.

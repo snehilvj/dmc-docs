@@ -23,7 +23,7 @@ configurator.add_select(
     ["space-between", "space-around", "center", "flex-end", "flex-start"],
     "center",
 )
-configurator.add_slider("spacing", "sm")
+configurator.add_slider("gap", "sm")
 
 
 component = configurator.panel

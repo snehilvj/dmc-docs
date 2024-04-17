@@ -18,6 +18,12 @@ Adjust stack styles with `align`, `justify`, and `spacing` props.
 .. exec::docs.stack.interactive
     :code: false
 
+### Styles API
+
+| Name        | Static selector     | Description                                      |
+|:------------|:--------------------|:-------------------------------------------------|
+| root        | .mantine-Stack-root | Root element                                     |
+
 ### Keyword Arguments
 
 #### Stack
