@@ -15,7 +15,7 @@ layout = dmc.Stack(
                     "here",
                     underline=False,
                     target="_blank",
-                    href="https://github.com/snehilvj/dash-mantine-components/issues/new",
+                    href="https://github.com/snehilvj/dmc-docs/issues/new",
                 ),
                 ".",
             ]
