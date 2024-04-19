@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
 ### Extensions
 
-Most of the styling is already included but if you are using components like DatePicker, Carousel, or CodeHighlight, then 
+Most of the styling is already included but if you are using components like `DatePicker`, `Carousel`, or `CodeHighlight`, then 
 you need to include css for them separately.
 
 ```python

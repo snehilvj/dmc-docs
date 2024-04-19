@@ -9,6 +9,7 @@ excluded_links = [
     "/style-props",
     "/dash-iconify",
     "/",
+    "/migration",
 ]
 
 
@@ -53,6 +54,11 @@ def create_content(data):
                 icon="material-symbols:cookie-rounded",
                 label="Dash Iconify",
                 href="/dash-iconify",
+            ),
+            create_main_link(
+                icon="material-symbols:checklist-rounded",
+                label="Migration Guide",
+                href="/migration",
             ),
             dmc.Divider(my=10),
         ],
