@@ -1,6 +1,6 @@
 ---
 name: Notification
-description: dmc has an excellent Notifications System, which can be used to generate client side notifications.
+description: DMC has an excellent Notifications System, which can be used to generate client side notifications.
 endpoint: /components/notification
 package: dash_mantine_components
 ---

@@ -1,6 +1,6 @@
 ---
 name: Image
-description: dmc alternative for html.Img with placeholder for loading and error states.
+description: DMC alternative for html.Img with placeholder for loading and error states.
 endpoint: /components/image
 package: dash_mantine_components
 ---

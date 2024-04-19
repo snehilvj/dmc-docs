@@ -33,6 +33,6 @@ DashIconify component can be customized with `width`, `height`, `rotate` and `fl
 ### Usage With DMC
 
 Although dash-iconify can be used with any dash components library, be it, dash-mantine-components, dash-core-components
-or dash-bootstrap-components, dmc provides direct hooks for adding icons to enhance the look and feel of your apps.
+or dash-bootstrap-components, DMC provides direct hooks for adding icons to enhance the look and feel of your apps.
 
 .. exec::docs.dash-iconify.dmc

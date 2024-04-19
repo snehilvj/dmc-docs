@@ -40,7 +40,7 @@ Use AvatarGroup to stack Avatar components.
 
 ### Dynamically created AvatarGroup
 
-Here's an example of a dynamically created AvatarGroup from GitHub contributors to dmc library.
+Here's an example of a dynamically created AvatarGroup from GitHub contributors to DMC library.
 
 .. exec::docs.avatar.contributors
 
