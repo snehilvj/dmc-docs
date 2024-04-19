@@ -13,7 +13,7 @@ Card component is a wrapper around Paper component with styles for CardSection c
 
 .. exec::docs.card.simple
 
-### CardSection
+### Card Section
 
 CardSection is a special component that is used to remove Card padding from its children while other elements still have horizontal spacing. CardSection works the following way:
 
