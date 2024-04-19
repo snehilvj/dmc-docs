@@ -49,21 +49,20 @@ and include this in your css file:
 
 ### Styling with inline styles
 
-`styles` prop can be used similarly to style individual elements inside a component. For example, you can customize a
-dmc.Button with `styles` prop like this:
+`styles` prop can be used similarly to style individual elements inside a component. Here again, you will have to
+refer to the Styles API section on the component page.
+
+#### Button
 
 .. exec::docs.styles-api.button
 
-Here again, you will have to refer to the Styles API section on the component page.
+#### Badge
 
-### Styles API with MantineProvider
+.. exec::docs.styles-api.badge
 
-You can also use Styles API in MantineProvider with `styles` prop. All styles defined there will be added to each
-component rendered inside provider. This technique is also used to style this entire documentation.
+#### TextInput
 
-Let's say you want to apply custom styling to all your badges, here's how you can do that.
-
-.. exec::docs.styles-api.provider
+.. exec::docs.styles-api.input
 
 ### root selector
 
@@ -77,10 +76,3 @@ dmc.MantineProvider(
     children=[...],
 )
 ```
-
-### Example
-
-Most of the input components are based on Mantine's Input and InputWrapper components, and so you can change shared
-styles using MantineProvider:
-
-.. exec::docs.styles-api.inputs
