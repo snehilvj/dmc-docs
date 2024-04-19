@@ -129,8 +129,8 @@ are now supposed to be implemented with compound components instead.
 
 [Button](/components/button) changes
 
-- `compact` prop was removed, use `size="compact-<>"` instead
-` `leftIcon` and `rightIcon` props were renamed to `leftSection` and `rightSection`
+- `compact` prop was removed, use `size='compact-xx'` instead
+- `leftIcon` and `rightIcon` props were renamed to `leftSection` and `rightSection`
 - `uppercase` prop was removed, use `tt` [style prop](/style-props) instead
 - `loaderPosition` prop was removed, Loader is now always rendered in the center to prevent layout shifts
 
