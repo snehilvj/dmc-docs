@@ -63,16 +63,3 @@ refer to the Styles API section on the component page.
 #### TextInput
 
 .. exec::docs.styles-api.input
-
-### root selector
-
-If the component does not specify Styles API selectors, then in most cases you can add styles using root selector.
-
-```python
-import dash_mantine_components as dmc
-
-dmc.MantineProvider(
-    theme={"components": {"Text": {"styles": {"root": {"fontSize": 20}}}}},
-    children=[...],
-)
-```
