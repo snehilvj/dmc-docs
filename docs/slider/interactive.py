@@ -18,7 +18,7 @@ target = dmc.Slider(
 configurator = Configurator(target, TARGET_ID)
 
 configurator.add_colorpicker("color", "indigo")
-configurator.add_slider("size", "sm")
+configurator.add_slider("size", "md")
 configurator.add_slider("radius", "lg")
 configurator.add_switch("showLabelOnHover", True)
 configurator.add_switch("labelAlwaysOn", False)

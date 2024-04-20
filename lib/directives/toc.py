@@ -34,7 +34,7 @@ class TOC(TableOfContents):
                 "className": "flat",
                 "id": "ethical-ads-box",
             },
-            mb=25,
+            my=25,
             ml=-15
         )
 

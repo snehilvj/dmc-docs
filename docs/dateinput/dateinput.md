@@ -3,6 +3,7 @@ name: DateInput
 description: Free form date input
 endpoint: /components/dateinput
 package: dash_mantine_components
+category: Date Pickers
 ---
 
 .. toc::

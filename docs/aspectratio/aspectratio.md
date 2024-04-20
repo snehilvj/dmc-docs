@@ -3,6 +3,7 @@ name: AspectRatio
 description: Use the Aspect component to maintain responsive consistent width/height ratio.
 endpoint: /components/aspectratio
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

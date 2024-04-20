@@ -3,6 +3,7 @@ name: Stepper
 description: Use the Stepper, StepperStep and StepperCompleted components to display content divided into a steps sequence
 endpoint: /components/stepper
 package: dash_mantine_components
+category: Navigation
 ---
 
 .. toc::

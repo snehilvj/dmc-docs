@@ -3,6 +3,7 @@ name: MantineProvider
 description: Use MantineProvider component to enable dark theme in your app globally.
 endpoint: /components/mantineprovider
 package: dash_mantine_components
+category: Theming
 ---
 
 .. toc::
@@ -53,15 +54,18 @@ dmc.MantineProvider(
     theme={
         "colors": {
             "myColor": [
-                "#EFF7A9",
-                "#DEEA80",
-                "#CCD962",
-                "#C9DC2F",
-                "#BCD113",
-                "#ABBF02",
-                "#9CB000",
-                "#869800",
-                "#728100",
+                [
+                  "#F2FFB6",
+                  "#DCF97E",
+                  "#C3E35B",
+                  "#AAC944",
+                  "#98BC20",
+                  "#86AC09",
+                  "#78A000",
+                  "#668B00",
+                  "#547200",
+                  "#455D00",
+                ]
             ]
         },
     },

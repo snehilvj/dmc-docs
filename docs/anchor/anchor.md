@@ -3,6 +3,7 @@ name: Anchor
 description: Use the Anchor component to add links with Mantine's theme styles.
 endpoint: /components/anchor
 package: dash_mantine_components
+category: Navigation
 ---
 
 .. toc::

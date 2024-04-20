@@ -3,6 +3,7 @@ name: List
 description: Use List component to show ordered and unordered lists with icon support.
 endpoint: /components/list
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

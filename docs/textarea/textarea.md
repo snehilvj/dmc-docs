@@ -3,6 +3,7 @@ name: Textarea
 description: Use Textarea component to capture string input in a text area with an auto-size variant. Customize the input with label, description, error message etc.
 endpoint: /components/textarea
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

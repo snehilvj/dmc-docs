@@ -3,6 +3,7 @@ name: Progress
 description: Use the Progress component to give feedback to the user about the status of a task with label, sections, etc.
 endpoint: /components/progress
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::

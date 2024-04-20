@@ -3,6 +3,7 @@ name: Loader
 description: Use Loader component to show loading state to the user.
 endpoint: /components/loader
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::

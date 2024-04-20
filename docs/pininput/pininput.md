@@ -3,6 +3,7 @@ name: PinInput
 description: Capture pin code or one time password from the user.
 endpoint: /components/pininput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: Slider
 description: Use Slider component to capture user feedback from a range of values.
 endpoint: /components/slider
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

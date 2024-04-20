@@ -3,6 +3,7 @@ name: NavLink
 description: Use the Navlink component to create navigation link in the side navigation bars.
 endpoint: /components/navlink
 package: dash_mantine_components
+category: Navigation
 ---
 
 .. toc::

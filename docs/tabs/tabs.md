@@ -3,6 +3,7 @@ name: Tabs
 description: Use the Tab and Tabs component to switch between views.
 endpoint: /components/tabs
 package: dash_mantine_components
+category: Navigation
 ---
 
 .. toc::

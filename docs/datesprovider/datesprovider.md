@@ -3,6 +3,7 @@ name: DatesProvider
 description: DatesProvider component lets you set various settings that are shared across all date components.
 endpoint: /components/datesprovider
 package: dash_mantine_components
+category: Date Pickers
 ---
 
 .. toc::

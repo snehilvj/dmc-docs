@@ -3,6 +3,7 @@ name: Stack
 description: Use Stack component to compose elements and components in a vertical flex container
 endpoint: /components/stack
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

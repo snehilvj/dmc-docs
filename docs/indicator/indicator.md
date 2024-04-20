@@ -3,6 +3,7 @@ name: Indicator
 description: Use Indicator to display element at the corner of another element
 endpoint: /components/indicator
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: Image
 description: DMC alternative for html.Img with placeholder for loading and error states.
 endpoint: /components/image
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::
@@ -26,7 +27,7 @@ Set `fallbackSrc` prop to display fallback image when image fails to load:
 
 .. exec::docs.image.placeholder
 
-### BackgroundImage
+### Background Image
 
 Use BackgroundImage component when you need to display image below any content. Component sets background-image to 
 given `src`, background-size to cover and background-position to center.

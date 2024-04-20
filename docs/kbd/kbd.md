@@ -3,6 +3,7 @@ name: Kbd
 description: Use Kbd to show keyboard shortcuts, etc.
 endpoint: /components/kbd
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

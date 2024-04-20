@@ -3,6 +3,7 @@ name: Group
 description: Use Group component to place components in a horizontal flex container.
 endpoint: /components/group
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: Drawer
 description: Use Drawer component to create collapsible sidebars.
 endpoint: /components/drawer
 package: dash_mantine_components
+category: Overlay
 ---
 
 .. toc::

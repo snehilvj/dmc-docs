@@ -3,6 +3,7 @@ name: SimpleGrid
 description: Use SimpleGrid component to create a grid where each column takes equal width. You can use it to create responsive layouts.
 endpoint: /components/simplegrid
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

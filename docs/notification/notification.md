@@ -3,6 +3,7 @@ name: Notification
 description: DMC has an excellent Notifications System, which can be used to generate client side notifications.
 endpoint: /components/notification
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::
@@ -58,7 +59,7 @@ Each notification is identified with an `id`. In order to update/hide a notifica
 
 ### Keyword Arguments
 
-#### Notifications
+#### NotificationProvider
 
 .. kwargs::NotificationProvider
 

@@ -3,6 +3,7 @@ name: Title
 description: Use the Title component to render h1-h6 headings.
 endpoint: /components/title
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

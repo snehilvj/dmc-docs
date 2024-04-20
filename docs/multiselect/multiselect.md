@@ -3,6 +3,7 @@ name: MultiSelect
 description: MultiSelect enables users to select multiple options in a dropdown.
 endpoint: /components/multiselect
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: ActionIcon
 description: Use this component as an alternative to buttons when you just want to use an icon.
 endpoint: /components/actionicon
 package: dash_mantine_components
+category: Buttons
 ---
 
 .. toc::

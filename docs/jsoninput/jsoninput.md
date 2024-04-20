@@ -3,6 +3,7 @@ name: JsonInput
 description: JsonInput is based on Textarea component, it includes json validation logic and option to format input value on blur.
 endpoint: /components/jsoninput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

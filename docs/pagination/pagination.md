@@ -3,6 +3,7 @@ name: Pagination
 description: Display active page and navigate between multiple pages
 endpoint: /components/pagination
 package: dash_mantine_components
+category: Navigation
 ---
 
 .. toc::

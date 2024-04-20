@@ -1,5 +1,5 @@
 import dash_mantine_components as dmc
-from dash import Output, Input, clientside_callback, html, dcc, page_container, State
+from dash import Output, Input, clientside_callback, dcc, page_container, State
 
 from components.header import create_header
 from components.navbar import create_navbar, create_navbar_drawer
@@ -32,15 +32,16 @@ def create_appshell(data):
             },
             "colors": {
                 "myColor": [
-                    "#EFF7A9",
-                    "#DEEA80",
-                    "#CCD962",
-                    "#C9DC2F",
-                    "#BCD113",
-                    "#ABBF02",
-                    "#9CB000",
-                    "#869800",
-                    "#728100",
+                    "#F2FFB6",
+                    "#DCF97E",
+                    "#C3E35B",
+                    "#AAC944",
+                    "#98BC20",
+                    "#86AC09",
+                    "#78A000",
+                    "#668B00",
+                    "#547200",
+                    "#455D00",
                 ]
             },
         },
@@ -86,11 +87,11 @@ clientside_callback(
 clientside_callback(
     """
     function(data) {
-        const element = document.getElementById("ethical-ads-box")
+        const box = document.getElementById("ethical-ads-box");
         if (data === "dark") {
-            element.className += " dark"
+            box.classList.add("dark");
         } else {
-            element.className = element.className.replace(" dark", "")
+            box.classList.remove("dark");
         }
         return dash_clientside.no_update
     }

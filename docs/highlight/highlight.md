@@ -3,6 +3,7 @@ name: Highlight
 description: Use the Highlight component to highlight a substring in a given string with mark tag.
 endpoint: /components/highlight
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

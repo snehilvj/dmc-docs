@@ -3,6 +3,7 @@ name: ColorPicker
 description: Use Colorpicker for color inputs in various formats such as hex, rgb, hsl etc.
 endpoint: /components/colorpicker
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

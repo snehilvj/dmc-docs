@@ -3,6 +3,7 @@ name: Text
 description: Use the Text component to display text and links with Mantine's theme styles.
 endpoint: /components/text
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

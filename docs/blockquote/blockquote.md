@@ -3,6 +3,7 @@ name: Blockquote
 description: Use the Blockquote to display quotes with optional cite and icon.
 endpoint: /components/blockquote
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

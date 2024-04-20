@@ -3,6 +3,7 @@ name: SegmentedControl
 description: SegmentedControl is an alternative to RadioGroup and allows users to select an option from a small set of options.
 endpoint: /components/segmentedcontrol
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

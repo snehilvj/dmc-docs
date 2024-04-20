@@ -3,6 +3,7 @@ name: AppShell
 description: Responsive shell for your application with header, navbar, aside and footer.
 endpoint: /components/appshell
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

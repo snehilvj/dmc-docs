@@ -3,6 +3,7 @@ name: Tooltip
 description: Use Tooltip component to render tooltip at given element on mouse over or any other event
 endpoint: /components/tooltip
 package: dash_mantine_components
+category: Overlay
 ---
 
 .. toc::
@@ -124,7 +125,6 @@ dmc.FloatingTooltip component has the same API as dmc.Tooltip component but tool
 
 .. kwargs::Tooltip
 
+#### FloatingTooltip
 
-#### TooltipFloating
-
-.. kwargs::TooltipFloating
+.. kwargs::FloatingTooltip

@@ -3,6 +3,7 @@ name: Table
 description: Use the Table component to display tables with Mantine's theme styles. An alternative to html.Table
 endpoint: /components/table
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

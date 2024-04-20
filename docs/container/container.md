@@ -3,6 +3,7 @@ name: Container
 description: Container is the most basic layout element, it centers content horizontally and adds horizontal padding from theme.
 endpoint: /components/container
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

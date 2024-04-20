@@ -3,6 +3,7 @@ name: Flex
 description: Use the Flex component to compose elements in a flex container.
 endpoint: /components/flex
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

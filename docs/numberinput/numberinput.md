@@ -3,6 +3,7 @@ name: NumberInput
 description: Use NumberInput to provide a field for entering numbers in your app with ability to set min, max and step.
 endpoint: /components/numberinput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

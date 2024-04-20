@@ -3,6 +3,7 @@ name: Spoiler
 description: Use the Spoiler component to hide long sections of content.
 endpoint: /components/spoiler
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

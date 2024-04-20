@@ -3,6 +3,7 @@ name: Breadcrumbs
 description: Breadcrumbs is a navigation component that is used to indicate current page's location within a navigational hierarchy.
 endpoint: /components/breadcrumbs
 package: dash_mantine_components
+category: Navigation
 ---
 
 .. toc::

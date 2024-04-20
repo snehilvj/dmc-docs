@@ -3,6 +3,7 @@ name: Divider
 description: Use Divider component as an alternative to html.Hr.
 endpoint: /components/divider
 package: dash_mantine_components
+category: Miscellaneous
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: Button
 description: DMC alternative to html.Button.
 endpoint: /components/button
 package: dash_mantine_components
+category: Buttons
 ---
 
 .. toc::

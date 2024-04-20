@@ -3,6 +3,7 @@ name: Skeleton
 description: Use Skeleton component to disable user interactions and indicate loading state.
 endpoint: /components/skeleton
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::

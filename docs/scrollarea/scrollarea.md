@@ -3,6 +3,7 @@ name: ScrollArea
 description: Use the ScrollArea component to customize scrollbars.
 endpoint: /components/scrollarea
 package: dash_mantine_components
+category: Miscellaneous
 ---
 
 .. toc::

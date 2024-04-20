@@ -3,6 +3,7 @@ name: RadioGroup
 description: RadioGroup component gives user radio inputs to allow only one selection from a small set of options.
 endpoint: /components/radiogroup
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

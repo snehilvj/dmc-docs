@@ -3,6 +3,7 @@ name: TextInput
 description: Use TextInput component to capture string input from user. Customize the input with label, description, error message etc.
 endpoint: /components/textinput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

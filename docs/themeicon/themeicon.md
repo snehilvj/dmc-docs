@@ -3,6 +3,7 @@ name: ThemeIcon
 description: Use ThemeIcon component to render icon inside element with theme colors.
 endpoint: /components/themeicon
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: Checkbox
 description: Use Checkbox component to capture boolean input from user.
 endpoint: /components/checkbox
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

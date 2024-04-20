@@ -2,14 +2,20 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-target = dmc.PasswordInput(
-    label="Enter your password",
-    placeholder="Password",
-    description="Password must include at least one letter, number and special character",
-    required=True,
+TARGET_ID = "interactive-password"
+
+target = dmc.Center(
+    dmc.PasswordInput(
+        label="Enter your password",
+        placeholder="Password",
+        description="Password must include at least one letter, number and special character",
+        required=True,
+        w=250,
+        id=TARGET_ID,
+    )
 )
 
-configurator = Configurator(target)
+configurator = Configurator(target, TARGET_ID)
 configurator.add_text_input("placeholder", "Password", **{"placeholder": "Placeholder"})
 configurator.add_text_input("label", "Enter your password", **{"placeholder": "Label"})
 configurator.add_text_input(

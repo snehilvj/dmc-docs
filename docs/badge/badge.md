@@ -3,6 +3,7 @@ name: Badge
 description: Use Badges to show indicators, numerical or otherwise.
 endpoint: /components/badge
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

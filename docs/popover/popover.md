@@ -3,6 +3,7 @@ name: Popover
 description: Display popover section relative to given target element.
 endpoint: /components/popover
 package: dash_mantine_components
+category: Overlay
 ---
 
 .. toc::

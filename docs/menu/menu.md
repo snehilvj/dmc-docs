@@ -3,6 +3,7 @@ name: Menu
 description: Use the Menu and MenuX components to show an interactive menu dropdown with links and buttons.
 endpoint: /components/menu
 package: dash_mantine_components
+category: Overlay
 ---
 
 .. toc::

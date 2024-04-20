@@ -3,6 +3,7 @@ name: Alert
 description: Use Alerts to attract user attention with static messages.
 endpoint: /components/alert
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::

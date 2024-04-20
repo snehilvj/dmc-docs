@@ -3,6 +3,7 @@ name: HoverCard
 description: Use HoverCard component to show more information in a popover.
 endpoint: /components/hovercard
 package: dash_mantine_components
+category: Overlay
 ---
 
 .. toc::

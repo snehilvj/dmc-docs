@@ -3,6 +3,7 @@ name: TimeInput
 description: Use the TimeInput component to capture time input from user.
 endpoint: /components/timeinput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

@@ -3,6 +3,7 @@ name: Mark
 description: Use the Mark component to highlight part of the text.
 endpoint: /components/mark
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

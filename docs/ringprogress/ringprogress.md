@@ -3,6 +3,7 @@ name: RingProgress
 description: Use the RingProgress component to give feedback to the user about the status of a task with label, sections, etc.
 endpoint: /components/ringprogress
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::

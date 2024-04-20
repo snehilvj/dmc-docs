@@ -3,6 +3,7 @@ name: PasswordInput
 description: Use PasswordInput to capture password from user with an option to toggle visibility.
 endpoint: /components/passwordinput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::
@@ -10,7 +11,7 @@ package: dash_mantine_components
 ### Introduction
 
 Use PasswordInput when you need to capture password from user. Component provides an option to toggle password 
-visibility, if you do not want this feature, use [TextInput](/components/textinput) component with `type="password"`.
+visibility, if you do not want this feature, use [TextInput](/components/textinput) component with `type='password'`.
 
 .. exec::docs.passwordinput.interactive
     :code: false

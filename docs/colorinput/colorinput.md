@@ -3,6 +3,7 @@ name: ColorInput
 description: Capture color inputs from user.
 endpoint: /components/colorinput
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

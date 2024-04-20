@@ -3,6 +3,7 @@ name: Space
 description: Use the Space component to add horizontal or vertical spacing from theme.
 endpoint: /components/space
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::

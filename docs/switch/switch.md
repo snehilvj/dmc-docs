@@ -3,6 +3,7 @@ name: Switch
 description: Use the Switch component to capture boolean input from user.
 endpoint: /components/switch
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

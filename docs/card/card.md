@@ -3,6 +3,7 @@ name: Card
 description: Use Card component to hold anything from images to headlines, supporting text, buttons, lists, etc. in a contained unit.
 endpoint: /components/card
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

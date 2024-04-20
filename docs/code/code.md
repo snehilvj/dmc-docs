@@ -3,6 +3,7 @@ name: Code
 description: Use Code to display code without syntax highlighting.
 endpoint: /components/code
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

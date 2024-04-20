@@ -3,6 +3,7 @@ name: Rating
 description: Pick and display rating
 endpoint: /components/rating
 package: dash_mantine_components
+category: Inputs
 ---
 
 .. toc::

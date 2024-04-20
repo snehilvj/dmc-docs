@@ -3,6 +3,7 @@ name: CodeHighlight
 description: Use CodeHighlight component for highlighting code snippets with syntax highlighting for different languages like python, cpp, javascript, etc.
 endpoint: /components/code-highlight
 package: dash_mantine_components
+category: Typography
 ---
 
 .. toc::

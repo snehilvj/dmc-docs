@@ -3,6 +3,7 @@ name: Modal
 description: Use Modal component to show a dialog box or a popup window on the top of the current page.
 endpoint: /components/modal
 package: dash_mantine_components
+category: Overlay
 ---
 
 .. toc::

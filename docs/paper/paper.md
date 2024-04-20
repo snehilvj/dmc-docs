@@ -3,6 +3,7 @@ name: Paper
 description: Render white or dark background depending on color scheme with Paper component with border, shadow, etc.
 endpoint: /components/paper
 package: dash_mantine_components
+category: Miscellaneous
 ---
 
 .. toc::

@@ -1,5 +1,6 @@
 import logging
 from pathlib import Path
+from typing import Optional
 
 import dash
 import dash_mantine_components as dmc
@@ -26,6 +27,7 @@ class Meta(BaseModel):
     description: str
     endpoint: str
     package: str = "dash_mantine_components"
+    category: Optional[str] = None
 
 
 def make_endpoint(name):
@@ -56,4 +58,5 @@ for file in files:
         title=PAGE_TITLE_PREFIX + metadata.name,
         description=metadata.description,
         layout=layout,
+        category=metadata.category,
     )

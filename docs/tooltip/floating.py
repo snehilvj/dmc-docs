@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 
 component = dmc.Center(
     [
-        dmc.TooltipFloating(
+        dmc.FloatingTooltip(
             label="Tooltip",
             color="orange",
             children=[

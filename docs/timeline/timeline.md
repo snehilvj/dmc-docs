@@ -3,6 +3,7 @@ name: Timeline
 description: Use the Timeline and TimelineItem components to display a list of events in chronological order.
 endpoint: /components/timeline
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

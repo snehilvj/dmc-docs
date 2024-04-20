@@ -3,6 +3,7 @@ name: LoadingOverlay
 description: Use LoadingOverlay component to disable user interactions and indicate loading state.
 endpoint: /components/loadingoverlay
 package: dash_mantine_components
+category: Feedback
 ---
 
 .. toc::

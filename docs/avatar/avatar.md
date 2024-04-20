@@ -3,6 +3,7 @@ name: Avatar
 description: Use Avatar to display user profile pictures. It supports images, icons, or letters. Use AvatarGroup to display stack Avatar components.
 endpoint: /components/avatar
 package: dash_mantine_components
+category: Data Display
 ---
 
 .. toc::

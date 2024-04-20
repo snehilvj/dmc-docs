@@ -3,6 +3,7 @@ name: Grid
 description: Use Grid component to create layouts with a flexbox grid system with variable amount of columns.
 endpoint: /components/grid
 package: dash_mantine_components
+category: Layout
 ---
 
 .. toc::
