@@ -15,7 +15,7 @@ Set `sections` prop to an array of:
 
 .. exec::docs.ringprogress.simple
 
-### Section Tooltips
+### Root Color
 
 Use `rootColor` property to change the root color.
 
