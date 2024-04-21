@@ -48,12 +48,10 @@ Set w="target" prop to make Popover dropdown take the same width as target eleme
 
 .. kwargs::Popover
 
-### PopoverTarget
+#### PopoverTarget
 
 .. kwargs::PopoverTarget
 
-### PopoverDropdown
+#### PopoverDropdown
 
 .. kwargs::PopoverDropdown
-
-

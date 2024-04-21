@@ -36,7 +36,9 @@ def create_main_link(icon, label, href):
         dmc.Group(
             [
                 DashIconify(
-                    icon=icon, width=23, color=dmc.DEFAULT_THEME["colors"][PRIMARY_COLOR][5]
+                    icon=icon,
+                    width=23,
+                    color=dmc.DEFAULT_THEME["colors"][PRIMARY_COLOR][5],
                 ),
                 dmc.Text(label, size="sm"),
             ]
@@ -128,7 +130,7 @@ def create_navbar_drawer(data):
         offset=10,
         radius="md",
         withCloseButton=False,
-        size="60%",
+        size="75%",
         children=create_content(data),
         trapFocus=False,
     )
