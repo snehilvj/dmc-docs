@@ -82,7 +82,6 @@ app = Dash(__name__, external_stylesheets=stylesheets)
 
 - `Chip` and `ChipGroup` components are not working as expected when ported over in dash. It will be worked on as part of subsequent releases.
 - `TransferList` is no longer available.
-- `Burger` will be added as part of subsequent releases.
 
 ### left and right section
 

@@ -51,7 +51,7 @@ def create_main_link(icon, label, href):
 def create_content(data):
     main_links = dmc.Stack(
         gap="sm",
-        mt=20,
+        mt=30,
         children=[
             create_main_link(
                 icon="material-symbols:rocket-launch-rounded",
