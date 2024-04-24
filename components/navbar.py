@@ -28,6 +28,7 @@ category_data = {
     "Feedback": {"icon": "material-symbols:feedback-rounded"},
     "Typography": {"icon": "material-symbols:custom-typography-rounded"},
     "Buttons": {"icon": "material-symbols:buttons-alt-rounded"},
+    "Combobox": {"icon": "material-symbols:chevron-left-rounded"},
 }
 
 
@@ -114,7 +115,7 @@ def create_content(data):
         offsetScrollbars=True,
         type="scroll",
         style={"height": "100%"},
-        children=dmc.Stack(gap=0, children=[main_links, *body], px=25),
+        children=dmc.Stack(gap=0, children=[main_links, *body, dmc.Space(h=90)], px=25),
     )
 
 

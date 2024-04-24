@@ -55,6 +55,10 @@ h3.m2d-heading {
     font-weight: 500;
 }
 
+.m2d-link {
+    font-size: 15px;
+}
+
 .m2d-block-kwargs td:nth-child(3) {
     width: 250px;
 }

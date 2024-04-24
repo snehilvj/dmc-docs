@@ -83,7 +83,12 @@ app = Dash(__name__, external_stylesheets=stylesheets)
 - `Chip` and `ChipGroup` components are not working as expected when ported over in dash. It will be worked on as part of subsequent releases.
 - `TransferList` is no longer available.
 
-### left and right section
+### Creatable option in Select and MultiSelect
+
+`creatable` prop has been removed from `Select` and `MultiSelect`. However, [TagsInput](/components/tagsinput) can be used to emulate
+the same functionality as `MultiSelect` with `creatable` prop.
+
+### Left and Right section
 
 Components that previously had `rightSection` and `icon` props, now use `leftSection` instead of `icon`. Example of Button sections:
 

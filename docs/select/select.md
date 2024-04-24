@@ -3,7 +3,7 @@ name: Select
 description: Select enables users to select an option in a dropdown.
 endpoint: /components/select
 package: dash_mantine_components
-category: Inputs
+category: Combobox
 ---
 
 .. toc::
