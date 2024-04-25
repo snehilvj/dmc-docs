@@ -48,7 +48,7 @@ def create_appshell(data):
         children=[
             dcc.Store(id="theme-store", storage_type="local", data="light"),
             dcc.Location(id="url", refresh="callback-nav"),
-            dmc.NotificationProvider(),
+            dmc.NotificationProvider(zIndex=2000),
             dmc.AppShell(
                 [
                     create_header(data),
