@@ -1,5 +1,6 @@
 import dash_mantine_components as dmc
-from dash import Output, Input, html, callback_context as ctx, no_update, callback
+from dash import Output, Input, html, callback_context as ctx, callback
+from dash.exceptions import PreventUpdate
 from dash_iconify import DashIconify
 
 component = html.Div(

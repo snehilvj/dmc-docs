@@ -7,7 +7,7 @@ Add Notifications to your app layout.
 
 app.layout = html.Div(
     [
-        dmc.Notifications(),
+        dmc.NotificationProvider(),
         html.Div(id="notifications-container"),
         dmc.Button("Show Notification", id="notify"),
     ]
