@@ -81,7 +81,7 @@ app = Dash(__name__, external_stylesheets=stylesheets)
 ### Missing components
 
 - `Chip` and `ChipGroup` components are not working as expected when ported over in dash. It will be worked on as part of subsequent releases.
-- `TransferList` is no longer available.
+- `TransferList` is no longer available. You might benefit from [AIO based TransferList component](https://community.plotly.com/t/dash-mantine-components-0-14-1/83865/18?u=snehilvj) created by a community member.
 
 ### Creatable option in Select and MultiSelect
 
@@ -93,6 +93,10 @@ the same functionality as `MultiSelect` with `creatable` prop.
 Components that previously had `rightSection` and `icon` props, now use `leftSection` instead of `icon`. Example of Button sections:
 
 .. exec::docs.migration.button
+
+### Title
+
+[Title](/components/title) doesn't accept other [Text](/components/text) props like gradient etc. anymore.
 
 ### Progress
 
