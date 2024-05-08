@@ -60,10 +60,7 @@ configurator.add_select(
 )
 
 configurator.add_segmented_control("tickLine", ["x", "y", "xy", "none"], "xy")
-
 configurator.add_segmented_control("gridAxis", ["x", "y", "xy", "none"], "x")
-
-
 configurator.add_switch("withGradient", False)
 configurator.add_switch("withXAxis", False)
 configurator.add_switch("withYAxis", False)
