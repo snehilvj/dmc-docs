@@ -37,6 +37,13 @@ category: Charts
 | referenceLine   | .mantine-AreaChart-referenceLine   | Reference line                                |
 | axisLabel       | .mantine-AreaChart-axisLabel       | X and Y axis labels                           |
 
+### AreaChart CSS variables
+
+| Selector           | Variable             | Description                                      |
+|:-------------------|:---------------------|:-------------------------------------------------|
+| root               | --chart-grid-color   | Controls color of the grid and cursor lines      |
+|                    | --chart-text-color   | Controls color of the axis labels                |
+
 
 ### Keyword Arguments
 

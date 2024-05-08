@@ -1,9 +1,8 @@
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from lib.configurator import Configurator
 
-data = data = [
+data = [
   {
     'date': 'Mar 22',
     'Apples': 2890,
@@ -34,7 +33,7 @@ data = data = [
     'Oranges': 1726,
     'Tomatoes': 2290,
   },
-];
+]
 
 target = dmc.AreaChart(
     h=300,
