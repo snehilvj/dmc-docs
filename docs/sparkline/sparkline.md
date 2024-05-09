@@ -1,7 +1,7 @@
 ---
 name: Sparkline
 description: Simplified area chart to show trends
-endpoint: /components/sparline
+endpoint: /components/sparkline
 package: dash_mantine_components
 category: Charts
 ---
