@@ -29,8 +29,8 @@ configurator = Configurator(target)
 
 
 configurator.add_switch("withPolarGrid", True)
-configurator.add_switch("withPolarAngleAxis", False)
-configurator.add_switch("withPolarRadiusAxis", False)
+configurator.add_switch("withPolarAngleAxis", True)
+configurator.add_switch("withPolarRadiusAxis", True)
 
 component = configurator.panel
 
