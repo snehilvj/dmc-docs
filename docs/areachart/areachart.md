@@ -178,6 +178,124 @@ dmc.AreaChart(
 
 ```
 
+### Stroke dash array
+Set `strokeDasharray` prop to control the stroke dash array of the grid and cursor lines. The value represent the
+lengths of alternating dashes and gaps. For example, strokeDasharray="10 5" will render a dashed line with 10px dashes
+and 5px gaps.
+
+
+.. exec::docs.areachart.strokedasharray
+
+### Tooltip animation
+By default, tooltip animation is disabled. To enable it, set `tooltipAnimationDuration` prop to a number of
+milliseconds to animate the tooltip position change.
+
+.. exec::docs.areachart.tooltipanimation
+
+### Units
+Set `unit` prop to render a unit label next to the y-axis ticks and tooltip values:
+
+.. exec::docs.areachart.units
+
+### Remove tooltip
+To remove tooltip, set `withTooltip=False`. It also removes the cursor line and disables interactions with the chart.
+
+
+.. exec::docs.areachart.removetooltip
+
+### Customize dots
+Use `dotProps` to pass props down to recharts dot in regular state and `activeDotProps` to pass props down to recharts dot in active state (when cursor is over the current series).
+
+.. exec::docs.areachart.customizedots
+
+### Stroke width
+Use `strokeWidth` prop to control the stroke width of all areas:
+
+.. exec::docs.areachart.strokewidth
+    :code: false
+
+```python
+import dash_mantine_components as dmc
+
+data = [
+  {"date": "Mar 22", "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
+  {"date": "Mar 23", "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
+  {"date": "Mar 24", "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
+  {"date": "Mar 25", "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
+  {"date": "Mar 26", "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
+]
+
+target = dmc.AreaChart(
+    h=300,
+    dataKey="date",
+    data=data,
+    series=[
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"}
+    ],
+    strokeWidth=2,
+)
+
+```
+
+### Fill opacity
+Use `fillOpacity` prop to control the fill opacity of all areas:
+
+.. exec::docs.areachart.fillopacity
+  :code: false
+
+```python
+
+import dash_mantine_components as dmc
+
+data = [
+  {"date": "Mar 22", "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
+  {"date": "Mar 23", "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
+  {"date": "Mar 24", "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
+  {"date": "Mar 25", "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
+  {"date": "Mar 26", "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
+]
+
+target = dmc.AreaChart(
+    h=300,
+    dataKey="date",
+    data=data,
+    series=[
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"}
+    ],
+    fillOpacity="0.2",
+    withGradient=False,
+)
+```
+### Sync multiple AreaCharts
+You can pass props down to recharts AreaChart component with `areaChartProps` prop. For example, setting the following 
+will sync tooltip of multiple `AreaChart` components with the same `syncId` prop.
+
+```python
+areaChartProps={"syncId": "any-id"}
+```
+.. exec::docs.areachart.sync
+
+### Vertical orientation
+Set orientation="vertical" to render a vertical area chart:
+
+
+.. exec::docs.areachart.vertical
+
+### Dashed area line
+Set `strokeDasharray` property in series to change line style to dashed:
+
+.. exec::docs.areachart.dashedarealine
+
+### Reference lines
+Use `referenceLines` prop to render reference lines. Reference lines are always rendered behind the chart.
+
+.. exec::docs.areachart.referencelines
+
+
 ### Styles API
 
 | Name            | Static selector                    | Description                                   |

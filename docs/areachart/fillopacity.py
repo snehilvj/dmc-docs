@@ -1,3 +1,4 @@
+
 import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
@@ -19,28 +20,18 @@ target = dmc.AreaChart(
         {"name": "Oranges", "color": "blue.6"},
         {"name": "Tomatoes", "color": "teal.6"}
     ],
-    curveType="linear",
-    tickLine="xy",
-    withGradient=False,
-    withXAxis=False,
-    withDots=False,
+    fillOpacity="0.2"
 )
 
 configurator = Configurator(target)
 
-configurator.add_select(
-    "curveType",
-    ["Bump", "Linear", "Natural", "Monotone", "Step", "StepBefore", "StepAfter"],
-    "Monotone",
-)
 
-configurator.add_segmented_control("tickLine", ["x", "y", "xy", "none"], "xy")
-configurator.add_segmented_control("gridAxis", ["x", "y", "xy", "none"], "x")
-configurator.add_switch("withGradient", False)
-configurator.add_switch("withXAxis", False)
-configurator.add_switch("withYAxis", False)
-configurator.add_switch("withDots", False)
+configurator.add_segmented_control("type", ["default", "stacked"], "default")
+configurator.add_number_slider("fillOpacity", 0.2, min=0, max=1)
+configurator.add_switch("withGradient", True)
 
 
 component = configurator.panel
+
+
 

@@ -19,28 +19,12 @@ target = dmc.AreaChart(
         {"name": "Oranges", "color": "blue.6"},
         {"name": "Tomatoes", "color": "teal.6"}
     ],
-    curveType="linear",
-    tickLine="xy",
-    withGradient=False,
-    withXAxis=False,
-    withDots=False,
+    strokeWidth=2,
 )
 
 configurator = Configurator(target)
 
-configurator.add_select(
-    "curveType",
-    ["Bump", "Linear", "Natural", "Monotone", "Step", "StepBefore", "StepAfter"],
-    "Monotone",
-)
-
-configurator.add_segmented_control("tickLine", ["x", "y", "xy", "none"], "xy")
-configurator.add_segmented_control("gridAxis", ["x", "y", "xy", "none"], "x")
-configurator.add_switch("withGradient", False)
-configurator.add_switch("withXAxis", False)
-configurator.add_switch("withYAxis", False)
-configurator.add_switch("withDots", False)
-
+configurator.add_number_slider("strokeWidth", 2, min=0.5, max=5)
 
 component = configurator.panel
 
