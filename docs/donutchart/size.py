@@ -9,15 +9,16 @@ data = [
   { "name": "Other", "value": 200, "color": "gray.6" }
 ]
 
-target = dmc.PieChart(
+
+target = dmc.DonutChart(
     data=data,
-    withLabels=True
+    size=160,
+    thickness=20
 )
 
 configurator = Configurator(target)
-
-configurator.add_switch("withLabelsLine", True)
-configurator.add_segmented_control("labelsPosition", ["inside", "outside"], "outside")
-configurator.add_segmented_control("labelsType", ["value", "percent"], "value")
+configurator.add_number_slider("size", 275, min=80, max=300)
+configurator.add_number_slider("thickness", 20, min=2, max=30)
 
 component = configurator.panel
+

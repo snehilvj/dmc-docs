@@ -9,18 +9,14 @@ data = [
   { "name": "Other", "value": 200, "color": "gray.6" }
 ]
 
-
 target = dmc.DonutChart(
     data=data,
+    withLabels=True,
+    withLabelsLine=True
 )
 
 configurator = Configurator(target)
 
-
-configurator.add_number_slider("size", 160, min=80, max=300)
-configurator.add_number_slider("thickness", 20, min=2, max=30)
-configurator.add_number_slider("paddingAngle", 0, min=0, max=30)
-configurator.add_number_slider("strokeWidth", 0, min=0, max=5)
+configurator.add_switch("withLabelsLine", True)
 
 component = configurator.panel
-

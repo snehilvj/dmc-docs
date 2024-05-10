@@ -8,10 +8,180 @@ category: Charts
 
 .. toc::
 
-### Introduction
+### Usage
 
-.. exec::docs.donutchart.interactive
+`DonutChart` is based on [PieChart recharts component](https://recharts.org/en-US/api/PieChart):
+
+.. exec::docs.donutchart.usage
+    
+
+### Segments labels
+
+Set `withLabels` prop to display labels next to each segment:
+
+.. exec::docs.donutchart.segmentlabels
     :code: false
+
+```python
+import dash_mantine_components as dmc
+
+data = [
+  { "name": "USA", "value": 400, "color": "indigo.6" },
+  { "name": "India", "value": 300, "color": "yellow.6" },
+  { "name": "Japan", "value": 100, "color": "teal.6" },
+  { "name": "Other", "value": 200, "color": "gray.6" }
+]
+
+dmc.DonutChart(
+    data=data,   
+    withLabels=True,
+    withLabelsLine=True
+)
+```
+
+### Size and thickness 
+
+Set `size` prop to control width and height of the chart. Note that if `withLabels` prop is set, the chart height is
+automatically increased by 80px to make room for labels. You can override this behavior by setting `h` style prop.
+
+
+.. exec::docs.donutchart.size
+    :code: false
+
+
+
+```python
+import dash_mantine_components as dmc
+
+data = [
+  { "name": "USA", "value": 400, "color": "indigo.6" },
+  { "name": "India", "value": 300, "color": "yellow.6" },
+  { "name": "Japan", "value": 100, "color": "teal.6" },
+  { "name": "Other", "value": 200, "color": "gray.6" }
+]
+
+dmc.DonutChart(
+    data=data,
+    size=160,
+    thickness=30
+)
+```
+
+
+### Padding angle 
+
+Use `paddingAngle` prop to control the space between segments:
+
+.. exec::docs.donutchart.paddingangle
+    :code: false
+
+
+```python
+
+import dash_mantine_components as dmc
+
+data = [
+  { "name": "USA", "value": 400, "color": "indigo.6" },
+  { "name": "India", "value": 300, "color": "yellow.6" },
+  { "name": "Japan", "value": 100, "color": "teal.6" },
+  { "name": "Other", "value": 200, "color": "gray.6" }
+]
+
+dmc.DonutChart(
+    data=data,
+    paddingAngle=30,
+)
+```
+
+
+### Segment color
+
+You can reference colors from theme the same way as in other components, for example, `blue`, `red.5`, `orange.7`, etc. 
+Any valid CSS color value is also accepted.
+
+.. exec::docs.donutchart.segmentcolor
+
+
+### Tooltip data source
+
+By default, the tooltip displays data for all segments when hovered over any segment. To display data only for the hovered segment, set tooltipDataSource="segment":
+
+.. exec::docs.donutchart.tooltipdatasource
+
+### Without tooltip
+
+To remove the tooltip, set `withTooltip=False`:
+
+
+.. exec::docs.donutchart.withouttooltip
+
+### Chart label
+
+To display a label in the center of the chart, use `chartLabel` prop. It accepts a string or a number:
+
+.. exec::docs.donutchart.chartlabel
+
+
+### Start and end angle
+
+Use `startAngle` and `endAngle` props to control the start and end angle of the chart. For example, to display a
+half-circle chart, set `startAngle=180` and `endAngle=0`:
+
+.. exec::docs.donutchart.angle
+
+### Segments stroke
+
+Use `strokeWidth` prop to control the width of the stroke around each segment.
+
+
+.. exec::docs.donutchart.strokewidth
+    :code: false
+
+
+```python
+import dash_mantine_components as dmc
+
+data = [
+  { "name": "USA", "value": 400, "color": "indigo.6" },
+  { "name": "India", "value": 300, "color": "yellow.6" },
+  { "name": "Japan", "value": 100, "color": "teal.6" },
+  { "name": "Other", "value": 200, "color": "gray.6" }
+]
+
+dmc.DonutChart(
+    data=data,
+    strokeWidth=1.8  
+)
+```
+
+To change color of the stroke, use `strokeColor` prop. You can reference colors from theme the same way as in other
+components, for example, `blue`, `red.5`, `orange.7`, etc. Any valid CSS color value is also accepted.
+
+```python
+dmc.DonutChart(
+    data=data,
+    strokeColor="red.5"
+)
+```
+
+By default, segments stroke color is the same as the background color of the body element
+(`--mantine-color-body` CSS variable). If you want to change it depending on the color scheme, define CSS variable
+and pass it to the `strokeColor` prop:
+
+
+.. exec::docs.donutchart.stroke
+
+```css
+.root {
+  --card-bg: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+
+  background-color: var(--card-bg);
+  padding: var(--mantine-spacing-md);
+  border-radius: var(--mantine-radius-md);
+}
+
+```
+
 
 ### Styles API
 

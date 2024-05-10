@@ -15,15 +15,15 @@ PieChart is based on [PieChart recharts](https://recharts.org/en-US/api/PieChart
 .. exec::docs.piechart.interactive
     :code: false
 
-### Simple Example
+### Usage
 
-.. exec::docs.piechart.simple
+.. exec::docs.piechart.usage
 
 ### Segment labels
 
 Set `withLabels` prop to display labels next to each segment. Use `labelPosition` prop to control the position of labels
-relative to the corresponding segment. Note that if your chart has a lot of segments and `labelPosition="inside"` is
-set, labels might overlap. In this case, use `labelPosition="outside`.
+relative to the corresponding segment. Note that if your chart has a lot of segments and labelPosition="inside" is
+set, labels might overlap. In this case, use labelPosition="outside".
 
 .. exec::docs.piechart.segmentlabels
     :code: false
@@ -38,7 +38,7 @@ data = [
   { "name": "Other", "value": 200, "color": "gray.6" }
 ]
 
-component = dmc.PieChart(
+dmc.PieChart(
     data=data,
     withLabelsLine=True,
     labelsPosition="inside",
@@ -49,7 +49,7 @@ component = dmc.PieChart(
 
 ### Size
 
-Set `size` prop to control width and height of the chart. Note that if `withLabels` and `labelPosition="outside"` prop
+Set `size` prop to control width and height of the chart. Note that if `withLabels` and labelPosition="outside" prop
 are set, the chart height is automatically increased by 80px to make room for labels. You can override this behavior
 by setting `h` and `w` style prop.
 
@@ -67,7 +67,7 @@ data = [
   { "name": "Other", "value": 200, "color": "gray.6" }
 ]
 
-component = dmc.PieChart(
+dmc.PieChart(
     data=data,
     size=275  
 )
@@ -87,7 +87,7 @@ To enable the tooltip, set `withTooltip` prop:
 
 ### Tooltip data source
 
-By default, the tooltip displays data for all segments when hovered over any segment. To display data only for the hovered segment, set `tooltipDataSource="segment"`:
+By default, the tooltip displays data for all segments when hovered over any segment. To display data only for the hovered segment, set tooltipDataSource="segment":
 
 .. exec::docs.piechart.tooltipdatasource
 
@@ -98,10 +98,13 @@ half-circle chart, set `startAngle=180` and `endAngle=0`:
 
 .. exec::docs.piechart.angle
 
-### Segment stroke
+### Segments stroke
 
 Use `strokeWidth` prop to control the width of the stroke around each segment.
-See live example at the top of this page.
+
+.. exec::docs.piechart.segmentstroke
+    :code: false
+
 
 
 ```python
@@ -114,9 +117,9 @@ data = [
   { "name": "Other", "value": 200, "color": "gray.6" }
 ]
 
-component = dmc.PieChart(
+dmc.PieChart(
     data=data,
-    strokeWidth=1.8  
+    strokeWidth=1
 )
 ```
 
@@ -124,7 +127,7 @@ To change color of the stroke, use `strokeColor` prop. You can reference colors 
 components, for example, `blue`, `red.5`, `orange.7`, etc. Any valid CSS color value is also accepted.
 
 ```python
-component = dmc.PieChart(
+dmc.PieChart(
     data=data,
     strokeWidth=1.8,
     strokeColor="red.5"
