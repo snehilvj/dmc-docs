@@ -24,11 +24,11 @@ dmc.AreaChart(
     h=300,
     dataKey="date",
     data=data,
-    series=[
-        { "name": 'Apples', 'color': 'indigo.6' },
-        { "name": 'Oranges', 'color': 'blue.6' },
-        { 'name': 'Tomatoes', 'color': 'teal.6' },
-      ],
+    series = [
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"}
+    ],
     curveType="linear",
     tickLine="xy",
     withGradient=False,
@@ -250,7 +250,6 @@ Use `fillOpacity` prop to control the fill opacity of all areas:
 import dash_mantine_components as dmc
 from .data import data
 
-
 dmc.AreaChart(
     h=300,
     dataKey="date",
@@ -264,6 +263,7 @@ dmc.AreaChart(
     withGradient=False,
 )
 ```
+
 ### Sync multiple AreaCharts
 You can pass props down to recharts AreaChart component with `areaChartProps` prop. For example, setting the following 
 will sync tooltip of multiple `AreaChart` components with the same `syncId` prop.
