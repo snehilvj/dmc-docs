@@ -19,6 +19,19 @@ PieChart is based on [PieChart recharts](https://recharts.org/en-US/api/PieChart
 
 .. exec::docs.piechart.usage
 
+### Data
+Here is the data imported for the examples on this page:
+
+```python
+
+data = [
+  { "name": "USA", "value": 400, "color": "indigo.6" },
+  { "name": "India", "value": 300, "color": "yellow.6" },
+  { "name": "Japan", "value": 100, "color": "teal.6" },
+  { "name": "Other", "value": 200, "color": "gray.6" }
+]
+```
+
 ### Segment labels
 
 Set `withLabels` prop to display labels next to each segment. Use `labelPosition` prop to control the position of labels
@@ -30,13 +43,7 @@ set, labels might overlap. In this case, use labelPosition="outside".
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.PieChart(
     data=data,
@@ -59,13 +66,7 @@ by setting `h` and `w` style prop.
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.PieChart(
     data=data,
@@ -109,13 +110,7 @@ Use `strokeWidth` prop to control the width of the stroke around each segment.
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.PieChart(
     data=data,
@@ -151,12 +146,6 @@ and pass it to the `strokeColor` prop:
 }
 
 ```
-
-
-
-
-
-
 
 ### Styles API
 

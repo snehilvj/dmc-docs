@@ -16,7 +16,7 @@ category: Charts
 
 ### Data
 
-Here is the imported data used in the examples on this page:
+Here is the data imported for the examples on this page:
 
 ```python
 
