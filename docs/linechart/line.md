@@ -99,6 +99,7 @@ dmc.LineChart(
 )
 
 ```
+
 ### X and Y axis props
 Use `xAxisProps` and `yAxisProps` to pass props down to recharts `XAxis` and `YAxis` components. For example, these props can
 be used to change orientation of axis:
