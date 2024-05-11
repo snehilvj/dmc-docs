@@ -13,6 +13,21 @@ category: Charts
 `DonutChart` is based on [PieChart recharts component](https://recharts.org/en-US/api/PieChart):
 
 .. exec::docs.donutchart.usage
+
+### Data
+
+Here is the imported data used in the examples on this page:
+
+```python
+
+data = [
+  { "name": "USA", "value": 400, "color": "indigo.6" },
+  { "name": "India", "value": 300, "color": "yellow.6" },
+  { "name": "Japan", "value": 100, "color": "teal.6" },
+  { "name": "Other", "value": 200, "color": "gray.6" }
+]
+
+```
     
 
 ### Segments labels
@@ -24,13 +39,7 @@ Set `withLabels` prop to display labels next to each segment:
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.DonutChart(
     data=data,   
@@ -52,13 +61,7 @@ automatically increased by 80px to make room for labels. You can override this b
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.DonutChart(
     data=data,
@@ -79,13 +82,7 @@ Use `paddingAngle` prop to control the space between segments:
 ```python
 
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.DonutChart(
     data=data,
@@ -140,13 +137,7 @@ Use `strokeWidth` prop to control the width of the stroke around each segment.
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  { "name": "USA", "value": 400, "color": "indigo.6" },
-  { "name": "India", "value": 300, "color": "yellow.6" },
-  { "name": "Japan", "value": 100, "color": "teal.6" },
-  { "name": "Other", "value": 200, "color": "gray.6" }
-]
+from .data import data
 
 dmc.DonutChart(
     data=data,
