@@ -18,14 +18,7 @@ is plotted on its own and does not interact with other series.
 
 ```python
 import dash_mantine_components as dmc
-
-data = [
-  {"date": "Mar 22", "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
-  {"date": "Mar 23", "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
-  {"date": "Mar 24", "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
-  {"date": "Mar 25", "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
-  {"date": "Mar 26", "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
-]
+from .data import data
 
 dmc.AreaChart(
     h=300,
@@ -42,6 +35,20 @@ dmc.AreaChart(
     withXAxis=False,
     withDots=False,
 )
+```
+
+### Data
+Here is the data imported for the examples on this page:
+
+```python
+
+data = [
+  {"date": "Mar 22", "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
+  {"date": "Mar 23", "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
+  {"date": "Mar 24", "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
+  {"date": "Mar 25", "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
+  {"date": "Mar 26", "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
+]
 ```
 
 ### Stacked area chart
@@ -216,16 +223,9 @@ Use `strokeWidth` prop to control the stroke width of all areas:
 
 ```python
 import dash_mantine_components as dmc
+from .data import data
 
-data = [
-  {"date": "Mar 22", "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
-  {"date": "Mar 23", "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
-  {"date": "Mar 24", "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
-  {"date": "Mar 25", "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
-  {"date": "Mar 26", "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
-]
-
-target = dmc.AreaChart(
+dmc.AreaChart(
     h=300,
     dataKey="date",
     data=data,
@@ -243,21 +243,15 @@ target = dmc.AreaChart(
 Use `fillOpacity` prop to control the fill opacity of all areas:
 
 .. exec::docs.areachart.fillopacity
-  :code: false
+    :code: false
 
 ```python
 
 import dash_mantine_components as dmc
+from .data import data
 
-data = [
-  {"date": "Mar 22", "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
-  {"date": "Mar 23", "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
-  {"date": "Mar 24", "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
-  {"date": "Mar 25", "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
-  {"date": "Mar 26", "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
-]
 
-target = dmc.AreaChart(
+dmc.AreaChart(
     h=300,
     dataKey="date",
     data=data,
