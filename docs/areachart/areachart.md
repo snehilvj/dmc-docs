@@ -289,6 +289,11 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 
 .. exec::docs.areachart.referencelines
 
+### clickData
+
+
+.. exec::docs.areachart.clickdata
+
 
 ### Styles API
 
