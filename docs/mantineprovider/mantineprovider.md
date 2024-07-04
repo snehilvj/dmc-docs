@@ -139,6 +139,52 @@ app.layout = dmc.MantineProvider(
  )
 ```
 
+### Theme Switch
+
+This minimal example shows how to toggle between light and dark modes, similar to the theme switcher used in these docs.
+
+```python
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+from dash import Dash, Input, Output, State, callback, _dash_renderer
+_dash_renderer._set_react_version("18.2.0")
+
+theme_toggle = dmc.ActionIcon(
+    [
+        dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
+        dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
+    ],
+    variant="transparent",
+    color="yellow",
+    id="color-scheme-toggle",
+    size="lg",
+    ms="auto",
+)
+
+app = Dash()
+
+app.layout = dmc.MantineProvider(
+    [theme_toggle, dmc.Text("Your page content")],
+    id="mantine-provider",
+    forceColorScheme="light",
+)
+
+
+@callback(
+    Output("mantine-provider", "forceColorScheme"),
+    Input("color-scheme-toggle", "n_clicks"),
+    State("mantine-provider", "forceColorScheme"),
+    prevent_initial_call=True,
+)
+def switch_theme(_, theme):
+    return "dark" if theme == "light" else "light"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
 ### Default theme
 
 Default theme is available as `dmc.DEFAULT_THEME`. It includes all theme properties with default values. 
