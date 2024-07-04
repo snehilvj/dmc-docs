@@ -53,19 +53,17 @@ import dash_mantine_components as dmc
 dmc.MantineProvider(
     theme={
         "colors": {
-            "myColor": [
-                [
-                  "#F2FFB6",
-                  "#DCF97E",
-                  "#C3E35B",
-                  "#AAC944",
-                  "#98BC20",
-                  "#86AC09",
-                  "#78A000",
-                  "#668B00",
-                  "#547200",
-                  "#455D00",
-                ]
+            "myColor": [                
+              "#F2FFB6",
+              "#DCF97E",
+              "#C3E35B",
+              "#AAC944",
+              "#98BC20",
+              "#86AC09",
+              "#78A000",
+              "#668B00",
+              "#547200",
+              "#455D00",                
             ]
         },
     },
