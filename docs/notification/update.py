@@ -47,8 +47,11 @@ def notify(nc1, nc2):
             return dmc.Notification(
                 id="my-notification",
                 title="Data loaded",
-                message="The process has started.",
+                message="Notification closing in 2 seconds",
                 color="green",
+                loading=False,
                 action="update",
+                autoClose=2000,
                 icon=DashIconify(icon="akar-icons:circle-check"),
             )
+
