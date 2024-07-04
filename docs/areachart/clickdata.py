@@ -6,7 +6,7 @@ from .data import data
 component = dmc.Group(
     [
         dmc.AreaChart(
-            id="areachart",
+            id="figure-areachart",
             h=300,
             dataKey="date",
             data=data,
@@ -23,7 +23,7 @@ component = dmc.Group(
 
 @callback(
     Output("clickdata-areachart", "children"),
-    Input("areachart", "clickData"),
+    Input("figure-areachart", "clickData"),
 )
 def update(clickdata):
     return str(clickdata)

@@ -19,7 +19,7 @@ configurator = Configurator(target)
 
 
 configurator.add_segmented_control("type", ["default", "stacked"], "default")
-configurator.add_number_slider("fillOpacity", 0.2, min=0, max=1)
+configurator.add_number_slider("fillOpacity", 0.2, min=0, max=1, step=0.1)
 configurator.add_switch("withGradient", True)
 
 

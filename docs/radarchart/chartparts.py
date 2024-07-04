@@ -13,8 +13,8 @@ data = [
 
 target = dmc.RadarChart(
     h=300,
-    data=data,    dataKey="product",
-
+    data=data,
+    dataKey="product",
     series=[
       {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
       {"name": "sales_february", "color": "cyan.4", "opacity": 0.1}

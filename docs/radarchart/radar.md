@@ -72,8 +72,6 @@ To pass props down to the underlying recharts components, use the following prop
 
 Example of passing props down to PolarRadiusAxis component:
 
-
-
 .. exec::docs.radarchart.rechartprops
 
 

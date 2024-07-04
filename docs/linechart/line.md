@@ -214,6 +214,12 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 .. exec::docs.linechart.referencelines
 
 
+### clickData
+You can use the  `clickData` property in a callback to get data from latest click event.
+
+.. exec::docs.linechart.clickdata
+
+
 ### Styles API
 
 | Selector         | Static selector                    | Description                                      |

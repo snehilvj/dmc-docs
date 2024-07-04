@@ -174,6 +174,12 @@ and pass it to the `strokeColor` prop:
 ```
 
 
+### clickData
+You can use the  `clickData` property in a callback to get data from latest click event.
+
+.. exec::docs.donutchart.clickdata
+
+
 ### Styles API
 
 | Selector    | Static selector              | Description                             |
