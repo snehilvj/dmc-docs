@@ -1,6 +1,8 @@
 import dash
 from dash import Dash
 
+dash._dash_renderer._set_react_version("18.2.0")
+
 from components.appshell import create_appshell
 
 stylesheets = [
