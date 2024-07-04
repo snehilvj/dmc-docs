@@ -175,6 +175,7 @@ are now supposed to be implemented with compound components instead.
 ### Notification
 
 `NotificationsProvider` has been renamed to `NotificationProvider`.
+`disallowClose` is no longer available.  Use `withCloseButton`
 
 ### Prism
 
