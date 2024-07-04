@@ -159,7 +159,7 @@ class Configurator:
 
         return dmc.Grid(
             [
-                dmc.GridCol(self.target, span="auto", p=20, miw=400),
+                dmc.GridCol(self.target, span={"sm": 12, "md": "auto"}, p=20),
                 dmc.GridCol(
                     dmc.Stack(self.controls, gap="md", maw="100%", w=240, p=20),
                     span="content",
