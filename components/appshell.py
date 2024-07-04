@@ -46,7 +46,6 @@ def create_appshell(data):
             },
         },
         children=[
-            dcc.Store(id="theme-store", storage_type="local", data="light"),
             dcc.Location(id="url", refresh="callback-nav"),
             dmc.NotificationProvider(zIndex=2000),
             dmc.AppShell(
@@ -77,16 +76,6 @@ def create_appshell(data):
 clientside_callback(
     """
     function(data) {
-        return data
-    }
-    """,
-    Output("m2d-mantine-provider", "forceColorScheme"),
-    Input("theme-store", "data"),
-)
-
-clientside_callback(
-    """
-    function(data) {
         const box = document.getElementById("ethical-ads-box");
         if (data === "dark") {
             box.classList.add("dark");
@@ -97,17 +86,22 @@ clientside_callback(
     }
     """,
     Output("ethical-ads-box", "className"),
-    Input("theme-store", "data"),
+    Input("m2d-mantine-provider", "forceColorScheme"),
 )
 
 clientside_callback(
     """
-    function(n_clicks, data) {
-        return data === "dark" ? "light" : "dark";
+    function(n_clicks, theme) {        
+        dash_clientside.set_props("m2d-mantine-provider", {
+            forceColorScheme: theme === "dark" ? "light" : "dark"
+        });
+        return dash_clientside.no_update
     }
     """,
-    Output("theme-store", "data"),
+    Output("m2d-mantine-provider", "forceColorScheme"),
     Input("color-scheme-toggle", "n_clicks"),
-    State("theme-store", "data"),
+    State("m2d-mantine-provider", "forceColorScheme"),
     prevent_initial_call=True,
 )
+
+
