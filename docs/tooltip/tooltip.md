@@ -54,7 +54,7 @@ Tooltip arrow is controlled by:
 By default, tooltip white-space property is set to nowrap. To change that use:
 
 * `multiline` - to enable line breaks
-* `width` - to define tooltip width in px
+* `w` - to define tooltip width in px
 
 .. exec::docs.tooltip.multiline
 
@@ -63,17 +63,19 @@ By default, tooltip white-space property is set to nowrap. To change that use:
 Tooltip is built with Transition component, it supports the following props.
 
 * `transition` - predefined transition name or transition object
-* `transitionDuration` - transition duration in ms, defaults to 100ms
-* `transitionTimingFunction` - timing function
+* `duration` - transition duration in ms, defaults to 100ms
+* `timingFunction` - timing function
 
 ```python
 import dash_mantine_components as dmc
 
 dmc.Tooltip(
     label="Fade transitions",
-    transition="fade",
-    transitionDuration=300,
-    transitionTimingFunction="ease",
+    transitionProps={
+        "transition": "fade", 
+        "duration": 200,
+        "timingFunction": "ease"
+    },
     children=[
         # children
     ],
