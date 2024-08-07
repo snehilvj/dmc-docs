@@ -7,4 +7,3 @@ component = dmc.LineChart(
     data=data,
     series=[{"name": "Apples", "color": "orange.7"}],
 )
-

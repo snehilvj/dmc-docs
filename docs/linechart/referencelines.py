@@ -1,4 +1,3 @@
-
 import dash_mantine_components as dmc
 
 data = [
@@ -9,7 +8,7 @@ data = [
     {"date": "Mar 26", "Apples": 0},
     {"date": "Mar 27", "Apples": 20},
     {"date": "Mar 28", "Apples": 20},
-    {"date": "Mar 29", "Apples": 10}
+    {"date": "Mar 29", "Apples": 10},
 ]
 
 
@@ -18,10 +17,9 @@ component = dmc.LineChart(
     dataKey="date",
     data=data,
     yAxisProps={"domain": [0, 100]},
-    referenceLines = [
+    referenceLines=[
         {"y": 40, "label": "Average sales", "color": "red.6"},
-        {"x": "Mar 25", "label": "Report out"}
+        {"x": "Mar 25", "label": "Report out"},
     ],
-    series=[{"name": "Apples", "color": "indigo.6"}]
+    series=[{"name": "Apples", "color": "indigo.6"}],
 )
-

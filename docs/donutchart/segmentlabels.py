@@ -3,11 +3,7 @@ from .data import data
 
 from lib.configurator import Configurator
 
-target = dmc.DonutChart(
-    data=data,
-    withLabels=True,
-    withLabelsLine=True
-)
+target = dmc.DonutChart(data=data, withLabels=True, withLabelsLine=True)
 
 configurator = Configurator(target)
 

@@ -13,12 +13,13 @@ component = dmc.Group(
             series=[
                 {"name": "Smartphones", "color": "violet.6"},
                 {"name": "Laptops", "color": "blue.6"},
-                {"name": "Tablets", "color": "teal.6"}
+                {"name": "Tablets", "color": "teal.6"},
             ],
         ),
         dmc.Text(id="clickdata-barchart"),
     ]
 )
+
 
 @callback(
     Output("clickdata-barchart", "children"),
@@ -26,6 +27,3 @@ component = dmc.Group(
 )
 def update(clickdata):
     return str(clickdata)
-
-
-

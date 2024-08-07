@@ -12,4 +12,3 @@ configurator = Configurator(target)
 configurator.add_number_slider("strokeWidth", 0, min=0, max=5)
 
 component = configurator.panel
-

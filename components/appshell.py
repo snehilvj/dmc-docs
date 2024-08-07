@@ -103,5 +103,3 @@ clientside_callback(
     State("m2d-mantine-provider", "forceColorScheme"),
     prevent_initial_call=True,
 )
-
-

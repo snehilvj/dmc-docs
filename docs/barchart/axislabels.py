@@ -7,10 +7,10 @@ component = dmc.BarChart(
     data=data,
     type="stacked",
     xAxisLabel="Date",
-    yAxisLabel = "Amount",
+    yAxisLabel="Amount",
     series=[
         {"name": "Smartphones", "color": "violet.6"},
         {"name": "Laptops", "color": "blue.6"},
-        {"name": "Tablets", "color": "teal.6"}
+        {"name": "Tablets", "color": "teal.6"},
     ],
 )

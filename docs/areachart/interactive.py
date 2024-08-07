@@ -9,7 +9,7 @@ target = dmc.AreaChart(
     series=[
         {"name": "Apples", "color": "indigo.6"},
         {"name": "Oranges", "color": "blue.6"},
-        {"name": "Tomatoes", "color": "teal.6"}
+        {"name": "Tomatoes", "color": "teal.6"},
     ],
     curveType="linear",
     tickLine="xy",
@@ -35,4 +35,3 @@ configurator.add_switch("withDots", False)
 
 
 component = configurator.panel
-

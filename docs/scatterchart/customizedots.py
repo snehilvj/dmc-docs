@@ -7,5 +7,4 @@ component = dmc.ScatterChart(
     dataKey={"x": "age", "y": "BMI"},
     xAxisLabel="Age",
     yAxisLabel="BMI",
-
 )

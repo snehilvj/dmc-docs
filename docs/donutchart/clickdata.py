@@ -4,14 +4,11 @@ from .data import data
 
 component = dmc.Group(
     [
-        dmc.DonutChart(
-            id="figure-donutchart",
-            data=data,
-            withTooltip=False
-        ),
+        dmc.DonutChart(id="figure-donutchart", data=data, withTooltip=False),
         dmc.Text(id="clickdata-donutchart"),
     ]
 )
+
 
 @callback(
     Output("clickdata-donutchart", "children"),
@@ -19,6 +16,3 @@ component = dmc.Group(
 )
 def update(clickdata):
     return str(clickdata)
-
-
-

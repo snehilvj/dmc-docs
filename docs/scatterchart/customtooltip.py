@@ -7,5 +7,5 @@ component = dmc.ScatterChart(
     dataKey={"x": "age", "y": "BMI"},
     xAxisLabel="Age",
     yAxisLabel="BMI",
-    tooltipProps = {'wrapperStyle':{'backgroundColor':'red', 'color': 'yellow'}}
+    tooltipProps={"wrapperStyle": {"backgroundColor": "red", "color": "yellow"}},
 )

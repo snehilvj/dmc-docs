@@ -16,4 +16,3 @@ configurator = Configurator(target)
 configurator.add_switch("withGradient", True)
 
 component = configurator.panel
-

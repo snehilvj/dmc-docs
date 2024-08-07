@@ -11,14 +11,15 @@ component = dmc.Group(
             data=data,
             withLegend=True,
             series=[
-                { "name": 'Apples', 'color': 'indigo.6' },
-                { "name": 'Oranges', 'color': 'blue.6' },
-                { 'name': 'Tomatoes', 'color': 'teal.6' },
-              ],
+                {"name": "Apples", "color": "indigo.6"},
+                {"name": "Oranges", "color": "blue.6"},
+                {"name": "Tomatoes", "color": "teal.6"},
+            ],
         ),
         dmc.Text(id="clickdata-linechart"),
     ]
 )
+
 
 @callback(
     Output("clickdata-linechart", "children"),
@@ -26,6 +27,3 @@ component = dmc.Group(
 )
 def update(clickdata):
     return str(clickdata)
-
-
-

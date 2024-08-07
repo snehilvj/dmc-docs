@@ -10,11 +10,12 @@ component = dmc.Group(
             data=data1,
             dataKey={"x": "age", "y": "BMI"},
             xAxisLabel="Age",
-            yAxisLabel="BMI"
+            yAxisLabel="BMI",
         ),
         dmc.Text(id="clickdata-scatterchart"),
     ]
 )
+
 
 @callback(
     Output("clickdata-scatterchart", "children"),
@@ -22,6 +23,3 @@ component = dmc.Group(
 )
 def update(clickdata):
     return str(clickdata)
-
-
-

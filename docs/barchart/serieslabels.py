@@ -11,6 +11,6 @@ component = dmc.BarChart(
     series=[
         {"name": "Smartphones", "label": "Smartphones sales", "color": "violet.6"},
         {"name": "Laptops", "label": "Laptops sales", "color": "blue.6"},
-        {"name": "Tablets", "label": "Tablets sales", "color": "teal.6"}
-    ]
+        {"name": "Tablets", "label": "Tablets sales", "color": "teal.6"},
+    ],
 )

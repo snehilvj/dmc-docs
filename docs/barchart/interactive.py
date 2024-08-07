@@ -10,10 +10,9 @@ target = dmc.BarChart(
     series=[
         {"name": "Smartphones", "color": "violet.6"},
         {"name": "Laptops", "color": "blue.6"},
-        {"name": "Tablets", "color": "teal.6"}
+        {"name": "Tablets", "color": "teal.6"},
     ],
     tickLine="y",
-
 )
 
 configurator = Configurator(target)
@@ -24,6 +23,4 @@ configurator.add_switch("withXAxis", True)
 configurator.add_switch("withYAxis", True)
 
 
-
 component = configurator.panel
-
