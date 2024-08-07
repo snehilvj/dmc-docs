@@ -13,7 +13,6 @@ target = dmc.BarChart(
 
 configurator = Configurator(target)
 
-configurator.add_number_slider("fillOpacity", 0.5, min=0, max=1, step=.1)
+configurator.add_number_slider("fillOpacity", 0.5, min=0, max=1, step=0.1)
 
 component = configurator.panel
-

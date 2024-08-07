@@ -1,17 +1,18 @@
 import dash
 from dash import Dash
+import dash_mantine_components as dmc
 
 dash._dash_renderer._set_react_version("18.2.0")
 
 from components.appshell import create_appshell
 
 stylesheets = [
-    "https://unpkg.com/@mantine/dates@7/styles.css",
-    "https://unpkg.com/@mantine/code-highlight@7/styles.css",
-    "https://unpkg.com/@mantine/charts@7/styles.css",
-    "https://unpkg.com/@mantine/carousel@7/styles.css",
-    "https://unpkg.com/@mantine/notifications@7/styles.css",
-    "https://unpkg.com/@mantine/nprogress@7/styles.css",
+    dmc.styles.DATES,
+    dmc.styles.CODE_HIGHLIGHT,
+    dmc.styles.CHARTS,
+    dmc.styles.CAROUSEL,
+    dmc.styles.NOTIFICATIONS,
+    dmc.styles.NPROGRESS,
 ]
 
 scripts = [

@@ -1,4 +1,3 @@
-
 import dash_mantine_components as dmc
 from .data import data
 
@@ -10,7 +9,7 @@ component = dmc.Stack(
             dataKey="date",
             data=data,
             series=[{"name": "Apples", "color": "indigo.6"}],
-            areaChartProps={"syncId": 'groceries' },
+            areaChartProps={"syncId": "groceries"},
         ),
         dmc.Text("Tomatoes sales"),
         dmc.AreaChart(
@@ -18,8 +17,7 @@ component = dmc.Stack(
             dataKey="date",
             data=data,
             series=[{"name": "Tomatoes", "color": "teal.6"}],
-            areaChartProps={"syncId": 'groceries' },
+            areaChartProps={"syncId": "groceries"},
         ),
     ]
 )
-

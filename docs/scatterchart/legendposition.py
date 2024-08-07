@@ -8,5 +8,5 @@ component = dmc.ScatterChart(
     xAxisLabel="Age",
     yAxisLabel="BMI",
     withLegend=True,
-    legendProps={"verticalAlign": "bottom", "height": 20}
+    legendProps={"verticalAlign": "bottom", "height": 20},
 )

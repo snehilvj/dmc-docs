@@ -2,10 +2,7 @@ import dash_mantine_components as dmc
 from lib.configurator import Configurator
 from .data import data
 
-target = dmc.PieChart(
-    data=data,
-    withLabels=True
-)
+target = dmc.PieChart(data=data, withLabels=True)
 
 configurator = Configurator(target)
 

@@ -12,12 +12,10 @@ component = dmc.Group(
     ]
 )
 
+
 @callback(
     Output("clickdata-piechart", "children"),
     Input("figure-piechart", "clickData"),
 )
 def update(clickdata):
     return str(clickdata)
-
-
-

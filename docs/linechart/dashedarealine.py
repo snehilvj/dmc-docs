@@ -1,4 +1,3 @@
-
 import dash_mantine_components as dmc
 from .data import data
 
@@ -12,7 +11,6 @@ component = dmc.LineChart(
     series=[
         {"name": "Apples", "color": "indigo.6"},
         {"name": "Oranges", "color": "blue.6"},
-        {"name": "Tomatoes", "color": "teal.6", "strokeDasharray": "5 5"}
-    ]
+        {"name": "Tomatoes", "color": "teal.6", "strokeDasharray": "5 5"},
+    ],
 )
-

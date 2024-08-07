@@ -54,4 +54,3 @@ def notify(nc1, nc2):
                 autoClose=2000,
                 icon=DashIconify(icon="akar-icons:circle-check"),
             )
-

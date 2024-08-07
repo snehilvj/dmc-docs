@@ -8,9 +8,8 @@ component = dmc.ScatterChart(
     xAxisLabel="Age",
     yAxisLabel="BMI",
     referenceLines=[
-    {"y": 14, "label": "Underweight ↓", "color": "red.7"},
-    {"y": 19, "label": "Normal weight", "color": "teal.7"},
-    {"y": 30, "label": "Overweight ↑", "color": "red.7"}
-    ]
+        {"y": 14, "label": "Underweight ↓", "color": "red.7"},
+        {"y": 19, "label": "Normal weight", "color": "teal.7"},
+        {"y": 30, "label": "Overweight ↑", "color": "red.7"},
+    ],
 )
-
