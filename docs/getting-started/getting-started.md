@@ -38,9 +38,10 @@ components.
 
 ```python
 import dash_mantine_components as dmc
-from dash import Dash
+from dash import Dash, _dash_renderer
+_dash_renderer._set_react_version("18.2.0")
 
-app = Dash(__name__)
+app = Dash(external_stylesheets=dmc.styles.ALL)
 
 app.layout = dmc.MantineProvider(
     dmc.Alert(
@@ -51,13 +52,19 @@ app.layout = dmc.MantineProvider(
 )
 
 if __name__ == "__main__":
-    app.run_server()
+    app.run(debug=True)
 ```
 
-### Extensions
+### CSS Extensions
 
-Most of the styling is already included but if you are using components like `DatePicker`, `Carousel`, or `CodeHighlight`, then 
-you need to include css for them separately.
+Most of the necessary styling is already included with `dash-mantine-components`. However, for certain components like
+`DatePicker`, `Carousel`, or `CodeHighlight`, you need to add their specific CSS files separately. You can also include 
+all optional stylesheets at once by using `dmc.styles.ALL`.
+
+Starting from version 0.14.4, `dash-mantine-components` provides `dmc.styles` variables to ensure that the correct 
+stylesheet version is used, matching the version of the library you have installed.
+
+To include stylesheets in your Dash app, you can do something like this:
 
 ```python
 from dash import Dash
@@ -75,10 +82,33 @@ stylesheets = [
 app = Dash(__name__, external_stylesheets=stylesheets)
 ```
 
+Or, if you want to include all optional stylesheets:
+
+```python
+app = Dash(external_stylesheets=dmc.styles.ALL)
+```
+
+If you need to add other external stylesheets along with these, you can do it like this:
+
+```python
+app = Dash(external_stylesheets=[dbc.icons.FONT_AWESOME] + dmc.styles.ALL)
+```
+
+
+Note - to find the correct stylesheet link, you can print it out like this:
+```
+print(dmc.styles.dmc.styles.NOTIFICATIONS)
+```
+This will give you a link like:
+```
+https://unpkg.com/@mantine/dates@7.11.0/styles.css
+```
+
+
 ### Documentation
 
 This entire documentation has been created almost entirely using Dash Mantine Components. You can check out the source
-code [here](https://github.com/snehilvj/dmc-docs) for some inspiration.
+code in the [dcm-docs GitHub](https://github.com/snehilvj/dmc-docs) for some inspiration.
 
 While going through this documentation, you will come across interactive demos meant to show an overview as well as the overall effect of different combinations of a component's props.
 
@@ -93,9 +123,10 @@ Here's how you can add the same styling to your apps:
 
 ```python
 import dash_mantine_components as dmc
-from dash import Dash
+from dash import Dash, _dash_renderer
+_dash_renderer._set_react_version("18.2.0")
 
-app = Dash(__name__)
+app = Dash(external_stylesheets=dmc.styles.ALL)
 
 app.layout = dmc.MantineProvider(
      forceColorScheme="light",
@@ -126,5 +157,5 @@ app.layout = dmc.MantineProvider(
  )
 
 if __name__ == "__main__":
-    app.run_server()
+    app.run(debug=True)
 ```
