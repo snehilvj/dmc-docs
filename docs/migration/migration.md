@@ -78,6 +78,11 @@ stylesheets = [
 
 app = Dash(__name__, external_stylesheets=stylesheets)
 ```
+Or, include all the stylesheets like this:
+
+```python
+app = Dash(__name__, external_stylesheets=dmc.styles.ALL)
+```
 
 ### Missing components
 
