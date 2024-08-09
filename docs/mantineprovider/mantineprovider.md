@@ -162,7 +162,7 @@ theme_toggle = dmc.ActionIcon(
     ms="auto",
 )
 
-app = Dash()
+app = Dash(external_stylesheets=dmc.styles.ALL)
 
 app.layout = dmc.MantineProvider(
     [theme_toggle, dmc.Text("Your page content")],

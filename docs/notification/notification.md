@@ -13,6 +13,29 @@ category: Feedback
     :icon: radix-icons:info-circled
     In order to show notifications in your apps, you need to add dmc.NotificationProvider() to your app layout.
 
+
+### CSS Extensions
+
+.. admonition::CSS Extensions
+   :icon: radix-icons:info-circled
+   :color: red
+
+   Notifications require additional CSS styles.
+
+The Chart components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
+
+Be sure to include:
+
+```python
+app = Dash(external_stylesheets=dmc.styles.NOTIFICATIONS)
+```
+
+Or, if you want to include all optional stylesheets:
+```python
+app = Dash(external_stylesheets=dmc.styles.ALL)
+```
+
+
 ### Simple Example
 
 To enable the Notifications System, include the `dmc.NotificationProvider()` component anywhere in your app layout. 
