@@ -28,13 +28,21 @@ components.
    :icon: radix-icons:info-circled
    :color: red
 
-   It's required that you wrap your app with a dmc.MantineProvider, else dash will complain.
+   It's required that you wrap your app with a dmc.MantineProvider.
 
 .. admonition::React 18 Issue
    :icon: radix-icons:info-circled
    :color: red
 
    Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before starting up the app.
+
+
+.. admonition::CSS Extensions
+   :icon: radix-icons:info-circled
+   :color: red
+
+   Some components require additional CSS styles.
+    
 
 ```python
 import dash_mantine_components as dmc
@@ -59,7 +67,7 @@ if __name__ == "__main__":
 
 Most of the necessary styling is already included with `dash-mantine-components`. However, for certain components like
 `DatePicker`, `Carousel`, or `CodeHighlight`, you need to add their specific CSS files separately. You can also include 
-all optional stylesheets at once by using `dmc.styles.ALL`.
+all optional CSS stylesheets at once by using `dmc.styles.ALL`.
 
 Starting from version 0.14.4, `dash-mantine-components` provides `dmc.styles` variables to ensure that the correct 
 stylesheet version is used, matching the version of the library you have installed.
@@ -97,7 +105,7 @@ app = Dash(external_stylesheets=[dbc.icons.FONT_AWESOME] + dmc.styles.ALL)
 
 Note - to find the correct stylesheet link, you can print it out like this:
 ```
-print(dmc.styles.dmc.styles.NOTIFICATIONS)
+print(dmc.styles.dmc.styles.DATES)
 ```
 This will give you a link like:
 ```

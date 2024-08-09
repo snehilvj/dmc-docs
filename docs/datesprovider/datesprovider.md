@@ -8,6 +8,28 @@ category: Date Pickers
 
 .. toc::
 
+
+### CSS Extensions
+
+.. admonition::CSS Extensions
+   :icon: radix-icons:info-circled
+   :color: red
+
+   Date components require additional CSS styles.
+
+The Date components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
+
+Be sure to include:
+```python
+app = Dash(external_stylesheets=dmc.styles.DATES)
+```
+Or, if you want to include all optional stylesheets:
+```python
+app = Dash(external_stylesheets=dmc.styles.ALL)
+```
+
+
+
 ### Usage
 
 The DatesProvider component lets you set various settings that are shared across all date components. DatesProvider supports the following settings:
@@ -23,13 +45,14 @@ required locale data and setting the `locale`. Make sure to include proper local
 
 ```python
 from dash import Dash
+import dash_mantine_components as dmc
 
 scripts = [
     "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/ru.min.js",
 ]
 
-app = Dash(__name__, external_scripts=scripts)
+app = Dash(__name__, external_scripts=scripts, external_stylesheets=dmc.styles.DATES)
 ```
 
 .. admonition::Localization Quirk

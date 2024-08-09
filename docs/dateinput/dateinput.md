@@ -8,6 +8,28 @@ category: Date Pickers
 
 .. toc::
 
+
+
+### CSS Extensions
+
+.. admonition::CSS Extensions
+   :icon: radix-icons:info-circled
+   :color: red
+
+   Date components require additional CSS styles.
+
+The Date components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
+
+Be sure to include:
+```python
+app = Dash(external_stylesheets=dmc.styles.DATES)
+```
+Or, if you want to include all optional stylesheets:
+```python
+app = Dash(external_stylesheets=dmc.styles.ALL)
+```
+
+
 ### DateInput props
 
 DateInput supports most of the [DatePicker](/components/datepicker) props, read through DatePicker
