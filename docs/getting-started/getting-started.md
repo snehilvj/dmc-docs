@@ -105,7 +105,7 @@ app = Dash(external_stylesheets=[dbc.icons.FONT_AWESOME] + dmc.styles.ALL)
 
 Note - to find the correct stylesheet link, you can print it out like this:
 ```
-print(dmc.styles.dmc.styles.DATES)
+print(dmc.styles.DATES)
 ```
 This will give you a link like:
 ```
