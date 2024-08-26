@@ -21,7 +21,7 @@ The CodeHighlight component require an additional CSS stylesheet.  See the [Gett
 
 Be sure to include:
 ```python
-app = Dash(external_stylesheets= dmc.styles.CODE_HIGHLIGHT)
+app = Dash(external_stylesheets=[dmc.styles.CODE_HIGHLIGHT])
 ```
 Or, if you want to include all optional stylesheets:
 ```python
