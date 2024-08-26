@@ -21,7 +21,7 @@ The Date components require an additional CSS stylesheet.  See the [Getting Star
 
 Be sure to include:
 ```python
-app = Dash(external_stylesheets=dmc.styles.DATES)
+app = Dash(external_stylesheets=[dmc.styles.DATES])
 ```
 Or, if you want to include all optional stylesheets:
 ```python
