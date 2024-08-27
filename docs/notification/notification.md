@@ -27,7 +27,7 @@ The Chart components require an additional CSS stylesheet.  See the [Getting Sta
 Be sure to include:
 
 ```python
-app = Dash(external_stylesheets=dmc.styles.NOTIFICATIONS)
+app = Dash(external_stylesheets=[dmc.styles.NOTIFICATIONS])
 ```
 
 Or, if you want to include all optional stylesheets:
