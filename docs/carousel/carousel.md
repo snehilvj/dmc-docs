@@ -22,7 +22,7 @@ The Carousel component require an additional CSS stylesheet.  See the [Getting S
 
 Be sure to include:
 ```python
-app = Dash(external_stylesheets= dmc.styles.CAROUSEL)
+app = Dash(external_stylesheets=[dmc.styles.CAROUSEL])
 ```
 Or, if you want to include all optional stylesheets:
 ```python
@@ -69,6 +69,69 @@ Carousel with `orientation="vertical"` requires `height` prop to be set:
 
 ### Controls icons
 You can replace default next/previous controls icons with any component:
+
+
+.. exec::docs.carousel.controls_icons
+
+### Styles API
+
+Carousel supports Styles API, you can add styles to any inner element of the component with `classNames` prop. Refer to the  [Styles API documentation](/styles-api) to learn more.
+
+### Indicator styles
+This example styles the indicators to emphasize the active slide.
+
+.. exec::docs.carousel.indicator_styles
+
+Put the following in a .css file in the `assets` folder:
+
+```css
+.dmc-indicator {
+  width: 12px;
+  height: 4px;
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: 40px;
+  }
+}
+```
+
+### Hide inactive controls
+
+.. exec::docs.carousel.hide_inactive_controls
+
+Put the following in a .css file in the `assets` folder:
+
+```css
+.dmc-control {
+  &[data-inactive] {
+    opacity: 0;
+    cursor: default;
+  }
+}
+```
+
+### Show controls on hover
+
+.. exec::docs.carousel.show_controls_on_hover
+
+Put the following in a .css file in the `assets` folder:
+```css
+
+.dmc-controls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.dmc-root {
+  &:hover {
+    .dmc-controls {
+      opacity: 1;
+    }
+  }
+}
+```
+
 
 
 

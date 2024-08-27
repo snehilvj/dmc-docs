@@ -9,8 +9,8 @@ component = dmc.Carousel(
     id="carousel-controls_icons",
     withIndicators=True,
     height=180,
-    nextControlIcon= DashIconify(icon="flat-ui:settings", width=30),
-    previousControlIcon="",
+    nextControlIcon= DashIconify(icon="bi:arrow-right-circle-fill", width=30),
+    previousControlIcon=DashIconify(icon="bi:arrow-left-circle-fill", width=30),
     loop=True,
 
 )
