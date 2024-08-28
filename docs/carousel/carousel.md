@@ -132,6 +132,12 @@ Put the following in a .css file in the `assets` folder:
 }
 ```
 
+### Set initial slide
+
+To set the inial slide to display, use the index number of the slide.
+
+.. exec::docs.carousel.initial
+
 
 
 
