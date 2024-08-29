@@ -134,34 +134,43 @@ Put the following in a .css file in the `assets` folder:
 
 ### Set initial slide
 
-To set the inial slide to display, use the index number of the slide.
+To set the initial slide to display, use the index number of the slide.
 
 .. exec::docs.carousel.initial
 
+### Example Image Carousel
+
+.. exec::docs.carousel.images
+
+
+### Example Card Carousel
+
+.. exec::docs.carousel.cards
 
 
 
 ### Styles API
 
 #### Carousel selectors
-| Selector   | Static selector                | Description                                           |
-|------------|--------------------------------|-------------------------------------------------------|
-| root       | .mantine-Carousel-root         | Root element                                          |
-| slide      | .mantine-Carousel-slide        | Carousel.Slide root element                           |
-| container  | .mantine-Carousel-container    | Slides container                                      |
-| viewport   | .mantine-Carousel-viewport     | Main element, contains slides container and all controls |
-| controls   | .mantine-Carousel-controls     | Next/previous controls container                      |
-| control    | .mantine-Carousel-control      | Next/previous control                                 |
-| indicators | .mantine-Carousel-indicators   | Indicators container                                  |
-| indicator  | .mantine-Carousel-indicator    | Indicator button                                      |
+
+| Selector   | Static selector              | Description                                              |
+|------------|------------------------------|----------------------------------------------------------|
+| root       | .mantine-Carousel-root       | Root element                                             |
+| slide      | .mantine-Carousel-slide      | Carousel.Slide root element                              |
+| container  | .mantine-Carousel-container  | Slides container                                         |
+| viewport   | .mantine-Carousel-viewport   | Main element, contains slides container and all controls |
+| controls   | .mantine-Carousel-controls   | Next/previous controls container                         |
+| control    | .mantine-Carousel-control    | Next/previous control                                    |
+| indicators | .mantine-Carousel-indicators | Indicators container                                     |
+| indicator  | .mantine-Carousel-indicator  | Indicator button                                         |
 
 #### Carousel CSS variables
 
-| Selector | Variable                     | Description                                             |
-|----------|------------------------------|---------------------------------------------------------|
-| root     | --carousel-control-size       | Controls `width` and `height` of the next/previous buttons  |
-| root     | --carousel-controls-offset    | Controls offsets of the next/previous buttons           |
-| root     | --carousel-height             | Controls height of the carousel                         |
+| Selector | Variable                   | Description                                                |
+|----------|----------------------------|------------------------------------------------------------|
+| root     | --carousel-control-size    | Controls `width` and `height` of the next/previous buttons |
+| root     | --carousel-controls-offset | Controls offsets of the next/previous buttons              |
+| root     | --carousel-height          | Controls height of the carousel                            |
 
 #### Carousel data attributes
 
