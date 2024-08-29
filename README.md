@@ -8,3 +8,4 @@ You can find it hosted [here](https://dash-mantine-components.com).
 pip install -r requirements.txt
 python run.py
 ```
+
