@@ -72,3 +72,33 @@ input:invalid {
     font-size: 15px;
     font-weight: 500;
 }
+
+.dmc-indicator {
+  width: 12px;
+  height: 4px;
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: 40px;
+  }
+}
+
+.dmc-control {
+  &[data-inactive] {
+    opacity: 0;
+    cursor: default;
+  }
+}
+
+.dmc-controls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.dmc-root {
+  &:hover {
+    .dmc-controls {
+      opacity: 1;
+    }
+  }
+}
