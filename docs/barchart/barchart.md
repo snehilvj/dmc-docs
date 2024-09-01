@@ -178,6 +178,10 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 
 .. exec::docs.barchart.referencelines
 
+### Bar value label
+To display value above each bar, set `withBarValueLabel=True`:
+
+.. exec::docs.barchart.bar_value_label
 
 ### clickData
 You can use the  `clickData` property in a callback to get data from latest click event.
