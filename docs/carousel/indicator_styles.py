@@ -9,5 +9,5 @@ component = dmc.Carousel(
     withIndicators=True,
     height=200,
     loop=True,
-    classNames= {"indicator": "dmc-indicator"}
+    classNames={"indicator": "dmc-indicator"},
 )
