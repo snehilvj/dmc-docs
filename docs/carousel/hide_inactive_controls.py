@@ -7,5 +7,5 @@ component = dmc.Carousel(
     ],
     id="carousel-hide-inactive-controls",
     height=200,
-    classNames= {"control": "dmc-control"}
+    classNames={"control": "dmc-control"},
 )

@@ -62,6 +62,5 @@ component = dmc.Carousel(
     id="carousel-cards",
     align="start",
     w=400,
-    loop=True
-
+    loop=True,
 )

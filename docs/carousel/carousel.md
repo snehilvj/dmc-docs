@@ -147,7 +147,15 @@ To set the initial slide to display, use the index number of the slide.
 
 .. exec::docs.carousel.cards
 
+### Limitation: Carousel in Tabs
 
+When a Carousel is placed inside a tab, it may not render correctly. For more details, refer to [GitHub Issue #299]((https://github.com/snehilvj/dash-mantine-components/issues/299). 
+As a workaround, you can update the carousel within the tabs using a callback.
+
+Be sure to give a unique id to each carousel in the app.
+
+
+.. exec::docs.carousel.tabs
 
 ### Styles API
 

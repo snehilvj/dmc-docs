@@ -7,5 +7,5 @@ component = dmc.Carousel(
     ],
     id="carousel-show-controls-on-hover",
     height=200,
-    classNames= {"controls": "dmc-controls", "root": "dmc-root"}
+    classNames={"controls": "dmc-controls", "root": "dmc-root"},
 )

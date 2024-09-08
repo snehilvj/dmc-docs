@@ -12,5 +12,5 @@ component = dmc.Carousel(
     slideGap="md",
     loop=True,
     align="start",
-    slidesToScroll=3
+    slidesToScroll=3,
 )
