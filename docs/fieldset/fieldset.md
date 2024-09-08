@@ -18,7 +18,20 @@ category: Inputs
 Set `disabled` prop to disable all inputs and buttons inside the fieldset:
 
 .. exec::docs.fieldset.disabled
-   :code: false
+
+### Styles API
+#### Fieldset selectors
+
+| Selector | Static selector            | Description      |
+| -------- | -------------------------- | ---------------- |
+| `root`   | `.mantine-Fieldset-root`    | Root element     |
+| `legend` | `.mantine-Fieldset-legend`  | Legend element   |
+
+#### Fieldset CSS variables
+
+| Selector | Variable           | Description               |
+| -------- | ------------------ | ------------------------- |
+| `root`   | `--fieldset-radius` | Controls border-radius     |
 
 ### Keyword Arguments
 
