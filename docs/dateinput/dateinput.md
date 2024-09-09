@@ -49,11 +49,6 @@ Use `format` property to change the format of the date displayed in the date inp
 
 Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label.
 
-### With Time
-
-Include time in `valueFormat` to allow hours, minutes and seconds to be entered.
-
-.. exec::docs.dateinput.time
 
 ### Clearable
 
