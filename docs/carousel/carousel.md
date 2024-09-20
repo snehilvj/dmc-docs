@@ -73,6 +73,11 @@ You can replace default next/previous controls icons with any component:
 
 .. exec::docs.carousel.controls_icons
 
+### Autoplay
+Enable autoplay by setting `autoplay=True` or by passing in a `dict` with options. Refer to [Embla Carousel Autoplay Options](https://www.embla-carousel.com/plugins/autoplay/#options) to learn more.
+
+.. exec::docs.carousel.autoplay
+
 ### Styles API
 
 Carousel supports Styles API, you can add styles to any inner element of the component with `classNames` prop. Refer to the  [Styles API documentation](/styles-api) to learn more.
