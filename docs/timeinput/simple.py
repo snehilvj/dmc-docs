@@ -8,7 +8,7 @@ component = dmc.Group(
         dmc.TimeInput(
             label="What time is it now?",
             withSeconds=True,
-            value=datetime.datetime.now(),
+            value="23:15:45",
         ),
     ],
 )
