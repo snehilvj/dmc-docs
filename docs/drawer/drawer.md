@@ -40,17 +40,33 @@ You can customize transition, timing function and duration for Drawer transition
 
 ### Styles API
 
-| Name    | Static selector         | Description                                                           |
-|:--------|:------------------------|:----------------------------------------------------------------------|
-| root    | .mantine-Divider-root   | Root element                                                          |
-| label   | .mantine-Divider-label  | Label element                                                         || root | .mantine-Drawer-root | Root element |
-| inner   | .mantine-Drawer-inner   | Element used to center modal, has fixed position, takes entire screen |
-| content | .mantine-Drawer-content | `Drawer.Content` root element                                         |
-| header  | .mantine-Drawer-header  | Contains title and close button                                       |
-| overlay | .mantine-Drawer-overlay | Overlay displayed under the `Drawer.Content`                          |
-| title   | .mantine-Drawer-title   | Drawer title (h2 tag), displayed in the header                        |
-| body    | .mantine-Drawer-body    | Drawer body, displayed after header                                   |
-| close   | .mantine-Drawer-close   | Close button                                                          |
+#### Drawer Selectors
+
+| Selector  | Static selector             | Description                                                             |
+| --------- | --------------------------- | ----------------------------------------------------------------------- |
+| `root`    | `.mantine-Drawer-root`       | Root element                                                            |
+| `inner`   | `.mantine-Drawer-inner`      | Element used to center modal, has fixed position, takes entire screen    |
+| `content` | `.mantine-Drawer-content`    | Drawer.Content root element                                              |
+| `header`  | `.mantine-Drawer-header`     | Contains title and close button                                          |
+| `overlay` | `.mantine-Drawer-overlay`    | Overlay displayed under the Drawer.Content                               |
+| `title`   | `.mantine-Drawer-title`      | Drawer title (`h2` tag), displayed in the header                         |
+| `body`    | `.mantine-Drawer-body`       | Drawer body, displayed after header                                      |
+| `close`   | `.mantine-Drawer-close`      | Close button                                                            |
+
+
+
+#### Drawer CSS variables
+
+
+| Selector | Variable          | Description                              |
+|----------|-------------------|------------------------------------------|
+| root     | --drawer-offset    | Controls margin of Drawer.Content        |
+|          | --drawer-size      | Controls width of Drawer.Content         |
+|          | --drawer-flex      | Controls flex property of Drawer.Content |
+|          | --drawer-align     | Controls align-items property of Drawer.Content |
+|          | --drawer-justify   | Controls justify-content property of Drawer.Content |
+|          | --drawer-height    | Controls height property of Drawer.Content |
+
 
 ### Keyword Arguments
 
