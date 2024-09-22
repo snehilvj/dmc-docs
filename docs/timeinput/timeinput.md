@@ -3,15 +3,14 @@ name: TimeInput
 description: Use the TimeInput component to capture time input from user.
 endpoint: /components/timeinput
 package: dash_mantine_components
-category: Inputs
+category: Date Pickers
 ---
 
 .. toc::
 
 ### Simple Example
 
-This is a simple example of the TimeInput. You can enter a valid time string or use the date object from datetime 
-library.
+This is a simple example of the TimeInput. You can enter a valid time string such as hh:mm:ss.
 
 Use the  `withSeconds` prop to display seconds.
 
