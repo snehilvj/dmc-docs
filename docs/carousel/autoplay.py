@@ -8,5 +8,5 @@ component = dmc.Carousel(
     ],
     id="carousel-simple",
     loop=True,
-    autoplay=True # Default delay is 2000ms
+    autoplay=True # Default delay is 4000ms
 )
