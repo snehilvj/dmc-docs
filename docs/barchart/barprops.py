@@ -7,6 +7,6 @@ component = dmc.BarChart(
     data=data,
     orientation="vertical",
     yAxisProps={"width": 80},
-    barChartProps={"barProps": {"radius": 50}},
+    barProps={"radius": 50},
     series=[{"name": "Smartphones", "color": "violet.6"}],
 )
