@@ -35,6 +35,8 @@ app = Dash(external_stylesheets=dmc.styles.ALL)
 This is a simple example of DatePicker tied to a callback. You can either use strings in a valid datetime format such
 as `YYYY-MM-DD` or use the date object from datetime library.
 
+> If you would like to enable the user to type a date manually into the input field, please use the `DateInput` component
+
 .. exec::docs.datepicker.simple
 
 ### Multiple dates
