@@ -110,9 +110,21 @@ and reset if user moves mouse over/out of target element before delay is expired
 
 ### Floating Tooltip
 
-dmc.FloatingTooltip component has the same API as dmc.Tooltip component but tooltip will follow mouse.
+`dmc.FloatingTooltip` component has the same API as `dmc.Tooltip` component but tooltip will follow mouse.
 
 .. exec::docs.tooltip.floating
+
+### Limitations - setting width
+
+There is a limitation in Dash that makes it challenging to style the width of some tooltip children. For more details, see [GitHub #319.](https://github.com/snehilvj/dash-mantine-components/issues/319)
+
+Tooltip children are wrapped in a `Box` with a default width of `fit-content`, which may override the width defined in the children. To work around this, you can set the width using `boxWrapperProps`.
+
+`boxWrapperProps` is a dictionary of style properties passed to the `Box` that wraps the tooltip children. In this example, both the `Textarea` and `boxWrapperProps` are used to set the width to 100%.
+
+
+.. exec::docs.tooltip.boxwrapperprops
+
 
 ### Styles API
 
