@@ -51,6 +51,21 @@ Multiple sections can be displayed instead of just one single bar.
 
 .. exec::docs.progress.sections
 
+
+### Limitations - with Tooltip
+
+There is a limitation in Dash that makes it challenging to style the width of some tooltip children. For more details, see [GitHub #319.](https://github.com/snehilvj/dash-mantine-components/issues/319)
+
+Tooltip children are wrapped in a `Box` with a default width of `fit-content`, which may override the width defined in the children. To work around this, you can set the width using `boxWrapperProps`.
+
+`boxWrapperProps` is a dictionary of style properties passed to the `Box` that wraps the tooltip children.
+
+In this example, the width of the `ProgressSection` is set to 100%, and the width of each section is defined using the `boxWrapperProps`.
+
+
+.. exec::docs.progress.tooltip
+
+
 ### Styles API
 
 | Name    | Static selector           | Description                     |
