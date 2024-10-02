@@ -12,7 +12,6 @@ component = html.Div(
     [
         dmc.Drawer(
             id="drawer-position",
-            zIndex=10000,
         ),
         dmc.Group(
             align="center",

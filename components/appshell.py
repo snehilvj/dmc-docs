@@ -47,7 +47,7 @@ def create_appshell(data):
         },
         children=[
             dcc.Location(id="url", refresh="callback-nav"),
-            dmc.NotificationProvider(zIndex=2000),
+            dmc.NotificationProvider(),
             dmc.AppShell(
                 [
                     create_header(data),
@@ -57,7 +57,6 @@ def create_appshell(data):
                 ],
                 header={"height": 70},
                 padding="xl",
-                zIndex=1400,
                 navbar={
                     "width": 300,
                     "breakpoint": "lg",

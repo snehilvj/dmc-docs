@@ -4,5 +4,4 @@ component = dmc.YearPickerInput(
     dropdownType="modal",
     label="Pick date (picker in modal)",
     placeholder="Pick date",
-    modalProps={"zIndex": 2000},
 )

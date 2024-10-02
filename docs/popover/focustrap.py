@@ -17,5 +17,4 @@ component = dmc.Popover(
     withArrow=True,
     trapFocus=True,
     shadow="md",
-    zIndex=2000,
 )

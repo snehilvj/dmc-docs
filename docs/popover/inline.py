@@ -9,7 +9,6 @@ component = dmc.Flex(
                 dmc.PopoverDropdown(" more info"),
             ],
             middlewares={"flip": True, "shift": True, "inline": True},
-            zIndex=2000,
         ),
         "and more text after.",
     ],

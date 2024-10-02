@@ -14,7 +14,6 @@ component = dmc.Box(
                 dmc.LoadingOverlay(
                     visible=False,
                     id="loading-overlay",
-                    zIndex=1000,
                     overlayProps={"radius": "sm", "blur": 2},
                 ),
                 dmc.TextInput(

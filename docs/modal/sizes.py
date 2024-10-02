@@ -3,12 +3,11 @@ from dash import html, Output, Input, State, callback
 
 component = html.Div(
     [
-        dmc.Modal(title="Size: lg", id="modal-size-lg", size="lg", zIndex=10000),
-        dmc.Modal(title="Size: 378px", id="modal-size-378", size=378, zIndex=10000),
-        dmc.Modal(title="Size: 55%", id="modal-size-55", size="55%", zIndex=10000),
+        dmc.Modal(title="Size: lg", id="modal-size-lg", size="lg"),
+        dmc.Modal(title="Size: 378px", id="modal-size-378", size=378),
+        dmc.Modal(title="Size: 55%", id="modal-size-55", size="55%"),
         dmc.Modal(
-            title="Size: full", id="modal-size-full", fullScreen=True, zIndex=10000
-        ),
+            title="Size: full", id="modal-size-full", fullScreen=True),
         dmc.Group(
             [
                 dmc.Button("lg", id="lg-modal-button"),

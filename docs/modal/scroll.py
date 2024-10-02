@@ -13,7 +13,6 @@ component = html.Div(
         dmc.Modal(
             id="modal-scroll",
             title="Modal with Scroll",
-            zIndex=10000,
             children=[dmc.Text(paragraph)],
         ),
         dmc.Button("Modal with Scroll", id="modal-scroll-button"),

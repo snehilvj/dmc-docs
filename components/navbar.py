@@ -127,7 +127,6 @@ def create_navbar_drawer(data):
     return dmc.Drawer(
         id="components-navbar-drawer",
         overlayProps={"opacity": 0.55, "blur": 3},
-        zIndex=1500,
         offset=10,
         radius="md",
         withCloseButton=False,
