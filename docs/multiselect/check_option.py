@@ -7,5 +7,6 @@ component = dmc.MultiSelect(
     checkIconPosition="right",
     dropdownOpened=True,
     w=200,
-    pb=150
+    pb=150,
+    id="multi-select-check-icon"
 )
