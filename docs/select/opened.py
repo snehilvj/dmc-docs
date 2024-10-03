@@ -3,10 +3,11 @@ from dash import Output, Input, html, callback
 
 component = html.Div(
     [
+        dmc.Button("Toggle dropdown", id="btn-select-opened", n_clicks=0),
         dmc.Select(
             label="Select your favorite library",
-            placeholder="Select one",
-            id="framework-select",
+            placeholder="Select value",
+            id="select-opened",
             value="pd",
             data = [
                 {"value": "pd", "label": "Pandas"},
@@ -14,14 +15,18 @@ component = html.Div(
                 {"value": "tf", "label": "TensorFlow"},
                 {"value": "torch", "label": "PyTorch"},
             ],
-            w=200,
+            w=400,
             mb=10,
         ),
-        dmc.Text(id="selected-value"),
+
     ]
 )
 
 
-@callback(Output("selected-value", "children"), Input("framework-select", "value"))
-def select_value(value):
-    return f" You selected {value}"
+@callback(
+    Output("select-opened", "dropdownOpened"), Input("btn-select-opened", "n_clicks")
+)
+def select_value(n):
+    if n % 2 ==  0:
+        return False
+    return True

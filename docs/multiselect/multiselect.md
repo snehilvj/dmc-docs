@@ -89,6 +89,12 @@ no data available. If the `nothingFoundMessage` prop is not set, the `MultiSelec
 
 
 ### Checked option icon
+Set `checkIconPosition` prop to left or right to control position of check icon in active option. To remove the 
+check icon, set `withCheckIcon=False`.
+
+.. exec::docs.multiselect.check_option
+
+### Checked option icon
 
 Set `checkIconPosition` prop to `left` or `right` to control position of check icon in active option.
 To remove the check icon, set `withCheckIcon=False`.
@@ -222,7 +228,8 @@ select less than 2 currency pairs.
 .. exec::docs.multiselect.error
 
 ### Input Props
-MultiSelect component supports Input and Input.Wrapper components features and all input element props. MultiSelect documentation does not include all features supported by the component – see Input documentation to learn about all available features.
+`MultiSelect` component supports `Input` and Input Wrapper components features and all input element props.
+`MultiSelect` documentation does not include all features supported by the component – see Input documentation to learn about all available features.
 
  
 .. exec::docs.multiselect.interactive

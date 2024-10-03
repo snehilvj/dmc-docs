@@ -1,8 +1,11 @@
 import dash_mantine_components as dmc
 
 component = dmc.Select(
+    label="Control check icon",
     data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
-    value="Pandas",
-    clearable=True,
+    value="NumPy",
+    checkIconPosition="right",
+    dropdownOpened=True,
     w=200,
+    pb=150
 )
