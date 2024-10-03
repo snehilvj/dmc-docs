@@ -3,19 +3,19 @@ import dash_mantine_components as dmc
 component = dmc.Select(
     data=[
         {
-            "group": "Frontend",
+            "group": "Data Analysis",
             "items": [
-                {"value": "React", "label": "React"},
-                {"value": "Angular", "label": "Angular"},
+                {"value": "Pandas", "label": "Pandas"},
+                {"value": "NumPy", "label": "NumPy"},
             ],
         },
         {
-            "group": "Backend",
+            "group": "Deep Learning",
             "items": [
-                {"value": "Svelte", "label": "Svelte"},
-                {"value": "Vue", "label": "Vue"},
+                {"value": "TensorFlow", "label": "TensorFlow"},
+                {"value": "PyTorch", "label": "PyTorch"},
             ],
         },
     ],
-    w=200,
+    w=400,
 )
