@@ -1,12 +1,12 @@
 import dash_mantine_components as dmc
 
 component = dmc.MultiSelect(
-    label="Select your favorite libraries",
+    label="Select your favorite library",
     placeholder="Select all you like!",
-    hidePickedOptions=True,
     value=["Pandas", "TensorFlow"],
     data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
+    clearable=True,
     w=400,
-    mb=140,
-    dropdownOpened=True,
+    mb=180,
+
 )
