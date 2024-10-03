@@ -7,5 +7,6 @@ component = dmc.Select(
     checkIconPosition="right",
     dropdownOpened=True,
     w=200,
-    pb=150
+    pb=150,
+    id="select-check-icon"
 )
