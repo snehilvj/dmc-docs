@@ -11,7 +11,7 @@ component = dmc.Popover(
             dmc.MultiSelect(
                 label="Your favorite libraries",
                 placeholder="Pick values",
-                data=["React", "Angular", "Vue", "Svelte"],
+                data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
                 comboboxProps={"withinPortal": False},
             )
         ),

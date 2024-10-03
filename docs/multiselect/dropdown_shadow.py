@@ -1,8 +1,8 @@
 import dash_mantine_components as dmc
 
 component = dmc.MultiSelect(
-    label="Pick your favorite libraries",
+    label="Your favorite libraries",
+    placeholder="Pick values",
     data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
-    searchable=True,
-    w=400,
+    comboboxProps={"shadow": "md"},
 )
