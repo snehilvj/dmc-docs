@@ -13,7 +13,6 @@ component = html.Div(
                 "duration": 1000,
                 "timingFunction": "ease",
             },
-            zIndex=10000,
         ),
     ]
 )

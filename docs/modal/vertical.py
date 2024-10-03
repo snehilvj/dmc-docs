@@ -7,7 +7,6 @@ component = html.Div(
             title="Centered Modal",
             id="modal-centered",
             centered=True,
-            zIndex=10000,
             children=[dmc.Text("This is a vertically centered modal.")],
         ),
         dmc.Button("Open modal", id="modal-centered-button"),

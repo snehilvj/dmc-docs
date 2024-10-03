@@ -70,8 +70,7 @@ dmc.AppShell(
         dmc.AppShellMain(children=[...]),
     ],
     header={"height": 70},
-    padding="xl",
-    zIndex=1400,
+    padding="xl",    
     navbar={
         "width": 300,
         "breakpoint": "sm",

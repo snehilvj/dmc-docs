@@ -41,7 +41,6 @@ def create_version_menu():
             ),
         ],
         trigger="hover",
-        zIndex=1500,
         styles={"item": {"height": 30}},
     )
 
@@ -64,7 +63,7 @@ def create_search(data):
             if component["name"] not in ["Home", "Not found 404"]
         ],
         visibleFrom="sm",
-        comboboxProps={"zIndex": 2000},
+        comboboxProps={"shadow": "md"},
     )
 
 

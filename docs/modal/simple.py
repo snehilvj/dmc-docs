@@ -7,7 +7,6 @@ component = html.Div(
         dmc.Modal(
             title="New Modal",
             id="modal-simple",
-            zIndex=10000,
             children=[
                 dmc.Text("I am in a modal component."),
                 dmc.Space(h=20),

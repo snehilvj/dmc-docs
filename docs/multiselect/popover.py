@@ -4,7 +4,6 @@ component = dmc.Popover(
     width=300,
     position="bottom",
     withArrow=True,
-    zIndex=2000,
     shadow="md",
     children=[
         dmc.PopoverTarget(dmc.Button("Toggle Popover")),
