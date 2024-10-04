@@ -15,6 +15,7 @@ component = dmc.Box(
                     visible=False,
                     id="loading-overlay",
                     overlayProps={"radius": "sm", "blur": 2},
+                    style={'zIndex': 10},
                 ),
                 dmc.TextInput(
                     label="Username",

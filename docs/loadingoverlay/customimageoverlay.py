@@ -1,7 +1,5 @@
-import time
 
 import dash_mantine_components as dmc
-from dash import Output, Input, no_update, callback, clientside_callback, dcc, html
 import random
 
 # Generate random data for the BarChart
@@ -19,11 +17,12 @@ component = dmc.Box(
     children=[
         dmc.Stack(
             pos="relative",
-            p=5,
+            p=10,
             children=[
                 dmc.LoadingOverlay(
                     visible=True,
-                    id="loading-overlay",
+                    id="custom-loading-overlay",
+                    style={'zIndex': 10},
                     loaderProps={
                         "variant": "custom",
                         "children": dmc.Image(
