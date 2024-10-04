@@ -22,7 +22,7 @@ component = dmc.Box(
                 dmc.LoadingOverlay(
                     visible=True,
                     id="custom-loading-overlay",
-                    style={'zIndex': 10},
+                    zIndex=10,
                     loaderProps={
                         "variant": "custom",
                         "children": dmc.Image(

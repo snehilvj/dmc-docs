@@ -6,7 +6,7 @@ component = dmc.Box(
             loaderProps={"type": "bars", "color": "red", "size": "lg"},
             overlayProps={"radius": "sm", "blur": 2},
             visible=True,
-            style={'zIndex': 10},
+            zIndex=10
         ),
         dmc.BackgroundImage(
             dmc.Box(h=200, w=100),
