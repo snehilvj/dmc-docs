@@ -2,12 +2,18 @@ import time
 
 import dash_mantine_components as dmc
 from dash import Output, Input, no_update, callback, clientside_callback, dcc, html
-from dash_iconify import DashIconify
-import numpy as np
-import plotly.graph_objs as go
+import random
 
-x_data = np.linspace(0, 10, 100)
-y_data = np.random.rand(100)
+# Generate random data for the BarChart
+data = [
+    {
+        "month": month,
+        "Smartphones": random.randint(50, 300),
+        "Laptops": random.randint(30, 200),
+        "Tablets": random.randint(20, 150),
+    }
+    for month in ["January", "February", "March", "April", "May", "June"]
+]
 
 component = dmc.Box(
     children=[
@@ -20,30 +26,24 @@ component = dmc.Box(
                     id="loading-overlay",
                     loaderProps={
                         "variant": "custom",
-                        "children": html.Img(src="/assets/custom_loadingoverlay.gif", style={"width": "120%", "height": "50%", "position": "relative", "left": "-10%"})
+                        "children": dmc.Image(
+                            radius="md",
+                            src="/assets/custom_loadingoverlay.gif",
+                        )
                     },
                     overlayProps={"radius": "sm", "blur": 2},
                 ),
-                dcc.Graph(
-                    id='random-data-graph',
-                    figure={
-                        'data': [
-                            go.Scatter(
-                                x=x_data,
-                                y=y_data,
-                                mode='lines+markers',
-                                name='Random Data'
-                            )
-                        ],
-                        'layout': go.Layout(
-                            title='Random Data Points',
-                            xaxis={'title': 'X-axis'},
-                            yaxis={'title': 'Y-axis'},
-                            margin={'l': 40, 'b': 40, 't': 40, 'r': 10},
-                            hovermode='closest'
-                        )
-                    },
-                )
+                dmc.BarChart(
+                    h=300,
+                    dataKey="month",
+                    data=data,
+                    type="stacked",
+                    series=[
+                        {"name": "Smartphones", "color": "violet.6"},
+                        {"name": "Laptops", "color": "blue.6"},
+                        {"name": "Tablets", "color": "teal.6"},
+                    ],
+                ),
             ],
         ),
     ]
