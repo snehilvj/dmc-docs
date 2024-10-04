@@ -21,6 +21,12 @@ It is usually used to indicate loading state of forms.
 
 .. exec::docs.loadingoverlay.customize
 
+### Custom LoadingOverly
+
+`loaderProps` (dic) - That can be "variant" of oval, bars, dots or custom as in this example providing children with an image of a .gif src.
+
+.. exec::docs.loadingoverlay.customimageoverlay
+
 ### Styles API
 
 | Name    | Static selector                 | Description         |
@@ -34,3 +40,5 @@ It is usually used to indicate loading state of forms.
 #### LoadingOverlay
 
 .. kwargs::LoadingOverlay
+
+
