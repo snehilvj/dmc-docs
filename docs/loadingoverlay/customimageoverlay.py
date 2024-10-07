@@ -26,6 +26,7 @@ component = dmc.Box(
                     loaderProps={
                         "variant": "custom",
                         "children": dmc.Image(
+                            h=150,
                             radius="md",
                             src="/assets/custom_loadingoverlay.gif",
                         )

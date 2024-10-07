@@ -129,7 +129,7 @@ def create_header(data):
                                         id="drawer-hamburger-button",
                                         variant="transparent",
                                         size="lg",
-                                        hiddenFrom="sm",
+                                        hiddenFrom="lg",
                                     ),
                                 ],
                             ),
