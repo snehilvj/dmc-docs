@@ -21,7 +21,7 @@ It is usually used to indicate loading state of forms.
 
 .. exec::docs.loadingoverlay.customize
 
-### Custom LoadingOverly
+### Custom LoadingOverlay
 
 `loaderProps` (dict) - Supports a key of "variant" with values of oval, bars, dots or custom as in this example, also custom supports a children key as in this dmc.Image with a custom .gif loading screen.
 
