@@ -49,13 +49,36 @@ The horizontal scroll bar will be displayed when the content of the ScrollArea i
 
 ### Styles API
 
-| Name      | Static selector               | Description  |
-|:----------|:------------------------------|:-------------|
-| root      | .mantine-ScrollArea-root      | Root element |
-| viewport  | .mantine-ScrollArea-viewport  |              |
-| scrollbar | .mantine-ScrollArea-scrollbar |              |
-| thumb     | .mantine-ScrollArea-thumb     |              |
-| corner    | .mantine-ScrollArea-corner    |
+
+####  ScrollArea Selectors
+
+| Selector  | Static selector               | Description    |
+|-----------|-------------------------------|----------------|
+| root      | .mantine-ScrollArea-root       | Root element   |
+| viewport  | .mantine-ScrollArea-viewport   |                |
+| scrollbar | .mantine-ScrollArea-scrollbar  |                |
+| thumb     | .mantine-ScrollArea-thumb      |                |
+| corner    | .mantine-ScrollArea-corner     |                |
+
+
+
+#### ScrollArea CSS variables
+
+| Selector | Variable                     | Description    |
+|----------|------------------------------|----------------|
+| root     | --scrollarea-scrollbar-size   | Scrollbar size |
+
+
+#### ScrollArea data attributes
+
+| Selector         | Attribute          | Condition                          | Value                               |
+|------------------|--------------------|------------------------------------|-------------------------------------|
+| scrollbar, corner| data-hidden         | `type="never"`                     | –                                   |
+| corner           | data-hovered        | One of the scrollbars is hovered   | –                                   |
+| scrollbar        | data-orientation    | –                                  | "horizontal" or "vertical" depending on scrollbar position |
+
+
+
 
 ### Keyword Arguments
 
