@@ -212,7 +212,7 @@ milliseconds to animate the tooltip position change.
 
 
 ### Area animation
-By default, the Recharts data animation is disabled. To enable and customize the animation, use `areaProps` to pass properties to the Recharts `Line` component.
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `areaProps` to pass properties to the Recharts `Area` component.
 
 .. exec::docs.areachart.area_animation
 

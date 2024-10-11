@@ -201,7 +201,7 @@ milliseconds to animate the tooltip position change.
 
 
 ### Points animation
-By default, the Recharts data animation is disabled. To enable and customize the animation, use `scatterProps` to pass properties to the Recharts `Line` component.
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `scatterProps` to pass properties to the Recharts `Scatter` component.
 
 .. exec::docs.scatterchart.scatter_animation
 

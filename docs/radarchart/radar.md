@@ -64,7 +64,7 @@ component = dmc.RadarChart(
 ### Rechart props
 
 To pass props down to the underlying recharts components, use the following props:
-
+- `radarProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
 - `radarChartProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
 - `polarGridProps` passed props to [PolarGrid](https://recharts.org/en-US/api/PolarGrid) component
 - `polarAngleAxisProps` passed props to [PolarAngleAxis](https://recharts.org/en-US/api/PolarAngleAxis) component
@@ -73,6 +73,13 @@ To pass props down to the underlying recharts components, use the following prop
 Example of passing props down to PolarRadiusAxis component:
 
 .. exec::docs.radarchart.rechartprops
+
+
+### Radar animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `radarProps` to pass properties to the Recharts `Radar` component.
+
+
+.. exec::docs.radarchart.radar_animation
 
 
 ### Styles API
