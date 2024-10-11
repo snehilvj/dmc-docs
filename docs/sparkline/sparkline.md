@@ -46,6 +46,14 @@ Use `trendColors` prop instead of `color` to change chart color depending on the
 .. exec::docs.sparkline.trendcolors
 
 
+### Sparkline animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `areaProps` to pass properties to the Recharts `Area` component.
+
+
+.. exec::docs.sparkline.spark_animation
+
+
+
 
 ### Styles API
 
@@ -54,7 +62,7 @@ Use `trendColors` prop instead of `color` to change chart color depending on the
 | root        | .mantine-Sparkline-root | Root element                            |
 
 
-### DonutChart CSS variables
+### Sparkline CSS variables
 
 | Selector         | Variable             | Description                        |
 |:-----------------|:---------------------|:-----------------------------------|
