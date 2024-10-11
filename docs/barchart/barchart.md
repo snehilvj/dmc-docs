@@ -145,8 +145,15 @@ Set `strokeDasharray` prop to control the stroke dash array of the grid and curs
 ### Tooltip animation
 By default, tooltip animation is disabled. To enable it, set `tooltipAnimationDuration` prop to a number of milliseconds to animate the tooltip position change.
 
-
 .. exec::docs.barchart.tooltipanimation
+
+
+### Bar animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `barProps` to pass properties to the Recharts `Bar` component.
+
+
+.. exec::docs.barchart.bar_animation
+
 
 ### Units
 Set `unit` prop to render a unit label next to the y-axis ticks and tooltip values:

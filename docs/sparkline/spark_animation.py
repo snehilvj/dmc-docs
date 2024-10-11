@@ -1,4 +1,3 @@
-from random import randint
 import dash_mantine_components as dmc
 from dash import  callback, Input, Output
 
