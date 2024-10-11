@@ -157,7 +157,7 @@ milliseconds to animate the tooltip position change.
 .. exec::docs.linechart.tooltipanimation
 
 ### Line animation
-By default, the Recharts data animation is disabled. To enable and customize the animation, use `LineProps` to pass properties to the Recharts `Line` component.
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `lineProps` to pass properties to the Recharts `Line` component.
 
 .. exec::docs.linechart.line_animation
 

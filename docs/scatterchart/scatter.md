@@ -200,6 +200,11 @@ milliseconds to animate the tooltip position change.
 .. exec::docs.scatterchart.tooltipanimation
 
 
+### Points animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `scatterProps` to pass properties to the Recharts `Line` component.
+
+.. exec::docs.scatterchart.scatter_animation
+
 ### Reference lines
 Use `referenceLines` prop to render reference lines. Reference lines are always rendered behind the chart.
 
