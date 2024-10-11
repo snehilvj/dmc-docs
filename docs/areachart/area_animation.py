@@ -3,14 +3,14 @@ import dash_mantine_components as dmc
 from dash import  callback, Input, Output
 
 component = dmc.Box([
-    dmc.Button("Update Chart", id="btn-linechart-animation"),
-    dmc.LineChart(
-        id="linechart-animation",
+    dmc.Button("Update Chart", id="btn-areachart-animation"),
+    dmc.AreaChart(
+        id="areachart-animation",
         h=300,
         dataKey="date",
         data=[{}],
         tooltipAnimationDuration=500,
-        lineProps={"isAnimationActive":True,
+        areaProps={"isAnimationActive":True,
                         "animationDuration": 500,
                         "animationEasing": "ease-in-out",
                         "animationBegin": 500},
@@ -24,8 +24,8 @@ component = dmc.Box([
 
 
 @callback(
-    Output("linechart-animation", "data"),
-    Input("btn-linechart-animation", "n_clicks")
+    Output("areachart-animation", "data"),
+    Input("btn-areachart-animation", "n_clicks")
 )
 def update(n):
     return [
