@@ -97,7 +97,12 @@ def create_content(data):
             links[entry["category"]].append(link)
 
     body = []
-    for section, items in links.items():
+
+    # set the order of the categories in the sidebar
+    category_order = ['Theming', 'Layout', 'Inputs', 'Combobox', 'Buttons', 'Navigation', 'Feedback', 'Overlay', 'Data Display', 'Typography', 'Miscellaneous', 'Date Pickers', 'Charts' ]
+    sorted_links = {key: links[key] for key in category_order if key in links}
+
+    for section, items in sorted_links.items():
         body.append(
             dmc.Divider(
                 label=[
