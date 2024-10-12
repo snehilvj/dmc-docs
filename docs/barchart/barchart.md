@@ -54,8 +54,13 @@ data = [
 Set type="stacked" to render a stacked bar chart. In this type of bar chart stacking is applied along the vertical axis,
 allowing you to see the overall trend as well as the contribution of each individual series to the total.
 
-
 .. exec::docs.barchart.stacked
+
+### Mixed stacked bar chart
+
+You can control how series are stacked by setting `stackId` property in `series` dictionary:
+
+.. exec::docs.barchart.stacked_mixed
 
 ### Percent bar chart
 Set type="percent" to render a percent bar chart. In this type of bar chart the y-axis scale is always normalized 
@@ -63,6 +68,16 @@ to 100%, making it easier to compare the contribution of each series in terms of
 
 
 .. exec::docs.barchart.percent
+
+
+### Waterfall
+
+Set `type="waterfall"` to render a waterfall bar chart. This chart type illustrates how an initial value is influenced
+by subsequent positive or negative values, with each bar starting where the previous one ended. Use the `color` prop
+inside data to color each bar individually. Note that the series color gets overwritten for this specific bar. Use the
+`standalone` prop inside data to decouple the bar from the flow.
+
+.. exec::docs.barchart.waterfall
 
 ### Legend
 To display chart legend, set `withLegend` prop. When one of the items in the legend is hovered, the corresponding data
@@ -132,13 +147,19 @@ dmc.AreaChart(
 ```
 
 ### Bar props
-You can pass props down to recharts [Bar](https://recharts.org/en-US/api/Bar) component with `barProps` prop. `barProps` accepts an object with props.
+You can pass props down to recharts [Bar](https://recharts.org/en-US/api/Bar) component with `barProps` prop. `barProps` accepts an object with rechart props.
 
 .. exec::docs.barchart.barprops
 
+
+### Bar animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `barProps` to pass properties to the Recharts `Bar` component.
+
+
+.. exec::docs.barchart.bar_animation
+
 ### Stroke dash array
 Set `strokeDasharray` prop to control the stroke dash array of the grid and cursor lines. The value represent the lengths of alternating dashes and gaps. For example, strokeDasharray="10 5" will render a dashed line with 10px dashes and 5px gaps.
-
 
 .. exec::docs.barchart.strokedasharray
 
@@ -148,11 +169,6 @@ By default, tooltip animation is disabled. To enable it, set `tooltipAnimationDu
 .. exec::docs.barchart.tooltipanimation
 
 
-### Bar animation
-By default, the Recharts data animation is disabled. To enable and customize the animation, use `barProps` to pass properties to the Recharts `Bar` component.
-
-
-.. exec::docs.barchart.bar_animation
 
 
 ### Units
@@ -196,6 +212,12 @@ You can use the  `clickData` property in a callback to get data from latest clic
 .. exec::docs.barchart.clickdata
 
 ### Styles API
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### BarChart selectors
+
 | Selector           | Static selector                   | Description                                      |
 |:-------------------|:---------------------------------|:-------------------------------------------------|
 | root               | .mantine-BarChart-root           | Root element                                    |

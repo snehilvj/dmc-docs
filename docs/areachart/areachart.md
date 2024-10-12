@@ -314,6 +314,11 @@ You can use the  `clickData` property in a callback to get data from latest clic
 
 ### Styles API
 
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### AreaChart selectors
+
 | Name            | Static selector                    | Description                                   |
 |:----------------|:----------------------------------|:----------------------------------------------|
 | root            | .mantine-AreaChart-root            | Root element                                  |
@@ -336,7 +341,7 @@ You can use the  `clickData` property in a callback to get data from latest clic
 | referenceLine   | .mantine-AreaChart-referenceLine   | Reference line                                |
 | axisLabel       | .mantine-AreaChart-axisLabel       | X and Y axis labels                           |
 
-### AreaChart CSS variables
+#### AreaChart CSS variables
 
 | Selector           | Variable             | Description                                      |
 |:-------------------|:---------------------|:-------------------------------------------------|

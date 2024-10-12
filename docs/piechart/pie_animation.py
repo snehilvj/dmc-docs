@@ -2,11 +2,20 @@ from random import randint
 import dash_mantine_components as dmc
 from dash import  callback, Input, Output
 
+
+def get_data(values):
+    return [
+        {"name": "A", "value": values[0], "color": "indigo.6"},
+        {"name": "B", "value": values[1], "color": "yellow.6"},
+        {"name": "C", "value": values[2], "color": "teal.6"},
+        {"name": "C", "value": values[3], "color": "gray.6"}
+    ]
+
 component = dmc.Box([
-    dmc.Button("Update Chart", id="btn-piechart-animation", n_clicks=0),
+    dmc.Button("Update Chart", id="btn-piechart-animation", n_clicks=0, mb="md"),
     dmc.PieChart(
         id="piechart-animation",
-        data=[{}],
+        data=get_data([100,0,0,0]),
         pieProps={"isAnimationActive":True},
     ),
 ])
@@ -17,11 +26,8 @@ component = dmc.Box([
     Input("btn-piechart-animation", "n_clicks")
 )
 def update(n):
-    return   [
-      { "name": "USA", "value": randint(10, 400), "color": "indigo.6" },
-      { "name": "India", "value": randint(10, 400), "color": "yellow.6" },
-      { "name": "Japan", "value": randint(10, 400), "color": "teal.6" },
-      { "name": "Other", "value": randint(10, 400), "color": "gray.6" }
-    ]
+    if n % 2 == 0:
+       return get_data([400, 300, 600, 100])
+    return  get_data([100,0,0,0])
 
 
