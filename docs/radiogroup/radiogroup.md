@@ -18,6 +18,9 @@ Use the `value` prop for callbacks.
 
 Each Radio item in a RadioGroup can be customized. The Radio component is a wrapper for input type radio.  Use Stack or Group to arrange multiple Radio items
 
+.. exec::docs.radiogroup.interactive
+    :code: false
+
 ### Color
 
 In a RadioGroup component, the color property can be customized at the individual Radio level.
