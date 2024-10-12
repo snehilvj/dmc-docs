@@ -1,4 +1,3 @@
-
 import dash_mantine_components as dmc
 import random
 
@@ -29,7 +28,7 @@ component = dmc.Box(
                             h=150,
                             radius="md",
                             src="/assets/custom_loadingoverlay.gif",
-                        )
+                        ),
                     },
                     overlayProps={"radius": "sm", "blur": 2},
                 ),
@@ -48,4 +47,3 @@ component = dmc.Box(
         ),
     ]
 )
-

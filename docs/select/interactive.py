@@ -4,7 +4,13 @@ from lib.configurator import Configurator
 
 TARGET_ID = "interactive-select-input"
 target = dmc.Center(
-    dmc.Select(label="", placeholder="placeholder", data=["Pandas", "NumPy", "TensorFlow", "PyTorch"], w=250, id=TARGET_ID)
+    dmc.Select(
+        label="",
+        placeholder="placeholder",
+        data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
+        w=250,
+        id=TARGET_ID,
+    )
 )
 
 configurator = Configurator(target, TARGET_ID)

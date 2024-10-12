@@ -8,5 +8,5 @@ component = dmc.MultiSelect(
     dropdownOpened=True,
     w=200,
     pb=150,
-    id="multi-select-check-icon"
+    id="multi-select-check-icon",
 )

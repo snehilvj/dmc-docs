@@ -3,9 +3,7 @@ from dash import html, Output, Input, State, callback
 
 component = html.Div(
     [
-        dmc.Drawer(
-            title="Size: md", id="drawer-size-md", padding="md", size="md"
-        ),
+        dmc.Drawer(title="Size: md", id="drawer-size-md", padding="md", size="md"),
         dmc.Drawer(
             title="Size: 450px",
             id="drawer-size-450",

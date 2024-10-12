@@ -7,7 +7,7 @@ data = biaxial_data = [
     {"name": "Page D", "uv": 2780, "pv": 3908},
     {"name": "Page E", "uv": 1890, "pv": 4800},
     {"name": "Page F", "uv": 2390, "pv": 3800},
-    {"name": "Page G", "uv": 3490, "pv": 4300}
+    {"name": "Page G", "uv": 3490, "pv": 4300},
 ]
 
 component = dmc.LineChart(
@@ -18,7 +18,7 @@ component = dmc.LineChart(
     yAxisLabel="uv",
     rightYAxisLabel="pv",
     series=[
-        {"name": 'uv', "color": 'pink.6'},
-        {"name": 'pv', "color": 'cyan.6', "yAxisId": 'right'},
-    ]
+        {"name": "uv", "color": "pink.6"},
+        {"name": "pv", "color": "cyan.6", "yAxisId": "right"},
+    ],
 )

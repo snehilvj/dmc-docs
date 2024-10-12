@@ -8,7 +8,12 @@ data = [
     {"item": "Loss carryf.", "Effective tax rate in %": -2, "color": "teal"},
     {"item": "Law changes", "Effective tax rate in %": 2, "color": "red"},
     {"item": "Reven. adj.", "Effective tax rate in %": 4, "color": "red"},
-    {"item": "ETR", "Effective tax rate in %": 3.5, "color": "blue", "standalone": True}
+    {
+        "item": "ETR",
+        "Effective tax rate in %": 3.5,
+        "color": "blue",
+        "standalone": True,
+    },
 ]
 
 component = dmc.BarChart(
@@ -17,5 +22,5 @@ component = dmc.BarChart(
     dataKey="item",
     type="waterfall",
     series=[{"name": "Effective tax rate in %", "color": "blue"}],
-    withLegend=True
+    withLegend=True,
 )

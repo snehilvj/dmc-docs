@@ -8,5 +8,5 @@ component = dmc.ScatterChart(
     tickLine="xy",
     xAxisLabel="Age",
     yAxisLabel="BMI",
-    pointLabels="x"
+    pointLabels="x",
 )
