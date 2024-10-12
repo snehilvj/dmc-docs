@@ -25,4 +25,4 @@ component = dmc.Box(
     Output("chipgroup-multi-container", "children"), Input("chipgroup-multi", "value")
 )
 def checkbox(value):
-    return f"The chip is selected: {value}"
+    return f"Selected chips: {value}"

@@ -12,17 +12,18 @@ component = dmc.Box(
                 ],
                 multiple=False,
                 value="a",
-                id="chipgroup-single",
+                deselectable=True,
+                id="chipgroup-deselect",
             ),
             justify="center",
         ),
-        dmc.Text(id="chipgroup-single-container", ta="center"),
+        dmc.Text(id="chipgroup-deselect-container", ta="center"),
     ]
 )
 
 
 @callback(
-    Output("chipgroup-single-container", "children"), Input("chipgroup-single", "value")
+    Output("chipgroup-deselect-container", "children"), Input("chipgroup-deselect", "value")
 )
 def checkbox(value):
-    return f"The chip is selected: {value}"
+    return f"You selected chip: {value}"

@@ -1,4 +1,5 @@
 import dash_mantine_components as dmc
+from dash import callback, Input, Output
 
 component = dmc.Box(
     [
@@ -10,20 +11,18 @@ component = dmc.Box(
                     dmc.Chip("At a time", value="c"),
                 ],
                 multiple=False,
-            ),
-            justify="center",
-            mb="sm",
-        ),
-        dmc.Group(
-            dmc.ChipGroup(
-                [
-                    dmc.Chip("Multiple chips", value="a"),
-                    dmc.Chip("Can be selected", value="b"),
-                    dmc.Chip("At a time", value="c"),
-                ],
-                multiple=True,
+                value="a",
+                id="chipgroup-single",
             ),
             justify="center",
         ),
+        dmc.Text(id="chipgroup-single-container", ta="center"),
     ]
 )
+
+
+@callback(
+    Output("chipgroup-single-container", "children"), Input("chipgroup-single", "value")
+)
+def checkbox(value):
+    return f"You selected chip: {value}"

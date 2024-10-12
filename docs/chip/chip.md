@@ -47,27 +47,30 @@ dmc.Chip("chip", controlled=True, checked=True)
 
 .. exec::docs.chip.tooltip
 
-### ChipGroup Overview
 
-`ChipGroup` component manages state of child `Chip` components using the `value` property. Set `multiple=True` to allow multiple chips to be selected at a time.
+### ChipGroups like Radio Button
 
+In this example, only a single chip can be selected, similar to a radio button. 
 
-.. exec::docs.chip.chipgroup
+> Note:  The  `ChipGroup` `value` property type must be a string when `multiple=False`.
 
-### ChipGroups with Callbacks
-
-In this example, only a single chip can be selected, similar to a radio button. Note that the `value` of the `ChipGroup`
-must be a string.
-
-.. exec::docs.chip.chipgroup_callbacks
+.. exec::docs.chip.chipgroup_radio
 
 
+### ChipGroups like Checklist
 
-In this example, only a multipe chips can be selected, similar to a checklist. Note that the `value` of the `ChipGroup`
-must be a list of strings.
+In this example,  multiple chips can be selected, similar to a checklist.  Set `multiple=True`
 
-.. exec::docs.chip.chipgroup_callbacks_multiple
+> Note: The  `ChipGroup` `value` property type must be a list of strings when `multiple=True`.
 
+.. exec::docs.chip.chipgroup_checklist
+
+### Deselect radio chip
+
+To enable deselecting a radio chip, set `deselectable=True`
+
+
+.. exec::docs.chip.chipgroup_radio_deselectable
 
 ### Styles API
 
