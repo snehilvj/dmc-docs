@@ -5,7 +5,7 @@ from lib.configurator import Configurator
 TARGET_ID = "interactive-Chip"
 
 target = dmc.Center(
-    dmc.Chip("Awesome chip", checked=True, controlled=True, id=TARGET_ID)
+    dmc.Chip("Awesome chip", checked=True, id=TARGET_ID)
 )
 
 configurator = Configurator(target, TARGET_ID)

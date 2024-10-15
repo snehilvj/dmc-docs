@@ -4,5 +4,4 @@ component = dmc.Chip(
     "Chip with props added to root",
     wrapperProps={"data-testid": "wrapper"},
     checked=True,
-    controlled=True,
 )

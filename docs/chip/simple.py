@@ -4,7 +4,7 @@ from dash import Output, Input, callback
 
 component = dmc.Box(
     [
-        dmc.Chip("Awesome chip", checked=True, id="chip-state", controlled=True),
+        dmc.Chip("Awesome chip", checked=True, id="chip-state"),
         dmc.Text(id="chip-container"),
     ],
     p=20,

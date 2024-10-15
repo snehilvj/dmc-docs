@@ -19,17 +19,6 @@ For a stand-alone `Chip`, use the `checked` property in callbacks.
 
 .. exec::docs.chip.simple
 
-### Controlled
-
-As shown in the example above, when using a single `Chip` as a stand-alone component, set `controlled=True` and use the
-`checked` property in callbacks or to set the state.  
-
-When using the `Chip` in the `ChipGroup` set `controlled=False` and use the `value` prop in callbacks.  See more 
-information in the `ChipGroup` section below.
-
-```python
-dmc.Chip("chip", controlled=True, checked=True)
-```
 
 ### Change Checked Icon
 

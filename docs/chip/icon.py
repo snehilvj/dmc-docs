@@ -6,6 +6,5 @@ component = dmc.Chip(
     icon=DashIconify(icon="bi-x-circle"),
     color="red",
     checked=True,
-    controlled=True,
     m="sm",
 )
