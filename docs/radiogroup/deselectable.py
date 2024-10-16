@@ -11,13 +11,8 @@ component = html.Div(
             label="Select your favorite framework/library",
             size="sm",
             my=10,
+            deselectable=True
         ),
-        dmc.RadioGroup(
-            children=dmc.Stack([dmc.Radio(l, value=k) for k, l in data], my=10),
-            value="react",
-            label="Select your favorite framework/library",
-            size="sm",
-            mt=10,
-        ),
+
     ]
 )

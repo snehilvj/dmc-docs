@@ -39,6 +39,13 @@ In a RadioGroup component, the Radio items can be arranged by using the Group or
 
 .. exec::docs.radiogroup.group
 
+
+### Deselectable RadioGroup
+
+To enable deselecting a radio chip, set `deselectable=True`
+
+.. exec::docs.radiogroup.deselectable
+
 ### Styles API
 
 | Name         | Static selector             | Description                                 |
