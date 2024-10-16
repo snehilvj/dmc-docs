@@ -10,7 +10,7 @@ target = dmc.Fieldset(
         dmc.TextInput(label="Email", placeholder="Email"),
     ],
     legend="Personal information",
-    id=TARGET_ID
+    id=TARGET_ID,
 )
 
 configurator = Configurator(target, TARGET_ID)

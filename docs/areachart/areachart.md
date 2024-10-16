@@ -150,6 +150,17 @@ of 0 to 100, you can set domain to [0, 100]:
 
 .. exec::docs.areachart.yaxisscale
 
+
+### Right Y axis
+
+To display additional Y axis on the right side of the chart, set `withRightYAxis` prop. You can pass props down to
+recharts `YAxis` component with `rightYAxisProps` prop and assign a label to the right Y axis with `rightYAxisLabel` prop.
+Note that you need to bind data series to the right Y axis by setting `yAxisId` in the series object.
+
+.. exec::docs.areachart.rightyaxis
+
+
+
 ### Rotate x-axis labels
 To rotate x-axis labels, set `xAxisProps.angle` to a number of degrees to rotate:
 
@@ -198,6 +209,12 @@ By default, tooltip animation is disabled. To enable it, set `tooltipAnimationDu
 milliseconds to animate the tooltip position change.
 
 .. exec::docs.areachart.tooltipanimation
+
+
+### Area animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `areaProps` to pass properties to the Recharts `Area` component.
+
+.. exec::docs.areachart.area_animation
 
 ### Units
 Set `unit` prop to render a unit label next to the y-axis ticks and tooltip values:
@@ -297,6 +314,11 @@ You can use the  `clickData` property in a callback to get data from latest clic
 
 ### Styles API
 
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### AreaChart selectors
+
 | Name            | Static selector                    | Description                                   |
 |:----------------|:----------------------------------|:----------------------------------------------|
 | root            | .mantine-AreaChart-root            | Root element                                  |
@@ -319,7 +341,7 @@ You can use the  `clickData` property in a callback to get data from latest clic
 | referenceLine   | .mantine-AreaChart-referenceLine   | Reference line                                |
 | axisLabel       | .mantine-AreaChart-axisLabel       | X and Y axis labels                           |
 
-### AreaChart CSS variables
+#### AreaChart CSS variables
 
 | Selector           | Variable             | Description                                      |
 |:-------------------|:---------------------|:-------------------------------------------------|

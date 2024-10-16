@@ -168,6 +168,12 @@ be used to change orientation of axis:
 
 .. exec::docs.scatterchart.xyaxis
 
+### Point labels
+Set `pointLabels` prop to `x` or `y` to display labels on data points for the corresponding axis:
+
+
+.. exec::docs.scatterchart.point_labels
+
 ### Stroke dash array
 Set `strokeDasharray` prop to control the stroke dash array of the grid and cursor lines. The value represent the
 lengths of alternating dashes and gaps. For example, strokeDasharray="10 5" will render a dashed line with 10px dashes
@@ -200,6 +206,11 @@ milliseconds to animate the tooltip position change.
 .. exec::docs.scatterchart.tooltipanimation
 
 
+### Points animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `scatterProps` to pass properties to the Recharts `Scatter` component.
+
+.. exec::docs.scatterchart.scatter_animation
+
 ### Reference lines
 Use `referenceLines` prop to render reference lines. Reference lines are always rendered behind the chart.
 
@@ -214,6 +225,12 @@ You can use the  `clickData` property in a callback to get data from latest clic
 
 
 ### Styles API
+
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### ScatterChart selectors
 
 | Selector          | Static selector                  | Description                                     |
 |-------------------|---------------------------------|-------------------------------------------------|
@@ -238,7 +255,7 @@ You can use the  `clickData` property in a callback to get data from latest clic
 | axisLabel         | .mantine-ScatterChart-axisLabel | X and Y axis labels                            |
 
 
-### ScatterChart CSS variables
+#### ScatterChart CSS variables
 | Selector       | Variable           | Description                              |
 |----------------|--------------------|------------------------------------------|
 | root           | --chart-grid-color | Controls color of the grid and cursor lines |

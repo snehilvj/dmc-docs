@@ -4,7 +4,13 @@ from lib.configurator import Configurator
 
 TARGET_ID = "interactive-multi-select-input"
 target = dmc.Center(
-    dmc.MultiSelect(label="", placeholder="placeholder", data=["Pandas", "NumPy", "TensorFlow", "PyTorch"], w=250, id=TARGET_ID)
+    dmc.MultiSelect(
+        label="",
+        placeholder="placeholder",
+        data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
+        w=250,
+        id=TARGET_ID,
+    )
 )
 
 configurator = Configurator(target, TARGET_ID)

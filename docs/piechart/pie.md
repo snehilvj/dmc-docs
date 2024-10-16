@@ -148,6 +148,14 @@ and pass it to the `strokeColor` prop:
 ```
 
 
+
+### Pie animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `pieProps` to pass properties to the Recharts `Pie` component.
+
+
+.. exec::docs.piechart.pie_animation
+
+
 ### clickData
 You can use the  `clickData` property in a callback to get data from latest click event.
 
@@ -156,12 +164,17 @@ You can use the  `clickData` property in a callback to get data from latest clic
 
 ### Styles API
 
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### PieChart selectors
+
 | Selector    | Static selector           | Description                             |
 |:------------|:--------------------------|:----------------------------------------|
 | root        | .mantine-PieChart-root    | Root element                            |
 
 
-### DonutChart CSS variables
+#### PieChart CSS variables
 
 | Selector         | Variable               | Description                              |
 |:-----------------|:-----------------------|:-----------------------------------------|

@@ -8,5 +8,4 @@ component = dmc.MultiSelect(
     clearable=True,
     w=400,
     mb=180,
-
 )

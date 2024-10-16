@@ -64,7 +64,7 @@ component = dmc.RadarChart(
 ### Rechart props
 
 To pass props down to the underlying recharts components, use the following props:
-
+- `radarProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
 - `radarChartProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
 - `polarGridProps` passed props to [PolarGrid](https://recharts.org/en-US/api/PolarGrid) component
 - `polarAngleAxisProps` passed props to [PolarAngleAxis](https://recharts.org/en-US/api/PolarAngleAxis) component
@@ -75,7 +75,20 @@ Example of passing props down to PolarRadiusAxis component:
 .. exec::docs.radarchart.rechartprops
 
 
+### Radar animation
+By default, the Recharts data animation is disabled. To enable and customize the animation, use `radarProps` to pass properties to the Recharts `Radar` component.
+
+
+.. exec::docs.radarchart.radar_animation
+
+
 ### Styles API
+
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### RadarChart selectors
 
 | Selector    | Static selector               | Description                                      |
 |:------------|:------------------------------|:-------------------------------------------------|
@@ -83,7 +96,7 @@ Example of passing props down to PolarRadiusAxis component:
 | container   | .mantine-RadarChart-container | Recharts ResponsiveContainer component          |
 
 
-### RadarChart CSS variables
+#### RadarChart CSS variables
 
 | Selector         | Variable             | Description                                   |
 |:-----------------|:---------------------|:----------------------------------------------|

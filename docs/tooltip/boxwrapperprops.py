@@ -5,5 +5,5 @@ component = dmc.Tooltip(
     children=dmc.Textarea(
         value="How to set the width of the textarea with a tooltip to 100%", w="100%"
     ),
-    boxWrapperProps={"w": "100%"}
+    boxWrapperProps={"w": "100%"},
 )

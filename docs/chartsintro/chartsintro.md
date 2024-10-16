@@ -31,4 +31,4 @@ app = Dash(external_stylesheets=dmc.styles.ALL)
 
 ### Based on recharts
 
-Most of the chart components are based on [recharts](https://recharts.org/) library. If you need advanced features that are not covered in dmc charts documentation, reference [recharts documentation](https://recharts.org/en-US/api) for more information.
+Most of the chart components are based on [recharts](https://recharts.org/) library. If you need advanced features that are not covered in dmc charts documentation, please refer to the [recharts documentation](https://recharts.org/en-US/api) for more information.

@@ -9,7 +9,7 @@ component = html.Div(
             placeholder="Select value",
             id="select-opened",
             value="pd",
-            data = [
+            data=[
                 {"value": "pd", "label": "Pandas"},
                 {"value": "np", "label": "NumPy"},
                 {"value": "tf", "label": "TensorFlow"},
@@ -18,7 +18,6 @@ component = html.Div(
             w=400,
             mb=10,
         ),
-
     ]
 )
 
@@ -27,6 +26,6 @@ component = html.Div(
     Output("select-opened", "dropdownOpened"), Input("btn-select-opened", "n_clicks")
 )
 def select_value(n):
-    if n % 2 ==  0:
+    if n % 2 == 0:
         return False
     return True

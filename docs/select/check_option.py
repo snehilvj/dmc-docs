@@ -8,5 +8,5 @@ component = dmc.Select(
     dropdownOpened=True,
     w=200,
     pb=150,
-    id="select-check-icon"
+    id="select-check-icon",
 )

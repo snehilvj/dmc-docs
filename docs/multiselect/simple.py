@@ -8,7 +8,7 @@ component = html.Div(
             placeholder="Select all you like!",
             id="framework-multi-select",
             value=["pd", "torch"],
-            data = [
+            data=[
                 {"value": "pd", "label": "Pandas"},
                 {"value": "np", "label": "NumPy"},
                 {"value": "tf", "label": "TensorFlow"},

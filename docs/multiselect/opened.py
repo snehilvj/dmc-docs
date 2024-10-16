@@ -9,7 +9,7 @@ component = html.Div(
             placeholder="Select all you like!",
             id="multi-select-opened",
             value=["pd", "torch"],
-            data = [
+            data=[
                 {"value": "pd", "label": "Pandas"},
                 {"value": "np", "label": "NumPy"},
                 {"value": "tf", "label": "TensorFlow"},
@@ -18,15 +18,15 @@ component = html.Div(
             w=400,
             mb=10,
         ),
-
     ]
 )
 
 
 @callback(
-    Output("multi-select-opened", "dropdownOpened"), Input("btn-multi-select-opened", "n_clicks")
+    Output("multi-select-opened", "dropdownOpened"),
+    Input("btn-multi-select-opened", "n_clicks"),
 )
 def select_value(n):
-    if n % 2 ==  0:
+    if n % 2 == 0:
         return False
     return True
