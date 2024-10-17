@@ -77,6 +77,7 @@ You can replace default next/previous controls icons with any component:
 Enable autoplay by setting `autoplay=True` or by passing in a `dict` with options. Refer to [Embla Carousel Autoplay Options](https://www.embla-carousel.com/plugins/autoplay/#options) to learn more.
 
 .. exec::docs.carousel.autoplay
+
 Here’s an example of passing props to the Embla component. In this example, the `delay` is set to 2000ms, and autoplay pauses when hovering over a slide:
 
 ```python
@@ -85,11 +86,11 @@ autoplay={"delay": 2000, "stopOnMouseEnter": True, "stopOnInteraction":False}
 ```
 .. exec::docs.carousel.autoplay_props
 
-### Styles API
+### Carousel Styles API
 
 Carousel supports Styles API, you can add styles to any inner element of the component with `classNames` prop. Refer to the  [Styles API documentation](/styles-api) to learn more.
 
-### Indicator styles
+### Carousel Indicator styles
 This example styles the indicators to emphasize the active slide.
 
 .. exec::docs.carousel.indicator_styles
