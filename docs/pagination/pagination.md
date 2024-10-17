@@ -38,11 +38,3 @@ Control the number of items displayed after previous(<) and before next(>) butto
 #### Pagination
 
 .. kwargs::Pagination
-
-#### ProgressRoot
-
-.. kwargs::ProgressRoot
-
-#### ProgressSection
-
-.. kwargs::ProgressSection

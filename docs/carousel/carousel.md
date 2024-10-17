@@ -78,11 +78,19 @@ Enable autoplay by setting `autoplay=True` or by passing in a `dict` with option
 
 .. exec::docs.carousel.autoplay
 
-### Styles API
+Here’s an example of passing props to the Embla component. In this example, the `delay` is set to 2000ms, and autoplay pauses when hovering over a slide:
+
+```python
+autoplay={"delay": 2000, "stopOnMouseEnter": True, "stopOnInteraction":False}
+
+```
+.. exec::docs.carousel.autoplay_props
+
+### Carousel Styles API
 
 Carousel supports Styles API, you can add styles to any inner element of the component with `classNames` prop. Refer to the  [Styles API documentation](/styles-api) to learn more.
 
-### Indicator styles
+### Carousel Indicator styles
 This example styles the indicators to emphasize the active slide.
 
 .. exec::docs.carousel.indicator_styles
@@ -142,6 +150,15 @@ Put the following in a .css file in the `assets` folder:
 To set the initial slide to display, use the index number of the slide.
 
 .. exec::docs.carousel.initial
+
+### Active prop for callbacks
+
+The `active` prop represents the index of the currently displayed slide and can be used to trigger Dash callbacks. Note
+that this prop is read-only. To set the initially displayed slide, use the `initialSlide` prop instead.
+
+In this example, the callback updates the current page in the `Pagination` component based on the active slide.
+
+.. exec::docs.carousel.active
 
 ### Example Image Carousel
 

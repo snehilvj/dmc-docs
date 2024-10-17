@@ -33,4 +33,4 @@ component = dmc.Paper(
     Input("carousel-input", "value"),
 )
 def go_to_slide(value):
-    return value
+    return int(value)
