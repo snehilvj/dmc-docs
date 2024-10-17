@@ -8,6 +8,7 @@ target = dmc.Pagination(
     radius="sm",
     withControls=True,
     withEdges=False,
+    value=1
 )
 
 configurator = Configurator(target)
