@@ -15,7 +15,6 @@ component = dmc.Box([
     Input("collapse-btn", "n_clicks"),
 )
 def update(n):
-    print(n)
     if n % 2 == 0:
         return False
     return True
