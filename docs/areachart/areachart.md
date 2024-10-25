@@ -307,12 +307,25 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 .. exec::docs.areachart.referencelines
 
 ### clickData
-You can use the  `clickData` property in a callback to get data from latest click event.
+Use the `clickData` property in a callback to retrieve data from the most recent click event.
+To get the name of the clicked series, use the `clickSeriesName` property.
 
 .. exec::docs.areachart.clickdata
 
 
+### hoverData
+Use the `hoverData` property in a callback to retrieve data from the most recent hover event.
+To get the name of the hovered series, use the `hoverSeriesName` property.
+
+.. exec::docs.areachart.hoverdata
+
+### highlightHover
+
+Set `highlightHover=True` to highlight the series when hovered, mirroring the behavior of hovering over chart legend items.
 ### Styles API
+
+
+.. exec::docs.areachart.highlighthover
 
 This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
 For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.

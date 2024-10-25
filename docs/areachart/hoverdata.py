@@ -6,7 +6,7 @@ from .data import data
 component = dmc.Group(
     [
         dmc.AreaChart(
-            id="figure-areachart",
+            id="figure-areachart-hover",
             h=300,
             dataKey="date",
             data=data,
@@ -17,17 +17,18 @@ component = dmc.Group(
                 {"name": "Tomatoes", "color": "teal.6"},
             ],
         ),
-        dmc.Text(id="clickdata-areachart1"),
-        dmc.Text(id="clickdata-areachart2"),
+        dmc.Text(id="hoverdata-areachart1"),
+        dmc.Text(id="hoverdata-areachart2"),
     ]
 )
 
 
 @callback(
-    Output("clickdata-areachart1", "children"),
-    Output("clickdata-areachart2", "children"),
-    Input("figure-areachart", "clickData"),
-    Input("figure-areachart", "clickSeriesName"),
+    Output("hoverdata-areachart1", "children"),
+    Output("hoverdata-areachart2", "children"),
+    Input("figure-areachart-hover", "hoverData"),
+    Input("figure-areachart-hover", "hoverSeriesName"),
 )
 def update(data, name):
-    return f"clickData:  {data}", f"clickSeriesName: {name}"
+    return f"hoverData:  {data}", f"hoverSeriesName: {name}"
+
