@@ -1,6 +1,7 @@
 PAGE_TITLE_PREFIX = "Dash Mantine Components | "
 PRIMARY_COLOR = "indigo"
 PROPS_TO_EXCLUDE = [
+    "bd",
     "unstyled",
     "m",
     "my",
