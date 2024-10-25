@@ -6,6 +6,7 @@ component = dmc.Table(
     data={
         "head": ["Prop", "CSS Property"],
         "body": [
+            ["bd", "border"],
             ["bg", "background"],
             ["bga", "background-attachment"],
             ["bgp", "background-position"],
