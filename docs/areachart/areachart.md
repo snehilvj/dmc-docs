@@ -322,6 +322,9 @@ To get the name of the hovered series, use the `hoverSeriesName` property.
 ### highlightHover
 
 Set `highlightHover=True` to highlight the series when hovered, mirroring the behavior of hovering over chart legend items.
+
+.. exec::docs.areachart.highlighthover
+
 ### Styles API
 
 
