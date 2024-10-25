@@ -207,9 +207,23 @@ To display value above each bar, set `withBarValueLabel=True`:
 .. exec::docs.barchart.bar_value_label
 
 ### clickData
-You can use the  `clickData` property in a callback to get data from latest click event.
+Use the `clickData` property in a callback to retrieve data from the most recent click event.
+To get the name of the clicked series, use the `clickSeriesName` property.
 
 .. exec::docs.barchart.clickdata
+
+
+### hoverData
+Use the `hoverData` property in a callback to retrieve data from the most recent hover event.
+To get the name of the hovered series, use the `hoverSeriesName` property.
+
+.. exec::docs.barchart.hoverdata
+
+### highlightHover
+
+Set `highlightHover=True` to highlight the series when hovered, mirroring the behavior of hovering over chart legend items.
+
+.. exec::docs.barchart.highlighthover
 
 ### Styles API
 

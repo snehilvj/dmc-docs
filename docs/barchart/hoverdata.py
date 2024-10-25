@@ -5,7 +5,7 @@ from .data import data
 component = dmc.Group(
     [
         dmc.BarChart(
-            id="figure-barchart",
+            id="figure-barchart-hover",
             h=300,
             dataKey="month",
             data=data,
@@ -18,17 +18,17 @@ component = dmc.Group(
             withLegend=True,
             withTooltip=False,
         ),
-        dmc.Text(id="clickdata-barchart1"),
-        dmc.Text(id="clickdata-barchart2"),
+        dmc.Text(id="hoverdata-barchart1"),
+        dmc.Text(id="hoverdata-barchart2"),
     ]
 )
 
 @callback(
-    Output("clickdata-barchart1", "children"),
-    Output("clickdata-barchart2", "children"),
-    Input("figure-barchart", "clickData"),
-    Input("figure-barchart", "clickSeriesName"),
+    Output("hoverdata-barchart1", "children"),
+    Output("hoverdata-barchart2", "children"),
+    Input("figure-barchart-hover", "hoverData"),
+    Input("figure-barchart-hover", "hoverSeriesName"),
 )
 def update(data, name):
-    return f"clickData:  {data}", f"clickSeriesName: {name}"
+    return f"hoverData:  {data}", f"hoverSeriesName: {name}"
 
