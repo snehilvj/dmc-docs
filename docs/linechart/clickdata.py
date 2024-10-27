@@ -15,7 +15,8 @@ component = dmc.Group(
                 {"name": "Oranges", "color": "blue.6"},
                 {"name": "Tomatoes", "color": "teal.6"},
             ],
-            withTooltip=False,
+            activeDotProps={"r": 8, "strokeWidth": 1, "fill": "#fff"},
+            strokeWidth=4
         ),
         dmc.Text(id="clickdata-linechart1"),
         dmc.Text(id="clickdata-linechart2"),

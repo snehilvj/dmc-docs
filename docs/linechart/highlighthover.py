@@ -12,5 +12,6 @@ component = dmc.LineChart(
     ],
     withLegend=True,
     highlightHover=True,
-    withTooltip=False
+    withTooltip=False,
+    strokeWidth=4
 )

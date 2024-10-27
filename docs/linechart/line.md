@@ -231,12 +231,16 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 Use the `clickData` property in a callback to retrieve data from the most recent click event.
 To get the name of the clicked series, use the `clickSeriesName` property.
 
+Note: To enable `clickSeriesName` when clicking on the dots,  set `withTooltip=True`.
+
 .. exec::docs.linechart.clickdata
 
 
 ### hoverData
 Use the `hoverData` property in a callback to retrieve data from the most recent hover event.
 To get the name of the hovered series, use the `hoverSeriesName` property.
+
+Note: To enable `hoverSeriesName` when hovering on the dots,  set `withTooltip=True`.
 
 .. exec::docs.linechart.hoverdata
 
