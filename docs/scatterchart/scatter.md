@@ -218,10 +218,17 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 
 
 ### clickData
-You can use the  `clickData` property in a callback to get data from latest click event.
-
+Use the `clickData` property in a callback to retrieve data from the most recent click event. To get the name of the
+clicked series, use the `clickSeriesName` property.
 .. exec::docs.scatterchart.clickdata
 
+
+
+### hoverData
+Use the `hoverData` property in a callback to retrieve data from the most recent hover event. To get the name of the 
+hovered series, use the `hoverSeriesName` property.
+
+.. exec::docs.scatterchart.hoverdata
 
 
 ### Styles API
