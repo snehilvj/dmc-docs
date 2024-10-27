@@ -7,7 +7,6 @@ component = dmc.Stack(
         dmc.PieChart(
             id="figure-piechart",
             data=data,
-           # withTootlip=False
         ),
         dmc.Text(id="clickdata-piechart1"),
         dmc.Text(id="clickdata-piechart2"),

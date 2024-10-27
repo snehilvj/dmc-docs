@@ -7,7 +7,6 @@ component = dmc.Stack(
         dmc.PieChart(
             id="figure-piechart-hover",
             data=data,
-        #    withTooltip=False,
         ),
         dmc.Text(id="hoverdata-piechart1"),
         dmc.Text(id="hoverdata-piechart2"),
