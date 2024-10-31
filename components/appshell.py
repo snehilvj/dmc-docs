@@ -96,13 +96,9 @@ clientside_callback(
 )
 
 clientside_callback(
-    """
-    function(n_clicks, theme) {
-        return theme === "dark" ? "light" : "dark";
-    }
-    """,
+    'function(n_clicks, theme) {return theme === "dark" ? "light" : "dark"}',
     Output("color-scheme-storage", "data"),
     Input("color-scheme-toggle", "n_clicks"),
-    State("m2d-mantine-provider", "forceColorScheme"),
+    State("color-scheme-storage", "data"),
     prevent_initial_call=True,
 )
