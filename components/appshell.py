@@ -47,6 +47,7 @@ def create_appshell(data):
         },
         children=[
             dcc.Location(id="url", refresh="callback-nav"),
+            dcc.Store(id="color-scheme-storage", storage_type="local"),
             dmc.NotificationProvider(),
             dmc.AppShell(
                 [
@@ -89,15 +90,18 @@ clientside_callback(
 )
 
 clientside_callback(
+    "function(colorScheme) {return colorScheme}",
+    Output("m2d-mantine-provider", "forceColorScheme"),
+    Input("color-scheme-storage", "data")
+)
+
+clientside_callback(
     """
-    function(n_clicks, theme) {        
-        dash_clientside.set_props("m2d-mantine-provider", {
-            forceColorScheme: theme === "dark" ? "light" : "dark"
-        });
-        return dash_clientside.no_update
+    function(n_clicks, theme) {
+        return theme === "dark" ? "light" : "dark";
     }
     """,
-    Output("m2d-mantine-provider", "forceColorScheme"),
+    Output("color-scheme-storage", "data"),
     Input("color-scheme-toggle", "n_clicks"),
     State("m2d-mantine-provider", "forceColorScheme"),
     prevent_initial_call=True,
