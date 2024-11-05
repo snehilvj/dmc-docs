@@ -7,7 +7,7 @@ colorama==0.4.6; python_version >= "3.8" and python_full_version < "3.0.0" and p
 dash-core-components==2.0.0; python_version >= "3.8"
 dash-html-components==2.0.0; python_version >= "3.8"
 dash-iconify==0.1.2
-dash-mantine-components==0.14.6
+dash-mantine-components==0.14.7
 dash-table==5.0.0; python_version >= "3.8"
 dash==2.17.1; python_version >= "3.8"
 flask==3.0.3; python_version >= "3.8"
