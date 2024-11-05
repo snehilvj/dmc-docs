@@ -86,6 +86,11 @@ autoplay={"delay": 2000, "stopOnMouseEnter": True, "stopOnInteraction":False}
 ```
 .. exec::docs.carousel.autoplay_props
 
+### Autoscroll
+Enable autoscroll by setting `autoScroll=True` or by passing in a `dict` with options. Refer to [Embla Carousel Auto Scroll Options](https://www.embla-carousel.com/plugins/auto-scroll/#options) to learn more.
+
+.. exec::docs.carousel.autoscroll
+
 ### Carousel Styles API
 
 Carousel supports Styles API, you can add styles to any inner element of the component with `classNames` prop. Refer to the  [Styles API documentation](/styles-api) to learn more.
