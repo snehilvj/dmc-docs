@@ -157,10 +157,17 @@ By default, the Recharts data animation is disabled. To enable and customize the
 
 
 ### clickData
-You can use the  `clickData` property in a callback to get data from latest click event.
-
+Use the `clickData` property in a callback to retrieve data from the most recent click event. To get the name of the
+clicked series, use the `clickSeriesName` property.
 .. exec::docs.piechart.clickdata
 
+
+
+### hoverData
+Use the `hoverData` property in a callback to retrieve data from the most recent hover event. To get the name of the 
+hovered series, use the `hoverSeriesName` property.
+
+.. exec::docs.piechart.hoverdata
 
 ### Styles API
 
