@@ -73,6 +73,12 @@ You can replace default next/previous controls icons with any component:
 
 .. exec::docs.carousel.controls_icons
 
+
+### Autoscroll
+Enable autoscroll by setting `autoScroll=True` or by passing in a `dict` with options. Refer to [Embla Carousel Auto Scroll Options](https://www.embla-carousel.com/plugins/auto-scroll/#options) to learn more.
+
+.. exec::docs.carousel.autoscroll
+
 ### Autoplay
 Enable autoplay by setting `autoplay=True` or by passing in a `dict` with options. Refer to [Embla Carousel Autoplay Options](https://www.embla-carousel.com/plugins/autoplay/#options) to learn more.
 
@@ -84,12 +90,6 @@ Here’s an example of passing props to the Embla component. In this example, th
 autoplay={"delay": 2000, "stopOnMouseEnter": True, "stopOnInteraction":False}
 
 ```
-.. exec::docs.carousel.autoplay_props
-
-### Autoscroll
-Enable autoscroll by setting `autoScroll=True` or by passing in a `dict` with options. Refer to [Embla Carousel Auto Scroll Options](https://www.embla-carousel.com/plugins/auto-scroll/#options) to learn more.
-
-.. exec::docs.carousel.autoscroll
 
 ### Carousel Styles API
 
@@ -161,9 +161,6 @@ To set the initial slide to display, use the index number of the slide.
 The `active` prop represents the index of the currently displayed slide and can be used to trigger Dash callbacks. Note
 that this prop is read-only. To set the initially displayed slide, use the `initialSlide` prop instead.
 
-In this example, the callback updates the current page in the `Pagination` component based on the active slide.
-
-.. exec::docs.carousel.active
 
 ### Example Image Carousel
 
