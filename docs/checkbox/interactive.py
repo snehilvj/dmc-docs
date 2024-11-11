@@ -11,8 +11,14 @@ target = dmc.Center(
 configurator = Configurator(target, TARGET_ID)
 
 configurator.add_segmented_control("labelPosition", ["left", "right"], "right")
+configurator.add_text_input("label", "I agree to sell my privacy")
+configurator.add_text_input("description", "")
+configurator.add_text_input("error", "")
 configurator.add_colorpicker("color", "indigo")
+configurator.add_segmented_control("variant", ["filled", "outline"], "filled")
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
+configurator.add_switch("disabled", False)
+configurator.add_switch("indeterminate", False)
 
 component = configurator.panel
