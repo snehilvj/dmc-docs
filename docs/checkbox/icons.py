@@ -8,12 +8,11 @@ component = dmc.Stack([
         checked=True,
         icon=DashIconify(icon="ion:bag-check-sharp"),
         size="lg",
-        p=0,
     ),
     dmc.Checkbox(
-        label="Custom intermediate icons",
+        label="Custom indeterminate icons",
         indeterminate=True,
-        indeterminateIcon=DashIconify(icon="material-symbols:indeterminate-question-box"),
-        size="lg"
-    )
+        indeterminateIcon=DashIconify(icon="mdi:dots-circle", ),
+        size="lg",
+    ),
 ])
