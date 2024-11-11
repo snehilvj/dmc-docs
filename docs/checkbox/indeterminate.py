@@ -1,6 +1,6 @@
 
 
-from dash import  html,  Input, Output,  callback, ALL
+from dash import  html,  Input, Output,  callback, ALL, ctx
 import dash_mantine_components as dmc
 
 initial_values = [
@@ -28,12 +28,22 @@ component = html.Div([
 ])
 
 
+
 @callback(
     Output("all-notifications", "checked"),
     Output("all-notifications", "indeterminate"),
-    Input({"type": "notification-item", "index": ALL}, "checked")
+    Output({"type": "notification-item", "index": ALL}, "checked"),
+    Input("all-notifications", "checked"),
+    Input({"type": "notification-item", "index": ALL}, "checked"),
+    prevent_initial_callback=True
 )
-def update_main_checkbox(checked_states):
-    all_checked = all(checked_states)
-    indeterminate = any(checked_states) and not all_checked
-    return all_checked, indeterminate
+def update_main_checkbox(all_checked, checked_states):
+    # handle "all" checkbox"
+    if ctx.triggered_id == 'all-notifications':
+        checked_states = [all_checked] * len(checked_states)
+
+    # handled individual check boxes
+    all_checked_states = all(checked_states)
+    indeterminate = any(checked_states) and not all_checked_states
+    return all_checked_states, indeterminate, checked_states
+
