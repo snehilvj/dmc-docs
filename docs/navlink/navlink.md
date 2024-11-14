@@ -36,6 +36,30 @@ dmc.NavLink(
 ),
 ```
 
+#### Using a callback to set active prop
+
+This example demonstrates how to use a callback to set the active prop of the NavLinks when the user navigates to a different page. It uses the "Dash Pages" feature but can be adapted to any other page navigation system.
+
+```python
+# Create Navlinks (using dash.page_registry)
+[
+    dmc.NavLink(
+        label=f"{page['name']}",
+        href=page["relative_path"],
+        id={"type": "navlink", "index": page["relative_path"]},
+    )
+    for page in page_registry.values()
+]
+
+# ...
+
+# Callback (using the dcc.location provided by Dash Pages)
+@app.callback(Output({"type": "navlink", "index": ALL}, "active"), Input("_pages_location", "pathname"))
+def update_navlinks(pathname):
+    return [control["id"]["index"] == pathname for control in callback_context.outputs_list]
+
+```
+
 ### Nested NavLinks
 
 To create nested links put dmc.NavLink as children of another dmc.NavLink.
