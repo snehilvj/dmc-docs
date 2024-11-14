@@ -3,8 +3,8 @@ from datetime import datetime
 import dash_mantine_components as dmc
 from dash import Output, Input, callback
 
-component = dmc.DatePicker(
-    id="datepicker-error",
+component = dmc.DatePickerInput(
+    id="datepickernput-error",
     value=datetime.now().date(),
     label="Date",
     required=True,
@@ -13,7 +13,7 @@ component = dmc.DatePicker(
 )
 
 
-@callback(Output("datepicker-error", "error"), Input("datepicker-error", "value"))
+@callback(Output("datepickerinput-error", "error"), Input("datepickerinput-error", "value"))
 def datepicker_error(date):
     day = datetime.strptime(date, "%Y-%M-%d").day
     return "Please select an even date." if day % 2 else ""

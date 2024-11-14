@@ -1,7 +1,7 @@
 ---
-name: DatePicker
+name: DatePickerInput
 description: Date, multiple dates and dates range picker input. Helps you easily switch between different months, years along with locale support.
-endpoint: /components/datepicker
+endpoint: /components/datepickerinput
 package: dash_mantine_components
 category: Date Pickers
 ---
@@ -32,40 +32,40 @@ app = Dash(external_stylesheets=dmc.styles.ALL)
 
 ### Simple Example
 
-This is a simple example of DatePicker tied to a callback. You can either use strings in a valid datetime format such
+This is a simple example of `DatePickerInput` tied to a callback. You can either use strings in a valid datetime format such
 as `YYYY-MM-DD` or use the date object from datetime library.
 
 > If you would like to enable the user to type a date manually into the input field, please use the `DateInput` component
 
-.. exec::docs.datepicker.simple
+.. exec::docs.datepickerinput.simple
 
 ### Multiple dates
 
 Set type="multiple" to allow user to pick multiple dates.  Note that `value` is a list.
 
-.. exec::docs.datepicker.multiple
+.. exec::docs.datepickerinput.multiple
 
 ### Dates range
 
 Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
-.. exec::docs.datepicker.range
+.. exec::docs.datepickerinput.range
 
 ### Open picker in modal
 
-By default, DatePicker is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
+By default, `DatePickerInput` is rendered inside `Popover`. You can change that to `Modal` by setting `dropdownType="modal"`
 
-.. exec::docs.datepicker.modal
+.. exec::docs.datepickerinput.modal
 
 ### Number of columns
 
-.. exec::docs.datepicker.columns
+.. exec::docs.datepickerinput.columns
 
 ### Value format
 
 Use `format` property to change the format of the date displayed in the date input field.
 
-.. exec::docs.datepicker.formats
+.. exec::docs.datepickerinput.formats
 
 Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label.
 
@@ -73,7 +73,7 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 Set `clearable=True` prop to display clear button in the right section. Note that if you set `rightSection` prop, clear button will not be displayed.
 
-.. exec::docs.datepicker.clearable
+.. exec::docs.datepickerinput.clearable
 
 ### Error Display
 
@@ -81,7 +81,7 @@ You can convey errors in your date picker by setting the `error` prop. For insta
 convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
 set `clearable=False`.
 
-.. exec::docs.datepicker.errors
+.. exec::docs.datepickerinput.errors
 
 ### Localization
 
@@ -124,6 +124,6 @@ For information on setting locale, have a look at the [DatesProvider](/component
 
 ### Keyword Arguments
 
-#### DatePicker
+#### DatePickerInput
 
-.. kwargs::DatePicker
+.. kwargs::DatePickerInput
