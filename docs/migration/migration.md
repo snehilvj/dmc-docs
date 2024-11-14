@@ -1,11 +1,18 @@
 ---
-name: Migration Guide 0.12 to 0.14
+name: Migration Guide
 endpoint: /migration
 description: This page helps you migrate from an old version to a newer version of Dash Mantine Components
 dmc: false
 ---
 
 .. toc::
+
+## Migrating from 0.14.7 to 0.14.6
+
+The `DatePicker` component has been renamed to `DatePickerInput` to align with the component names of  the upstream
+Mantine Library.  We plan to add the Mantine [`DatePicker`](https://mantine.dev/dates/date-picker/) component in a future release.
+
+## Migrating from 0.12 to 0.14
 
 ### Backstory
 
