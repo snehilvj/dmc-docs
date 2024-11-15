@@ -7,10 +7,13 @@ dmc: false
 
 .. toc::
 
-## Migrating from 0.14.7 to 0.14.6
+## Migrating from 0.14 to 0.15
 
 The `DatePicker` component has been renamed to `DatePickerInput` to align with the component names of  the upstream
 Mantine Library.  We plan to add the Mantine [`DatePicker`](https://mantine.dev/dates/date-picker/) component in a future release.
+
+We still expect far fewer breaking changes going forward compared to what you may have experienced in the past. For more details, please see our [Roadmap](https://github.com/snehilvj/dash-mantine-components/discussions/377).
+
 
 ## Migrating from 0.12 to 0.14
 
@@ -95,6 +98,7 @@ app = Dash(__name__, external_stylesheets=dmc.styles.ALL)
 
 - `Chip` and `ChipGroup` components are not working as expected when ported over in dash. It will be worked on as part of subsequent releases.
 - `TransferList` is no longer available. You might benefit from [AIO based TransferList component](https://community.plotly.com/t/dash-mantine-components-0-14-1/83865/18?u=snehilvj) created by a community member.
+**update** `Chip` and `ChipGroup` are available as of 0.14.6
 
 ### Creatable option in Select and MultiSelect
 
