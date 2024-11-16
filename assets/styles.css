@@ -102,3 +102,38 @@ input:invalid {
     }
   }
 }
+
+
+
+.dmc-slider-track {
+  &::before {
+    background-color: light-dark(var(--mantine-color-blue-1), var(--mantine-color-dark-3));
+  }
+}
+
+.dmc-slider-mark {
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  transform: translateX(-3px) translateY(-2px);
+  border-color: light-dark(var(--mantine-color-blue-1), var(--mantine-color-dark-3));
+
+  &[data-filled] {
+    border-color: var(--mantine-color-blue-6);
+  }
+}
+
+.dmc-slider-markLabel {
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-green-5);
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.dmc-slider-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: var(--mantine-color-green-5);
+  border-width: 1px;
+  box-shadow: var(--mantine-shadow-lg);
+}
