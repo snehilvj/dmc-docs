@@ -187,3 +187,45 @@ component = dmc.Stack(
 )
 
 ```
+
+### Component classes
+
+If you inspect the browser, you will notice classes that look something like  `m_77c9d27d`. Those classes come from
+Mantine's CSS-in-JS system using emotion. They are hashed class names generated at build time to ensure uniqueness and
+avoid naming collisions.
+
+Note that these class names can change:
+1. Between different versions of Mantine as the styles are rebuilt
+2. Potentially even between builds if the styles change
+3. When emotion generates new unique hashes
+
+Because of this, you shouldn't rely on or hardcode these specific class names in your code. Instead, you should:
+
+1. Use the Styles API props (`classNames` and `styles`)
+2. Use the static class names, such as `.mantine-Button-root` etc.
+
+Example of what NOT to do:
+```css
+/* Don't do this - could break in future versions */
+.m_77c9d27d {
+  background: blue;
+}
+```
+
+Instead do this:
+```css
+/* Do this - uses stable class names */
+.mantine-Button-root {
+  background: blue;
+}
+```
+
+Or:
+```python
+# Do this - uses Styles API
+dmc.Button(
+    "My Button",
+    classNames={"root": "my-custom-button"}
+)
+```
+
