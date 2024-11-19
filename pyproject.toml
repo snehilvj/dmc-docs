@@ -11,8 +11,8 @@ dash = "^2.0.0"
 dash-iconify = "^0.1.0"
 requests = "^2.27.1"
 python-frontmatter = "^1.0.0"
-dash-mantine-components = "^0.14"
-markdown2dash = "^0.1"
+dash-mantine-components = "^0.15"
+markdown2dash = {git = "https://github.com/AnnMarieW/markdown2dash-amw.git"}
 pydantic = "^2.3.0"
 gunicorn = "^21.2.0"
 
