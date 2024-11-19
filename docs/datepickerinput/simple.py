@@ -6,7 +6,7 @@ from dash.exceptions import PreventUpdate
 
 component = html.Div(
     [
-        dmc.DatePicker(
+        dmc.DatePickerInput(
             id="date-picker-input",
             label="Start Date",
             description="You can also provide a description",

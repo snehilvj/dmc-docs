@@ -4,12 +4,12 @@ import dash_mantine_components as dmc
 
 component = dmc.Stack(
     [
-        dmc.DatePicker(
+        dmc.DatePickerInput(
             value=datetime.now().date(),
             label="Date not clearable",
             w=200,
         ),
-        dmc.DatePicker(
+        dmc.DatePickerInput(
             value=datetime.now().date(),
             label="Date clearable",
             w=200,

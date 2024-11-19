@@ -6,7 +6,7 @@ from dash import Input, Output, html, callback, no_update
 
 component = html.Div(
     [
-        dmc.DatePicker(
+        dmc.DatePickerInput(
             id="date-picker-input-multiple",
             label="Pick dates",
             description="Pick one or more dates",
