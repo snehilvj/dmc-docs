@@ -23,6 +23,10 @@ Use the property `checked` in the callbacks.
 
 .. exec::docs.checkbox.states
 
+### Change icons
+
+.. exec::docs.checkbox.icons
+
 ### Change icon color
 
 Use `iconColor` prop to change icon color. You can reference colors from theme.colors or use any valid CSS color:

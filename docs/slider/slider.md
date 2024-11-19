@@ -90,6 +90,8 @@ Note:
 - The `step` prop is ignored when `restrictToMarks=True`.
 - This option is specific to the `Slider` component and does not apply to `RangeSlider`.
 
+.. exec::docs.slider.restrictomarks
+
 
 ### Thumb size
 .. exec::docs.slider.thumbsize
