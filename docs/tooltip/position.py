@@ -4,7 +4,7 @@ component = dmc.Group(
     justify="center",
     children=[
         dmc.Tooltip(
-            children=[dmc.Button(position, variant="outline")],
+            children=dmc.Button(position, variant="outline"),
             withArrow=True,
             label=position,
             position=position,

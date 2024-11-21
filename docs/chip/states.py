@@ -8,7 +8,7 @@ component = dmc.Box(
                 dmc.Chip(
                     "Outline checked", variant="outline", checked=True
                 ),
-                dmc.Chip("Outline disabled", variant="outline"),
+                dmc.Chip("Outline disabled", disabled=True, variant="outline"),
             ]
         ),
         dmc.Group(
@@ -20,7 +20,7 @@ component = dmc.Box(
                     checked=True,
                     m="sm",
                 ),
-                dmc.Chip("Light disabled", variant="light", m="sm"),
+                dmc.Chip("Light disabled", disabled=True, variant="light", m="sm"),
             ]
         ),
         dmc.Group(
@@ -32,7 +32,7 @@ component = dmc.Box(
                     checked=True,
                     m="sm",
                 ),
-                dmc.Chip("Filled disabled", variant="filled", m="sm"),
+                dmc.Chip("Filled disabled", disabled=True, variant="filled", m="sm"),
             ]
         ),
     ],
