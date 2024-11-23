@@ -3,11 +3,11 @@ import dash_mantine_components as dmc
 component = dmc.DatesProvider(
     children=dmc.Stack(
         [
-            dmc.DatePicker(
+            dmc.DatePickerInput(
                 w=250,
                 label="Sélectionner une date",
             ),
-            dmc.DatePicker(
+            dmc.DatePickerInput(
                 w=250,
                 label="Sélectionner une autre date",
             ),
