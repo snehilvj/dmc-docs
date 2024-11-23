@@ -55,12 +55,6 @@ scripts = [
 app = Dash(__name__, external_scripts=scripts, external_stylesheets=[dmc.styles.DATES])
 ```
 
-.. admonition::Localization Quirk
-    :color: orange
-    :icon: radix-icons:info-circled
-
-    As of now, localization doesn't come into effect with the initial value. If you can help, raise a PR!
-
 .. exec::docs.datesprovider.simple
 
 ### Keyword Arguments
