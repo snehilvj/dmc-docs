@@ -1,7 +1,6 @@
 import dash_mantine_components as dmc
 
 component = dmc.SemiCircleProgress(
-
       fillDirection="left-to-right",
       orientation="up",
       filledSegmentColor="blue",
