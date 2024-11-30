@@ -6,3 +6,4 @@ dash-mantine-components>=0.15
 pydantic>=2.3.0
 gunicorn>=21.2.0
 git+https://github.com/AnnMarieW/markdown2dash-amw.git#egg=markdown2dash
+pandas
