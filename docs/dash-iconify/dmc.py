@@ -5,7 +5,7 @@ from dash_iconify import DashIconify
 
 component = dmc.Group(
     [
-        dmc.DatePicker(
+        dmc.DatePickerInput(
             value=date.today(), leftSection=DashIconify(icon="clarity:date-line")
         ),
         dmc.Alert(
