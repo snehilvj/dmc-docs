@@ -14,4 +14,4 @@ component = dcc.Graph(id="figure-templates-histogram")
     Input("m2d-mantine-provider", "forceColorScheme"),
 )
 def update_figure(theme):
-    return px.histogram(dff, x='lifeExp', title='2007 Life Expectancy', template=f"mantine_{theme}")
+    return px.bar(dff, x="continent", y="pop", title="Population by Continent", template=f"mantine_{theme}")

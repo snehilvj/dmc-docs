@@ -38,7 +38,7 @@ def create_main_link(icon, label, href, id):
         leftSection=DashIconify(
             icon=icon,
             width=23,
-            color=dmc.DEFAULT_THEME["colors"][PRIMARY_COLOR][5],
+            color=dmc.DEFAULT_THEME["colors"][PRIMARY_COLOR][6],
         ),
         label=label,
         href=href,
