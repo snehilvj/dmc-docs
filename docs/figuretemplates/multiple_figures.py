@@ -56,8 +56,7 @@ sample_controls = dmc.Box([
     dmc.Slider(value=25, my="lg"),
 ], w=600)
 
-
-# also need to add a theme switch component and callbacks
+# used in the children prop of  MantinePovider([], id="m2d-mantine-provider)
 component = dmc.Box([sample_controls, graphs])
 
 @callback(
@@ -74,5 +73,4 @@ def update_figure(theme, ids):
         patched_fig["layout"]["template"] = template
         patched_figures.append(patched_fig)
 
-    print(theme, ids)
     return patched_figures

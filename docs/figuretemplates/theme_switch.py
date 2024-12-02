@@ -7,6 +7,7 @@ dff = df[df.year == 2007]
 
 dmc.add_figure_templates()
 
+# used in the children prop of  MantinePovider([], id="m2d-mantine-provider)
 component = dcc.Graph(id="figure-templates-histogram")
 
 @callback(
