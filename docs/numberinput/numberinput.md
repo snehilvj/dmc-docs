@@ -117,6 +117,10 @@ Controls are not rendered in these cases:
 
 .. exec::docs.numberinput.controls
 
+### Disabled state
+
+.. exec::docs.numberinput.disabled
+
 ### Styles API
 
 This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
