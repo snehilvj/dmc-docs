@@ -17,6 +17,55 @@ By default, `enter key` and `,` will select the typed value.
 
 .. exec::docs.tagsinput.simple
 
+
+### Data Format
+
+The data can be provided as either:
+* an array of strings - use when label and value are same.
+* an array of dicts with `label` and `value` properties.
+* an array of dict with `group` and `items` as keys where items are one of the previous two types.
+
+```python
+data = ["Pandas", "NumPy", "TensorFlow", "PyTorch"]
+
+# or
+
+data = [
+    {"value": "Pandas", "label": "Pandas"},
+    {"value": "NumPy", "label": "NumPy"},
+    {"value": "TensorFlow", "label": "TensorFlow"},
+    {"value": "PyTorch", "label": "PyTorch"},
+]
+
+# or
+
+data = [
+    {"group": "Data Analysis", "items": ["Pandas", "NumPy"]},
+    {"group": "Deep Learning", "items": ["TensorFlow", "Pytorch"]}
+]
+
+# or
+
+data = [
+    {
+        "group": "Data Analysis",
+        "items": [
+            {"value": "Pandas", "label": "Pandas"},
+            {"value": "NumPy", "label": "NumPy"},
+        ],
+    },
+    {
+        "group": "Deep Learning",
+        "items": [
+            {"value": "TensorFlow", "label": "TensorFlow"},
+            {"value": "PyTorch", "label": "PyTorch"},
+        ],
+    },
+]
+```
+
+
+
 ### Clearable
 
 Set `clearable` prop to display the clear button in the right section. The button is not displayed when:
@@ -33,18 +82,21 @@ You can limit the number of selected values with `maxTags` prop. This will not a
 
 .. exec::docs.tagsinput.max-selected
 
+### Accept value on blur
+By default, if the user types a value and blurs the input, the value is added to the list. You can change this behavior
+by setting `acceptValueOnBlur` to `False`. In this case, the value is added only when the user presses `Enter` or clicks
+on a suggestion.
+
+.. exec::docs.tagsinput.acceptvalueonblur
+
 ### Allow duplicates
 
 By default, `TagsInput` does not allow adding duplicate values, but you can change this behavior by setting `allowDuplicates` prop.
 Value is considered duplicate if it is already present in the `value` array, regardless of the case and trailing whitespace.
 
-```python
-import dash_mantine_components as dmc
 
-dmc.TagsInput(
-    allowDuplicates=True
-)
-```
+.. exec::docs.tagsinput.duplicates
+
 
 ### Split chars
 
@@ -82,7 +134,142 @@ data = [
 
 .. exec::docs.tagsinput.grouping
 
+
+### Large data sets
+The best strategy for large data sets is to limit the number of options that are rendered at the same time. You can do
+it with `limit` prop. 
+
+Example of `TagsInput` with 100 000 options, 5 options are rendered at the same time:
+
+
+.. exec::docs.tagsinput.large_data_sets
+
+
+### Scrollable dropdown
+
+By default, the options list is wrapped with `ScrollArea.Autosize`. You can control dropdown max-height with 
+`maxDropdownHeight` prop if you do not change the default settings.
+
+If you want to use native scrollbars, set `withScrollArea=False`. Note that in this case, you will need to change 
+dropdown styles with `Styles API`.
+
+
+.. exec::docs.tagsinput.scrollable
+
+### Disabled options  
+
+When an option is disabled, it cannot be selected and is ignored in keyboard navigation. Note that user can still enter
+disabled option as a value. If you want to prohibit certain values, use a callback to filter them out.
+
+.. exec::docs.tagsinput.disabledoptions
+
+
+### Combobox props
+You can override `Combobox` props with `comboboxProps`. It is useful when you need to change some of the props that are
+not exposed by `TagsInput`, for example `withinPortal`:
+
+```python
+dmc.TagsInput(comboboxProps={"withinPortal": False})
+```
+
+
+### Change dropdown z-index
+
+```python
+dmc.TagsInput(comboboxProps={"zIndex": 1000})
+```
+
+### Inside Popover
+
+To use `TagsInput` inside popover, you need to set `withinPortal=False`:
+
+.. exec::docs.tagsinput.popover
+
+
+### Dropdown open in a callback
+
+.. exec::docs.tagsinput.opened
+
+### Dropdown position
+
+By default, the dropdown is displayed below the input if there is enough space; otherwise it is displayed above the
+input. You can change this behavior by setting `position` and `middlewares` props, which are passed down to the
+underlying `Popover` component.
+
+Example of dropdown that is always displayed above the input:
+
+.. exec::docs.tagsinput.dropdown_position
+
+### Dropdown width
+
+To change dropdown width, set `width` prop in `comboboxProps`. By default, dropdown width is equal to the input width.
+
+.. exec::docs.tagsinput.dropdown_width
+
+
+### Dropdown offset
+
+To change dropdown offset, set `offset` prop in `comboboxProps`:  
+
+.. exec::docs.tagsinput.dropdown_offset
+
+### Dropdown animation
+By default, dropdown animations are disabled. To enable them, you can set `transitionProps`, which will be passed
+down to the underlying `Transition` component.
+
+.. exec::docs.tagsinput.dropdown_animation
+
+### Dropdown padding
+
+.. exec::docs.tagsinput.dropdown_padding
+
+
+### Dropdown shadow
+
+.. exec::docs.tagsinput.dropdown_shadow
+
+
+
+### Left and right sections
+
+`MultiSelect` supports `leftSection` and `rightSection` props. These sections are rendered with absolute position
+inside the input wrapper. You can use them to display icons, input controls or any other elements.
+
+You can use the following props to control sections styles and content:
+
+- `rightSection`/`leftSection` – component to render on the corresponding side of input
+- `rightSectionWidth`/`leftSectionWidth` – controls width of the right section and padding on the corresponding side of the input. By default, it is controlled by component size prop.
+- `rightSectionPointerEvents`/`leftSectionPointerEvents` – controls pointer-events property of the section. If you want to render a non-interactive element, set it to none to pass clicks through to the input.
+
+.. exec::docs.tagsinput.left_right
+
+
+### Input Props
+`TagsInput` component supports `Input` and Input Wrapper components features and all input element props.
+`TagsInput` documentation does not include all features supported by the component – see Input documentation to learn about all available features.
+
+ 
+.. exec::docs.tagsinput.interactive
+   :code: false
+
+### Read only
+Set `readOnly` to make the input read only. When `readOnly` is set, `TagsInput` will not show suggestions and value
+cannot be updated by the user entering data in the input.
+
+.. exec::docs.tagsinput.readonly
+
+### Disabled
+Set `disabled` to disable the input. When `disabled` is set, user cannot interact with the input and `TagsInput` will not show suggestions.
+
+.. exec::docs.tagsinput.disabled
+
 ### Styles API
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/core/tags-input/#styles-api) for help in identifying each selector.
+
 
 | Name        | Static selector                | Description                                      |
 |:------------|:-------------------------------|:-------------------------------------------------|
