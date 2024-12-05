@@ -79,7 +79,7 @@ theme_toggle = dmc.ActionIcon(
 
 layout = dmc.Container([
     dmc.Group([
-        dmc.Title("Custom Figure Template Demo - Primary Color: Green", my="md"),
+        dmc.Title("Custom Figure Template Demo", my="md", order=4),
         theme_toggle,
     ], justify="space-between"),
     sample_controls,
