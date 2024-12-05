@@ -13,30 +13,28 @@ dff = df[df.year == 2007]
 
 graph = dcc.Graph(figure=px.bar(dff, x="continent", y="pop", title="2007 Population by Continent"), id="graph")
 
-theme_toggle = dmc.Affix(
-    dmc.ActionIcon(
-        [
-            dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
-            dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
-        ],
-        variant="transparent",
-        color="yellow",
-        id="color-scheme-toggle",
-        size="lg",
-        ms="auto",
-    ),
-    position={"top": 10, "right": 10}
+theme_toggle = dmc.ActionIcon(
+    [
+        dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
+        dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
+    ],
+    variant="transparent",
+    color="yellow",
+    id="color-scheme-toggle",
+    size="lg",
 )
 
+
 layout = dmc.Container([
-    dmc.Title("Figure Template Demo", my="md"),
-    theme_toggle,
+    dmc.Group([
+        dmc.Title("Figure Template Demo", my="md"),
+        theme_toggle,
+    ], justify="space-between"),
     graph
 ], fluid=True)
 
 
 app= Dash(external_stylesheets=dmc.styles.ALL)
-
 
 app.layout = dmc.MantineProvider(
     layout,

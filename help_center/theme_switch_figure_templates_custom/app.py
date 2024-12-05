@@ -66,24 +66,22 @@ sample_controls = dmc.Box([
 ], w=600)
 
 
-theme_toggle = dmc.Affix(
-    dmc.ActionIcon(
-        [
-            dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
-            dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
-        ],
-        variant="transparent",
-        color="yellow",
-        id="color-scheme-toggle",
-        size="lg",
-        ms="auto",
-    ),
-    position={"top": 10, "right": 10}
+theme_toggle = dmc.ActionIcon(
+    [
+        dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
+        dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
+    ],
+    variant="transparent",
+    color="yellow",
+    id="color-scheme-toggle",
+    size="lg",
 )
 
 layout = dmc.Container([
-    dmc.Title("Custom Figure Template Demo - Primary Color: Green", my="md"),
-    theme_toggle,
+    dmc.Group([
+        dmc.Title("Custom Figure Template Demo - Primary Color: Green", my="md"),
+        theme_toggle,
+    ], justify="space-between"),
     sample_controls,
     graphs
 ], fluid=True)
