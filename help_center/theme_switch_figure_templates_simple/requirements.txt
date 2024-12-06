@@ -1,0 +1,4 @@
+dash-mantine-componeents>=0.15.1
+pandas
+dash
+dash-iconify

@@ -15,6 +15,7 @@ dash-mantine-components = "^0.15"
 markdown2dash = {git = "https://github.com/AnnMarieW/markdown2dash-amw.git"}
 pydantic = "^2.3.0"
 gunicorn = "^21.2.0"
+pandas = "^2.2.3"
 
 [tool.poetry.dev-dependencies]
 black = "^21.12b0"
