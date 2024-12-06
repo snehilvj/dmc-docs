@@ -12,10 +12,19 @@ category: Data Display
 
 .. exec::docs.avatar.simple
 
-### Size and Radius
+### Initials
+To display initials instead of the default placeholder, set name prop to the name of the person, for example,
+`name='John Doe'`. If the name is set, you can use `color='initials'` to generate color based on the name:
+
+
+.. exec::docs.avatar.initials
+
+### Size, Radius and Variant
 
 Control Avatar's height and width with `size` prop and border-radius with `radius` prop. Both props have
 predefined values: xs, sm, md, lg, xl. Alternatively, a number can be used to set radius or size in px.
+
+You can also use `variant` to style the Avatar.
 
 ```python
 import dash_mantine_components as dmc
@@ -24,6 +33,7 @@ dmc.Avatar(src="/assets/avatar.jpeg", size="sm"),
 dmc.Avatar(src="/assets/avatar.jpeg"),
 dmc.Avatar(src="/assets/avatar.jpeg", size=50, radius="xl"),
 dmc.Avatar(src="/assets/avatar.jpeg", size="xl", radius=20),
+dmc.Avatar(src="/assets/avatar.jpeg", size="xl", variant="outline"),
 ```
 
 .. exec::docs.avatar.interactive

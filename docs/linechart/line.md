@@ -49,11 +49,18 @@ data = [
 ]
 ```
 
+### Gradient type
+Set `type="gradient"` to render a line chart with gradient fill. To customize gradient colors, use `gradientStops` prop.
+It accepts an array of objects with `offset` and `color` properties. `offset` is a number between 0 and 100 that defines
+the position of the color in the gradient, `color` is a reference to `theme.colors` or any valid CSS color.
+
+.. exec::docs.linechart.legend
+
 ### Legend
 To display chart legend, set `withLegend` prop. When one of the items in the legend is hovered, the corresponding data
 series is highlighted in the chart.
 
-.. exec::docs.linechart.legend
+.. exec::docs.linechart.gradient
 
 ### Legend position
 You can pass props down to recharts Legend component with `legendProps` prop. For example, setting the following will
