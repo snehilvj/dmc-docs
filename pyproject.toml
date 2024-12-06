@@ -6,7 +6,7 @@ authors = ["Snehil Vijay <snehilvj@outlook.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 dash = "^2.0.0"
 dash-iconify = "^0.1.0"
 requests = "^2.27.1"
@@ -16,9 +16,6 @@ markdown2dash = {git = "https://github.com/AnnMarieW/markdown2dash-amw.git"}
 pydantic = "^2.3.0"
 gunicorn = "^21.2.0"
 pandas = "^2.2.3"
-
-[tool.poetry.dev-dependencies]
-black = "^21.12b0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
