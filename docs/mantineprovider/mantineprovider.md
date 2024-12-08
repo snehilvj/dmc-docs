@@ -141,7 +141,8 @@ app.layout = dmc.MantineProvider(
 
 ### Theme Switch
 
-This minimal example shows how to toggle between light and dark modes, similar to the theme switcher used in these docs.
+This minimal example shows how to toggle between light and dark modes.  It uses a `dmc.ActionIcon` for the theme switch,
+component, similar to the theme switcher used in these docs.
 
 ```python
 
@@ -184,6 +185,15 @@ def switch_theme(_, theme):
 if __name__ == "__main__":
     app.run(debug=True)
 ```
+
+### Theme Switch with Clientside Callback
+
+This example demonstrates how to use the `dmc.Switch` component with icons as labels to create a theme switcher.
+A clientside callback is used to update the `data-mantine-color-scheme` attribute to either `'light'` or `'dark'`. 
+Additionally, the `dmc.Switch` component is configured with `persistence=True`, ensuring that the selected theme is 
+retained even after the browser is refreshed.
+
+.. exec::docs.mantineprovider.themeswitch2
 
 ### Default theme
 
