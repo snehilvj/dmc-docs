@@ -1,6 +1,6 @@
 
 import dash_mantine_components as dmc
-from dash import Dash, dcc, Input, Output, State, callback, _dash_renderer, Patch, ALL
+from dash import Dash, dcc, Input, Output, State, callback, clientside_callback, _dash_renderer, Patch, ALL
 import plotly.express as px
 import plotly.io as pio
 from dash_iconify import DashIconify
@@ -47,7 +47,7 @@ def make_graph_card(fig, index):
         span={"base": 12, "md": 6}
     )
 
-graphs = dmc.Grid(
+graphs = dcc.Loading(dmc.Grid(
     [
         make_graph_card(bar_fig, "bar"),
         make_graph_card(scatter_fig, "scatter"),
@@ -55,7 +55,8 @@ graphs = dmc.Grid(
         make_graph_card(map_fig, "map")
     ],
     gutter="xl",
-)
+    style={"height": 800}
+),delay_hide=1000 )
 
 sample_controls = dmc.Box([
     dmc.Button("sample button"),
@@ -64,15 +65,12 @@ sample_controls = dmc.Box([
     dmc.Slider(value=25, my="lg"),
 ], w=600)
 
-theme_toggle = dmc.ActionIcon(
-    [
-        dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
-        dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
-    ],
-    variant="transparent",
-    color="yellow",
+theme_toggle = dmc.Switch(
+    offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
+    onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
     id="color-scheme-toggle",
-    size="lg",
+    persistence=True,
+    color="grey",
 )
 
 layout = dmc.Container([
@@ -87,31 +85,28 @@ layout = dmc.Container([
 
 app= Dash(external_stylesheets=dmc.styles.ALL)
 
-app.layout = dmc.MantineProvider(
-    layout,
-    forceColorScheme="dark",
-    id="mantine-provider"
-)
+app.layout = dmc.MantineProvider(layout)
 
-
-@callback(
-    Output("mantine-provider", "forceColorScheme"),
-    Input("color-scheme-toggle", "n_clicks"),
-    State("mantine-provider", "forceColorScheme"),
-    prevent_initial_call=True,
+clientside_callback(
+    """ 
+    (switchOn) => {
+       document.documentElement.setAttribute('data-mantine-color-scheme', switchOn ? 'dark' : 'light');  
+       return window.dash_clientside.no_update
+    }
+    """,
+    Output("color-scheme-toggle", "id"),
+    Input("color-scheme-toggle", "checked"),
 )
-def switch_theme(_, theme):
-    return "dark" if theme == "light" else "light"
 
 
 @callback(
     Output({"index": ALL}, "figure"),
-    Input("mantine-provider", "forceColorScheme"),
+    Input("color-scheme-toggle", "checked"),
     State({"index": ALL}, "id"),
 )
-def update_figure(theme, ids):
+def update_figure(switch_on, ids):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_light"] if theme == "light" else pio.templates["mantine_dark"]
+    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
     patched_figures = []
     for i in ids:
         patched_fig = Patch()
