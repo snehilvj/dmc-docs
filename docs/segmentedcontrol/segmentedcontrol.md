@@ -19,7 +19,7 @@ limited to certain options)
 
 The data can be provided as either:
 * an array of strings - use when label and value are same.
-* an array of dicts with `label` and `value` properties.
+* an array of dicts with `label` and `value` properties (plus an optional `disabled` boolean).
 
 ```python
 data = ["React", "Angular", "Svelte", "Vue"]
@@ -29,7 +29,7 @@ data = ["React", "Angular", "Svelte", "Vue"]
 data = [
     {"value": "React", "label": "React"},
     {"value": "Angular", "label": "Angular"},
-    {"value": "Svelte", "label": "Svelte"},
+    {"value": "Svelte", "label": "Svelte", "disabled": True},
     {"value": "Vue", "label": "Vue"},
 ]
 ```
