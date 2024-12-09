@@ -34,6 +34,12 @@ data = [
 ]
 ```
 
+### Disabled
+
+To disable the entire component, use the `disabled` prop. To disable a SegmentedControl item, use the array of objects data format and set `disabled = True` on the item that you want to disable. 
+
+.. exec::docs.segmentedcontrol.disabled
+
 ### Full Width and Orientation
 
 By default, SegmentedControl will take only the amount of space that is required to render elements. Set `fullWidth` 
