@@ -11,7 +11,7 @@ dmc: false
 
 ### What is Styles API
 
-The Styles API is a set of properties that allows you to customize the style of any element inside a dash-mantine-components (dmc) component. All dmc components that have styles support the Styles API.
+The Styles API is a set of properties that allows you to customize the style of any element inside a dash-mantine-components component. All dmc components that have styles support the Styles API.
 
 ### Styles API selectors
 
@@ -30,61 +30,84 @@ Example of `dmc.Button` component selectors:
 
 
 
-You can use these selectors in `classNames` and `styles` in component props and `theme`:
+1) You can use the `Name` selectors from the first column in `classNames` and `styles` component props:
 
-```python
-import dash_mantine_components as dmc
+    
+    ```python
+    import dash_mantine_components as dmc
+    
+    # Using `classNames`
+    dmc.Button(
+        "Button with custom classes",
+        classNames={
+                    # define the classes in a .css file in /assets
+            "root": "my-root-class",   
+            "label": "my-label-class",
+            "inner": "my-inner-class",
+        }
+    )
+    
+    # Using inline `styles`
+    dmc.Button(
+        "Button with custom styles",
+        styles={
+            "root": {"backgroundColor": "red"},
+            "label": {"color": "blue"},
+            "inner": {"fontSize": 20},
+        }
+    )
+    
+    
+    ``` 
 
-# Using classNames
-dmc.Button(
-    "Button with custom classes",
-    classNames={
-        "root": "my-root-class",
-        "label": "my-label-class",
-        "inner": "my-inner-class",
-    }
-)
-
-# Using inline styles
-dmc.Button(
-    "Button with custom styles",
-    styles={
-        "root": {"backgroundColor": "red"},
-        "label": {"color": "blue"},
-        "inner": {"fontSize": 20},
-    }
-)
-```
-
-```python
-# Using in the theme
-theme = {
-    "components": {
-        "Button": {
-            "classNames": {
-                "root": "my-root-class",
-                "label": "my-label-class",
-                "inner": "my-inner-class",
-            },
-            "styles": {
-                "root": {"backgroundColor": "red"},
-                "label": {"color": "blue"},
-                "inner": {"fontSize": 20},
+2) You can use the `Name` selectors from the first column in the `theme` prop in the `MantineProvider`.
+    
+    ```python
+    # Using in the theme
+    theme = {
+        "components": {
+            "Button": {
+                "classNames": {
+                    "root": "my-root-class",
+                    "label": "my-label-class",
+                    "inner": "my-inner-class",
+                },
+                "styles": {
+                    "root": {"backgroundColor": "red"},
+                    "label": {"color": "blue"},
+                    "inner": {"fontSize": 20},
+                }
             }
         }
     }
-}
+    
+    
+    app.layout = dmc.MantineProvider(    
+        theme=theme,
+        children={dmc.Button("Button")}
+    )
+    
+    ```
 
 
-app.layout = dmc.MantineProvider(    
-    theme=theme,
-    children={dmc.Button("Button")}
-)
+3) You can use the `Static` selectors from the second column in a `.css` file in the `/assets` folder. 
+    
+    ```css
+    .mantine-Button-root {
+        background-color: red;        
+    }
+    
+     .mantine-Button-label {
+        color: blue
+     }
+     
+     .mantine-Button-inner {
+         font-size: 20
+     }     
+    ```
+    
 
-```
-
-
-### classNames property
+### classNames Property
 
 With the `classNames` property, you can add classes to inner elements of dmc components. It accepts a dictionary with 
 selector names as keys and classes as values:
@@ -124,7 +147,7 @@ and include this in your `.css` file in the `/assets` folder:
 
 
 
-### Styling with inline styles
+### styles Property
 
 `styles` prop can be used similarly to style individual elements inside a component. 
 
@@ -132,49 +155,33 @@ The `styles` property works similarly to `classNames`, but applies inline styles
 specificity than classes, so you cannot override them with classes without using `!important`. You cannot use 
 pseudo-classes (for example, `:hover`, `:first-of-type`) and media queries with inline styles.
 
-Here are three examples.  Please refer to the Styles API section on the component page.
-
-#### Button
-
-.. exec::docs.styles-api.button
-
-#### Badge
-
-.. exec::docs.styles-api.badge
-
-#### TextInput
-
-.. exec::docs.styles-api.input
-
 > **styles property usage**
 >
-> While some examples may use the `styles` property for convenience, it is recommended to use `classNames` as the
-> primary means of styling components, as it is more flexible and has better performance.
-
-### Styles with Callbacks
-
-.. exec::docs.styles-api.conditional
+> While some examples may use the `styles` property for convenience, it is recommended to use `classNames` or `className`
+> as the primary means of styling components, as it is more flexible and has better performance.
 
 
-### Static classes
+### className Property (Static Classes)
 
-Every component that supports Styles API includes static classes that can be used to style components without using
-`classNames` or `styles` properties. By default, static classes have `.mantine-{ComponentName}-{selector}` format. 
-For example, the `root` selector of `dmc.Button` component will have `.mantine-Button-root` class.
+Every component that supports the Styles API includes static classes that can be used to style components without relying on the `classNames` or `styles` properties. By default, static classes follow the format `.mantine-{ComponentName}-{selector}`. For example, the `root` selector of the `dmc.Button` component will have the class `.mantine-Button-root`.
 
-You can use static classes to style a component with CSS:
+Static classes make it easy to style components directly with CSS.
 
-Place this in the `.css` file in `/assets`:
+To demonstrate, add the following CSS to a `.css` file in the `/assets` directory of your Dash app:
 
 ```css
+/* Global style for all dmc.Button components */
 .mantine-Button-root {
     background-color: red;
 }
 
-.my-button.mantine-Button-root {
+/* Specific style for buttons with "my-button" class */
+.my-button .mantine-Button-root {
     background-color: yellow;
 }
 ```
+
+Here’s how this CSS is applied to two buttons:
 
 ```python
 import dash_mantine_components as dmc
@@ -185,8 +192,16 @@ component = dmc.Stack(
         dmc.Button("Red Button"),
     ]
 )
-
 ```
+
+#### Global vs. Specific Styling
+
+By using global and specific styles together, you can define default styles for all components while customizing individual components as needed.
+
+In the example above, note that:
+- The Red Button is styled by the global rule `.mantine-Button-root`, which applies to all `dmc.Button` components. This rule sets its background color to red.
+- The Yellow Button has a `className` of `'my-button'`, so it is styled by the more specific rule `.my-button. mantine-Button-root`, which overrides the global style and sets its background color to yellow.
+
 
 ### Component classes
 
@@ -214,7 +229,7 @@ Example of what NOT to do:
 
 Instead do this:
 ```css
-/* Do this - uses stable class names */
+/* Do this - uses static class names */
 .mantine-Button-root {
   background: blue;
 }
@@ -228,4 +243,76 @@ dmc.Button(
     classNames={"root": "my-custom-button"}
 )
 ```
+
+### Data Attributes
+
+Data attributes are custom attributes added to HTML elements that allow you to apply targeted styles or behavior based
+on the component's state or configuration. In Dash Mantine Components, data attributes are dynamically added to elements
+to reflect certain prop conditions or settings. This feature enables developers to write CSS rules that adapt to a 
+component's state without needing to manage additional logic.
+
+#### Using Data Attributes  
+
+Data attributes follow the format `data-{attribute-name}` and can be used to style components directly in your CSS.
+
+The data attributes are listed in the `Styles API`section for each component. Note that most components also have a
+`data-dash-is-loading` attribute which is set based on the loading state coming from the dash renderer.
+
+As an example, here are the data
+attributes for `Button`:
+
+
+| **Selector**   | **Attribute**         | **Condition**            | **Value**                       |
+|----------------|-----------------------|---------------------------|---------------------------------|
+| `root`         | `data-disabled`       | When `disabled` is set    | –                               |
+| `root, label`  | `data-loading`        | When `loading` is set     | –                               |
+| `root`         | `data-block`          | When `fullWidth` is set   | –                               |
+| `root`         | `data-with-left-section`  | When `leftSection` is set  | –                               |
+| `root`         | `data-with-right-section` | When `rightSection` is set | –                               |
+| `section`      | `data-position`       | –                         | Section position: `left` or `right` |
+
+
+This is particularly helpful for customizing components based on their props, such as `loading`, `disabled`, or `fullWidth`.
+
+Here’s how you can use data attributes to customize a `dmc.Button`:
+
+```css
+
+.dmc-data-attributes-demo[data-disabled="true"] {
+    color: red;
+    cursor: not-allowed;
+}
+
+.dmc-data-attributes-demo[data-loading="true"] {
+    background-color: darkgray;
+}
+
+.dmc-data-attributes-demo .mantine-Button-section[data-position="left"] {
+    color: var(--mantine-color-yellow-filled);
+}
+```
+
+.. exec::docs.styles-api.data-attributes
+
+### More Examples
+
+Here are more examples.  Please refer to the Styles API section on the component page for more information on the selectors.
+
+#### Button
+
+.. exec::docs.styles-api.button
+
+#### Badge
+
+.. exec::docs.styles-api.badge
+
+#### TextInput
+
+.. exec::docs.styles-api.input
+
+
+#### Styles with Callbacks
+
+.. exec::docs.styles-api.conditional
+
 
