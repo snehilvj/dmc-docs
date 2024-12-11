@@ -137,3 +137,18 @@ input:invalid {
   border-width: 1px;
   box-shadow: var(--mantine-shadow-lg);
 }
+
+
+
+.dmc-data-attributes-demo[data-disabled="true"] {
+    color: red;
+    cursor: not-allowed;
+}
+
+.dmc-data-attributes-demo[data-loading="true"] {
+    background-color: darkgray;
+}
+
+.dmc-data-attributes-demo .mantine-Button-section[data-position="left"] {
+    color: var(--mantine-color-yellow-filled);
+}
