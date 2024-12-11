@@ -316,3 +316,16 @@ Here are more examples.  Please refer to the Styles API section on the component
 .. exec::docs.styles-api.conditional
 
 
+#### Slider
+
+Don't miss this detailed example of styling a component in the [Styling the Slider](/components/slider#styling-the-slider) section.
+
+- Dynamic Theming with `light-dark`: Styles adapt automatically to light and dark themes using the `light-dark` function and Mantine's color variables.  
+- Track Customization: Adjusts the background color of the slider track to theme-specific colors.  
+- Mark Customization:  
+  - Changes the size, shape, and border of slider marks.  
+  - Applies conditional styling to filled marks with the `[data-filled]` attribute.  
+- Mark Label Customization: Modifies the font size, color, and spacing of labels displayed next to marks.  
+- Thumb Customization: Customizes the size, background color, border, and shadow of the slider's draggable thumb.  
+
+

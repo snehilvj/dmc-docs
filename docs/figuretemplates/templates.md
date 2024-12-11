@@ -104,8 +104,8 @@ In the [Help Center](https://github.com/snehilvj/dmc-docs/tree/main/help_center/
 
 To update the figure when switching themes, you need to change the Plotly template in a callback.
 
-The `MantineProvider` has a `forceColorScheme` prop that switches between light and dark themes. For more information on
-adding a theme switcher to your app, check the [MantineProvider documentation](/components/mantineprovider).
+
+> For more information on adding a theme switcher to your app, check the [MantineProvider documentation](/components/mantineprovider).
 
 The example below uses this app's  `MantineProvider` in the callback.  Try it out by clicking the **theme icon** in the header!
 
@@ -141,7 +141,6 @@ def update_figure(theme):
 To update multiple figure when switching themes, you can use [Pattern Matching Callbacks.](https://dash.plotly.com/pattern-matching-callbacks)
  
 The example below uses this app's  `MantineProvider` in the callback.  Try it out by clicking the **theme icon** in the header!
-
 
 See a complete minimal example in the [Help Center](https://github.com/snehilvj/dmc-docs/tree/main/help_center/theme_switch_figure_templates)
 
