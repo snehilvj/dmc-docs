@@ -30,7 +30,7 @@ Example of `dmc.Button` component selectors:
 
 
 
-1) You can use the `Name` selectors from the first column in `classNames` and `styles` component props:
+1) You can use the  selectors from the "Name" column in `classNames` and `styles` component props:
 
     
     ```python
@@ -60,7 +60,7 @@ Example of `dmc.Button` component selectors:
     
     ``` 
 
-2) You can use the `Name` selectors from the first column in the `theme` prop in the `MantineProvider`.
+2) You can use the selectors from the "Name" column in the `theme` prop in the `MantineProvider`.
     
     ```python
     # Using in the theme
@@ -90,7 +90,7 @@ Example of `dmc.Button` component selectors:
     ```
 
 
-3) You can use the `Static` selectors from the second column in a `.css` file in the `/assets` folder. 
+3) You can use the selectors from the "Static" column in a `.css` file in the `/assets` folder. 
     
     ```css
     .mantine-Button-root {
@@ -160,6 +160,7 @@ pseudo-classes (for example, `:hover`, `:first-of-type`) and media queries with 
 > While some examples may use the `styles` property for convenience, it is recommended to use `classNames` or `className`
 > as the primary means of styling components, as it is more flexible and has better performance.
 
+See some examples using the `styles` prop below.
 
 ### className Property (Static Classes)
 
@@ -202,6 +203,10 @@ In the example above, note that:
 - The Red Button is styled by the global rule `.mantine-Button-root`, which applies to all `dmc.Button` components. This rule sets its background color to red.
 - The Yellow Button has a `className` of `'my-button'`, so it is styled by the more specific rule `.my-button. mantine-Button-root`, which overrides the global style and sets its background color to yellow.
 
+Note that with components that are rendered within a portal, such as `Popover`, `Tooltip`, `Modal`, It is impossible to
+style inner elements with static selectors because some elements will be rendered outside of the
+component root and inner elements are not part of the component tree.  Either set `withinPortal=False` or use the
+`classNames` or `styles` props.
 
 ### Component classes
 
@@ -271,8 +276,6 @@ attributes for `Button`:
 | `root`         | `data-with-right-section` | When `rightSection` is set | –                               |
 | `section`      | `data-position`       | –                         | Section position: `left` or `right` |
 
-
-This is particularly helpful for customizing components based on their props, such as `loading`, `disabled`, or `fullWidth`.
 
 Here’s how you can use data attributes to customize a `dmc.Button`:
 
