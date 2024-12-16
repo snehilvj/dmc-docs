@@ -4,7 +4,7 @@ import dash_mantine_components as dmc
 from dash import Output, Input, callback
 
 component = dmc.DatePickerInput(
-    id="datepickernput-error",
+    id="datepickerinput-error",
     value=datetime.now().date(),
     label="Date",
     required=True,
