@@ -97,7 +97,7 @@ component = dmc.Stack(
 ### Loading State
 
 Starting with dash version 2.9.2, you can use duplicate callback outputs. Here's an example that lets you easily show
-loading state and at the same time, disable the button.
+loading state while the callback is running.   Note that the button is disabled automatically when `loading=True`
 
 .. exec::docs.button.loading
 
