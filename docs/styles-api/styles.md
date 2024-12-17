@@ -90,7 +90,7 @@ Example of `dmc.Button` component selectors:
     ```
 
 
-3) You can use the selectors from the "Static" column in a `.css` file in the `/assets` folder. 
+3) You can use the selectors from the "Static selector" column in a `.css` file in the `/assets` folder. 
     
     ```css
     .mantine-Button-root {
@@ -105,6 +105,8 @@ Example of `dmc.Button` component selectors:
          font-size: 20
      }     
     ```
+4) Don't use classes like `m_77c9d27d` that you can see when inspecting elements in the browser. These classes are not
+static and can change in different versions. For more information, refer to the Component Classes section below. 
     
 
 ### classNames Property
@@ -173,12 +175,12 @@ To demonstrate, add the following CSS to a `.css` file in the `/assets` director
 ```css
 /* Global style for all dmc.Button components */
 .mantine-Button-root {
-    background-color: red;
+    color: red;
 }
 
 /* Specific style for buttons with "my-button" class */
 .my-button .mantine-Button-root {
-    background-color: yellow;
+    color: yellow;
 }
 ```
 
@@ -211,13 +213,9 @@ component root and inner elements are not part of the component tree.  Either se
 ### Component classes
 
 If you inspect the browser, you will notice classes that look something like  `m_77c9d27d`. Those classes come from
-Mantine's CSS-in-JS system using emotion. They are hashed class names generated at build time to ensure uniqueness and
-avoid naming collisions.
+Mantine and they are hashed class names generated at build time to ensure uniqueness and avoid naming collisions.
 
-Note that these class names can change:
-1. Between different versions of Mantine as the styles are rebuilt
-2. Potentially even between builds if the styles change
-3. When emotion generates new unique hashes
+Note that these class names can change between different versions of Mantine as the styles are rebuilt or if the styles change.
 
 Because of this, you shouldn't rely on or hardcode these specific class names in your code. Instead, you should:
 
@@ -299,7 +297,7 @@ Here’s how you can use data attributes to customize a `dmc.Button`:
 
 ### More Examples
 
-Here are more examples.  Please refer to the Styles API section on the component page for more information on the selectors.
+Here are more examples.  Please refer to the Styles API section on each component's page for more information on the selectors.
 
 #### Button
 
@@ -330,5 +328,15 @@ Don't miss this detailed example of styling a component in the [Styling the Slid
   - Applies conditional styling to filled marks with the `[data-filled]` attribute.  
 - Mark Label Customization: Modifies the font size, color, and spacing of labels displayed next to marks.  
 - Thumb Customization: Customizes the size, background color, border, and shadow of the slider's draggable thumb.  
+
+
+#### DatePickerInput
+
+This is an example of styling elements that are in a portal, such as Popover, Modal, Tooltip.  By default, the dropdown
+calendar is rendered using the Popover component and `withinPortal=True`.  It's necessary to use the `classNames` or the
+`styles` properties because the static selectors cannot target elements in the portal.
+
+
+.. exec::docs.styles-api.datepickerinput
 
 
