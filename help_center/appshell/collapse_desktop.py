@@ -1,9 +1,6 @@
 """
-Collapsible navbar
 Collapsible navbar on both desktop and mobile
-
 """
-
 
 import dash_mantine_components as dmc
 from dash import Dash, Input, Output, State, callback, _dash_renderer
