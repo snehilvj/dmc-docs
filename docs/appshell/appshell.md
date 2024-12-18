@@ -15,14 +15,50 @@ This page includes only documentation. Since all associated `AppShell` component
 
 Please see the code in the dmc-docs GitHub.  Or run the app and edit the code on PyCafe.
 
-1. Basic app shell with header and navbar.  See code in [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/basic_appshell.py), or live on [PyCafe](https://py.cafe/dash.mantine.components/basic-appshell-collapsible-navbar)
-2. Responsive width and height.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py), or  [PyCafe](https://py.cafe/dash.mantine.components/appshell-responsive-width-height)
-3. Mobile only navbar -buttons in header are shown in navbar on mobile.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/mobile_navbar.py), or  [PyCafe](https://py.cafe/dash.mantine.components/responsive-mobile-navbar-demo)
-4. Collapsible navbar both on desktop and mobile.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py), or [PyCafe](https://py.cafe/dash.mantine.components/Collapsible-navbar-on-both-desktop-and-moble)
-5. AppShell with all elements, navbar, header, aside, footer.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/full_layout.py), or [PyCafe](https://py.cafe/dash.mantine.components/AppShell-with-all-elements)
-6. Scrollable navbar with 60 links.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/navbar_scroll.py), or [PyCafe](https://py.cafe/dash.mantine.components/Appshell-with-scrollable-navbar)
-7. Appshell with alternate layout. Navbar and aside are rendered on top of header and footer.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/alt_layout.py), or [PyCafe](https://py.cafe/dash.mantine.components/dash-alt-layout-appshell)
-8. Appshell with a theme switch component.  [GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/appshell_with_theme_switch.py), or [PyCafe](https://py.cafe/dash.mantine.components/dash-mantine-theme-toggle-app)
+Here’s a cleaner and more visually appealing version of the links:
+
+---
+
+### Examples  
+
+This page includes only documentation. Since all associated `AppShell` components have fixed positions, it is not possible to include demos on this page.  
+
+Please refer to the code on the **[dmc-docs GitHub](https://github.com/snehilvj/dmc-docs)** or run and edit the examples on **[PyCafe](https://py.cafe)**.  
+
+1. **Basic AppShell with Header and Navbar**  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/basic_appshell.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/basic-appshell-collapsible-navbar)  
+
+2. **Responsive Width and Height**  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/appshell-responsive-width-height)  
+
+3. **Mobile-Only Navbar**  
+   - Buttons in the header are displayed in the navbar on mobile.  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/mobile_navbar.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/responsive-mobile-navbar-demo)  
+
+4. **Collapsible Navbar on Desktop and Mobile**  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Collapsible-navbar-on-both-desktop-and-moble)  
+
+5. **Full AppShell Layout**  
+   - Includes all elements: navbar, header, aside, and footer.  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/full_layout.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/AppShell-with-all-elements)  
+
+6. **Scrollable Navbar with 60 Links**  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/navbar_scroll.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Appshell-with-scrollable-navbar)  
+
+7. **Alternate AppShell Layout**  
+   - Navbar and aside are rendered on top of the header and footer.  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/alt_layout.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-alt-layout-appshell)  
+
+8. **AppShell with Theme Switch Component**  
+   - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/appshell_with_theme_switch.py)  
+   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-mantine-theme-toggle-app)  
 
 ### Basic usage
 
