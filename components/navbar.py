@@ -81,6 +81,12 @@ def create_content(data, idtype):
                 href="/migration",
                 id={"type": idtype, "index": "/migration"},
             ),
+            create_main_link(
+                icon="material-symbols:info-rounded",
+                label="Help Center",
+                href="/help-center",
+                id={"type": idtype, "index": "/help-center"},
+            ),
         ],
     )
 
