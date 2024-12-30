@@ -2,3 +2,4 @@ dash
 dash-ag-grid==31.3.0
 dash-mantine-components==0.15.1
 pandas
+dash-iconify

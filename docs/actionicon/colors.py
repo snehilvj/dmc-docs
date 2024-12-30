@@ -28,6 +28,6 @@ component = dmc.Stack(
             ],
             justify="center",
         )
-        for variant in ["subtle", "filled", "outline", "light" "transparent"]
+        for variant in ["subtle", "filled", "outline", "light", "transparent"]
     ],
 )
