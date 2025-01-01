@@ -9,11 +9,11 @@ from lib.constants import PRIMARY_COLOR
 excluded_links = [
     "/404",
     "/getting-started",
-    "/styles-api",
-    "/style-props",
+    "/mantine-api"
     "/dash-iconify",
     "/",
     "/migration",
+    "/help-center"
 ]
 
 category_data = {
@@ -59,16 +59,11 @@ def create_content(data, idtype):
             ),
             create_main_link(
                 icon="material-symbols:style",
-                label="Styles API",
-                href="/styles-api",
-                id={"type": idtype, "index": "/styles-api"},
+                label="Mantine API Overview",
+                href="/mantine-api",
+                id={"type": idtype, "index": "/mantine-api"},
             ),
-            create_main_link(
-                icon="material-symbols:measuring-tape-rounded",
-                label="Style Props",
-                href="/style-props",
-                id={"type": idtype, "index": "/style-props"},
-            ),
+
             create_main_link(
                 icon="material-symbols:cookie-rounded",
                 label="Dash Iconify",
