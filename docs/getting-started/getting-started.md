@@ -167,3 +167,10 @@ app.layout = dmc.MantineProvider(
 if __name__ == "__main__":
     app.run(debug=True)
 ```
+
+### Next Steps
+
+Please read the [Mantine API Overview](/mantine-api) section Theming section before starting development to learn about all of the
+available theming and styling features.
+
+

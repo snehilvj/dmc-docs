@@ -3,7 +3,8 @@ name: Styles API
 endpoint: /styles-api
 head: With Styles API you can overwrite styles of inner elements in Mantine components with classNames or styles props.
 description: With Styles API you can overwrite styles of inner elements in Mantine components with classNames or styles props.
-dmc: false
+package: dash_mantine_components
+category: Theming
 ---
 
 .. toc::
@@ -11,11 +12,14 @@ dmc: false
 
 ### What is Styles API
 
-The Styles API is a set of properties that allows you to customize the style of any element inside a dash-mantine-components component. All dmc components that have styles support the Styles API.
+The Styles API is a set of properties that allows you to customize the style of any element inside a DMC component. All 
+DMC components that have styles support the Styles API.
 
 ### Styles API selectors
 
-Every dmc component that supports the Styles API has a set of element names that can be used to apply styles to inner elements inside the component. For simplicity, these elements names are called selectors in the documentation. You can find selectors information in each component's documentation.
+Every DMC component that supports the Styles API has a set of element names that can be used to apply styles to inner
+elements inside the component. For simplicity, these elements names are called selectors in the documentation. You can
+find selectors information in each component's documentation.
 
 Example of `dmc.Button` component selectors:
 

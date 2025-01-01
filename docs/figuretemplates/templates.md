@@ -105,7 +105,7 @@ In the [Help Center](https://github.com/snehilvj/dmc-docs/tree/main/help_center/
 To update the figure when switching themes, you need to change the Plotly template in a callback.
 
 
-> For more information on adding a theme switcher to your app, check the [MantineProvider documentation](/components/mantineprovider).
+> For more information on adding a theme switcher to your app, check the [Theme Switch Component](/theme-switch) section.
 
 The example below uses this app's  `MantineProvider` in the callback.  Try it out by clicking the **theme icon** in the header!
 
