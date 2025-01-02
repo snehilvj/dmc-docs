@@ -5,6 +5,7 @@ head: With Styles API you can overwrite styles of inner elements in Mantine comp
 description: With Styles API you can overwrite styles of inner elements in Mantine components with classNames or styles props.
 package: dash_mantine_components
 category: Theming
+order: 4  # sets order in navbar section
 ---
 
 .. toc::

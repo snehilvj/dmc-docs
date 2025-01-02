@@ -28,6 +28,7 @@ class Meta(BaseModel):
     endpoint: str
     package: str = "dash_mantine_components"
     category: Optional[str] = None
+    order: Optional[int] = None
 
 
 def make_endpoint(name):
@@ -59,4 +60,5 @@ for file in files:
         description=metadata.description,
         layout=layout,
         category=metadata.category,
+        order=metadata.order
     )

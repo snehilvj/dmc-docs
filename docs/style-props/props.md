@@ -5,6 +5,7 @@ head: With style props you can add responsive styles to any Mantine component th
 description: With style props you can add responsive styles to any Mantine component that supports these props.
 package: dash_mantine_components
 category: Theming
+order: 5  # sets order in navbar section
 ---
 
 .. toc::

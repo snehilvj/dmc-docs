@@ -4,6 +4,7 @@ description: Examples of components to switch between light and dark modes
 endpoint: /theme-switch
 package: dash_mantine_components
 category: Theming
+order: 6  # sets order in navbar section
 ---
 
 .. toc::

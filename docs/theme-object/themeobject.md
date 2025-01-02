@@ -4,6 +4,7 @@ description: Mantine theme is an object where your application's colors, fonts, 
 endpoint: /theme-object
 package: dash_mantine_components
 category: Theming
+order: 2  # sets order in navbar section
 ---
 
 .. toc::
@@ -45,6 +46,18 @@ dmc.MantineProvider(
 ### Theme properties
 You can find a complete list of all theme properties in the theme object in the references section at the bottom of the 
 page. In the next section, we’ll focus on a few key properties to explain them in more detail.
+
+#### colors
+
+To add colors or over-ride named theme colors see the [Colors](/colors#adding-extra-colors) section.
+
+#### primaryColor
+
+To change the app's primary (default) accent color see the [Colors](/colors#primarycolor) section.
+
+#### primaryShade
+
+To change the app's primary shade in either light or dark mode, see the [Colors](/colors#primaryshade) section.
 
 #### autoContrast
 `autoContrast` controls whether text color should be changed based on the given color prop in the following components:
@@ -227,6 +240,8 @@ dmc.MantineProvider(
     }
 )
 ```
+
+### 
 
 #### other 
 

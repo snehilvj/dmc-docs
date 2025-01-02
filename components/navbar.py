@@ -86,6 +86,8 @@ def create_content(data, idtype):
     )
 
     links = defaultdict(list)
+    # note - to set order of links in each category, use the order prop in
+    #        the .md page metadata
     for entry in data:
         if entry["path"] not in excluded_links:
             link = dmc.NavLink(
