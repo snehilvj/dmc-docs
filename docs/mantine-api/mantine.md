@@ -42,7 +42,7 @@ Dash Mantine Components go beyond traditional Dash styling by offering additiona
 props and the Styles API.
 
 #### Style Props
-DMC includes [Style Props](), which let you set individual CSS variables directly via component props. For example, you
+DMC includes [Style Props](/style-props), which let you set individual CSS variables directly via component props. For example, you
 can set the background color with the `bg` prop and  text color with the `c` prop:
 ```python
 dmc.Card(bg="blue", c="white")
@@ -50,7 +50,7 @@ dmc.Card(bg="blue", c="white")
 
 
 #### styles and classNames props
-DMC also supports the [Styles API](), enabling deep customization of inner elements through `styles` and `classNames`
+DMC also supports the [Styles API](/styles-api), enabling deep customization of inner elements through `styles` and `classNames`
 props. Note: These props are different from `style` and `className`:
 - `styles`: Inline styles for specific elements inside a component.
 - `classNames`: Custom class names for specific elements inside a component.
@@ -83,12 +83,13 @@ if __name__ == "__main__":
 
 ```
 
-### Theme dictionary
-The `theme` dictionary stores design values, components default props, context styles and other data that can be accessed by any
-Mantine component. Most of the theme values are exposed as CSS variables and can be accessed both in component props and CSS.
+### Theme object
+The `theme` object is a  dictionary that stores design toketn, components default props, context styles and other data
+that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
+both in component props and CSS.
 
 To customize the theme, pass a theme dictionary to the `theme` prop of the `MantineProvider` component. The provided
-theme will be deeply merged with Mantine's [default theme]().
+theme will be deeply merged with Mantine's [default theme](/theme-object#default-theme).
 
 ```python
 # Your theme configuration is merged with default theme
@@ -223,5 +224,5 @@ app.layout = dmc.MantineProvider(
 )
 ```
 
-See the Theming section for examples of a [Theme Switch Component]()
+See the Theming section for examples of a [Theme Switch Component](/theme-switch)
 
