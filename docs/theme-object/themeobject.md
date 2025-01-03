@@ -65,6 +65,10 @@ See more information and examples in [Typography](/typography) section
 - `fontSizes` - defines the font-size from `xs` to `xl`
 - `lineHeights` -defines `line-height` values for `Text` component, most other components use `theme.lineHeights.md` by default
 
+#### Breakpoints
+
+See more information and examples in [Responsive Styles](/responsive-styles) section
+
 #### autoContrast
 `autoContrast` controls whether text color should be changed based on the given color prop in the following components:
 
@@ -247,7 +251,6 @@ dmc.MantineProvider(
 )
 ```
 
-### 
 
 #### other 
 
