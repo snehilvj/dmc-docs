@@ -1,6 +1,6 @@
 ---
 name: Responsive Styles
-description: How to create responsive styles  in your app
+description: Explore how to implement responsive styles, customize breakpoints, and manage visibility in Mantine using media queries, container queries, and style props for dynamic layouts
 endpoint: /responsive-styles
 package: dash_mantine_components
 category: Theming
