@@ -47,17 +47,23 @@ dmc.MantineProvider(
 You can find a complete list of all theme properties in the theme object in the references section at the bottom of the 
 page. In the next section, we’ll focus on a few key properties to explain them in more detail.
 
-#### colors
+#### Colors
 
-To add colors or over-ride named theme colors see the [Colors](/colors#adding-extra-colors) section.
+See more information and examples in [Colors](/colors) section
 
-#### primaryColor
+- `colors` adds colors or over-rides named theme colors
+- `primaryColor` sets the app's primary (default) accent color 
+- `primaryShade` sets the app's primary shade in either light or dark mode
 
-To change the app's primary (default) accent color see the [Colors](/colors#primarycolor) section.
+#### Typography
 
-#### primaryShade
+See more information and examples in [Typography](/typography) section
 
-To change the app's primary shade in either light or dark mode, see the [Colors](/colors#primaryshade) section.
+- `fontFamily` – controls font-family in all components except `Title`, `Code` and `Kbd`
+- `fontFamilyMonospace` – controls font-family of components that require monospace font: `Code`, `Kbd` and `CodeHighlight`
+- `headings.fontFamily` – controls font-family of h1-h6 tags in `Title`, fallbacks to `theme.fontFamily` if not defined
+- `fontSizes` - defines the font-size from `xs` to `xl`
+- `lineHeights` -defines `line-height` values for `Text` component, most other components use `theme.lineHeights.md` by default
 
 #### autoContrast
 `autoContrast` controls whether text color should be changed based on the given color prop in the following components:
