@@ -4,7 +4,7 @@ description: How to style Plotly figures with a Mantine theme.
 endpoint: /components/figure-templates
 package: dash_mantine_components
 category: Theming
-order: 7  # sets order in navbar section
+order: 11  # sets order in navbar section
 ---
 
 .. toc::
