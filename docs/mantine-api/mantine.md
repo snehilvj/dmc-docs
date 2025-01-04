@@ -8,10 +8,6 @@ dmc: false
 
 .. toc::
 
-
-This guide will help you get familiar with core Mantine concepts. Please read this guide and the theming section 
-before starting development to learn about all of the available theming and styling features.
-
 ### Styling: Dash Mantine vs. Other Libraries
 
 Dash components typically provide `style` and `className` props for styling, and Dash Mantine Components (DMC) also 
@@ -38,8 +34,8 @@ dmc.Card(className="header-style")
 }
 ```
 
-Dash Mantine Components go beyond traditional Dash styling by offering additional tools for customization using style
-props and the Styles API.
+Dash Mantine Components go beyond traditional Dash styling by offering additional tools for customization using 
+[style props](/style-props) and the [Styles API](/styles-api).
 
 #### Style Props
 DMC includes [Style Props](/style-props), which let you set individual CSS variables directly via component props. For example, you
@@ -61,10 +57,9 @@ props. Note: These props are different from `style` and `className`:
 Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
 It is responsible for:  
 
-1. Providing the Theme: Controls the overall theme of the app (for example, colors, spacing, fonts).  
-2. Setting the Color Scheme: Manages light or dark mode.  
-3. Customizing Global Styles: Applies app-wide styles and configurations.
-4. Adding CSS variables to the document
+1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
+2. Manages light or dark mode.
+3. Adding CSS variables to the document
 
 
 ```python
@@ -84,7 +79,7 @@ if __name__ == "__main__":
 ```
 
 ### Theme object
-The `theme` object is a  dictionary that stores design toketn, components default props, context styles and other data
+The `theme` object is a  dictionary that stores design tokens, components default props, context styles and other data
 that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
 both in component props and CSS.
 

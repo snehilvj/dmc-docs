@@ -11,7 +11,7 @@ order: 10  # sets order in navbar section
 
 ### Example 1
 
-This simple example demonstrates how to toggle between light and dark modes using a `ActionIcon` as the theme switch.
+This simple example demonstrates how to toggle between light and dark modes using  `ActionIcon` as the theme switch component.
 It's similar to the theme switcher used in the Mantine documentation.
 
 ```python
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
 ### Example 2: Theme Switch with Clientside Callback  
 
-This example shows how to use the `Switch` component with icon labels to create a theme switcher. A clientside 
+This example shows how to use the `Switch` component with icon labels to create a theme switch component. A clientside 
 callback updates the `data-mantine-color-scheme` attribute to `'light'` or `'dark'`.  The `Switch` is set with 
 `persistence=True` to retain the selected theme even after a browser refresh.
 
