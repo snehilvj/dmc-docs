@@ -1,6 +1,6 @@
 ---
 name: Responsive Styles
-description: Explore how to implement responsive styles, customize breakpoints, and manage visibility in Mantine using media queries, container queries, and style props for dynamic layouts
+description: Responsive styles let you adjust the appearance of individual components, including font size, visibility, spacing, and colors, based on screen size.
 endpoint: /responsive-styles
 package: dash_mantine_components
 category: Theming
@@ -8,6 +8,10 @@ order: 7  # sets order in navbar section
 ---
 
 .. toc::
+
+Note:  If you are looking for how to structure app’s layout responsively, use components like
+[Grid](/components/grid) and [Group](/components/group), [Stack](/components/stack) and others. Check out the [GitHub Discussions](https://github.com/snehilvj/dash-mantine-components/discussions/468) 
+for tips on selecting the right layout components.  
 
 ### Media Queries
 

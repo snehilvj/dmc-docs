@@ -13,10 +13,9 @@ order: 1  # sets order in navbar section
 Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
 It is responsible for:  
 
-1. Providing the Theme: Controls the overall theme of the app (for example, colors, spacing, fonts).  
-2. Setting the Color Scheme: Manages light or dark mode.  
-3. Customizing Global Styles: Applies app-wide styles and configurations.
-4. Adding CSS variables to the document
+1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
+2. Manages light or dark mode.
+3. Adding CSS variables to the document
 
 
 ### Usage

@@ -169,7 +169,7 @@ See a live demo of `activeClassName` in the [Mantine Docs](https://mantine.dev/t
 
 `theme.defaultRadius` controls the default border-radius property in most components, for example, `Button` or `TextInput`.
 You can set to either one of the values from `theme.radius` or a number/string to use exact value. Note that numbers are
-treated as pixels, but converted to rem. For example, `{"defaultRadius": 4}` will be converted to 0.25rem. You can learn
+treated as pixels, but converted to rem. For example, `{'defaultRadius': 4}` will be converted to 0.25rem. You can learn
 more about rem conversion in the [rem units guide](https://mantine.dev/styles/rem/).
 
 
@@ -202,7 +202,7 @@ dmc.MantineProvider(
 ```
 
 #### defaultGradient
-`theme.defaultGradient` controls the default gradient configuration for components that support `variant="gradient"`
+`theme.defaultGradient` controls the default gradient configuration for components that support `variant='gradient'`
 (Button, ActionIcon, Badge, etc.).
 
 

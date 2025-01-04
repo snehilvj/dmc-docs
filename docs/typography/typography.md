@@ -92,11 +92,11 @@ You can customize the `fontSizes` defaults in the `theme`:
 ```python
 theme = {
     "fontSizes" : {
-        "xs": "12px",            # customize font sizes here
-        "sm": "14px",
-        "md": "16px",
-        "lg": "18px",
-        "xl": "20px",
+        "xs": "0.75rem",            # customize font sizes here
+        "sm": "0.875rem",
+        "md": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
     }
 }
 
