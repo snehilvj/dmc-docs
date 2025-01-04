@@ -216,3 +216,8 @@ You can combine both props to achieve better contrast between text and backgroun
 
 
 .. exec::docs.colors.colorswatch
+
+
+### Default colors: CSS Variables list
+
+For a list of all Mantine CSS variables that are generated from default theme, see the [Mantine docs](https://mantine.dev/styles/css-variables-list/)

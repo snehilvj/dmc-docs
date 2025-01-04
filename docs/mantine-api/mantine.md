@@ -148,7 +148,9 @@ prefixed with `--mantine-`, for example:
 - theme["colors"]["blue"][9] → --mantine-color-blue-9
 - theme["spacing"]["xl"] → --mantine-spacing-xl
 
-See the css variables based on the default theme in the [Mantine docs](https://mantine.dev/styles/css-variables-list/)
+### CSS Variables list
+
+For a list of all Mantine CSS variables that are generated from default theme, see the [Mantine docs](https://mantine.dev/styles/css-variables-list/)
 
 ### Styles API
 
