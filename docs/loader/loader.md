@@ -25,6 +25,9 @@ By default, Loader will be rendered with theme.primaryColor. A Loader can be cus
 In this example, the loader is shown while the callback is running.   Note that the button is disabled automatically when `loading=True`
 See more examples in the Button section.
 
+This examples uses the [running](https://dash.plotly.com/advanced-callbacks#updating-component-properties-when-a-callback-is-running)
+argument in a callback and requires dash>=2.16.
+
 
 .. exec::docs.loader.button
 
