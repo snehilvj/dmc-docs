@@ -149,6 +149,15 @@ Pass `fullWidth=True` for a full width button.
 
 .. exec::docs.button.group
 
+Note that you must not wrap child `Button` components with any additional elements:
+
+```python
+dmc.ButtonGroup([
+    html.Div(dmc.Button("This will not work")),
+    dmc.Button("Buttons will have incorrect borders")
+])
+```
+
 ### Styles API
 
 #### Button Selectors

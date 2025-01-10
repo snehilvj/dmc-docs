@@ -38,3 +38,24 @@
     color: var(--mantine-color-dimmed);
   }
 }
+
+
+
+.shadow-input {
+   border-color: transparent;
+
+    &:focus-within {
+      outline: 1px solid black;;
+      border-color: transparent;
+  }
+}
+
+.task-container:has(.mantine-Checkbox-root[data-checked]) .mantine-TextInput-input {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task-del-button:hover {
+    color: red;
+}
+
