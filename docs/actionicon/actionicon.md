@@ -116,7 +116,6 @@ Example:
  - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/actionicon-custom-variants-demo)  
 
 
-
 The example includes the following in a .css file in /assets
 ```css
 .ai-custom-variants {

@@ -154,9 +154,8 @@ the `theme` prop in the `MantineProvider` so they available in all `Button` comp
 
 Example:
  - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/theme/button_custom_variants.py)  
- - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/button-variants-demo-0)  
-
-
+ - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/button-custom-variants-demo-0)  
+ 
 
 The example includes the following in a .css file in /assets
 ```css
