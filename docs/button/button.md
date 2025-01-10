@@ -145,9 +145,60 @@ Pass `fullWidth=True` for a full width button.
 
 .. exec::docs.button.full
 
+
+### Add custom variants
+
+To add new `Button` variants, define a class in the `.css` file using the `data-variant` attribute. Add the new variants to
+the `theme` prop in the `MantineProvider` so they available in all `Button` components in your app.
+
+
+Example:
+ - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/theme/button_custom_variants.py)  
+ - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/button-custom-variants-demo-0)  
+ 
+
+The example includes the following in a .css file in /assets
+```css
+.button-custom-variants {
+  &[data-variant='danger'] {
+    background-color: var(--mantine-color-red-9);
+    color: var(--mantine-color-red-0);
+  }
+
+  &[data-variant='primary'] {
+    background: linear-gradient(45deg, #4b6cb7 10%, #253b67 90%);
+    color: var(--mantine-color-white);
+    border-width: 0;
+  }
+}
+```
+
+The example adds the custom variants to the `theme` prop in `Mantine Provider`
+
+```python
+app.layout = dmc.MantineProvider(
+   children=[# your app content],
+   theme={
+      "components": {
+           "Button": {"classNames": {"root": "button-custom-variants"}}
+       }
+   }
+)
+```
+
+
 ### Button Group
 
 .. exec::docs.button.group
+
+Note that you must not wrap child `Button` components with any additional elements:
+
+```python
+dmc.ButtonGroup([
+    html.Div(dmc.Button("This will not work")),
+    dmc.Button("Buttons will have incorrect borders")
+])
+```
 
 ### Styles API
 

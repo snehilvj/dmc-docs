@@ -251,6 +251,13 @@ dmc.MantineProvider(
 )
 ```
 
+#### components custom variants
+
+See how to add custom variants to `ActionIcon` and `Button` in the theme object, making these variants available globally
+across your app. Detailed examples are provided in their respective documentation sections.  Also, see examples live:
+
+- [Live Demo: Button Variants on PyCafe](https://py.cafe/dash.mantine.components/button-custom-variants-demo-0)  
+- [Live Demo: ActionIcon Variants on PyCafe](https://py.cafe/dash.mantine.components/actionicon-custom-variants-demo)  
 
 #### other 
 
