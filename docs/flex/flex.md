@@ -13,16 +13,47 @@ category: Layout
 .. exec::docs.flex.interactive
    :code: false
 
+### Supported Props
+
+| Prop        | CSS Property     | Theme Key       |
+|-------------|------------------|-----------------|
+| gap         | gap              | theme.spacing   |
+| rowGap      | rowGap           | theme.spacing   |
+| columnGap   | columnGap        | theme.spacing   |
+| align       | alignItems       | –               |
+| justify     | justifyContent   | –               |
+| wrap        | flexWrap         | –               |
+| direction   | flexDirection    | –               |
+
+
+
 ### Responsive Props
 
 Flex component props can have responsive values the same way as other style props:
 
 .. exec::docs.flex.responsive
 
-### Difference from Group and Stack
 
-Flex component is an alternative to Group and Stack. 
-Flex is more flexible, it allows creating both horizontal and vertical flexbox layouts, but requires more configuration.
+### Comparison: Group, Stack, and Flex
+
+`Flex` component is an alternative to `Group` and `Stack`. 
+`Flex` is more flexible, it allows creating both horizontal and vertical flexbox layouts, but requires more configuration.
+
+| Feature                    | Group | Stack | Flex |
+|----------------------------|-------|-------|------|
+| Direction                  | horizontal | vertical | both |
+| Equal width children       | ✅     | ❌    | ❌   |
+| flex-wrap support          | ✅     | ❌    | ✅   |
+| Responsive flexbox props   | ❌     | ❌    | ✅   |
+
+
+
+
+### Browser support
+`Flex` uses flexbox gap to add spacing between children. In older browsers, `Flex` children may not have spacing.
+
+
+
 
 ### Styles API
 
