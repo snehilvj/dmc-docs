@@ -8,10 +8,10 @@ category: Layout
 
 .. toc::
 
-### Simple Usage
+### Usage
 
-SimpleGrid is a simple flexbox container where each child is treated as a column. Each column takes equal amount of
-space and unlike Grid component you do not control column span, instead you specify number of columns per row.
+`SimpleGrid` is a responsive grid system with equal-width columns. It uses CSS grid layout. If you need to set different
+widths for columns, use `Grid` component instead.
 
 .. exec::docs.simplegrid.simple
     :code: false
@@ -33,6 +33,18 @@ dmc.SimpleGrid(
     ]
 )
 
+```
+
+### spacing and verticalSpacing props
+`spacing` prop is used both for horizontal and vertical spacing if `verticalSpacing` is not set:
+
+```python
+
+# `spacing` is used for both horizontal and vertical spacing
+dmc.SimpleGrid(spacing="xl")
+
+# `spacing` is used for horizontal spacing, `verticalSpacing` for vertical
+dmc.SimpleGrid(spacing="xl", verticalSpacing="lg")
 ```
 
 ### Responsive Props
