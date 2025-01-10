@@ -20,11 +20,32 @@ Component accepts these props:
 
 .. exec::docs.container.simple
 
+### Fluid
+Set `fluid` prop to make container fluid, it will take 100% of available width, it is the same as setting `size="100%"`.
+
+.. exec::docs.container.fluid
+
+
+
 ### Styles API
 
-| Name | Static selector         | Description  |
-|:-----|:------------------------|:-------------|
-| root | .mantine-Container-root | Root element |
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### Container Selectors
+
+| Selector | Static selector            | Description   |
+|----------|-----------------------------|---------------|
+| root     | .mantine-Container-root     | Root element  |
+
+
+#### Container CSS Variables
+
+| Selector | Variable          | Description               |
+|----------|-------------------|---------------------------|
+| root     | --container-size  | Controls container max-width |
+
+
 
 ### Keyword Arguments
 

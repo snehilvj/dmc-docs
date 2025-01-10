@@ -8,7 +8,10 @@ category: Layout
 
 .. toc::
 
-### Simple Example
+### Usage
+
+`Stack` is a vertical flex container. If you need a horizontal flex container, use `Group` component instead. If you
+need to have full control over flex container properties, use `Flex` component.
 
 Adjust stack styles with `align`, `justify`, and `spacing` props.
 
@@ -21,9 +24,25 @@ Adjust stack styles with `align`, `justify`, and `spacing` props.
 
 ### Styles API
 
-| Name        | Static selector     | Description                                      |
-|:------------|:--------------------|:-------------------------------------------------|
-| root        | .mantine-Stack-root | Root element                                     |
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### Stack Selectors
+
+| Selector | Static selector        | Description    |
+|----------|-------------------------|----------------|
+| root     | .mantine-Stack-root     | Root element   |
+
+
+
+#### Stack CSS Variables
+
+| Selector | Variable         | Description                     |
+|----------|------------------|---------------------------------|
+| root     | --stack-align    | Controls `align-items` property |
+|          | --stack-justify  | Controls `justify-content` property |
+|          | --stack-gap      | Controls `gap` property         |
+
 
 ### Keyword Arguments
 

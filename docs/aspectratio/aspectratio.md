@@ -20,11 +20,32 @@ category: Layout
 
 .. exec::docs.aspectratio.video
 
+### Inside flex container
+By default, `AspectRatio` does not have fixed width and height, it will take as much space as possible in a regular
+container. To make it work inside flex container, you need to set `width` or `flex` property.
+
+.. exec::docs.aspectratio.flex
+
 ### Styles API
 
-| Name | Static selector           | Description  |
-|------|---------------------------|--------------|
-| root | .mantine-AspectRatio-root | Root element |
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### AspectRatio Selectors
+
+| Selector | Static selector                 | Description   |
+|----------|----------------------------------|---------------|
+| root     | .mantine-AspectRatio-root        | Root element  |
+
+---
+
+#### AspectRatio CSS Variables
+
+| Selector | Variable      | Description     |
+|----------|---------------|-----------------|
+| root     | --ar-ratio    | Aspect ratio    |
+
+
 
 ### Keyword Arguments
 
