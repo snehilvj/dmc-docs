@@ -12,6 +12,13 @@ category: Layout
 
 .. exec::docs.center.simple
 
+### Inline
+
+To use `Center` with inline elements set `inline` prop. For example, you can center link icon and label:
+
+.. exec::docs.center.inline
+
+
 ### Styles API
 
 | Name | Static selector    | Description  |

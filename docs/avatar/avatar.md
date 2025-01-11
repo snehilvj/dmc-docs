@@ -16,8 +16,14 @@ category: Data Display
 To display initials instead of the default placeholder, set name prop to the name of the person, for example,
 `name='John Doe'`. If the name is set, you can use `color='initials'` to generate color based on the name:
 
-
 .. exec::docs.avatar.initials
+
+### Allowed initials colors
+By default, all colors from the default theme are allowed for initials, you can restrict them by providing 
+`allowedInitialsColors` prop with an array of colors. Note that the default colors array does not include custom
+colors defined in the theme, you need to provide them manually if needed.
+
+.. exec::docs.avatar.allowedinitialscolors
 
 ### Size, Radius and Variant
 
