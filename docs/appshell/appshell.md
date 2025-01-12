@@ -180,7 +180,7 @@ height, `AppShellHeader`/`AppShellFooter` width is equal to viewport width
 - To change height based on viewport width, use dict with breakpoints as keys and height as values. It works the same way as `style` props.
 
 Examples:
-```
+```python
 # Height is a number, it will be converted to rem  and used as height at all viewport sizes
 dmc.AppShell(
     children=[
