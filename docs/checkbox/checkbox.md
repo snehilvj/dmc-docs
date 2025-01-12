@@ -47,6 +47,62 @@ Choose from one of the following sizes: xs, sm, md, lg, xl.
 
 .. exec::docs.checkbox.sizes
 
+
+### Add custom sizes
+Using the [Styles API](/styles-api), you can add any number of custom sizes with `data-size` attribute.  Defining the checkbox 
+sizes in the [theme object](/theme-object) in the `MantineProvider` makes them available to all `Checkbox` components in the app.
+
+ - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/checkbox-custom-sizes-demo)  
+
+```python
+component = dmc.Box([
+    dmc.Checkbox(
+        label="Extra small checkbox",
+        size="xxs",
+    ),
+    dmc.Checkbox(
+        label="Extra extra large checkbox",
+        size="xxl",
+        mt="md"
+    ),
+])
+
+app.layout = dmc.MantineProvider(
+   children=component,
+    theme={
+        "components": {
+            "Checkbox": {"classNames": {
+                "root": "checkbox-add-custom-sizes-root",
+                "label": "checkbox-add-custom-sizes-label"}
+            }
+        }
+    }
+)
+```
+Define the classes in a `.css` file in `/assets` folder
+
+```css
+.checkbox-add-custom-sizes-root {
+  --checkbox-size-xxl: 42px;
+  --checkbox-size-xxs: 14px;
+
+  &[data-size='xxl'] {
+    .checkbox-add-custom-sizes-label {
+      font-size: 22px;
+      line-height: 40px;
+    }
+  }
+
+  &[data-size='xxs'] {
+    .checkbox-add-custom-sizes-label {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+}
+```
+
+
 ### Indeterminate state
 `Checkbox` supports indeterminate state. When `indeterminate=True` prop is set, `checked` prop is ignored (checkbox
 always has checked styles)
@@ -60,7 +116,7 @@ always has checked styles)
 
 
 ### Pointer cursor
-By default, checkbox input and label have `cursor: default` (same as native `input[type="checkbox"]`). To change cursor
+By default, checkbox input and label have `cursor: default` (same as native `input[type='checkbox']`). To change cursor
 to pointer, set `cursorType` on `theme`:
 
 ```python
@@ -71,26 +127,6 @@ app.layout = dmc.MantineProvider(
 )
 ```
 
-### Add props to the root element
-All props passed to the component are forwarded to the input element. If you need to add props to the root element,
-use `wrapperProps`. In the following example:
-
-- `data-testid="wrapper"` is added to the root element
-- `data-testid="input"` is added to the input element
-
-```python
-dmc.Checkboc(
-    wrapperProps={}
-)
-
-```
-import { Checkbox } from '@mantine/core';
-
-function Demo() {
-  return <Checkbox wrapperProps={{ 'data-testid': 'wrapper' }} data-testid="input" />;
-}
-
-For more information see the [MantineProvider](/components/mantineprovider) section.
 
 ### Checkbox Group
 
@@ -101,11 +137,38 @@ Use `value` property of the checkbox group in the callbacks.
 
 .. exec::docs.checkbox.group
 
+### Example: Customize with Styles API
+
+.. exec::docs.mantine-api.styles-api
+   
+The following is added to a `.css` file in the `/assets` folder
+```css
+
+.dmc-api-demo-root {
+  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+
+  &[data-checked] {
+    background-color: var(--mantine-color-blue-filled);
+    border-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
+  }
+}
+
+``` 
+
 
 ### Styles API
 
 This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
 For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+> Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://mantine.dev/core/checkbox/#styles-api)
+> lets you hover over selectors to see which elements they correspond to.
+
 
 #### Checkbox Selectors
 

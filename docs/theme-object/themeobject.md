@@ -259,6 +259,12 @@ across your app. Detailed examples are provided in their respective documentatio
 - [Live Demo: Button Variants on PyCafe](https://py.cafe/dash.mantine.components/button-custom-variants-demo-0)  
 - [Live Demo: ActionIcon Variants on PyCafe](https://py.cafe/dash.mantine.components/actionicon-custom-variants-demo)  
 
+#### components custom sizes
+
+See and example of adding custom sizes in the  [Checkbox](/components/checkbox) section.  Also see a live dome on PyCafe:
+
+- [Live Demo: Checkbox Sizes PyCafe](https://py.cafe/dash.mantine.components/checkbox-custom-sizes-demo) 
+
 #### other 
 
 `theme.other` is an object that can be used to store any other properties that you want to access with the theme objects.
