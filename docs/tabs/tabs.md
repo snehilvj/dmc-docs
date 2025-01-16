@@ -47,8 +47,8 @@ You can use any dash component as icon and rightSection in dmc.TabsTab component
 
 ### Tabs Position
 
-Tabs' controls position is controlled with `grow` and `position` properties in TabsList component. If `grow` property 
-is set to true, controls will take 100% of available space and `position` property is ignored.
+Tabs' controls position is controlled with `grow` and `justify` properties in TabsList component. If `grow` property 
+is set to `True`, controls will take 100% of available space and `justify` property is ignored.
 
 ```python
 import dash_mantine_components as dmc
@@ -56,7 +56,7 @@ import dash_mantine_components as dmc
 dmc.Tabs(
     children=[
         dmc.TabsList(
-            position="right",
+            justify="right",
             grow=False,
             children=[...],
         )
