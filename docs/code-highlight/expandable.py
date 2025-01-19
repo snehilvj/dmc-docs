@@ -41,4 +41,9 @@ code = [
     },
 ]
 
-component = dmc.CodeHighlightTabs(code=code)
+component = dmc.CodeHighlightTabs(
+    code=code,
+    withExpandButton=True,
+    expandCodeLabel="Show full code",
+    collapseCodeLabel="Show less",
+)
