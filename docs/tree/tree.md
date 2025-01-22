@@ -104,8 +104,12 @@ This happens because users can toggle the state of leaf nodes, even though they 
 displayed. To handle this, ensure your callback logic accounts for the possibility that leaf nodes may or may not
 be present in the `expanded` prop.
 
+Note also that the nodes included in the `expanded` prop are ordered based on user interation and the order of operations.
 
 ### With Checkboxes
+
+Use the `checked` prop to set or track the checked items.  Note that only leaves can be checked, and the order will be
+based on user interation and the order of operations. 
 
 .. exec::docs.tree.checkboxes
 
