@@ -30,6 +30,7 @@ Enable inline middleware to use Popover with inline elements.
 
 .. exec::docs.popover.inline
 
+
 ### Same width
 
 Set w="target" prop to make Popover dropdown take the same width as target element.
@@ -37,10 +38,29 @@ Set w="target" prop to make Popover dropdown take the same width as target eleme
 
 ### Styles API
 
-| Name     | Static selector           | Description      |
-|:---------|:--------------------------|:-----------------|
-| dropdown | .mantine-Popover-dropdown | Dropdown element |
-| arrow    | .mantine-Popover-arrow    | Dropdown arrow   |
+#### Popover Selectors
+
+| Selector  | Static selector             | Description          |
+|-----------|------------------------------|----------------------|
+| dropdown  | .mantine-Popover-dropdown    | Dropdown element     |
+| arrow     | .mantine-Popover-arrow       | Dropdown arrow       |
+| overlay   | .mantine-Popover-overlay     | Overlay element      |
+
+
+#### Popover CSS Variables
+
+| Selector  | Variable           | Description                    |
+|-----------|--------------------|--------------------------------|
+| dropdown  | --popover-radius   | Controls dropdown border-radius |
+|           | --popover-shadow   | Controls dropdown box-shadow    |
+
+
+#### Popover Data Attributes
+
+| Selector  | Attribute       | Value                             |
+|-----------|-----------------|-----------------------------------|
+| dropdown  | data-position   | Value of floating UI dropdown position |
+
 
 ### Keyword Arguments
 
