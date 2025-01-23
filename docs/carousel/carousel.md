@@ -156,6 +156,19 @@ To set the initial slide to display, use the index number of the slide.
 
 .. exec::docs.carousel.initial
 
+### Container queries
+To use container queries instead of media queries, set `type="container"`. With container queries, slides size and gap 
+will be adjusted based on the container width, not the viewport width.
+
+Note that, when using container queries, `slideSize` and `slideGap` props cannot reference `theme.breakpoints` values 
+in keys. It is required to use exact `px` or `em` values.
+
+To see how the slides size and gap changes, resize the root element of the demo with the resize handle located at the
+bottom right corner of the demo:
+
+
+.. exec::docs.carousel.containerquery
+
 ### Active prop for callbacks
 
 The `active` prop represents the index of the currently displayed slide and can be used to trigger Dash callbacks. Note
