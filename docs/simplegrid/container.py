@@ -6,7 +6,9 @@ style = {
     "textAlign": "center",
 }
 
-html.Div(
+component = html.Div(
+    # Wrapper div is added for demonstration purposes only,
+    # it is not required in real projects
     dmc.SimpleGrid(
         type="container",
         cols={"base": 1, "300px": 2, "500px": 5},

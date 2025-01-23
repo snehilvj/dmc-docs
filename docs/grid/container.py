@@ -7,13 +7,14 @@ style = {
 }
 
 component = html.Div(
+    # Wrapper div is added for demonstration purposes only,
+    # it is not required in real projects
     dmc.Grid(
         children=[
             dmc.GridCol(html.Div("1", style=style), span={"base": 12, "md": 6, "lg": 3}),
             dmc.GridCol(html.Div("2", style=style), span={"base": 12, "md": 6, "lg": 3}),
             dmc.GridCol(html.Div("3", style=style), span={"base": 12, "md": 6, "lg": 3}),
             dmc.GridCol(html.Div("4", style=style), span={"base": 12, "md": 6, "lg": 3}),
-            dmc.GridCol(html.Div("5", style=style), span={"base": 12, "md": 6, "lg": 3}),
         ],
         gutter="xl",
         type="container",
