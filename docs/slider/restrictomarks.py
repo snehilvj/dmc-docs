@@ -1,14 +1,26 @@
 import dash_mantine_components as dmc
 
-component = dmc.Slider(
-    restrictToMarks=True,
-    value=25,
-    marks=[
-        {"value": 25, "label": "25%"},
-        {"value": 50, "label": "50%"},
-        {"value": 75, "label": "75%"},
-        {"value": 85, "label": "85%"},
-        {"value": 95, "label": "95%"},
-    ],
-    m=30,
+component = dmc.Stack(
+    [
+        # Slider
+        dmc.Slider(
+            restrictToMarks=True,
+            value=25,
+            marks=[{"value": index * 25} for index in range(5)],
+        ),
+        # RangeSlider
+        dmc.RangeSlider(
+            restrictToMarks=True,
+            value=[5, 15],
+            marks=[
+                {"value": 5},
+                {"value": 15},
+                {"value": 25},
+                {"value": 35},
+                {"value": 70},
+                {"value": 80},
+                {"value": 90},
+            ],
+        ),
+    ]
 )
