@@ -36,6 +36,12 @@ Enable inline middleware to use Popover with inline elements.
 Set w="target" prop to make Popover dropdown take the same width as target element.
 .. exec::docs.popover.same-width
 
+### With overlay
+Set `withOverlay` prop to add overlay behind the dropdown. You can pass additional configuration to `Overlay` component with `overlayProps` prop:
+
+.. exec::docs.popover.overlay
+
+
 ### Styles API
 
 #### Popover Selectors

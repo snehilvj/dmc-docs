@@ -86,9 +86,7 @@ Setting `restrictToMarks=True` ensures that users can only select values matchin
 feature is especially helpful when you have uneven or non-standard marks and want to ensure users can only pick 
 from those specific points.
 
-Note:
-- The `step` prop is ignored when `restrictToMarks=True`.
-- This option is specific to the `Slider` component and does not apply to `RangeSlider`.
+Note: The `step` prop is ignored when `restrictToMarks=True`.
 
 .. exec::docs.slider.restrictomarks
 
