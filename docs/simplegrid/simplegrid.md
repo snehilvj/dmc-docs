@@ -65,6 +65,21 @@ Resize browser to see breakpoints behavior.
 
 .. exec::docs.simplegrid.responsive
 
+### Container queries
+To use [container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) instead
+of media queries, set `type='container'`. With container queries, grid columns and spacing will be adjusted based on the
+container width, not the viewport width.
+
+Note that, when using container queries, `cols`, `spacing` and `verticalSpacing` props cannot reference `theme.breakpoints`
+values in keys. It is required to use exact `px` or `em` values.
+
+To see how the grid changes, resize the root element of the demo with the resize handle located at the bottom right
+corner of the demo:
+
+
+.. exec::docs.simplegrid.container
+
+
 ### Styles API
 
 
