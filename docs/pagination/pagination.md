@@ -25,6 +25,13 @@ Control the number of items displayed after previous(<) and before next(>) butto
 
 .. exec::docs.pagination.boundaries
 
+### Hide pages controls
+Set `withPages=False` to hide pages controls:
+
+
+.. exec::docs.pagination.withpages
+
+
 ### Styles API
 
 | Name    | Static selector             | Description                                               |
