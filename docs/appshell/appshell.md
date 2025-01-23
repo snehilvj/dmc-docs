@@ -8,9 +8,6 @@ category: Layout
 
 .. toc::
 
-
-### Examples
-
 This page includes only documentation. Since all associated `AppShell` components have fixed position, it is not possible to include demos on this page.
 
 Please see the code in the dmc-docs GitHub.  Or run the app and edit the code on PyCafe.

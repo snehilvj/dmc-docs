@@ -46,4 +46,5 @@ component = dmc.CodeHighlightTabs(
     withExpandButton=True,
     expandCodeLabel="Show full code",
     collapseCodeLabel="Show less",
+    defaultExpanded=False
 )

@@ -93,7 +93,12 @@ To change label of the expand/collapse control tooltip, use `expandCodeLabel` an
 .. exec::docs.code-highlight.expandable
     :code: false
 
+### Inline code
 
+`InlineCodeHighlight` component allows highlighting inline code snippets:
+
+
+.. exec::docs.code-highlight.inline
 
 ### Styles API
 
@@ -129,6 +134,12 @@ For more information on styling components,  please also refer to the [Mantine S
 | showCodeButton| .mantine-CodeHighlightTabs-showCodeButton | Button that reveals full code when it is collapsed |
 
 
+#### InlineCodeHighlight Selectors
+
+| Selector | Static selector                    | Description    |
+|----------|-------------------------------------|----------------|
+| code     | .mantine-InlineCodeHighlight-code   | Root element   |
+
 ### Keyword Arguments
 
 #### CodeHighlight
@@ -138,3 +149,7 @@ For more information on styling components,  please also refer to the [Mantine S
 #### CodeHighlightTabs
 
 .. kwargs::CodeHighlightTabs
+
+#### InlineCodeHighlight
+
+.. kwargs::InlineCodeHighlight
