@@ -10,8 +10,9 @@ category: Navigation
 
 ### Usage
 
-The dmc.Tabs and its associated components can be used to create tabbed sections in your app.
-You can set the orientation of the Tabs using the `orientation` prop.
+.. exec::docs.tabs.interactive
+    :code: false
+
 
 ```python
 import dash_mantine_components as dmc
@@ -30,14 +31,27 @@ dmc.Tabs(
         dmc.TabsPanel("Settings tab content", value="settings"),
     ],
     color="red",
-    orientation="vertical",
+    orientation="vertical", # or "horizontal"
+    variant="default", # or "outline" or "pills"
+    value="gallery"
 )
 ```
 
-.. exec::docs.tabs.interactive
+### Variants
+
+Use the `variant` can be set to `"default"`,  `"outline"` or `"pills"`
+
+.. exec::docs.tabs.variant
     :code: false
 
-### Icons and Right Section
+### Change colors
+To change colors of all tabs, set `color` on `Tabs` component, to change color of the individual tab, set `color`
+on `TabsTab`.
+
+
+.. exec::docs.tabs.color
+
+### Icons on right or left
 
 You can use any dash component as icon and rightSection in dmc.TabsTab component.
 
@@ -47,7 +61,7 @@ You can use any dash component as icon and rightSection in dmc.TabsTab component
 
 ### Tabs Position
 
-Tabs' controls position is controlled with `grow` and `justify` properties in TabsList component. If `grow` property 
+`Tabs` controls position is controlled with `grow` and `justify` properties in TabsList component. If `grow` property 
 is set to `True`, controls will take 100% of available space and `justify` property is ignored.
 
 ```python
@@ -70,22 +84,62 @@ dmc.Tabs(
 
 ### Separated Tabs
 
-To display tab on the opposite side, set margin-left to auto with ml="auto" in dmc.TabsTab component.
+To display tab on the opposite side, set `margin-left` to auto with `ml="auto"` in `TabsTab` component.
 
 .. exec::docs.tabs.right
 
 ### Inverted Tabs
 
-To make tabs inverted, place Tabs.Panel components before Tabs.List and add inverted prop to Tabs component.
+To make tabs inverted, place `TabsPanel` components before `TabsList` and add `inverted=True` prop to `Tabs` component.
 
 .. exec::docs.tabs.inverted
 
 ### Vertical Tabs placement
 
-To change placement of dmc.TabsList in vertical orientation, set `placement` prop in dmc.Tabs.
+To change placement of `TabsList` in vertical orientation, set `placement` prop in `Tabs`.
 
 .. exec::docs.tabs.vertical
     :code: false
+
+### Disabled tabs
+
+Set `disabled=True` prop on `TabsTab` component to disable tab. Disabled tab cannot be activated with mouse or keyboard,
+and they will be skipped when user navigates with arrow keys:
+
+.. exec::docs.tabs.disabled
+
+### Activation mode
+By default, tabs are activated when user presses arrows keys or Home/End keys. To disable that set
+`activateTabWithKeyboard=False` on `Tabs` component.  
+
+This can be useful if the tab content is updated in a long running callback.  Try clicking on a tab to focus, then
+navigate to other tabs with arrow keys, or home/end keys:
+
+.. exec::docs.tabs.activation
+    :code: false
+
+
+
+```python
+import dash_mantine_components as dmc
+
+dmc.Tabs(
+    activateTabWithKeyboard=False,
+    children=[
+        # tabs content
+    ],    
+)
+```
+
+### Tab deactivation
+By default, active tab cannot be deactivated. To allow that set `allowTabDeactivation=True` on Tabs component:
+
+Try clicking on the active tab to see the deactivated state:
+
+
+.. exec::docs.tabs.deactivation
+    :code: false
+
 
 ### Content As Callback
 
@@ -102,14 +156,41 @@ the Tab component.
 
 ### Styles API
 
-| Name       | Static selector          | Description                                     |
-|:-----------|:-------------------------|:------------------------------------------------|
-| root       | .mantine-Tabs-root       | Root element (`Tabs` component)                 |
-| list       | .mantine-Tabs-list       | List of tabs (`Tabs.List` component)            |
-| panel      | .mantine-Tabs-panel      | Panel with tab content (`Tabs.Panel` component) |
-| tab        | .mantine-Tabs-tab        | Tab button (`Tabs.Tab` component)               |
-| tabLabel   | .mantine-Tabs-tabLabel   | Label of `Tabs.Tab`                             |
-| tabSection | .mantine-Tabs-tabSection | Left and right sections of `Tabs.Tab`           |
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
+
+#### Tabs Selectors
+
+| Selector     | Static selector             | Description                              |
+|--------------|------------------------------|------------------------------------------|
+| root         | .mantine-Tabs-root           | Root element (Tabs component)            |
+| list         | .mantine-Tabs-list           | List of tabs (Tabs.List component)       |
+| panel        | .mantine-Tabs-panel          | Panel with tab content (Tabs.Panel component) |
+| tab          | .mantine-Tabs-tab            | Tab button (Tabs.Tab component)          |
+| tabLabel     | .mantine-Tabs-tabLabel       | Label of Tabs.Tab                        |
+| tabSection   | .mantine-Tabs-tabSection     | Left and right sections of Tabs.Tab      |
+
+
+
+#### Tabs CSS Variables
+
+| Selector | Variable        | Description                                                  |
+|----------|-----------------|--------------------------------------------------------------|
+| root     | --tabs-color    | Controls colors of Tabs.Tab, only applicable for `pills` or `default` variant |
+|          | --tabs-radius   | Controls Tabs.Tab border-radius                              |
+
+---
+
+#### Tabs Data Attributes
+
+| Selector          | Attribute          | Condition                                 | Value                        |
+|-------------------|--------------------|-------------------------------------------|------------------------------|
+| root, tab, list, panel | data-orientation  | –                                         | Value of `orientation` prop |
+| root, tab, list   | data-placement     | `orientation` is "vertical" on Tabs component | Value of `placement` prop   |
+| tab, list         | data-inverted      | `inverted` prop is set on T
 
 ### Keyword Arguments
 
