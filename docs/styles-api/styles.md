@@ -334,6 +334,10 @@ Don't miss this detailed example of styling a component in the [Styling the Slid
 - Mark Label Customization: Modifies the font size, color, and spacing of labels displayed next to marks.  
 - Thumb Customization: Customizes the size, background color, border, and shadow of the slider's draggable thumb.  
 
+#### Tabs
+
+See another detailed example of styling a component in the [Styling the Tabs](/components/tabs#styling-the-tabs) section.
+
 
 #### DatePickerInput
 
