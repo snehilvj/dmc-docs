@@ -217,3 +217,37 @@ input:invalid {
     border-width: 0;
   }
 }
+
+
+.dmc-tabs {
+  position: relative;
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+
+  &:first-of-type {
+    border-radius: 4px 0 0 4px;
+  }
+
+  &:last-of-type {
+    border-radius: 0 4px 4px 0;
+  }
+
+  & + & {
+    border-left-width: 0;
+  }
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  }
+
+  &[data-active] {
+    z-index: 1;
+    background-color: var(--mantine-color-blue-filled);
+    border-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
+
+    &:hover {
+      background-color: var(--mantine-color-blue-filled-hover);
+    }
+  }
+}

@@ -154,6 +154,50 @@ the Tab component.
 
 .. exec::docs.tabs.content
 
+### Styling the Tabs
+
+Here is an example of styling the tabs using the Styles API:
+
+.. exec::docs.tabs.styles
+
+Put the following in a `.css` file in the `/assets` folder
+
+```css
+.dmc-tabs {
+  position: relative;
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+
+  &:first-of-type {
+    border-radius: 4px 0 0 4px;
+  }
+
+  &:last-of-type {
+    border-radius: 0 4px 4px 0;
+  }
+
+  & + & {
+    border-left-width: 0;
+  }
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  }
+
+  &[data-active] {
+    z-index: 1;
+    background-color: var(--mantine-color-blue-filled);
+    border-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
+
+    &:hover {
+      background-color: var(--mantine-color-blue-filled-hover);
+    }
+  }
+}
+
+```
+
 ### Styles API
 
 
@@ -163,6 +207,7 @@ For more information on styling components,  please also refer to the [Mantine S
 Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
 
 #### Tabs Selectors
+
 
 | Selector     | Static selector             | Description                              |
 |--------------|------------------------------|------------------------------------------|
@@ -182,7 +227,7 @@ Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/
 | root     | --tabs-color    | Controls colors of Tabs.Tab, only applicable for `pills` or `default` variant |
 |          | --tabs-radius   | Controls Tabs.Tab border-radius                              |
 
----
+
 
 #### Tabs Data Attributes
 
@@ -190,7 +235,11 @@ Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/
 |-------------------|--------------------|-------------------------------------------|------------------------------|
 | root, tab, list, panel | data-orientation  | –                                         | Value of `orientation` prop |
 | root, tab, list   | data-placement     | `orientation` is "vertical" on Tabs component | Value of `placement` prop   |
-| tab, list         | data-inverted      | `inverted` prop is set on T
+| tab, list         | data-inverted      | `inverted` prop is set on Tabs component  | –                            |
+| list              | data-grow          | `grow` prop is set on Tabs.List component | –                            |
+| tabSection        | data-position      | –                                         | Position of the section (left or right) |
+
+
 
 ### Keyword Arguments
 
