@@ -30,8 +30,8 @@ dmc.Tabs(
         dmc.TabsPanel("Messages tab content", value="messages"),
         dmc.TabsPanel("Settings tab content", value="settings"),
     ],
-    color="red",
-    orientation="vertical", # or "horizontal"
+    color="red", # default is blue
+    orientation="horizontal", # or "vertical"
     variant="default", # or "outline" or "pills"
     value="gallery"
 )
@@ -61,7 +61,7 @@ You can use any dash component as icon and rightSection in dmc.TabsTab component
 
 ### Tabs Position
 
-`Tabs` controls position is controlled with `grow` and `justify` properties in TabsList component. If `grow` property 
+`Tabs` controls position is controlled with `grow` and `justify` properties in `TabsList` component. If `grow` property 
 is set to `True`, controls will take 100% of available space and `justify` property is ignored.
 
 ```python
@@ -154,9 +154,28 @@ the Tab component.
 
 .. exec::docs.tabs.content
 
+
+
+
 ### Styling the Tabs
 
-Here is an example of styling the tabs using the Styles API:
+#### With Props  
+
+This example demonstrates how to style tabs using only props, without requiring additional CSS files:  
+
+- **Variant**: Sets `variant="pills"` to make the tabs resemble buttons.  
+- **Grow Prop**: Uses the `grow` prop on the `TabsList` component, causing the tabs to expand and fill the full width of the viewport.  
+- **Border**: Adds a border around the tabs with the `bd` prop. For more details, see the [Style Props](/style-props) section.  
+- **Border Color**: Sets the border color using the Mantine CSS variable `var(--mantine-color-default-border)`, ensuring a border color that works well in both light and dark modes. See the [Colors](/colors) section for more details.  
+- **Active Tab Color**: Sets the active tab color with `color="green.3"`. This specifies a lighter shade of a built-in color. Mantine’s color palette includes 10 shades for each color, indexed from 0 (lightest) to 9 (darkest). Learn more in the [Colors](/colors) section.  
+- **Auto Contrast**: Enables `autoContrast=True` to automatically adjust the text color for better readability when using lighter or darker background colors. Additional details can be found in the [Colors](/colors) section.  
+
+.. exec::docs.tabs.styleprops
+
+
+#### With Styles API  
+
+This example demonstrates styling tabs using the Styles API, allowing for precise control over the appearance of each element in the tabs component. For more information, see the Styles API section below.  
 
 .. exec::docs.tabs.styles
 
