@@ -38,4 +38,4 @@ app.layout = create_appshell(dash.page_registry.values())
 server = app.server
 
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8051)
+    app.run_server(debug=True, port=8052)
