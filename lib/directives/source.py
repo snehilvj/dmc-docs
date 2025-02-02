@@ -7,9 +7,12 @@ from markdown2dash import SourceCode
 
 
 class SC(SourceCode):
-    NAME = "source"
+    NAME = "sourcetabs"
 
     def render(self, renderer, title: str, content: str, **options) -> Component:
+        defaultExpanded = options.pop("defaultExpanded", "false")
+        withExpandedButton = options.pop("withExpandedButton", "true")
+
         mapping = {
             "py": {"language": "python", "icon": DashIconify(icon="devicon:python")},
             "css": {"language": "css", "icon": DashIconify(icon="devicon:css3")},
@@ -26,4 +29,15 @@ class SC(SourceCode):
                     "icon": mapping[extension]["icon"],
                 }
             )
-        return dmc.CodeHighlightTabs(code=code)
+        return dmc.CodeHighlightTabs(code=code, defaultExpanded=defaultExpanded=="true", withExpandButton=withExpandedButton=='true' )
+
+
+"""
+sample usage:
+
+
+.. sourcetabs::docs/alert/auto.py, assets/styles.css
+    :defaultExpanded: false
+    :withExpandedButton: true
+
+"""
