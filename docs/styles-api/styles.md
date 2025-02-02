@@ -162,7 +162,7 @@ The `styles` property works similarly to `classNames`, but applies inline styles
 specificity than classes, so you cannot override them with classes without using `!important`. You cannot use 
 pseudo-classes (for example, `:hover`, `:first-of-type`) and media queries with inline styles.
 
-> **styles property usage**
+> Styles Property Usage
 >
 > While some examples may use the `styles` property for convenience, it is recommended to use `classNames` or `className`
 > as the primary means of styling components, as it is more flexible and has better performance.

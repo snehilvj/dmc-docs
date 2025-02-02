@@ -24,7 +24,5 @@ configurator.add_select(
 configurator.add_select(
     "align", ["stretch", "center", "flex-end", "flex-start"], "stretch"
 )
-configurator.add_switch("grow", False)
-configurator.add_slider("gutter", "md")
 
 component = configurator.panel
