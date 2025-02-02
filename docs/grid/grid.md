@@ -78,7 +78,7 @@ Once children columns span and offset sum exceeds `columns` prop (defaults to 12
 ### Justify and Align
 
 Since grid is a flexbox container, you can control justify-content and align-items properties by using `justify` and 
-`align` props respectively.
+`align` props respectively. Note the minimum height set on column 2 and 3.
 
 ```python
 import dash_mantine_components as dmc
@@ -87,12 +87,12 @@ from dash import html
 dmc.Grid(
     children=[
         dmc.GridCol(html.Div("1"), span=4),
-        dmc.GridCol(html.Div("2"), span=4),
-        dmc.GridCol(html.Div("3"), span=4),
+        dmc.GridCol(html.Div("2", style={"minHeight":80}), span=4),
+        dmc.GridCol(html.Div("3", style={"minHeight":120}), span=4),
     ],
     justify="center",
-    align="center",
-    gutter="xl",
+    align="stretch",
+
 )
 ```
 
