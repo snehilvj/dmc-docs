@@ -227,20 +227,20 @@ files = [
 
 [[package]]
 name = "dash-mantine-components"
-version = "0.15.3"
+version = "1.0.0rc1"
 description = "Plotly Dash Components based on Mantine"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dash_mantine_components-0.15.3-py3-none-any.whl", hash = "sha256:a8ad002ba36848adbca66570383f10203b0edb3e87bdf38209e12b01c52db379"},
-    {file = "dash_mantine_components-0.15.3.tar.gz", hash = "sha256:265122b30370df46de2dabbe60824e3f0886085b04700677aa1713dfef0a549c"},
+    {file = "dash_mantine_components-1.0.0rc1-py3-none-any.whl", hash = "sha256:260a3750eb035c21bc7e6806dcafb8d5c2061ce50551ff6ff7d4a1878b34f17d"},
+    {file = "dash_mantine_components-1.0.0rc1.tar.gz", hash = "sha256:a97d4ca78c90d37b63709439529d64de79e23047b4d8c97640625fb1cfcf4a22"},
 ]
 
 [package.dependencies]
 dash = ">=2"
 
 [package.extras]
-dev = ["black", "build", "dash[ci,dev,testing] (>=2.0)", "pytest (<8.1.0)", "pyyaml (>=5.0)", "selenium (<4.3.0)", "wheel"]
+dev = ["black", "build", "dash[ci,dev,testing] (>=2)", "pytest (<8.1.0)", "pyyaml (>=5.0)", "selenium (<4.3.0)", "wheel"]
 
 [[package]]
 name = "dash-table"
@@ -480,13 +480,13 @@ typing-extensions = {version = "*", markers = "python_version < \"3.11\""}
 
 [[package]]
 name = "narwhals"
-version = "1.25.0"
+version = "1.25.2"
 description = "Extremely lightweight compatibility layer between dataframe libraries"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "narwhals-1.25.0-py3-none-any.whl", hash = "sha256:73c595179c95f1ebe87f2f8487b090223cde23409710a0f48a0f987c1f4ff775"},
-    {file = "narwhals-1.25.0.tar.gz", hash = "sha256:bce0f713831106dde3c7f66b610a104c9d0b7fba7739e8056f29f0aa831891ea"},
+    {file = "narwhals-1.25.2-py3-none-any.whl", hash = "sha256:e645f7fc1f8c0a3563a6cdcd0191586cdf88470ad90f0818abba7ceb6c181b00"},
+    {file = "narwhals-1.25.2.tar.gz", hash = "sha256:37594746fc06fe4a588967a34a2974b1f3a7ad6ff1571b6e31ac5e58c9591000"},
 ]
 
 [package.extras]
@@ -1129,4 +1129,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "0fb51f611390520d7bb163d68cc74ec25692d80a4a807b3c4544475d6bdc155d"
+content-hash = "57807d281d369c5e425d3072b44b71a32149bb8f9a33c6a436e160bdf6e5cadb"
