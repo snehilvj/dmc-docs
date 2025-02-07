@@ -1,7 +1,7 @@
 import dash
 from dash import Dash
 import dash_mantine_components as dmc
-
+print(dash.__version__)
 dash._dash_renderer._set_react_version("18.2.0")
 
 from components.appshell import create_appshell

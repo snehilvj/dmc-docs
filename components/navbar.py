@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 import dash_mantine_components as dmc
-from dash import callback, Input, Output, ALL, callback_context
+from dash import callback, Input, Output, ALL, callback_context, clientside_callback
 from dash_iconify import DashIconify
 
 from lib.constants import PRIMARY_COLOR
@@ -159,13 +159,19 @@ def create_navbar_drawer(data):
     )
 
 
-@callback(
-    Output({"type": "navlink_navbar", "index": ALL}, "active"),
-    Output({"type": "navlink_drawer", "index": ALL}, "active"),
-    Input("_pages_location", "pathname"),
+clientside_callback(
+    """(p) => {
+        dc = dash_clientside
+        old = document.querySelectorAll('.mantine-NavLink-root[data-active]')
+        if (old) {
+            old.forEach((el) => {
+                dc.set_props((el.id.includes('{') ? JSON.parse(el.id) : el.id), {active: false})
+            })
+        }
+        newId = document.querySelector(`.mantine-NavLink-root[href="${p.split('?')[0]}"]`)
+        if (newId) {
+            dc.set_props((newId.id.includes('{') ? JSON.parse(newId.id) : newId.id), {active: true})
+        }
+    }""",
+    Input('_pages_location', "pathname"),
 )
-def update_header(pathname):
-    return [
-        [control["id"]["index"] == pathname for control in outputs]
-        for outputs in callback_context.outputs_list
-    ]
