@@ -28,6 +28,29 @@ Here is an example of adding an `InputWapper` to the `Tree` component.
 
 .. exec::docs.inputwrapper.simple
 
+###  Avoid Unnecessary `InputWrapper` Usage  
+
+Most Mantine input components already include the `InputWrapper` internally, so you **should not** wrap them with `InputWrapper` yourself.  
+
+Instead, check the reference section for built-in props like `label`, `description`, and `error`, and use these props directly.
+
+**✅ Correct Usage: Use Component Props**
+```python
+dmc.Select(
+    label="My label",
+    description="My description"
+)
+```  
+
+**❌ Incorrect Usage: Avoid Wrapping with `InputWrapper`**
+```python
+# don't do this
+dmc.InputWrapper(
+    label="My label",
+    description="My description",
+    children=dmc.Select(...)  
+)
+```  
 
 ### Accessibility
 
