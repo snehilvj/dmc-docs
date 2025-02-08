@@ -81,6 +81,13 @@ layout = html.Div(
                     mx=0,
                     highlight=["more than 90 components"],
                 ),
+
+                dmc.Box([
+                    dmc.Text("Version Info:", ta="center"),
+                    dmc.Center(dmc.Anchor("dash-mantine-components=0.15.3" , underline=False, href="https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases", target='_blank')),
+                    dmc.Center(dmc.Anchor("mantine=7.16.2" , underline=False, href="https://mantine.dev/", target='_blank')),
+                ]),
+
                 dmc.Group(
                     [
                         dmc.Anchor(dmc.Button("Get Started"), href="/getting-started"),

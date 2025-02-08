@@ -7,13 +7,27 @@ dmc: false
 
 .. toc::
 
+## Version Info
+
+
+| Dash Mantine Components | Release Date  | Mantine Version |
+|-------------------------|--------------|----------------|
+| **0.15.0**             | Nov 2024     | 7.14.1         |
+| **0.14.0**             | Apr 2024     | 7.0            |
+| **0.13.0a1**           | Aug 2023     | 6.0            |
+| **0.12.0**             | Mar 2023     | 5.10.5         |
+
+
+
 ## Migrating from 0.15 to 1.0.0
+
+This release ensures dash-mantine-components V1 is fully compatible with both Dash 2 and Dash 3.
 
 We are currently testing 1.0.0rc1 with both dash 2.18.2 and dash 3.0.0rc1
 
 There are no known breaking changes.  If you encounter a problem, please open an issue in our [GitHub](https://github.com/snehilvj/dash-mantine-components/issues)
 
-If you are using dash-mantine-components<1.0.0rc1 you must  pin your dash version to < 3.0.0
+**If you are using dash-mantine-components<1.0.0rc1 you must  pin your dash version to < 3.0.0**
 
 
 ## Migrating from 0.14 to 0.15
