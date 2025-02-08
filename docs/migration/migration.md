@@ -7,6 +7,15 @@ dmc: false
 
 .. toc::
 
+## Migrating from 0.15 to 1.0.0
+
+We are currently testing 1.0.0rc1 with both dash 2.18.2 and dash 3.0.0rc1
+
+There are no known breaking changes.  If you encounter a problem, please open an issue in our [GitHub](https://github.com/snehilvj/dash-mantine-components/issues)
+
+If you are using dash-mantine-components<1.0.0rc1 you must  pin your dash version to < 3.0.0
+
+
 ## Migrating from 0.14 to 0.15
 
 The `DatePicker` component has been renamed to `DatePickerInput` to align with the component names of  the upstream
