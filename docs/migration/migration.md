@@ -7,15 +7,18 @@ dmc: false
 
 .. toc::
 
-## Version Info
 
+## Version Compatibility  
 
-| Dash Mantine Components | Release Date  | Mantine Version |
-|-------------------------|--------------|----------------|
-| **0.15.0**             | Nov 2024     | 7.14.1         |
-| **0.14.0**             | Apr 2024     | 7.0            |
-| **0.13.0a1**           | Aug 2023     | 6.0            |
-| **0.12.0**             | Mar 2023     | 5.10.5         |
+Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions:  
+
+| Dash Mantine Components | Release Date  | Mantine Version | Required Dash Version |
+|-------------------------|--------------|----------------|----|
+| **1.0.0rc1**           | Feb 2025     | 7.61.2         | `dash>=2.0.0` |
+| **0.15.0**             | Nov 2024     | 7.14.1         | `dash>=2.0.0,<3.0.0`|
+| **0.14.0**             | Apr 2024     | 7.0            | `dash>=2.0.0,<3.0.0` |
+| **0.13.0a1**           | Aug 2023     | 6.0            | `dash>=2.0.0,<3.0.0` |
+| **0.12.0**             | Mar 2023     | 5.10.5         | `dash>=2.0.0,<3.0.0` |
 
 
 
