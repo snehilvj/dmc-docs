@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dash = "^2.0.0"
+dash = "^3.0.0rc1"
 dash-iconify = "^0.1.0"
 requests = "^2.27.1"
 python-frontmatter = "^1.0.0"
