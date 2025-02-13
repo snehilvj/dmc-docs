@@ -46,6 +46,46 @@ To enable deselecting a radio chip, set `deselectable=True`
 
 .. exec::docs.radiogroup.deselectable
 
+
+### RadioIndicator
+
+`RadioIndicator` looks exactly the same as `Radio` component, but it does not have any semantic meaning, it's just a 
+visual representation of radio state. You can use it in any place where you need to display radio state without any 
+interaction related to the indicator. For example, it is useful in cards based on buttons, trees, etc.
+
+> Note that `RadioIndicator` cannot be focused or selected with keyboard. It is not accessible and should not be used as
+a replacement for Radio component.
+
+.. exec::docs.radiogroup.radioindicator
+
+
+### RadioCard
+
+RadioCard component can be used as a replacement for `Radio` to build custom cards/buttons/other things that work as
+radios. The root element of the component has `role="radio"` attribute, it is accessible by default and supports the
+same keyboard interactions as `input[type="radio"]`.
+
+
+.. exec::docs.radiogroup.radiocard
+
+
+
+### RadioCard with RadioGroup
+
+You can use `RadioCard` with `RadioGroup` the same way as `Radio` component.
+
+Note - do not set the `checked` prop in the `RadioIndicator` component otherwise the `RadioIndicator` will not be updated.
+This example also shows how to add hover styles
+
+.. exec::docs.radiogroup.radiocardgroup
+    :code: false
+
+.. sourcetabs::docs/radiogroup/radiocardgroup.py, assets/radiocard.css
+    :defaultExpanded: false
+    :withExpandedButton: true
+
+
+
 ### Styles API
 
 | Name         | Static selector             | Description                                 |
@@ -69,3 +109,13 @@ To enable deselecting a radio chip, set `deselectable=True`
 #### Radio
 
 .. kwargs::Radio
+
+
+#### RadioIndicator
+
+.. kwargs::RadioIndicator
+
+
+#### Radio
+
+.. kwargs::RadioCard
