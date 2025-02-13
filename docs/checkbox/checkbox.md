@@ -137,29 +137,49 @@ Use `value` property of the checkbox group in the callbacks.
 
 .. exec::docs.checkbox.group
 
+### CheckboxIndicator 
+
+`CheckboxIndicator` looks exactly the same as `Checkbox` component, but it does not have any semantic meaning, it's 
+just a visual representation of checkbox state. You can use it in any place where you need to display checkbox state 
+without any interaction related to the indicator. For example, it is useful in cards based on buttons, trees, etc.
+
+> Note that CheckboxIndicator cannot be focused or selected with keyboard. It is not accessible and should not be used as a replacement for Checkbox component.
+
+.. exec::docs.checkbox.checkboxindicator
+
+### CheckboxCard
+`CheckboxCard` component can be used as a replacement for `Checkbox` to build custom cards/buttons/other things that
+work as checkboxes. The root element of the component has `role="checkbox"` attribute, it is accessible by default 
+and supports the same keyboard interactions as `input[type="checkbox"]`.
+
+.. exec::docs.checkbox.checkboxcard
+
+### CheckboxCard with CheckboxGroup
+
+You can use `CheckboxCard` with `CheckboxGroup` the same way as `Checkbox` component.
+
+Note - do not set the `checked` prop in the `CheckboxIndicator` component otherwise the `CheckboxIndicator` will not be updated.
+This example also shows how to add hover styles
+
+.. exec::docs.checkbox.checkboxcardgroup
+    :code: false
+
+.. sourcetabs::docs/checkbox/checkboxcardgroup.py, assets/radiocard.css
+    :defaultExpanded: false
+    :withExpandedButton: true
+
+
 ### Example: Customize with Styles API
 
+
 .. exec::docs.mantine-api.styles-api
+    :code: false
+
+.. sourcetabs::docs/mantine-api/styles-api.py, assets/examples/checkbox.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
    
-The following is added to a `.css` file in the `/assets` folder
-```css
-
-.dmc-api-demo-root {
-  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
-  border-radius: var(--mantine-radius-md);
-  font-weight: 500;
-  cursor: pointer;
-
-  &[data-checked] {
-    background-color: var(--mantine-color-blue-filled);
-    border-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
-  }
-}
-
-``` 
-
 
 ### Styles API
 
