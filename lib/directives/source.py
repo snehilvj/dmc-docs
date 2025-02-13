@@ -26,10 +26,15 @@ class SC(SourceCode):
                     "fileName": os.path.basename(file),
                     "code": open(file, "r").read(),
                     "language": mapping[extension]["language"],
-                    "icon": mapping[extension]["icon"],
+                     # "icon": mapping[extension]["icon"],
                 }
             )
-        return dmc.CodeHighlightTabs(code=code, defaultExpanded=defaultExpanded=="true", withExpandButton=withExpandedButton=='true' )
+        return dmc.CodeHighlightTabs(
+            code=code,
+            defaultExpanded=defaultExpanded=="true",
+            withExpandButton=withExpandedButton=='true',
+            maxCollapsedHeight="325px",
+        )
 
 
 """
