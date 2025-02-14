@@ -47,7 +47,7 @@ To enable deselecting a radio chip, set `deselectable=True`
 .. exec::docs.radiogroup.deselectable
 
 
-### RadioIndicator
+### RadioIndicator component
 
 `RadioIndicator` looks exactly the same as `Radio` component, but it does not have any semantic meaning, it's just a 
 visual representation of radio state. You can use it in any place where you need to display radio state without any 
@@ -59,7 +59,7 @@ a replacement for Radio component.
 .. exec::docs.radiogroup.radioindicator
 
 
-### RadioCard
+### RadioCard component
 
 RadioCard component can be used as a replacement for `Radio` to build custom cards/buttons/other things that work as
 radios. The root element of the component has `role="radio"` attribute, it is accessible by default and supports the
@@ -88,17 +88,89 @@ This example also shows how to add hover styles
 
 ### Styles API
 
-| Name         | Static selector             | Description                                 |
-|:-------------|:----------------------------|:--------------------------------------------|
-| root         | .mantine-Radio-root         | Root element                                |
-| radio        | .mantine-Radio-radio        | Input element (`input[type="radio"]`)       |
-| icon         | .mantine-Radio-icon         | Radio icon, used to display checked icon    |
-| inner        | .mantine-Radio-inner        | Wrapper for `icon` and `input`              |
-| body         | .mantine-Radio-body         | Input body, contains all other elements     |
-| labelWrapper | .mantine-Radio-labelWrapper | Contains `label`, `description` and `error` |
-| label        | .mantine-Radio-label        | Label element                               |
-| description  | .mantine-Radio-description  | Description displayed below the label       |
-| error        | .mantine-Radio-error        | Error message displayed below the label     |
+#### Radio Selectors
+
+| Selector       | Static selector              | Description                           |
+|---------------|------------------------------|---------------------------------------|
+| root          | .mantine-Radio-root          | Root element                         |
+| radio         | .mantine-Radio-radio         | Input element (input[type="radio"])  |
+| icon          | .mantine-Radio-icon          | Radio icon, used to display checked icon |
+| inner         | .mantine-Radio-inner         | Wrapper for icon and input           |
+| body          | .mantine-Radio-body          | Input body, contains all other elements |
+| labelWrapper  | .mantine-Radio-labelWrapper  | Contains label, description, and error |
+| label         | .mantine-Radio-label         | Label element                        |
+| description   | .mantine-Radio-description   | Description displayed below the label |
+| error         | .mantine-Radio-error         | Error message displayed below the label |
+
+#### Radio CSS Variables
+
+| Selector | Variable           | Description                                |
+|----------|-------------------|--------------------------------------------|
+| root     | --radio-color     | Controls checked radio background-color   |
+|          | --radio-radius    | Controls radio border-radius              |
+|          | --radio-size      | Controls radio width and height           |
+|          | --radio-icon-color | Controls radio icon color                 |
+|          | --radio-icon-size  | Controls radio icon width and height      |
+
+#### Radio Data Attributes
+
+| Selector | Attribute           | Condition         | Value |
+|----------|--------------------|------------------|-------|
+| radio    | data-error         | `error` prop is set | –     |
+| inner    | data-label-position | –                | Value of `labelPosition` prop |
+
+#### RadioGroup Selectors
+
+| Selector    | Static selector               | Description                         |
+|------------|------------------------------|-------------------------------------|
+| root       | .mantine-RadioGroup-root     | Root element                       |
+| label      | .mantine-RadioGroup-label    | Label element                      |
+| required   | .mantine-RadioGroup-required | Required asterisk element, rendered inside label |
+| description | .mantine-RadioGroup-description | Description element                |
+| error      | .mantine-RadioGroup-error    | Error element                      |
+
+#### RadioIndicator Selectors
+
+| Selector   | Static selector                   | Description   |
+|------------|----------------------------------|---------------|
+| indicator  | .mantine-RadioIndicator-indicator | Root element  |
+| icon       | .mantine-RadioIndicator-icon     | Radio icon    |
+
+#### RadioIndicator CSS Variables
+
+| Selector   | Variable           | Description                                |
+|------------|-------------------|--------------------------------------------|
+| indicator  | --radio-color     | Controls checked radio background-color   |
+|            | --radio-radius    | Controls radio border-radius              |
+|            | --radio-size      | Controls radio width and height           |
+|            | --radio-icon-color | Controls radio icon color                 |
+|            | --radio-icon-size  | Controls radio icon width and height      |
+
+#### RadioIndicator Data Attributes
+
+| Selector   | Attribute     | Condition         |
+|------------|-------------|------------------|
+| indicator  | data-checked | `checked` prop is set |
+| indicator  | data-disabled | `disabled` prop is set |
+
+#### RadioCard Selectors
+
+| Selector | Static selector          | Description   |
+|----------|--------------------------|---------------|
+| card     | .mantine-RadioCard-card  | Root element  |
+
+#### RadioCard CSS Variables
+
+| Selector | Variable      | Description                  |
+|----------|-------------|------------------------------|
+| card     | --card-radius | Controls card border-radius |
+
+#### RadioCard Data Attributes
+
+| Selector | Attribute       | Condition                  |
+|----------|----------------|----------------------------|
+| card     | data-checked    | `checked` prop is set      |
+| card     | data-with-border | `withBorder` prop is set  |
 
 ### Keyword Arguments
 
@@ -116,6 +188,6 @@ This example also shows how to add hover styles
 .. kwargs::RadioIndicator
 
 
-#### Radio
+#### RadioCard
 
 .. kwargs::RadioCard

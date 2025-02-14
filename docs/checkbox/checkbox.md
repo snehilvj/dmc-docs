@@ -128,7 +128,7 @@ app.layout = dmc.MantineProvider(
 ```
 
 
-### Checkbox Group
+### Checkbox Group component
 
 Use CheckboxGroup component to create inputs with multiple checkbox elements and label, description, etc. You can use either
 the dmc.Group or dmc.Stack to customize the orientation and spacing of checkbox elements.
@@ -137,7 +137,7 @@ Use `value` property of the checkbox group in the callbacks.
 
 .. exec::docs.checkbox.group
 
-### CheckboxIndicator 
+### CheckboxIndicator component
 
 `CheckboxIndicator` looks exactly the same as `Checkbox` component, but it does not have any semantic meaning, it's 
 just a visual representation of checkbox state. You can use it in any place where you need to display checkbox state 
@@ -147,10 +147,12 @@ without any interaction related to the indicator. For example, it is useful in c
 
 .. exec::docs.checkbox.checkboxindicator
 
-### CheckboxCard
+### CheckboxCard component
 `CheckboxCard` component can be used as a replacement for `Checkbox` to build custom cards/buttons/other things that
 work as checkboxes. The root element of the component has `role="checkbox"` attribute, it is accessible by default 
 and supports the same keyboard interactions as `input[type="checkbox"]`.
+
+Note - do not set the `checked` prop in the `CheckboxIndicator` component otherwise the `CheckboxIndicator` will not be updated.
 
 .. exec::docs.checkbox.checkboxcard
 
@@ -189,48 +191,89 @@ For more information on styling components,  please also refer to the [Mantine S
 > Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://mantine.dev/core/checkbox/#styles-api)
 > lets you hover over selectors to see which elements they correspond to.
 
-
 #### Checkbox Selectors
 
 | Selector       | Static selector              | Description                                             |
-|----------------|--------------------------------|---------------------------------------------------------|
-| root           | .mantine-Checkbox-root         | Root element                                            |
-| input          | .mantine-Checkbox-input        | Input element (input[type="checkbox"])                  |
-| icon           | .mantine-Checkbox-icon         | Checkbox icon, used to display checkmark and indeterminate state icon |
-| inner          | .mantine-Checkbox-inner        | Wrapper for icon and input                              |
-| body           | .mantine-Checkbox-body         | Input body, contains all other elements                 |
-| labelWrapper   | .mantine-Checkbox-labelWrapper | Contains label, description, and error                  |
-| label          | .mantine-Checkbox-label        | Label element                                           |
-| description    | .mantine-Checkbox-description  | Description displayed below the label                   |
-| error          | .mantine-Checkbox-error        | Error message displayed below the label                 |
+|---------------|------------------------------|---------------------------------------------------------|
+| root          | .mantine-Checkbox-root       | Root element                                           |
+| input         | .mantine-Checkbox-input      | Input element (`input[type="checkbox"]`)               |
+| icon          | .mantine-Checkbox-icon       | Checkbox icon, used to display checkmark and indeterminate state icon |
+| inner         | .mantine-Checkbox-inner      | Wrapper for icon and input                             |
+| body          | .mantine-Checkbox-body       | Input body, contains all other elements                |
+| labelWrapper  | .mantine-Checkbox-labelWrapper | Contains label, description, and error              |
+| label         | .mantine-Checkbox-label      | Label element                                          |
+| description   | .mantine-Checkbox-description | Description displayed below the label                 |
+| error         | .mantine-Checkbox-error      | Error message displayed below the label               |
 
 #### Checkbox CSS Variables
 
-| Selector | Variable            | Description                                     |
-|----------|----------------------|-------------------------------------------------|
-| root     | --checkbox-color     | Controls checked checkbox background-color     |
-|          | --checkbox-radius    | Controls checkbox border-radius                |
-|          | --checkbox-size      | Controls checkbox width and height             |
-|          | --checkbox-icon-color| Controls checkbox icon color                   |
+| Selector | Variable              | Description                                |
+|----------|----------------------|--------------------------------------------|
+| root     | --checkbox-color     | Controls checked checkbox background-color |
+|          | --checkbox-radius    | Controls checkbox border-radius           |
+|          | --checkbox-size      | Controls checkbox width and height        |
+|          | --checkbox-icon-color | Controls checkbox icon color              |
 
 #### Checkbox Data Attributes
 
-| Selector | Attribute            | Condition                  | Value                             |
-|----------|-----------------------|-----------------------------|-----------------------------------|
-| root     | data-checked          | `checked` prop is set       | –                                 |
-| input    | data-error            | `error` prop is set         | –                                 |
-| input    | data-indeterminate    | `indeterminate` prop is set | –                                 |
-| inner    | data-label-position   | –                           | Value of `labelPosition` prop     |
+| Selector | Attribute          | Condition                | Value                      |
+|----------|-------------------|-------------------------|----------------------------|
+| root     | data-checked      | `checked` prop is set   | –                          |
+| input    | data-error        | `error` prop is set     | –                          |
+| input    | data-indeterminate | `indeterminate` prop is set | –                     |
+| inner    | data-label-position | –                      | Value of `labelPosition` prop |
 
-#### Checkbox.Group Selectors
+#### CheckboxGroup Selectors
 
-| Selector    | Static selector                   | Description                        |
-|-------------|------------------------------------|------------------------------------|
-| root        | .mantine-CheckboxGroup-root        | Root element                       |
-| label       | .mantine-CheckboxGroup-label       | Label element                      |
-| required    | .mantine-CheckboxGroup-required    | Required asterisk element, rendered inside label |
+| Selector    | Static selector               | Description                         |
+|------------|------------------------------|-------------------------------------|
+| root       | .mantine-CheckboxGroup-root  | Root element                       |
+| label      | .mantine-CheckboxGroup-label | Label element                      |
+| required   | .mantine-CheckboxGroup-required | Required asterisk element, rendered inside label |
 | description | .mantine-CheckboxGroup-description | Description element                |
-| error       | .mantine-CheckboxGroup-error       | Error element                      |
+| error      | .mantine-CheckboxGroup-error | Error element                      |
+
+#### CheckboxIndicator Selectors
+
+| Selector   | Static selector                     | Description   |
+|------------|------------------------------------|---------------|
+| indicator  | .mantine-CheckboxIndicator-indicator | Root element  |
+| icon       | .mantine-CheckboxIndicator-icon   | Checkbox icon |
+
+#### CheckboxIndicator CSS Variables
+
+| Selector   | Variable            | Description                                |
+|------------|--------------------|--------------------------------------------|
+| indicator  | --checkbox-color   | Controls checked checkbox background-color |
+|            | --checkbox-radius  | Controls checkbox border-radius           |
+|            | --checkbox-size    | Controls checkbox width and height        |
+|            | --checkbox-icon-color | Controls checkbox icon color          |
+
+#### CheckboxIndicator Data Attributes
+
+| Selector   | Attribute     | Condition         |
+|------------|-------------|------------------|
+| indicator  | data-checked | `checked` prop is set |
+| indicator  | data-disabled | `disabled` prop is set |
+
+#### CheckboxCard Selectors
+
+| Selector | Static selector            | Description   |
+|----------|----------------------------|---------------|
+| card     | .mantine-CheckboxCard-card | Root element  |
+
+#### CheckboxCard CSS Variables
+
+| Selector | Variable      | Description                  |
+|----------|-------------|------------------------------|
+| card     | --card-radius | Controls card border-radius |
+
+#### CheckboxCard Data Attributes
+
+| Selector | Attribute       | Condition                  |
+|----------|----------------|----------------------------|
+| card     | data-checked    | `checked` prop is set      |
+| card     | data-with-border | `withBorder` prop is set  |
 
 ### Keyword Arguments
 
@@ -241,3 +284,12 @@ For more information on styling components,  please also refer to the [Mantine S
 #### CheckboxGroup
 
 .. kwargs::CheckboxGroup
+
+
+#### CheckboxIndicator
+
+.. kwargs::CheckboxIndicator
+
+#### CheckboxCard
+
+.. kwargs::CheckboxCard
