@@ -1,0 +1,23 @@
+
+:root {
+  --my-light-dark-colors: aliceblue;
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --my-light-dark-colors: blue;
+}
+
+/*
+You can also use mantine colors
+
+:root {
+  --my-light-dark-colors: var(--mantine-color-blue-1);
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --my-light-dark-colors: var(--mantine-color-blue-1);
+}
+
+
+
+*/
