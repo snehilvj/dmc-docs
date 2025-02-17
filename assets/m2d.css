@@ -1,6 +1,6 @@
 h2.m2d-heading {
-    font-weight: 300;
-    font-size: 30px;
+    font-weight: 700;
+  /*  font-size: 30px; */
 }
 
 h5.m2d-heading {
@@ -10,15 +10,15 @@ h5.m2d-heading {
 }
 
 h4.m2d-heading {
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 h3.m2d-heading {
-    font-weight: 500;
-    margin-top: 40px;
-    font-size: 20px;
+    font-weight: 700;
+    margin-top: 60px;
+   /* font-size: 20px;*/
     margin-bottom: 15px;
 }
 
