@@ -7,3 +7,16 @@
  [data-mantine-color-scheme='dark'] .light-dark-demo {
      background-color: #ff6b6b
 }
+
+
+
+/*
+You can also use mantine colors
+
+.light-dark-demo {
+    background-color: var(--mantine-color-blue-1)
+}
+
+[data-mantine-color-scheme='dark'] .light-dark-demo {
+     background-color:  var(--mantine-color-blue-1)
+*/
