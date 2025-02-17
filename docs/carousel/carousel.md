@@ -195,11 +195,10 @@ Be sure to give a unique id to each carousel in the app.
 .. exec::docs.carousel.tabs
 
 
-### Limitation: draggable prop
-In dash-mantine-components version 0.14.7 and above, setting `draggable=False` has no effect. This happens because DMC
-uses a different version of Embla Carousel than the upstream Mantine library.
+### Limitation: draggable and speed Props
+As of DMC v0.14.7, the `draggable` and `speed` props no longer work because Embla Carousel v8 has removed them. These props
+will be removed in DMC v1.0.0
 
-We expect this to work again once Mantine upgrades to Embla Carousel v8.0 or later.
 
 ### Styles API
 

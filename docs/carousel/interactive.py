@@ -23,7 +23,6 @@ configurator.add_slider("controlsOffset", "sm")
 configurator.add_number_slider("controlSize", 26, min=14, max=60)
 configurator.add_switch("loop", True)
 configurator.add_switch("dragFree", False)
-configurator.add_switch("draggable", True)
 configurator.add_switch("withControls", True)
 configurator.add_switch("withIndicators", True)
 
