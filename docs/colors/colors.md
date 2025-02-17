@@ -224,6 +224,8 @@ background-color: light-dark(white, black);
 - The first argument applies in light mode.
 - The second argument applies in dark mode.
 
+Note that the light-dark() function is not supported in older browsers.
+
 .. exec::docs.colors.light-dark-function
 
 
