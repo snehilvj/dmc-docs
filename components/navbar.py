@@ -153,7 +153,7 @@ def create_navbar_drawer(data):
         offset=10,
         radius="md",
         withCloseButton=False,
-        size="75%",
+        size=350,
         children=create_content(data, "navlink_drawer"),
         trapFocus=False,
     )
