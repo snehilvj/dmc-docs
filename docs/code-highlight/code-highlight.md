@@ -58,6 +58,12 @@ The `code` prop is a list of dictionaries, where each dictionary defines a tab. 
 - `icon`: An optional component to display to the left of the fileName.
 
 
+**Limitations**
+
+In Dash 3.0, avoid using the `icon`  in tabs if your app includes a theme-switching component, as icons may cause errors when switching themes. 
+A fix for this issue may be introduced in a future Dash release.
+
+
 
 .. exec::docs.code-highlight.tabs
     :code: false
@@ -71,13 +77,13 @@ code = [
         "fileName": "demo.py",
         "code": demo_py, # your code string here
         "language": "python",
-        "icon": DashIconify(icon="vscode-icons:file-type-reactts", width=20),
+    #    "icon": DashIconify(icon="vscode-icons:file-type-python", width=20), don't use with dash 3
     },
     {
         "fileName": "styles.css",
         "code":styles_css, # your code string here
         "language": "css",
-        "icon": DashIconify(icon="vscode-icons:file-type-css", width=20),
+    #    "icon": DashIconify(icon="vscode-icons:file-type-css", width=20), don't use with dash 3
     },    
 ]
 

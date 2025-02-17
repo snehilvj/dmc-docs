@@ -1,0 +1,9 @@
+/* applied in light color-scheme */
+.light-dark-demo {
+    background-color: #ffec99
+}
+
+/* applied in dark color-scheme */
+ [data-mantine-color-scheme='dark'] .light-dark-demo {
+     background-color: #ff6b6b
+}

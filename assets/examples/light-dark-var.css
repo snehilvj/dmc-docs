@@ -1,0 +1,36 @@
+
+:root {
+  --my-light-dark-colors: aliceblue;
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --my-light-dark-colors: blue;
+}
+
+/*
+You can also use mantine colors
+
+:root {
+  --my-light-dark-colors: var(--mantine-color-blue-1);
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --my-light-dark-colors: var(--mantine-color-blue-1);
+}
+*/
+
+
+/*
+The  --mantine-color-body CSS variable is used for body background and as background color
+ of some components (Modal, Paper, etc.).  You can change it like this:
+
+:root {
+  --mantine-color-body: #f9f9f9;
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --mantine-color-body: #333;
+}
+
+
+*/

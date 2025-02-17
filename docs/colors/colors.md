@@ -212,6 +212,51 @@ You can combine both props to achieve better contrast between text and backgroun
 
 .. exec::docs.colors.color_c_props
 
+### Colors in light and dark mode
+
+#### Using light-dark() CSS Function
+The [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) function allows defining different styles for light and dark color schemes.
+
+```css
+background-color: light-dark(white, black);
+```
+
+- The first argument applies in light mode.
+- The second argument applies in dark mode.
+
+Note that the light-dark() function is not supported in older browsers.
+
+.. exec::docs.colors.light-dark-function
+
+
+#### CSS Class Names for Light/Dark Mode
+
+Since light-dark() is not supported in older browsers, you can use class-based styling instead:
+
+.. exec::docs.colors.light-dark
+    :code: false
+
+
+.. sourcetabs::docs/colors/light-dark.py, assets/examples/light-dark-demo.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+#### CSS Variables for Light/Dark Mode
+
+Defining CSS variables on the `:root` element allows global styling across your app, including the `body` element.
+
+Here is an example using a CSS variable:
+
+.. exec::docs.colors.light-dark-var
+    :code: false
+
+
+.. sourcetabs::docs/colors/light-dark-var.py, assets/examples/light-dark-var.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Default colors
 
 
