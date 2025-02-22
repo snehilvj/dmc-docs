@@ -26,8 +26,7 @@ class SC(SourceCode):
                     "fileName": os.path.basename(file),
                     "code": open(file, "r").read(),
                     "language": mapping[extension]["language"],
-                    # remove temporarily until bug in dash 3 is fixed. https://github.com/emilhe/dash-extensions-js/issues/5
-                    # "icon": mapping[extension]["icon"],
+                    "icon": mapping[extension]["icon"],
                 }
             )
         return dmc.CodeHighlightTabs(code=code, defaultExpanded=defaultExpanded=="true", withExpandButton=withExpandedButton=='true' )

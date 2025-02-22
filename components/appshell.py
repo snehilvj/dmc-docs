@@ -89,16 +89,15 @@ clientside_callback(
     Input("m2d-mantine-provider", "forceColorScheme"),
 )
 
-clientside_callback(
-    "function(colorScheme) {return colorScheme}",
-    Output("m2d-mantine-provider", "forceColorScheme"),
-    Input("color-scheme-storage", "data")
-)
+
 
 clientside_callback(
-    'function(n_clicks, theme) {return theme === "dark" ? "light" : "dark"}',
-    Output("color-scheme-storage", "data"),
-    Input("color-scheme-toggle", "n_clicks"),
-    State("color-scheme-storage", "data"),
-    prevent_initial_call=True,
+    """
+    (switchOn) => {
+       document.documentElement.setAttribute('data-mantine-color-scheme', switchOn ? 'dark' : 'light');
+       return window.dash_clientside.no_update
+    }
+    """,
+    Output("docs-color-scheme-switch", "id"),
+    Input("docs-color-scheme-switch", "checked"),
 )
