@@ -17,7 +17,7 @@ component = dmc.Group(
             label=dmc.Text("App data usage", size="xs", ta="center"),
         ),
         dmc.RingProgress(
-            id="ring-progress-label2",
+            id="ring-progress-label3",
             sections=[{"value": 60, "color": "green"}, {"value": 5, "color": "yellow"}],
             label=dmc.Center(
                 dmc.ActionIcon(

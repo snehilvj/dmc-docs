@@ -67,6 +67,15 @@ def create_search(data):
     )
 
 
+theme_toggle = dmc.Switch(
+    offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
+    onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
+    id="docs-color-scheme-switch",
+    persistence=True,
+    color="grey",
+    size="md"
+)
+
 def create_header(data):
     return dmc.AppShellHeader(
         px=25,
@@ -103,24 +112,7 @@ def create_header(data):
                                     create_link(
                                         "bi:discord", "https://discord.gg/KuJkh4Pyq5"
                                     ),
-                                    dmc.ActionIcon(
-                                        [
-                                            DashIconify(
-                                                icon="radix-icons:sun",
-                                                width=25,
-                                                id="light-theme-icon",
-                                            ),
-                                            DashIconify(
-                                                icon="radix-icons:moon",
-                                                width=25,
-                                                id="dark-theme-icon",
-                                            ),
-                                        ],
-                                        variant="transparent",
-                                        color="yellow",
-                                        id="color-scheme-toggle",
-                                        size="lg",
-                                    ),
+                                    theme_toggle,
                                     dmc.ActionIcon(
                                         DashIconify(
                                             icon="radix-icons:hamburger-menu",
