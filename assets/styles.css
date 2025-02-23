@@ -154,20 +154,6 @@ input:invalid {
 }
 
 
-.dmc-api-demo-root {
-  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
-  border-radius: var(--mantine-radius-md);
-  font-weight: 500;
-  cursor: pointer;
-
-  &[data-checked] {
-    background-color: var(--mantine-color-blue-filled);
-    border-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
-  }
-}
-
 .media-query-demo  {
   background-color: var(--mantine-color-blue-filled);
   color: var(--mantine-color-white);
