@@ -60,6 +60,11 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
+Font Explorer
+Explore and preview different fonts with this interactive example. The application allows you to select from various font families and see how they look in both regular text and code blocks. It also includes a theme switch to toggle between light and dark modes.
+.. exec::docs.typography.font_options
+    :code: false
+
 ### System fonts
 By default, Mantine uses system fonts. It means that different devices will display components based on available font,
 for example, macOS and iOS users will see San Francisco font, Windows users will see Segoe UI font, Android users will
