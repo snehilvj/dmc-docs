@@ -7,12 +7,12 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dash = "^3.0.0rc1"
+dash = "^3.0.0rc3"
 dash-iconify = "^0.1.0"
 requests = "^2.27.1"
 python-frontmatter = "^1.0.0"
-dash-mantine-components = "1.0.0rc1"
-markdown2dash = {git = "https://github.com/AnnMarieW/markdown2dash-amw.git"}
+dash-mantine-components = "1.0.0rc2"
+markdown2dash = "0.1.2"
 pydantic = "^2.3.0"
 gunicorn = "^21.2.0"
 pandas = "^2.2.3"
