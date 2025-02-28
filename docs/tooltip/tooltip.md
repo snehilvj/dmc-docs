@@ -120,15 +120,6 @@ dmc.Tooltip(
 )
 
 ```
-### Change Events
-
-Events that trigger tooltip can be changed with events prop, it accepts an dictionary with the following properties that determine which events will trigger tooltip:
-
-- hover – mouse hover event, true by default
-- focus – focus/blur events excluding clicks on the target element, false by default
-- touch – events for touchscreen devices,  false by default 
-
-.. exec::docs.tooltip.events
 
 ### Multiline
 
