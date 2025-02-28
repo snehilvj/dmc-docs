@@ -12,7 +12,7 @@ component = dmc.Group(
             dmc.Button("With size", variant="outline"),
             label="Arrow with size",
             withArrow=True,
-            arrowSize=6,
+            arrowSize=12,
             opened=True,
         ),
     ],
