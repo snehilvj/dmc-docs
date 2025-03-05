@@ -43,6 +43,7 @@ def create_main_link(icon, label, href, id):
         label=label,
         href=href,
         id=id,
+        active="exact"
     )
 
 
@@ -97,6 +98,7 @@ def create_content(data, idtype):
                 className="navbar-link",
                 pl=30,
                 id={"type": idtype, "index": entry["path"]},
+                active="exact"
             )
             links[entry["category"]].append(link)
 
@@ -157,21 +159,3 @@ def create_navbar_drawer(data):
         children=create_content(data, "navlink_drawer"),
         trapFocus=False,
     )
-
-
-clientside_callback(
-    """(p) => {
-        dc = dash_clientside
-        old = document.querySelectorAll('.mantine-NavLink-root[data-active]')
-        if (old) {
-            old.forEach((el) => {
-                dc.set_props((el.id.includes('{') ? JSON.parse(el.id) : el.id), {active: false})
-            })
-        }
-        newId = document.querySelector(`.mantine-NavLink-root[href="${p.split('?')[0]}"]`)
-        if (newId) {
-            dc.set_props((newId.id.includes('{') ? JSON.parse(newId.id) : newId.id), {active: true})
-        }
-    }""",
-    Input('_pages_location', "pathname"),
-)
