@@ -5,5 +5,5 @@ component = dmc.LineChart(
     h=300,
     dataKey="date",
     data=data,
-    series=[{"name": "Apples", "color": "var(--area-color)"}],
+    series=[{"name": "Apples", "color": "var(--chart-color)"}],
 )

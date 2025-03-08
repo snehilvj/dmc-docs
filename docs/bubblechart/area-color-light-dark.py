@@ -6,6 +6,6 @@ component = dmc.BubbleChart(
     data=data,
     range=[16, 225],
     label="Sales/hour",
-    color="var(--area-color)",
+    color="var(--chart-color)",
     dataKey={"x": "hour", "y": "index", "z": "value"}
 )

@@ -166,7 +166,7 @@ Example of bar area color that is dark orange in light mode and lime in dark mod
     :code: false
 
 
-.. sourcetabs::docs/barchart/area-color-light-dark.py, assets/examples/area-color.css
+.. sourcetabs::docs/barchart/area-color-light-dark.py, assets/examples/chart-color.css
     :defaultExpanded: true
     :withExpandedButton: true
 
@@ -203,7 +203,7 @@ With CSS , you can change colors depending on color scheme.  Learn more in the T
     :defaultExpanded: true
     :withExpandedButton: true
 
-If your application has only one color scheme, you can use gridColor and textColor props instead of CSS variables:
+If your application has only one color scheme, you can use `gridColor` and `textColor` props instead of CSS variables:
 
 ```python
 dmc.BarChart(

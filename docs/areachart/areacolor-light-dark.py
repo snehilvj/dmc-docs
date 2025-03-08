@@ -6,6 +6,6 @@ component = dmc.AreaChart(
     dataKey="date",
     data=data,
     withGradient=True,
-    series=[{"name": "Apples", "color": "var(--area-color)"}],
+    series=[{"name": "Apples", "color": "var(--chart-color)"}],
 )
 

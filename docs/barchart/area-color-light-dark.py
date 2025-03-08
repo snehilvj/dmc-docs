@@ -5,5 +5,5 @@ component = dmc.BarChart(
     h=300,
     dataKey="date",
     data=data,
-    series=[{"name": "Smartphones", "color": "var(--area-color)"}],
+    series=[{"name": "Smartphones", "color": "var(--chart-color)"}],
 )
