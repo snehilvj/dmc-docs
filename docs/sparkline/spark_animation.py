@@ -9,6 +9,7 @@ component = dmc.Box(
             h=60,
             data=[],
             areaProps={"isAnimationActive": True},
+            color="blue",
             id="spark-animation",
         ),
     ]

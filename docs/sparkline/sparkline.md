@@ -46,6 +46,21 @@ Use `trendColors` prop instead of `color` to change chart color depending on the
 .. exec::docs.sparkline.trendcolors
 
 
+### Change area color depending on color scheme
+You can use CSS variables in color property. Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+Example of area color that is dark orange in light mode and lime in dark mode:
+
+
+.. exec::docs.sparkline.areacolor-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/sparkline/areacolor-light-dark.py, assets/examples/chart-color.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Sparkline animation
 By default, the Recharts data animation is disabled. To enable and customize the animation, use `areaProps` to pass properties to the Recharts `Area` component.
 
