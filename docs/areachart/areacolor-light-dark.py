@@ -1,8 +1,6 @@
 import dash_mantine_components as dmc
 from .data import data
 
-
-
 component = dmc.AreaChart(
     h=300,
     dataKey="date",
