@@ -1,0 +1,8 @@
+:root {
+   --chart-color: var(--mantine-color-orange-8)
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --chart-color: var(--mantine-color-lime-4);
+}
+

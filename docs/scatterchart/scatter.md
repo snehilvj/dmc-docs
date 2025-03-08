@@ -181,6 +181,38 @@ and 5px gaps.
 
 .. exec::docs.scatterchart.strokedasharray
 
+
+### Grid and text colors
+Use `--chart-grid-color` and `--chart-text-color` to change colors of grid lines and text within the chart. 
+With CSS , you can change colors depending on color scheme.  Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+
+
+.. exec::docs.scatterchart.grid-text-color-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/scatterchart/grid-text-color-light-dark.py, assets/examples/chart-grid-text-colors.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+If your application has only one color scheme, you can use `gridColor` and `textColor` props instead of CSS variables:
+
+```python
+
+dmc.ScatterChart(
+    h=300,
+    data=data1,
+    dataKey={"x": "age", "y": "BMI"},
+    tickLine="xy",
+    xAxisLabel="Age",
+    yAxisLabel="BMI",
+    gridColor="gray.5",
+    textColor = "gray.9",
+)
+
+```
+
 ### Units
 Set `unit` prop to render a unit label next to the y-axis ticks and tooltip values:
 

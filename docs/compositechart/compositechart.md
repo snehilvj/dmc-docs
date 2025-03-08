@@ -133,10 +133,62 @@ You can reference colors from theme the same way as in other components, for exa
 
 .. exec::docs.compositechart.chartcolor
 
+
+
+### Change chart color depending on color scheme
+You can use CSS variables in color property. Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+Example of line color that is dark orange in light mode and lime in dark mode:
+
+
+.. exec::docs.compositechart.line-color-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/compositechart/line-color-light-dark.py, assets/examples/chart-color.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Stroke dash array
 Set `strokeDasharray` prop to control the stroke dash array of the grid and cursor lines. The value represent the lengths of alternating dashes and gaps. For example, strokeDasharray="10 5" will render a dashed line with 10px dashes and 5px gaps.
 
 .. exec::docs.compositechart.strokedasharray
+
+
+
+### Grid and text colors
+Use `--chart-grid-color` and `--chart-text-color` to change colors of grid lines and text within the chart. 
+With CSS , you can change colors depending on color scheme.  Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+.. exec::docs.compositechart.grid-text-color-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/compositechart/grid-text-color-light-dark.py, assets/examples/chart-grid-text-colors.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+If your application has only one color scheme, you can use `gridColor` and `textColor` props instead of CSS variables:
+
+```python
+dmc.CompositeChart(
+    h=300,
+    dataKey="date",
+    data=data,
+    maxBarWidth=30,
+    gridColor="gray.5",
+    textColor="gray.9",
+    series=[
+        {"name": "Tomatoes", "color": "rgba(18, 120, 255, 0.2)", "type": "bar"},
+        {"name": "Apples", "color": "red.8", "type": "line"},
+        {"name": "Oranges", "color": "yellow.8", "type": "area"},
+    ]
+)
+
+```
+
+
 
 
 ### Tooltip animation
