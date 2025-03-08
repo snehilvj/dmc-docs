@@ -196,6 +196,21 @@ dmc.AreaChart(
 
 ```
 
+### Change area color depending on color scheme
+You can use CSS variables in color property. Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+Example of area that is dark orange in light mode and lime in dark mode:
+
+
+.. exec::docs.areachart.areacolor-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/areachart/areacolor-light-dark.py, assets/examples/area-color.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Stroke dash array
 Set `strokeDasharray` prop to control the stroke dash array of the grid and cursor lines. The value represent the
 lengths of alternating dashes and gaps. For example, strokeDasharray="10 5" will render a dashed line with 10px dashes
@@ -203,6 +218,38 @@ and 5px gaps.
 
 
 .. exec::docs.areachart.strokedasharray
+
+### Grid and text colors
+Use `--chart-grid-color` and `--chart-text-color` to change colors of grid lines and text within the chart. 
+With CSS , you can change colors depending on color scheme.  Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+
+
+.. exec::docs.areachart.grid-text-color-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/areachart/grid-text-color-light-dark.py, assets/examples/chart-grid-text-colors.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+If your application has only one color scheme, you can use gridColor and textColor props instead of CSS variables:
+
+```python
+dmc.AreaChart(
+    h=300,
+    dataKey="date",
+    data=data,
+    type="stacked",
+    gridColor="gray.5",
+    textColor = "gray.9",
+    series=[
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"},
+    ],
+)
+```
 
 ### Tooltip animation
 By default, tooltip animation is disabled. To enable it, set `tooltipAnimationDuration` prop to a number of

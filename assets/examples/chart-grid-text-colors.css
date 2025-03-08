@@ -1,0 +1,10 @@
+
+.chart-grid-text-colors {
+  --chart-grid-color: var(--mantine-color-blue-5);
+  --chart-text-color: var(--mantine-color-blue-8);
+}
+
+[data-mantine-color-scheme='dark'] .chart-grid-text-colors {
+  --chart-grid-color: var(--mantine-color-blue-3);
+  --chart-text-color: var(--mantine-color-blue-2);
+}

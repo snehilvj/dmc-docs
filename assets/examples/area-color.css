@@ -1,0 +1,8 @@
+:root {
+   --area-color: var(--mantine-color-orange-8)
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --area-color: var(--mantine-color-lime-4);
+}
+
