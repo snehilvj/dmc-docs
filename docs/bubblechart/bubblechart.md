@@ -38,6 +38,51 @@ You can reference colors from theme the same way as in other components, for exa
 .. exec::docs.bubblechart.interactive
     :code: false
 
+
+### Change line color depending on color scheme
+You can use CSS variables in color property. Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+Example of line color that is dark orange in light mode and lime in dark mode:
+
+
+.. exec::docs.bubblechart.area-color-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/bubblechart/area-color-light-dark.py, assets/examples/area-color.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
+### Grid and text colors
+Use `--chart-grid-color` and `--chart-text-color` to change colors of grid lines and text within the chart. 
+With CSS , you can change colors depending on color scheme.  Learn more in the Theming section under [Colors.](/colors#colors-in-light-and-dark-mode)
+
+.. exec::docs.bubblechart.grid-text-color-light-dark
+    :code: false
+
+
+.. sourcetabs::docs/bubblechart/grid-text-color-light-dark.py, assets/examples/chart-grid-text-colors.css
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+If your application has only one color scheme, you can use gridColor and textColor props instead of CSS variables:
+
+```python
+dmc.BubbleChart(
+    gridColor="gray.5",
+    textColor="gray.9",
+    h=60,
+    data=data,
+    range=[16, 225],
+    label="Sales/hour",
+    color="lime.6",
+    dataKey={"x": "hour", "y": "index", "z": "value"}
+)
+
+```
+
 ### Remove tooltip
 To remove tooltip, set `withTooltip=False`. It also removes the cursor line and disables interactions with the chart.
 
