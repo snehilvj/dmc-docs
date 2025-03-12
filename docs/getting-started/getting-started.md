@@ -34,7 +34,8 @@ components.
    :icon: radix-icons:info-circled
    :color: red
 
-   Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before starting up the app.
+   Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before
+   starting up the app when using dash < 3.0.
 
 
 .. admonition::CSS Extensions
@@ -47,6 +48,8 @@ components.
 ```python
 import dash_mantine_components as dmc
 from dash import Dash, _dash_renderer
+
+# this is optional when using dash >3.0.0
 _dash_renderer._set_react_version("18.2.0")
 
 app = Dash(external_stylesheets=dmc.styles.ALL)
