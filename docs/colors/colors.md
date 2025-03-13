@@ -131,7 +131,7 @@ This example changed the default primary color to `green`:
 
 ```python
 dmc.MantineProvider(
-    theme={"defaultColor": "green"},
+    theme={"primaryColor": "green"},
     children=[] # your layout here
     
 )

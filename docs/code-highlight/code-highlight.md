@@ -70,13 +70,13 @@ code = [
         "fileName": "demo.py",
         "code": demo_py, # your code string here
         "language": "python",
-        "icon": DashIconify(icon="vscode-icons:file-type-python", width=20), don't use with dash 3
+        "icon": DashIconify(icon="vscode-icons:file-type-python", width=20), 
     },
     {
         "fileName": "styles.css",
         "code":styles_css, # your code string here
         "language": "css",
-        "icon": DashIconify(icon="vscode-icons:file-type-css", width=20), don't use with dash 3
+        "icon": DashIconify(icon="vscode-icons:file-type-css", width=20), 
     },    
 ]
 
