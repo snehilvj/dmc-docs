@@ -59,16 +59,46 @@ dmc.Table(
 
 ### Styles API
 
-| Name    | Static selector        | Description                                   |
-|:--------|:-----------------------|:----------------------------------------------|
-| table   | .mantine-Table-table   | Root `table` element (`Table` component)      |
-| thead   | .mantine-Table-thead   | `thead` element (`Table.Thead` component)     |
-| tbody   | .mantine-Table-tbody   | `tbody` element (`Table.Tbody` component)     |
-| tfoot   | .mantine-Table-tfoot   | `tfoot` element (`Table.Tfoot` component)     |
-| tr      | .mantine-Table-tr      | `tr` element (`Table.Tr` component)           |
-| th      | .mantine-Table-th      | `th` element (`Table.Th` component)           |
-| td      | .mantine-Table-td      | `td` element (`Table.Td` component)           |
-| caption | .mantine-Table-caption | `caption` element (`Table.Caption` component) |
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### Selectors
+
+| Selector  | Static selector             | Description |
+|-----------|-----------------------------|-------------|
+| `table`   | `.mantine-Table-table`      | Root table element (Table component) |
+| `thead`   | `.mantine-Table-thead`      | `<thead>` element (Table.Thead component) |
+| `tbody`   | `.mantine-Table-tbody`      | `<tbody>` element (Table.Tbody component) |
+| `tfoot`   | `.mantine-Table-tfoot`      | `<tfoot>` element (Table.Tfoot component) |
+| `tr`      | `.mantine-Table-tr`         | `<tr>` element (Table.Tr component) |
+| `th`      | `.mantine-Table-th`         | `<th>` element (Table.Th component) |
+| `td`      | `.mantine-Table-td`         | `<td>` element (Table.Td component) |
+| `caption` | `.mantine-Table-caption`    | `<caption>` element (Table.Caption component) |
+
+#### CSS Variables
+
+| Selector | Variable | Description |
+|----------|----------|-------------|
+| `table`  | `--table-border-color` | Controls border color of all elements inside table |
+| `table`  | `--table-layout` | Controls `table-layout` of the table element, `auto` by default |
+| `table`  | `--table-caption-side` | Controls `caption-side` of the table element, `bottom` by default |
+| `table`  | `--table-horizontal-spacing` | Controls `padding-left` and `padding-right` of Table.Th and Table.Td elements |
+| `table`  | `--table-vertical-spacing` | Controls `padding-top` and `padding-bottom` of Table.Td and Table.Th elements |
+| `table`  | `--table-striped-color` | Controls `background-color` of even/odd Table.Tr elements |
+| `table`  | `--table-highlight-on-hover-color` | Controls `background-color` of Table.Tr elements when hovered |
+| `table`  | `--table-sticky-header-offset` | Controls top offset of sticky header |
+
+#### Data Attributes
+
+| Selector | Attribute | Condition | Value |
+|----------|-----------|------------|-------|
+| `table`  | `data-with-table-border` | `withTableBorder` prop is set on Table component | – |
+| `th`, `td` | `data-with-column-border` | `withColumnsBorder` prop is set on Table component | – |
+| `tr`      | `data-with-row-border` | `withRowsBorder` prop is set on Table component | – |
+| `tr`      | `data-striped` | `striped` prop is set on Table component | `odd` \| `even` |
+| `tr`      | `data-hover` | `highlightOnHover` prop is set on Table component | – |
+| `tr`      | `data-size` | – | Value of `captionSize` prop on Table component |
 
 ### Keyword Arguments
 

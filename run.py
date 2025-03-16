@@ -1,19 +1,10 @@
 import dash
 from dash import Dash
 import dash_mantine_components as dmc
-print(dash.__version__)
+print(dash.__version__, dmc.__version__)
 dash._dash_renderer._set_react_version("18.2.0")
 
 from components.appshell import create_appshell
-
-stylesheets = [
-    dmc.styles.DATES,
-    dmc.styles.CODE_HIGHLIGHT,
-    dmc.styles.CHARTS,
-    dmc.styles.CAROUSEL,
-    dmc.styles.NOTIFICATIONS,
-    dmc.styles.NPROGRESS,
-]
 
 scripts = [
     "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
@@ -29,7 +20,7 @@ app = Dash(
     suppress_callback_exceptions=True,
     use_pages=True,
     external_scripts=scripts,
-    external_stylesheets=stylesheets,
+    external_stylesheets=dmc.styles.ALL,
     update_title=None,
 )
 
