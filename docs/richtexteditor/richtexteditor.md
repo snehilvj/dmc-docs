@@ -51,6 +51,44 @@ The `RichTextEditor` component is built on top of the [Tiptap editor](https://ti
 
 
 
+
+### JSON or HTML Content  
+
+The editor supports content in either JSON (ProseMirror) or HTML format. You can specify the format using the `json`
+or `html` prop. If both props are set, `json` takes precedence.  
+
+#### When to Use Each Format:  
+- **JSON (ProseMirror)**: Ideal for structured data storage (databases, APIs) or programmatic content manipulation (e.g., dynamically adding elements).  
+- **HTML**: Useful for direct rendering in a browser, email clients, or using with components like `dcc.Markdown`.  
+
+Note that the schema is very strict.  For example, if you use `This is <strong>important</strong>`, but don’t have any 
+extension that handles strong tags, you’ll only see `This is important` – without the bold formatting..
+
+For details on the schema and ProseMirror format, see the [Tiptap documentation](https://tiptap.dev/docs/editor/core-concepts/schema).
+
+Try editing the content in this example to see the JSON and HTML format:
+.. exec::docs.richtexteditor.content
+
+### Selected text
+
+The `selected` prop contains the currently selected text.  Note that it is text only and does not include any formatting.
+
+.. exec::docs.richtexteditor.selected
+
+### Debounce
+
+The `debounce` prop controls how updates to the `html`, `json`, and `selected` props are triggered in the `RichTextEditor`.
+
+Enabling debounce helps prevent excessive callbacks by delaying updates until the user stops interacting. If set to
+`True`, updates occur only when the editor loses focus. Alternatively, you can specify a delay in milliseconds to
+fine-tune when updates should be sent.
+
+```python
+dmc.RichTextEditor(       
+     debounce=500   # # Delay updates by 500ms 
+)
+```
+
 ### TipTap Extensions
 
 TipTab Extension enable additional features. By default `exentsions=["StarterKit"]`
