@@ -10,6 +10,7 @@ component = dmc.RichTextEditor(
     ],
     toolbar={
         "sticky": True,
+        "stickyOffset": 60,
         "controlsGroups": [
             [
                 "Bold",

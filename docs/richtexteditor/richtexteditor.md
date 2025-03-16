@@ -293,6 +293,14 @@ To display images, you will need to include the following extensions:
 
 .. exec::docs.richtexteditor.image
 
+
+### Sticky toolbar
+Set `sticky` prop on `RichTextEditor` `toolbar` prop to make toolbar sticky, control top property with `stickyOffset`. 
+For example, in the dmc docs website there is a header with 60px height, in this case we will need to set 
+`stickyOffset=60` to make sticky position correctly with fixed positioned header element.
+
+Note the sticky toolbar in the labels example below.
+
 ### Labels and localization
 `RichTextEditor` supports changing labels for all controls with labels prop:
 
@@ -357,4 +365,5 @@ default_labels = {
     "colorPickerColorLabel": "Set text color",  # function returns "Set text color {color}"
 }
 ```
+
 
