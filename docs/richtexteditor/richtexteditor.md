@@ -62,7 +62,7 @@ or `html` prop. If both props are set, `json` takes precedence.
 - **HTML**: Useful for direct rendering in a browser, email clients, or using with components like `dcc.Markdown`.  
 
 Note that the schema is very strict.  For example, if you use `This is <strong>important</strong>`, but don’t have any 
-extension that handles strong tags, you’ll only see `This is important` – without the bold formatting..
+[extension](/components/richtexteditor#tiptap-extensions) that handles strong tags, you’ll only see `This is important` – without the bold formatting..
 
 For details on the schema and ProseMirror format, see the [Tiptap documentation](https://tiptap.dev/docs/editor/core-concepts/schema).
 
@@ -211,12 +211,6 @@ Here are the control icons available for use in the `toolbar`:
 
 
 
-### Subtle Variant  
-
-`variant="subtle"` removes borders from the controls groups, makes controls larger and reduces spacing of the toolbar:
-
-.. exec::docs.richtexteditor.variant
-
 ### Placeholder
 
 To use the placeholder, include (at least) the following extensions:
@@ -257,7 +251,6 @@ You can use the following toolbar controls to change text color:
 .. exec::docs.richtexteditor.text_color
 
 ### Table
-
 
 To display tables, you will need to include the following extensions:
 
@@ -365,6 +358,14 @@ default_labels = {
     "colorPickerColorLabel": "Set text color",  # function returns "Set text color {color}"
 }
 ```
+
+
+### Subtle Variant  
+
+`variant="subtle"` removes borders from the controls groups, makes controls larger and reduces spacing of the toolbar:
+
+.. exec::docs.richtexteditor.variant
+
 
 ### Typography styles
 By default, `RichTextEditor` renders content with `TypographyStylesProvider` and some additional styles. You can disable
