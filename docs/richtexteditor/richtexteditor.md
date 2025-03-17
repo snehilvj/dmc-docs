@@ -366,6 +366,16 @@ default_labels = {
 }
 ```
 
+### Typography styles
+By default, `RichTextEditor` renders content with `TypographyStylesProvider` and some additional styles. You can disable
+these styles by setting `withTypographyStyles=False`.  Then you can add your own CSS files, or style with the Styles API.
+
+
+```python
+ dmc.RichTextEditor(       
+     withTypographyStyles=False
+)
+```
 
 ### Styles API
 
