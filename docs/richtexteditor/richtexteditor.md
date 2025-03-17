@@ -367,3 +367,39 @@ default_labels = {
 ```
 
 
+### Styles API
+
+This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
+For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+
+#### RichTextEditor Selectors
+
+| Selector                         | Static Selector                                         | Description |
+|----------------------------------|------------------------------------------------------|-------------|
+| `root`                           | `.mantine-RichTextEditor-root`                        | Root element |
+| `toolbar`                        | `.mantine-RichTextEditor-toolbar`                     | Toolbar element |
+| `content`                        | `.mantine-RichTextEditor-content`                     | Content area |
+| `typographyStylesProvider`       | `.mantine-RichTextEditor-typographyStylesProvider`    | TypographyStylesProvider component, wraps content |
+| `control`                        | `.mantine-RichTextEditor-control`                     | `RichTextEditor.Control` root element, used as a base for all controls |
+| `controlIcon`                    | `.mantine-RichTextEditor-controlIcon`                 | Control icon element |
+| `controlsGroup`                  | `.mantine-RichTextEditor-controlsGroup`               | `RichTextEditor.ControlsGroup` component root |
+| `linkEditor`                     | `.mantine-RichTextEditor-linkEditor`                  | Link editor root element |
+| `linkEditorSave`                 | `.mantine-RichTextEditor-linkEditorSave`              | Link editor save button |
+| `linkEditorInput`                | `.mantine-RichTextEditor-linkEditorInput`             | Link editor URL input |
+| `linkEditorExternalControl`      | `.mantine-RichTextEditor-linkEditorExternalControl`   | Link editor external button |
+| `linkEditorDropdown`             | `.mantine-RichTextEditor-linkEditorDropdown`          | Link editor popover dropdown element |
+
+### RichTextEditor Data Attributes
+
+| Selector  | Attribute     | Condition                 |
+|-----------|--------------|---------------------------|
+| `control` | `data-active` | Control is active        |
+
+### Keyword Arguments
+
+#### RichTextEditor
+
+.. kwargs::RichTextEditor
+
+
+
