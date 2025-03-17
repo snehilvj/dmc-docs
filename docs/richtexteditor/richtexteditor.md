@@ -54,7 +54,7 @@ The `RichTextEditor` component is built on top of the [Tiptap editor](https://ti
 
 ### JSON or HTML Content  
 
-The editor supports content in either JSON (ProseMirror) or HTML format. You can specify the format using the `json`
+The editor supports content in either [JSON (ProseMirror) or HTML format](https://tiptap.dev/docs/editor/core-concepts/schema). You can specify the format using the `json`
 or `html` prop. If both props are set, `json` takes precedence.  
 
 #### When to Use Each Format:  
@@ -88,63 +88,62 @@ dmc.RichTextEditor(
      debounce=500   # # Delay updates by 500ms 
 )
 ```
+### TipTap Extensions  
 
-### TipTap Extensions
+Extensions enable additional features in TipTap. By default, `extensions=["StarterKit"]`.  
 
-TipTab Extension enable additional features. By default `exentsions=["StarterKit"]`
+Each extension can be specified in two ways:  
+- As a **string** for default settings (e.g., `"Color"`)  
+- As a **dictionary** with configuration options (e.g., `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
 
-Each item can be either a string with the extension name (for example 'Color') or a dictionary with the extension name
-as key and options as value (For example `{'TextAlign': {'types': ['heading', 'paragraph']}})`. 
+For a full list of available extensions and their configuration options, refer to the [Tiptap documentation](https://tiptap.dev/docs/extensions).
+
+Below are the extensions currently supported in DMC, along with example configuration options:
 
 ```python
  dmc.RichTextEditor(       
-     extensions=[
-         "StarterKit",
-         {"TextAlign": {"types": ["heading", "paragraph"]}},
-         # other extensions,
-     ],
+     extensions = [
+        "StarterKit",
+        "Underline",
+        "Link",
+        "Superscript",
+        "Subscript",
+        "Highlight",
+        "Table",
+        "TableCell",
+        "TableHeader",
+        "TableRow",
+        {"TextAlign": {"types": ["heading", "paragraph"]}},
+        {"Placeholder": {"placeholder": "Write something..."}},
+        "Color",
+        "TextStyle",
+        "Image",
+    ]
 )
 ```
-These are the extensions currently available in DMC:
 
-- StarterKit
-- Underline
-- Link
-- Superscript
-- Subscript
-- Highlight
-- Table,
--  TableCell,
--  TableHeader, 
--  TableRow,
--  TextAlign,
--  Placeholder,
--  Color,
--  TextStyle,
--  Image
+The `StarterKit` includes the following extensions:
 
-The `StarterKit` includes the following features:
+- Blockquote
+- BulletList
+- CodeBlock
+-  Document
+-  HardBreak
+-  Heading
+-  HorizontalRule
+-  ListItem
+-  OrderedList
+-  Paragraph
+-  Text
 
-Blockquote,
- BulletList,
- CodeBlock,
- Document,
- HardBreak,
- Heading,
- HorizontalRule,
- ListItem,
- OrderedList,
- Paragraph,
- Text
+- Bold
+-  Code
+-  Italic
+-  Strike
 
-Bold,
- Code,
- Italic,
- Strike
-
-Dropcursor,
- Gapcursor,
- History
+- Dropcursor
+- Gapcursor
+- History
 
 ### Toolbar Controls
 Customize the toolbar by grouping control icons using the `controlsGroups` parameter. Each nested list within
