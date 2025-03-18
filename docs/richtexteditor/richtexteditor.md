@@ -49,8 +49,66 @@ The `RichTextEditor` component is built on top of the [Tiptap editor](https://ti
     - Use `-` or `*` for **bullet lists**.  
   - See the full list of [Markdown shortcuts](https://tiptap.dev/docs/examples/basics/markdown-shortcuts#page-title).
 
+### Tiptap Extensions  
+
+Extensions add extra functionality to Tiptap in `RichTextEditor`. Only a subset of Tiptap extensions are avaiaible in DMC
+and they are all enabled by default.  You can customize these defaults as needed.  
+
+#### Default Extensions
+By default, all the available extensions are enabled:  
+
+```python
+dmc.RichTextEditor(       
+    extensions=[
+        "StarterKit",
+        "Underline",
+        "Link",
+        "Superscript",
+        "Subscript",
+        "Highlight",
+        "Table",
+        "TableCell",
+        "TableHeader",
+        "TableRow",
+        {"TextAlign": {"types": ["heading", "paragraph"]}},
+        {"Placeholder": {"placeholder": "Write or paste content here..."}},
+        "Color",
+        "TextStyle",
+        "Image",
+    ]
+)
+```  
+
+The `StarterKit` extension includes essential text-editing features such as:  
+
+- Text Formatting: `Text`, `Bold`, `Italic`, `Strike`, `Code`  
+- Headings & Lists: `Heading`, `OrderedList`, `BulletList`, `ListItem`  
+- Structural Elements: `Paragraph`, `Blockquote`, `CodeBlock`, `HardBreak`, `HorizontalRule`, `Document`  
+- Cursor & History Features: `Dropcursor`, `Gapcursor`, `History`  
 
 
+#### Customizing Extensions
+
+You can modify the enabled extensions by setting the `extensions` prop. This allows you to:  
+- Exclude features you don’t want  
+- Adjust settings for specific extensions  
+
+Each extension can be defined in two ways:  
+- As a string to use default settings (for example, `"Color"`)  
+- As a dictionary to specify configuration options (for example `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
+
+ **Important:** Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
+`"Image"`, that feature will no longer be available.  
+
+Additionally, some features require multiple extensions. For example:  
+- color formatting requires both `"Color"` and `"TextStyle"`.  
+- Tables require `"Table"`, `"TableCell"`, `"TableHeader"`, and `"TableRow"`.  
+
+At a minimum, ensure that `"StarterKit"` is included:  
+```python
+extensions=["StarterKit"]
+```  
+For a full list of extensions and configuration options, refer to the [Tiptap documentation](https://tiptap.dev/docs/extensions).
 
 ### JSON or HTML Content  
 
@@ -68,82 +126,6 @@ For details on the schema and ProseMirror format, see the [Tiptap documentation]
 
 Try editing the content in this example to see the JSON and HTML format:
 .. exec::docs.richtexteditor.content
-
-### Selected text
-
-The `selected` prop contains the currently selected text.  Note that it is text only and does not include any formatting.
-
-.. exec::docs.richtexteditor.selected
-
-### Debounce
-
-The `debounce` prop controls how updates to the `html`, `json`, and `selected` props are triggered in the `RichTextEditor`.
-
-Enabling debounce helps prevent excessive callbacks by delaying updates until the user stops interacting. If set to
-`True`, updates occur only when the editor loses focus. Alternatively, you can specify a delay in milliseconds to
-fine-tune when updates should be sent.
-
-```python
-dmc.RichTextEditor(       
-     debounce=500   # # Delay updates by 500ms 
-)
-```
-### TipTap Extensions  
-
-Extensions enable additional features in TipTap. By default, `extensions=["StarterKit"]`.  
-
-Each extension can be specified in two ways:  
-- As a **string** for default settings (e.g., `"Color"`)  
-- As a **dictionary** with configuration options (e.g., `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
-
-For a full list of available extensions and their configuration options, refer to the [Tiptap documentation](https://tiptap.dev/docs/extensions).
-
-Below are the extensions currently supported in DMC, along with example configuration options:
-
-```python
- dmc.RichTextEditor(       
-     extensions = [
-        "StarterKit",
-        "Underline",
-        "Link",
-        "Superscript",
-        "Subscript",
-        "Highlight",
-        "Table",
-        "TableCell",
-        "TableHeader",
-        "TableRow",
-        {"TextAlign": {"types": ["heading", "paragraph"]}},
-        {"Placeholder": {"placeholder": "Write something..."}},
-        "Color",
-        "TextStyle",
-        "Image",
-    ]
-)
-```
-
-The `StarterKit` includes the following extensions:
-
-- Blockquote
-- BulletList
-- CodeBlock
--  Document
--  HardBreak
--  Heading
--  HorizontalRule
--  ListItem
--  OrderedList
--  Paragraph
--  Text
-
-- Bold
--  Code
--  Italic
--  Strike
-
-- Dropcursor
-- Gapcursor
-- History
 
 ### Toolbar Controls
 Customize the toolbar by grouping control icons using the `controlsGroups` parameter. Each nested list within
@@ -291,7 +273,7 @@ Set `sticky` prop on `RichTextEditor` `toolbar` prop to make toolbar sticky, con
 For example, in the dmc docs website there is a header with 60px height, in this case we will need to set 
 `stickyOffset=60` to make sticky position correctly with fixed positioned header element.
 
-Note the sticky toolbar in the labels example below.
+Note the sticky toolbar as you scroll past the example below.
 
 ### Labels and localization
 `RichTextEditor` supports changing labels for all controls with labels prop:
@@ -307,7 +289,7 @@ default_labels = {
     "linkControlLabel": "Link",
     "colorPickerControlLabel": "Text color",
     "highlightControlLabel": "Highlight text",
-    "colorControlLabel": "Set text color",  # function returns "Set text color {color}"
+    "colorControlLabel": "Set text color {color}",  # Use f-string format to include color in label
     "boldControlLabel": "Bold",
     "italicControlLabel": "Italic",
     "underlineControlLabel": "Underline",
@@ -354,8 +336,29 @@ default_labels = {
     "colorPickerColorPicker": "Color picker",
     "colorPickerPalette": "Color palette",
     "colorPickerSave": "Save",
-    "colorPickerColorLabel": "Set text color",  # function returns "Set text color {color}"
+    "colorPickerColorLabel": "Set Text color {color}",  # Use f-string format to include color in color swatch label
 }
+```
+
+
+### Selected text
+
+The `selected` prop contains the currently selected text.  Note that it is text only and does not include any formatting.
+
+.. exec::docs.richtexteditor.selected
+
+### Debounce
+
+The `debounce` prop controls how updates to the `html`, `json`, and `selected` props are triggered in the `RichTextEditor`.
+
+Enabling debounce helps prevent excessive callbacks by delaying updates until the user stops interacting. If set to
+`True`, updates occur only when the editor loses focus. Alternatively, you can specify a delay in milliseconds to
+fine-tune when updates should be sent.
+
+```python
+dmc.RichTextEditor(       
+     debounce=500   # # Delay updates by 500ms 
+)
 ```
 
 

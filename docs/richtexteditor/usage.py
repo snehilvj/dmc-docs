@@ -4,15 +4,6 @@ content = """<h2 style="text-align: center;">Welcome to Mantine rich text editor
 
 component = dmc.RichTextEditor(
     html=content,
-    extensions=[
-        "StarterKit",
-        "Underline",
-        "Link",
-        "Superscript",
-        "SubScript",
-        "Highlight",
-        {"TextAlign": {"types": ["heading", "paragraph"]}},
-    ],
     toolbar={
         "sticky": True,
         "controlsGroups": [
