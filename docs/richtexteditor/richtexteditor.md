@@ -402,7 +402,7 @@ For more information on styling components,  please also refer to the [Mantine S
 | `linkEditorExternalControl`      | `.mantine-RichTextEditor-linkEditorExternalControl`   | Link editor external button |
 | `linkEditorDropdown`             | `.mantine-RichTextEditor-linkEditorDropdown`          | Link editor popover dropdown element |
 
-### RichTextEditor Data Attributes
+#### RichTextEditor Data Attributes
 
 | Selector  | Attribute     | Condition                 |
 |-----------|--------------|---------------------------|
