@@ -29,7 +29,7 @@ Or, if you want to include all optional stylesheets:
 app = Dash(external_stylesheets=dmc.styles.ALL)
 ```
 
-### TipTap editor
+### Tiptap editor
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
   
 
@@ -51,7 +51,7 @@ The `RichTextEditor` component is built on top of the [Tiptap editor](https://ti
 
 ### Tiptap Extensions  
 
-Extensions add extra functionality to Tiptap in `RichTextEditor`. Only a subset of Tiptap extensions are avaiaible in DMC
+Extensions add extra functionality to Tiptap in `RichTextEditor`. Only a subset of Tiptap extensions are available in DMC
 and they are all enabled by default.  You can customize these defaults as needed.  
 
 #### Default Extensions
