@@ -110,26 +110,14 @@ extensions=["StarterKit"]
 ```  
 For a full list of extensions and configuration options, refer to the [Tiptap documentation](https://tiptap.dev/docs/extensions).
 
-### JSON or HTML Content  
+### Toolbar Controls 
 
-The editor supports content in either [JSON (ProseMirror) or HTML format](https://tiptap.dev/docs/editor/core-concepts/schema). You can specify the format using the `json`
-or `html` prop. If both props are set, `json` takes precedence.  
-
-#### When to Use Each Format:  
-- **JSON (ProseMirror)**: Ideal for structured data storage (databases, APIs) or programmatic content manipulation (e.g., dynamically adding elements).  
-- **HTML**: Useful for direct rendering in a browser, email clients, or using with components like `dcc.Markdown`.  
-
-Note that the schema is very strict.  For example, if you use `This is <strong>important</strong>`, but don’t have any 
-[extension](/components/richtexteditor#tiptap-extensions) that handles strong tags, you’ll only see `This is important` – without the bold formatting..
-
-For details on the schema and ProseMirror format, see the [Tiptap documentation](https://tiptap.dev/docs/editor/core-concepts/schema).
-
-Try editing the content in this example to see the JSON and HTML format:
-.. exec::docs.richtexteditor.content
-
-### Toolbar Controls
 Customize the toolbar by grouping control icons using the `controlsGroups` parameter. Each nested list within
 `controlsGroups` represents a separate group of toolbar icons.
+
+ Note that ven if a toolbar icon is not included, features provided by enabled extensions can still be accessed
+ through available keyboard shortcuts and Markdown syntax where applicable.
+
 ```python
 dmc.RichTextEditor(
     toolbar={           
@@ -194,7 +182,7 @@ Here are the control icons available for use in the `toolbar`:
 
 ### Placeholder
 
-To use the placeholder, include (at least) the following extensions:
+To use the placeholder or change the placeholder default text, include (at least) the following extensions:
 
 
 ```python
@@ -247,7 +235,7 @@ To display tables, you will need to include the following extensions:
 )
 ```
 
-The tables will be styles with a Mantine theme. To style the table see [Tables Styles API](/components/table#styles-api)
+The tables will be styles with a Mantine theme. To style the table see Typography styles section.
 
 .. exec::docs.richtexteditor.table
 
@@ -280,7 +268,8 @@ Note the sticky toolbar as you scroll past the example below.
 
 .. exec::docs.richtexteditor.labels
 
-Most labels are used to add `aria-label` and `title` attributes to the toolbar controls, some of the labels can be a function that returns string. If you do not provide all labels, then they will be merged with the default labels.
+Most labels are used to add `aria-label` and `title` attributes to the toolbar controls.  Some labels support f-string
+formatting for dynamic values. If you do not provide all labels, then they will be merged with the default labels.
 
 Here are all available labels with their defaults:
 ```python
@@ -340,6 +329,23 @@ default_labels = {
 }
 ```
 
+### JSON or HTML Content  
+
+The editor supports content in either [JSON (ProseMirror) or HTML format](https://tiptap.dev/docs/editor/core-concepts/schema). You can specify the format using the `json`
+or `html` prop. If both props are set, `json` takes precedence.  
+
+#### When to Use Each Format:  
+- **JSON (ProseMirror)**: Ideal for structured data storage (databases, APIs) or programmatic content manipulation (e.g., dynamically adding elements).  
+- **HTML**: Useful for direct rendering in a browser, email clients, or using with components like `dcc.Markdown`.  
+
+Note that the schema is very strict.  For example, if you use `This is <strong>important</strong>`, but don’t have any 
+[extension](/components/richtexteditor#tiptap-extensions) that handles strong tags, you’ll only see `This is important` – without the bold formatting..
+
+For details on the schema and ProseMirror format, see the [Tiptap documentation](https://tiptap.dev/docs/editor/core-concepts/schema).
+
+Try editing the content in this example to see the JSON and HTML format:
+.. exec::docs.richtexteditor.content
+
 
 ### Selected text
 
@@ -370,8 +376,9 @@ dmc.RichTextEditor(
 
 
 ### Typography styles
-By default, `RichTextEditor` renders content with `TypographyStylesProvider` and some additional styles. You can disable
-these styles by setting `withTypographyStyles=False`.  Then you can add your own CSS files, or style with the Styles API.
+By default, `RichTextEditor` renders content with [TypographyStylesProvider](/components/typographystylesprovider) and
+some additional styles. You can disable these styles by setting `withTypographyStyles=False`.  Then you can add your own 
+CSS files, or style with the Styles API.
 
 
 ```python
