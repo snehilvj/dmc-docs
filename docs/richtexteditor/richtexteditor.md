@@ -51,8 +51,11 @@ The `RichTextEditor` component is built on top of the [Tiptap editor](https://ti
 
 ### Tiptap Extensions  
 
-Extensions add extra functionality to Tiptap in `RichTextEditor`. Only a subset of Tiptap extensions are available in DMC
-and they are all enabled by default.  You can customize these defaults as needed.  
+Extensions expand the capabilities of Tiptap in `RichTextEditor`. DMC provides a predefined set of extensions, all
+enabled by default. You can customize these as needed.
+
+ Need an extension that’s not included? Open a [feature request on GitHub](https://github.com/snehilvj/dash-mantine-components/issues).
+ We prioritize requests based on popularity and bundle size impact to keep DMC lightweight and efficient.
 
 #### Default Extensions
 By default, all the available extensions are enabled:  
