@@ -231,21 +231,21 @@ For more information on styling components,  please also refer to the [Mantine S
 | root, icon    | data-loading    | `loading` prop is set      |
 
 
-#### ActionIcon.Group Selectors
+#### ActionIconGroup Selectors
 
 | Selector | Static selector                    | Description                     |
 |----------|-------------------------------------|---------------------------------|
 | group    | .mantine-ActionIconGroup-group      | Root element                    |
 
 
-#### ActionIcon.Group CSS Variables
+#### ActionIconGroup CSS Variables
 
 | Selector | Variable            | Description                                                      |
 |----------|---------------------|------------------------------------------------------------------|
 | group    | --ai-border-width   | Controls border width of child `ActionIcon` components placed beside one another |
 
 
-#### ActionIcon.Group Data Attributes
+#### ActionIconGroup Data Attributes
 
 | Selector | Attribute        | Value                      |
 |----------|------------------|----------------------------|
@@ -260,6 +260,6 @@ For more information on styling components,  please also refer to the [Mantine S
 .. kwargs::ActionIcon
 
 
-#### ActionIcon
+#### ActionIcon Group
 
 .. kwargs::ActionIconGroup
