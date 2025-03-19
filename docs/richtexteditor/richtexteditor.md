@@ -367,6 +367,23 @@ dmc.RichTextEditor(
 )
 ```
 
+### Persistence
+
+Dash provides built-in persistence props that allow components to retain their values across page reloads or app
+sessions. In `RichTextEditor`, this means the editor content can be saved and restored automatically.  
+
+The following persistence-related props are available:  
+- `persistence` – Enables persistence (`True`, `"local"`, `"session"`, or `"memory"`).  
+- `persisted_props` – Specifies which props should be persisted.  By default it's  `["html, json"]` 
+- `persistence_type` – Defines where the data is stored (`"local"`, `"session"`, or `"memory"`).  
+
+For more details on how Dash handles persistence, refer to the [Dash persistence documentation](https://dash.plotly.com/persistence).
+
+
+Notes:
+ - The component must have an `id` for persistence to work.
+ - If you want to set an initial value while also enabling persistence, set `persisted_props` to only the prop used for the initial value.
+For example `persisted_props=['html']`.
 
 ### Subtle Variant  
 
