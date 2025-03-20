@@ -32,7 +32,12 @@ This release ensures dash-mantine-components V1 is fully compatible with both Da
 The `draggable` and `speed` props have been removed from `Carousel` as they are no longer supported in Embla Carousel V8.
 These props were functional until DMC 0.14.7, when Embla was upgraded to V8.
 
-
+### React 18 
+Dash 3.0 now uses react 18 by default.  If your app uses dash>=3.0 it is no longer necessary to set the React version:
+```python
+# not needed with dash>=3.0
+_dash_renderer._set_react_version("18.2.0")
+```
 
 ## Migrating from 0.14 to 0.15
 

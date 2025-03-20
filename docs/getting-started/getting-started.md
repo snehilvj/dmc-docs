@@ -28,30 +28,38 @@ components.
    :icon: radix-icons:info-circled
    :color: red
 
-   It's required that you wrap your app with a dmc.MantineProvider.
-
-.. admonition::React 18 Issue
-   :icon: radix-icons:info-circled
-   :color: red
-
-   Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before
-   starting up the app when using dash < 3.0.
-
+   It's required that you wrap your app layout with a dmc.MantineProvider.
 
 .. admonition::CSS Extensions
    :icon: radix-icons:info-circled
    :color: red
 
    Some components require additional CSS styles.
+
+.. admonition::React 18 with Dash 2.x Issue
+   :icon: radix-icons:info-circled
+   :color: red
+
+   Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before
+   starting  the app when using dash 2.x.
+
+
+Dash 3.0 now uses react 18 by default.  If your app uses dash>=3.0 it is no longer necessary to set the React version:
+```python
+# not needed with dash>=3.0
+_dash_renderer._set_react_version("18.2.0")
+```
+
     
 
 ```python
 import dash_mantine_components as dmc
 from dash import Dash, _dash_renderer
 
-# this is optional when using dash >3.0.0
+# not needed with dash >3.0.0
 _dash_renderer._set_react_version("18.2.0")
 
+# additional styles
 app = Dash(external_stylesheets=dmc.styles.ALL)
 
 app.layout = dmc.MantineProvider(
