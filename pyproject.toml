@@ -7,11 +7,11 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dash = "^3.0.0rc4"
+dash = "^3.0.0"
 dash-iconify = "^0.1.0"
 requests = "^2.27.1"
 python-frontmatter = "^1.0.0"
-dash-mantine-components = "1.0.0"
+dash-mantine-components = "^1.0.0"
 markdown2dash = "0.1.2"
 pydantic = "^2.3.0"
 gunicorn = "^21.2.0"
