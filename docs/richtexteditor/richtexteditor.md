@@ -118,7 +118,7 @@ For a full list of extensions and configuration options, refer to the [Tiptap do
 Customize the toolbar by grouping control icons using the `controlsGroups` parameter. Each nested list within
 `controlsGroups` represents a separate group of toolbar icons.
 
- Note that ven if a toolbar icon is not included, features provided by enabled extensions can still be accessed
+ Note that even if a toolbar icon is not included, features provided by enabled extensions can still be accessed
  through available keyboard shortcuts and Markdown syntax where applicable.
 
 ```python
