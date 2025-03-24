@@ -238,7 +238,7 @@ To display tables, you will need to include the following extensions:
 )
 ```
 
-The tables will be styles with a Mantine theme. To style the table see Typography styles section.
+The tables will be styles with a Mantine theme. For more information refer to the [TypographyStylesProvider](components/typographystylesprovider) section.
 
 .. exec::docs.richtexteditor.table
 

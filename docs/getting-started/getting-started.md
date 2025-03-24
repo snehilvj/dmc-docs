@@ -1,15 +1,14 @@
 ---
 name: Getting Started
 endpoint: /getting-started
-description: Install dash-mantine-components using pip, poetry, or conda.
+description: Dash Mantine Components (DMC) integrates the Mantine UI library with Dash, making it easy to create modern, responsive, and highly customizable applications—right out of the box.
 dmc: false
 ---
 
 .. toc::
 
-### PyPI
 
-You can install `dash-mantine-components` from PyPI via pip or poetry.
+### Installation
 
 ```bash
 pip install dash-mantine-components
@@ -19,39 +18,14 @@ pip install dash-mantine-components
 poetry add dash-mantine-components
 ```
 
-### Simple Usage
-
-Using Dash Mantine Components is pretty much the same as using Dash Bootstrap Components or the official Dash 
-components. 
-
-.. admonition::Don't Forget MantineProvider!
-   :icon: radix-icons:info-circled
-   :color: red
-
-   It's required that you wrap your app layout with a dmc.MantineProvider.
-
-.. admonition::CSS Extensions
-   :icon: radix-icons:info-circled
-   :color: red
-
-   Some components require additional CSS styles.
-
-.. admonition::React 18 with Dash 2.x Issue
-   :icon: radix-icons:info-circled
-   :color: red
-
-   Dash Mantine Components is based on REACT 18. You must set the env variable REACT_VERSION=18.2.0 before
-   starting  the app when using dash 2.x.
+### Basic Usage
 
 
-Dash 3.0 now uses react 18 by default.  If your app uses dash>=3.0 it is no longer necessary to set the React version:
-```python
-# not needed with dash>=3.0
-_dash_renderer._set_react_version("18.2.0")
-```
 
-    
+.. exec::docs.getting-started.hello_world
+   :code: false
 
+Be sure to wrap your app layout in the `dmc.MantineProvider`
 ```python
 import dash_mantine_components as dmc
 from dash import Dash, _dash_renderer
@@ -59,13 +33,12 @@ from dash import Dash, _dash_renderer
 # not needed with dash >3.0.0
 _dash_renderer._set_react_version("18.2.0")
 
-# additional styles
 app = Dash(external_stylesheets=dmc.styles.ALL)
 
 app.layout = dmc.MantineProvider(
     dmc.Alert(
-       "Hi from Dash Mantine Components. You can create some great looking dashboards using me!",
-       title="Welcome!",
+       "Welcome to Dash Mantine Components",
+       title="Hello!",
        color="violet",
     )
 )
@@ -74,7 +47,29 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-### CSS Extensions
+
+### Important Notes
+#### Wrap Your App with MantineProvider
+DMC components require `dmc.MantineProvider` to apply theming and styles.
+
+#### Some Components Require Extra Stylesheets
+Certain components, such as `DatePicker`, `Carousel`, `CodeHighlight` need additional CSS stylesheets. You can load them 
+individually or use `dmc.styles.ALL` to include all optional styles.
+
+```python
+app = Dash(external_stylesheets=dmc.styles.ALL)
+```
+
+#### React 18 is Required
+- Dash 2.x: Set REACT_VERSION=18.2.0 before running your app.
+- Dash 3.x: React 18 is used by default—no additional setup required.
+```python
+# required only with dash 2.x
+_dash_renderer._set_react_version("18.2.0")
+```
+
+
+### Adding Optional Stylesheets
 
 Most of the necessary styling is already included with `dash-mantine-components`. However, for certain components like
 `DatePicker`, `Carousel`, or `CodeHighlight`, you need to add their specific CSS files separately. You can also include 
@@ -97,6 +92,7 @@ stylesheets = [
     dmc.styles.CAROUSEL,
     dmc.styles.NOTIFICATIONS,
     dmc.styles.NPROGRESS,
+    dmc.styles.RICH_TEXT_EDITOR,
 ]
 app = Dash(__name__, external_stylesheets=stylesheets)
 ```
@@ -135,7 +131,7 @@ While going through this documentation, you will come across interactive demos m
    :code: false
 
 Note that this documentation has some additional styling applied to it. So when you actually use these components, they 
-might look a bit different. You can check out [MantineProvider](/components/mantineprovider) for more details on
+might look a bit different. You can check out [MantineProvider theme object](/theme-object) for more details on
 theming and customizations.
 
 Here's how you can add the same styling to your apps:
