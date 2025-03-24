@@ -21,11 +21,10 @@ ActionIcon component is an alternative to [Button](/components/button) component
 .. exec::docs.actionicon.simple
 
 ### Children
+You can use a dash component such as `DashIconify` in the `children` prop.  Note that it does not control the icon size, 
+you need to specify it manually on icon component to match `ActionIcon` size.
 
-ActionIcon accepts any React node (a dash component) as child. It does not control the icon size, you need to specify it manually on icon
-component (such as DashIconify) to match ActionIcon size.
-
-For example, if you were to use DashIconify, you can set the icon size like this:
+For example, if you were to use `DashIconify`, you can set the icon size like this:
 
 ```python
 import dash_mantine_components as dmc
