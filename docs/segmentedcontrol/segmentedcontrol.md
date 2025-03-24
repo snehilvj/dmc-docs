@@ -95,7 +95,7 @@ Change transition properties with:
 
 .. exec::docs.segmentedcontrol.transitions
 
-### React node as label
+### Components in label
 
 .. exec:: docs.segmentedcontrol.react
 
