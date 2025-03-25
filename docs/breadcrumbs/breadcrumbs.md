@@ -16,6 +16,8 @@ Breadcrumbs accept any react nodes as children and places given separator (defau
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name       | Static selector                 | Description                |
 |:-----------|:--------------------------------|:---------------------------|
 | root       | .mantine-Breadcrumbs-root       | Root element               |

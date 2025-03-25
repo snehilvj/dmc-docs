@@ -32,6 +32,8 @@ To vertically center the modal, set `centered=True`.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name    | Static selector        | Description                                                           |
 |:--------|:-----------------------|:----------------------------------------------------------------------|
 | root    | .mantine-Modal-root    | Root element                                                          |

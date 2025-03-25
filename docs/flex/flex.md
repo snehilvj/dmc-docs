@@ -57,6 +57,10 @@ Flex component props can have responsive values the same way as other style prop
 
 ### Styles API
 
+
+.. styles_api_text::
+
+
 | Name | Static selector    | Description  |
 |:-----|:-------------------|:-------------|
 | root | .mantine-Flex-root | Root element |

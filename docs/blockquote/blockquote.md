@@ -23,6 +23,8 @@ Here's an example using [DashIconify](/dash-iconify).
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name   | Static selector           | Description        |
 |:-------|:--------------------------|:-------------------|
 | root   | .mantine-Blockquote-root  | Root element       |

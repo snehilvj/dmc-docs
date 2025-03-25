@@ -53,6 +53,9 @@ Highlight component supports same props as Text component.
 
 ### Styles API
 
+
+.. styles_api_text::
+
 | Name | Static selector         | Description  |
 |:-----|:------------------------|:-------------|
 | root | .mantine-Highlight-root | Root element |

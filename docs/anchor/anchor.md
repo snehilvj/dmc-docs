@@ -48,6 +48,8 @@ Text props
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Anchor selectors
 
 | Selector | Static selector | Description |

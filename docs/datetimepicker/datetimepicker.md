@@ -77,6 +77,9 @@ By default, `DateTimePicker` is rendered inside `Popover`. You can change that t
 
 
 ### Styles API
+
+.. styles_api_text::
+
 #### DateTimePicker selectors
 
 | Selector                    | Static selector                               | Description                                                 |

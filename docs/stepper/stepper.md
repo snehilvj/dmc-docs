@@ -72,6 +72,8 @@ You can also change completed icon for each step, for example, to indicate error
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name                    | Static selector                          | Description                                   |
 |:------------------------|:-----------------------------------------|:----------------------------------------------|
 | root                    | .mantine-Stepper-root                    | Root element                                  |

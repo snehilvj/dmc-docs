@@ -57,6 +57,8 @@ Menu component can be customised by changing icons, right section and even color
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector           | Description                            |
 |:------------|:--------------------------|:---------------------------------------|
 | dropdown    | .mantine-Menu-dropdown    | Dropdown element                       |

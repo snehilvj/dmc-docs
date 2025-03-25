@@ -38,6 +38,8 @@ Set the Divider color from one of the colors of Mantine default theme using the 
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name  | Static selector        | Description   |
 |:------|:-----------------------|:--------------|
 | root  | .mantine-Divider-root  | Root element  |

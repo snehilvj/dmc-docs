@@ -70,6 +70,8 @@ Each notification is identified with an `id`. In order to update/hide a notifica
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector                   | Description                                                |
 |:------------|:----------------------------------|:-----------------------------------------------------------|
 | root        | .mantine-Notification-root        | Root element                                               |

@@ -231,6 +231,8 @@ select less than 2 currency pairs.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector                  | Description                                      |
 |:------------|:---------------------------------|:-------------------------------------------------|
 | wrapper     | .mantine-MultiSelect-wrapper     | Root element of the Input                        |

@@ -185,8 +185,7 @@ This example also shows how to add hover styles
 
 ### Styles API
 
-This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
-For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+.. styles_api_text::
 
 > Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://mantine.dev/core/checkbox/#styles-api)
 > lets you hover over selectors to see which elements they correspond to.

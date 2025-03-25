@@ -63,6 +63,8 @@ Here's an example of a dynamically created AvatarGroup from GitHub contributors 
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name            | Static selector                 | Description                                               |
 |:----------------|:--------------------------------|:----------------------------------------------------------|
 | root            | .mantine-Avatar-root            | Root element                                              |

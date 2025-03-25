@@ -40,6 +40,8 @@ You can customize transition, timing function and duration for Drawer transition
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Drawer Selectors
 
 | Selector  | Static selector             | Description                                                             |

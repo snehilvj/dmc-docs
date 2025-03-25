@@ -42,6 +42,8 @@ dmc.Affix(
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Affix selectors
 
 | Selector | Static selector | Description |

@@ -202,6 +202,9 @@ will be removed in DMC v1.0.0
 
 ### Styles API
 
+.. styles_api_text::
+
+
 #### Carousel selectors
 
 | Selector   | Static selector              | Description                                              |

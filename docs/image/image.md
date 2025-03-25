@@ -36,6 +36,8 @@ given `src`, background-size to cover and background-position to center.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name         | Static selector          | Description                               |
 |:-------------|:-------------------------|:------------------------------------------|
 | root         | .mantine-Image-root      | Root element                              |

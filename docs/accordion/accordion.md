@@ -124,6 +124,9 @@ dmc.AccordionControl(children=[...], disabled=True)
 
 ### Styles API
 
+.. styles_api_text::
+
+
 #### Accordion selectors
 
 | Selector   | Static selector                | Description                                    |

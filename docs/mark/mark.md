@@ -18,6 +18,8 @@ category: Typography
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector    | Description                                      |
 |:------------|:-------------------|:-------------------------------------------------|
 | root        | .mantine-Mark-root | Root element                                     |

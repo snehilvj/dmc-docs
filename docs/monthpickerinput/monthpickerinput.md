@@ -83,6 +83,8 @@ Set `clearable=True` prop to display clear button in the right section. Note tha
 
 ### Styles API
 
+.. styles_api_text::
+
 | Selector                   | Static selector                                        | Description                                                           |
 | ---------------------------| ------------------------------------------------------ | --------------------------------------------------------------------- |
 | `wrapper`                  | `.mantine-MonthPickerInput-wrapper`                    | Root element of the Input                                              |

@@ -31,6 +31,9 @@ CardSection is a special component that is used to remove Card padding from its 
 
 ### Styles API
 
+
+.. styles_api_text::
+
 | Name    | Static selector       | Description                 |
 |:--------|:----------------------|:----------------------------|
 | root    | .mantine-Card-root    | Root element                |

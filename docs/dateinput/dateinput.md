@@ -71,6 +71,9 @@ Set `minDate` and `maxDate` props to define min and max dates. If date that is a
 
 ### Styles API
 
+
+.. styles_api_text::
+
 | Name                      | Static selector                              | Description                                                          |
 |:--------------------------|:---------------------------------------------|:---------------------------------------------------------------------|
 | wrapper                   | .mantine-DateInput-wrapper                   | Root element of the Input                                            |

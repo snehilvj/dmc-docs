@@ -265,8 +265,7 @@ Set `disabled` to disable the input. When `disabled` is set, user cannot interac
 
 ### Styles API
 
-This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
-For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+.. styles_api_text::
 
 Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/core/tags-input/#styles-api) for help in identifying each selector.
 

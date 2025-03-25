@@ -136,9 +136,9 @@ if __name__ == "__main__":
 
 ```
 
-Here is a complete example using 
-
 ### Styles API
+
+.. styles_api_text::
 
 | Name        | Static selector              | Description                                  |
 |:------------|:-----------------------------|:---------------------------------------------|

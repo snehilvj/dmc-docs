@@ -36,6 +36,8 @@ input:invalid {
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector               | Description                                      |
 |:------------|:------------------------------|:-------------------------------------------------|
 | wrapper     | .mantine-Textarea-wrapper     | Root element of the Input                        |

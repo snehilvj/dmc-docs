@@ -55,6 +55,8 @@ The root element of `Text` is an HTML `p` component.  To change it to an HTML `s
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Text Selectors
 
 | Selector | Static selector       | Description     |

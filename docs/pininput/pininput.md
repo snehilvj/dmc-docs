@@ -57,6 +57,8 @@ Inputs do not have associated labels, set aria-label to make component visible t
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name     | Static selector            | Description        |
 |:---------|:---------------------------|:-------------------|
 | root     | .mantine-PinInput-root     | Root element       |

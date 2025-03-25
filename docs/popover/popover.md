@@ -44,6 +44,8 @@ Set `withOverlay` prop to add overlay behind the dropdown. You can pass addition
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Popover Selectors
 
 | Selector  | Static selector             | Description          |
