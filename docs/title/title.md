@@ -17,6 +17,8 @@ Pass the `order` prop to render specific element (h1-h6), default order is 1.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector     | Description                                      |
 |:------------|:--------------------|:-------------------------------------------------|
 | root        | .mantine-Title-root | Root element                                     |

@@ -202,6 +202,8 @@ dmc.ButtonGroup([
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Button Selectors
 
 | Selector | Static selector          | Description                                        |

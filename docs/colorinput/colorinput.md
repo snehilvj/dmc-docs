@@ -65,6 +65,8 @@ dmc.ColorInput(**{"aria-label": "My input"}) # ok, label is not visible but will
 
 ### StylesAPI
 
+.. styles_api_text::
+
 | Name              | Static selector                       | Description                                                         |
 |:------------------|:--------------------------------------|:--------------------------------------------------------------------|
 | wrapper           | .mantine-ColorInput-wrapper           | Root element                                                        |

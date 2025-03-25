@@ -43,6 +43,8 @@ Here is an example of `delay_hide` prop in `dcc.Loading` to prevent the `Skeleto
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Skeleton Selectors
 
 | Selector | Static selector         | Description   |

@@ -14,6 +14,8 @@ category: Data Display
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector   | Description                                      |
 |:------------|:------------------|:-------------------------------------------------|
 | root        | .mantine-Kbd-root | Root element                                     |

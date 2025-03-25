@@ -12,6 +12,7 @@ from lib.constants import PAGE_TITLE_PREFIX
 from lib.directives.kwargs import Kwargs
 from lib.directives.source import SC
 from lib.directives.toc import TOC
+from lib.directives.styles_api_text import StylesApiText
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -35,7 +36,7 @@ def make_endpoint(name):
     return "-".join(name.lower().split())
 
 
-directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC()]
+directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText()]
 parse = create_parser(directives)
 
 for file in files:

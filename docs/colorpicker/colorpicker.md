@@ -33,6 +33,8 @@ To display just the swatches and no picker, initialize the component with `withP
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name              | Static selector                        | Description                                                         |
 |:------------------|:---------------------------------------|:--------------------------------------------------------------------|
 | wrapper           | .mantine-ColorPicker-wrapper           | Root element                                                        |

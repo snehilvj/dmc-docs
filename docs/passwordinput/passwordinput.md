@@ -45,6 +45,8 @@ Add icon to the left side of the input.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name             | Static selector                         | Description                                      |
 |:-----------------|:----------------------------------------|:-------------------------------------------------|
 | wrapper          | .mantine-PasswordInput-wrapper          | Root element of the Input                        |

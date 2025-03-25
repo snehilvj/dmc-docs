@@ -37,6 +37,8 @@ The alerts can also be timed out using the `duration` prop which accepts time in
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector            | Description                                   |
 |:------------|:---------------------------|:----------------------------------------------|
 | root        | .mantine-Alert-root        | Root element                                  |

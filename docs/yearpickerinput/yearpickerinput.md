@@ -80,6 +80,9 @@ Set `clearable=True` prop to display clear button in the right section. Note tha
 .. exec::docs.yearpickerinput.minmax
 
 ### Styles API
+
+.. styles_api_text::
+
 | Selector                   | Static selector                                      | Description                                                           |
 | ---------------------------| ---------------------------------------------------- | --------------------------------------------------------------------- |
 | `wrapper`                  | `.mantine-YearPickerInput-wrapper`                   | Root element of the Input                                              |

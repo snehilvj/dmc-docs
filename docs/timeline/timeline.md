@@ -35,6 +35,8 @@ Control timeline appearance with the following props:
     
 ### Styles API
 
+.. styles_api_text::
+
 #### Timeline Selectors
 
 | Selector     | Static selector               | Description                               |

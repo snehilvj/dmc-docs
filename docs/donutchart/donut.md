@@ -197,8 +197,7 @@ hovered series, use the `hoverSeriesName` property.
 
 ### Styles API
 
-This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
-For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+.. styles_api_text::
 
 #### DonutChart selectors
 

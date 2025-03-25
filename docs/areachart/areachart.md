@@ -8,6 +8,7 @@ category: Charts
 
 .. toc::
 
+
 ### Introduction
 
 Use `AreaChart` component without `type` prop to render a regular area chart. In a regular area chart, each data series
@@ -374,8 +375,7 @@ Set `highlightHover=True` to highlight the series when hovered, mirroring the be
 
 ### Styles API
 
-This component supports [Styles API](/styles-api). With Styles API, you can customize styles of any inner element.
-For more information on styling components,  please also refer to the [Mantine Styles](https://mantine.dev/styles/styles-overview/) documentation.
+.. styles_api_text::
 
 #### AreaChart selectors
 

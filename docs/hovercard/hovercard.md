@@ -32,6 +32,8 @@ using the prop `boxWrapperProps` in dmc.HoverCardTarget.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name     | Static selector             | Description      |
 |:---------|:----------------------------|:-----------------|
 | dropdown | .mantine-HoverCard-dropdown | Dropdown element |

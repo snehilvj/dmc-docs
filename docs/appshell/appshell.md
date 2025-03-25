@@ -373,6 +373,7 @@ dmc.AppShell(
 
 ### Styles API
 
+.. styles_api_text::
 
 #### AppShell Selectors
 

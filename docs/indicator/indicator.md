@@ -34,6 +34,8 @@ Set `offset` to change indicator position. It is useful when Indicator component
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name      | Static selector              | Description       |
 |:----------|:-----------------------------|:------------------|
 | root      | .mantine-Indicator-root      | Root element      |

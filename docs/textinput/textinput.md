@@ -48,6 +48,8 @@ Add icon or loading indicator to the right section of the input.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name        | Static selector                | Description                                      |
 |:------------|:-------------------------------|:-------------------------------------------------|
 | wrapper     | .mantine-TextInput-wrapper     | Root element of the Input                        |

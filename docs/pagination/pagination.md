@@ -34,6 +34,8 @@ Set `withPages=False` to hide pages controls:
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name    | Static selector             | Description                                               |
 |:--------|:----------------------------|:----------------------------------------------------------|
 | root    | .mantine-Pagination-root    | Root element                                              |

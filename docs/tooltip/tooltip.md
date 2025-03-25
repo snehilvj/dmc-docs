@@ -197,6 +197,8 @@ using the prop `boxWrapperProps` in dmc.Tooltip.
 
 ### Styles API
 
+.. styles_api_text::
+
 #### Tooltip selectors
 
 | Selector | Static selector | Description |

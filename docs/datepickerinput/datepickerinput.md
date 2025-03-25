@@ -89,6 +89,8 @@ For information on setting locale, have a look at the [DatesProvider](/component
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name                      | Static selector                                    | Description                                                          |
 |:--------------------------|:---------------------------------------------------|:---------------------------------------------------------------------|
 | wrapper                   | .mantine-DatePickerInput-wrapper                   | Root element of the Input                                            |

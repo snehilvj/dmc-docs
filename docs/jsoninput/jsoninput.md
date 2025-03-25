@@ -16,6 +16,9 @@ JsonInput is based on [Textarea](/components/textarea) component, it includes js
 
 ### Styles API
 
+
+.. styles_api_text::
+
 | Name        | Static selector                | Description                                      |
 |:------------|:-------------------------------|:-------------------------------------------------|
 | wrapper     | .mantine-JsonInput-wrapper     | Root element of the Input                        |

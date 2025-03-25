@@ -29,6 +29,8 @@ It is usually used to indicate loading state of forms.
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name    | Static selector                 | Description         |
 |:--------|:--------------------------------|:--------------------|
 | root    | .mantine-LoadingOverlay-root    | Root element        |

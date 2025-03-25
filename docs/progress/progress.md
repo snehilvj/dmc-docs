@@ -77,6 +77,8 @@ Another even better workaround is to use `FloatingTooltips`.  In this case, set 
 
 ### Styles API
 
+.. styles_api_text::
+
 | Name    | Static selector           | Description                     |
 |:--------|:--------------------------|:--------------------------------|
 | root    | .mantine-Progress-root    | Root element                    |
