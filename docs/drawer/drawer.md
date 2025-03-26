@@ -13,7 +13,7 @@ category: Overlay
 This is a basic example of dmc.Drawer. Set the `opened` property to open the drawer. The drawer can be controlled in following ways:
 
 * programmatically (using callbacks)
-* by clicking on the cross button (if not disabled using `hideCloseButton` prop)
+* by clicking on the cross button (if not disabled using `withCloseButton` prop)
 * by clicking outside the drawer area (if not disabled using `closeOnClickOutside` prop)
 * by pressing the ESC key (if not disabled using `closeOnEscape` prop)
 
