@@ -1,5 +1,5 @@
 import dash_mantine_components as dmc
-from dash import Output, Input, clientside_callback, dcc, page_container, State
+from dash import html, Output, Input, clientside_callback, dcc, page_container
 
 from components.header import create_header
 from components.navbar import create_navbar, create_navbar_drawer
@@ -49,6 +49,9 @@ def create_appshell(data):
             dcc.Location(id="url", refresh="callback-nav"),
             dcc.Store(id="color-scheme-storage", storage_type="local"),
             dmc.NotificationProvider(),
+            html.Div(id="notifications-container"),
+            html.Div(id="notifications-container2"),
+            html.Div(id="notifications-container3"),
             dmc.AppShell(
                 [
                     create_header(data),

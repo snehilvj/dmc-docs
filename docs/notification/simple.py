@@ -1,27 +1,13 @@
+import dash
 import dash_mantine_components as dmc
 from dash import Output, Input, html, callback
 from dash_iconify import DashIconify
 
-"""
-Add Notifications to your app layout.
 
-app.layout = html.Div(
-    [
-        dmc.NotificationProvider(),
-        html.Div(id="notifications-container"),
-        dmc.Button("Show Notification", id="notify"),
-    ]
-)
-
-"""
-
-component = html.Div(
-    [
-        html.Div(id="notifications-container"),
-        dmc.Button("Show Notification", id="notify"),
-    ]
-)
-
+component = html.Div([
+    dmc.Button("Show Notification", id="notify"),
+    html.Div(id="notifications-container")
+])
 
 @callback(
     Output("notifications-container", "children"),
@@ -29,6 +15,8 @@ component = html.Div(
     prevent_initial_call=True,
 )
 def show(n_clicks):
+    if n_clicks is None:
+        return dash.no_update
     return dmc.Notification(
         title="Hey there!",
         id="simple-notify",

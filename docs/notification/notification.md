@@ -11,8 +11,25 @@ category: Feedback
 .. admonition::Note
     :color: red
     :icon: radix-icons:info-circled
-    In order to show notifications in your apps, you need to add dmc.NotificationProvider() to your app layout.
+    In order to show notifications in your apps, you need to add a  dmc.NotificationProvider() to your app layout.
 
+Add `NotificationProvider()` component in your application. Note that:
+
+- It is required to place `NotificationProvider` component inside `MantineProvider`
+- You do not need to wrap your application with `NotificationPrivider()` component – it is a regular component
+- You should not have multiple `NotificationPrivider()` components – if you do that, your notifications will be duplicated
+- In a multi page app, the `NotificationPrivider()` and the output container used to update notifications should be in the main `app.layout`
+
+```python
+
+app.layout = dmc.MantineProvider(
+    [
+        dmc.NotificationProvider(),
+        html.Div(id="notifications-container"),    
+    ]
+)
+
+```
 
 ### CSS Extensions
 
@@ -22,7 +39,7 @@ category: Feedback
 
    Notifications require additional CSS styles.
 
-The Chart components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
+The notification components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
 
 Be sure to include:
 
@@ -38,28 +55,13 @@ app = Dash(external_stylesheets=dmc.styles.ALL)
 
 ### Simple Example
 
-To enable the Notifications System, include the `dmc.NotificationProvider()` component anywhere in your app layout. 
+To enable the Notifications System, include the `dmc.NotificationProvider()` component in your `app.layout`. 
 
-The `dmc.Notification` is not like your conventional dash components. They are more like "instructions" than components. 
-In order to show notifications in your app, just send these instructions as children to any div in your callbacks.
+Unlike regular Dash components, `dmc.Notification` is more like "instructions". The notifications are triggered and 
+updated inside a callback by updating the `children` of a div as the output.
 
 .. exec::docs.notification.simple
 
-### Customizing Notifications
-
-Use NotificationProvider to customize the positioning of your notification, auto close duration, etc.  In the example below, the
-notification will display on the bottom left side of the screen rather than the default of bottom right.
-
-```python
-import dash_mantine_components as dmc
-
-layout = dmc.MantineProvider(
-    html.Div([
-        dmc.NotificationProvider(position="bottom-left"),
-        # children
-    ])
-)
-```
 
 ### Updating Notifications
 
@@ -68,19 +70,71 @@ Each notification is identified with an `id`. In order to update/hide a notifica
 
 .. exec::docs.notification.update
 
+### action prop
+
+The following functions are available using the `action` prop
+
+- `show` – adds given notification to the notifications list or queue, depending on the current state and limit
+- `hide` – removes notification with given id from the notifications state and queue
+- `update` – updates notification that was previously added to the state or queue
+- `clean` – removes all notifications from the notifications state and queue
+- `cleanQueue` – removes all notifications from the queue
+
+### Notification Position
+
+.. exec::docs.notification.position
+
+
+The position can be defined on the `NotificationProvider` component. In the following example, notifications will be
+displayed in the top right corner of the screen if position is not defined in the `Notification` component in the callback:
+
+
+
+```python
+
+app.layout = dmc.MantineProvider(
+    [
+        dmc.NotificationProvider(position="top-right"),
+        html.Div(id="notifications-container"),    
+    ]
+)
+
+```
+
+### Limit and queue
+You can limit maximum number of notifications that are displayed at a time by setting limit prop on `NotificationProvider`:
+
+```python
+ dmc.NotificationProvider(limit=5),
+```
+All notifications added after the limit was reached are added to the queue and displayed when notification from current state is hidden.
+
+
+### Notifications in Multi Page apps
+
+When using notifications in a multi-page app, ensure that `NotificationProvider()` and the notification output container
+are defined in `app.layout`—even if the notification is triggered from a different page.  
+
+By keeping the notification container in `app.layout`, it remains available across all pages, preventing errors when a
+user navigates away while a notification is still visible and later updated.  
+
+
 ### Styles API
 
 .. styles_api_text::
 
-| Name        | Static selector                   | Description                                                |
-|:------------|:----------------------------------|:-----------------------------------------------------------|
-| root        | .mantine-Notification-root        | Root element                                               |
-| loader      | .mantine-Notification-loader      | Loader component, displayed only when `loading`prop is set |
-| icon        | .mantine-Notification-icon        | Icon component, displayed only when `icon` prop is set     |
-| body        | .mantine-Notification-body        | Notification body, contains all other elements             |
-| title       | .mantine-Notification-title       | Title element, displayed only when `title` prop is set     |
-| description | .mantine-Notification-description | Description displayed below the title                      |
-| closeButton | .mantine-Notification-closeButton | Close button element                                       |
+#### Notifications Selectors
+| Selector      | Static Selector                         | Description                                      |
+|--------------|--------------------------------------|--------------------------------------------------|
+| `root`       | `.mantine-Notifications-root`      | Notifications container, contains all notifications |
+| `notification` | `.mantine-Notifications-notification` | Single notification |
+
+#### Notifications CSS Variables
+| Selector | Variable | Description |
+|----------|----------|-------------|
+| `root`   | `--notifications-container-width` | Controls notifications container max-width |
+| `root`   | `--notifications-z-index` | Controls notifications container z-index |
+
 
 ### Keyword Arguments
 

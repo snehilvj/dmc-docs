@@ -1,20 +1,22 @@
+import dash
 import dash_mantine_components as dmc
 from dash import Output, Input, html, callback_context as ctx, callback
-from dash.exceptions import PreventUpdate
 from dash_iconify import DashIconify
 
 component = html.Div(
     [
-        html.Div(id="notify-container"),
+        html.Div(id="notifications-container2"),
         dmc.Group(
-            children=[
+            [
                 dmc.Button(
                     "Load Data",
                     id="show-notification",
+                    n_clicks=0
                 ),
                 dmc.Button(
                     "Update",
                     id="update-notification",
+                    n_clicks=0
                 ),
             ],
         ),
@@ -23,16 +25,14 @@ component = html.Div(
 
 
 @callback(
-    Output("notify-container", "children"),
+    Output("notifications-container2", "children"),
     Input("show-notification", "n_clicks"),
     Input("update-notification", "n_clicks"),
     prevent_initial_call=True,
 )
 def notify(nc1, nc2):
-    if not ctx.triggered:
-        raise PreventUpdate
-    else:
-        button_id = ctx.triggered_id
+    button_id = ctx.triggered_id
+    if nc1 > 0:
         if "show" in button_id:
             return dmc.Notification(
                 id="my-notification",
@@ -43,7 +43,8 @@ def notify(nc1, nc2):
                 action="show",
                 autoClose=False,
             )
-        else:
+    if nc2 > 0:
+        if "update" in button_id:
             return dmc.Notification(
                 id="my-notification",
                 title="Data loaded",
@@ -54,3 +55,4 @@ def notify(nc1, nc2):
                 autoClose=2000,
                 icon=DashIconify(icon="akar-icons:circle-check"),
             )
+    return dash.no_update
