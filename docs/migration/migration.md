@@ -14,12 +14,66 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **1.2.0**               | Apr 2025     | 7.17.4          | `dash>=2.0.0` |
 | **1.1.0**               | Mar 2025     | 7.17.2          | `dash>=2.0.0` |
 | **1.0.0**               | Mar 2025     | 7.17.0          | `dash>=2.0.0` |
 | **0.15.0**              | Nov 2024     | 7.14.1          | `dash>=2.0.0,<3.0.0`|
 | **0.14.0**              | Apr 2024     | 7.0             | `dash>=2.0.0,<3.0.0` |
 | **0.13.0a1**            | Aug 2023     | 6.0             | `dash>=2.0.0,<3.0.0` |
 | **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
+
+
+### Some Components Require Extra Stylesheets in DMC < 1.2.0
+
+> Starting in DMC 1.2.0, it is not necessary to include additional stylesheets for some components.  The info below is for
+running older version of DMC. 
+
+In DMC < 1.2.0, certain components like `DatePicker`, `Carousel`, or `CodeHighlight`, require you to add their specific
+CSS files separately. You can also include all optional CSS stylesheets at once by using `dmc.styles.ALL`.
+
+Starting from version 0.14.4, `dash-mantine-components` provides `dmc.styles` variables to ensure that the correct 
+stylesheet version is used, matching the version of the library you have installed.
+
+To include stylesheets in your Dash app, you can do something like this:
+
+```python
+from dash import Dash
+import dash_mantine_components as dmc
+
+# below covers all the stylesheets, you can pick as per your need.
+stylesheets = [
+    dmc.styles.DATES,
+    dmc.styles.CODE_HIGHLIGHT,
+    dmc.styles.CHARTS,
+    dmc.styles.CAROUSEL,
+    dmc.styles.NOTIFICATIONS,
+    dmc.styles.NPROGRESS,
+    dmc.styles.RICH_TEXT_EDITOR,
+]
+app = Dash(__name__, external_stylesheets=stylesheets)
+```
+
+Or, if you want to include all optional stylesheets:
+
+```python
+app = Dash(external_stylesheets=dmc.styles.ALL)
+```
+
+If you need to add other external stylesheets along with these, you can do it like this:
+
+```python
+app = Dash(external_stylesheets=[dbc.icons.FONT_AWESOME] + dmc.styles.ALL)
+```
+
+
+Note - to find the correct stylesheet link, you can print it out like this:
+```
+print(dmc.styles.DATES)
+```
+This will give you a link like:
+```
+https://unpkg.com/@mantine/dates@7.11.0/styles.css
+```
 
 
 
@@ -35,8 +89,9 @@ These props were functional until DMC 0.14.7, when Embla was upgraded to V8.
 ### React 18 
 Dash 3.0 now uses react 18 by default.  If your app uses dash>=3.0 it is no longer necessary to set the React version:
 ```python
+import dash
 # not needed with dash>=3.0
-_dash_renderer._set_react_version("18.2.0")
+dash._dash_renderer._set_react_version("18.2.0")
 ```
 
 ## Migrating from 0.14 to 0.15

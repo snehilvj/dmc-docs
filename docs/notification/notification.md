@@ -33,24 +33,9 @@ app.layout = dmc.MantineProvider(
 
 ### CSS Extensions
 
-.. admonition::CSS Extensions
-   :icon: radix-icons:info-circled
-   :color: red
 
-   Notifications require additional CSS styles.
-
-The notification components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
-
-Be sure to include:
-
-```python
-app = Dash(external_stylesheets=[dmc.styles.NOTIFICATIONS])
-```
-
-Or, if you want to include all optional stylesheets:
-```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
+As of DMC 1.2.0, Notification component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 
 ### Simple Example

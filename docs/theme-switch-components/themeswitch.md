@@ -35,8 +35,8 @@ Here is a complete minimal example:
 
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
-from dash import Dash, Input, Output, State, callback, _dash_renderer, html, clientside_callback
-_dash_renderer._set_react_version("18.2.0")
+from dash import Dash, Input, Output,  clientside_callback
+
 
 theme_toggle = dmc.Switch(
     offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
@@ -46,7 +46,7 @@ theme_toggle = dmc.Switch(
     color="grey",
 )
 
-app = Dash(external_stylesheets=dmc.styles.ALL)
+app = Dash()
 
 app.layout = dmc.MantineProvider(
     [theme_toggle, dmc.Text("Your page content")],

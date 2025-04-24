@@ -12,22 +12,10 @@ category: Date Pickers
 
 ### CSS Extensions
 
-.. admonition::CSS Extensions
-   :icon: radix-icons:info-circled
-   :color: red
+As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
-   Date components require additional CSS styles.
 
-The Date components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
-
-Be sure to include:
-```python
-app = Dash(external_stylesheets=[dmc.styles.DATES])
-```
-Or, if you want to include all optional stylesheets:
-```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
 ### DatePicker props
 `DateTimePicker` supports most of the `DatePicker` props, read through `DatePicker` documentation to learn about all component features that are not listed on this page.
 

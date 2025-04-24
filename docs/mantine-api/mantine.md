@@ -64,10 +64,8 @@ It is responsible for:
 
 ```python
 import dash_mantine_components as dmc
-from dash import Dash, _dash_renderer
-_dash_renderer._set_react_version("18.2.0")
-
-app = Dash(external_stylesheets=dmc.styles.ALL)
+from dash import Dash
+app = Dash()
 
 app.layout = dmc.MantineProvider(
     # children=[] your layout here

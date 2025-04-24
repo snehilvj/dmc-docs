@@ -12,22 +12,9 @@ category: Data Display
 
 ### CSS Extensions
 
-.. admonition::CSS Extensions
-   :icon: radix-icons:info-circled
-   :color: red
+As of DMC 1.2.0, `Carousel` component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
-   Carousel require additional CSS styles.
-
-The Carousel component require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
-
-Be sure to include:
-```python
-app = Dash(external_stylesheets=[dmc.styles.CAROUSEL])
-```
-Or, if you want to include all optional stylesheets:
-```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
 
 
 ### Simple Example
