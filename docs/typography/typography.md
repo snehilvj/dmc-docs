@@ -21,10 +21,10 @@ In this example, you can toggle between the default fonts and custom fonts speci
 
 ```python
 import dash_mantine_components as dmc
-from dash import Dash, _dash_renderer, Input, Output
-_dash_renderer._set_react_version("18.2.0")
+from dash import Dash, Input, Output
 
-app = Dash(external_stylesheets=dmc.styles.ALL)
+
+app = Dash()
 
 component = dmc.Box([
     dmc.SegmentedControl(id="segment", data=["default", "custom-fonts"], value="default"),

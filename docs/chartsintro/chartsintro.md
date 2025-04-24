@@ -11,23 +11,8 @@ category: Charts
 
 ### CSS Extensions
 
-.. admonition::CSS Extensions
-   :icon: radix-icons:info-circled
-   :color: red
-
-   Chart components require additional CSS styles.
-
-The Chart components require an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
-
-Be sure to include:
-```python
-app = Dash(external_stylesheets=[dmc.styles.CHARTS])
-```
-
-Or, if you want to include all optional stylesheets:
-```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
+As of DMC 1.2.0, Chart component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 ### Based on recharts
 

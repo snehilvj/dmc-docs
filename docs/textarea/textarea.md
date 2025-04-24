@@ -34,6 +34,14 @@ input:invalid {
 
 .. exec::docs.textarea.error
 
+### inputProps
+
+Use the `inputProps` dictionary to pass attributes directly to the underlying [`<input>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#attributes).
+
+In this example, `maxLength` is used to limit the number of characters a user can enter.
+
+.. exec::docs.textarea.inputProps
+
 ### Styles API
 
 .. styles_api_text::

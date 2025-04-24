@@ -10,30 +10,12 @@ category: Inputs
 
 ### CSS Extensions
 
-.. admonition::CSS Extensions
-   :icon: radix-icons:info-circled
-   :color: red
-
-   RichTextEditor require additional CSS styles.
-
-The `RichTextEditor` component requires an additional CSS stylesheet.  See the [Getting Started](/getting-started) section for more information.
-
-Be sure to include:
-
-```python
-app = Dash(external_stylesheets=[dmc.styles.RICH_TEXT_EDTIOR])
-```
-
-Or, if you want to include all optional stylesheets:
-```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
+As of DMC 1.2.0, RichTextEditor component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 ### Tiptap editor
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
   
-
-
 .. exec::docs.richtexteditor.usage
 
 

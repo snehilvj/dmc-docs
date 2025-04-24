@@ -102,10 +102,9 @@ automatically apply active styles based on the current URL
 ```python
 import dash
 import dash_mantine_components as dmc
-from dash import Dash, _dash_renderer, html
-_dash_renderer._set_react_version("18.2.0")
+from dash import Dash, html
 
-app = Dash(external_stylesheets=dmc.styles.ALL, use_pages=True, pages_folder="")
+app = Dash(use_pages=True, pages_folder="")
 
 dash.register_page("home", path="/", layout=html.Div("I'm home"))
 dash.register_page("page1", path="/page-1", layout=html.Div("Info about page 1 subjects"))

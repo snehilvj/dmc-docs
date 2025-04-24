@@ -20,7 +20,6 @@ app = Dash(
     suppress_callback_exceptions=True,
     use_pages=True,
     external_scripts=scripts,
-    external_stylesheets=dmc.styles.ALL,
     update_title=None,
 )
 

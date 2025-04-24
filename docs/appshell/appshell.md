@@ -69,10 +69,9 @@ This is the code for the first example above for the basic app shell with header
 ```python
 
 import dash_mantine_components as dmc
-from dash import Dash, _dash_renderer, Input, Output, State, callback
-_dash_renderer._set_react_version("18.2.0")
+from dash import Dash, Input, Output, State, callback
 
-app = Dash(external_stylesheets=dmc.styles.ALL)
+app = Dash()
 
 logo = "https://github.com/user-attachments/assets/c1ff143b-4365-4fd1-880f-3e97aab5c302"
 
