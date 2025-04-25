@@ -47,30 +47,29 @@ if __name__ == "__main__":
 
 ### Important Notes 
 
-#### Wrap Your App with MantineProvider
-DMC components require `dmc.MantineProvider` to apply theming and styles.
 
-#### React 18 is Required with Dash 2.x
-- Dash 2.x: Set REACT_VERSION=18.2.0 before running your app.
+#### Wrap the app.layout with `MantineProvider`
+Required to enable theming and styles for all DMC components.
 
+#### Using Dash 2.x?
+You must set React to version 18.2.0:
 ```python
-# required only with dash 2.x
+# required for dash 2.x
 import dash
 dash._dash_renderer._set_react_version("18.2.0")
 ```
 
+#### DMC < 1.2.0 Requires additional stylesheets
 
-#### Adding Optional Stylesheets required with DMC < 1.2.0 
-
-Starting in DMC 1.2.0, all necessary stylesheets are bundled automatically. You no longer need to manually add styles for specific components.  
-For details on including optional stylesheets in older versions, see our [migration guide](/migration).
+From DMC 1.2.0 on, styles are bundled—no need to add them manually. Still on an older version? Check the [migration guide](/migration)
+for info on how to add the stylesheets.
 
 ### Documentation
 
-This entire documentation has been created almost entirely using Dash Mantine Components. You can check out the source
-code in the [dcm-docs GitHub](https://github.com/snehilvj/dmc-docs) for some inspiration.
+This documentation site is built almost entirely with Dash Mantine Components.
+You can explore the source code on the [dcm-docs GitHub](https://github.com/snehilvj/dmc-docs)  for ideas and inspiration.
 
-While going through this documentation, you will come across interactive demos meant to show an overview as well as the overall effect of different combinations of a component's props.
+Throughout the docs, you’ll find interactive demos that highlight how different props and combinations affect each component in real time.
 
 .. exec::docs.getting-started.interactive
    :code: false
@@ -123,5 +122,11 @@ if __name__ == "__main__":
 
 Please read the [Mantine API Overview](/mantine-api) section Theming section before starting development to learn about all of the
 available theming and styling features.
+
+### Questions?
+
+Please ask on the [dash community forum](https://community.plotly.com/), or join our [Discord.](https://discord.gg/KuJkh4Pyq5)
+
+
 
 
