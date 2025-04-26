@@ -88,3 +88,8 @@ h3.m2d-heading {
 .m2d-block-quote {
     margin-bottom: 10px;
 }
+
+.m2d-thematic-break {
+   margin-top: 10px;
+   margin-bottom: 10px;
+}

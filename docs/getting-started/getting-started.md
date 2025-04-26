@@ -23,8 +23,6 @@ poetry add dash-mantine-components
 .. exec::docs.getting-started.hello_world
    :code: false
 
-Be sure to wrap your app layout in the `dmc.MantineProvider`
-
 
 ```python
 import dash_mantine_components as dmc
@@ -48,8 +46,25 @@ if __name__ == "__main__":
 ### Important Notes 
 
 
-#### Wrap the app.layout with `MantineProvider`
-Required to enable theming and styles for all DMC components.
+#### Wrap the layout with `MantineProvider`
+
+```python
+app.layout = dmc.MantineProvider(
+   # your content
+)
+```
+
+The `MantineProvider` is a core wrapper component that handles global styles, themes, and settings for all child components.
+
+It’s required to:
+
+- Enable component styling and theming (e.g., colors, fonts, spacing)
+
+- Apply dark/light mode
+
+- Customize default props across the app
+
+- Register custom themes or override styles
 
 #### Using Dash 2.x?
 You must set React to version 18.2.0:
@@ -59,10 +74,10 @@ import dash
 dash._dash_renderer._set_react_version("18.2.0")
 ```
 
-#### DMC < 1.2.0 Requires additional stylesheets
+#### Using DMC < 1.2.0?
 
-From DMC 1.2.0 on, styles are bundled—no need to add them manually. Still on an older version? Check the [migration guide](/migration)
-for info on how to add the stylesheets.
+If you are using DMC < 1.2.0 it is required to include additional stylesheets for certain components. See the
+[migration guide](/migration) for more information.
 
 ### Documentation
 
@@ -76,51 +91,11 @@ Throughout the docs, you’ll find interactive demos that highlight how differen
 
 Note that this documentation has some additional styling applied to it. So when you actually use these components, they 
 might look a bit different. You can check out [MantineProvider theme object](/theme-object) for more details on
-theming and customizations.
-
-Here's how you can add the same styling to your apps:
-
-```python
-import dash_mantine_components as dmc
-from dash import Dash
-
-app = Dash()
-
-app.layout = dmc.MantineProvider(
-     forceColorScheme="light",
-     theme={
-         "primaryColor": "indigo",
-         "fontFamily": "'Inter', sans-serif",
-         "components": {
-             "Button": {"defaultProps": {"fw": 400}},
-             "Alert": {"styles": {"title": {"fontWeight": 500}}},
-             "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
-             "Badge": {"styles": {"root": {"fontWeight": 500}}},
-             "Progress": {"styles": {"label": {"fontWeight": 500}}},
-             "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
-             "CodeHighlightTabs": {"styles": {"file": {"padding": 12}}},
-             "Table": {
-                 "defaultProps": {
-                     "highlightOnHover": True,
-                     "withTableBorder": True,
-                     "verticalSpacing": "sm",
-                     "horizontalSpacing": "md",
-                 }
-             },
-         },
-     },
-     children=[
-         # content
-     ],
- )
-
-if __name__ == "__main__":
-    app.run(debug=True)
-```
+theming and customizations and to see the [theme used in these docs.](/theme-object#usage-in-dmc-docs)
 
 ### Next Steps
 
-Please read the [Mantine API Overview](/mantine-api) section Theming section before starting development to learn about all of the
+Please read the [Mantine API Overview](/mantine-api) section before starting development to learn about all of the
 available theming and styling features.
 
 ### Questions?

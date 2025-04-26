@@ -73,7 +73,12 @@ print(dmc.styles.DATES)
 This will give you a link like:
 ```
 https://unpkg.com/@mantine/dates@7.11.0/styles.css
+
+
 ```
+
+
+----
 
 
 

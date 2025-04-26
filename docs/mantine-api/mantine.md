@@ -8,7 +8,73 @@ dmc: false
 
 .. toc::
 
-### Styling: Dash Mantine vs. Other Libraries
+### MantineProvider
+
+Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
+It is responsible for:  
+
+1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
+2. Manages light or dark mode.
+3. Adding CSS variables to the document
+
+
+```python
+import dash_mantine_components as dmc
+from dash import Dash
+app = Dash()
+
+app.layout = dmc.MantineProvider(
+    # children=[] your layout here
+)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+
+
+### Theme object
+The `theme` object is a  dictionary that stores design tokens, components default props, context styles and other data
+that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
+both in component props and CSS.
+
+To customize the theme, pass a theme dictionary to the `theme` prop of the `MantineProvider` component. The provided
+theme will be deeply merged with Mantine's [default theme](/theme-object#default-theme).
+
+```python
+# Your theme configuration is merged with default theme
+theme = {
+    "fontFamily": "Montserrat, sans-serif",
+    "defaultRadius": "md",    
+}
+
+app.layout = dmc.MantineProvider(
+    # children=[] your layout here
+    theme=theme
+)
+```
+
+
+Accessing theme values in a .css file in the /assets folder:
+
+```css
+.demo {
+  background: var(--mantine-color-red-1);
+  color: var(--mantine-color-red-9);
+  font-family: var(--mantine-font-family);
+  border-radius: var(--mantine-radius-md);
+}
+```
+
+Accessing CSS variables in the `style` or `styles` prop in a component
+
+```python
+dmc.Card(style={"backgroundColor":"var(--mantine-color-red-1)"})
+```
+
+
+
+### Styling props
 
 Dash components typically provide `style` and `className` props for styling, and Dash Mantine Components (DMC) also 
 supports these props in the same way as other libraries. For example:
@@ -51,70 +117,6 @@ props. Note: These props are different from `style` and `className`:
 - `styles`: Inline styles for specific elements inside a component.
 - `classNames`: Custom class names for specific elements inside a component.
 
-
-### MantineProvider
-
-Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
-It is responsible for:  
-
-1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
-2. Manages light or dark mode.
-3. Adding CSS variables to the document
-
-
-```python
-import dash_mantine_components as dmc
-from dash import Dash
-app = Dash()
-
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-)
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
-```
-
-### Theme object
-The `theme` object is a  dictionary that stores design tokens, components default props, context styles and other data
-that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
-both in component props and CSS.
-
-To customize the theme, pass a theme dictionary to the `theme` prop of the `MantineProvider` component. The provided
-theme will be deeply merged with Mantine's [default theme](/theme-object#default-theme).
-
-```python
-# Your theme configuration is merged with default theme
-theme = {
-    "fontFamily": "Montserrat, sans-serif",
-    "defaultRadius": "md",    
-}
-
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-    theme=theme
-)
-```
-
-
-
-Accessing theme values in a .css file in the /assets folder:
-
-```css
-.demo {
-  background: var(--mantine-color-red-1);
-  color: var(--mantine-color-red-9);
-  font-family: var(--mantine-font-family);
-  border-radius: var(--mantine-radius-md);
-}
-```
-
-Accessing CSS variables in the `style` or `styles` prop in a component
-
-```python
-dmc.Card(style={"backgroundColor":"var(--mantine-color-red-1)"})
-```
 
 
 
