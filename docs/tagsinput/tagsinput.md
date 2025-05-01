@@ -18,53 +18,23 @@ By default, `enter key` and `,` will select the typed value.
 .. exec::docs.tagsinput.simple
 
 
+
 ### Data Format
 
-The data can be provided as either:
-* an array of strings - use when label and value are same.
-* an array of dicts with `label` and `value` properties.
-* an array of dict with `group` and `items` as keys where items are one of the previous two types.
+Note that the `data` format is different than components like `Select` and `Multi Select`.  See [Why can I not use value/label data structure with TagsInput?](https://help.mantine.dev/q/autocomplete-value-label)
+
+`TagsInput` `data` prop accepts data in one of the following formats:
 
 ```python
-data = ["Pandas", "NumPy", "TensorFlow", "PyTorch"]
+data = ["React", "Angular", "Svelte", "Vue"]
 
 # or
 
 data = [
-    {"value": "Pandas", "label": "Pandas"},
-    {"value": "NumPy", "label": "NumPy"},
-    {"value": "TensorFlow", "label": "TensorFlow"},
-    {"value": "PyTorch", "label": "PyTorch"},
-]
-
-# or
-
-data = [
-    {"group": "Data Analysis", "items": ["Pandas", "NumPy"]},
-    {"group": "Deep Learning", "items": ["TensorFlow", "Pytorch"]}
-]
-
-# or
-
-data = [
-    {
-        "group": "Data Analysis",
-        "items": [
-            {"value": "Pandas", "label": "Pandas"},
-            {"value": "NumPy", "label": "NumPy"},
-        ],
-    },
-    {
-        "group": "Deep Learning",
-        "items": [
-            {"value": "TensorFlow", "label": "TensorFlow"},
-            {"value": "PyTorch", "label": "PyTorch"},
-        ],
-    },
+    {"group": "Frontend", "items": ["React", "Angular"]},
+    {"group": "Backend", "items": ["Express", "Django"]}
 ]
 ```
-
-
 
 ### Clearable
 
@@ -115,20 +85,6 @@ If you want to allow values only from suggestions, use [MultiSelect](/components
 
 .. exec::docs.tagsinput.suggestions
 
-### Data Format
-
-`TagsInput` `data` prop accepts data in one of the following formats:
-
-```python
-data = ["React", "Angular", "Svelte", "Vue"]
-
-# or
-
-data = [
-    {"group": "Frontend", "items": ["React", "Angular"]},
-    {"group": "Backend", "items": ["Express", "Django"]}
-]
-```
 
 ### Grouping
 
