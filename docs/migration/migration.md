@@ -114,6 +114,10 @@ We still expect far fewer breaking changes going forward compared to what you ma
 There are many breaking changes going from DMC `v0.12` to DMC `v0.14`. The major reason behind this was we jumped from 
 underlying Mantine `v5` to Mantine `v7` and DMC tries to be as aligned with Mantine as possible. 
 
+It's helpful to also refer to the upstream docs as well for a description of breaking changes:
+  - [Mantine V7.0](https://mantine.dev/changelog/7-0-0/)
+  - [Mantine V6.0](https://v6.mantine.dev/changelog/6-0-0/)
+
 This hard alignment ensures that I can continue developing and maintaining this library alongside my day job. However, 
 as per the author of Mantine itself, Mantine is reaching maturity and 
 Mantine `v8` is supposed to introduce a lot of new features without the cost of API change.
@@ -183,7 +187,7 @@ app = Dash(__name__, external_stylesheets=stylesheets)
 Or, include all the stylesheets like this:
 
 ```python
-app = Dash(__name__, external_stylesheets=dmc.styles.ALL)
+app = Dash(external_stylesheets=dmc.styles.ALL)
 ```
 
 ### Missing components
@@ -251,7 +255,7 @@ are now supposed to be implemented with compound components instead.
 - `uppercase` prop was removed, use `tt` [style prop](/style-props) instead
 - `loaderPosition` prop was removed, Loader is now always rendered in the center to prevent layout shifts
 
-### AppShell
+### AppShell (renamed Navbar, Aside, Header, Footer, Main)
 
 [AppShell](/components/appshell) component is more feature rich now and has undergone following changes:
 
