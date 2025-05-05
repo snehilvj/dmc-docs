@@ -93,6 +93,12 @@ Note that this documentation has some additional styling applied to it. So when 
 might look a bit different. You can check out [MantineProvider theme object](/theme-object) for more details on
 theming and customizations and to see the [theme used in these docs.](/theme-object#usage-in-dmc-docs)
 
+### Mantine Documentation
+
+Dash Mantine Components v0.14 through v1.x are built on **Mantine v7**.
+While the [Mantine documentation](https://mantine.dev) is a valuable reference, please make sure to consult the [Mantine v7 docs](https://v7.mantine.dev/) to avoid discrepancies, as Mantine is currently on version 8.
+
+
 ### Next Steps
 
 Please read the [Mantine API Overview](/mantine-api) section before starting development to learn about all of the
