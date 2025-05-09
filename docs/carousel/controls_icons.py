@@ -13,5 +13,5 @@ component = dmc.Carousel(
     height=180,
     nextControlIcon=DashIconify(icon="bi:arrow-right-circle-fill", width=30),
     previousControlIcon=DashIconify(icon="bi:arrow-left-circle-fill", width=30),
-    loop=True,
+    emblaOptions = {"loop": True},
 )
