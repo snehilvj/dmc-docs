@@ -4,7 +4,7 @@ from dash import html, Input, Output, callback
 
 def make_carousel(id):
     return dmc.Carousel(
-        loop=True,
+        emblaOptions={"loop": True},
         withIndicators=True,
         children=[
             dmc.CarouselSlide(
