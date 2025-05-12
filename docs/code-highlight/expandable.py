@@ -31,13 +31,13 @@ code = [
         "fileName": "demo.py",
         "code": demo_py,
         "language": "python",
-        "icon": DashIconify(icon="vscode-icons:file-type-python", width=20),
+        "icon": DashIconify(icon="vscode-icons:file-type-python", width=12),
     },
     {
         "fileName": "styles.css",
         "code":styles_css,
         "language": "css",
-        "icon": DashIconify(icon="vscode-icons:file-type-css", width=20),
+        "icon": DashIconify(icon="vscode-icons:file-type-css", width=12),
     },
 ]
 
