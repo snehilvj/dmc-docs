@@ -24,6 +24,23 @@ in the following cases:
 - All inputs are empty. In this case the `value` will be  an empty string.
 - All inputs are filled. For example if `withSeconds` prop is set and the user entered 12:34:56, the value will be
 12:34:56. But if the user entered 12:34, `value` will not be updated because seconds value is missing.
+- If a complete, valid time has been entered, the value will update as the user changes any part of it (hours, minutes,
+or seconds). Each digit change will immediately reflect in the updated value.
+
+### Debounce
+
+To control how often the input's value is updated while the user is typing, use the `debounce` prop:
+
+- Set `debounce=True` to update the value only when the user finishes typing and moves focus away (i.e. on blur).
+- Set `debounce=<milliseconds>` to update the value after a specified delay from the user's last keystroke. For example,
+`debounce=300` will wait 300 milliseconds after the user stops typing before updating the value.
+
+#### Example debounce=True
+.. exec::docs.timepicker.debounce
+
+#### Example debounce=1000
+.. exec::docs.timepicker.debouncems
+
 
 ### With seconds
 Set `withSeconds` prop to enable seconds input. Note that if this prop is used, the value is not updated until all
