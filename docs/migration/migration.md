@@ -23,7 +23,169 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 | **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
 
 
-### Some Components Require Extra Stylesheets in DMC < 1.2.0
+### Migrating from 1.2.0 to 2.0.0
+
+DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://mantine.dev/changelog/8-0-0/)
+
+
+#### Portal reuseTargetNode
+`reuseTargetNode` prop of `Portal` component is now enabled by default. This option improves performance by reusing the
+target node between portal renders, but in some edge cases, it might cause issues with z-index stacking context.
+
+For more information see the [Mantine Portal documentation.](https://mantine.dev/core/portal/)
+
+If you experience issues with z-index, change `reuseTargetNode` prop to `False` in `theme`:
+
+
+```python
+dmc.MantineProvider(    
+    theme={
+        "components": {
+            "Portal": {
+                "defaultProps": {
+                    # ✅ Disable reuseTargetNode by default if your application has z-index issues
+                    "reuseTargetNode": False,                  
+                },
+            },
+        },
+    }
+)
+```
+
+#### Switch withThumbIndicator
+
+[Switch](/components/switch) component default styles were updated, it now includes checked state indicator inside the
+thumb. If you want to use old styles without indicator, set `withThumbIndicator` prop to false in theme:
+
+```python
+dmc.MantineProvider(    
+    theme={
+        "components": {
+            "Switch": {
+                "defaultProps": {
+                    # ✅ Disable withThumbIndicator if you want to use old styles
+                    "withThumbIndicator": False,                  
+                },
+            },
+        },
+    }
+)
+```
+#### DatesProvider timezone
+DatesProvider component no longer supports timezone option:
+
+```python
+dmc.DatesProvider(
+    # children= ...
+    # ❌ timezone option is no longer supported
+    setting={"timezone": 'UTC', "consistentWeeks": True}
+)
+```
+
+
+
+#### DateTimePicker timeInputProps
+`DateTimePicker` component no longer accepts `timeInputProps` prop, as the underlying `TimeInput` component was
+replaced with `TimePicker`. To pass props down to `TimePicker` component, use `timePickerProps` prop instead.
+
+1.x
+```python
+dmc.DateTimePicker(
+    # ❌ timeInputProps is no longer available
+      timeInputProps={
+        "leftSection": dashIconify(icon="bi:clock"),
+      }
+)
+```
+
+2.x
+```python
+dmc.DateTimePicker(
+    #   ✅ Use timePickerProps instead of timeInputProps
+      timePickerProps={
+        "leftSection": dashIconify(icon="bi:clock"),
+         "minutesStep": 5,
+        "withDropdown": True,
+      }
+)
+```
+
+#### CodeHighlight usage
+
+To reduce the bundle size and increase performance,  only the top 10 languages from highlight.js are available.  See [CodeHighlight](/components/code-highlight)
+for more details.  If you would like additional languages, please open an issue on our [GitHub](https://github.com/snehilvj/dash-mantine-components/issues)
+
+
+#### Menu data-hovered attribute
+`MenuItem` no longer uses `data-hovered` attribute to indicate hovered state. If you used `data-hovered` in your styles,
+you need to change it `:hover` and `:focus` selectors instead:
+
+.css files:
+```css
+// ❌ 7.x – styles with `data-hovered`,
+// no longer works in 8.x
+.item {
+  &[data-hovered] {
+    background-color: red;
+  }
+}
+
+// ✅ 8.x – use styles with `:hover` and `:focus`
+.item {
+  &:hover,
+  &:focus {
+    background-color: red;
+  }
+}
+```
+
+#### Popover hideDetached
+`Popover` now supports `hideDetached` prop to automatically close popover when target element is removed from the DOM.
+Please see the example in the [Popover docs](/components/popover)
+
+By default, `hideDetached` is enabled – the behavior has changed from 1.x version. If you prefer to keep the old
+behavior, you can disable `hideDetached` for all components:
+
+
+```python
+dmc.MantineProvider(    
+    theme={
+        "components": {
+            "Popover": {
+                "defaultProps": {
+                    #  ✅ Disable hideDetached by default if you want to keep the old behavior
+                    "hideDetached": False,                  
+                },
+            },
+        },
+    }
+)
+```
+
+#### Carousel changes
+
+Update embla props that were previously passed to `Carousel` component to `emblaOptions`. Full list of props:
+
+- `loop`
+- `align`
+- `slidesToScroll`
+- `dragFree`
+- `inViewThreshold`
+- `skipSnaps`
+- `containScroll`
+- `speed` and `draggable` props were removed – they are no longer supported by embla
+
+```python
+#  ❌ 1.x – embla options passed as props no longer works in 2.x
+dmc.Carousel(loop=True,  dragFree=True,  align="start")
+
+# ✅ 2.x – use emblaOptions to pass options to embla
+dmc.Carousel({ "loop": True, "dragFree": True, "align": 'start' })
+```
+
+----
+
+### Some Components No Longer Require Extra Stylesheets in DMC >= 1.2.0
 
 > Starting in DMC 1.2.0, it is not necessary to include additional stylesheets for some components.  The info below is for
 running older version of DMC. 
@@ -34,7 +196,7 @@ CSS files separately. You can also include all optional CSS stylesheets at once 
 Starting from version 0.14.4, `dash-mantine-components` provides `dmc.styles` variables to ensure that the correct 
 stylesheet version is used, matching the version of the library you have installed.
 
-To include stylesheets in your Dash app, you can do something like this:
+To include stylesheets in your Dash app, it was necessary to do something like this:
 
 ```python
 from dash import Dash
