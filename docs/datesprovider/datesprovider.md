@@ -8,15 +8,6 @@ category: Date Pickers
 
 .. toc::
 
-
-### CSS Extensions
-
-As of DMC 1.2.0, `Date` component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
-
-
-
 ### Usage
 
 The DatesProvider component lets you set various settings that are shared across all date components. DatesProvider supports the following settings:
