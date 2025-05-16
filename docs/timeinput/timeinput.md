@@ -16,12 +16,31 @@ Use the  `withSeconds` prop to display seconds.
 
 .. exec::docs.timeinput.simple
 
+### TimePicker component
+TimeInput component is based on the native `input[type="time"]` element and does not support most of advanced features
+like choosing time format or custom dropdown with time select. If you need more features, use [TimePicker](/components/timepicker) 
+component instead.
+
+`TimeInput` features/limitations:
+
+- Native `input[type="time"]` element
+- Native browser controls for time selection on mobile devices
+- Time format depends on the user's locale
+- Only native dropdown with hours/minutes/seconds, does not work in Firefox
+- Mobile Safari does not provide an option to select seconds
+
+
 ### Input Props
 
 TimeInput supports all props from Input and InputWrapper components such as `radius`, `size`, `required`, etc.
 
 .. exec::docs.timeinput.interactive
     :code: false
+
+### With icon
+
+
+.. exec::docs.timeinput.icon
 
 ### Invalid State And Error
 

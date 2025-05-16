@@ -26,6 +26,28 @@ the code language is `tsx` (TypeScript).
 
 .. exec::docs.code-highlight.simple
 
+### Supported Languages 
+
+By default, the `CodeHighlight` components supports syntax highlighting for the top 10 most commonly used languages:
+
+* `python` / `py`
+* `javascript` / `js`
+* `typescript` / `ts`
+* `html` / `xml`
+* `css`
+* `json`
+* `yaml` / `yml`
+* `bash` / `sh`
+* `sql`
+* `markdown` / `md`
+
+These were selected to optimize bundle size and load performance while covering the most common use cases across
+data science, web development, and configuration formats.
+
+If you set `language="some-unsupported-lang"`, the code will render with no syntax highlighting.
+
+If you need support for a language not currently included, please open an issue on our [GitHub repository.](https://github.com/snehilvj/dash-mantine-components/issues)
+
 ### Copy button
 You can customize copy button labels with `copyLabel` and `copiedLabel` props. In case you need to remove 
 the copy button, set `withCopyButton=False`.

@@ -41,6 +41,25 @@ Set `withOverlay` prop to add overlay behind the dropdown. You can pass addition
 
 .. exec::docs.popover.overlay
 
+### Hide detached
+
+Use `hideDetached` prop to configure how the dropdown behaves when the target element is hidden with styles 
+(`display: none, visibility: hidden,` etc.), removed from the DOM, or when the target element is scrolled out of the viewport.
+
+By default, `hideDetached` is enabled – the dropdown is hidden with the target element. You can change this behavior
+with `hideDetached=False`. To see the difference, try to scroll the root element of the following demo:
+
+
+.. exec::docs.popover.hidedetached
+
+### Click outside
+By default, `Popover` closes when you click outside of the dropdown. To disable this behavior, set `closeOnClickOutside=False`.
+
+You can configure events that are used for click outside detection with `clickOutsideEvents` prop. By default, `Popover`
+listens to `mousedown` and `touchstart` events. You can change it to any other events, for example, `mouseup` and `touchend`:
+
+
+.. exec::docs.popover.clickoutside
 
 ### Styles API
 

@@ -20,5 +20,6 @@ configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "lg")
 configurator.add_colorpicker("color", "indigo")
 configurator.add_switch("disabled", False)
+configurator.add_switch("withThumbIndicator", True)
 
 component = configurator.panel

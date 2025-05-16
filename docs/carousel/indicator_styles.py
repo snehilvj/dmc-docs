@@ -8,6 +8,6 @@ component = dmc.Carousel(
     id="carousel-indicator-styles",
     withIndicators=True,
     height=200,
-    loop=True,
+    emblaOptions = {"loop": True},
     classNames={"indicator": "dmc-indicator"},
 )
