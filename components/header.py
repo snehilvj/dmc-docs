@@ -44,6 +44,31 @@ def create_version_menu():
         trigger="hover",
         styles={"item": {"height": 30}},
     )
+def search_data(data):
+    docs_pages = [
+            {"label": component["name"], "value": component["path"]}
+            for component in data
+            if component["name"] not in ["Home", "Not found 404"]
+        ]
+    other_search_terms = [
+        {"label": "RangeSlider", "value": "/components/slider#range-slider"},
+        {"label": "DatePickerInput dates range", "value": "/components/datepickerinput#dates-range"},
+        {"label": "CheckboxGroup", "value": "/components/checkbox#checkbox-group-component"},
+        {"label": "CheckboxCard", "value": "/components/checkbox#checkboxcad-component"},
+        {"label": "ChipGroup", "value": "components/chip#chipgroups-like-radio-button"},
+        {"label": "InlineCodeHighlight", "value": "/components/code-highlight#inline-code"},
+        {"label": "CodeHighlightTabs", "value": "/components/code-highlight#with-tabs"},
+        {"label": "AvatarGroup", "value": "/components/avatar#avatar-group"},
+        {"label": "RadioCard", "value": "/components/radiogroup#radiocard-component"},
+        {"label": "AppShellNavbar", "value": "/components/appshell#navbar"},
+        {"label": "AppShellHeader", "value": "/components/appshell#header"},
+        {"label": "AppShellAside", "value": "/components/appshell#aside"},
+        {"label": "AppShellFooter", "value": "/components/appshell#footer"},
+        {"label": "AppShellSection", "value": "/components/appshell#section"},
+        {"label": "ActionIconGroup", "value": "/components/actionicon#actionicongroup"},
+        {"label": "ButtonGroup", "value": "/components/button#button-group"},
+    ]
+    return docs_pages + other_search_terms
 
 
 def create_search(data):
@@ -58,11 +83,7 @@ def create_search(data):
         nothingFoundMessage="Nothing Found!",
         rightSectionWidth=60,
         leftSection=DashIconify(icon="mingcute:search-3-line"),
-        data=[
-            {"label": component["name"], "value": component["path"]}
-            for component in data
-            if component["name"] not in ["Home", "Not found 404"]
-        ],
+        data=search_data(data),
         visibleFrom="sm",
         comboboxProps={"shadow": "md"},
     )
