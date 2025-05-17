@@ -24,7 +24,7 @@ def create_version_menu():
             dmc.MenuTarget(
                 #version-update
                 dmc.Button(
-                    '1.2',
+                    '1.3',
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                 )
