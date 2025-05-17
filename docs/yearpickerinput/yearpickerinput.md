@@ -44,7 +44,7 @@ By default, YearPickerInput is rendered inside Popover. You can change that to M
 
 ### Value format
 
-Use `format` property to change the format of the date displayed in the date input field.
+Use `valueFormat` property to change the format of the date displayed in the date input field.
 
 .. exec::docs.yearpickerinput.valueformat
 

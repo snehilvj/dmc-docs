@@ -29,11 +29,10 @@ This is a simple example of DateInput tied to a callback. You can type a date or
 
 ### Value format
 
-Use `format` property to change the format of the date displayed in the date input field.
+
+Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label displayed in the input field.
 
 .. exec::docs.dateinput.formats
-
-Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label.
 
 
 ### Clearable
