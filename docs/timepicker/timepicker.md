@@ -92,6 +92,13 @@ To group presets use an array of objects with label and values keys:
 
 .. exec::docs.timepicker.presetsgroup
 
+### Time presets range
+Use the `timeRangePresets` prop to generate a range of times. It accepts a dictionary with `startTime`,
+`endTime`, and `interval` keys, where all values are strings in `hh:mm:ss` format. This overrides any values provided 
+directly in the `presets` prop.
+
+.. exec::docs.timepicker.presetsrange
+
 
 ### Dropdown position
 By default, the dropdown is displayed below the input if there is enough space; otherwise it is displayed above the 
