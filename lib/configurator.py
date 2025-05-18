@@ -70,7 +70,7 @@ class Configurator:
             [Input(f"{self.target_id}-store", "data"), Input(cid, "value")],
             prevent_initial_call=True,
         )
-        setattr(self.target, target_prop, mapping[value])
+        setattr(self.target, target_prop, value)
         self.control_props.append({ 'prop': target_prop, 'value': value })
         control = dmc.Stack(
             [
