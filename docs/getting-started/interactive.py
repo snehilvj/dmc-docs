@@ -2,11 +2,9 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "getting-started-button-interactive"
+target = dmc.Button("Settings")
 
-target = dmc.Center(dmc.Button("Settings", id=TARGET_ID))
-
-configurator = Configurator(target, TARGET_ID, "Button")
+configurator = Configurator(target, center_component=True)
 
 configurator.add_select(
     "variant",

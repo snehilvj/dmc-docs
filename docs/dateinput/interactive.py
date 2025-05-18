@@ -2,12 +2,10 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-date-input"
-target = dmc.Center(
-    dmc.DateInput(label="Enter date", placeholder="Enter date", w=250, id=TARGET_ID)
-)
+target = dmc.DateInput(label="Enter date", placeholder="Enter date", w=250)
 
-configurator = Configurator(target, TARGET_ID, "DateInput")
+configurator = Configurator(target, center_component=True)
+
 configurator.add_text_input(
     "placeholder", "Enter date", **{"placeholder": "Placeholder"}
 )

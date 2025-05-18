@@ -3,12 +3,9 @@ from dash_iconify import DashIconify
 
 from lib.configurator import Configurator
 
-TARGET_ID = "actionicon-interactive"
-target = dmc.Center(
-    dmc.ActionIcon(DashIconify(icon="clarity:settings-line", width=20), id=TARGET_ID)
-)
+target = dmc.ActionIcon(DashIconify(icon="clarity:settings-line", width=20))
 
-configurator = Configurator(target, TARGET_ID, "ActionIcon")
+configurator = Configurator(target, center_component=True)
 
 configurator.add_select(
     "variant",

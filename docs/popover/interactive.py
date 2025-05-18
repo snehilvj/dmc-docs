@@ -7,10 +7,7 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-popover-arrow"
-
-target = dmc.Center(
-    dmc.Popover(
+target = dmc.Popover(
         [
             dmc.PopoverTarget(dmc.Button("Toggle Popover")),
             dmc.PopoverDropdown(dmc.Text("Arrow position can be changed for *-start and *-end positions")),
@@ -20,11 +17,10 @@ target = dmc.Center(
         withArrow=True,
         shadow="md",
         opened=True,
-        id=TARGET_ID
     )
-)
 
-configurator = Configurator(target, TARGET_ID, "Popover")
+configurator = Configurator(target, center_component=True)
+
 configurator.add_segmented_control("arrowPosition", ["center", "side"], "side")
 configurator.add_number_slider("arrowOffset", value=6, max=50)
 configurator.add_number_slider("arrowSize", value=12, max=12)

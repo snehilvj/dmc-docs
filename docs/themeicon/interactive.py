@@ -3,13 +3,10 @@ from dash_iconify import DashIconify
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-themeicon"
+target = dmc.ThemeIcon(children=DashIconify(icon="tabler:photo", width=20))
 
-target = dmc.Center(
-    dmc.ThemeIcon(children=DashIconify(icon="tabler:photo", width=20), id=TARGET_ID)
-)
+configurator = Configurator(target, center_component=True)
 
-configurator = Configurator(target, TARGET_ID)
 configurator.add_segmented_control("variant", ["filled", "light", "outline"], "filled")
 configurator.add_slider("size", "md")
 configurator.add_slider("radius", "sm")

@@ -2,18 +2,15 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-select-input"
-target = dmc.Center(
-    dmc.Select(
+target = dmc.Select(
         label="",
         placeholder="placeholder",
         data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
         w=250,
-        id=TARGET_ID,
     )
-)
 
-configurator = Configurator(target, TARGET_ID, "Select")
+configurator = Configurator(target, center_component=True)
+
 configurator.add_text_input(
     "placeholder", "Select placeholder", **{"placeholder": "Placeholder"}
 )

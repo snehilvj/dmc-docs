@@ -2,19 +2,15 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-numberinput"
-
-target = dmc.Center(
-    dmc.NumberInput(
+target = dmc.NumberInput(
         label="Your age",
         placeholder="Your age",
         w=300,
         required=True,
-        id=TARGET_ID,
     )
-)
 
-configurator = Configurator(target, TARGET_ID, "NumberInput")
+configurator = Configurator(target, center_component=True)
+
 configurator.add_text_input("placeholder", "Your age", placeholder="Placeholder")
 configurator.add_text_input("label", "Your age", placeholder="Label")
 configurator.add_text_input("description", "", placeholder="Description")

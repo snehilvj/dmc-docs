@@ -2,17 +2,14 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-datetime-input"
-target = dmc.Center(
-    dmc.DateTimePicker(
+target = dmc.DateTimePicker(
         label="Pick a date and time",
         placeholder="Pick date and time",
         w=250,
-        id=TARGET_ID,
     )
-)
 
-configurator = Configurator(target, TARGET_ID, "DateTimePicker")
+configurator = Configurator(target, center_component=True)
+
 configurator.add_text_input(
     "placeholder", "Pick date and time", **{"placeholder": "Placeholder"}
 )

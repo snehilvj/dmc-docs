@@ -11,14 +11,12 @@ def create_label(label: str) -> str:
 
 
 class Configurator:
-    def __init__(self, target_component: Component, target_id: Optional[str] = None, component_name: Optional[str] = None):
+    def __init__(self, target_component: Component, center_component: Optional[bool] = False):
         self.target = target_component
-        self.target_id = target_id or self.new_id
+        self.center_component = center_component
+        self.target_id = self.new_id
+        setattr(self.target, 'id', self.target_id)
         self.component_name = self.target.__class__.__name__
-        if not target_id:
-            self.target.id = self.target_id
-        if not component_name:
-            self.component_name = self.target.__class__.__name__
         self.outputs = []
         self.inputs = []
         self.controls = []
@@ -175,9 +173,10 @@ class Configurator:
             State(f"{self.target_id}-component-name", "data"),
         )
 
+
         return dmc.Stack([
             dmc.Grid([
-                dmc.GridCol(self.target, span={"sm": 12, "md": "auto"}, p=20),
+                dmc.GridCol(dmc.Center(self.target) if self.center_component else self.target, span={"sm": 12, "md": "auto"}, p=20),
                 dmc.GridCol(
                     dmc.Stack(self.controls, gap="md", maw="100%", w=240, p=20),
                     span="content",

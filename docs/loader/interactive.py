@@ -2,11 +2,9 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-loader"
+target = dmc.Loader()
 
-target = dmc.Center(dmc.Loader(id=TARGET_ID))
-
-configurator = Configurator(target, TARGET_ID, "Loader")
+configurator = Configurator(target, center_component=True)
 
 configurator.add_colorpicker("color", "red")
 configurator.add_slider("size", "md")

@@ -2,8 +2,7 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-tabs-position"
-
+# to fix, target ID on tabsList
 target = dmc.Tabs(
     [
         dmc.TabsList(
@@ -12,14 +11,13 @@ target = dmc.Tabs(
                 dmc.TabsTab("Messages", value="messages"),
                 dmc.TabsTab("Settings", value="settings"),
             ],
-            id=TARGET_ID,
         ),
     ],
     value="gallery",
 )
 
 
-configurator = Configurator(target, TARGET_ID, "Tabs")
+configurator = Configurator(target, center_component=True)
 
 configurator.add_select(
     "justify", ["flex-start", "center", "flex-end", "space-around"], "center"

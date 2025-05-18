@@ -2,20 +2,16 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "indicator-interactive"
-
-target = dmc.Center(
-    dmc.Indicator(
+target = dmc.Indicator(
         dmc.Avatar(
             size="lg",
             radius="sm",
             src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png",
-        ),
-        id=TARGET_ID,
+        ),   
     )
-)
 
-configurator = Configurator(target, TARGET_ID, "Indicator")
+configurator = Configurator(target, center_component=True)
+
 configurator.add_colorpicker("color", "indigo")
 configurator.add_select(
     "position",

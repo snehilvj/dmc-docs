@@ -3,9 +3,7 @@ from dash_iconify import DashIconify
 
 from lib.configurator import Configurator
 
-TARGET_ID = "actionicongroup-interactive"
-target = dmc.Center(
-    dmc.ActionIconGroup(
+target = dmc.ActionIconGroup(
         [
             dmc.ActionIcon(
                 variant="default",
@@ -27,11 +25,9 @@ target = dmc.Center(
             ),
         ],
         orientation="horizontal",
-        id=TARGET_ID
     )
-)
 
-configurator = Configurator(target, TARGET_ID, 'ActionIconGroup')
+configurator = Configurator(target, center_component=True)
 configurator.add_segmented_control("orientation", ["horizontal", "vertical"], "horizontal")
 
 component = configurator.panel

@@ -2,13 +2,9 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-avatar"
+target = dmc.Avatar()
 
-target = dmc.Center(
-    dmc.Avatar( id=TARGET_ID)
-)
-
-configurator = Configurator(target, TARGET_ID, "Avatar")
+configurator = Configurator(target, center_component=True)
 
 configurator.add_select("variant", ["filled", "light", "outline", "transparent", "white", "default"], "filled")
 configurator.add_slider("radius", "sm")
