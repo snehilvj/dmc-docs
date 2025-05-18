@@ -28,7 +28,7 @@ target = html.Div(
     style={"width": 240},
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "NavLink")
 configurator.add_segmented_control("variant", ["filled", "light", "subtle"], "filled")
 configurator.add_colorpicker("color", "indigo")
 

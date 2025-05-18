@@ -14,7 +14,7 @@ target = dmc.Center(
     ),
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "ScrollArea")
 
 configurator.add_select("type", ["auto", "scroll", "always", "never", "hover"], "hover")
 configurator.add_number_input("scrollbarSize", 10, **{"min": 2, "max": 20, "step": 2})

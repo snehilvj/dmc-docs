@@ -15,7 +15,7 @@ target = dmc.RingProgress(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "RingProgress")
 
 configurator.add_number_input("size", 120, **{"min": 60, "max": 400, "step": 10})
 configurator.add_number_input("thickness", 12, **{"min": 0})

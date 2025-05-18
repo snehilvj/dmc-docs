@@ -8,7 +8,7 @@ target = dmc.Center(
     dmc.Checkbox(label="I agree to sell my privacy.", checked=True, id=TARGET_ID)
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Checkbox")
 
 configurator.add_segmented_control("labelPosition", ["left", "right"], "right")
 configurator.add_text_input("label", "I agree to sell my privacy")

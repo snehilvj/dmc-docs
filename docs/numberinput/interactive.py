@@ -14,7 +14,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "NumberInput")
 configurator.add_text_input("placeholder", "Your age", placeholder="Placeholder")
 configurator.add_text_input("label", "Your age", placeholder="Label")
 configurator.add_text_input("description", "", placeholder="Description")

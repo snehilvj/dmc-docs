@@ -13,7 +13,7 @@ target = dmc.Stepper(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Stepper")
 
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("size", "sm")

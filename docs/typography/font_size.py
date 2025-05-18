@@ -17,7 +17,7 @@ target = dmc.Text(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Text")
 
 
 configurator.add_slider("fz", "md")

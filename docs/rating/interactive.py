@@ -6,7 +6,7 @@ TARGET_ID = "interactive-rating"
 
 target = dmc.Group(dmc.Rating(value=2, count=5, id=TARGET_ID), justify="center")
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Rating")
 
 configurator.add_colorpicker("color", "yellow")
 configurator.add_slider("size", "sm")

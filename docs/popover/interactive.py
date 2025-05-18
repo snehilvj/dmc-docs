@@ -24,7 +24,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Popover")
 configurator.add_segmented_control("arrowPosition", ["center", "side"], "side")
 configurator.add_number_slider("arrowOffset", value=6, max=50)
 configurator.add_number_slider("arrowSize", value=12, max=12)

@@ -22,7 +22,7 @@ target = dmc.Tabs(
 )
 
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Tabs")
 configurator.add_colorpicker("color", "red")
 configurator.add_segmented_control(
     "variant", ["default", "outline", "pills"], "default"

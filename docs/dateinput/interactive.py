@@ -7,7 +7,7 @@ target = dmc.Center(
     dmc.DateInput(label="Enter date", placeholder="Enter date", w=250, id=TARGET_ID)
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "DateInput")
 configurator.add_text_input(
     "placeholder", "Enter date", **{"placeholder": "Placeholder"}
 )

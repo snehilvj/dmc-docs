@@ -15,7 +15,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Indicator")
 configurator.add_colorpicker("color", "indigo")
 configurator.add_select(
     "position",

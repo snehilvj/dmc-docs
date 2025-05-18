@@ -6,7 +6,7 @@ TARGET_ID = "getting-started-button-interactive"
 
 target = dmc.Center(dmc.Button("Settings", id=TARGET_ID))
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Button")
 
 configurator.add_select(
     "variant",

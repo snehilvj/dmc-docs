@@ -15,7 +15,7 @@ target = dmc.Slider(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Slider")
 
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("size", "md")

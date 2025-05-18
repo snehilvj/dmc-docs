@@ -12,7 +12,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "DateTimePicker")
 configurator.add_text_input(
     "placeholder", "Pick date and time", **{"placeholder": "Placeholder"}
 )

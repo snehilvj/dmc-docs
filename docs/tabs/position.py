@@ -19,7 +19,7 @@ target = dmc.Tabs(
 )
 
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Tabs")
 
 configurator.add_select(
     "justify", ["flex-start", "center", "flex-end", "space-around"], "center"

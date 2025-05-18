@@ -8,7 +8,7 @@ target = dmc.Center(
     dmc.Chip("Awesome chip", checked=True, id=TARGET_ID)
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Chip")
 
 configurator.add_segmented_control("variant", ["filled", "outline", "light"], "light")
 configurator.add_colorpicker("color", "indigo")

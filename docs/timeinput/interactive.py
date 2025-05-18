@@ -8,7 +8,7 @@ target = dmc.TimeInput(
     label="Start time", description="Enter start time for processing", id=TARGET_ID
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "TimeInput")
 configurator.add_text_input("label", "Current Time", **{"placeholder": "Label"})
 configurator.add_text_input("description", "", **{"placeholder": "Description"})
 configurator.add_text_input("error", "", **{"placeholder": "Error"})

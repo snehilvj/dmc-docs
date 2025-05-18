@@ -13,7 +13,7 @@ target = dmc.Fieldset(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Fieldset")
 
 configurator.add_select(
     "variant",

@@ -8,7 +8,7 @@ target = dmc.Center(
     dmc.ActionIcon(DashIconify(icon="clarity:settings-line", width=20), id=TARGET_ID)
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "ActionIcon")
 
 configurator.add_select(
     "variant",

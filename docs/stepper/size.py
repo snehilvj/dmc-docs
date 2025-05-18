@@ -13,7 +13,7 @@ target = dmc.Stepper(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Stepper")
 
 configurator.add_number_input("iconSize", 42)
 

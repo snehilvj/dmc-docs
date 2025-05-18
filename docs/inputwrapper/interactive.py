@@ -15,7 +15,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "InputWrapper")
 
 configurator.add_text_input("label", "Your label", placeholder="Label")
 configurator.add_text_input("description", "Your description", placeholder="Description")

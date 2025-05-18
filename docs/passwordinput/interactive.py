@@ -15,7 +15,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "PasswordInput")
 configurator.add_text_input("placeholder", "Password", **{"placeholder": "Placeholder"})
 configurator.add_text_input("label", "Enter your password", **{"placeholder": "Label"})
 configurator.add_text_input(

@@ -6,7 +6,7 @@ TARGET_ID = "interactive-loader"
 
 target = dmc.Center(dmc.Loader(id=TARGET_ID))
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Loader")
 
 configurator.add_colorpicker("color", "red")
 configurator.add_slider("size", "md")

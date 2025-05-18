@@ -11,7 +11,7 @@ target = dmc.SegmentedControl(
     id=TARGET_ID,
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "SegmentedControl")
 
 configurator.add_colorpicker("color", "indigo")
 

@@ -75,7 +75,7 @@ target = dmc.Timeline(
 )
 
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Timeline")
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("radius", "xl")
 configurator.add_number_input("active", 2, **{"min": -1, "max": 3})

@@ -31,7 +31,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, 'ActionIconGroup')
 configurator.add_segmented_control("orientation", ["horizontal", "vertical"], "horizontal")
 
 component = configurator.panel

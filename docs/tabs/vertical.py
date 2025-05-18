@@ -24,7 +24,7 @@ target = dmc.Tabs(
 )
 
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Tabs")
 
 configurator.add_select("placement", ["left", "right"], "right")
 

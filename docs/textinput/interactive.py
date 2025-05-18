@@ -9,7 +9,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "TagsInput")
 configurator.add_text_input(
     "placeholder", "Your Name", **{"placeholder": "Placeholder"}
 )

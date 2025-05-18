@@ -13,7 +13,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "MultiSelect")
 configurator.add_text_input(
     "placeholder", "MultiSelect placeholder", **{"placeholder": "Placeholder"}
 )

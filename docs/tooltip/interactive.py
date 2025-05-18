@@ -14,7 +14,7 @@ target = dmc.Center(
     )
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Tooltip")
 configurator.add_colorpicker("color", "red")
 configurator.add_slider("radius", "sm")
 configurator.add_select(

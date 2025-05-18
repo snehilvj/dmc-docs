@@ -8,7 +8,7 @@ target = dmc.Center(
     dmc.Switch(label="I agree to sell my privacy", checked=True, id=TARGET_ID)
 )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, TARGET_ID, "Switch")
 
 configurator.add_segmented_control("labelPosition", ["right", "left"], "right")
 configurator.add_text_input(
