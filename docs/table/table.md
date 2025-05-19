@@ -57,6 +57,42 @@ dmc.Table(
 .. exec::docs.table.striped
     :code: false
 
+
+### Scroll container
+To prevent viewport overflow wrap `Table` with `TableScrollContainer`. The component accepts `minWidth` prop which sets
+minimum width below which table will be scrollable.
+
+By default, `TableScrollContainer` uses `ScrollArea`, you can change it to native scrollbars by setting `type="native"`
+
+You can also set `maxHeight` prop on `TableScrollContainer` to limit table height
+
+
+.. exec::docs.table.scrollcontainer
+
+### Vertical variant
+Set `variant="vertical"` to render table with vertical layout:
+
+
+
+.. exec::docs.table.vertical
+
+
+### tableProps
+
+
+Use `tableProps` to pass additional [HTML attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table) 
+to the underlying elements of a dmc.Table, such as `<td>`, `<tr>`, or `<th>`. This is useful when you need to control
+layout behavior like `rowSpan`, `colSpan`.
+
+You can pass tableProps to components like:
+```python
+dmc.TableTd("Monday", tableProps={"rowSpan": 2})
+```
+
+This example also shows how to include other dash components in table cells.
+
+.. exec::docs.table.tableprops
+
 ### Styles API
 
 .. styles_api_text::
@@ -103,3 +139,7 @@ dmc.Table(
 #### Table
 
 .. kwargs::Table
+
+#### TableScrollContainer
+
+.. kwargs::TableScrollContainer

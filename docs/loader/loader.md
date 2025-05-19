@@ -17,7 +17,7 @@ category: Feedback
 Loader component supports 3 types of loaders: `oval`, `bars` and `dots` by default. All loaders are animated with CSS for better performance.
 
 By default, Loader will be rendered with theme.primaryColor. A Loader can be customized with `color`, `size`, and
-`variant` props.
+`type` props.
 
 .. exec::docs.loader.simple
 
