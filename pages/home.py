@@ -85,8 +85,8 @@ layout = html.Div(
                 dmc.Box([
                     dmc.Text("Version Info:", ta="center"),
                     #version-update
-                    dmc.Center(dmc.Anchor("dash-mantine-components=1.2.0" , underline=False, href="https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases", target='_blank')),
-                    dmc.Center(dmc.Anchor("mantine=7.17.4" , underline=False, href="https://mantine.dev/", target='_blank')),
+                    dmc.Center(dmc.Anchor("dash-mantine-components=1.3.0" , underline=False, href="https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases", target='_blank')),
+                    dmc.Center(dmc.Anchor("mantine=7.17.7" , underline=False, href="https://mantine.dev/", target='_blank')),
                 ]),
 
                 dmc.Group(
