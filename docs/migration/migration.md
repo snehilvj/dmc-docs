@@ -14,6 +14,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.0.0**               | June 2025    | 8.0.1           | `dash>=2.0.0` |
 | **1.3.0**               | May 2025     | 7.17.7          | `dash>=2.0.0` |
 | **1.2.0**               | Apr 2025     | 7.17.4          | `dash>=2.0.0` |
 | **1.1.0**               | Mar 2025     | 7.17.2          | `dash>=2.0.0` |
@@ -183,6 +184,16 @@ dmc.Carousel(loop=True,  dragFree=True,  align="start")
 # ✅ 2.x – use emblaOptions to pass options to embla
 dmc.Carousel({ "loop": True, "dragFree": True, "align": 'start' })
 ```
+
+####  DatePicker
+
+A new `DatePicker` component has been added — this is a standalone calendar (no input field), matching Mantine's upstream
+component.
+
+Note that in v0.15.0, the original `DatePicker` was renamed to `DatePickerInput` to align with Mantine’s naming.
+
+If you are migrating from DMC < 0.15.0 and your app used `dmc.DatePicker` update it to use `dmc.DatePickerInput`
+
 
 ----
 
