@@ -52,14 +52,14 @@ The horizontal scroll bar will be displayed when the content of the ScrollArea i
 .. styles_api_text::
 
 ####  ScrollArea Selectors
-
-| Selector  | Static selector               | Description    |
-|-----------|-------------------------------|----------------|
-| root      | .mantine-ScrollArea-root       | Root element   |
-| viewport  | .mantine-ScrollArea-viewport   |                |
-| scrollbar | .mantine-ScrollArea-scrollbar  |                |
-| thumb     | .mantine-ScrollArea-thumb      |                |
-| corner    | .mantine-ScrollArea-corner     |                |
+| Selector  | Static selector                 | Description                                       |
+| --------- | ------------------------------- | ------------------------------------------------- |
+| root      | `.mantine-ScrollArea-root`      | Root element                                      |
+| content   | `.mantine-ScrollArea-content`   | Wraps component children                          |
+| viewport  | `.mantine-ScrollArea-viewport`  | Main scrollable area                              |
+| scrollbar | `.mantine-ScrollArea-scrollbar` | Horizontal or vertical scrollbar root             |
+| thumb     | `.mantine-ScrollArea-thumb`     | Scrollbar thumb                                   |
+| corner    | `.mantine-ScrollArea-corner`    | Corner between horizontal and vertical scrollbars |
 
 
 
