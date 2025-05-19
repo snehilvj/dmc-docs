@@ -140,6 +140,54 @@ For information on setting locale, have a look at the [DatesProvider](/component
 
 .. styles_api_text::
 
+
+#### DatePicker Selectors
+
+| Selector                  | Static selector                                 | Description                                    |
+| ------------------------- | ----------------------------------------------- | ---------------------------------------------- |
+| calendarHeader            | `.mantine-DatePicker-calendarHeader`            | Calendar header root element                   |
+| calendarHeaderControl     | `.mantine-DatePicker-calendarHeaderControl`     | Previous/next calendar header controls         |
+| calendarHeaderControlIcon | `.mantine-DatePicker-calendarHeaderControlIcon` | Icon of previous/next calendar header controls |
+| calendarHeaderLevel       | `.mantine-DatePicker-calendarHeaderLevel`       | Level control (month → year → decade)          |
+| levelsGroup               | `.mantine-DatePicker-levelsGroup`               | Group of months levels                         |
+| yearsList                 | `.mantine-DatePicker-yearsList`                 | Years list table element                       |
+| yearsListRow              | `.mantine-DatePicker-yearsListRow`              | Years list row element                         |
+| yearsListCell             | `.mantine-DatePicker-yearsListCell`             | Years list cell element                        |
+| yearsListControl          | `.mantine-DatePicker-yearsListControl`          | Button used to pick months and years           |
+| monthsList                | `.mantine-DatePicker-monthsList`                | Months list table element                      |
+| monthsListRow             | `.mantine-DatePicker-monthsListRow`             | Months list row element                        |
+| monthsListCell            | `.mantine-DatePicker-monthsListCell`            | Months list cell element                       |
+| monthsListControl         | `.mantine-DatePicker-monthsListControl`         | Button used to pick months and years           |
+| monthThead                | `.mantine-DatePicker-monthThead`                | Thead element of month table                   |
+| monthRow                  | `.mantine-DatePicker-monthRow`                  | TR element of month table                      |
+| monthTbody                | `.mantine-DatePicker-monthTbody`                | Tbody element of month table                   |
+| monthCell                 | `.mantine-DatePicker-monthCell`                 | TD element of month table                      |
+| month                     | `.mantine-DatePicker-month`                     | Month table element                            |
+| weekdaysRow               | `.mantine-DatePicker-weekdaysRow`               | Weekdays TR element                            |
+| weekday                   | `.mantine-DatePicker-weekday`                   | Weekday TH element                             |
+| day                       | `.mantine-DatePicker-day`                       | Month day control                              |
+| weekNumber                | `.mantine-DatePicker-weekNumber`                | Week number TD element                         |
+
+
+
+#### DatePicker Data Attributes
+
+| Selector              | Attribute             | Condition                                    | Value                    |
+| --------------------- | --------------------- | -------------------------------------------- | ------------------------ |
+| calendarHeaderControl | `data-direction`      | –                                            | `"previous"` or `"next"` |
+| calendarHeaderControl | `data-disabled`       | Control is disabled                          | –                        |
+| monthCell             | `data-with-spacing`   | `withCellSpacing` prop is set                | –                        |
+| day                   | `data-today`          | Date is today (`new Date()`)                 | –                        |
+| day                   | `data-hidden`         | Outside current month and `hideOutsideDates` | –                        |
+| day                   | `data-disabled`       | Disabled by props (e.g., `excludeDate`)      | –                        |
+| day                   | `data-weekend`        | Day is weekend                               | –                        |
+| day                   | `data-outside`        | Day is outside of current month              | –                        |
+| day                   | `data-selected`       | Day is selected                              | –                        |
+| day                   | `data-in-range`       | Day is in selected range                     | –                        |
+| day                   | `data-first-in-range` | First day in selected range                  | –                        |
+| day                   | `data-last-in-range`  | Last day in selected range                   | –                        |
+
+
 ### Keyword Arguments
 
 #### DatePicker
