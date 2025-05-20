@@ -15,6 +15,16 @@ When MenuItem is used as a button, you can write callbacks on it.
 
 .. exec::docs.menu.simple
 
+### Submenus
+
+.. exec::docs.menu.submenus
+    :code: false
+
+.. sourcetabs::docs/menu/submenus.py
+    :defaultExpanded: false
+    :withExpandedButton: true
+
+
 ### Menu on Hover
 
 Set `trigger` to `hover` to reveal dropdown when user hovers over menu target and dropdown. `closeDelay` and `openDelay` props can be used to control open and close delay in ms.

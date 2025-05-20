@@ -28,7 +28,7 @@ the code language is `tsx` (TypeScript).
 
 ### Supported Languages 
 
-By default, the `CodeHighlight` components supports syntax highlighting for the top 10 most commonly used languages:
+The `CodeHighlight` components supports syntax highlighting for the top 10 most commonly used languages:
 
 * `python` / `py`
 * `javascript` / `js`
@@ -40,9 +40,6 @@ By default, the `CodeHighlight` components supports syntax highlighting for the 
 * `bash` / `sh`
 * `sql`
 * `markdown` / `md`
-
-These were selected to optimize bundle size and load performance while covering the most common use cases across
-data science, web development, and configuration formats.
 
 If you set `language="some-unsupported-lang"`, the code will render with no syntax highlighting.
 
