@@ -8,8 +8,6 @@ dmc: false
 
 .. toc::
 
-### Migration Guide: From `NotificationProvider` to `NotificationContainer`
-
 Starting in `dash-mantine-components` v2.0.0, the notification system has been redesigned to align more closely
 with Mantine’s native implementation. The `NotificationProvider` and `Notification` components are now deprecated and
 will be removed in a future release. The new `NotificationContainer` provides a simpler and more declarative way to
@@ -17,7 +15,7 @@ manage notifications.
 
 See the [new Notification documentation](components/notification) for more details.
 
-#### Key Changes
+### Key Changes
 
 * Old approach:
 
@@ -32,7 +30,7 @@ See the [new Notification documentation](components/notification) for more detai
   * Use the `hideNotifications`, `clean`, and `cleanQueue` props to use the `hide`, `clean` and `cleanQueue` features.
   * Use the `appNotifications` API for client-side interactions.
 
-#### Updating Your Code
+### Updating Your Code
 
 Before (deprecated):
 
@@ -55,7 +53,7 @@ app.layout = dmc.MantineProvider([
 ])
 ```
 
-#### Show Notifications
+### Show Notifications
 
 Before:
 
@@ -95,7 +93,7 @@ def show_notification(n_clicks):
     return []
 ```
 
-#### Update Notifications
+### Update Notifications
 
 Before:
 
