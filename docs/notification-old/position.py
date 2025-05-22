@@ -4,26 +4,27 @@ from dash import callback, Output, Input
 
 positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'top-center', 'bottom-center']
 
-component =  dmc.RadioGroup(
-    children=dmc.Group([dmc.Radio(p, value=p) for p in positions], my=10),
-    label="Select Notification position",
-    value=None,
-    id="notification-position"
+component = dmc.Box(
+    [
+        dmc.Text("Display Notification at position:"),
+        dmc.SegmentedControl( data=positions, value="top-right", id="notify-position"),
+        dmc.Box(id="notifications-container3")
+    ]
 )
 
 @callback(
-    Output("notification-container", "sendNotifications", allow_duplicate=True),
-    Input("notification-position", "value"),
+    Output("notifications-container3", "children"),
+    Input("notify-position", "value"),
     prevent_initial_call=True,
 )
 def notify(value):
     if value:
-        return [dict(
+        return dmc.Notification(
             title=f"Notification {value}",
             autoClose=True,
             action="show",
             message="Hello World",
             color="red",
-            position=value,
-        )]
+            position=value
+        )
     return dash.no_update

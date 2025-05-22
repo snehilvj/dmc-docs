@@ -52,7 +52,8 @@ def create_appshell(data):
             html.Div(id="notifications-container"),
             html.Div(id="notifications-container2"),
             html.Div(id="notifications-container3"),
-            dmc.AppShell(
+            dmc.NotificationContainer(id="notification-container"),
+             dmc.AppShell(
                 [
                     create_header(data),
                     create_navbar(data),
