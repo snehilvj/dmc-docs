@@ -8,154 +8,142 @@ category: Feedback
 
 .. toc::
 
+### New NotificationContainer
 
-Add `NotificationContainer()` component in your application. Note that:
+Starting in `dash-mantine-components` v2.0.0, notifications are now handled through a single, simplified component: `NotificationContainer`.
 
-- It is required to place `NotificationContainer` component inside `MantineProvider`
-- You do not need to wrap your application with `NotificationNotification()` component – it is a regular component
-- You should not have multiple `NotificationContainer()` components – if you do that, your notifications will be duplicated
-- In a multi page app, the `NotificationContainer()` should be in the main `app.layout`
-- It is unnecessary to have a separate output container like in DMC < 2.0
+This replaces the previous `NotificationProvider` and `Notification` pattern with a more powerful and declarative approach.
+
+Add `NotificationContainer` to your layout (it must be placed inside a `MantineProvider`):
 
 ```python
-
-app.layout = dmc.MantineProvider(
-    [
-        dmc.NotificationContainer(id="notification-container"),
-        # other
-        
-    ]
-)
-
+app.layout = dmc.MantineProvider([
+    dmc.NotificationContainer(id="notification-container"),
+    # other components...
+])
 ```
 
+### Migration Notice
 
+The following components are deprecated and will be removed in a future release:
+
+* `NotificationProvider`
+* `Notification`
+
+See the [Notification Migration Guide](#) for help updating your app.
+
+### Usage notes
+
+* `NotificationContainer` must be placed inside a `MantineProvider`.
+* You should have only one `NotificationContainer` in your app; multiple containers will cause notifications to be duplicated.
+* In multi-page apps, place `NotificationContainer` in the top-level `app.layout`, not inside individual pages.
+* It is no longer necessary to use a separate output container (such as `html.Div`) as in versions prior to 2.0.
 
 ### sendNotifications
 
-Use the `sendNotifications` prop in the `NotificationContainer` to show, hide or update the notification component.
+Use the `sendNotifications` prop on `NotificationContainer` to show, or  update  notifications.
 
-`sendNotifications` is a list of dictionaries with the following properties:
+`sendNotifications` is a list of dictionaries. Each dictionary represents a single notification with the following properties:
 
-- `id` – notification id, it is used to update and remove notifications, by default id is randomly generated
-- `action`-  One of "show", "hide", or "update"
-- `position` – notification position, by default the value from the position prop of the Notifications component is used
-- `withBorder` – determines whether notification should have a border
-- `withCloseButton` – determines whether the close button should be visible
-- `onClose` – calls when notification is unmounted
-- `autoClose` – defines timeout in ms on which notification will be automatically closed, use false to disable auto close
-- `message` – required notification body
-- `color`, `icon`, `title`, `radius`, `className`, `style`, `loading`
+* `id` – notification ID used to update or remove notifications. A random ID is generated if not provided.
+* `action` – one of `"show"`, or `"update"`
+* `position` – notification position. If not provided, the default from `NotificationContainer` is used.
+* `withBorder` – whether the notification should have a border
+* `withCloseButton` – whether the close button is visible
+* `onClose` – callback triggered when the notification is unmounted
+* `autoClose` – timeout in milliseconds to automatically close the notification. Set to `False` to disable.
+* `message` – required notification body
+* `color`, `icon`, `title`, `radius`, `className`, `style`, `loading`
 
-The "action" prop in the `sendNotifications` dict can be "show", "hide" or "update"
+The `"action"` value determines what happens to the notification:
 
-- `show` – adds given notification to the notifications list or queue, depending on the current state and limit
-- `hide` – removes notification with given id from the notifications state and queue
-- `update` – updates notification that was previously added to the state or queue
+* `"show"` – adds a new notification or queues it if the limit is reached
+* `"update"` – updates a notification previously shown or queued
 
+### Show Notifications
 
-#### Show Notifications
-To display a notification, add an item to the `sendNotifications` list with `"action": "show"`.
-
-Each item in the list is a dictionary describing a single notification:
+To display a notification, add a dictionary with `"action": "show"` to the `sendNotifications` list:
 
 ```python
 sendNotifications = [{
     "action": "show",
     "id": "my-id",
-    "message":  "My notification message",
+    "message": "My notification message",
     # other props
 }]
 ```
 
 .. exec::docs.notification.show
 
-
 #### Update Notifications
 
-To update a notifications that were previously shown or queued, set `"action": "update"` and include the same id used earlier.
+To update a notification that was previously shown or queued, set `"action": "update"` and include the same `id` used earlier:
+
 ```python
 sendNotifications = [{
     "action": "update",
     "id": "my-id",
-    "message":  "My updated notification message",
+    "message": "My updated notification message",
     # other props to update
 }]
 ```
 
 .. exec::docs.notification.update
 
-
-
 ### Notification Position
 
-You can define notification position in `sendNotification` dictionary. Possible position values:
+You can set the notification position in the `sendNotifications` dictionary. Valid values:
 
-- "top-left"
-- "top-right"
-- "top-center"
-- "bottom-left" 
-- "bottom-right"
-- "bottom-center"
+* `"top-left"`
+* `"top-right"`
+* `"top-center"`
+* `"bottom-left"`
+* `"bottom-right"`
+* `"bottom-center"`
 
 .. exec::docs.notification.position
 
-
-The default position can be defined on the `NotificationContainer` component. In the following example, notifications will be
-displayed in the top right corner of the screen if position is not defined in the `senddNotifications` prop in the callback:
-
-
+You can also set a default position in the `NotificationContainer`. For example, if `position` is not set in the
+callback, the following layout will display notifications in the top right corner:
 
 ```python
-
-app.layout = dmc.MantineProvider(
-    [
-        dmc.NotificationContainer(position="top-right", id="notification-container"),
-     
-    ]
-)
-
+app.layout = dmc.MantineProvider([
+    dmc.NotificationContainer(position="top-right", id="notification-container"),
+])
 ```
 
 ### Limit and queue
-You can limit maximum number of notifications that are displayed at a time by setting limit prop on `NotificationContainer`:
+
+To limit the number of notifications displayed at once, use the `limit` prop:
 
 ```python
- dmc.NotificationContainer(limit=5),
+dmc.NotificationContainer(limit=5)
 ```
-All notifications added after the limit was reached are added to the queue and displayed when notification from current state is hidden.
 
+Notifications beyond the limit are added to the queue and shown when others are dismissed.
 
 .. exec::docs.notification.queue
 
-
 ### Hide Notifications
 
-use `hideNotifications` to specify a list of notification ids to remove from the  state and queue.
+Use the `hideNotifications` prop to remove notifications by `id` from the state and queue.
 
 .. exec::docs.notification.hide
 
-
 ### clean and cleanQueue
 
-Use `cleanQueue` to  remove all notifications from the queue and `clean` to remove all notifications both from the state and queue:
-
+Use `cleanQueue` to remove all queued notifications, and `clean` to remove all notifications from both state and queue.
 
 .. exec::docs.notification.clean
 
-
 ### autoClose
-
-
 
 .. exec::docs.notification.autoclose
 
-###  Accessing Notifications API
+### Accessing Notifications API
 
-The `NotificationsContainer` exposes the underlying Mantine notifications API directly to JavaScript. This makes it
-easy to control notifications in Dash clientside callbacks.
-
-You can access the API via:
+`NotificationContainer` exposes the underlying Mantine notifications API globally in JavaScript. You can access this
+in clientside callbacks using:
 
 ```js
 dash_mantine_components.appNotifications
@@ -168,29 +156,23 @@ This object provides:
   * `.show({...})`
   * `.update({...})`
   * `.hide(id)`
-  * `.clean()` 
+  * `.clean()`
   * `.cleanQueue()`
-* `appNotifications.store` – returns the current state of all notifications (active + queued)
-
-
+* `appNotifications.store` – returns the current state of all active and queued notifications
 
 The example below demonstrates how to:
 
 * Show a notification from a clientside callback
-* Display the notification store into a Dash `html.Pre` component
-* Clean all notifications from the client
+* Display the notification store in a `html.Pre` component
+* Clean all notifications on the client
 
 .. exec::docs.notification.api
 
-
 ### Notifications in Multi Page apps
 
-When using notifications in a multi-page app, ensure that `NotificationContainer` is defined in `app.layout`—even if
-the notification is triggered from a different page.  
+In multi-page apps, define `NotificationContainer` in `app.layout`—even if notifications are triggered from other pages.
 
-By keeping the notification container in `app.layout`, it remains available across all pages, preventing errors when a
-user navigates away while a notification is still visible and later updated.  
-
+This ensures the container is always mounted and available, preventing errors when navigating between pages while notifications are active.
 
 ### CSS Extensions
 
