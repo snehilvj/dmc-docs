@@ -30,7 +30,7 @@ The following components are deprecated and will be removed in a future release:
 * `NotificationProvider`
 * `Notification`
 
-See the [Notification Migration Guide](#) for help updating your app.
+See the [Notification Migration Guide](/migration-notifications) for help updating your app.
 
 ### Usage notes
 
@@ -38,6 +38,22 @@ See the [Notification Migration Guide](#) for help updating your app.
 * You should have only one `NotificationContainer` in your app; multiple containers will cause notifications to be duplicated.
 * In multi-page apps, place `NotificationContainer` in the top-level `app.layout`, not inside individual pages.
 * It is no longer necessary to use a separate output container (such as `html.Div`) as in versions prior to 2.0.
+
+### Show Notifications
+
+To display a notification, add a dictionary with `"action": "show"` to the `sendNotifications` list:
+
+```python
+sendNotifications = [{
+    "action": "show",
+    "id": "my-id",
+    "message": "My notification message",
+    # other props
+}]
+```
+
+.. exec::docs.notification.show
+
 
 ### sendNotifications
 
@@ -60,22 +76,8 @@ The `"action"` value determines what happens to the notification:
 * `"show"` – adds a new notification or queues it if the limit is reached
 * `"update"` – updates a notification previously shown or queued
 
-### Show Notifications
 
-To display a notification, add a dictionary with `"action": "show"` to the `sendNotifications` list:
-
-```python
-sendNotifications = [{
-    "action": "show",
-    "id": "my-id",
-    "message": "My notification message",
-    # other props
-}]
-```
-
-.. exec::docs.notification.show
-
-#### Update Notifications
+### Update Notifications
 
 To update a notification that was previously shown or queued, set `"action": "update"` and include the same `id` used earlier:
 
