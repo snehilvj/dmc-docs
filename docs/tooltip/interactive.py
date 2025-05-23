@@ -2,19 +2,15 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-tooltip"
-
-target = dmc.Center(
-    dmc.Tooltip(
-        id=TARGET_ID,
+target = dmc.Tooltip(
         label="Tooltip",
         opened=True,
         withArrow=True,
         children=[dmc.Button("Button with tooltip", variant="outline", size="lg")],
     )
-)
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, center_component=True)
+
 configurator.add_colorpicker("color", "red")
 configurator.add_slider("radius", "sm")
 configurator.add_select(

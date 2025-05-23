@@ -2,13 +2,9 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-switch"
+target = dmc.Switch(label="I agree to sell my privacy", checked=True)
 
-target = dmc.Center(
-    dmc.Switch(label="I agree to sell my privacy", checked=True, id=TARGET_ID)
-)
-
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, center_component=True)
 
 configurator.add_segmented_control("labelPosition", ["right", "left"], "right")
 configurator.add_text_input(

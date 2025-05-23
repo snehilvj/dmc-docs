@@ -4,18 +4,16 @@ from lib.configurator import Configurator
 
 TARGET_ID = "interactive-password"
 
-target = dmc.Center(
-    dmc.PasswordInput(
+target = dmc.PasswordInput(
         label="Enter your password",
         placeholder="Password",
         description="Password must include at least one letter, number and special character",
         required=True,
         w=250,
-        id=TARGET_ID,
     )
-)
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, center_component=True)
+
 configurator.add_text_input("placeholder", "Password", **{"placeholder": "Placeholder"})
 configurator.add_text_input("label", "Enter your password", **{"placeholder": "Label"})
 configurator.add_text_input(

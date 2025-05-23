@@ -2,8 +2,6 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-tabs"
-
 target = dmc.Tabs(
     [
         dmc.TabsList(
@@ -18,11 +16,10 @@ target = dmc.Tabs(
         dmc.TabsPanel("Settings tab content", value="settings", pt="xs"),
     ],
     value="gallery",
-    id=TARGET_ID,
 )
 
+configurator = Configurator(target)
 
-configurator = Configurator(target, TARGET_ID)
 configurator.add_colorpicker("color", "red")
 configurator.add_segmented_control(
     "variant", ["default", "outline", "pills"], "default"

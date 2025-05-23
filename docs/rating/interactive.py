@@ -2,11 +2,9 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-rating"
+target = dmc.Rating(value=2, count=5)
 
-target = dmc.Group(dmc.Rating(value=2, count=5, id=TARGET_ID), justify="center")
-
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, center_component=True)
 
 configurator.add_colorpicker("color", "yellow")
 configurator.add_slider("size", "sm")
