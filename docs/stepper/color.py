@@ -10,7 +10,7 @@ target = dmc.Stepper(
     ]
 )
 
-configurator = Configurator(target, center_component=True)
+configurator = Configurator(target)
 
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("size", "sm")
