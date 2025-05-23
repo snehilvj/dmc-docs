@@ -29,9 +29,9 @@ component = html.Div(
     Input("update-notifications", "n_clicks"),
     prevent_initial_call=True,
 )
-def notify(nc1, nc2):
+def notify(n1, n2):
     button_id = ctx.triggered_id
-    if nc1 > 0:
+    if n1 and n1 > 0:
         if "show" in button_id:
             return [dict(
                 id="my-load-notification",
@@ -42,7 +42,7 @@ def notify(nc1, nc2):
                 action="show",
                 autoClose=False,
             )]
-    if nc2 > 0:
+    if n2 and n2 > 0:
         if "update" in button_id:
             return [dict(
                 id="my-load-notification",

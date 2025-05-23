@@ -9,9 +9,8 @@ dmc: false
 .. toc::
 
 Starting in `dash-mantine-components` v2.0.0, the notification system has been redesigned to align more closely
-with Mantine’s native implementation. The `NotificationProvider` and `Notification` components are now deprecated and
-will be removed in a future release. The new `NotificationContainer` provides a simpler and more declarative way to
-manage notifications.
+with Mantine’s implementation. The `NotificationProvider` and `Notification` components are now deprecated and
+will be removed in a future release. 
 
 See the [new Notification documentation](components/notification) for more details.
 
@@ -223,3 +222,14 @@ def cleanQueue_notification(n_clicks):
         return True
     return no_update
 ```
+
+
+### Keyword Arguments
+
+#### NotificationProvider
+
+.. kwargs::NotificationProvider
+
+#### Notification
+
+.. kwargs::Notification

@@ -12,7 +12,8 @@ category: Feedback
 
 Starting in `dash-mantine-components` v2.0.0, notifications are now handled through a single, simplified component: `NotificationContainer`.
 
-This replaces the previous `NotificationProvider` and `Notification` pattern with a more powerful and declarative approach.
+This replaces the previous `NotificationProvider` and `Notification` pattern with a more powerful approach that is more closely
+aligned with the Mantine's implementation.
 
 Add `NotificationContainer` to your layout (it must be placed inside a `MantineProvider`):
 
@@ -41,6 +42,8 @@ See the [Notification Migration Guide](/migration-notifications) for help updati
 
 ### Show Notifications
 
+Use the `sendNotifications` prop on `NotificationContainer` to show or update notifications.
+
 To display a notification, add a dictionary with `"action": "show"` to the `sendNotifications` list:
 
 ```python
@@ -57,12 +60,16 @@ sendNotifications = [{
 
 ### sendNotifications
 
-Use the `sendNotifications` prop on `NotificationContainer` to show, or  update  notifications.
+Use the `sendNotifications` prop on `NotificationContainer` to show or  update  notifications.
 
 `sendNotifications` is a list of dictionaries. Each dictionary represents a single notification with the following properties:
 
 * `id` – notification ID used to update or remove notifications. A random ID is generated if not provided.
 * `action` – one of `"show"`, or `"update"`
+  
+    * `"show"` – adds a new notification or queues it if the limit is reached
+    * `"update"` – updates a notification previously shown or queued
+ 
 * `position` – notification position. If not provided, the default from `NotificationContainer` is used.
 * `withBorder` – whether the notification should have a border
 * `withCloseButton` – whether the close button is visible
@@ -71,15 +78,10 @@ Use the `sendNotifications` prop on `NotificationContainer` to show, or  update 
 * `message` – required notification body
 * `color`, `icon`, `title`, `radius`, `className`, `style`, `loading`
 
-The `"action"` value determines what happens to the notification:
-
-* `"show"` – adds a new notification or queues it if the limit is reached
-* `"update"` – updates a notification previously shown or queued
-
 
 ### Update Notifications
 
-To update a notification that was previously shown or queued, set `"action": "update"` and include the same `id` used earlier:
+To update notifications that were previously shown or queued, set `"action": "update"` and include the`id` of the notifications to update:
 
 ```python
 sendNotifications = [{
@@ -106,7 +108,7 @@ You can set the notification position in the `sendNotifications` dictionary. Val
 .. exec::docs.notification.position
 
 You can also set a default position in the `NotificationContainer`. For example, if `position` is not set in the
-callback, the following layout will display notifications in the top right corner:
+`sendNotifications` dict, the following layout will display notifications in the top right corner:
 
 ```python
 app.layout = dmc.MantineProvider([
@@ -202,10 +204,6 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 
 ### Keyword Arguments
 
-#### NotificationProvider
+#### NotificationContainer
 
-.. kwargs::NotificationProvider
-
-#### Notification
-
-.. kwargs::Notification
+.. kwargs::NotificationContainer
