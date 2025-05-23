@@ -105,21 +105,6 @@ will be able to control arrow offset with `arrowOffset` prop. Note that when `ar
 .. exec::docs.tooltip.interactive-arrow
     :code: false
 
-```python
-
-dmc.Tooltip(
-    label="This is a tooltip",
-    position="top-start",
-    opened=True,
-    withArrow=True,
-    arrowPosition="side",
-    arrowOffset=5,
-    arrowSize=8,
-    arrowRadius=3,    
-    children=[...]
-)
-
-```
 
 ### Multiline
 
