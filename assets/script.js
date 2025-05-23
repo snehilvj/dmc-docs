@@ -32,7 +32,7 @@ const sliderCallback = (data, value) => {
 }
 
 const generateSnippetCode = (componentsProps, componentName) => {
-    let snippet = `import dash_mantine_component as dmc\n\ndmc.${componentName}(\n`
+    let snippet = `import dash_mantine_component as dmc\n\ndmc.${componentName}(\n\t# props as configured above:\n`
     for (const {prop, value} of Object.values(componentsProps)) {
         if (value !== undefined && value !== null && value !== '') {
             if (typeof value === 'string') {
@@ -50,7 +50,7 @@ const generateSnippetCode = (componentsProps, componentName) => {
             }
         }
     }
-    snippet += `)`
+    snippet += `\t# other props...\n)`
     return snippet
 }
 
