@@ -16,25 +16,6 @@ widths for columns, use `Grid` component instead.
 .. exec::docs.simplegrid.simple
     :code: false
 
-```python
-import dash_mantine_components as dmc
-from dash import html
-
-dmc.SimpleGrid(
-    cols=3,
-    spacing="md",
-    verticalSpacing="md",
-    children=[
-        html.Div("1"),
-        html.Div("2"),
-        html.Div("3"),
-        html.Div("4"),
-        html.Div("5"),
-    ]
-)
-
-```
-
 ### spacing and verticalSpacing props
 `spacing` prop is used both for horizontal and vertical spacing if `verticalSpacing` is not set:
 
