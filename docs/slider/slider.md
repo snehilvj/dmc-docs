@@ -53,7 +53,8 @@ Below is a slider with `updatemode` set to "drag", observe how the output text c
 ### Control label
 To change label behavior and appearance, set the following props:
 
-- `label` – set to `None` to disable the label. Use a formatter function to format the label, accepts value as an argument.
+
+- `label` – set to `None` to disable the label. You can also provide a formatter function (via `{"function": "..."}`) to customize the label text. The function receives the `value` as its argument.
 - `labelAlwaysOn` – if `True` – label will always be displayed, by default label is visible only when user is dragging
 - `labelTransitionProps` – props passed down to the `Transition` component, can be used to customize label animation
 
@@ -62,7 +63,7 @@ To change label behavior and appearance, set the following props:
 .. exec::docs.slider.label
     :code: false
 
-.. sourcetabs::docs/slider/scale.py, assets/examples-js/celcius_label.js
+.. sourcetabs::docs/slider/label.py, assets/examples-js/celcius_label.js
     :defaultExpanded: true
     :withExpandedButton: true
 

@@ -10,7 +10,7 @@ class FunctionsAsProps(BaseDirective):
 
     def render(self, renderer, title: str, content: str, **options) -> Component:
         component = dmc.Box([
-            dmc.Text("Note:  This example uses custom JavaScript functions. Learn more at ", span=True),
+            dmc.Text("Note: This example uses custom JavaScript defined in the assets folder. Learn more at ", span=True),
             dmc.Anchor("Functions As Props", href="/functions-as-props"),
         ], mb="lg")
         return component

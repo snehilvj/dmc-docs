@@ -11,14 +11,14 @@ component = dmc.Stack([
         labelAlwaysOn=True,
         label={"function": "valueLabelFormat"}
     ),
-    # dmc.RangeSlider(
-    #     mt=50,
-    #     min=2,
-    #     max=30,
-    #     step=1,
-    #     value=[10, 20],
-    #     scale={"function": "getScale"},
-    #     labelAlwaysOn=True,
-    #     label={"function": "valueLabelFormat"}
-    # )
+    dmc.RangeSlider(
+        mt=50,
+        min=2,
+        max=30,
+        step=1,
+        value=[10, 20],
+        scale={"function": "getScale"},
+        labelAlwaysOn=True,
+        label={"function": "valueLabelFormat"}
+    )
 ])
