@@ -9,9 +9,8 @@ category: Data Display
 .. toc::
 
 ### Simple Example
-
-Image component is a wrapper around img element with option to change object fit, radius and placeholder and provide
-caption.
+`Image` is a wrapper for HTML `img` with minimal styles. By default, the image will take 100% of parent width. The 
+image size can be controlled with `w` and `h` style props.
 
 .. exec::docs.image.simple
 
@@ -20,6 +19,13 @@ caption.
 In most case, you will need to set image height to prevent layout jumps when image is loading. You can do so with `h` [style](/style-props) props.
 
 .. exec::docs.image.height
+
+### Image fit
+By default the image has `object-fit: cover` style - it will resize to cover parent element. To change this behavior,
+set `w="auto"` and `fit="contain"` props.
+
+
+.. exec::docs.image.fit
 
 ### Placeholder
 
@@ -38,13 +44,30 @@ given `src`, background-size to cover and background-position to center.
 
 .. styles_api_text::
 
-| Name         | Static selector          | Description                               |
-|:-------------|:-------------------------|:------------------------------------------|
-| root         | .mantine-Image-root      | Root element                              |
 
-| Name         | Static selector          | Description                               |
-|:-------------|:-------------------------|:------------------------------------------|
-| root         | .mantine-Background-root | Root element                              |
+#### Image Selectors
+
+| Selector | Static selector       | Description  |
+| -------- | --------------------- | ------------ |
+| root     | `.mantine-Image-root` | Root element |
+
+
+
+#### Image CSS Variables
+
+| Selector | Variable             | Description                       |
+| -------- | -------------------- | --------------------------------- |
+| root     | `--image-object-fit` | Controls `object-fit` property    |
+| root     | `--image-radius`     | Controls `border-radius` property |
+
+
+
+#### Image Data Attributes
+
+| Selector | Attribute       | Condition            |
+| -------- | --------------- | -------------------- |
+| root     | `data-fallback` | Image failed to load |
+
 
 ### Keyword Arguments
 

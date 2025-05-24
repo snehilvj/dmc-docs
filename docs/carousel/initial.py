@@ -21,8 +21,7 @@ component = dmc.Paper(
             ],
             id="carousel-initial",
             height=200,
-            loop=True,
-            align="start",
+            emblaOptions = {"loop": True, "align": "start"},
         ),
     ]
 )

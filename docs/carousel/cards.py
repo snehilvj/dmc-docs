@@ -60,7 +60,6 @@ def make_card(image, title, category):
 component = dmc.Carousel(
     [dmc.CarouselSlide(make_card(d["image"], d["title"], d["category"])) for d in data],
     id="carousel-cards",
-    align="start",
     w=400,
-    loop=True,
+    emblaOptions={"loop": True, "align": "start"},
 )

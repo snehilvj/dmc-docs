@@ -14,8 +14,7 @@ component = html.Div(
         type="container",
         slideSize = {"base": '100%', '300px': '50%', '500px': '33.333333%'},
         slideGap = {"base": 0, '300px': 'md', '500px': 'lg'},
-        loop=True,
-        align = "start"
+        emblaOptions = {"loop": True, "align": "start"},
     ),
     style={
         "resize": 'horizontal',
