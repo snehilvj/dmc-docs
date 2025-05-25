@@ -1,35 +1,40 @@
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 
-
-function ChartTooltip({ label, payload }) {
-  if (!payload || payload.length === 0) return null;
-
+dmcfuncs.chartTooltip = ({ label, payload }) => {
   const dmc = window.dash_mantine_components;
 
-  return dmc.Paper({
-    px: "md",
-    py: "sm",
-    withBorder: true,
-    shadow: "md",
-    radius: "md",
-    children: [
-      dmc.Text({
-        fw: 500,
-        mb: 5,
-        children: label,
-      }),
-      ...payload.map((item) =>
-        dmc.Text({
-          key: item.name,
-          c: item.color,
-          fz: "sm",
-          children: `${item.name}: ${item.value}`,
-        })
+  if (!payload || payload.length === 0) return null;
+
+  return React.createElement(
+    dmc.Paper,
+    {
+      px: "md",
+      py: "sm",
+      withBorder: true,
+      shadow: "md",
+      radius: "md",
+    },
+    [
+      React.createElement(
+        dmc.Text,
+        {
+          key: "tooltip-label",
+          fw: 500,
+          mb: 5,
+        },
+        label
       ),
-    ],
-  });
-}
-
-dmcfuncs.chartTooltip = ({ label, payload }) => ChartTooltip({ label, payload });
-
-
+      ...payload.map((item, index) =>
+        React.createElement(
+          dmc.Text,
+          {
+            key: `item-${index}`,
+            c: item.color,
+            fz: "sm",
+          },
+          `${item.name}: ${item.value}`
+        )
+      ),
+    ]
+  );
+};
