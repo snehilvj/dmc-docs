@@ -88,6 +88,23 @@ Example of using diagonal stripes and crosshatch patterns as bar fill:
 
 .. exec::docs.barchart.svg
 
+### Bar color based on value
+Use `getBarColor` prop to assign color based on `value`. `getBarColor` function is called with two arguments: `value`
+and `series` object. It should return a color string (theme color reference or any valid CSS color value).
+
+Note that color returned by `getBarColor` does not impact colors of the legend and tooltip.
+
+.. functions_as_props::
+
+.. exec::docs.barchart.barcolor
+    :code: false
+
+.. sourcetabs::docs/barchart/barcolor.py, assets/examples-js/barcolor.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
 ### Legend
 To display chart legend, set `withLegend` prop. When one of the items in the legend is hovered, the corresponding data
 series is highlighted in the chart.
@@ -132,6 +149,22 @@ Use `yAxisProps` to change domain of the Y axis. For example, if you know that y
 of 0 to 150, you can set domain to `[0, 150]`:
 
 .. exec::docs.barchart.yaxisscale
+
+
+### Value formatter
+To format values in the tooltip and axis ticks, use `valueFormat` prop. It accepts a function that takes number `value`
+as an argument and returns formatted value:
+
+
+.. functions_as_props::
+
+.. exec::docs.barchart.value-formatter
+    :code: false
+
+.. sourcetabs::docs/barchart/value-formatter.py, assets/examples-js/format-number-intl.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Area color
 You can reference colors from theme the same way as in other components, for example, `blue`, `red.5`, `orange.7`, etc.
@@ -238,6 +271,26 @@ Set `unit` prop to render a unit label next to the y-axis ticks and tooltip valu
 To remove tooltip, set `withTooltip=false`. It also removes the cursor line and disables interactions with the chart.
 
 .. exec::docs.barchart.removetooltip
+
+### Custom tooltip
+Use the `tooltipProps` `content` prop to  to pass custom tooltip renderer to recharts Tooltip component.  For example:
+```python
+ tooltipProps={'content': {'functon': 'myFunction'}}
+```
+
+It is required to filter recharts payload with `getFilteredChartTooltipPayload` function to remove empty values that are
+used for styling purposes only.
+
+
+.. functions_as_props::
+
+.. exec::docs.barchart.custom-tooltip
+    :code: false
+
+.. sourcetabs::docs/barchart/custom-tooltip.py, assets/examples-js/chart-tooltip.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Sync multiple BarCharts
 You can pass props down to recharts [BarChart](https://recharts.org/en-US/api/BarChart) component with `barChartProps` 
