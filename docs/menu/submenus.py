@@ -12,11 +12,11 @@ menu = dmc.Menu(
         dmc.MenuDropdown([
             dmc.MenuItem("Dashboard"),
 
-            dmc.MenuSub([
-                dmc.MenuSubTarget(
-                    dmc.MenuSubItem("Products")
+            dmc.SubMenu([
+                dmc.SubMenuTarget(
+                    dmc.SubMenuItem("Products")
                 ),
-                dmc.MenuSubDropdown([
+                dmc.SubMenuDropdown([
                     dmc.MenuItem("All products"),
                     dmc.MenuItem("Categories"),
                     dmc.MenuItem("Tags"),
@@ -25,22 +25,22 @@ menu = dmc.Menu(
                 ])
             ]),
 
-            dmc.MenuSub([
-                dmc.MenuSubTarget(
-                    dmc.MenuSubItem("Orders")
+            dmc.SubMenu([
+                dmc.SubMenuTarget(
+                    dmc.SubMenuItem("Orders")
                 ),
-                dmc.MenuSubDropdown([
+                dmc.SubMenuDropdown([
                     dmc.MenuItem("Open"),
                     dmc.MenuItem("Completed"),
                     dmc.MenuItem("Cancelled"),
                 ])
             ]),
 
-            dmc.MenuSub([
-                dmc.MenuSubTarget(
-                    dmc.MenuSubItem("Settings")
+            dmc.SubMenu([
+                dmc.SubMenuTarget(
+                    dmc.SubMenuItem("Settings")
                 ),
-                dmc.MenuSubDropdown([
+                dmc.SubMenuDropdown([
                     dmc.MenuItem("Profile"),
                     dmc.MenuItem("Security"),
                     dmc.MenuItem("Notifications"),
