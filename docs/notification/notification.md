@@ -16,9 +16,9 @@ category: Feedback
 Add `NotificationProvider()` component in your application. Note that:
 
 - It is required to place `NotificationProvider` component inside `MantineProvider`
-- You do not need to wrap your application with `NotificationPrivider()` component – it is a regular component
-- You should not have multiple `NotificationPrivider()` components – if you do that, your notifications will be duplicated
-- In a multi page app, the `NotificationPrivider()` and the output container used to update notifications should be in the main `app.layout`
+- You do not need to wrap your application with `NotificationProvider()` component – it is a regular component
+- You should not have multiple `NotificationProvider()` components – if you do that, your notifications will be duplicated
+- In a multi page app, the `NotificationProvider()` and the output container used to update notifications should be in the main `app.layout`
 
 ```python
 
