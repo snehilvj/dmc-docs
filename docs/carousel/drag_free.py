@@ -10,8 +10,6 @@ component = dmc.Carousel(
     id="carousel-drag-free",
     withIndicators=True,
     height=200,
-    dragFree=True,
     slideGap="md",
-    loop=True,
-    align="start",
+    emblaOptions = {"loop": True, "align": "start", "dragFree": True},
 )

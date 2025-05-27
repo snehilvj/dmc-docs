@@ -11,5 +11,5 @@ component = dmc.Carousel(
     orientation="vertical",
     withIndicators=True,
     height=200,
-    loop=True,
+    emblaOptions={"loop": True},
 )

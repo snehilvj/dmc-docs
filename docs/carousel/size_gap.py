@@ -10,7 +10,5 @@ component = dmc.Carousel(
     height=200,
     slideSize="33.3333%",
     slideGap="md",
-    loop=True,
-    align="start",
-    slidesToScroll=3,
+    emblaOptions = {"loop": True, "align": "start", "slidesToScroll": 3},
 )

@@ -2,7 +2,7 @@ from dash_iconify import DashIconify
 import dash_mantine_components as dmc
 from dash import callback, html, Input, Output
 
-component = html.Div(
+component = dmc.Stack(
     [
         dmc.Text(id="menu-text", mb="md"),
         dmc.Menu(
@@ -21,7 +21,7 @@ component = html.Div(
                 ),
             ]
         ),
-    ]
+    ], align="center"
 )
 
 

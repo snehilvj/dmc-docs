@@ -8,15 +8,6 @@ category: Date Pickers
 
 .. toc::
 
-
-### CSS Extensions
-
-As of DMC 1.2.0, `Date` component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
-
-
-
 ### Usage
 
 The DatesProvider component lets you set various settings that are shared across all date components. DatesProvider supports the following settings:
@@ -24,6 +15,9 @@ The DatesProvider component lets you set various settings that are shared across
 - `locale` – dayjs locale, note that you also need to import corresponding locale module from dayjs. Default value is en.
 - `firstDayOfWeek` – number from 0 to 6, where 0 is Sunday and 6 is Saturday. Default value is 1 – Monday.
 - `weekendDays` – an array of numbers from 0 to 6, where 0 is Sunday and 6 is Saturday. Default value is [0, 6] – Saturday and Sunday.
+- `consistentWeeks` – boolean, if true every month will have 6 weeks. Default value is false.
+
+
 
 ### Locale
 
@@ -47,6 +41,16 @@ app = Dash(external_scripts=scripts)
 ```
 
 .. exec::docs.datesprovider.simple
+
+
+### Consistent weeks
+If you want to avoid layout shifts, set `consistentWeeks=True` in `DatesProvider` settings. This will make sure that 
+every month has 6 weeks, even if outside days are not in the same month.
+
+
+.. exec::docs.datesprovider.consistentweeks
+
+
 
 ### Keyword Arguments
 

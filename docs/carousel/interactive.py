@@ -14,15 +14,12 @@ target = dmc.Carousel(
 
 configurator = Configurator(target)
 
-configurator.add_segmented_control("align", ["start", "center", "end"], "center")
 configurator.add_segmented_control(
     "orientation", ["horizontal", "vertical"], "horizontal"
 )
 configurator.add_slider("slideGap", "xs")
 configurator.add_slider("controlsOffset", "sm")
 configurator.add_number_slider("controlSize", 26, min=14, max=60)
-configurator.add_switch("loop", True)
-configurator.add_switch("dragFree", False)
 configurator.add_switch("withControls", True)
 configurator.add_switch("withIndicators", True)
 
