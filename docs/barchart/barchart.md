@@ -278,10 +278,6 @@ Use the `tooltipProps` `content` prop to  to pass custom tooltip renderer to rec
  tooltipProps={'content': {'functon': 'myFunction'}}
 ```
 
-It is required to filter recharts payload with `getFilteredChartTooltipPayload` function to remove empty values that are
-used for styling purposes only.
-
-
 .. functions_as_props::
 
 .. exec::docs.barchart.custom-tooltip

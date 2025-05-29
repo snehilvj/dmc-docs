@@ -167,6 +167,22 @@ To rotate x-axis labels, set `xAxisProps.angle` to a number of degrees to rotate
 
 .. exec::docs.areachart.rotatexaxislabels
 
+
+### Value formatter
+To format values in the tooltip and axis ticks, use `valueFormatter` prop. It accepts a function that takes number `value`
+as an argument and returns formatted value:
+
+
+.. functions_as_props::
+
+.. exec::docs.areachart.valueformatter
+    :code: false
+
+.. sourcetabs::docs/areachart/valueformatter.py, assets/examples-js/format-number-intl.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Area color
 You can reference colors from theme the same way as in other components, for example, `blue`, `red.5`, `orange.7`, etc. 
 Any valid CSS color value is also accepted.
