@@ -1,7 +1,7 @@
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+var dmc = window.dash_mantine_components;
 
 dmcfuncs.chartTooltip = ({ label, payload }) => {
-  const dmc = window.dash_mantine_components;
 
   if (!payload || payload.length === 0) return null;
 
