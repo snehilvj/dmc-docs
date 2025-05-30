@@ -81,7 +81,7 @@ used for positive values and the second color for negative values. `splitColors`
 
 ### Legend
 To display chart legend, set `withLegend` prop. When one of the items in the legend is hovered, the corresponding data
-series is highlighted in the chart.
+series is highlighted in the chart.Tooltip
 
 .. exec::docs.areachart.legend
 
