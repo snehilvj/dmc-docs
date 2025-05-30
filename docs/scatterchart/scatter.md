@@ -218,11 +218,44 @@ Set `unit` prop to render a unit label next to the y-axis ticks and tooltip valu
 
 .. exec::docs.scatterchart.units
 
+
+### Value formatter
+
+To format values in the tooltip and axis ticks, use `valueFormatter` prop. It accepts a function that takes number value
+as an argument and returns formatted value.  Use two functions to format x and y values separately:
+
+
+.. functions_as_props::
+
+.. exec::docs.scatterchart.valueformatter
+    :code: false
+
+.. sourcetabs::docs/scatterchart/valueformatter.py, assets/examples-js/format-scatter-chart.js
+    :defaultExpanded: false
+    :withExpandedButton: true
+
+
 ### Tooltip labels
 To customize labels displayed in the tooltip, use `labels` prop:
 
 .. exec::docs.scatterchart.tooltiplabels
 
+
+
+### Custom tooltip
+Use the `tooltipProps` `content` prop to  to pass custom tooltip renderer to recharts Tooltip component.  For example:
+```python
+ tooltipProps={'content': {'functon': 'myFunction'}}
+```
+
+.. functions_as_props::
+
+.. exec::docs.scatterchart.custom-tooltip
+    :code: false
+
+.. sourcetabs::docs/scatterchart/custom-tooltip.py, assets/examples-js/chart-tooltip.js
+    :defaultExpanded: true
+    :withExpandedButton: true
 
 ### Remove tooltip
 To remove tooltip, set `withTooltip=False`. It also removes the cursor line and disables interactions with the chart.
