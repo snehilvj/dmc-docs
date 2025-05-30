@@ -15,10 +15,10 @@ dmcfuncs.renderGroceryOption = function ({ option }, { data }) {
     React.createElement(
       "div",
       null,
-      React.createElement(dmc.Text, null, option.value),
+      React.createElement(dmc.Text, { key: "label"}, option.value, ),
       React.createElement(
         dmc.Text,
-        { size: "xs", opacity: 0.5 },
+        { size: "xs", opacity: 0.5, key: "description" },
         item.description
       )
     )
