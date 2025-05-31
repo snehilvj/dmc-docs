@@ -81,7 +81,7 @@ used for positive values and the second color for negative values. `splitColors`
 
 ### Legend
 To display chart legend, set `withLegend` prop. When one of the items in the legend is hovered, the corresponding data
-series is highlighted in the chart.
+series is highlighted in the chart.Tooltip
 
 .. exec::docs.areachart.legend
 
@@ -166,6 +166,22 @@ Note that you need to bind data series to the right Y axis by setting `yAxisId` 
 To rotate x-axis labels, set `xAxisProps.angle` to a number of degrees to rotate:
 
 .. exec::docs.areachart.rotatexaxislabels
+
+
+### Value formatter
+To format values in the tooltip and axis ticks, use `valueFormatter` prop. It accepts a function that takes number `value`
+as an argument and returns formatted value:
+
+
+.. functions_as_props::
+
+.. exec::docs.areachart.valueformatter
+    :code: false
+
+.. sourcetabs::docs/areachart/valueformatter.py, assets/examples-js/format-number-intl.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Area color
 You can reference colors from theme the same way as in other components, for example, `blue`, `red.5`, `orange.7`, etc. 

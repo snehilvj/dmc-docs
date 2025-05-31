@@ -22,6 +22,7 @@ component = dmc.LineChart(
     series=[{"name": "temperature", "label": "Avg. Temperature"}],
     dataKey="date",
     type="gradient",
+    valueFormatter={"function": "celsiusLabel"},
     gradientStops=[
         {"offset": 0, "color": "red.6"},
         {"offset": 20, "color": "orange.6"},

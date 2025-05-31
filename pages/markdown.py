@@ -9,6 +9,7 @@ from markdown2dash import Admonition, BlockExec, Divider, Image, create_parser
 from pydantic import BaseModel
 
 from lib.constants import PAGE_TITLE_PREFIX
+from lib.directives.functions_as_props import FunctionsAsProps
 from lib.directives.kwargs import Kwargs
 from lib.directives.source import SC
 from lib.directives.toc import TOC
@@ -36,7 +37,7 @@ def make_endpoint(name):
     return "-".join(name.lower().split())
 
 
-directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText()]
+directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText(), FunctionsAsProps()]
 parse = create_parser(directives)
 
 for file in files:

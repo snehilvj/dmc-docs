@@ -12,14 +12,6 @@ category: Combobox
 
 Select component allows user to pick one option from the given data.
 
-Note: Dash adds some css by default which can lead you to see an ugly red box when setting the `required` or `error` 
-prop to True. Use the below css snippet to counteract it.
-
-```css
-input:invalid {
-    outline: none !important;
-}
-```
 
 .. exec::docs.select.simple
 
@@ -108,9 +100,61 @@ default, `allowDeselect` is True:
 The best strategy for large data sets is to limit the number of options that are rendered at the same time. You can
 do it with limit prop. 
 
+Note that if you use a custom `filter` function, you need to implement your own logic to limit the number of options in filter
+
 Example of `Select` with 100 000 options, 10 options are rendered at the same time:
 
 .. exec::docs.select.large_data_sets
+
+
+### renderOption
+
+`renderOption` function allows you to customize option rendering.
+
+.. functions_as_props::
+
+.. exec::docs.select.render_option
+    :code: false
+
+.. sourcetabs::docs/select/render_option.py, assets/examples-js/render_option_select.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+### Options filtering
+
+By default, `Select` filters options by checking if the option label contains input value. You can change this behavior 
+with `filter`. The filter function receives an object with the following properties as a single argument:
+ - `options` – array of options or options groups, all options are in `{ value: string; label: string; disabled?: boolean }` format
+ - `search` – current search query
+ - `limit` – value of limit prop passed to `Select`
+
+
+.. functions_as_props::
+
+Example of a custom filter function that matches options by words instead of letters sequence:
+
+.. exec::docs.select.option_filter
+    :code: false
+
+.. sourcetabs::docs/select/option_filter.py, assets/examples-js/option_filter.js
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
+### Sort options
+
+By default, options are sorted by their position in the data array. You can change this behavior with `filter` function:
+
+.. functions_as_props::
+
+.. exec::docs.select.option_sort
+    :code: false
+
+.. sourcetabs::docs/select/option_sort.py, assets/examples-js/option_sort.js
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
 
 ### Scrollable dropdown
 
@@ -220,6 +264,16 @@ You can use the following props to control sections styles and content:
 
 
 ### Invalid State And Error
+
+
+Note: Dash adds some css by default which can lead you to see a red box when setting the `required` or `error` 
+prop to True. Use the below css snippet to counteract it.
+
+```css
+input:invalid {
+    outline: none !important;
+}
+```
 
 You can let the user know if the selected value is invalid. In the example below, you will get an error message if you
 select less than 2 currency pairs.
