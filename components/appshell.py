@@ -20,7 +20,7 @@ def create_appshell(data):
                 "Badge": {"styles": {"root": {"fontWeight": 500}}},
                 "Progress": {"styles": {"label": {"fontWeight": 500}}},
                 "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
-                "CodeHighlightTabs": {"styles": {"file": {"padding": 12}}},
+                "CodeHighlightTabs": {"styles": {"file": {"padding": 6, "border": "1px solid", "border-color": "var(--mantine-color-default-border)"}}},
                 "Table": {
                     "defaultProps": {
                         "highlightOnHover": True,
