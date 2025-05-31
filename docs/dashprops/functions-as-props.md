@@ -8,26 +8,22 @@ dmc: false
 
 .. toc::
 
-
-Some Dash Mantine Components support custom JavaScript functions to let you control how things appear — such as tooltips,
-labels, dropdown options, and formatting.
+Some components props support JavaScript functions to control how elements look and behave — like labels, tooltips, dropdown options, and more.
 
 
 ### Basic Usage
 
-To use a JavaScript function in a DMC component, you pass a dictionary like this in Python:
+To use a JavaScript function in a DMC component, pass a dictionary like this:
 
 ```python
 {"function": "myFunctionName"}
 ```
 
-This tells Dash to look for a function named `myFunctionName` in a `.js` file in your app’s `/assets/` folder.
+This tells Dash to call a function named `myFunctionName` from a `.js` file in your app’s `/assets/` folder.
 
 
 
-#### Example: Format Temperature
-
-You might use this with a component like `Slider` to display a formatted label above the slider value.
+Example: Format a Slider label
 
 See this example in the [Slider Control Label](/components/slider#control-label) section.
 
@@ -51,11 +47,12 @@ dmcfuncs.formatTemperature = function (value) {
 };
 ```
 
+See this example in the [Slider Control Label](/components/slider#control-label) section.
+
 
 ### Passing Extra Options
 
-If you want to customize behavior from Python — for example, choose Celsius or Fahrenheit — you can pass an `options` 
-dictionary to the JavaScript function.  This makes your function flexible without rewriting it for every variation.
+You can pass extra options from Python to customize how the JavaScript function behaves:
 
 .py
 ```python
@@ -76,25 +73,17 @@ dmcfuncs.formatTemperature = function (value, { unit }) {
   return `${value.toFixed(1)} °C`;
 };
 ```
-
+See examples the Render Options example in the [TagsInput](components/tagsinput#renderoption) and [MultiSelect](components/multiselect#renderoption) sections
 
 ###  Returning a Component
 
-Some props in Dash Mantine Components — like `renderOption`, `tooltipProps.content`, and others — let you return a
-component, not just a string.
+Its also possible to return React components.  To do this:
 
-This lets you customize how things look using Mantine elements like `Text`, `Group`, `Avatar`, and more.
+- Use `React.createElement()` (no JSX).
+- access DMC components by using  `window.dash_mantine_components`.
+- If you've imported other component libraries, you can use them too. For example  `window.dash_iconify`, `window.dash_core_components`, etc.
 
-To return a component, you use `React.createElement(...)`, which is how components are created in JavaScript (without using JSX).
-
-You must also use the DMC component library available in the browser as:
-
-```js
-window.dash_mantine_components
-```
-
-
-#### Example: Render a custom dropdown option
+Example: Components in Dropdown Options
 
 
 ```python
@@ -135,28 +124,25 @@ dmcfuncs.renderLibraryBadge = function ({ option }, { colors }) {
 ```
 
 
-### Using AI to Write JavaScript Functions 
+### Use AI to Help Write JavaScript
+If you're more comfortable in Python, you can use AI to write JavaScript functions for DMC components. Just provide the
+logic in Python and follow this prompt pattern.
 
-If you're more comfortable writing Python than JavaScript, you can use AI (like ChatGPT) to generate JavaScript functions for use in Dash Mantine Components.
+#### Prompt Template
+When asking AI to generate a function:
 
-This section shows how to start with a Python function and write a prompt that AI can use to generate the correct JavaScript version — ready to use with `{"function": "..."}` in DMC.
-
----
-
-### Prompt Pattern
-
-Always tell AI:
-
-1. The function name
-2. That it's for Dash Mantine Components
-3. That it should be assigned to `dmcfuncs.functionName`
-4. Show the Python version of the logic
-5. For functions that return components — tell AI to use `React.createElement` and avoid JSX
-6. Always include this global header:
-
-   ```js
-   var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
-   ```
+1. State the function name.
+2. Mention it’s for Dash Mantine Components.
+3. Ask it to assign the function to dmcfuncs.functionName.
+4. Provide the Python logic.
+5. Always include this global header:
+    ```
+    var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+    ```
+6. If the function returns a component, mention:
+   - Use `React.createElement`
+   - Don’t use JSX
+   - Use `window.dash_mantine_components`
 
 
 #### Example 1:  Simple function
@@ -214,12 +200,12 @@ dmcfuncs.formatTemp = function (value, { unit }) {
 
 AI Prompt
 
-> Write a JavaScript function for Dash Mantine Components named `renderLibraryBadge`. Assign it to `dmcfuncs.renderLibraryBadge`. 
+> Write a JavaScript function for Dash Mantine Components named `renderBadge`. Assign it to `dmcfuncs.renderBadge`. 
 > This function returns a React component. Use `React.createElement`. Do not use JSX. Use `dmc = window.dash_mantine_components`.
 > In Python, the function would be:
 
 > ```python
-> def renderLibraryBadge(option):
+> def renderBadge(option):
 >    return dmc.Badge(
 >        option["value"],
 >        color= "red" if option["value"] == "A" else "blue",
@@ -235,7 +221,7 @@ AI Output
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 var dmc = window.dash_mantine_components;
 
-dmcfuncs.renderLibraryBadge = function ({ option }) {
+dmcfuncs.renderBadge = function ({ option }) {
   return React.createElement(
     dmc.Badge,
     {
@@ -248,3 +234,25 @@ dmcfuncs.renderLibraryBadge = function ({ option }) {
 };
 
 ```
+
+Supported props in V2.0.0
+
+| Component         | Props                                             |
+|------------------|---------------------------------------------------|
+| Slider           | label, scale                                      |
+| RangeSlider      | label, scale                                      |
+| Select           | renderOption, filter                              |
+| MultiSelect      | renderOption, filter                              |
+| TagsInput        | renderOption, filter                              |
+| DatePickerInput  | disabledDates                                     |
+| DateInput        | disabledDates                                     |
+| DateTimePicker   | disabledDates                                     |
+| MonthPickerInput | disabledDates                                     |
+| YearPickerInput  | disabledDates                                     |
+| BarChart         | getBarColor, valueFormatter, tooltipProps         |
+| AreaChart        | valueFormatter, tooltipProps                      |
+| LineChart        | valueFormatter, tooltipProps                      |
+| CompositeChart   | valueFormatter, tooltipProps                      |
+| BubbleChart      | valueFormatter, tooltipProps                      |
+| ScatterChart     | valueFormatter, tooltipProps                      |
+
