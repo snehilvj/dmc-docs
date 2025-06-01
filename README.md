@@ -3,6 +3,7 @@ Official documentation for [Dash Mantine Components](https://github.com/snehilvj
 <br>
 You can find it hosted [here](https://dash-mantine-components.com).
 
+
 ## Steps to run the docs app locally:
 ```
 pip install -r requirements.txt
