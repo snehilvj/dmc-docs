@@ -13,6 +13,21 @@ category: Inputs
 .. exec::docs.switch.interactive
     :code: false
 
+
+### Callbacks
+
+Use the property `checked` to use dmc.Switch in callbacks.
+
+.. exec::docs.switch.callback
+
+### Inner Labels
+
+
+
+.. exec::docs.switch.label
+
+
+
 ### Radius and Size
 
 Set the radius and size of the Switch component using the `radius` and `size` prop respectively.
@@ -27,27 +42,6 @@ dmc.Switch(
     checked=True
 )
 ```
-
-### Callbacks
-
-Use the property `checked` to use dmc.Switch in callbacks.
-
-.. exec::docs.switch.callback
-
-### Inner Labels
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Switch(
-    label="I agree to sell my privacy",
-    onLabel="ON",
-    offLabel="OFF"
-)
-```
-
-.. exec::docs.switch.label
-    :code: false
 
 ### Icon Labels
 

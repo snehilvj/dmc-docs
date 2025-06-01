@@ -28,6 +28,11 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 
 .. exec::docs.datetimepicker.seconds
 
+### TimePicker props
+You can pass props down to the underlying `TimePicker` component with `timePickerProps` prop. Example of enabling 
+dropdown and setting 12h format for time picker:
+
+.. exec::docs.datetimepicker.time-picker-props
 
 ### Value format
 

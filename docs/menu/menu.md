@@ -15,6 +15,16 @@ When MenuItem is used as a button, you can write callbacks on it.
 
 .. exec::docs.menu.simple
 
+### Submenus
+
+.. exec::docs.menu.submenus
+    :code: false
+
+.. sourcetabs::docs/menu/submenus.py
+    :defaultExpanded: false
+    :withExpandedButton: true
+
+
 ### Menu on Hover
 
 Set `trigger` to `hover` to reveal dropdown when user hovers over menu target and dropdown. `closeDelay` and `openDelay` props can be used to control open and close delay in ms.
@@ -59,15 +69,32 @@ Menu component can be customised by changing icons, right section and even color
 
 .. styles_api_text::
 
-| Name        | Static selector           | Description                            |
-|:------------|:--------------------------|:---------------------------------------|
-| dropdown    | .mantine-Menu-dropdown    | Dropdown element                       |
-| arrow       | .mantine-Menu-arrow       | Dropdown arrow                         |
-| divider     | .mantine-Menu-divider     | `Menu.Divider` root element            |
-| label       | .mantine-Menu-label       | `Menu.Label` root element              |
-| item        | .mantine-Menu-item        | `Menu.Item` root element               |
-| itemLabel   | .mantine-Menu-itemLabel   | Label of `Menu.Item`                   |
-| itemSection | .mantine-Menu-itemSection | Left and right sections of `Menu.Item` |
+#### Menu Selectors
+
+| Selector      | Static Selector             | Description                            |
+| ------------- | --------------------------- | -------------------------------------- |
+| `dropdown`    | `.mantine-Menu-dropdown`    | Dropdown element                       |
+| `arrow`       | `.mantine-Menu-arrow`       | Dropdown arrow                         |
+| `overlay`     | `.mantine-Menu-overlay`     | Overlay element                        |
+| `divider`     | `.mantine-Menu-divider`     | `Menu.Divider` root element            |
+| `label`       | `.mantine-Menu-label`       | `Menu.Label` root element              |
+| `item`        | `.mantine-Menu-item`        | `Menu.Item` root element               |
+| `itemLabel`   | `.mantine-Menu-itemLabel`   | Label of `Menu.Item`                   |
+| `itemSection` | `.mantine-Menu-itemSection` | Left and right sections of `Menu.Item` |
+| `chevron`     | `.mantine-Menu-chevron`     | Sub menu chevron                       |
+
+
+
+#### Menu Data Attributes
+
+| Selector | Attribute       | Condition                             |
+| -------- | --------------- | ------------------------------------- |
+| `item`   | `data-disabled` | `disabled` prop is set on `Menu.Item` |
+
+---
+
+**a.** Want this table exported to HTML or reStructuredText?
+**b.** Want a full CSS override example using these selectors in a Dash app?
 
 ### Keyword Arguments
 
