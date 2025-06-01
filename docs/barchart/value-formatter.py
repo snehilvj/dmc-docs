@@ -3,11 +3,8 @@ from .data import data
 
 component = dmc.BarChart(
     h=300,
-    dataKey="month",
     data=data,
-    withBarValueLabel=True,
-    withLegend=True,
-    withTooltip=False,
+    dataKey="month",
     series=[
         {"name": "Smartphones", "color": "violet.6"},
         {"name": "Laptops", "color": "blue.6"},

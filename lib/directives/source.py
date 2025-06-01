@@ -16,6 +16,7 @@ class SC(SourceCode):
         mapping = {
             "py": {"language": "python", "icon": DashIconify(icon="devicon:python")},
             "css": {"language": "css", "icon": DashIconify(icon="devicon:css3")},
+            "js": {"language": "js", "icon": DashIconify(icon="devicon:javascript")},
         }
         files = title.split(", ")
         code = []

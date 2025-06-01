@@ -101,6 +101,57 @@ Example of `TagsInput` with 100 000 options, 5 options are rendered at the same 
 .. exec::docs.tagsinput.large_data_sets
 
 
+### renderOption
+
+`renderOption` function allows you to customize option rendering.
+
+.. functions_as_props::
+
+.. exec::docs.tagsinput.render_option
+    :code: false
+
+.. sourcetabs::docs/tagsinput/render_option.py, assets/examples-js/render_option_tagsinput.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+### Options filtering
+
+By default, `TagsInput` filters options by checking if the option label contains input value. You can change this behavior 
+with `filter`. The filter function receives an object with the following properties as a single argument:
+ - `options` – array of options or options groups, all options are in `{ value: string; label: string; disabled?: boolean }` format
+ - `search` – current search query
+ - `limit` – value of limit prop passed to `Select`
+
+
+.. functions_as_props::
+
+Example of a custom filter function that matches options by words instead of letters sequence:
+
+.. exec::docs.tagsinput.option_filter
+    :code: false
+
+.. sourcetabs::docs/tagsinput/option_filter.py, assets/examples-js/option_filter.js
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
+### Sort options
+
+By default, options are sorted by their position in the data array. You can change this behavior with `filter` function:
+
+.. functions_as_props::
+
+.. exec::docs.tagsinput.option_sort
+    :code: false
+
+.. sourcetabs::docs/tagsinput/option_sort.py, assets/examples-js/option_sort.js
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
+
+
 ### Scrollable dropdown
 
 By default, the options list is wrapped with `ScrollArea.Autosize`. You can control dropdown max-height with 
