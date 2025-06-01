@@ -21,7 +21,7 @@ app = Dash(
     use_pages=True,
     external_scripts=scripts,
     update_title=None,
-    prevent_initial_callbacks="initial_duplicate"
+    prevent_initial_callbacks=True
 )
 
 app.layout = create_appshell(dash.page_registry.values())

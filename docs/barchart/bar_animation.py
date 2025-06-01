@@ -1,4 +1,6 @@
 from random import randint
+
+import dash
 import dash_mantine_components as dmc
 from dash import callback, Input, Output
 
@@ -26,12 +28,14 @@ component = dmc.Box(
     Output("barchart-animation", "data"), Input("btn-barchart-animation", "n_clicks")
 )
 def update(n):
-    return [
-        {
-            "month": month,
-            "Smartphones": randint(50, 300),
-            "Laptops": randint(30, 200),
-            "Tablets": randint(20, 150),
-        }
-        for month in ["January", "February", "March", "April", "May", "June"]
-    ]
+    if n and n > 0:
+        return [
+            {
+                "month": month,
+                "Smartphones": randint(50, 300),
+                "Laptops": randint(30, 200),
+                "Tablets": randint(20, 150),
+            }
+            for month in ["January", "February", "March", "April", "May", "June"]
+        ]
+    return dash.no_update

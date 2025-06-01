@@ -56,6 +56,22 @@ the position of the color in the gradient, `color` is a reference to `theme.colo
 
 .. exec::docs.linechart.gradient
 
+
+### Value formatter
+To format values in the tooltip and axis ticks, use `valueFormatter` prop. It accepts a function that takes number `value`
+as an argument and returns formatted value:
+
+
+.. functions_as_props::
+
+.. exec::docs.linechart.valueformatter
+    :code: false
+
+.. sourcetabs::docs/linechart/valueformatter.py, assets/examples-js/format-number-intl.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Legend
 To display chart legend, set `withLegend` prop. When one of the items in the legend is hovered, the corresponding data
 series is highlighted in the chart.
@@ -228,6 +244,23 @@ To remove tooltip, set `withTooltip=False`. It also removes the cursor line and 
 
 
 .. exec::docs.linechart.removetooltip
+
+
+### Custom tooltip
+Use the `tooltipProps` `content` prop to  to pass custom tooltip renderer to recharts Tooltip component.  For example:
+```python
+ tooltipProps={'content': {'functon': 'myFunction'}}
+```
+
+.. functions_as_props::
+
+.. exec::docs.linechart.custom-tooltip
+    :code: false
+
+.. sourcetabs::docs/linechart/custom-tooltip.py, assets/examples-js/chart-tooltip.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Customize dots
 Use `dotProps` to pass props down to recharts dot in regular state and `activeDotProps` to pass props down to recharts dot in active state (when cursor is over the current series).

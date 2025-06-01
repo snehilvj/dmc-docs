@@ -15,6 +15,7 @@ As of DMC v2.0.0, notifications are handled by a single component:  `Notificatio
 This replaces the previous `NotificationProvider`   +  `Notification` approach with one that is more aligned with 
 Mantine's implementation.
 
+
 ### Getting Started
 
 Add `NotificationContainer` to your layout:

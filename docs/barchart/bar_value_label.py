@@ -13,4 +13,5 @@ component = dmc.BarChart(
         {"name": "Laptops", "color": "blue.6"},
         {"name": "Tablets", "color": "teal.6"},
     ],
+    valueFormatter={"function": "formatNumberIntl"},
 )

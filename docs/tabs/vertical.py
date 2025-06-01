@@ -2,8 +2,6 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-tabs-vertical"
-
 target = dmc.Tabs(
     [
         dmc.TabsList(
@@ -20,11 +18,9 @@ target = dmc.Tabs(
     value="gallery",
     orientation="vertical",
     placement="right",
-    id=TARGET_ID,
 )
 
-
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target)
 
 configurator.add_select("placement", ["left", "right"], "right")
 

@@ -2,7 +2,7 @@ import uuid
 from typing import List, Optional
 
 import dash_mantine_components as dmc
-from dash import Input, Output, clientside_callback, ClientsideFunction
+from dash import Input, Output, State, clientside_callback, ClientsideFunction, dcc
 from dash.development.base_component import Component
 
 
@@ -11,14 +11,16 @@ def create_label(label: str) -> str:
 
 
 class Configurator:
-    def __init__(self, target_component: Component, target_id: Optional[str] = None):
+    def __init__(self, target_component: Component, center_component: Optional[bool] = False):
         self.target = target_component
-        self.target_id = target_id or self.new_id
-        if not target_id:
-            self.target.id = self.target_id
+        self.center_component = center_component
+        self.target_id = self.new_id
+        setattr(self.target, 'id', self.target_id)
+        self.component_name = self.target.__class__.__name__
         self.outputs = []
         self.inputs = []
         self.controls = []
+        self.control_props = []
 
     @property
     def new_id(self):
@@ -27,13 +29,15 @@ class Configurator:
     def add_colorpicker(self, target_prop: str, value: str):
         colors = dmc.DEFAULT_THEME["colors"]
         mapping = {color: codes[5] for color, codes in colors.items()}
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': 0}
         clientside_callback(
             ClientsideFunction(namespace="clientside", function_name="colorCallback"),
-            Output(self.target_id, target_prop),
-            Input(cid, "value"),
+            [Output(f"{self.target_id}-store", "data", allow_duplicate=True), Output(self.target_id, target_prop)],
+            [Input(f"{self.target_id}-store", "data"), Input(cid, "value")],
+            prevent_initial_call=True,
         )
         setattr(self.target, target_prop, mapping[value])
+        self.control_props.append({ 'prop': target_prop, 'value': mapping[value] })
         self.controls.append(
             dmc.ColorPicker(
                 id=cid,
@@ -46,23 +50,26 @@ class Configurator:
         )
 
     def add_switch(self, target_prop: str, checked: bool):
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "checked")))
         setattr(self.target, target_prop, checked)
+        self.control_props.append({ 'prop': target_prop, 'value': checked })
         self.controls.append(
             dmc.Switch(id=cid, checked=checked, label=create_label(target_prop))
         )
 
     def add_slider(self, target_prop: str, value: str):
         mapping = {"xs": 1, "sm": 2, "md": 3, "lg": 4, "xl": 5}
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': 0}
         clientside_callback(
             ClientsideFunction(namespace="clientside", function_name="sliderCallback"),
-            [Output(self.target_id, target_prop), Output(cid, "label")],
-            Input(cid, "value"),
+            [Output(f"{self.target_id}-store", "data", allow_duplicate=True), Output(self.target_id, target_prop), Output(cid, "label")],
+            [Input(f"{self.target_id}-store", "data"), Input(cid, "value")],
+            prevent_initial_call=True,
         )
-        setattr(self.target, target_prop, mapping[value])
+        setattr(self.target, target_prop, value)
+        self.control_props.append({ 'prop': target_prop, 'value': value })
         control = dmc.Stack(
             [
                 dmc.Text(create_label(target_prop), size="sm", fw=500),
@@ -73,13 +80,7 @@ class Configurator:
                     id=cid,
                     updatemode="drag",
                     styles={"markLabel": {"display": "none"}},
-                    marks=[
-                        {"value": 1, "label": "xs"},
-                        {"value": 2, "label": "sm"},
-                        {"value": 3, "label": "md"},
-                        {"value": 4, "label": "lg"},
-                        {"value": 5, "label": "xl"},
-                    ],
+                    marks=[{ "value": val, "label": lab} for lab, val in mapping.items()],
                 ),
             ],
             gap=0,
@@ -87,10 +88,11 @@ class Configurator:
         self.controls.append(control)
 
     def add_number_slider(self, target_prop: str, value: int, **kwargs):
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
+        self.control_props.append({ 'prop': target_prop, 'value': value })
         control = dmc.Stack(
             [
                 dmc.Text(create_label(target_prop), size="sm", fw=500),
@@ -101,10 +103,11 @@ class Configurator:
         self.controls.append(control)
 
     def add_segmented_control(self, target_prop: str, data: List[str], value: str):
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
+        self.control_props.append({ 'prop': target_prop, 'value': value })
         control = dmc.Stack(
             [
                 dmc.Text(create_label(target_prop), size="sm", fw=500),
@@ -115,19 +118,21 @@ class Configurator:
         self.controls.append(control)
 
     def add_select(self, target_prop: str, data: List[str], value: str):
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
+        self.control_props.append({ 'prop': target_prop, 'value': value })
         self.controls.append(
             dmc.Select(id=cid, data=data, label=create_label(target_prop), value=value)
         )
 
     def add_number_input(self, target_prop: str, value: int, **kwargs):
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
+        self.control_props.append({ 'prop': target_prop, 'value': value })
         self.controls.append(
             dmc.NumberInput(
                 id=cid, value=value, label=create_label(target_prop), **kwargs
@@ -136,10 +141,11 @@ class Configurator:
 
     def add_text_input(self, target_prop: str, value: str, **kwargs):
         kwargs.setdefault("debounce", 100)
-        cid = self.new_id
+        cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
         self.outputs.append(Output(self.target_id, target_prop))
         self.inputs.append((Input(cid, "value")))
         setattr(self.target, target_prop, value)
+        self.control_props.append({ 'prop': target_prop, 'value': value })
         self.controls.append(
             dmc.TextInput(
                 id=cid, value=value, label=create_label(target_prop), **kwargs
@@ -153,17 +159,35 @@ class Configurator:
                 ClientsideFunction(
                     namespace="clientside", function_name="generalCallback"
                 ),
-                self.outputs,
-                self.inputs,
+                [Output(f"{self.target_id}-store", "data", allow_duplicate=True)] + self.outputs,
+                [Input(f"{self.target_id}-store", "data")] + self.inputs,
+                prevent_initial_call=True,
             )
 
-        return dmc.Grid(
-            [
-                dmc.GridCol(self.target, span={"sm": 12, "md": "auto"}, p=20),
+        clientside_callback(
+            ClientsideFunction(
+                namespace="clientside", function_name="generateSnippetCode"
+            ),
+            Output(f"{self.target_id}-code", "code"),
+            Input(f"{self.target_id}-store", "data"),
+            State(f"{self.target_id}-component-name", "data"),
+        )
+
+
+        return dmc.Stack([
+            dmc.Grid([
+                dmc.GridCol(dmc.Center(self.target) if self.center_component else self.target, span={"sm": 12, "md": "auto"}, p=20),
                 dmc.GridCol(
                     dmc.Stack(self.controls, gap="md", maw="100%", w=240, p=20),
                     span="content",
-                ),
-            ],
-            align="center",
-        )
+                )],
+                align="center",
+            ),
+            dmc.CodeHighlight(
+                language='Python',
+                code="", style={"maxHeight": 400},
+                id=f"{self.target_id}-code",
+            ), 
+            dcc.Store(id=f"{self.target_id}-store", data=self.control_props),
+            dcc.Store(id=f"{self.target_id}-component-name", data=self.component_name)
+        ],)

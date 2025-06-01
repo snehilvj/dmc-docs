@@ -2,17 +2,14 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-color-input"
-target = dmc.Center(
-    dmc.ColorInput(
+target = dmc.ColorInput(
         label="Your favorite color",
         placeholder="Pick color",
         w=250,
-        id=TARGET_ID,
     )
-)
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, center_component=True)
+
 configurator.add_text_input(
     "placeholder", "Pick color", **{"placeholder": "Placeholder"}
 )

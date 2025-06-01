@@ -4,7 +4,7 @@ import dash_mantine_components as dmc
 
 component = dmc.DateTimePicker(
     clearable=True,
-    value=datetime.now(),
+    value="2025-01-01",
     label="Pick date and time (clearable)",
     placeholder="Pick Date and time",
 )

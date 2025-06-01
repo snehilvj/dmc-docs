@@ -1,10 +1,7 @@
 import dash_mantine_components as dmc
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-timeline"
-
 target = dmc.Timeline(
-    id=TARGET_ID,
     active=1,
     bulletSize=15,
     lineWidth=2,
@@ -75,7 +72,8 @@ target = dmc.Timeline(
 )
 
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target)
+
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("radius", "xl")
 configurator.add_number_input("active", 2, **{"min": -1, "max": 3})

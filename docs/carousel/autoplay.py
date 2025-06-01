@@ -11,7 +11,7 @@ component = html.Div([
         ],
         id="carousel-autoplay",
         mt="sm",
-        loop=True,
+        emblaOptions={"loop": True},
         autoplay=True,  # Default delay is 4000ms
     )
 ])
