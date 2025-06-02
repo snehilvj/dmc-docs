@@ -13,12 +13,13 @@ target = dmc.TimeGrid(
             "spacing": "xs",
         },
         value="10:00:00",
-        id=TARGET_ID
     )
 
-configurator = Configurator(target, TARGET_ID)
+configurator = Configurator(target, center_component=True)
 configurator.add_segmented_control("format", ["12h", "24h"], "12h")
 configurator.add_switch("withSeconds", True)
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
 component = configurator.panel
+
+

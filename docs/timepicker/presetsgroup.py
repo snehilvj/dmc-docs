@@ -10,6 +10,7 @@ component = dmc.TimePicker(
         {"label": 'Morning', "values": ['06:00:00', '08:00:00', '10:00:00']},
         {"label": 'Afternoon', "values": ['12:00:00', '14:00:00', '16:00:00']},
         {"label": 'Evening', "values": ['18:00:00', '20:00:00', '22:00:00']},
-    ]
+    ],
+    mb=120,
 )
 

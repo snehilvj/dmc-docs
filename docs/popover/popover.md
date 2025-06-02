@@ -47,7 +47,7 @@ Use `hideDetached` prop to configure how the dropdown behaves when the target el
 (`display: none, visibility: hidden,` etc.), removed from the DOM, or when the target element is scrolled out of the viewport.
 
 By default, `hideDetached` is enabled – the dropdown is hidden with the target element. You can change this behavior
-with `hideDetached=False`. To see the difference, try to scroll the root element of the following demo:
+with `hideDetached=False`. To see the difference, try to scroll the container that holds the Popover components:
 
 
 .. exec::docs.popover.hidedetached
