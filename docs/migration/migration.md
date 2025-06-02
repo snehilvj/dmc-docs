@@ -7,8 +7,11 @@ dmc: false
 
 .. toc::
 
+### Release Announcements
 
-## Version Compatibility  
+See the [release announcements](https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases) for more details on the new features in each release!
+
+### Version Compatibility  
 
 Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions:  
 
