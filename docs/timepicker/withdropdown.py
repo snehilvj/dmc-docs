@@ -10,7 +10,7 @@ component = dmc.Group(
             withDropdown=True
         ),
         dmc.TimePicker(
-            label="Enter time (24h format)",
+            label="Enter time (12h format)",
             withSeconds=True,
             withDropdown=True,
             format="12h"

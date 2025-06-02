@@ -56,7 +56,7 @@ for details on what props accept functions and what each function receives.
 
 
 
-### Example: `Slider.label`
+### Example: Slider label
 
 See this example in the [Slider Control Label](/components/slider#control-label) section.
 
@@ -82,7 +82,9 @@ dmcfuncs.formatCelsius = function (value) {
 
 ### Passing Extra Options
 
-You can pass extra options from Python to customize how the JavaScript function behaves:
+You can pass extra options from Python to customize how the JavaScript function behaves.
+
+In this example, the same function can be used to format the label using either Celsius or Fahrenheit.
 
 .py
 ```python
@@ -103,7 +105,6 @@ dmcfuncs.formatTemperature = function (value, { unit }) {
   return `${value.toFixed(1)} °C`;
 };
 ```
-See examples the Render Options example in the [TagsInput](components/tagsinput#renderoption) and [MultiSelect](components/multiselect#renderoption) sections
 
 ###  Returning a Component
 
@@ -115,7 +116,7 @@ Its also possible to return React components.  To do this:
 
 Example: Components in Dropdown Options
 
-
+.py
 ```python
 
 colors = {
@@ -136,6 +137,7 @@ component = dmc.Select(
 )
 ```
 
+.js
 ```js 
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 var dmc = window.dash_mantine_components;
