@@ -104,28 +104,16 @@ Use the `disabledDates` prop to pass a list of specific dates to disable. Dates 
 
 #### Example 2: A Function
 
-.. functions_as_props::
+.. functions_as_props::  
 
-The `disabledDates` prop also accepts a function that receives a date and returns a boolean.
-Return true to disable the date.
+The `disabledDates` prop accepts a function that receives a date string (in 'YYYY-MM-DD' format) and returns true if the date should be disabled.
 
+Notes on Handling Dates in JavaScript with `dayjs`:
+- DMC includes [dayjs](https://day.js.org/), which makes working with dates safer and simpler.
+- The date value passed into your function will always be a string like '2025-11-01'.
+- To check the day of the week, you can use `dayjs(dateStr).day()` — this avoids timezone bugs and is easier than manually splitting the date.
 
-Notes on Handling Dates in JavaScript:
-
-The date value passed to the function is a string in the 'YYYY-MM-DD' format.
-When converting it to a JavaScript Date object, be aware that:
-
-- `new Date("2025-11-01")` is parsed as midnight UTC and then converted to the browser's local time zone.
-- This can shift the date to the previous day, depending on the user's location.
-
-To avoid time zone issues, the example below:
-
-- Splits the string manually,
-- Constructs a date using Date.UTC(year, monthIndex, day),
-- Uses getUTCDay() to consistently retrieve the weekday.
-
-This ensures the logic works correctly across all time zones.
-
+This example disables all days except Fridays:
 
 .. exec::docs.datepicker.disabledates_function
     :code: false
