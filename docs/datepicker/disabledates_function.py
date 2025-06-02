@@ -3,10 +3,9 @@ import dash_mantine_components as dmc
 
 component = dmc.Center(
     dmc.DatePicker(
-        value="2024-11-05",
+        value="2024-11-08",
         defaultDate="2024-11-01",
-        disabledDates=["2024-11-06", "2024-11-07",  "2024-11-08"],
+        disabledDates={"function": "excludeDate"},
         m="lg"
     )
 )
-

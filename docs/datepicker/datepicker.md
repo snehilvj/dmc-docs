@@ -12,8 +12,7 @@ category: Date Pickers
 
 ### Simple Example
 
-This is a simple example of `DatePicker` with a callback. You can either use strings in format 'YYYY-MM-DD` or use the
-date object from datetime library.
+This is a simple example of `DatePicker` with a callback. Use a string in the format 'YYYY-MM-DD'.
 
 .. exec::docs.datepicker.simple
 
@@ -97,9 +96,44 @@ corresponding control will be disabled.
 .. exec::docs.datepicker.minmax
 
 ### Disabled dates
-To disable specific dates use `disabledDates' prop. The prop accepts a list of dates in the string format of YYYY-MM-DD
+
+#### Example 1: A List of dates
+Use the `disabledDates` prop to pass a list of specific dates to disable. Dates must be strings in the YYYY-MM-DD format.
 
 .. exec::docs.datepicker.disabledates
+
+#### Example 2: A Function
+
+.. functions_as_props::
+
+The `disabledDates` prop also accepts a function that receives a date and returns a boolean.
+Return true to disable the date.
+
+
+Notes on Handling Dates in JavaScript:
+
+The date value passed to the function is a string in the 'YYYY-MM-DD' format.
+When converting it to a JavaScript Date object, be aware that:
+
+- `new Date("2025-11-01")` is parsed as midnight UTC and then converted to the browser's local time zone.
+- This can shift the date to the previous day, depending on the user's location.
+
+To avoid time zone issues, the example below:
+
+- Splits the string manually,
+- Constructs a date using Date.UTC(year, monthIndex, day),
+- Uses getUTCDay() to consistently retrieve the weekday.
+
+This ensures the logic works correctly across all time zones.
+
+
+.. exec::docs.datepicker.disabledates_function
+    :code: false
+
+.. sourcetabs::docs/datepicker/disabledates_function.py, assets/examples-js/disabled_dates.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Number of columns
 Set `numberOfColumns` prop to define number of pickers that will be rendered side by side:
