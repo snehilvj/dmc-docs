@@ -14,6 +14,8 @@ will be removed in a future release.
 
 See the [new Notification documentation](components/notification) for more details.
 
+Need to reference the old version? Visit the [DMC 1.3.0 Notification docs](https://dmc-docs-1-3.onrender.com/components/notification) 
+
 ### Key Changes
 
 * Old approach:
