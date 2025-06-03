@@ -7,11 +7,13 @@ dmc: false
 
 .. toc::
 
+
 ### Release Announcements
 
-See the [release announcements](https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases) for more details on the new features in each release!
+Check out the [release announcements](https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases) to see what’s new in each version.
 
-See the [V2.0.0 Release announcement]( /release-2-0-0) with live examples! 
+Explore the [v2.0.0 release announcement](/release-2-0-0) for a full overview with live examples of new features!
+
 
 ### Version Compatibility  
 
@@ -214,57 +216,35 @@ you need to change it `:hover` and `:focus` selectors instead:
 ```
 
 
+### Stylesheets Are Now Included Automatically (DMC ≥ 1.2.0)
 
-### Some Components No Longer Require Extra Stylesheets in DMC >= 1.2.0
+As of `dash-mantine-components >= 1.2.0`, you no longer need to manually include optional stylesheets for components like `DatePicker`, `Carousel`, `CodeHighlight`, or `RichTextEditor`.
 
-> Starting in DMC 1.2.0, it is not necessary to include additional stylesheets for some components.  The info below is for
-running older version of DMC. 
+These styles are now bundled automatically — making setup faster and simpler.
 
-In DMC < 1.2.0, certain components like `DatePicker`, `Carousel`, or `CodeHighlight`, require you to add their specific
-CSS files separately. You can also include all optional CSS stylesheets at once by using `dmc.styles.ALL`.
+#### Still using an older version?
 
-Starting from version 0.14.4, `dash-mantine-components` provides `dmc.styles` variables to ensure that the correct 
-stylesheet version is used, matching the version of the library you have installed.
-
-To include stylesheets in your Dash app, it was necessary to do something like this:
+If you're working with **DMC < 1.2.0**, you may need to manually include stylesheets like this:
 
 ```python
-from dash import Dash
 import dash_mantine_components as dmc
+from dash import Dash
 
-# below covers all the stylesheets, you can pick as per your need.
-stylesheets = [
-    dmc.styles.DATES,
-    dmc.styles.CODE_HIGHLIGHT,
-    dmc.styles.CHARTS,
-    dmc.styles.CAROUSEL,
-    dmc.styles.NOTIFICATIONS,
-    dmc.styles.NPROGRESS,
-    dmc.styles.RICH_TEXT_EDITOR,
-]
-app = Dash(__name__, external_stylesheets=stylesheets)
+app = Dash(
+    external_stylesheets=[
+        dmc.styles.CAROUSEL,
+        dmc.styles.CODE_HIGHLIGHT,
+        dmc.styles.NOTIFICATIONS,
+        # or just use dmc.styles.ALL
+    ]
+)
 ```
 
-Or, if you want to include all optional stylesheets:
+You can also inspect any style path directly:
 
 ```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
-
-If you need to add other external stylesheets along with these, you can do it like this:
-
-```python
-app = Dash(external_stylesheets=[dbc.icons.FONT_AWESOME] + dmc.styles.ALL)
-```
-
-
-Note - to find the correct stylesheet link, you can print it out like this:
-```
-print(dmc.styles.DATES)
-```
-This will give you a link like:
-```
-https://unpkg.com/@mantine/dates@7.11.0/styles.css
+print(dmc.styles.CODE_HIGHLIGHT)
+# → https://unpkg.com/@mantine/code-highlight@7.x.x/styles.css
 ```
 
 
