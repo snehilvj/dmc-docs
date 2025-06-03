@@ -197,6 +197,20 @@ By default, tooltip animation is disabled. To enable it, set `tooltipAnimationDu
 .. exec::docs.compositechart.tooltipanimation
 
 
+### Value formatter
+To format values in the tooltip and axis ticks, use `valueFormatter` prop. It accepts a function that takes number `value`
+as an argument and returns formatted value:
+
+
+.. functions_as_props::
+
+.. exec::docs.compositechart.valueformatter
+    :code: false
+
+.. sourcetabs::docs/compositechart/valueformatter.py, assets/examples-js/format-number-intl.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Units
 Set `unit` prop to render a unit label next to the y-axis ticks and tooltip values:
@@ -207,6 +221,24 @@ Set `unit` prop to render a unit label next to the y-axis ticks and tooltip valu
 To remove tooltip, set `withTooltip=false`. It also removes the cursor line and disables interactions with the chart.
 
 .. exec::docs.compositechart.removetooltip
+
+
+### Custom tooltip
+Use the `tooltipProps` `content` prop to  to pass custom tooltip renderer to recharts Tooltip component.  For example:
+```python
+ tooltipProps={'content': {'functon': 'myFunction'}}
+```
+
+.. functions_as_props::
+
+.. exec::docs.compositechart.custom-tooltip
+    :code: false
+
+.. sourcetabs::docs/compositechart/custom-tooltip.py, assets/examples-js/chart-tooltip.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 
 ### Customize dots
 Use `dotProps` to pass props down to recharts dot in regular state and `activeDotProps` to pass props down to recharts

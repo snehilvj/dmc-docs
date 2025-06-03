@@ -83,6 +83,24 @@ dmc.BubbleChart(
 
 ```
 
+
+
+### Value formatter
+To format values in the tooltip and axis ticks, use `valueFormatter` prop. It accepts a function that takes number `value`
+as an argument and returns formatted value:
+
+
+.. functions_as_props::
+
+.. exec::docs.bubblechart.valueformatter
+    :code: false
+
+.. sourcetabs::docs/bubblechart/valueformatter.py, assets/examples-js/format-usd.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
 ### Remove tooltip
 To remove tooltip, set `withTooltip=False`. It also removes the cursor line and disables interactions with the chart.
 

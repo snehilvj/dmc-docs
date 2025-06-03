@@ -16,6 +16,7 @@ class SC(SourceCode):
         mapping = {
             "py": {"language": "python", "icon": DashIconify(icon="devicon:python")},
             "css": {"language": "css", "icon": DashIconify(icon="devicon:css3")},
+            "js": {"language": "js", "icon": DashIconify(icon="devicon:javascript")},
         }
         files = title.split(", ")
         code = []
@@ -26,7 +27,7 @@ class SC(SourceCode):
                     "fileName": os.path.basename(file),
                     "code": open(file, "r").read(),
                     "language": mapping[extension]["language"],
-                     # "icon": mapping[extension]["icon"],
+                    "icon": mapping[extension]["icon"],
                 }
             )
         return dmc.CodeHighlightTabs(

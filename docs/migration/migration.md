@@ -8,12 +8,20 @@ dmc: false
 .. toc::
 
 
-## Version Compatibility  
+### Release Announcements
 
-Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions:  
+Check out the [release announcements](https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases) to see what’s new in each version.
+
+Explore the [v2.0.0 release announcement](/release-2-0-0) for a full overview with live examples of new features!
+
+
+### Version Compatibility  
+
+Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions.
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.0.0**               | June 2025    | 8.0.2           | `dash>=2.0.0` |
 | **1.3.0**               | May 2025     | 7.17.7          | `dash>=2.0.0` |
 | **1.2.0**               | Apr 2025     | 7.17.4          | `dash>=2.0.0` |
 | **1.1.0**               | Mar 2025     | 7.17.2          | `dash>=2.0.0` |
@@ -24,75 +32,233 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 | **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
 
 
-### Some Components Require Extra Stylesheets in DMC < 1.2.0
+### Migrating from 1.2.0 to 2.0.0
 
-> Starting in DMC 1.2.0, it is not necessary to include additional stylesheets for some components.  The info below is for
-running older version of DMC. 
+DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://mantine.dev/changelog/8-0-0/)
+and the [DMC 2.0.0 Release announcement.]( /release-2-0-0)
 
-In DMC < 1.2.0, certain components like `DatePicker`, `Carousel`, or `CodeHighlight`, require you to add their specific
-CSS files separately. You can also include all optional CSS stylesheets at once by using `dmc.styles.ALL`.
+#### Switch withThumbIndicator
 
-Starting from version 0.14.4, `dash-mantine-components` provides `dmc.styles` variables to ensure that the correct 
-stylesheet version is used, matching the version of the library you have installed.
-
-To include stylesheets in your Dash app, you can do something like this:
+[Switch](/components/switch) component default styles were updated, it now includes checked state indicator inside the
+thumb. If you want to use old styles without indicator, set `withThumbIndicator` prop to false in theme:
 
 ```python
-from dash import Dash
+dmc.MantineProvider(    
+    theme={
+        "components": {
+            "Switch": {
+                "defaultProps": {
+                    # ✅ Disable withThumbIndicator if you want to use old styles
+                    "withThumbIndicator": False,                  
+                },
+            },
+        },
+    }
+)
+```
+#### DatesProvider timezone
+DatesProvider component no longer supports timezone option:
+
+```python
+dmc.DatesProvider(
+    # children= ...
+    # ❌ timezone option is no longer supported
+    setting={"timezone": 'UTC', "consistentWeeks": True}
+)
+```
+
+
+
+#### DateTimePicker timeInputProps
+`DateTimePicker` component no longer accepts `timeInputProps` prop, as the underlying `TimeInput` component was
+replaced with `TimePicker`. To pass props down to `TimePicker` component, use `timePickerProps` prop instead.
+
+1.x
+```python
+dmc.DateTimePicker(
+    # ❌ timeInputProps is no longer available
+      timeInputProps={
+        "leftSection": dashIconify(icon="bi:clock"),
+      }
+)
+```
+
+2.x
+```python
+dmc.DateTimePicker(
+    #   ✅ Use timePickerProps instead of timeInputProps
+      timePickerProps={
+        "leftSection": dashIconify(icon="bi:clock"),
+         "minutesStep": 5,
+        "withDropdown": True,
+      }
+)
+```
+
+#### CodeHighlight usage
+
+To reduce the bundle size and increase performance,  only the top 10 languages from highlight.js are available.  See [CodeHighlight](/components/code-highlight)
+for more details.  If you would like additional languages, please open an issue on our [GitHub](https://github.com/snehilvj/dash-mantine-components/issues)
+
+
+#### Popover hideDetached
+`Popover` now supports `hideDetached` prop to automatically close popover when target element is removed from the DOM.
+Please see the example in the [Popover docs](/components/popover)
+
+By default, `hideDetached` is enabled – the behavior has changed from 1.x version. If you prefer to keep the old
+behavior, you can disable `hideDetached` for all components:
+
+
+```python
+dmc.MantineProvider(    
+    theme={
+        "components": {
+            "Popover": {
+                "defaultProps": {
+                    #  ✅ Disable hideDetached by default if you want to keep the old behavior
+                    "hideDetached": False,                  
+                },
+            },
+        },
+    }
+)
+```
+
+#### Carousel changes
+
+Update embla props that were previously passed to `Carousel` component to `emblaOptions`. Full list of props:
+
+- `loop`
+- `align`
+- `slidesToScroll`
+- `dragFree`
+- `inViewThreshold`
+- `skipSnaps`
+- `containScroll`
+- `speed` and `draggable` props were removed – they are no longer supported by embla
+
+```python
+#  ❌ 1.x – embla options passed as props no longer works in 2.x
+dmc.Carousel(loop=True,  dragFree=True,  align="start")
+
+# ✅ 2.x – use emblaOptions to pass options to embla
+dmc.Carousel({ "loop": True, "dragFree": True, "align": 'start' })
+```
+
+####  New DatePicker
+
+A new `DatePicker` component has been added — this is a standalone calendar (no input field), matching Mantine's upstream
+component.
+
+Note that in v0.15.0, the original `DatePicker` was renamed to `DatePickerInput` to align with Mantine’s naming.
+
+If you are migrating from DMC < 0.15.0 and your app used `dmc.DatePicker` update it to use `dmc.DatePickerInput`
+
+#### New NotificationContainer component
+
+Notifications are now handled by a single component: `NotificationContainer`. This replaces the previous
+`NotificationProvider` + `Notification` approach with one that is more aligned with Mantine's implementation. Also, there is
+now direct access to Mantine's  Notification API in clientside callbacks. 
+
+Please see the new [Notification docs](/components/notification) for more details.
+
+The `NotificationProvider` and `Notification` components are now deprecated and will be removed in a future major release.
+Please see the [Notification Migration Guide](/migration-notifications) for a step-by-step guild for updating your apps.
+
+
+
+#### Portal reuseTargetNode
+`reuseTargetNode` prop of `Portal` component is now enabled by default. This option improves performance by reusing the
+target node between portal renders, but in some edge cases, it might cause issues with z-index stacking context.
+
+For more information see the [Mantine Portal documentation.](https://mantine.dev/core/portal/)
+
+If you experience issues with z-index, change `reuseTargetNode` prop to `False` in `theme`:
+
+
+```python
+dmc.MantineProvider(    
+    theme={
+        "components": {
+            "Portal": {
+                "defaultProps": {
+                    # ✅ Disable reuseTargetNode by default if your application has z-index issues
+                    "reuseTargetNode": False,                  
+                },
+            },
+        },
+    }
+)
+```
+
+
+#### Menu data-hovered attribute
+`MenuItem` no longer uses `data-hovered` attribute to indicate hovered state. If you used `data-hovered` in your styles,
+you need to change it `:hover` and `:focus` selectors instead:
+
+.css files:
+```css
+// ❌ 7.x – styles with `data-hovered`,
+// no longer works in 8.x
+.item {
+  &[data-hovered] {
+    background-color: red;
+  }
+}
+
+// ✅ 8.x – use styles with `:hover` and `:focus`
+.item {
+  &:hover,
+  &:focus {
+    background-color: red;
+  }
+}
+```
+
+
+### Stylesheets Are Now Included Automatically (DMC ≥ 1.2.0)
+
+As of `dash-mantine-components >= 1.2.0`, you no longer need to manually include optional stylesheets for components like `DatePicker`, `Carousel`, `CodeHighlight`, or `RichTextEditor`.
+
+These styles are now bundled automatically — making setup faster and simpler.
+
+#### Still using an older version?
+
+If you're working with **DMC < 1.2.0**, you may need to manually include stylesheets like this:
+
+```python
 import dash_mantine_components as dmc
+from dash import Dash
 
-# below covers all the stylesheets, you can pick as per your need.
-stylesheets = [
-    dmc.styles.DATES,
-    dmc.styles.CODE_HIGHLIGHT,
-    dmc.styles.CHARTS,
-    dmc.styles.CAROUSEL,
-    dmc.styles.NOTIFICATIONS,
-    dmc.styles.NPROGRESS,
-    dmc.styles.RICH_TEXT_EDITOR,
-]
-app = Dash(__name__, external_stylesheets=stylesheets)
+app = Dash(
+    external_stylesheets=[
+        dmc.styles.CAROUSEL,
+        dmc.styles.CODE_HIGHLIGHT,
+        dmc.styles.NOTIFICATIONS,
+        # or just use dmc.styles.ALL
+    ]
+)
 ```
 
-Or, if you want to include all optional stylesheets:
+You can also inspect any style path directly:
 
 ```python
-app = Dash(external_stylesheets=dmc.styles.ALL)
-```
-
-If you need to add other external stylesheets along with these, you can do it like this:
-
-```python
-app = Dash(external_stylesheets=[dbc.icons.FONT_AWESOME] + dmc.styles.ALL)
+print(dmc.styles.CODE_HIGHLIGHT)
+# → https://unpkg.com/@mantine/code-highlight@7.x.x/styles.css
 ```
 
 
-Note - to find the correct stylesheet link, you can print it out like this:
-```
-print(dmc.styles.DATES)
-```
-This will give you a link like:
-```
-https://unpkg.com/@mantine/dates@7.11.0/styles.css
 
-
-```
-
-
-----
-
-
-
-## Migrating from 0.15 to 1.0.0
+### Migrating from 0.15 to 1.0.0
 
 This release ensures dash-mantine-components V1 is fully compatible with both Dash 2 and Dash 3.
-**If you are using dash-mantine-components<1.0.0rc1 you must  pin your dash version to < 3.0.0**
+**If you are using dash-mantine-components<1.0.0 you must  pin your dash version to < 3.0.0**
 
-### Breaking Change: Carousel Props
+#### Breaking Change: Carousel Props
 The `draggable` and `speed` props have been removed from `Carousel` as they are no longer supported in Embla Carousel V8.
 These props were functional until DMC 0.14.7, when Embla was upgraded to V8.
 
-### React 18 
+#### React 18 
 Dash 3.0 now uses react 18 by default.  If your app uses dash>=3.0 it is no longer necessary to set the React version:
 ```python
 import dash
@@ -100,7 +266,7 @@ import dash
 dash._dash_renderer._set_react_version("18.2.0")
 ```
 
-## Migrating from 0.14 to 0.15
+### Migrating from 0.14 to 0.15
 
 The `DatePicker` component has been renamed to `DatePickerInput` to align with the component names of  the upstream
 Mantine Library.  We plan to add the Mantine [`DatePicker`](https://mantine.dev/dates/date-picker/) component in a future release.
@@ -108,9 +274,9 @@ Mantine Library.  We plan to add the Mantine [`DatePicker`](https://mantine.dev/
 We still expect far fewer breaking changes going forward compared to what you may have experienced in the past. For more details, please see our [Roadmap](https://github.com/snehilvj/dash-mantine-components/discussions/377).
 
 
-## Migrating from 0.12 to 0.14
+### Migrating from 0.12 to 0.14
 
-### Backstory
+#### Backstory
 
 There are many breaking changes going from DMC `v0.12` to DMC `v0.14`. The major reason behind this was we jumped from 
 underlying Mantine `v5` to Mantine `v7` and DMC tries to be as aligned with Mantine as possible. 
@@ -125,7 +291,7 @@ Mantine `v8` is supposed to introduce a lot of new features without the cost of 
 
 I'd recommend going through the [getting started](/getting-started) page as well.
 
-### MantineProvider
+#### MantineProvider
 
 It is now mandatory to wrap your app into [MantineProvider](/components/mantineprovider) (of which only one can be there in the app).
 This component is responsible for providing theme to all DMC components.
@@ -143,7 +309,7 @@ dmc.MantineProvider(
 
 Mantine provides some better way to manage color themes in your app, but they are yet to be made available in DMC.
 
-### React 18+ only
+#### React 18+ only
 
 Starting with `v0.14`, DMC will need REACT 18. You can ensure that in two ways:
 
@@ -164,7 +330,7 @@ app = Dash(__name__)
 REACT_VERSION=18.2.0 python app.py
 ```
 
-### Required StyleSheets
+#### Required StyleSheets
 
 Except styling for core elements, the styling for components like `CodeHighlight`, `DatePicker`, `Carousel`, etc. have to be 
 included by the user.
@@ -191,28 +357,28 @@ Or, include all the stylesheets like this:
 app = Dash(external_stylesheets=dmc.styles.ALL)
 ```
 
-### Missing components
+#### Missing components
 
 - `Chip` and `ChipGroup` components are not working as expected when ported over in dash. It will be worked on as part of subsequent releases.
 - `TransferList` is no longer available. You might benefit from [AIO based TransferList component](https://community.plotly.com/t/dash-mantine-components-0-14-1/83865/18?u=snehilvj) created by a community member.
 **update** `Chip` and `ChipGroup` are available as of 0.14.6
 
-### Creatable option in Select and MultiSelect
+#### Creatable option in Select and MultiSelect
 
 `creatable` prop has been removed from `Select` and `MultiSelect`. However, [TagsInput](/components/tagsinput) can be used to emulate
 the same functionality as `MultiSelect` with `creatable` prop.
 
-### Left and Right section
+#### Left and Right section
 
 Components that previously had `rightSection` and `icon` props, now use `leftSection` instead of `icon`. Example of Button sections:
 
 .. exec::docs.migration.button
 
-### Title
+#### Title
 
 [Title](/components/title) doesn't accept other [Text](/components/text) props like gradient etc. anymore.
 
-### Progress
+#### Progress
 
 [Progress](/components/progress) component now supports compound components pattern. Advanced features that were previously implemented in Progress
 are now supposed to be implemented with compound components instead.
@@ -225,7 +391,7 @@ are now supposed to be implemented with compound components instead.
 
      Tooltips on Progress are not working as expected for now. Will have to tackle this in the subsequent releases.
 
-### Table
+#### Table
 
 [Table](/components/table) component changes:
 
@@ -237,7 +403,7 @@ are now supposed to be implemented with compound components instead.
 
 .. exec::docs.table.simple
 
-### Group
+#### Group
 
 [Group](/components/group) component changes:
 
@@ -247,7 +413,7 @@ are now supposed to be implemented with compound components instead.
 .. exec::docs.group.interactive
     :code: false
 
-### Button
+#### Button
 
 [Button](/components/button) changes
 
@@ -256,7 +422,7 @@ are now supposed to be implemented with compound components instead.
 - `uppercase` prop was removed, use `tt` [style prop](/style-props) instead
 - `loaderPosition` prop was removed, Loader is now always rendered in the center to prevent layout shifts
 
-### AppShell (renamed Navbar, Aside, Header, Footer, Main)
+#### AppShell (renamed Navbar, Aside, Header, Footer, Main)
 
 [AppShell](/components/appshell) component is more feature rich now and has undergone following changes:
 
@@ -264,19 +430,19 @@ are now supposed to be implemented with compound components instead.
 - `AppShell` now supports animations when navbar/aside are opened/closed
 - `AppShell` no longer supports `fixed` prop – all components have `position: fixed` styles, static positioning is no longer supported
 
-### SimpleGrid
+#### SimpleGrid
 
 [SimpleGrid](/components/simplegrid) now uses object format to define grid breakpoints and spacing, it works the same way as [style props](/style-props).
 
 .. exec::docs.simplegrid.responsive
 
-### Grid
+#### Grid
 
 [Grid](/components/grid) now uses object format in `gutter`, `offset`, `span` and `order` props, all props now work the same way as [style props](/style-props).
 
 - `Col` component has been renamed to `GridCol`
 
-### Image
+#### Image
 
 [Image](/components/image) component changes:
 
@@ -286,16 +452,16 @@ are now supposed to be implemented with compound components instead.
 
 .. exec::docs.image.placeholder
 
-### Notification
+#### Notification
 
 `NotificationsProvider` has been renamed to `NotificationProvider`.
 `disallowClose` is no longer available.  Use `withCloseButton`
 
-### Prism
+#### Prism
 
 `Prism` has been replaced by [CodeHighlight](/components/code-highlight).
 
-### MediaQuery
+#### MediaQuery
 
 MediaQuery has been removed. You can use CSS or `visibleFrom` and `hiddenFrom` props.
 

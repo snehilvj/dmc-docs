@@ -16,6 +16,7 @@ def create_link(icon, href):
 
 def create_version_menu():
     versions = {
+        "1.3.0": "https://dmc-docs-1-3.onrender.com",
         "0.12": "https://dmc-docs-0-12.onrender.com",
         "0.13": "https://dmc-docs-0-13.onrender.com",
     }
@@ -24,7 +25,7 @@ def create_version_menu():
             dmc.MenuTarget(
                 #version-update
                 dmc.Button(
-                    '1.3',
+                    '2.0',
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                 )

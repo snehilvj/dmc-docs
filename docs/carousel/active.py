@@ -11,7 +11,7 @@ component = dmc.Box(
                 for n in range(6)
             ],
             id="carousel-active",
-            loop=True,
+            emblaOptions={"loop": True},
             autoplay={
                 "delay": 2000,
                 "stopOnMouseEnter": True,

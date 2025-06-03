@@ -53,12 +53,20 @@ Below is a slider with `updatemode` set to "drag", observe how the output text c
 ### Control label
 To change label behavior and appearance, set the following props:
 
-- `label` – set to `None` to disable the label.  In a future release you will be able to provide a function to format the label, but this feature is not yet available.
+
+- `label` – set to `None` to disable the label. You can also provide a formatter function (via `{"function": "..."}`) to customize the label text. The function receives the `value` as its argument.
 - `labelAlwaysOn` – if `True` – label will always be displayed, by default label is visible only when user is dragging
 - `labelTransitionProps` – props passed down to the `Transition` component, can be used to customize label animation
 
+.. functions_as_props::
 
 .. exec::docs.slider.label
+    :code: false
+
+.. sourcetabs::docs/slider/label.py, assets/examples-js/celcius_label.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Min, Max, and Step
 
@@ -97,6 +105,16 @@ Note: The `step` prop is ignored when `restrictToMarks=True`.
 
 ### Thumb children
 .. exec::docs.slider.thumbchildren
+
+
+### Scale
+You can use the scale prop to represent the value on a different scale.
+
+In the following demo, the value x represents the value 2^x. Increasing x by one increases the represented value by 2 to the power of x.
+
+
+.. functions_as_props::
+
 
 ### Inverted
 You can invert the track by setting `inverted=True`:

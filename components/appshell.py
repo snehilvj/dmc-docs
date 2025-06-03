@@ -20,7 +20,7 @@ def create_appshell(data):
                 "Badge": {"styles": {"root": {"fontWeight": 500}}},
                 "Progress": {"styles": {"label": {"fontWeight": 500}}},
                 "RingProgress": {"styles": {"label": {"fontWeight": 500}}},
-                "CodeHighlightTabs": {"styles": {"file": {"padding": 12}}},
+                "CodeHighlightTabs": {"styles": {"file": {"padding": 6, "border": "1px solid", "borderColor": "var(--mantine-color-default-border)"}}},
                 "Table": {
                     "defaultProps": {
                         "highlightOnHover": True,
@@ -48,11 +48,8 @@ def create_appshell(data):
         children=[
             dcc.Location(id="url", refresh="callback-nav"),
             dcc.Store(id="color-scheme-storage", storage_type="local"),
-            dmc.NotificationProvider(),
-            html.Div(id="notifications-container"),
-            html.Div(id="notifications-container2"),
-            html.Div(id="notifications-container3"),
-            dmc.AppShell(
+            dmc.NotificationContainer(id="notification-container"),
+             dmc.AppShell(
                 [
                     create_header(data),
                     create_navbar(data),
