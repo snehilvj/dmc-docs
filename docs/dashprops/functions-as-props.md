@@ -271,7 +271,7 @@ dmcfuncs.renderBadge = function ({ option }) {
 };
 
 ```
-`
+
 Supported props in V2.0.0
 
 The following props support JavaScript functions in Dash Mantine Components version 2.0.0.
