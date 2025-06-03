@@ -32,7 +32,7 @@ app.layout = dmc.MantineProvider([
 * In multi-page apps, place `NotificationContainer` in the top-level `app.layout`, not inside individual pages.
 * It is no longer necessary to use a separate output container (such as `html.Div`) as in versions prior to 2.0.
 
-### Migration Notice
+### Migration Guide
 
 The following components are deprecated and will be removed in a future release:
 

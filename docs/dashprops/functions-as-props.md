@@ -8,51 +8,83 @@ dmc: false
 
 .. toc::
 
-Some components props support JavaScript functions to control how elements look and behave — like labels, tooltips, dropdown options, and more.
 
+### How Function Props Work
 
-### Basic Usage
+In JavaScript libraries like [Mantine](https://mantine.dev), some component props accept functions — for example, to
+format a value, render custom content, or control behavior. Here is an example of formating the label of the `Slider`
 
-To use a JavaScript function in a DMC component, pass a dictionary like this:
-
-```python
-{"function": "myFunctionName"}
+```js
+<Slider label={(value) => `${value} °C`} />
 ```
 
-This tells Dash to call a function named `myFunctionName` from a `.js` file in your app’s `/assets/` folder.
+However, in a Dash app, you can’t pass a Python function to a JavaScript component running in the browser. Functions
+don't serialize over the network.
 
+To support this safely, Dash Mantine Components allows you to pass named references to JavaScript functions instead.
 
-
-Example: Format a Slider label
-
-See this example in the [Slider Control Label](/components/slider#control-label) section.
-
-Python
+You write your function in a `.js` file in the `/assets` folder, and refer to it by name in Python:
 
 ```python
-dmc.Slider(
-    label={"function": "formatTemperature"},
-    # other props
-)
+label = {"function": "formatCelsius"}
 ```
 
-
-JavaScript (in `/assets/formatTemperature.js`)
-
+assets/formatCelsius.js
 ```js
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 
-dmcfuncs.formatTemperature = function (value) {
+dmcfuncs.formatCelsius = function (value) {
   return `${value} °C`;
 };
 ```
 
+DMC knows how to call this function in the browser for props like `label`.
+
+
+
+### About Mantine Function Props
+
+Only specific props in Mantine support functions. For example:
+
+* `Slider.label`
+* `Select.renderOption`
+* `BarChart.getBarColor`
+* `ScatterChart.valueFormat`
+
+Each function must follow the structure defined by Mantine. You can refer to the [Mantine documentation](https://mantine.dev) 
+for details on what props accept functions and what each function receives.
+
+
+
+### Example: Slider label
+
 See this example in the [Slider Control Label](/components/slider#control-label) section.
+
+In Mantine:
+
+```js
+<Slider label={(value) => `${value} °C`} />
+```
+
+In DMC:
+
+```python
+dmc.Slider(label={"function": "formatCelsius"})
+```
+
+```js
+dmcfuncs.formatCelsius = function (value) {
+  return `${value} °C`;
+};
+```
+
 
 
 ### Passing Extra Options
 
-You can pass extra options from Python to customize how the JavaScript function behaves:
+You can pass extra options from Python to customize how the JavaScript function behaves.
+
+In this example, the same function can be used to format the label using either Celsius or Fahrenheit.
 
 .py
 ```python
@@ -73,7 +105,6 @@ dmcfuncs.formatTemperature = function (value, { unit }) {
   return `${value.toFixed(1)} °C`;
 };
 ```
-See examples the Render Options example in the [TagsInput](components/tagsinput#renderoption) and [MultiSelect](components/multiselect#renderoption) sections
 
 ###  Returning a Component
 
@@ -85,7 +116,7 @@ Its also possible to return React components.  To do this:
 
 Example: Components in Dropdown Options
 
-
+.py
 ```python
 
 colors = {
@@ -106,6 +137,7 @@ component = dmc.Select(
 )
 ```
 
+.js
 ```js 
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 var dmc = window.dash_mantine_components;
@@ -125,8 +157,13 @@ dmcfuncs.renderLibraryBadge = function ({ option }, { colors }) {
 
 
 ### Use AI to Help Write JavaScript
-If you're more comfortable in Python, you can use AI to write JavaScript functions for DMC components. Just provide the
-logic in Python and follow this prompt pattern.
+
+Most Dash users are more comfortable writing Python than JavaScript. You can use AI tools like ChatGPT to generate the
+JavaScript functions needed for Dash Mantine Components.
+
+While it's possible to describe the logic in plain English, in practice, writing the function in Python and asking the 
+AI to translate it tends to produce more accurate and usable results. It gives the model a clear structure and avoids
+ambiguity, especially for functions with conditions, formatting rules, or custom output.
 
 #### Prompt Template
 When asking AI to generate a function:
@@ -134,7 +171,7 @@ When asking AI to generate a function:
 1. State the function name.
 2. Mention it’s for Dash Mantine Components.
 3. Ask it to assign the function to dmcfuncs.functionName.
-4. Provide the Python logic.
+4. Provide the Python logic (or natural language)
 5. Always include this global header:
     ```
     var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
@@ -236,6 +273,9 @@ dmcfuncs.renderBadge = function ({ option }) {
 ```
 
 Supported props in V2.0.0
+
+The following props support JavaScript functions in Dash Mantine Components version 2.0.0.
+If there’s a Mantine prop you’d like to see added, feel free to [open an issue on GitHub.](https://github.com/snehilvj/dash-mantine-components/issues)
 
 | Component         | Props                                             |
 |------------------|---------------------------------------------------|

@@ -83,7 +83,8 @@ def create_content(data, idtype):
                 href="/help-center",
                 id={"type": idtype, "index": "/help-center"},
             ),
-          #  dmc.Anchor("Mantine V7 docs", href="https://v7.mantine.dev/", target="_blank", ml="lg", pt="md"),
+            dmc.Anchor("Mantine V8 docs", href="https://mantine.dev/", target="_blank", ml="lg", pt="md"),
+            dmc.Anchor("DMC V2 Release", href="/release-2-0-0", ml="lg", pt="md"),
         ],
     )
 

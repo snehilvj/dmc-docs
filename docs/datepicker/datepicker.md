@@ -12,8 +12,7 @@ category: Date Pickers
 
 ### Simple Example
 
-This is a simple example of `DatePicker` with a callback. You can either use strings in format 'YYYY-MM-DD` or use the
-date object from datetime library.
+This is a simple example of `DatePicker` with a callback. Use a string in the format 'YYYY-MM-DD'.
 
 .. exec::docs.datepicker.simple
 
@@ -97,9 +96,32 @@ corresponding control will be disabled.
 .. exec::docs.datepicker.minmax
 
 ### Disabled dates
-To disable specific dates use `disabledDates' prop. The prop accepts a list of dates in the string format of YYYY-MM-DD
+
+#### Example 1: A List of dates
+Use the `disabledDates` prop to pass a list of specific dates to disable. Dates must be strings in the YYYY-MM-DD format.
 
 .. exec::docs.datepicker.disabledates
+
+#### Example 2: A Function
+
+.. functions_as_props::  
+
+The `disabledDates` prop accepts a function that receives a date string (in 'YYYY-MM-DD' format) and returns true if the date should be disabled.
+
+Notes on Handling Dates in JavaScript with `dayjs`:
+- DMC includes [dayjs](https://day.js.org/), which makes working with dates safer and simpler.
+- The date value passed into your function will always be a string like '2025-11-01'.
+- To check the day of the week, you can use `dayjs(dateStr).day()` — this avoids timezone bugs and is easier than manually splitting the date.
+
+This example disables all days except Fridays:
+
+.. exec::docs.datepicker.disabledates_function
+    :code: false
+
+.. sourcetabs::docs/datepicker/disabledates_function.py, assets/examples-js/disabled_dates.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Number of columns
 Set `numberOfColumns` prop to define number of pickers that will be rendered side by side:

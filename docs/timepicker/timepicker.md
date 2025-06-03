@@ -87,7 +87,7 @@ based on `format`, `amPmLabels` and `withSeconds` props.
 .. exec::docs.timepicker.presets
 
 ### Time presets groups
-To group presets use an array of objects with label and values keys:
+To group presets use a list of dictionaries with label and values keys:
 
 
 .. exec::docs.timepicker.presetsgroup

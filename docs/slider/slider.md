@@ -115,14 +115,6 @@ In the following demo, the value x represents the value 2^x. Increasing x by one
 
 .. functions_as_props::
 
-.. exec::docs.slider.scale
-    :code: false
-
-.. sourcetabs::docs/slider/scale.py, assets/examples-js/scale-label.js
-    :defaultExpanded: true
-    :withExpandedButton: true
-
-
 
 ### Inverted
 You can invert the track by setting `inverted=True`:
