@@ -319,6 +319,9 @@ default_labels = {
 The editor supports content in either [JSON (ProseMirror) or HTML format](https://tiptap.dev/docs/editor/core-concepts/schema). You can specify the format using the `json`
 or `html` prop. If both props are set, `json` takes precedence.  
 
+Note: While users can type Markdown-style text into `RichTextEditor`, the component does not parse or render supplied text in Markdown
+content.  To render Markdown text, use the `dcc.Markdown` component instead.
+
 #### When to Use Each Format:  
 - **JSON (ProseMirror)**: Ideal for structured data storage (databases, APIs) or programmatic content manipulation (e.g., dynamically adding elements).  
 - **HTML**: Useful for direct rendering in a browser, email clients, or using with components like `dcc.Markdown`.  
