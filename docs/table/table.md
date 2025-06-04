@@ -27,32 +27,12 @@ You can use `data` prop to automatically generate table rows from raw data.
 To control spacing use `horizontalSpacing` and `verticalSpacing` props. Both props support spacing from Mantine's theme
 and number values to set cell padding in px.
 
-```python
-import dash_mantine_components as dmc
-
-dmc.Table(
-    verticalSpacing="sm",
-    horizontalSpacing=10,
-    data={...}
-)
-```
 
 .. exec::docs.table.spacing
     :code: false
 
 ### Striped and Rows Hover
 
-```python
-import dash_mantine_components as dmc
-
-dmc.Table(
-    striped=True,
-    highlightOnHover=True,
-    withTableBorder=True,
-    withColumnBorders=True,
-    data={...}
-)
-```
 
 .. exec::docs.table.striped
     :code: false
