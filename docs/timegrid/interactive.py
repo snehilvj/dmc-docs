@@ -2,8 +2,6 @@ import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
 
-TARGET_ID = "interactive-timegrid"
-
 target = dmc.TimeGrid(
         timeRangeData={ "startTime": "10:00", "endTime": "21:00", "interval": "01:00" },
         withSeconds=False,
@@ -15,11 +13,11 @@ target = dmc.TimeGrid(
         value="10:00:00",
     )
 
-configurator = Configurator(target, center_component=True)
+configurator = Configurator(target)
 configurator.add_segmented_control("format", ["12h", "24h"], "12h")
 configurator.add_switch("withSeconds", True)
 configurator.add_slider("size", "sm")
-configurator.add_slider("radius", "sm")
+configurator.add_slider("radius", "lg")
 component = configurator.panel
 
 

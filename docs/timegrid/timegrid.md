@@ -13,6 +13,10 @@ category: Date Pickers
 
 .. exec::docs.timegrid.simple
 
+### format, withSeconds, size, radius
+
+.. exec::docs.timegrid.interactive
+    :code: false
 
 ### data prop
 `data` prop accepts an array of time values in 24-hour format. Values must be unique.

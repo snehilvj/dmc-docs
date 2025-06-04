@@ -16,21 +16,6 @@ Sparkline is a simplified version of AreaChart. It can be used to display a sing
     :code: false
 
 
-```python
-import dash_mantine_components as dmc
-from dash import html
-
-dmc.Sparkline(
-    w=200,
-    h=60,
-    data=[10, 20, 40, 20, 40, 10, 50],
-    curveType="linear",
-    color="blue",
-    fillOpacity=0.98,
-    strokeWidth=5    
-)
-
-```
 
 ### Trend Colors
 

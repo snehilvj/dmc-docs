@@ -12,17 +12,6 @@ category: Data Display
 
 ThemeIcon can be customized by setting its variant, size, radius and color.
 
-```python
-import dash_mantine_components as dmc
-from dash_iconify import DashIconify
-
-dmc.ThemeIcon(
-    size="xl",
-    color="indigo",
-    variant="filled",
-    children=DashIconify(icon="tabler:photo", width=25)
-)
-```
 
 .. exec::docs.themeicon.interactive
     :code: false
