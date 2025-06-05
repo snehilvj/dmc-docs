@@ -281,6 +281,24 @@ select less than 2 currency pairs.
 .. exec::docs.multiselect.interactive
    :code: false
 
+
+### Removing placeholder after values selected
+
+`MultiSelect` component uses placeholder to indicate that there are values available for selection. It is different
+from `Select` component where placeholder is removed when value is selected – user can select only one value.
+
+You can use CSS to remove the placeholder in the `MultiSelect` component when values are selected:
+
+
+.. exec::docs.multiselect.placeholder
+    :code: false
+
+.. sourcetabs::docs/multiselect/placeholder.py, assets/examples/remove_placeholder.css
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
+
 ### Styles API
 
 .. styles_api_text::

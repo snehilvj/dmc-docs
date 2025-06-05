@@ -1,0 +1,5 @@
+.dmc-docs-demo .mantine-MultiSelect-inputField {
+  &:not(:only-child)::placeholder {
+    color: transparent;
+  }
+}
