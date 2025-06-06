@@ -154,7 +154,24 @@ dmcfuncs.renderLibraryBadge = function ({ option }, { colors }) {
   );
 };
 ```
+### Using Other JavaScript Libraries
+You can use third-party JavaScript libraries inside your Dash functions — as long as you include them correctly in your app.
 
+Here is an example of including the `dayjs` library as an external script:
+
+```python
+app = Dash(exteral_scripts=["https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js"])
+```
+
+.js
+```json
+var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+
+dmcfuncs.excludeDate = function(dateStr) {
+   const date = dayjs(dateStr, "YYYY-MM-DD");
+   return date.isValid() && date.day() !== 5;
+}
+```
 
 ### Use AI to Help Write JavaScript
 

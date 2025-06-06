@@ -108,12 +108,20 @@ Use the `disabledDates` prop to pass a list of specific dates to disable. Dates 
 
 The `disabledDates` prop accepts a function that receives a date string (in 'YYYY-MM-DD' format) and returns true if the date should be disabled.
 
-Notes on Handling Dates in JavaScript with `dayjs`:
-- DMC includes [dayjs](https://day.js.org/), which makes working with dates safer and simpler.
-- The date value passed into your function will always be a string like '2025-11-01'.
-- To check the day of the week, you can use `dayjs(dateStr).day()` — this avoids timezone bugs and is easier than manually splitting the date.
+This example uses [dayjs](https://day.js.org/) to simplify working with dates in JavaScript.
 
-This example disables all days except Fridays:
+To use it in your Dash app, load it as an external script:
+
+```python
+app = Dash(external_scripts=[
+    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js"
+])
+```
+
+Here, `dayjs(dateStr).day()` is used to check the day of the week. This is more reliable than manually parsing the date string and helps avoid common timezone issues.
+
+The example below disables all dates except Fridays:
+
 
 .. exec::docs.datepicker.disabledates_function
     :code: false
