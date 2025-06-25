@@ -113,6 +113,79 @@ based on user interation and the order of operations.
 
 .. exec::docs.tree.checkboxes
 
+
+### Custom Tree rendering
+
+By default, `dmc.Tree` includes a built-in `renderNode` function that handles how each tree node is rendered. It requires
+no JavaScript and supports some customization through component props like `checkboxes`, `expandedIcon`, and `iconSide`. 
+However, it is limited — for example, all leaf nodes must be strings only, and more advanced layouts or icons are not possible.
+
+To fully customize the rendering of each node, you can supply your own `renderNode` function. This allows you to build 
+any layout you want for each tree node using JavaScript.
+
+#### Ignored Props
+
+When you supply your own `renderNode` function, the following props are ignored:
+
+* `checkboxes`
+* `expandedIcon`
+* `collapsedIcon`
+* `iconSide`
+
+These props only apply when you're using the default built-in renderer. If you're using a custom `renderNode`, you are
+responsible for rendering icons, checkboxes, or any other visual element.
+
+
+#### Example: Files Tree 
+
+.. functions_as_props::
+
+.. exec::docs.tree.renderNode
+    :code: false
+
+.. sourcetabs::docs/tree/renderNode.py, assets/examples-js/tree.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+#### Function Arguments
+
+The function receives a single `payload` object with the following fields:
+
+```js
+export interface RenderTreeNodePayload {
+  /** Node level in the tree */
+  level: number;
+
+  /** `true` if the node is expanded, applicable only for nodes with `children` */
+  expanded: boolean;
+
+  /** `true` if the node has non-empty `children` array */
+  hasChildren: boolean;
+
+  /** `true` if the node is selected */
+  selected: boolean;
+
+  /** Node data from the `data` prop of `Tree` */
+  node: TreeNodeData;
+
+  /** Tree controller instance, return value of `useTree` hook */
+  tree: TreeController;
+
+  /** Props to spread into the root node element */
+  elementProps: {
+    className: string;
+    style: React.CSSProperties;
+    onClick: (event: React.MouseEvent) => void;
+    'data-selected': boolean | undefined;
+    'data-value': string;
+    'data-hovered': boolean | undefined;
+  };
+}
+
+```
+
+
 ### Styles API
 
 .. styles_api_text::
