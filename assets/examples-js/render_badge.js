@@ -1,7 +1,7 @@
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 var dmc = window.dash_mantine_components;
 
-dmcfuncs.renderBadge = function (option, colors) {
+dmcfuncs.renderBadge = function ({option}, {colors}) {
   return React.createElement(
     dmc.Badge,
     {
