@@ -12,28 +12,29 @@ dmc: false
 ### How Function Props Work
 
 In JavaScript libraries like [Mantine](https://mantine.dev), some component props accept functions — for example, to
-format a value, render custom content, or control behavior. Here is an example of formating the label of the `Slider`
+dynamically format a value, render custom content, or control behavior. Here is an example of formating the label of the `Slider`
 
+**In Mantine**
 ```js
-<Slider label={(value) => `${value} °C`} />
+<Slider label={(value) => `${value} °C`}  />
 ```
 
-However, in a Dash app, you can’t pass a Python function to a JavaScript component running in the browser. Functions
-don't serialize over the network.
+However, in a Dash app, you can’t pass a function to the component because functions don't serialize over the network.
 
 To support this safely, Dash Mantine Components allows you to pass named references to JavaScript functions instead.
 
 You write your function in a `.js` file in the `/assets` folder, and refer to it by name in Python:
 
+**app.py**
 ```python
-label = {"function": "formatCelsius"}
+dmc.Slider(label={"function": "celsiusLabel"}, value=40)
 ```
 
-assets/formatCelsius.js
+**assets/formatCelsius.js**
 ```js
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 
-dmcfuncs.formatCelsius = function (value) {
+dmcfuncs.celsiusLabel = function(value) {
   return `${value} °C`;
 };
 ```
@@ -41,42 +42,38 @@ dmcfuncs.formatCelsius = function (value) {
 DMC knows how to call this function in the browser for props like `label`.
 
 
+### Example: Formatting a Slider label
 
-### About Mantine Function Props
-
-Only specific props in Mantine support functions. For example:
-
-* `Slider.label`
-* `Select.renderOption`
-* `BarChart.getBarColor`
-* `ScatterChart.valueFormat`
-
-Each function must follow the structure defined by Mantine. You can refer to the [Mantine documentation](https://mantine.dev) 
-for details on what props accept functions and what each function receives.
+See more examples in the [Slider section](/components/slider) section.
 
 
+.. exec::docs.dashprops.slider_label
+    :code: false
 
-### Example: Slider label
+.. sourcetabs::docs/dashprops/slider_label.py, assets/examples-js/celcius_label.js
+    :defaultExpanded: true
+    :withExpandedButton: true
 
-See this example in the [Slider Control Label](/components/slider#control-label) section.
 
-In Mantine:
 
-```js
-<Slider label={(value) => `${value} °C`} />
-```
+### Function Props in Mantine Components
 
-In DMC:
+Not all Mantine props accept functions — only specific ones are designed to.
 
-```python
-dmc.Slider(label={"function": "formatCelsius"})
-```
+Here are some examples:
 
-```js
-dmcfuncs.formatCelsius = function (value) {
-  return `${value} °C`;
-};
-```
+* `Slider`: `label`
+* `Select`: `renderOption`
+* `BarChart`: `getBarColor`
+* `ScatterChart`: `valueFormat`
+
+For a full list of supported function props in Dash Mantine Components, see the table at the bottom of this page.
+
+Each function must match the structure expected by Mantine. To learn what arguments each one receives — and how they’re
+used — refer to the [Mantine documentation](https://mantine.dev). You’ll also find complete working examples in the relevant sections of the DMC docs.
+
+
+
 
 
 
@@ -88,10 +85,13 @@ In this example, the same function can be used to format the label using either 
 
 .py
 ```python
-label = {
-    "function": "formatTemperature",
-    "options": {"unit": "F"}
-}
+dmc.Slider(
+    label={
+        "function": "formatTemperature",
+        "options": {"unit": "F"}
+    },
+    # other props
+)
 ```
 
 .js
@@ -112,48 +112,27 @@ Its also possible to return React components.  To do this:
 
 - Use `React.createElement()` (no JSX).
 - access DMC components by using  `window.dash_mantine_components`.
-- If you've imported other component libraries, you can use them too. For example  `window.dash_iconify`, `window.dash_core_components`, etc.
+- If you've imported other component libraries in your Dash app, you can use them too. For example  `window.dash_iconify`, `window.dash_core_components`, etc.
 
-Example: Components in Dropdown Options
+See examples of including icons in the dropdown data in the `Select` section of the docs.
 
-.py
-```python
+### Example: Components and passing extra options
 
-colors = {
-    "Pandas": "grape",
-    "NumPy": "blue",
-    "Matplotlib": "teal",
-    "Plotly": "violet",
-}
+This example shows
+  - Returning a component.  Note the dropdown data is formated as a `Badge`.
+  - Passing extra options to the JavaScript function.  The colors for each badge are passed to the function from the dash app.
 
-component = dmc.Select(
-    label="Choose a library",
-    placeholder="Pick one",
-    data=list(colors.keys()),
-    renderOption={
-        "function": "renderLibraryBadge",
-        "options": {"colors": colors},
-    },
-)
-```
 
-.js
-```js 
-var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
-var dmc = window.dash_mantine_components;
+.. exec::docs.dashprops.return_component
+    :code: false
 
-dmcfuncs.renderLibraryBadge = function ({ option }, { colors }) {
-  return React.createElement(
-    dmc.Badge,
-    {
-      color: colors[option.value] || "gray",
-      variant: "light",
-      radius: "sm",
-    },
-    option.value
-  );
-};
-```
+.. sourcetabs::docs/dashprops/return_component.py, assets/examples-js/render_badge.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
+
 ### Using Other JavaScript Libraries
 You can use third-party JavaScript libraries inside your Dash functions — as long as you include them correctly in your app.
 
