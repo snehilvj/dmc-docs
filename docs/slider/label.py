@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-component = dmc.MantineProvider([
+component = dmc.Stack([
     dmc.Text("No label", size="sm"),
     dmc.Slider(value=40, label=None),
 
