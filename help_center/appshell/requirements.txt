@@ -1,3 +1,3 @@
-dash
-dash-mantine-components==0.15.1
+dash>=3.0.0
+dash-mantine-components>=1.2.0
 dash-iconify

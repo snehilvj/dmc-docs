@@ -5,10 +5,9 @@ Navbar and Aside are rendered on top on Header and Footer
 """
 
 import dash_mantine_components as dmc
-from dash import Dash, Input, Output, State, callback, _dash_renderer
-_dash_renderer._set_react_version("18.2.0")
+from dash import Dash, Input, Output, State, callback
 
-app = Dash(external_stylesheets=dmc.styles.ALL)
+app = Dash()
 
 logo = "https://github.com/user-attachments/assets/c1ff143b-4365-4fd1-880f-3e97aab5c302"
 
@@ -18,7 +17,7 @@ layout = dmc.AppShell(
             dmc.Group(
                 [
                     dmc.Burger(id="burger", size="sm", hiddenFrom="sm", opened=False),
-                    dmc.Image(src=logo, h=40),
+                    dmc.Image(src=logo, h=40, flex=0),
                     dmc.Title("Demo App", c="blue"),
                 ],
                 h="100%",

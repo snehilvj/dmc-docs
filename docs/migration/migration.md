@@ -145,6 +145,15 @@ dmc.Carousel(loop=True,  dragFree=True,  align="start")
 dmc.Carousel({ "loop": True, "dragFree": True, "align": 'start' })
 ```
 
+
+#### Image No longer has `flex:0` as a default style
+
+```python
+  # ✅ Add back flex:0 style if needed
+dmc.Image(src=logo, h=40, flex=0)
+
+```
+
 ####  New DatePicker
 
 A new `DatePicker` component has been added — this is a standalone calendar (no input field), matching Mantine's upstream
