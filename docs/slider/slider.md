@@ -70,9 +70,20 @@ To change label behavior and appearance, set the following props:
 
 ### Min, Max, and Step
 
-You can set `min`, `max` and `step` values for Slider component. This will work even for negative and decimal values.
+You can set `min`, `max` and `step` values for `Slider` component. This will work even for negative and decimal values.
 
 .. exec::docs.slider.step
+
+The following example uses a function to format the `label`
+
+.. functions_as_props::
+
+.. exec::docs.slider.minmaxstep
+    :code: false
+
+.. sourcetabs::docs/slider/minmaxstep.py, assets/examples-js/slider_labels.js
+    :defaultExpanded: true
+    :withExpandedButton: true
 
 ### Marks
 
