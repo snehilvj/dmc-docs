@@ -116,12 +116,12 @@ based on user interation and the order of operations.
 
 ### Custom Tree rendering
 
-By default, `dmc.Tree` includes a built-in `renderNode` function that handles how each tree node is rendered. It requires
-no JavaScript and supports some customization through component props like `checkboxes`, `expandedIcon`, and `iconSide`. 
-However, it is limited — for example, all leaf nodes must be strings only, and more advanced layouts or icons are not possible.
+By default, `dmc.Tree` includes a built-in `renderNode` function that covers most common use cases. It requires no 
+JavaScript and supports some customization through props like `checkboxes`, `expandedIcon`, and `iconSide`.
 
-To fully customize the rendering of each node, you can supply your own `renderNode` function. This allows you to build 
-any layout you want for each tree node using JavaScript.
+If you need more control over how each node is rendered, such as using custom icons based on the data, arranging content
+differently or advanced styling, you can provide your own `renderNode` function written in JavaScript. This advanced
+feature is designed for use cases that go beyond what the built-in options support.
 
 #### Ignored Props
 
@@ -147,10 +147,29 @@ responsible for rendering icons, checkboxes, or any other visual element.
     :defaultExpanded: true
     :withExpandedButton: true
 
+#### Example:  Tree with Checkboxes
 
-#### Function Arguments
+.. functions_as_props::
 
-The function receives a single `payload` object with the following fields:
+
+If the "With Checkboxes" example above does not meet your needs, you can use the `renderNode` prop to fully customize
+how each tree node is rendered using JavaScript.
+
+When using a custom `renderNode`, you are responsible for implementing the checkbox and expand/collapse logic yourself.
+To handle the checked state, you'll need to render a `CheckboxIndicator` manually inside your custom render function
+and call `tree.checkNode(...)` or `tree.uncheckNode(...)` to update it.
+
+
+.. exec::docs.tree.renderNodeCheckbox
+    :code: false
+
+.. sourcetabs::docs/tree/renderNodeCheckbox.py, assets/examples-js/tree_checkbox.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+#### renderNode Arguments
+
+The `renderNode` function receives a single `payload` object with the following fields:
 
 ```js
 export interface RenderTreeNodePayload {

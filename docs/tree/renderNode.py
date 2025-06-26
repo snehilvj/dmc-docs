@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
-import dash_iconify
+import dash_iconify  # required in order to use DashIconify in the renderNode function
 from .data import data
 
 
-component = dmc.Tree(data=data, renderNode={"function": "myLeaf"}, m="lg")
+component = dmc.Tree(data=data, renderNode={"function": "myLeaf"})
