@@ -113,6 +113,98 @@ based on user interation and the order of operations.
 
 .. exec::docs.tree.checkboxes
 
+
+### Custom Tree rendering
+
+By default, `dmc.Tree` includes a built-in `renderNode` function that covers most common use cases. It requires no 
+JavaScript and supports some customization through props like `checkboxes`, `expandedIcon`, and `iconSide`.
+
+If you need more control over how each node is rendered, such as using custom icons based on the data, arranging content
+differently or advanced styling, you can provide your own `renderNode` function written in JavaScript. This advanced
+feature is designed for use cases that go beyond what the built-in options support.
+
+#### Ignored Props
+
+When you supply your own `renderNode` function, the following props are ignored:
+
+* `checkboxes`
+* `expandedIcon`
+* `collapsedIcon`
+* `iconSide`
+
+These props only apply when you're using the default built-in renderer. If you're using a custom `renderNode`, you are
+responsible for rendering icons, checkboxes, or any other visual element.
+
+
+#### Example: Files Tree 
+
+.. functions_as_props::
+
+.. exec::docs.tree.renderNode
+    :code: false
+
+.. sourcetabs::docs/tree/renderNode.py, assets/examples-js/tree.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+#### Example:  Tree with Checkboxes
+
+.. functions_as_props::
+
+
+If the "With Checkboxes" example above does not meet your needs, you can use the `renderNode` prop to fully customize
+how each tree node is rendered using JavaScript.
+
+When using a custom `renderNode`, you are responsible for implementing the checkbox and expand/collapse logic yourself.
+To handle the checked state, you'll need to render a `CheckboxIndicator` manually inside your custom render function
+and call `tree.checkNode(...)` or `tree.uncheckNode(...)` to update it.
+
+
+.. exec::docs.tree.renderNodeCheckbox
+    :code: false
+
+.. sourcetabs::docs/tree/renderNodeCheckbox.py, assets/examples-js/tree_checkbox.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+#### renderNode Arguments
+
+The `renderNode` function receives a single `payload` object with the following fields:
+
+```js
+export interface RenderTreeNodePayload {
+  /** Node level in the tree */
+  level: number;
+
+  /** `true` if the node is expanded, applicable only for nodes with `children` */
+  expanded: boolean;
+
+  /** `true` if the node has non-empty `children` array */
+  hasChildren: boolean;
+
+  /** `true` if the node is selected */
+  selected: boolean;
+
+  /** Node data from the `data` prop of `Tree` */
+  node: TreeNodeData;
+
+  /** Tree controller instance, return value of `useTree` hook */
+  tree: TreeController;
+
+  /** Props to spread into the root node element */
+  elementProps: {
+    className: string;
+    style: React.CSSProperties;
+    onClick: (event: React.MouseEvent) => void;
+    'data-selected': boolean | undefined;
+    'data-value': string;
+    'data-hovered': boolean | undefined;
+  };
+}
+
+```
+
+
 ### Styles API
 
 .. styles_api_text::
