@@ -30,6 +30,23 @@ To vertically center the modal, set `centered=True`.
 
 .. exec::docs.modal.scroll
 
+### Modal Stack
+
+Use `ModalStack` component to render multiple modals at the same time. `ModalStack` keeps track of opened modals, 
+manages `z-index` values, focus trapping and `closeOnEscape` behavior.
+
+#### Differences from using multiple Modal components:
+
+- `ModalStack` children must be `ManagedModal` components
+- `ModalStack` manages `z-index` values – modals that are opened later will always have higher `z-index` value disregarding their order in the DOM
+- `ModalStack` disables focus trap and `Escape` key handling for all modals except the one that is currently opened
+- Modals that are not currently visible are present in the DOM but are hidden with `opacity: 0` and `pointer-events: none`
+- Only one overlay is rendered at a time
+
+
+.. exec::docs.modal.modalstack
+
+
 ### Styles API
 
 .. styles_api_text::
@@ -50,3 +67,14 @@ To vertically center the modal, set `centered=True`.
 #### Modal
 
 .. kwargs::Modal
+
+
+#### ModalStack
+
+.. kwargs::ModalStack
+
+#### ManagedModal
+
+> Note:  ManagedModal is for use in the ModalStack component. id is required.  open/closed state is controlled by ModalStack.
+
+.. kwargs::ManagedModal
