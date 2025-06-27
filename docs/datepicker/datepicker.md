@@ -95,6 +95,14 @@ corresponding control will be disabled.
 
 .. exec::docs.datepicker.minmax
 
+### Change header controls order
+Use `headerControlsOrder` prop to change order of header controls. The prop accepts a list of 'next' | 'previous' | 'level'.
+Note that each control can be used only once in the list.
+
+
+.. exec::docs.datepicker.headercontrolsorder
+
+
 ### Disabled dates
 
 #### Example 1: A List of dates
