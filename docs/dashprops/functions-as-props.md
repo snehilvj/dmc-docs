@@ -292,3 +292,16 @@ If there’s a Mantine prop you’d like to see added, feel free to [open an iss
 | BubbleChart      | valueFormatter, tooltipProps                      |
 | ScatterChart     | valueFormatter, tooltipProps                      |
 
+
+Additional Supported props in V2.1.0
+
+
+| Component        | Props                                                             |
+|------------------|-------------------------------------------------------------------|
+| AutoComplete     | renderOption, filter                                              |
+| DatePickerInput  | getYearControlProps, getMonthControlProps, getDayProps, renderDay |
+| DateInput        | getYearControlProps, getMonthControlProps, getDayProps, renderDay |
+| DateTimePicker   | getYearControlProps, getMonthControlProps, getDayProps, renderDay |
+| MonthPickerInput | getYearControlProps, getMonthControlProps                         |
+| YearPickerInput  | getYearControlProps                                               |
+| Tree             | renderNode                                                        |
