@@ -102,6 +102,37 @@ Note that each control can be used only once in the list.
 
 .. exec::docs.datepicker.headercontrolsorder
 
+### Add props to year and month control
+
+.. functions_as_props::  
+
+You can add props to year, month and day controls with `getYearControlProps`, `getMonthControlProps` and `getDayProps`
+functions. All functions accept date as single argument, props returned from the function will be added to
+year/month/day control. For example, it can be used to disable specific control or add styles:
+
+
+.. exec::docs.datepicker.getprops
+    :code: false
+
+.. sourcetabs::docs/datepicker/getprops.py, assets/examples-js/getprops.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+### Render day function
+
+.. functions_as_props::  
+
+You can customize day rendering with renderDay prop. For example, it can be used to add `Indicator` to certain days.
+
+
+.. exec::docs.datepicker.renderDay
+    :code: false
+
+.. sourcetabs::docs/datepicker/renderDay.py, assets/examples-js/renderDay.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 ### Disabled dates
 
@@ -118,7 +149,7 @@ The `disabledDates` prop accepts a function that receives a date string (in 'YYY
 
 This example uses [dayjs](https://day.js.org/) to simplify working with dates in JavaScript.
 
-To use it in your Dash app, load it as an external script:
+To use `dayjs` in your Dash app, load it as an external script:
 
 ```python
 app = Dash(external_scripts=[
