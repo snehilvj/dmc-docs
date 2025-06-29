@@ -56,7 +56,7 @@ def search_data(data):
         {"label": "DatePickerInput dates range", "value": "/components/datepickerinput#dates-range"},
         {"label": "CheckboxGroup", "value": "/components/checkbox#checkbox-group-component"},
         {"label": "CheckboxCard", "value": "/components/checkbox#checkboxcad-component"},
-        {"label": "ChipGroup", "value": "components/chip#chipgroups-like-radio-button"},
+        {"label": "ChipGroup", "value": "/components/chip#chipgroups-like-radio-button"},
         {"label": "InlineCodeHighlight", "value": "/components/code-highlight#inline-code"},
         {"label": "CodeHighlightTabs", "value": "/components/code-highlight#with-tabs"},
         {"label": "AvatarGroup", "value": "/components/avatar#avatar-group"},
