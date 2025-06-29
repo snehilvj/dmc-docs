@@ -4,7 +4,7 @@ endpoint: /releases
 description: Release announcement for Dash Mantine Components
 dmc: false
 category: Releases
-order: 9
+order: 99
 ---
 
 Release notes for versions before DMC v2.0.0 are available in [GitHub Discussions.](https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases)
