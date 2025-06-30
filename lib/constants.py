@@ -51,4 +51,5 @@ PROPS_TO_EXCLUDE = [
     "inset",
     "display",
     "flex",
+    "bdrs"
 ]
