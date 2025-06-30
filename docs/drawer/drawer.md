@@ -44,7 +44,7 @@ You can customize transition, timing function and duration for Drawer transition
 Use `DrawerStack` component to render multiple drawers at the same time. `DrawerStack` keeps track of opened drawers, 
 manages `z-index` values, focus trapping and `closeOnEscape` behavior.
 
-#### Differences from using multiple Drawer components:
+Differences from using multiple Drawer components:
 
 - `DrawerStack` children must be `ManagedDrawer` components
 - `DrawerStack` manages `z-index` values – drawers that are opened later will always have higher `z-index` value disregarding their order in the DOM

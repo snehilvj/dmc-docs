@@ -35,7 +35,7 @@ To vertically center the modal, set `centered=True`.
 Use `ModalStack` component to render multiple modals at the same time. `ModalStack` keeps track of opened modals, 
 manages `z-index` values, focus trapping and `closeOnEscape` behavior.
 
-#### Differences from using multiple Modal components:
+Differences from using multiple Modal components:
 
 - `ModalStack` children must be `ManagedModal` components
 - `ModalStack` manages `z-index` values – modals that are opened later will always have higher `z-index` value disregarding their order in the DOM
