@@ -68,6 +68,10 @@ def search_data(data):
         {"label": "AppShellSection", "value": "/components/appshell#section"},
         {"label": "ActionIconGroup", "value": "/components/actionicon#actionicongroup"},
         {"label": "ButtonGroup", "value": "/components/button#button-group"},
+        {"label": "DrawerStack", "value": "/components/drawer#drawer-stack"},
+        {"label": "ManagedDrawer", "value": "/components/drawer#manageddrawer"},
+        {"label": "ModalStack", "value": "/components/modal#modal-stack"},
+        {"label": "ManagedModal", "value": "/components/modal#managedmodal"},
     ]
     return docs_pages + other_search_terms
 
