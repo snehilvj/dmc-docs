@@ -6,7 +6,10 @@ package: dash_mantine_components
 category: Combobox
 ---
 
-.. toc::
+.. toc::  
+
+> Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput`.
+
 
 ### Simple Example
 

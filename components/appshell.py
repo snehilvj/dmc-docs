@@ -15,6 +15,7 @@ def create_appshell(data):
             "fontFamily": "'Inter', sans-serif",
             "components": {
                 "Button": {"defaultProps": {"fw": 400}},
+                "Blockquote": {"styles": {"root": {"padding": 16}}},
                 "Alert": {"styles": {"title": {"fontWeight": 500}}},
                 "AvatarGroup": {"styles": {"truncated": {"fontWeight": 500}}},
                 "Badge": {"styles": {"root": {"fontWeight": 500}}},
