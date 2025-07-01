@@ -14,5 +14,6 @@ component = dmc.Autocomplete(
         {"value": 'justify', "label": 'Justify'},
     ],
     renderOption={"function": "renderOptionSelect"},
+    my="xl"
 )
 
