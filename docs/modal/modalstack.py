@@ -70,14 +70,13 @@ component = dmc.Center([
     prevent_initial_call=True,
 )
 def control_modals(*_):
-    match ctx.triggered_id:
-        case "open":
-            return "delete-page", False
-        case "cancel-1" | "cancel-2" | "cancel-3" | "final-confirm":
-            return None, True
-        case "delete":
-            return "confirm-action", False
-        case "confirm":
-            return "really-confirm-action", False
-        case _:
-            return no_update, no_update
+    trigger = ctx.triggered_id
+    if trigger == "open":
+        return "delete-page", False
+    if trigger in ("cancel-1", "cancel-2", "cancel-3", "final-confirm"):
+        return None, True
+    if trigger == "delete":
+        return "confirm-action", False
+    if trigger == "confirm":
+        return "really-confirm-action", False
+    return no_update, no_update
