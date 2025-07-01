@@ -25,7 +25,7 @@ def create_version_menu():
             dmc.MenuTarget(
                 #version-update
                 dmc.Button(
-                    '2.0',
+                    '2.1',
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                 )
@@ -56,7 +56,7 @@ def search_data(data):
         {"label": "DatePickerInput dates range", "value": "/components/datepickerinput#dates-range"},
         {"label": "CheckboxGroup", "value": "/components/checkbox#checkbox-group-component"},
         {"label": "CheckboxCard", "value": "/components/checkbox#checkboxcad-component"},
-        {"label": "ChipGroup", "value": "components/chip#chipgroups-like-radio-button"},
+        {"label": "ChipGroup", "value": "/components/chip#chipgroups-like-radio-button"},
         {"label": "InlineCodeHighlight", "value": "/components/code-highlight#inline-code"},
         {"label": "CodeHighlightTabs", "value": "/components/code-highlight#with-tabs"},
         {"label": "AvatarGroup", "value": "/components/avatar#avatar-group"},
@@ -68,6 +68,10 @@ def search_data(data):
         {"label": "AppShellSection", "value": "/components/appshell#section"},
         {"label": "ActionIconGroup", "value": "/components/actionicon#actionicongroup"},
         {"label": "ButtonGroup", "value": "/components/button#button-group"},
+        {"label": "DrawerStack", "value": "/components/drawer#drawer-stack"},
+        {"label": "ManagedDrawer", "value": "/components/drawer#manageddrawer"},
+        {"label": "ModalStack", "value": "/components/modal#modal-stack"},
+        {"label": "ManagedModal", "value": "/components/modal#managedmodal"},
     ]
     return docs_pages + other_search_terms
 

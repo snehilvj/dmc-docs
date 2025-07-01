@@ -38,6 +38,25 @@ You can customize transition, timing function and duration for Drawer transition
 
 .. exec::docs.drawer.transition
 
+
+### Drawer Stack
+
+Use `DrawerStack` component to render multiple drawers at the same time. `DrawerStack` keeps track of opened drawers, 
+manages `z-index` values, focus trapping and `closeOnEscape` behavior.
+
+Differences from using multiple Drawer components:
+
+- `DrawerStack` children must be `ManagedDrawer` components
+- `DrawerStack` manages `z-index` values – drawers that are opened later will always have higher `z-index` value disregarding their order in the DOM
+- `DrawerStack` disables focus trap and `Escape` key handling for all drawers except the one that is currently opened
+- Drawers that are not currently visible are present in the DOM but are hidden with `opacity: 0` and `pointer-events: none`
+- Only one overlay is rendered at a time
+
+
+.. exec::docs.drawer.drawerstack
+
+
+
 ### Styles API
 
 .. styles_api_text::
@@ -75,3 +94,14 @@ You can customize transition, timing function and duration for Drawer transition
 #### Drawer
 
 .. kwargs::Drawer
+
+
+#### DrawerStack
+
+.. kwargs::DrawerStack
+
+#### ManagedDrawer
+
+> Note:  ManagedDrawer is for use in the DrawerStack component. id is required.  open/closed state is controlled by DrawerStack.
+
+.. kwargs::ManagedDrawer

@@ -20,9 +20,6 @@ Use the `value` prop to get the value of the slider.
 .. exec::docs.slider.simple
 
 
-### Disabled
-
-.. exec::docs.slider.disabled
 
 ### Range Slider
 
@@ -85,6 +82,25 @@ The following example uses a function to format the `label`
     :defaultExpanded: true
     :withExpandedButton: true
 
+
+### Domain
+By default, min and max values define the possible range of values. `domain` prop allows setting the possible range
+of values independently of the min and max values:
+
+
+.. exec::docs.slider.domain
+
+
+### pushOnOverlap
+`pushOnOverlap` prop controls whether the thumbs should push each other when they overlap. By default, `pushOnOverlap`
+is `True`, if you want to disable this behavior, set it to `False`.
+
+Example of `pushOnOverlap=False`:
+
+
+.. exec::docs.slider.pushonoverlap
+
+
 ### Marks
 
 Add any number of marks to the Slider by setting `marks` prop to an array of objects.
@@ -109,6 +125,10 @@ Note: The `step` prop is ignored when `restrictToMarks=True`.
 
 .. exec::docs.slider.restrictomarks
 
+
+### Disabled
+
+.. exec::docs.slider.disabled
 
 ### Thumb size
 .. exec::docs.slider.thumbsize

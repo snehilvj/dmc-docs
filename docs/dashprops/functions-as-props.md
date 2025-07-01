@@ -268,27 +268,44 @@ dmcfuncs.renderBadge = function ({ option }) {
 
 ```
 
-Supported props in V2.0.0
+Supported props in V2
 
-The following props support JavaScript functions in Dash Mantine Components version 2.0.0.
+The following props support JavaScript functions in Dash Mantine Components version >=2.0.0.
 If there’s a Mantine prop you’d like to see added, feel free to [open an issue on GitHub.](https://github.com/snehilvj/dash-mantine-components/issues)
 
-| Component         | Props                                             |
-|------------------|---------------------------------------------------|
-| Slider           | label, scale                                      |
-| RangeSlider      | label, scale                                      |
-| Select           | renderOption, filter                              |
-| MultiSelect      | renderOption, filter                              |
-| TagsInput        | renderOption, filter                              |
-| DatePickerInput  | disabledDates                                     |
-| DateInput        | disabledDates                                     |
-| DateTimePicker   | disabledDates                                     |
-| MonthPickerInput | disabledDates                                     |
-| YearPickerInput  | disabledDates                                     |
-| BarChart         | getBarColor, valueFormatter, tooltipProps         |
-| AreaChart        | valueFormatter, tooltipProps                      |
-| LineChart        | valueFormatter, tooltipProps                      |
-| CompositeChart   | valueFormatter, tooltipProps                      |
-| BubbleChart      | valueFormatter, tooltipProps                      |
-| ScatterChart     | valueFormatter, tooltipProps                      |
+| Component        | Props                                     |
+|------------------|-------------------------------------------|
+| Slider           | label, scale                              |
+| RangeSlider      | label, scale                              |
+| Select           | renderOption, filter                      |
+| MultiSelect      | renderOption, filter                      |
+| TagsInput        | renderOption, filter                      |
+| DatePickerInput  | disabledDates                             |
+| DateInput        | disabledDates                             |
+| DateTimePicker   | disabledDates                             |
+| MonthPickerInput | disabledDates                             |
+| YearPickerInput  | disabledDates                             |
+| BarChart         | getBarColor, valueFormatter, tooltipProps |
+| AreaChart        | valueFormatter, tooltipProps              |
+| LineChart        | valueFormatter, tooltipProps              |
+| CompositeChart   | valueFormatter, tooltipProps              |
+| BubbleChart      | valueFormatter, tooltipProps              |
+| ScatterChart     | valueFormatter, tooltipProps              |
+| Tree             | renderNode (as of v2.1.0)                 |
 
+
+
+
+
+Additional Supported props in V2.1.0
+
+
+| Component        | Props                                                             |
+|------------------|-------------------------------------------------------------------|
+| AutoComplete     | renderOption, filter                                              |
+| DatePickerInput  | getYearControlProps, getMonthControlProps, getDayProps, renderDay |
+| DateInput        | getYearControlProps, getMonthControlProps, getDayProps, renderDay |
+| DateTimePicker   | getYearControlProps, getMonthControlProps, getDayProps, renderDay |
+| MonthPickerInput | getYearControlProps, getMonthControlProps                         |
+| YearPickerInput  | getYearControlProps                                               |
+| Tree             | renderNode                                                        |

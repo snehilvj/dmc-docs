@@ -30,6 +30,7 @@ category_data = {
     "Typography": {"icon": "material-symbols:custom-typography-rounded"},
     "Buttons": {"icon": "material-symbols:buttons-alt-rounded"},
     "Combobox": {"icon": "material-symbols:chevron-left-rounded"},
+    "Releases": {"icon": "tabler:tag"}
 }
 
 
@@ -84,7 +85,7 @@ def create_content(data, idtype):
                 id={"type": idtype, "index": "/help-center"},
             ),
             dmc.Anchor("Mantine V8 docs", href="https://mantine.dev/", target="_blank", ml="lg", pt="md"),
-            dmc.Anchor("DMC V2 Release", href="/release-2-0-0", ml="lg", pt="md"),
+
         ],
     )
 
@@ -121,6 +122,7 @@ def create_content(data, idtype):
         "Miscellaneous",
         "Date Pickers",
         "Charts",
+        "Releases"
     ]
     sorted_links = {key: links[key] for key in category_order if key in links}
 
