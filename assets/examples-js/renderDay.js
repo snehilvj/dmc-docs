@@ -8,7 +8,7 @@ dmcfuncs.highlightSixteenthWithDot = function (dateStr) {
   return React.createElement(
     dmc.Indicator,
     {
-      size: 6,
+      size: 9,
       color: "red",
       offset: -5,
       disabled: day !== 16, // displays indicator only on the the 16th doy of the month

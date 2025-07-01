@@ -9,4 +9,5 @@ component = dmc.DatePicker(
     getDayProps={"function": "highlightFriday13"},
     getYearControlProps={"function": "yearControlProps"},
     getMonthControlProps={"function": "monthControlProps"},
+    my="lg"
 )

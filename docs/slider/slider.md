@@ -20,9 +20,6 @@ Use the `value` prop to get the value of the slider.
 .. exec::docs.slider.simple
 
 
-### Disabled
-
-.. exec::docs.slider.disabled
 
 ### Range Slider
 
@@ -128,6 +125,10 @@ Note: The `step` prop is ignored when `restrictToMarks=True`.
 
 .. exec::docs.slider.restrictomarks
 
+
+### Disabled
+
+.. exec::docs.slider.disabled
 
 ### Thumb size
 .. exec::docs.slider.thumbsize
