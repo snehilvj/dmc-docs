@@ -70,14 +70,13 @@ component = dmc.Center([
     prevent_initial_call=True,
 )
 def control_modals(*_):
-    match ctx.triggered_id:
-        case "drawer-stack-open":
-            return "drawer-delete-page", False
-        case "drawer-cancel-1" | "drawer-cancel-2" | "drawer-cancel-3" | "drawer-final-confirm":
-            return None, True
-        case "drawer-delete":
-            return "drawer-confirm-action", False
-        case "drawer-confirm":
-            return "drawer-really-confirm-action", False
-        case _:
-            return no_update, no_update
+    trigger = ctx.triggered_id
+    if trigger == "drawer-stack-open":
+        return "drawer-delete-page", False
+    if trigger in ("drawer-cancel-1", "drawer-cancel-2", "drawer-cancel-3", "drawer-final-confirm"):
+        return None, True
+    if trigger == "drawer-delete":
+        return "drawer-confirm-action", False
+    if trigger == "drawer-confirm":
+        return "drawer-really-confirm-action", False
+    return no_update, no_update
