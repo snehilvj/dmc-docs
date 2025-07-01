@@ -9,4 +9,5 @@ component = dmc.MultiSelect(
     w=400,
     mb=140,
     dropdownOpened=True,
+    comboboxProps={"withinPortal":False}
 )

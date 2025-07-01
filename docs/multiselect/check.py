@@ -7,6 +7,6 @@ component = dmc.MultiSelect(
     data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
     w=400,
     mb=180,
-    dropdownOpened=True,
+  #  dropdownOpened=True,
     checkIconPosition="right",
 )

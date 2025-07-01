@@ -6,7 +6,9 @@ component = dmc.Select(
     value="NumPy",
     checkIconPosition="right",
     dropdownOpened=True,
+    comboboxProps={"withinPortal":False},
     w=200,
     pb=150,
     id="select-check-icon",
+
 )

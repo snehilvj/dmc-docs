@@ -93,7 +93,7 @@ no data available. If the `nothingFoundMessage` prop is not set, the `MultiSelec
 Set `checkIconPosition` prop to `left` or `right` to control position of check icon in active option.
 To remove the check icon, set `withCheckIcon=False`.
 
-.. exec::docs.multiselect.check
+.. exec::docs.multiselect.check_option
 
 
 ### Max Selected Values

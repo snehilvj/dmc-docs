@@ -15,6 +15,7 @@ component = html.Div(
                 {"value": "tf", "label": "TensorFlow"},
                 {"value": "torch", "label": "PyTorch"},
             ],
+            comboboxProps={"position": "bottom", "middlewares": {"flip": False, "shift": False}},
             w=400,
             mb=10,
         ),
