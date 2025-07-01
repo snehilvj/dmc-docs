@@ -6,7 +6,9 @@ component = dmc.MultiSelect(
     value=["Pandas", "NumPy"],
     checkIconPosition="right",
     dropdownOpened=True,
-    w=200,
+    w=400,
     pb=150,
     id="multi-select-check-icon",
+    comboboxProps={"withinPortal": False}
+
 )
