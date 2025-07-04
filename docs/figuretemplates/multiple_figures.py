@@ -61,12 +61,12 @@ component = dmc.Box([sample_controls, graphs])
 
 @callback(
     Output({"type": "graph", "index": ALL}, "figure"),
-    Input("m2d-mantine-provider", "forceColorScheme"),
+    Input("docs-color-scheme-switch", "checked"),
     State({"type": "graph", "index": ALL}, "id"),
 )
-def update_figure(theme, ids):
+def update_figure(switch_on, ids):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_light"] if theme == "light" else pio.templates["mantine_dark"]
+    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
     patched_figures = []
     for i in ids:
         patched_fig = Patch()

@@ -72,7 +72,9 @@ def search_data(data):
         {"label": "ManagedDrawer", "value": "/components/drawer#manageddrawer"},
         {"label": "ModalStack", "value": "/components/modal#modal-stack"},
         {"label": "ManagedModal", "value": "/components/modal#managedmodal"},
-        {"label":"Dropdown", "value": "/components/select#"}
+        {"label":"Dropdown", "value": "/components/select#"},
+        {"label": "BackgroundImage", "value": "/components/image#background-image"},
+        {"label": "GridCol", "value": "/components/grid#"}
     ]
     return docs_pages + other_search_terms
 

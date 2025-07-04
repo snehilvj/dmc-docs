@@ -210,6 +210,43 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 
 .. styles_api_text::
 
+
+
+#### Notification Selectors
+
+
+| Selector    | Static Selector                     | Description                                            |
+| ----------- | ----------------------------------- | ------------------------------------------------------ |
+| root        | `.mantine-Notification-root`        | Root element                                           |
+| loader      | `.mantine-Notification-loader`      | Loader component, displayed only when `loading` is set |
+| icon        | `.mantine-Notification-icon`        | Icon component, displayed only when `icon` is set      |
+| body        | `.mantine-Notification-body`        | Notification body, contains all other elements         |
+| title       | `.mantine-Notification-title`       | Title element, displayed only when `title` is set      |
+| description | `.mantine-Notification-description` | Description displayed below the title                  |
+| closeButton | `.mantine-Notification-closeButton` | Close button element                                   |
+
+
+
+#### Notification CSS Variables
+
+| Selector | Variable                | Description                                    |
+| -------- | ----------------------- | ---------------------------------------------- |
+| root     | `--notification-radius` | Controls border-radius                         |
+| root     | `--notification-color`  | Controls icon color or notification line color |
+
+
+
+#### Notification Data Attributes
+
+| Selector    | Attribute          | Condition                |
+| ----------- | ------------------ | ------------------------ |
+| root        | `data-with-icon`   | `icon` prop is set       |
+| root        | `data-with-border` | `withBorder` prop is set |
+| description | `data-with-title`  | `title` prop is set      |
+
+
+
+
 #### Notifications Selectors
 | Selector      | Static Selector                         | Description                                      |
 |--------------|--------------------------------------|--------------------------------------------------|
