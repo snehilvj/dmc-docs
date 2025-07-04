@@ -108,7 +108,7 @@ To update the figure when switching themes, you need to change the Plotly templa
 
 > For more information on adding a theme switcher to your app, check the [Theme Switch Component](/theme-switch) section.
 
-The example below uses this app's  `MantineProvider` in the callback.  Try it out by clicking the **theme icon** in the header!
+The example below uses this app's  theme switch component in the callback.  Try it out by clicking the **theme switch** in the header!
 
 See a complete minimal example in the [Help Center](https://github.com/snehilvj/dmc-docs/tree/main/help_center/theme_switch_figure_templates_simple)
 
@@ -127,11 +127,11 @@ import plotly.io as pio
 
 @callback(
     Output("figure-templates-bar", "figure"),
-    Input("mantine-provider", "forceColorScheme"),
+    Input("docs-color-scheme-switch", "checked"),
 )
-def update_figure(theme):
+def update_figure(switch_on):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_light"] if theme == "light" else pio.templates["mantine_dark"]
+    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
     patched_fig = Patch()
     patched_fig["layout"]["template"] = template
     return patched_fig
@@ -141,7 +141,7 @@ def update_figure(theme):
 
 To update multiple figure when switching themes, you can use [Pattern Matching Callbacks.](https://dash.plotly.com/pattern-matching-callbacks)
  
-The example below uses this app's  `MantineProvider` in the callback.  Try it out by clicking the **theme icon** in the header!
+The example below uses this app's  theme switch component in the callback.  Try it out by clicking the **theme switch** in the header!
 
 See a complete minimal example in the [Help Center](https://github.com/snehilvj/dmc-docs/tree/main/help_center/theme_switch_figure_templates)
 

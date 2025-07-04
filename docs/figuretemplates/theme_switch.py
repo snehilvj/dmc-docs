@@ -7,12 +7,20 @@ dff = df[df.year == 2007]
 
 dmc.add_figure_templates()
 
-# used in the children prop of  MantinePovider([], id="m2d-mantine-provider)
+# Theme switch in the dmc-docs header:
+# dmc.Switch(
+#     offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
+#     onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
+#     id="docs-color-scheme-switch",
+#     persistence=True,
+#     color="grey",
+# )
 component = dcc.Graph(id="figure-templates-histogram")
 
 @callback(
     Output("figure-templates-histogram", "figure"),
-    Input("m2d-mantine-provider", "forceColorScheme"),
+    Input("docs-color-scheme-switch", "checked"),
 )
-def update_figure(theme):
-    return px.bar(dff, x="continent", y="pop", title="Population by Continent", template=f"mantine_{theme}")
+def update_figure(switch_on):
+    template = "mantine_dark" if switch_on else "mantine_light"
+    return px.bar(dff, x="continent", y="pop", title="Population by Continent", template=template)
