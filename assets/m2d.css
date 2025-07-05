@@ -93,3 +93,17 @@ h3.m2d-heading {
    margin-top: 10px;
    margin-bottom: 10px;
 }
+
+
+
+:where([data-mantine-color-scheme='dark']) .hljs {
+    color: var(--mantine-color-dark-1);
+    background: var(--mantine-color-dark-8);
+}
+
+
+:where([data-mantine-color-scheme='light']) .hljs {
+    color: var(--mantine-color-gray-7);
+    background: var(--mantine-color-gray-0);
+}
+
