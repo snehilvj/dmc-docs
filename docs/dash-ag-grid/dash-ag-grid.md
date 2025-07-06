@@ -3,6 +3,7 @@ name: Dash Ag Grid
 description: Build high-performance, interactive data tables with Dash AG Grid and Dash Mantine Components. Learn how to apply light and dark grid themes and use DMC components as custom cell renderers and editors.
 endpoint: /dash-ag-grid
 package: dash_mantine_components
+category: Dash
 ---
 
 .. toc::
