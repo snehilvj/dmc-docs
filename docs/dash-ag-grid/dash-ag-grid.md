@@ -12,9 +12,9 @@ category: Dash
 
 If you're new to Dash AG Grid, check out the [official Dash AG Grid documentation](https://dash.plotly.com/dash-ag-grid) for detailed information.
 
-By default, you get a lot features with just a few lines of code:
+Here are just some of the features enabled by default in the quickstart example below:
 
-* Built-in theme pairs well with the DMC default theme
+* Built-in theme pairs well with the Mantine default theme
 * Columns are resizable (drag the column header edges)
 * Rows are sortable (click header; shift-click for multi-sort)
 * Smooth row animations during filtering and sorting
@@ -84,33 +84,27 @@ To apply a built-in theme:
 * Light mode: `className="ag-theme-alpine"` (default)
 * Dark mode: `className="ag-theme-alpine-dark"`
 
-You can switch between light and dark themes dynamically by updating the `className` prop in a callback.
+Switch between light and dark themes by updating the `className` prop in a callback.
 
 For more details and a full list of built-in themes and how to customize the theme, see the [Dash AG Grid styling guide](https://dash.plotly.com/dash-ag-grid/styling-themes) or the [AG Grid v31.3 theme docs](https://www.ag-grid.com/archive/31.3.0/react-data-grid/themes/).
 
-Click the theme toggle in the top right of this page to see the grid theme update live.
+Click the theme switch in the top right of this page to see the grid theme update live.
 
 .. exec::docs.dash-ag-grid.simple
 
 
 ###  Custom Cell Renderers with DMC
 
-In Dash AG Grid, a cell renderer is a component or function that allows you to customize the cell content rather
-than displaying simple text.  You can use DMC components as custom cell renderers.
+For an introduction to [dash-ag-grid Cell Renderers](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) refer to the dash documentation.
 
+A cell renderer is a JavaScript function that returns a component to customize the cell content, rather
+than displaying simple text.  You can use DMC components as custom cell renderers.
 
 Key concepts:
 
-* Use the `cellRenderer` prop to name the custom function.
-* Use the `cellRendererParams` prop to pass props to that component from Python.
-
-To use a custom component, define it in a `.js` file in your `/assets/` folder in the `window.dashAgGridComponentFunctions` namespace. AG Grid will automatically register it.
-
-
-For an introduction to [dash-ag-grid Cell Renderers](https://dash.plotly.com/dash-ag-grid/cell-renderer-components) refer to the dash documentation.
-
-
-Want help writing these custom cell render functions? See [Using AI to Generate Functions](/functions-as-props#using-ai-to-generate-javascript-functions) for how to describe the logic in plain English or Python and convert it to JavaScript.
+* Define the renderer function in a `.js` file in  `/assets/` under `window.dashAgGridComponentFunctions` namespace. Dash registers these components with the grid.
+* Set `cellRenderer` to the function name.
+* Pass extra props to the function with `cellRendererParams`.
 
 
 ```js
@@ -121,17 +115,23 @@ dagcomponentfuncs.MyFunction = function (props) {
 }
 ```
 
+
+
+Want help writing these custom cell render functions? See [Using AI to Generate Functions](/functions-as-props#using-ai-to-generate-javascript-functions) for how to describe the logic in plain English or Python and convert it to JavaScript.
+
+
+
 #### Example 1:  Card
 
-This example renders a `Card` layout inside each cell using `Dash Mantine Components`. The layout is defined in
-a `.js` file in the `/assets` folder, with the function named `DMC_Card`.
+This example displays grid data in a DMC `Card` in cells. The card layout is defined in a `.js` file in the `/assets` folder, with
+the function named `DMC_Card`.
 
 
 .. exec::docs.dash-ag-grid.cell_renderer_card
     :code: false
 
 .. sourcetabs::docs/dash-ag-grid/cell_renderer_card.py, assets/examples-ag-grid-js/dmc_card.js
-    :defaultExpanded: false
+    :defaultExpanded: true
     :withExpandedButton: true 
 
 
@@ -185,17 +185,24 @@ Dash AG Grid includes several [built-in cell editors](https://dash.plotly.com/da
 - Date Cell Editor
 - Checkbox Cell Editor
 
-These editors are easy to use and require no extra JavaScript. But if you need more control or want to use Dash Mantine
-Components as cell editors, you can create a custom cell editor.
+These editors are easy to use and require no extra JavaScript. But if you need more control or want to use DMC components
+as cell editors, you can create a custom cell editor.
 
-The example below uses a generic editor function that works with any DMC component.
+The example below uses a generic editor function that works with any DMC component.  Simply copy the .js file from the
+example below and place it in your app's `/assets` folder.
 
-Simply pass the component to the `component` key inside `cellEditorParams`. Dash handles the rest.
+Then in your dash app you can pass a component written in Python to the function using the `cellEditorParams` prop:
 
 ```python
-"cellEditorParams": {
-    "component": dmc.Select(data=["A", "B", "C"])
-}
+columnDefs = [
+    {
+        'cellEditor': {'function': 'AllFunctionalComponentEditors'},
+        "cellEditorParams": {
+            "component": dmc.Select(data=["A", "B", "C"])
+        }
+    },
+    
+]
 ```
 
 
