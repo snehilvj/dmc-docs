@@ -20,7 +20,9 @@ Use `Skeleton` to create a placeholder for loading content. `Skeleton` support t
 
 .. exec::docs.skeleton.simple
 
-### Customizing Loader
+### Display Skeleton while loading
+
+The `Seleton` will be visible while the children components are being updated by a Dash callback.
 
 .. exec::docs.skeleton.graphs
 
