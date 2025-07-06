@@ -123,7 +123,8 @@ dagcomponentfuncs.MyFunction = function (props) {
 
 #### Example 1:  Card
 
-This example renders a `Card` layout using `Dash Mantine Components` within each cell. The layout is defined in the JavaScript function `DMC_Card`.
+This example renders a `Card` layout inside each cell using `Dash Mantine Components`. The layout is defined in
+a `.js` file in the `/assets` folder, with the function named `DMC_Card`.
 
 
 .. exec::docs.dash-ag-grid.cell_renderer_card
