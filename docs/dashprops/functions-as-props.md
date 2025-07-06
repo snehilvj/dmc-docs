@@ -1,8 +1,9 @@
 ---
-name: JavaScript Functions as Props
+name: Functions as Props
 endpoint: /functions-as-props
 description: Introduction to using JavaScript functions with Dash Mantine Components
 dmc: false
+category: Dash
 ---
 
 
@@ -291,7 +292,6 @@ If there’s a Mantine prop you’d like to see added, feel free to [open an iss
 | CompositeChart   | valueFormatter, tooltipProps              |
 | BubbleChart      | valueFormatter, tooltipProps              |
 | ScatterChart     | valueFormatter, tooltipProps              |
-| Tree             | renderNode (as of v2.1.0)                 |
 
 
 

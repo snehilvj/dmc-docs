@@ -9,8 +9,7 @@ from lib.constants import PRIMARY_COLOR
 excluded_links = [
     "/404",
     "/getting-started",
-    "/mantine-api"
-    "/dash-iconify",
+    "/mantine-api",
     "/",
     "/migration",
     "/help-center"
@@ -30,6 +29,7 @@ category_data = {
     "Typography": {"icon": "material-symbols:custom-typography-rounded"},
     "Buttons": {"icon": "material-symbols:buttons-alt-rounded"},
     "Combobox": {"icon": "material-symbols:chevron-left-rounded"},
+    "Dash": {"icon":"simple-icons:plotly"},
     "Releases": {"icon": "tabler:tag"}
 }
 
@@ -66,12 +66,13 @@ def create_content(data, idtype):
                 id={"type": idtype, "index": "/mantine-api"},
             ),
 
-            create_main_link(
-                icon="material-symbols:cookie-rounded",
-                label="Dash Iconify",
-                href="/dash-iconify",
-                id={"type": idtype, "index": "/dash-iconify"},
-            ),
+            # moved to the dash section  (commented out for now to make it easier to revert)
+            # create_main_link(
+            #     icon="material-symbols:cookie-rounded",
+            #     label="Dash Iconify",
+            #     href="/dash-iconify",
+            #     id={"type": idtype, "index": "/dash-iconify"},
+            # ),
             create_main_link(
                 icon="material-symbols:bookmark-rounded",
                 label="Migration Guide",
@@ -122,6 +123,7 @@ def create_content(data, idtype):
         "Miscellaneous",
         "Date Pickers",
         "Charts",
+        "Dash",
         "Releases"
     ]
     sorted_links = {key: links[key] for key in category_order if key in links}
