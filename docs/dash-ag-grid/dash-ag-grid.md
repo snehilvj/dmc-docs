@@ -69,7 +69,7 @@ Be sure to check out the [Dash AG Grid documentation](https://dash.plotly.com/da
 - Data Manipulation and Display: pagination, cell data types with automatic inference, custom filtering, and cell editing,  value getters and formatters, conditional formatting, and CSV data export.
 - Layout and Styling:  themes (Alpine, Material, Quartz) with light/dark options, customizable themes, and conditional styling for various elements. Custom icons and more.
 - Other Features: tooltips in cells and headers, keyboard navigation, accessibility support, and localization. 
-- Enterprise Features:  Additional advanced features are available with an AG Grid Enterprise licence.
+- Enterprise Features:  All the above features are free in AG Grid Community.  Additional advanced features are available with an AG Grid Enterprise licence.
 
 The next sections show how to apply AG Grid themes that match your Mantine light or dark theme, and how to use DMC
 components as custom cell renderers and editors. 
@@ -102,7 +102,7 @@ than displaying simple text.  You can use DMC components as custom cell renderer
 
 Key concepts:
 
-* Define the renderer function in a `.js` file in  `/assets/` under `window.dashAgGridComponentFunctions` namespace. Dash registers these components with the grid.
+* Define the cell renderer function in a `.js` file in  `/assets/` under `window.dashAgGridComponentFunctions` namespace. Dash registers these components with the grid.
 * Set `cellRenderer` to the function name.
 * Pass extra props to the function with `cellRendererParams`.
 
@@ -140,7 +140,7 @@ the function named `DMC_Card`.
 #### Example 2: Buttons
 
 This example shows how to place interactive buttons inside grid cells. The `DMC_Button` is defined in a `.js` file in
-`/assets` is used in the `cellRenderer` prop. You can pass Button props (color, icon, variant, etc.) using 
+`/assets` is used in the `cellRenderer` prop. You can pass `Button` props (color, icon, variant, etc.) using 
 `cellRendererParams` per column.
 
 Here’s an example for the `"buy"` column:
@@ -188,8 +188,8 @@ Dash AG Grid includes several [built-in cell editors](https://dash.plotly.com/da
 These editors are easy to use and require no extra JavaScript. But if you need more control or want to use DMC components
 as cell editors, you can create a custom cell editor.
 
-The example below uses a generic editor function that works with any DMC component.  Simply copy the .js file from the
-example below and place it in your app's `/assets` folder.
+The example below uses a generic editor function that works with any DMC component. Just copy the `.js` file into your app’s `/assets` folder to use it.
+(Thanks to Dash community member [@BSd3v](https://github.com/BSd3v) for creating this!)
 
 Then in your dash app you can pass a component written in Python to the function using the `cellEditorParams` prop:
 
