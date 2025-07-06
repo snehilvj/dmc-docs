@@ -8,6 +8,8 @@ category: Typography
 
 .. toc::
 
+> Looking for advanced table capabilities? [Dash AG Grid](/dash-ag-grid) pairs well with DMC and supports editing, sorting, filtering, selecting, conditional formatting and much more.
+
 ### Simple Example
 
 Use Table component to add Mantine styled tables in your app. use `dmc.Table` and associated components as

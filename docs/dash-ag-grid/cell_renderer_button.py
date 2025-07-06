@@ -20,13 +20,15 @@ columnDefs = [
     {
         "headerName": "Stock Ticker",
         "field": "ticker",
+        "minWidth": 100
     },
-    {"headerName": "Company", "field": "company", "filter": True},
+    {"headerName": "Company", "field": "company", "filter": True, "minWidth": 50},
     {
         "headerName": "Last Close Price",
         "type": "rightAligned",
         "field": "price",
         "valueFormatter": {"function": """d3.format("($,.2f")(params.value)"""},
+        "minWidth": 100
     },
     {
         "field": "buy",
@@ -37,6 +39,7 @@ columnDefs = [
             "color": "green",
             "radius": "xl"
         },
+        "minWidth": 100
     },
     {
         "field": "sell",
@@ -47,6 +50,7 @@ columnDefs = [
             "color": "red",
             "radius": "xl"
         },
+        "minWidth": 100
     },
     {
         "field": "watch",
@@ -54,6 +58,7 @@ columnDefs = [
         "cellRendererParams": {
             "rightIcon": "ph:eye",
         },
+        "minWidth": 100
     },
 ]
 

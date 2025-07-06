@@ -13,7 +13,7 @@ df = pd.DataFrame({
 })
 
 columnDefs = [
-    { "field": "Column 1"},
+    { "field": "Column 1", "headerName": "id", "maxWidth": 50},
     {
         "field": "DatePickerInput",
         'cellEditor': {'function': 'AllFunctionalComponentEditors'},
@@ -25,12 +25,14 @@ columnDefs = [
         'cellEditor': {'function': 'AllFunctionalComponentEditors'},
         'cellEditorParams': {'component': dmc.TagsInput(data=["A", "B", "C"])},
         'cellEditorPopup': True,
+        "flex": 1
     },
     {
         "field": "Select",
         'cellEditor': {'function': 'AllFunctionalComponentEditors'},
         'cellEditorParams': {'component': dmc.Select(data=["A", "B", "C"])},
         'cellEditorPopup': True,
+        "flex": 1
     },
 ]
 
@@ -38,9 +40,8 @@ columnDefs = [
 component = dag.AgGrid(
     id='dag-dmc-cell-editor',
     columnDefs=columnDefs,
-    columnSize="autoSize",
     rowData=df.to_dict('records'),
-    defaultColDef={'editable': True},
+    defaultColDef={'editable': True, "minWidth": 150},
     dashGridOptions={'singleClickEdit': True}
 )
 
