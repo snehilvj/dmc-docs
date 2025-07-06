@@ -1,15 +1,15 @@
 ---
 name: Dash Ag Grid
-description: Combine Dash AG Grid with Dash Mantine Components to build high-performance, interactive data grids. This guide covers how to apply AG Grid themes that match your DMC app and how to embed DMC components as custom cell renderers and editors.
+description: Combine Dash AG Grid with Dash Mantine Components to build high-performance, interactive data grids. This guide covers how to apply AG Grid themes that match your app and how to use DMC components as custom cell renderers and editors.
 endpoint: /dash-ag-grid
 package: dash_mantine_components
 ---
 
 .. toc::
 
-### Introduction
+### Dash AG Grid quickstart
 
-If you're new to Dash AG Grid, check out the [official Dash AG Grid documentation](https://dash.plotly.com/dash-ag-grid) for an overview of its features and capabilities.
+If you're new to Dash AG Grid, check out the [official Dash AG Grid documentation](https://dash.plotly.com/dash-ag-grid) for detailed information.
 
 By default, you get a lot features with just a few lines of code:
 
@@ -23,11 +23,18 @@ By default, you get a lot features with just a few lines of code:
 
 
 
-
-### Basic Features Demo
+### Quickstart Demo
 
 .. exec::docs.dash-ag-grid.demo
    :code: false
+
+
+```bash
+pip install dash-ag-agrid
+
+```
+
+---
 
 ```python
 import dash_mantine_components as dmc
@@ -52,17 +59,40 @@ app.run(debug=True)
 ```
 
 
-### Light and Dark Mode
+### Explore More Grid Features
 
-This example uses `dash-ag-grid` v31.3.0. You can switch between light and dark grid themes dynamically by updating the `className` prop in a callback.
+Be sure to check out the Dash AG Grid docs for even more features, such as:
 
-See the [Dash AG Grid styling guide](https://dash.plotly.com/dash-ag-grid/styling-themes) or the upstream [AG Grid v31.3 themes docs](https://www.ag-grid.com/archive/31.3.0/react-data-grid/themes/) for more details and a list of built-in themes.
+- Column Interactions: Include resizing, reordering, pinning, spanning, and grouping.
+- Row Management: Features like sorting, selection (including with checkboxes), reordering, dragging, spanning, pinned rows, and full width rows are available.
+- Data Manipulation and Display: Offers pagination, cell data types with automatic inference, custom filtering, and cell editing,  value getters and formatters, conditional formatting, and CSV data export.
+- Layout and Styling: Provides multiple themes (Alpine, Material, Quartz) with light/dark options, customizable themes, and conditional styling for various elements. Custom icons and more.
+- Other Features: Includes tooltips in cells and headers, keyboard navigation, accessibility support, and localization. 
+- Enterprise Features:  Additional advanced features are available with an AG Grid Enterprise licence.
 
-Click the light/dark mode toggle in the top right of this page to see the grid theme update live.
+We won't go into details on grid features here.  The next sections show how to apply AG Grid themes that match your
+Mantine light or dark theme, and how to use DMC components as custom cell renderers and editors. 
+
+
+### Theming: Light and Dark Mode Support
+
+This example uses `dash-ag-grid` v31.3.0. The grid theme is controlled with the `className` prop.
+
+To apply a built-in theme:
+
+* Light mode: `className="ag-theme-alpine"` (default)
+* Dark mode: `className="ag-theme-alpine-dark"`
+
+You can switch between light and dark themes dynamically by updating the `className` prop in a callback.
+
+For more details and a full list of built-in themes and how to customize the theme, see the [Dash AG Grid styling guide](https://dash.plotly.com/dash-ag-grid/styling-themes) or the [AG Grid v31.3 theme docs](https://www.ag-grid.com/archive/31.3.0/react-data-grid/themes/).
+
+Click the theme toggle in the top right of this page to see the grid theme update live.
 
 .. exec::docs.dash-ag-grid.simple
 
-### Using DMC components in cell renderers
+
+###  Custom Cell Renderers with DMC
 
 To go beyond plain text in grid cells, you can use custom components as cell renderers. AG Grid provides a powerful
 system for embedding your own React components, and DMC components work great for this.
@@ -86,7 +116,7 @@ dagcomponentfuncs.MyFunction = function (props) {
 }
 ```
 
-#### Example 1: DMC Card in Grid Cell
+#### Example 1:  Card
 
 This example renders a `Card` layout using `Dash Mantine Components` within each cell. The layout is defined in the JavaScript function `DMC_Card`.
 
@@ -103,7 +133,7 @@ Want help writing these custom cell functions? See [Using AI to Generate Functio
 
 
 
-#### Example 2: Buttons with `cellRendererParams`
+#### Example 2: Buttons
 
 This example shows how to place interactive buttons inside grid cells. The JavaScript function `DMC_Button` is used in the `cellRenderer` prop. You can pass different visual props (color, icon, variant, etc.) using `cellRendererParams` per column.
 
@@ -138,7 +168,7 @@ columnDefs = [
 
 
 
-## Using Dash Mantine Components as Cell Editors
+###  Custom Cell editors with DMC
 
 Dash AG Grid includes several [built-in cell editors](https://dash.plotly.com/dash-ag-grid/provided-cell-editors), such as:
 - Text Cell Editor
@@ -164,7 +194,7 @@ You simply pass the component to the `component` key inside `cellEditorParams`. 
 ```
 
 
-### Example: Using DMC Components as Editors
+#### Example: DatePickerInput, TagsInput, Select 
 
 This example shows how to use:
 
