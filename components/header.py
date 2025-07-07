@@ -120,6 +120,16 @@ def create_header(data):
                         dmc.GridCol(
                             dmc.Group(
                                 [
+                                    dmc.ActionIcon(
+                                        DashIconify(
+                                            icon="radix-icons:hamburger-menu",
+                                            width=25,
+                                        ),
+                                        id="drawer-hamburger-button",
+                                        variant="transparent",
+                                        size="lg",
+                                        hiddenFrom="lg",
+                                    ),
                                     dmc.Anchor(
                                         "DMC", size="xl", href="/", underline=False
                                     ),
@@ -144,16 +154,6 @@ def create_header(data):
                                         "bi:discord", "https://discord.gg/KuJkh4Pyq5"
                                     ),
                                     theme_toggle,
-                                    dmc.ActionIcon(
-                                        DashIconify(
-                                            icon="radix-icons:hamburger-menu",
-                                            width=25,
-                                        ),
-                                        id="drawer-hamburger-button",
-                                        variant="transparent",
-                                        size="lg",
-                                        hiddenFrom="lg",
-                                    ),
                                 ],
                             ),
                         ),
