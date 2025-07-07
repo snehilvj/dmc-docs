@@ -57,9 +57,9 @@ def create_appshell(data):
                     dmc.AppShellMain(children=page_container),
                 ],
                 header={"height": 70},
-                padding="xl",
+                padding="lg",
                 navbar={
-                    "width": 300,
+                    "width": 280,
                     "breakpoint": "67.5em", # keeps navbar visible on ipad
                     "collapsed": {"mobile": True},
                 },

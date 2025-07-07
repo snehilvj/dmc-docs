@@ -146,7 +146,7 @@ def create_content(data, idtype):
         offsetScrollbars=True,
         type="scroll",
         style={"height": "100%"},
-        children=dmc.Stack(gap=0, children=[main_links, *body, dmc.Space(h=90)], px=25),
+        children=dmc.Stack(gap=0, children=[main_links, *body, dmc.Space(h=90)], pl="xs"),
     )
 
 
