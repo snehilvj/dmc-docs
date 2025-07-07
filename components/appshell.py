@@ -60,7 +60,7 @@ def create_appshell(data):
                 padding="xl",
                 navbar={
                     "width": 300,
-                    "breakpoint": "lg",
+                    "breakpoint": "67.5em", # keeps navbar visible on ipad
                     "collapsed": {"mobile": True},
                 },
                 aside={
