@@ -2,7 +2,8 @@
 name: Migration Guide
 endpoint: /migration
 description: This page helps you migrate from an old version to a newer version of Dash Mantine Components
-dmc: false
+category: Releases
+order: 500
 ---
 
 .. toc::
