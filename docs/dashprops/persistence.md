@@ -1,7 +1,7 @@
 ---
 name: persistence props
 endpoint: /persistence
-description:  Dash Mantine Components support Dash’s built-in persistence system, allowing component values to be remembered across page reloads, tabs, or user sessions — without writing extra callbacks.
+description:  Dash Mantine Components support Dash’s built-in persistence system, allowing component values to be retained across page reloads, tabs, or user sessions — without writing extra callbacks.
 
 category: Dash
 ---
@@ -10,7 +10,7 @@ category: Dash
 .. toc::
 
 
-### What It Does
+### Overview: Persistence in Dash
 
 When a user interacts with a component (like typing in a `TextInput` or selecting a `Date`), its value is
 stored in local memory (or optionally, in localStorage or sessionStorage). If the user refreshes the page, navigates
@@ -18,7 +18,7 @@ away and returns, or reopens the tab, that value can be restored automatically.
 
 This helps maintain app state with minimal effort.
 
-### How to Enable
+### How to Enable Persistence
 
 You can enable persistence on any supported component by setting these three props:
 
@@ -26,15 +26,40 @@ You can enable persistence on any supported component by setting these three pro
 persistence=True
 persisted_props=["value"]  # or other prop(s) to persist. 
 persistence_type="local"   # "local", "session", or "memory" (default is local)
+id="component-id"  # required for persistence to work
 ```
-
-Note:  In DMC, the `persisted_prop` is set to the correct default for each component so this prop can be ignored.
 
 ### Example: Persistent TextInput
 Try typing something in each box, then refresh the browser to see which one remembers your input.
     
 .. exec::docs.dashprops.persistence
 
+
+### Important Notes
+
+* In DMC, the `persisted_prop` is already with an appropriate default for each component, so you don’t need to specify it.
+* An `id` is required — persistence will not work without one.
+* Due to [an open issue in Dash](https://github.com/plotly/dash/issues/3147), persistence does not work if your layout is simply a list of components. The layout must be a single component (or a function returning one).
+
+This **does work**:
+
+```python
+app.layout = dmc.MantineProvider(
+    dmc.Container([
+        dmc.Select(id="select", data=["A", "B", "C"], persistence=True)
+    ])
+)
+```
+
+This **will not work**:
+
+```python
+app.layout = dmc.MantineProvider(
+    [
+        dmc.Select(id="select", data=["A", "B", "C"], persistence=True)
+    ]
+)
+```
 
 ### Supported DMC Components
 
