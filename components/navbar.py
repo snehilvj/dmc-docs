@@ -11,7 +11,6 @@ excluded_links = [
     "/getting-started",
     "/mantine-api",
     "/",
-    "/migration",
     "/help-center"
 ]
 
@@ -64,12 +63,6 @@ def create_content(data, idtype):
                 label="Mantine API Overview",
                 href="/mantine-api",
                 id={"type": idtype, "index": "/mantine-api"},
-            ),
-            create_main_link(
-                icon="material-symbols:bookmark-rounded",
-                label="Migration Guide",
-                href="/migration",
-                id={"type": idtype, "index": "/migration"},
             ),
             create_main_link(
                 icon="material-symbols:info-rounded",
