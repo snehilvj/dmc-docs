@@ -143,7 +143,7 @@ def create_header(data):
                             children=dmc.Group(
                                 justify="flex-end",
                                 h=31,
-                                gap="xl",
+                                gap="md",
                                 children=[
                                     create_search(data),
                                     create_link(
