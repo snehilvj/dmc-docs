@@ -65,14 +65,6 @@ def create_content(data, idtype):
                 href="/mantine-api",
                 id={"type": idtype, "index": "/mantine-api"},
             ),
-
-            # moved to the dash section  (commented out for now to make it easier to revert)
-            # create_main_link(
-            #     icon="material-symbols:cookie-rounded",
-            #     label="Dash Iconify",
-            #     href="/dash-iconify",
-            #     id={"type": idtype, "index": "/dash-iconify"},
-            # ),
             create_main_link(
                 icon="material-symbols:bookmark-rounded",
                 label="Migration Guide",
@@ -146,7 +138,7 @@ def create_content(data, idtype):
         offsetScrollbars=True,
         type="scroll",
         style={"height": "100%"},
-        children=dmc.Stack(gap=0, children=[main_links, *body, dmc.Space(h=90)], px=25),
+        children=dmc.Stack(gap=0, children=[main_links, *body, dmc.Space(h=90)], pl="xs"),
     )
 
 

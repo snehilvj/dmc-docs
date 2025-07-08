@@ -12,6 +12,12 @@ def create_appshell(data):
         theme={
             "primaryColor": PRIMARY_COLOR,
             "fontFamily": "'Inter', sans-serif",
+            "breakpoints": {
+                "sm": "43em",
+                "lg": "67.5em",  #allows navbar to be visible on an ipad
+                "xl":"78em",    #toc breakpoint (matches Mantine's)
+                "xxl": "100em",
+            },
             "components": {
                 "Button": {"defaultProps": {"fw": 400}},
                 "Blockquote": {"styles": {"root": {"padding": 16}}},
@@ -45,7 +51,7 @@ def create_appshell(data):
                 ]
             },
         },
-        children=html.Div([
+        children=dmc.Box([
             dcc.Location(id="url", refresh="callback-nav"),
             dcc.Store(id="color-scheme-storage", storage_type="local"),
             dmc.NotificationContainer(id="notification-container"),
@@ -54,22 +60,25 @@ def create_appshell(data):
                     create_header(data),
                     create_navbar(data),
                     create_navbar_drawer(data),
-                    dmc.AppShellMain(children=page_container),
+                    dmc.Box(
+                        dmc.AppShellMain(children=page_container),
+                        maw="100em"
+                    )
                 ],
                 header={"height": 70},
-                padding="xl",
+                padding="lg",
                 navbar={
-                    "width": 300,
+                    "width": 280,
                     "breakpoint": "lg",
                     "collapsed": {"mobile": True},
                 },
                 aside={
-                    "width": 300,
+                    "width": 275,
                     "breakpoint": "xl",
                     "collapsed": {"desktop": False, "mobile": True},
                 },
             ),
-        ], className="dmc-code"),
+        ], className="dmc-code", px={"base": 0, "xxl": 50}),
     )
 
 
