@@ -20,12 +20,12 @@ This helps maintain app state with minimal effort.
 
 ### How to Enable Persistence
 
-You can enable persistence on any supported component by setting these three props:
+You can enable persistence on any supported component by setting these props:
 
 ```python
 persistence=True
-persisted_props=["value"]  # or other prop(s) to persist. 
-persistence_type="local"   # "local", "session", or "memory" (default is local)
+persisted_props=["value"]  # or other prop(s) to persist. Typically use the default.
+persistence_type="local"   # "local", "session", or "memory" (default is "local")
 id="component-id"  # required for persistence to work
 ```
 
@@ -37,7 +37,7 @@ Try typing something in each box, then refresh the browser to see which one reme
 
 ### Important Notes
 
-* In DMC, the `persisted_prop` is already with an appropriate default for each component, so you don’t need to specify it.
+* In DMC, the `persisted_prop` is already set with an appropriate default for each component, so you don’t need to specify it.
 * An `id` is required — persistence will not work without one.
 * Due to [an open issue in Dash](https://github.com/plotly/dash/issues/3147), persistence does not work if your layout is simply a list of components. The layout must be a single component (or a function returning one).
 
