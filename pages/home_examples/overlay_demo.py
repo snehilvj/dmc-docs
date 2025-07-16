@@ -61,23 +61,23 @@ hover_card = dmc.Stack([
         radius="md",
         children=[
             dmc.HoverCardTarget(
-                dmc.Group([
+                dmc.Card(dmc.Group([
                     dmc.Avatar(src="https://avatars.githubusercontent.com/u/79146003?s=200&v=4", radius="xl"),
                     dmc.Stack([
                         dmc.Text("Mantine", size="sm", fw=700, lh=1, c="bright"),
-                        dmc.Anchor("@mantinedev", href="https://twitter.com/mantinedev", size="xs", c="dimmed", lh=1)
+                        dmc.Anchor("documentation", href="https://mantine.dev/", size="xs", c="dimmed", lh=1)
                     ], gap=5)
-                ], style={"width": "max-content"})
+                ], style={"width": "max-content"}), withBorder=True),
             ),
             dmc.HoverCardDropdown([
                 dmc.Group([
                     dmc.Avatar(src="https://avatars.githubusercontent.com/u/79146003?s=200&v=4", radius="xl"),
                     dmc.Stack([
                         dmc.Text("Mantine", size="sm", fw=700, lh=1, c="bright"),
-                        dmc.Anchor("@mantinedev", href="https://twitter.com/mantinedev", size="xs", c="dimmed", lh=1)
+                        dmc.Anchor("documentation", href="https://mantine.dev/", size="xs", c="dimmed", lh=1)
                     ], gap=5)
                 ]),
-                dmc.Text("Customizable React components and hooks library with focus on usability, accessibility and developer experience", size="sm", mt="md"),
+                dmc.Text("DMC is based on the React Mantine components and hooks library with focus on usability, accessibility and developer experience", size="sm", mt="md"),
 
             ])
         ]
@@ -113,13 +113,12 @@ floating_tooltip = dmc.Stack([
                 dmc.Text("Hover over the box to see tooltip"),
                 style={
                     "height": 100,
-                    "padding": 10,
-                    "border": f"2px solid {dmc.DEFAULT_THEME['colors']['gray'][5]}",
+                    "padding": 20,
+                    "background-color": "var(--mantine-color-gray-0)"
                 },
             )
         ],
     )
-
 ])
 
 authentication = dmc.Card(

@@ -12,6 +12,11 @@ from lib.directives.toc import TOC
 
 from .home_examples.inputs_demo import component as inputs_demo
 from .home_examples.overlay_demo import component as overlay_demo
+from .home_examples.nav_demo import component as nav_demo
+from .home_examples.light_dark import component as light_dark_demo
+
+
+
 
 dash.register_page(
     __name__,
@@ -19,7 +24,7 @@ dash.register_page(
     title=PAGE_TITLE_PREFIX + "Home",
     description="Official documentation and collection of ready-made Plotly Dash Components created using Dash "
     "Mantine Components. Dash Mantine Components is an extensive UI components library for Plotly Dash "
-    "with more than 90 components and supports dark theme natively.",
+    "with more than 100 components and supports dark theme natively.",
 )
 
 
@@ -106,6 +111,7 @@ layout = html.Div(
                 ),
             ],
         ),
+        dmc.Space(h=20),
         dmc.Title("100+ components", order=1),
         dmc.Title("Input components", order=3, my="lg"),
         dmc.Text(
@@ -113,21 +119,38 @@ layout = html.Div(
             DMC includes all the components you need to build polished, accessible forms and control panels-- styled consistently with the Mantine theme including light and dark mode.    Labels, descriptions, and error messages are built in, and can be added with a prop — no extra layout or components required.       
             """,
             my="lg"
-
         ),
         inputs_demo,
 
+        dmc.Space(h=60),
         dmc.Title("Overlay components", order=3, my="lg"),
         dmc.Text(
             """            
             Overlay components like modals, drawers, tooltips, and more help display extra content, actions, or context without navigating away from the page. They're great for building forms, filter panels, or adding helpful hints to your app.    
             """,
             my="lg"
-
         ),
         overlay_demo,
 
-        dmc.Space(h=20),
+        dmc.Space(h=60),
+        dmc.Title("Navigation components", order=3, my="lg"),
+        dmc.Text(
+            """            
+                
+            """,
+            my="lg"
+        ),
+        nav_demo,
+
+        dmc.Space(h=60),
+        dmc.Title("Light Dark Mode", order=3, my="lg"),
+        dmc.Text("""
+            Add dark theme to your application with just 1 line of code. All components support dark theme out of the box. Try it out by clicking the theme switch in the header.
+        """),
+        light_dark_demo,
+
+
+        dmc.Space(h=60),
         create_title("Sponsors", id="sponsors"),
         create_heading(
             dmc.Anchor(
@@ -137,22 +160,8 @@ layout = html.Div(
                 target="_blank",
             )
         ),
-        # dmc.Group(
-        #     [
-        #         dcc.Link(
-        #             dmc.Image(
-        #                 src="https://avatars.githubusercontent.com/u/14855837?s=200&v=4",
-        #                 alt="ascend.io",
-        #                 h=85,
-        #                 fit="contain",
-        #             ),
-        #             href="http://www.ascend.io",
-        #             target="_blank",
-        #         )
-        #     ],
-        #     justify="center",
-        # ),
-        dmc.Space(h=40),
+
+        dmc.Space(h=60),
         create_title("Contributors", id="contributors"),
         create_heading(
             dmc.Anchor(
