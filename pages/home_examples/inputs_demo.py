@@ -61,24 +61,8 @@ component = dmc.Card([
             ),
             dmc.MultiSelect(
                 label="MultiSelect",
-               # placeholder="Search and pick",
-                data=[
-                        {
-                            "group": "Data Analysis",
-                            "items": [
-                                {"value": "Pandas", "label": "Pandas"},
-                                {"value": "NumPy", "label": "NumPy"},
-                            ],
-                        },
-                        {
-                            "group": "Deep Learning",
-                            "items": [
-                                {"value": "TensorFlow", "label": "TensorFlow"},
-                                {"value": "PyTorch", "label": "PyTorch"},
-                            ],
-                        },
-                    ],
-                value=["Pandas", "NumPy"],
+                data=["A", "B", "C", "D", "E", "F"],
+                value=["A", "C"],
                 comboboxProps={"radius": "md"},
                 **input_props
             ),

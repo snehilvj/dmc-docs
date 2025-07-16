@@ -11,6 +11,7 @@ from lib.directives.toc import TOC
 
 
 from .home_examples.inputs_demo import component as inputs_demo
+from .home_examples.overlay_demo import component as overlay_demo
 
 dash.register_page(
     __name__,
@@ -115,6 +116,16 @@ layout = html.Div(
 
         ),
         inputs_demo,
+
+        dmc.Title("Overlay components", order=3, my="lg"),
+        dmc.Text(
+            """            
+            Overlay components like modals, drawers, tooltips, and more help display extra content, actions, or context without navigating away from the page. They're great for building forms, filter panels, or adding helpful hints to your app.    
+            """,
+            my="lg"
+
+        ),
+        overlay_demo,
 
         dmc.Space(h=20),
         create_title("Sponsors", id="sponsors"),
