@@ -62,9 +62,12 @@ layout = html.Div(
             size="lg",
             mt=30,
             children=[
-                create_title(
+                dmc.Title(
                     "Dash Mantine Components",
                     id="features",
+                    order=1,
+                    ta="center"
+
                 ),
                 dmc.Text(
                     "Build fully functional, accessible Dash apps faster than ever! Dash Mantine Components includes over 100 customizable components based on the React Mantine library, with consistent styling, theming, and full support for light and dark mode.",
@@ -112,27 +115,28 @@ layout = html.Div(
             ],
         ),
         dmc.Space(h=20),
-        dmc.Title("100+ components", order=1),
+        dmc.Title("100+ components", order=2),
+        dmc.Text(" "),
         dmc.Title("Input components", order=3, my="lg"),
         dmc.Text(
-            """            
-            DMC includes all the components you need to build polished, accessible forms and control panels-- styled consistently with the Mantine theme including light and dark mode.    Labels, descriptions, and error messages are built in, and can be added with a prop — no extra layout or components required.       
+            """   
+            From text fields to date pickers and dropdowns, DMC input components share a consistent design,  making it easy to create polished, accessible forms and control panels. Add labels, descriptions, and error messages with props — no extra layout or components required.       
             """,
             my="lg"
         ),
         inputs_demo,
 
-        dmc.Space(h=60),
+        dmc.Space(h=70),
         dmc.Title("Overlay components", order=3, my="lg"),
         dmc.Text(
             """            
-            Overlay components like modals, drawers, tooltips, and more help display extra content, actions, or context without navigating away from the page. They're great for building forms, filter panels, or adding helpful hints to your app.    
+            Overlay components like modals, drawers, tooltips, and more help display extra content, actions, or context without navigating away from the page.
             """,
             my="lg"
         ),
         overlay_demo,
 
-        dmc.Space(h=60),
+        dmc.Space(h=70),
         dmc.Title("Navigation components", order=3, my="lg"),
         dmc.Text(
             """            
@@ -142,7 +146,7 @@ layout = html.Div(
         ),
         nav_demo,
 
-        dmc.Space(h=60),
+        dmc.Space(h=70),
         dmc.Title("Light Dark Mode", order=3, my="lg"),
         dmc.Text("""
             Add dark theme to your application with just 1 line of code. All components support dark theme out of the box. Try it out by clicking the theme switch in the header.
@@ -150,7 +154,7 @@ layout = html.Div(
         light_dark_demo,
 
 
-        dmc.Space(h=60),
+        dmc.Space(h=70),
         create_title("Sponsors", id="sponsors"),
         create_heading(
             dmc.Anchor(
@@ -161,7 +165,7 @@ layout = html.Div(
             )
         ),
 
-        dmc.Space(h=60),
+        dmc.Space(h=70),
         create_title("Contributors", id="contributors"),
         create_heading(
             dmc.Anchor(

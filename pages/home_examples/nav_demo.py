@@ -20,5 +20,5 @@ component =  dmc.Card([
     dmc.Text("Stepper", my="md"),
     stepper_demo,
     dmc.Text("Tabs", my="md"),
-    tabs_demo,
+    dmc.Box(tabs_demo, mb="lg"),
 ], withBorder=True)
