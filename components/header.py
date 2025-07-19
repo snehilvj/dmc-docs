@@ -76,6 +76,7 @@ def search_data(data):
         {"label": "BackgroundImage", "value": "/components/image#background-image"},
         {"label": "GridCol", "value": "/components/grid#"},
         {"label": "Skeleton while loading", "value": "/components/skeleton#display-skeleton-while-loading"},
+        {"label": "FloatingTooltip", "value": "/components/tooltip#floating-tooltip"},
     ]
     return docs_pages + other_search_terms
 

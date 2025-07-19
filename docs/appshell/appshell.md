@@ -8,20 +8,16 @@ category: Layout
 
 .. toc::
 
-This page includes only documentation. Since all associated `AppShell` components have fixed position, it is not possible to include demos on this page.
-
-Please see the code in the dmc-docs GitHub.  Or run the app and edit the code on PyCafe.
-
-Here’s a cleaner and more visually appealing version of the links:
-
----
 
 ### Examples  
 
-This page includes only documentation. Since all associated `AppShell` components have fixed positions, it is not possible to include demos on this page.  
+Since `AppShell` components have fixed position, it is not possible to include live demos on this page.
 
-Please refer to the code on the **[dmc-docs GitHub](https://github.com/snehilvj/dmc-docs)** or run and edit the examples on **[PyCafe](https://py.cafe)**.  
 
+Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  Or run the app and edit the code on **[PyCafe](https://py.cafe/dash.mantine.components)**.
+
+.. image::/assets/appshell.png
+ 
 1. Basic AppShell with Header and Navbar
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/basic_appshell.py)  
    - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/basic-appshell-collapsible-navbar)  
