@@ -14,6 +14,7 @@ from .home_examples.inputs_demo import component as inputs_demo
 from .home_examples.overlay_demo import component as overlay_demo
 from .home_examples.nav_demo import component as nav_demo
 from .home_examples.light_dark import component as light_dark_demo
+from .home_examples.layout_demo import component as layout_demo
 
 
 
@@ -66,7 +67,8 @@ layout = html.Div(
                     "Dash Mantine Components",
                     id="features",
                     order=1,
-                    ta="center"
+                    ta="center",
+                    fz=40
 
                 ),
                 dmc.Text(
@@ -126,7 +128,7 @@ layout = html.Div(
         ),
         inputs_demo,
 
-        dmc.Space(h=70),
+        dmc.Space(h=110),
         dmc.Title("Overlay components", order=3, my="lg"),
         dmc.Text(
             """            
@@ -136,7 +138,7 @@ layout = html.Div(
         ),
         overlay_demo,
 
-        dmc.Space(h=70),
+        dmc.Space(h=110),
         dmc.Title("Navigation components", order=3, my="lg"),
         dmc.Text(
             """            
@@ -146,7 +148,14 @@ layout = html.Div(
         ),
         nav_demo,
 
-        dmc.Space(h=70),
+        dmc.Space(h=110),
+        dmc.Title("Layout components", order=3, my="lg"),
+        dmc.Text("""
+
+        """),
+        layout_demo,
+
+        dmc.Space(h=110),
         dmc.Title("Light Dark Mode", order=3, my="lg"),
         dmc.Text("""
             Add dark theme to your application with just 1 line of code. All components support dark theme out of the box. Try it out by clicking the theme switch in the header.
@@ -154,7 +163,9 @@ layout = html.Div(
         light_dark_demo,
 
 
-        dmc.Space(h=70),
+
+
+        dmc.Space(h=100),
         create_title("Sponsors", id="sponsors"),
         create_heading(
             dmc.Anchor(
@@ -165,7 +176,7 @@ layout = html.Div(
             )
         ),
 
-        dmc.Space(h=70),
+        dmc.Space(h=30),
         create_title("Contributors", id="contributors"),
         create_heading(
             dmc.Anchor(
