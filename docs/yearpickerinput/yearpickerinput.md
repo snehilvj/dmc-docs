@@ -10,11 +10,6 @@ category: Date Pickers
 
 
 
-### CSS Extensions
-
-As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
 
 ### Simple Example
 
@@ -64,6 +59,12 @@ Set `clearable=True` prop to display clear button in the right section. Note tha
 ### Min and Max date
 
 .. exec::docs.yearpickerinput.minmax
+
+
+### CSS Extensions
+
+As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 ### Styles API
 

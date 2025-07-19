@@ -10,12 +10,6 @@ category: Date Pickers
 
 
 
-### CSS Extensions
-
-As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
-
 ### DatePicker props
 `DateTimePicker` supports most of the `DatePicker` props, read through `DatePicker` documentation to learn about all component features that are not listed on this page.
 
@@ -65,6 +59,12 @@ By default, `DateTimePicker` is rendered inside `Popover`. You can change that t
 .. exec::docs.datetimepicker.modal
 
 
+
+
+### CSS Extensions
+
+As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 
 
