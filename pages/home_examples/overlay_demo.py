@@ -114,7 +114,7 @@ floating_tooltip = dmc.Stack([
                 style={
                     "height": 100,
                     "padding": 20,
-                    "background-color": "var(--mantine-color-gray-0)"
+                    "background-color": "var(--my-light-dark-gray-background)"
                 },
             )
         ],

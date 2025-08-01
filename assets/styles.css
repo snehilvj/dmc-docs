@@ -204,3 +204,11 @@ input:invalid {
     }
   }
 }
+
+:root {
+  --my-light-dark-gray-background: var(--mantine-color-gray-1);
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --my-light-dark-gray-background: var(--mantine-color-dark-5);
+}

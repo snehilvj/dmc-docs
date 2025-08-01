@@ -128,7 +128,7 @@ layout = html.Div(
         ),
         inputs_demo,
 
-        dmc.Space(h=110),
+        dmc.Space(h=180),
         dmc.Title("Overlay components", order=3, my="lg"),
         dmc.Text(
             """            
@@ -138,7 +138,7 @@ layout = html.Div(
         ),
         overlay_demo,
 
-        dmc.Space(h=110),
+        dmc.Space(h=180),
         dmc.Title("Navigation components", order=3, my="lg"),
         dmc.Text(
             """            
@@ -148,14 +148,14 @@ layout = html.Div(
         ),
         nav_demo,
 
-        dmc.Space(h=110),
+        dmc.Space(h=180),
         dmc.Title("Layout components", order=3, my="lg"),
         dmc.Text("""
 
         """),
         layout_demo,
 
-        dmc.Space(h=110),
+        dmc.Space(h=180),
         dmc.Title("Light Dark Mode", order=3, my="lg"),
         dmc.Text("""
             Add dark theme to your application with just 1 line of code. All components support dark theme out of the box. Try it out by clicking the theme switch in the header.
