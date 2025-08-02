@@ -4,7 +4,7 @@ from dash import Output, Input, html, callback
 component = html.Div(
     [
         dmc.Autocomplete(
-            label="Select your favorite library",
+            label="Your favorite library",
             placeholder="Pick value or enter anything",
             id="framework-autocomplete",
             data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],

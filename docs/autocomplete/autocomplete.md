@@ -16,7 +16,7 @@ Use `Autocomplete` component in the following cases:
 - You want to allow user to enter any value
 - You want to display suggestions to the user based on the input value
 - You want to preserve user input on blur if option was not selected from the dropdown
-- value and label of the option are the same, for example, 'United States'
+- `value` and `label` of the option are the same.
 
 In the example below, suggestions are based on the input value, but the user can enter any value and it will be preserved on blur.
 
@@ -33,6 +33,7 @@ In the example below, suggestions are based on the input value, but the user can
 
 `Autocomplete` is not a searchable select, it is a text input with suggestions. Values are not enforced to be one of
 the suggestions, user can type anything. If you need a searchable select, use `Select` component instead.
+ To learn more about the differences between Autocomplete and Select, check [help center article](https://help.mantine.dev/q/select-autocomplete-difference).
 
 ### Select first option on change
 
