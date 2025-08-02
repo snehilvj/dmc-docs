@@ -141,14 +141,19 @@ dropdown styles with `Styles API`.
 
 
 
-### Grouping Items
+### Group options
 
 .. exec::docs.autocomplete.grouping
 
+### Disabled options
+
+When option is disabled, it cannot be selected and is ignored in keyboard navigation.
+
+.. exec::docs.autocomplete.disabled
 
 ### Combobox props
 You can override `Combobox` props with `comboboxProps`. It is useful when you need to change some of the props that are
-not exposed by `MultiSelect`, for example `withinPortal`:
+not exposed by `Autocomplete`, for example `withinPortal`:
 
 ```python
 dmc.Autocomplete(comboboxProps={"withinPortal": False})
@@ -157,21 +162,24 @@ dmc.Autocomplete(comboboxProps={"withinPortal": False})
 
 ### Change dropdown z-index
 
-
 ```python
 dmc.Autocomplete(comboboxProps={"zIndex": 1000})
 ```
 
 ### Inside Popover
 
-To use `Select` inside popover, you need to set `withinPortal=False`:
+To use `Autocomplete` inside popover, you need to set `withinPortal=False`:
 
 .. exec::docs.autocomplete.popover
 
 
 ### Clearable
 
-Set `clearable` prop to enable clearing selected values.
+Set `clearable` prop to display the clear button in the right section. The button is not displayed when:
+
+- The component does not have a value
+- The component is disabled
+- The component is read only
 
 .. exec::docs.autocomplete.clearable
 
@@ -219,7 +227,7 @@ down to the underlying `Transition` component.
 
 ### Left and right sections
 
-`MultiSelect` supports `leftSection` and `rightSection` props. These sections are rendered with absolute position
+`Autocomplete` supports `leftSection` and `rightSection` props. These sections are rendered with absolute position
 inside the input wrapper. You can use them to display icons, input controls or any other elements.
 
 You can use the following props to control sections styles and content:
@@ -232,12 +240,19 @@ You can use the following props to control sections styles and content:
 
 
 ### Input Props
-`Select` component supports `Input` and Input Wrapper components features and all input element props.
-`Select` documentation does not include all features supported by the component – see Input documentation to learn about all available features.
+`Autocomplete` component supports `Input` and Input Wrapper components features and all input element props.
+`Autocomplete` documentation does not include all features supported by the component – see Input documentation to learn about all available features.
 
 
 .. exec::docs.autocomplete.interactive
    :code: false
+
+### Read only
+Set `readOnly` to make the input read only. When readOnly is set, `Autocomplete` will not show suggestions and will not
+call onChange function.
+
+
+.. exec::docs.autocomplete.readonly
 
 
 ### Invalid State And Error
@@ -262,22 +277,23 @@ select less than 2 currency pairs.
 
 .. styles_api_text::
 
-| Name        | Static selector             | Description                                      |
-|:------------|:----------------------------|:-------------------------------------------------|
-| wrapper     | .mantine-Select-wrapper     | Root element of the Input                        |
-| input       | .mantine-Select-input       | Input element                                    |
-| section     | .mantine-Select-section     | Left and right sections                          |
-| root        | .mantine-Select-root        | Root element                                     |
-| label       | .mantine-Select-label       | Label element                                    |
-| required    | .mantine-Select-required    | Required asterisk element, rendered inside label |
-| description | .mantine-Select-description | Description element                              |
-| error       | .mantine-Select-error       | Error element                                    |
-| dropdown    | .mantine-Select-dropdown    | Dropdown root element                            |
-| options     | .mantine-Select-options     | Options wrapper                                  |
-| option      | .mantine-Select-option      | Option                                           |
-| empty       | .mantine-Select-empty       | Nothing found message                            |
-| group       | .mantine-Select-group       | Options group wrapper                            |
-| groupLabel  | .mantine-Select-groupLabel  | Options group label                              |
+### Autocomplete Selectors
+
+| Selector     | Static selector                        | Description                                              |
+|--------------|----------------------------------------|----------------------------------------------------------|
+| `wrapper`    | `.mantine-Autocomplete-wrapper`        | Root element of the Input                                |
+| `input`      | `.mantine-Autocomplete-input`          | Input element                                            |
+| `section`    | `.mantine-Autocomplete-section`        | Left and right sections                                  |
+| `root`       | `.mantine-Autocomplete-root`           | Root element                                             |
+| `label`      | `.mantine-Autocomplete-label`          | Label element                                            |
+| `required`   | `.mantine-Autocomplete-required`       | Required asterisk element, rendered inside label         |
+| `description`| `.mantine-Autocomplete-description`    | Description element                                      |
+| `error`      | `.mantine-Autocomplete-error`          | Error element                                            |
+| `dropdown`   | `.mantine-Autocomplete-dropdown`       | Dropdown root element                                    |
+| `options`    | `.mantine-Autocomplete-options`        | Options wrapper                                          |
+| `option`     | `.mantine-Autocomplete-option`         | Option                                                   |
+| `group`      | `.mantine-Autocomplete-group`          | Options group wrapper                                    |
+| `groupLabel` | `.mantine-Autocomplete-groupLabel`     | Options group label                                      |
 
 ### Keyword Arguments
 
