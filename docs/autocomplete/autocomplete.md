@@ -8,7 +8,7 @@ category: Combobox
 
 .. toc::  
 
-> Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput`.
+> Need users to select multiple items? See `MultiSelect` or `TagsInput`.
 
 
 Use `Autocomplete` component in the following cases:
@@ -18,8 +18,12 @@ Use `Autocomplete` component in the following cases:
 - You want to preserve user input on blur if option was not selected from the dropdown
 - `value` and `label` of the option are the same.
 
-In the example below, suggestions are based on the input value, but the user can enter any value and it will be preserved on blur.
 
+### Not a searchable select
+
+`Autocomplete` is not a searchable select, it is a text input with suggestions. Values are not enforced to be one of
+the suggestions, user can type anything. If you need a searchable select, use `Select` component instead.
+ To learn more about the differences between Autocomplete and Select, check [help center article](https://help.mantine.dev/q/select-autocomplete-difference).
 
 
 ### Simple Example
@@ -28,12 +32,6 @@ In the example below, suggestions are based on the input value, but the user can
 
 
 .. exec::docs.autocomplete.simple
-
-### Not a searchable select
-
-`Autocomplete` is not a searchable select, it is a text input with suggestions. Values are not enforced to be one of
-the suggestions, user can type anything. If you need a searchable select, use `Select` component instead.
- To learn more about the differences between Autocomplete and Select, check [help center article](https://help.mantine.dev/q/select-autocomplete-difference).
 
 ### Select first option on change
 
