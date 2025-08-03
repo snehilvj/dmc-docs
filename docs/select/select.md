@@ -8,12 +8,12 @@ category: Combobox
 
 .. toc::  
 
-> Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput`.
+> Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput` or `Autocomplete`
 
 
 ### Simple Example
 
-Select component allows user to pick one option from the given data.
+`Select` component allows user to pick one option from the given data. Unlike `Autocomplete`, `Select` does not allow entering custom values.
 
 
 .. exec::docs.select.simple
@@ -179,7 +179,7 @@ dropdown styles with `Styles API`.
 
 ### Combobox props
 You can override `Combobox` props with `comboboxProps`. It is useful when you need to change some of the props that are
-not exposed by `MultiSelect`, for example `withinPortal`:
+not exposed by `Select`, for example `withinPortal`:
 
 ```python
 dmc.Select(comboboxProps={"withinPortal": False})
@@ -245,7 +245,7 @@ down to the underlying `Transition` component.
 
 ### Left and right sections
 
-`MultiSelect` supports `leftSection` and `rightSection` props. These sections are rendered with absolute position
+`Select` supports `leftSection` and `rightSection` props. These sections are rendered with absolute position
 inside the input wrapper. You can use them to display icons, input controls or any other elements.
 
 You can use the following props to control sections styles and content:
