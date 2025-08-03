@@ -8,12 +8,12 @@ category: Combobox
 
 .. toc::  
 
-> Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput`.
+> Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput` or `Autocomplete`
 
 
 ### Simple Example
 
-Select component allows user to pick one option from the given data.
+`Select` component allows user to pick one option from the given data. Unlike `Autocomplete`, `Select` does not allow entering custom values.
 
 
 .. exec::docs.select.simple

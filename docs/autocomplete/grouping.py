@@ -4,17 +4,11 @@ component = dmc.Autocomplete(
     data=[
         {
             "group": "Data Analysis",
-            "items": [
-                {"value": "Pandas", "label": "Pandas"},
-                {"value": "NumPy", "label": "NumPy"},
-            ],
+            "items": ["Pandas", "NumPy"],
         },
         {
             "group": "Deep Learning",
-            "items": [
-                {"value": "TensorFlow", "label": "TensorFlow"},
-                {"value": "PyTorch", "label": "PyTorch"},
-            ],
+            "items": ["TensorFlow", "PyTorch"],
         },
     ],
     w=400,
