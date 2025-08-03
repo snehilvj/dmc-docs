@@ -9,16 +9,6 @@ from dash_iconify import DashIconify
 from lib.constants import PAGE_TITLE_PREFIX, PRIMARY_COLOR
 from lib.directives.toc import TOC
 
-
-from .home_examples.inputs_demo import component as inputs_demo
-from .home_examples.overlay_demo import component as overlay_demo
-from .home_examples.nav_demo import component as nav_demo
-from .home_examples.light_dark import component as light_dark_demo
-from .home_examples.layout_demo import component as layout_demo
-
-
-
-
 dash.register_page(
     __name__,
     "/",
@@ -55,6 +45,24 @@ def create_contributors_avatars():
     return dmc.Group(children, justify="center")
 
 
+def create_tile(icon, heading, description, href):
+    return dmc.Anchor(dmc.Card(
+        radius="md",
+        p="xl",
+        withBorder=True,
+        m=5,
+        className="homepage-tile",
+        children=[
+            DashIconify(
+                icon=icon,
+                height=20,
+                color=dmc.DEFAULT_THEME["colors"][PRIMARY_COLOR][5],
+            ),
+            dmc.Text(heading, size="lg", mt="md"),
+            dmc.Text(description, size="sm", c="dimmed", mt="sm"),
+        ],
+    ), href=href, underline = "never")
+
 
 
 layout = html.Div(
@@ -72,7 +80,7 @@ layout = html.Div(
 
                 ),
                 dmc.Text(
-                    "Build fully functional, accessible Dash apps faster than ever! Dash Mantine Components includes over 100 customizable components based on the React Mantine library, with consistent styling, theming, and full support for light and dark mode.",
+                    "Build feature-rich, accessible Dash apps faster than ever! Dash Mantine Components includes over 100 customizable components based on the React Mantine library, with consistent styling, theming, and full support for light and dark mode.",
                     ta="center",
                     mt=10,
                     mb=20,
@@ -116,56 +124,58 @@ layout = html.Div(
                 ),
             ],
         ),
+        dmc.Container(
+            size="lg",
+            px=0,
+            py=0,
+            my=40,
+            children=[
+                dmc.SimpleGrid(
+                    mt=80,
+                    cols={"xs": 1, "sm": 2, "xl": 3},
+                    children=[
+                        create_tile(
+                            icon="akar-icons:calendar",
+                            heading="Best DatePickers out there!",
+                            description="Easily switch between different years and months while looking great too.",
+                            href="/components/datepicker",
+                        ),
+                        create_tile(
+                            icon="uil:paint-tool",
+                            heading="Dark Theme Support",
+                            description="Use dark theme across all components with no additional steps.",
+                            href="/components/mantineprovider",
+                        ),
+                        create_tile(
+                            icon="ph:notification-bold",
+                            heading="Notifications System",
+                            description="Mantine has a great notifications system, and now you get that in dash apps "
+                            "too.",
+                            href="/components/notification",
+                        ),
+                        create_tile(
+                            icon="radix-icons:dashboard",
+                            heading="Responsive Grid System",
+                            description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
+                            href="/components/grid",
+                        ),
+                        create_tile(
+                            icon="el:gift",
+                            heading="Unique Components",
+                            description="Components such as Segmented Control only available with DMC.",
+                            href="/components/segmentedcontrol",
+                        ),
+                        create_tile(
+                            icon="lucide:text-cursor-input",
+                            heading="Better Inputs",
+                            description="Add label, description, errors, etc. easily to all inputs.",
+                            href="/components/select",
+                        ),
+                    ],
+                )
+            ],
+        ),
         dmc.Space(h=20),
-        dmc.Title("100+ components", order=2),
-        dmc.Text(" "),
-        dmc.Title("Input components", order=3, my="lg"),
-        dmc.Text(
-            """   
-            From text fields to date pickers and dropdowns, DMC input components share a consistent design,  making it easy to create polished, accessible forms and control panels. Add labels, descriptions, and error messages with props — no extra layout or components required.       
-            """,
-            my="lg"
-        ),
-        inputs_demo,
-
-        dmc.Space(h=180),
-        dmc.Title("Overlay components", order=3, my="lg"),
-        dmc.Text(
-            """            
-            Overlay components like modals, drawers, tooltips, and more help display extra content, actions, or context without navigating away from the page.
-            """,
-            my="lg"
-        ),
-        overlay_demo,
-
-        dmc.Space(h=180),
-        dmc.Title("Navigation components", order=3, my="lg"),
-        dmc.Text(
-            """            
-                
-            """,
-            my="lg"
-        ),
-        nav_demo,
-
-        dmc.Space(h=180),
-        dmc.Title("Layout components", order=3, my="lg"),
-        dmc.Text("""
-
-        """),
-        layout_demo,
-
-        dmc.Space(h=180),
-        dmc.Title("Light Dark Mode", order=3, my="lg"),
-        dmc.Text("""
-            Add dark theme to your application with just 1 line of code. All components support dark theme out of the box. Try it out by clicking the theme switch in the header.
-        """),
-        light_dark_demo,
-
-
-
-
-        dmc.Space(h=100),
         create_title("Sponsors", id="sponsors"),
         create_heading(
             dmc.Anchor(
@@ -176,7 +186,7 @@ layout = html.Div(
             )
         ),
 
-        dmc.Space(h=30),
+        dmc.Space(h=40),
         create_title("Contributors", id="contributors"),
         create_heading(
             dmc.Anchor(
