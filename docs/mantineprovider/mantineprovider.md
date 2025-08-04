@@ -40,7 +40,7 @@ See the [Theme Object](/theme-object) section to learn how to customize the defa
 
 See the [Colors](/colors) section to learn how to customize the theme colors.
 
-### Color Scheme
+### Light and Dark Color Schemes
 Mantine supports both light and dark color schemes.  The default color scheme is "light".
 When the `MantineProvider` is added to your app, it automatically sets the `data-mantine-color-scheme` attribute at the 
 top level of the app. This attribute controls whether the app uses light or dark mode. All components in the app 
