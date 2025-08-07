@@ -31,7 +31,7 @@ Here are just some of the features enabled by default in the quickstart example 
 
 
 ```bash
-pip install dash-ag-agrid
+pip install dash-ag-grid
 
 ```
 

@@ -7,7 +7,7 @@ component = dmc.Table(
         "head": ["Prop", "CSS Property"],
         "body": [
             ["bd", "border"],
-            ["bgrs", "border-radius"],
+            ["bdrs", "border-radius"],
             ["bg", "background"],
             ["bga", "background-attachment"],
             ["bgp", "background-position"],
