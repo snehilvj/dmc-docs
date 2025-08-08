@@ -3,8 +3,8 @@ name: Responsive Styles
 description: Responsive styles let you adjust the appearance of individual components, including font size, visibility, spacing, and colors, based on screen size.
 endpoint: /responsive-styles
 package: dash_mantine_components
-category: Theming
-order: 7  # sets order in navbar section
+category: Styling
+order: 5 # sets order in navbar section
 ---
 
 .. toc::

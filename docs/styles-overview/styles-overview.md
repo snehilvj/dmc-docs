@@ -17,7 +17,7 @@ Most of the components provide props that allow you to customize their styles. F
 
 
 .. exec::docs.button.interactive
-    :code:false
+    :code: false
 
 
 ### Style props
@@ -62,4 +62,72 @@ to limit the number of style props used per component to 3-4. If you find yourse
 consider creating a separate CSS file with styles – it will be easier to maintain and will be more performant.
 
 
+### style prop
+
+You can use the `style` prop to define inline styles, just like in other dash components:
+```python
+dmc.Card(style={"backgroundColor": "blue", "color": "white"})
+```
+
+### className prop
+You can define CSS classes in a `.css` file in the `/assets` folder. These can then be referenced using the `className` prop, just like in other dash components:
+
+```python 
+dmc.Card(className="card-style")
+```
+
+.css file:
+```css
+.card-style {
+    background-color: blue;
+    color: white;
+}
+```
+
+### Styles API
+
+Note that the `style` and the `className` props will apply style to the root of the component.  Many DMC components contain
+multiple elements, for example the `TextInput` includes `label`, `description`, `error` props.  
+
+Use the `classNames` or `styles` props to target the nested elements.  See more information in the [StylesAPI](/styles-api) section.
+
+### theme prop in MantineProvider
+
+DMC includes a great default theme that supports light and dark mode. Use the `theme` prop to change the global styles.
+
+For those of you familiar with Dash Bootstrap Components, this is similar to setting the theme using a Bootstrap
+stylesheet. However, in DMC, instead of linking to a  CSS file, you can directly define the theme using a Python
+dictionary, which makes it easy to customize the theme. For example, you can  override colors, fonts, spacing,
+and even component-specific styles globally.
+
+For more information see the [Theme Object](/theme-object) section.
+
+
+###  Theme Tokens
+
+A theme token is a named value from the global theme, like a color, spacing unit, or font family. In DMC, these tokens
+can be used in any styles with the Mantine [CSS variables](/css-variables):
+
+For example:
+
+ - In a `.css` file in `/assets`:
+
+```css
+.root {
+  background: var(--mantine-color-red-5); /* red[5] from theme.colors */
+  margin-top: var(--mantine-spacing-md);  /* md from theme.spacing */
+}
+```
+
+-  In style props:
+```python
+dcc.Box(bg="red.5", mt="xl")
+# Shorthand for: var(--mantine-color-red-5), var(--mantine-spacing-xl)
+```
+
+- In the `style` prop:
+```python
+dcc.Box(style={"backgroundColor": "var(--mantine-color-red-5)"})
+
+```
 

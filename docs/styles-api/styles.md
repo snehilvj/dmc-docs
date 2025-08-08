@@ -5,33 +5,23 @@ head: With Styles API you can overwrite styles of inner elements in Mantine comp
 description: With Styles API you can overwrite styles of inner elements in Mantine components with classNames or styles props.
 package: dash_mantine_components
 category: Styling
-order: 4  # sets order in navbar section
+order: 2  # sets order in navbar section
 ---
 
 .. toc::
 
+
 ### Styles API Overview
 
-Most Dash users are familiar with the `style` prop — a dictionary of CSS rules applied to a component’s outermost container. Mantine supports this too, but also introduces a more powerful alternative: the `styles` prop.
+DMC supports `style` and `className` props for styling the root element, just like other Dash libraries.
+However, many DMC components have nested elements.  For example the `TextInput` includes `label`, `description`,
+`error` props.  To target each element, use the `classNames` or `styles` props. 
 
-Many Mantine components may look simple — for example, `TextInput` appears to be just an `<input type="text">`. But under the hood, it's composed of multiple nested elements for things like the label, description, error message, and layout.
-
-This internal structure allows you to set props  like:
-
-* `label` — a label for the input
-* `description` — additonal helper text for the input
-* `error` — a validation message
-
-Instead of requiring you to manually render and style each element, Mantine includes them as part of the component — and the `styles` prop gives you control over how each part looks.
-
-* Use `style` to apply styles to the outermost wrapper.
-* Use `styles` to target specific internal parts (like the label, input, or error text).
-
-Each component’s documentation lists which internal parts are available for styling via the `styles` prop.
 
 ### Styles API Selectors
 
-To let you style these internal parts individually, each component exposes a set of style selectors — string identifiers like `"label"`, `"input"`, or `"error"` that represent specific internal elements.
+To let you style these internal parts individually, each component exposes a set of style selectors — string identifiers
+like `"label"`, `"input"`, or `"error"` that represent specific internal elements.
 
 You use them like this:
 
@@ -44,8 +34,6 @@ styles={
 ```
 
 Each component has its own set of selectors based on its structure. These are documented in the Styles API section of each component’s page.
-
-If you've used `className` in Dash this is similar — but built directly into the component system and consistent across Mantine.
 
 
 #### Example: `dmc.Button` Selectors
