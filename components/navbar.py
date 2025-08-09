@@ -61,7 +61,7 @@ def create_content(data, idtype):
             ),
             create_main_link(
                 icon="material-symbols:style",
-                label="Mantine API Overview",
+                label="Mantine Overview",
                 href="/mantine-api",
                 id={"type": idtype, "index": "/mantine-api"},
             ),

@@ -10,12 +10,8 @@ dmc: false
 
 ### MantineProvider
 
-Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
-It is responsible for:  
-
-1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
-2. Manages light or dark mode.
-3. Adding CSS variables to the document
+Wrap your `app.layout` with a `MantineProvider` to manage your app’s overall theme, including colors, spacing, fonts,
+and light/dark mode. It also exposes Mantine CSS variables based on your theme settings.
 
 
 ```python
@@ -33,16 +29,52 @@ if __name__ == "__main__":
 ```
 
 
+### Color scheme  
+
+All Mantine components support light, dark and auto color schemes.
+
+The default color scheme is light.  You can set the default color scheme on `MantineProvider`:
+
+.. exec::docs.mantine-api.light_dark
+    :code: false
+
+
+See the Theming section for examples of a [Theme Switch Component](/theme-switch)
+
+
+
 ### Theme object
+
+Mantine’s  [default theme](/theme-object#default-theme) makes Dash apps look great in both light and dark modes. If you’re new to Dash Mantine Components,
+start with the default theme. You can customize the theme globally by editing the `theme` prop in the `MantineProvider`.
+
+The `theme` object is a dictionary where you can set things like colors, border radius, spacing, fonts, and breakpoints.
+Mantine will merge your custom theme with the defaults, so you just need to provide what you want to change.
+
+See the [Theme Object documentation](/theme-object) for all options.
+
+This example demonstrates how changing the `theme` updates the entire app’s appearance. Here, we change:
+- Primary accent color
+- Border radius
+- Card shadow style
+- Color scheme (light/dark)
+
+Try it live: [DMC Theme Builder on Pycafe](https://py.cafe/app/dash.mantine.components/dash-mantine-theme-builder)
+
+---
+
+.. image::/assets/dmc-theme-builder.gif
+    :w: 400px
+    :h: 400px
+
+---
+
 The `theme` object is a  dictionary that stores design tokens, components default props, context styles and other data
 that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
 both in component props and CSS.
 
-To customize the theme, pass a theme dictionary to the `theme` prop of the `MantineProvider` component. The provided
-theme will be deeply merged with Mantine's [default theme](/theme-object#default-theme).
-
 ```python
-# Your theme configuration is merged with default theme
+# Your theme  is merged with default theme
 theme = {
     "fontFamily": "Montserrat, sans-serif",
     "defaultRadius": "md",    
@@ -55,7 +87,7 @@ app.layout = dmc.MantineProvider(
 ```
 
 
-Accessing theme values in a .css file in the /assets folder:
+Accessing theme values in a `.css` file in the `/assets` folder:
 
 ```css
 .demo {
@@ -76,8 +108,8 @@ dmc.Card(style={"backgroundColor":"var(--mantine-color-red-1)"})
 
 ### Styling props
 
-Dash components typically provide `style` and `className` props for styling, and Dash Mantine Components (DMC) also 
-supports these props in the same way as other libraries. For example:
+Dash components typically provide `style` and `className` props for styling, and Dash Mantine Components  also 
+supports these props in the same way as other dash component libraries. For example:
 
 #### style prop
 You can use the `style` prop to define inline styles:
@@ -90,11 +122,12 @@ You can define custom CSS classes in a `.css` file located in the `/assets` fold
 using the `className` prop:
 
 ```python
-dmc.Card(className="header-style")
+dmc.Card(className="card-style")
 ```
 
+.css file:
 ```css
-.header-style {
+.card-style {
     background-color: blue;
     color: white;
 }
@@ -150,7 +183,7 @@ prefixed with `--mantine-`, for example:
 
 ### CSS Variables list
 
-For a list of all Mantine CSS variables that are generated from default theme, see the [Mantine docs](https://mantine.dev/styles/css-variables-list/)
+For a list of all Mantine CSS variables that are generated from default theme, see the [CSS variables](/css-variables) section.
 
 ### Styles API
 
@@ -198,28 +231,4 @@ The following is added to a `.css` file in the `/assets` folder
 
 ``` 
 
-
-### Color scheme
-All Mantine components support light, dark and auto color schemes. By default, the color scheme is light, it can be
-changed by the user and will be persisted in localStorage.
-
-You can configure the default color scheme on MantineProvider:
-
-```python
-
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-    defaultColorScheme="dark"
-)
-```
-or use:
-
-```python
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-    forceColorScheme="dark",
-)
-```
-
-See the Theming section for examples of a [Theme Switch Component](/theme-switch)
 

@@ -144,7 +144,7 @@ layout = html.Div(
                             icon="uil:paint-tool",
                             heading="Dark Theme Support",
                             description="Use dark theme across all components with no additional steps.",
-                            href="/components/mantineprovider",
+                            href="/mantine-api#color-scheme",
                         ),
                         create_tile(
                             icon="ph:notification-bold",
@@ -199,7 +199,7 @@ layout = html.Div(
         dmc.Space(h=10),
         (create_contributors_avatars() if "CONTRIB_TOKEN" in environ else None),
         dmc.Space(h=40),
-        dmc.Center(
+        dmc.Box(
             [
                 dmc.Group(
                     gap="xs",
@@ -209,7 +209,15 @@ layout = html.Div(
                         dmc.Text("by Snehil Vijay"),
                     ],
                     justify="center",
-                )
+                ),
+                dmc.Group([
+                dmc.Text("Lead maintainer: ", span=True),
+                dmc.Anchor(
+                    "AnnMarieW ",
+                    underline=False,
+                    href="https://github.com/AnnMarieW",
+                    target="_blank",
+                )], mt="sm", justify="center")
             ],
             h=100,
         ),
