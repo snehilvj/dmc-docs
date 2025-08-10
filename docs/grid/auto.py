@@ -1,16 +1,15 @@
 import dash_mantine_components as dmc
-from dash import html
 
 style = {
-    "border": f"1px solid {dmc.DEFAULT_THEME['colors']['indigo'][4]}",
+    "border": f"1px solid var(--mantine-primary-color-filled)",
     "textAlign": "center",
 }
 
 component = dmc.Grid(
     children=[
-        dmc.GridCol(html.Div("span=auto", style=style), span="auto"),
-        dmc.GridCol(html.Div("span=6", style=style), span=6),
-        dmc.GridCol(html.Div("span=auto", style=style), span="auto"),
+        dmc.GridCol(dmc.Box("span=auto", style=style), span="auto"),
+        dmc.GridCol(dmc.Box("span=6", style=style), span=6),
+        dmc.GridCol(dmc.Box("span=auto", style=style), span="auto"),
     ],
     gutter="xl",
 )
