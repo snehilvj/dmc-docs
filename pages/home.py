@@ -61,7 +61,7 @@ def create_tile(icon, heading, description, href):
             dmc.Text(heading, size="lg", mt="md"),
             dmc.Text(description, size="sm", c="dimmed", mt="sm"),
         ],
-    ), href=href, underline = "never")
+    ), href=href, underline = "never", style={"display":"flex", "height": "100%"})
 
 
 
@@ -155,9 +155,9 @@ layout = html.Div(
                         ),
                         create_tile(
                             icon="radix-icons:dashboard",
-                            heading="Responsive Grid System",
-                            description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
-                            href="/components/grid",
+                            heading="Responsive Layouts",
+                            description="Design your layouts faster with components like Grid, SimpleGrid, Group, Stack and AppShell.",
+                            href="/layout-overview",
                         ),
                         create_tile(
                             icon="el:gift",
@@ -169,7 +169,7 @@ layout = html.Div(
                             icon="lucide:text-cursor-input",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
-                            href="/components/select",
+                            href="/inputs-overview",
                         ),
                     ],
                 )

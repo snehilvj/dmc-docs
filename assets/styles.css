@@ -219,4 +219,5 @@ input:invalid {
       background-color: var(--my-light-dark-gray-background);
      transition: background-color 0.2s ease;
   }
+  height: "100%"
 }

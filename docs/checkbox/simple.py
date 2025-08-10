@@ -4,7 +4,7 @@ from dash import html, Output, Input, callback
 component = html.Div(
     [
         dmc.Checkbox(
-            id="checkbox-state", label="I agree to sell my privacy", checked=True, mb=10
+            id="checkbox-state", label="I agree to sell my privacy", checked=True, color="green", mb=10
         ),
         dmc.Text(id="checkbox-output"),
     ]

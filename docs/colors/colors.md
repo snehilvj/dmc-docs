@@ -265,4 +265,4 @@ Here is an example using a CSS variable:
 
 ### Default colors: CSS Variables list
 
-For a list of all Mantine CSS variables that are generated from default theme, see the [Mantine docs](https://mantine.dev/styles/css-variables-list/)
+For a list of all Mantine CSS variables that are generated from default theme, see the [CSS Variables](/css-variables/) section.

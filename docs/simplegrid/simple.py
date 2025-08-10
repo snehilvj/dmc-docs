@@ -4,7 +4,7 @@ from dash import html
 from lib.configurator import Configurator
 
 style = {
-    "border": f"1px solid {dmc.DEFAULT_THEME['colors']['indigo'][4]}",
+    "border": f"1px solid var(--mantine-primary-color-filled)",
     "textAlign": "center",
 }
 

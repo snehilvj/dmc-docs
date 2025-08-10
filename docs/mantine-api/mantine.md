@@ -29,7 +29,7 @@ if __name__ == "__main__":
 ```
 
 
-### Color scheme  
+### Light Dark Color scheme  
 
 All Mantine components support light, dark and auto color schemes.
 
@@ -48,10 +48,25 @@ See the Theming section for examples of a [Theme Switch Component](/theme-switch
 Mantine’s  [default theme](/theme-object#default-theme) makes Dash apps look great in both light and dark modes. If you’re new to Dash Mantine Components,
 start with the default theme. You can customize the theme globally by editing the `theme` prop in the `MantineProvider`.
 
-The `theme` object is a dictionary where you can set things like colors, border radius, spacing, fonts, and breakpoints.
+The `theme` object is a dictionary where you can set things like colors, border radius, spacing, fonts, and breakpoints globally.
 Mantine will merge your custom theme with the defaults, so you just need to provide what you want to change.
 
 See the [Theme Object documentation](/theme-object) for all options.
+
+
+```python
+# Your theme  is merged with default theme
+theme = {
+    "fontFamily": "Montserrat, sans-serif",
+    "defaultRadius": "md",    
+}
+
+app.layout = dmc.MantineProvider(
+    # children=[] your layout here
+    theme=theme
+)
+```
+
 
 This example demonstrates how changing the `theme` updates the entire app’s appearance. Here, we change:
 - Primary accent color
@@ -69,23 +84,8 @@ Try it live: [DMC Theme Builder on Pycafe](https://py.cafe/app/dash.mantine.comp
 
 ---
 
-The `theme` object is a  dictionary that stores design tokens, components default props, context styles and other data
-that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
+Most of the theme values are exposed as CSS variables and can be accessed
 both in component props and CSS.
-
-```python
-# Your theme  is merged with default theme
-theme = {
-    "fontFamily": "Montserrat, sans-serif",
-    "defaultRadius": "md",    
-}
-
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-    theme=theme
-)
-```
-
 
 Accessing theme values in a `.css` file in the `/assets` folder:
 
