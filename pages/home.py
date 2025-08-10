@@ -138,7 +138,7 @@ layout = html.Div(
                             icon="akar-icons:calendar",
                             heading="Best DatePickers out there!",
                             description="Easily switch between different years and months while looking great too.",
-                            href="/components/datepicker",
+                            href="/datepickers-overview",
                         ),
                         create_tile(
                             icon="uil:paint-tool",
@@ -160,16 +160,16 @@ layout = html.Div(
                             href="/layout-overview",
                         ),
                         create_tile(
-                            icon="el:gift",
-                            heading="Unique Components",
-                            description="Components such as Segmented Control only available with DMC.",
-                            href="/components/segmentedcontrol",
-                        ),
-                        create_tile(
                             icon="lucide:text-cursor-input",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
                             href="/inputs-overview",
+                        ),
+                        create_tile(
+                            icon="el:gift",
+                            heading="Unique Components",
+                            description=" Start exploring all the components available in DMC today!",
+                            href="/",
                         ),
                     ],
                 )
