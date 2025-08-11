@@ -15,23 +15,13 @@ order: 2  # sets order in navbar section
 
 DMC supports `style` and `className` props for styling the root element, just like other Dash libraries.
 However, many DMC components have nested elements.  For example the `TextInput` includes `label`, `description`,
-`error` props.  To target each element, use the `classNames` or `styles` props. 
+`error` props.
+
+The Styles API is a set of props and techniques that allows you to customize the style of any element inside a Mantine
+component - inline using the  `classNames` or `styles` props, or using the [Theme Object](/theme-object).
 
 
 ### Styles API Selectors
-
-To let you style these internal parts individually, each component exposes a set of style selectors — string identifiers
-like `"label"`, `"input"`, or `"error"` that represent specific internal elements.
-
-You use them like this:
-
-```python
-styles={
-    "label": {"fontWeight": 700},
-    "input": {"backgroundColor": "#f0f0f0"},
-    "error": {"color": "red"},
-}
-```
 
 Each component has its own set of selectors based on its structure. These are documented in the Styles API section of each component’s page.
 
@@ -73,7 +63,7 @@ dmc.Button(
 )
 ```
 
-#### 2) In a global `theme` via `MantineProvider`
+#### 2) In the `theme` prop in  `MantineProvider`
 
 ```python
 theme = {
@@ -115,9 +105,30 @@ app.layout = dmc.MantineProvider(
 }
 ```
 
-#### 4) Avoid dynamic class names
+### classNames Prop
 
-When inspecting elements in the browser, you may see generated class names like `m_77c9d27d`. These are internal to Mantine and not stable between versions. Don’t target these in CSS.
+The `classNames` prop is used to apply custom CSS class names to specific inner elements of a Mantine component. It 
+accepts a dictionary  with element names as keys and classes as values. This approach is preferred for larger-scale styling and
+maintainability.
+
+
+### Styles Prop
+
+The `styles` prop is used to apply inline styles directly to specific inner elements of a Mantine component. It accepts
+an dictionary where keys correspond to the names of the inner elements (as defined in the component's Styles API documentation)
+and values are style objects. Inline styles have higher specificity than classes, meaning they will override styles
+defined by classes unless `!important` is explicitly used in the class definition.
+
+You cannot use pseudo-classes (for example, `:hover`, `:first-of-type`) and media queries inside the `styles` prop.
+
+
+> styles prop usage
+>
+> Some examples and demos in the documentation use the `styles` prop for convenience, but it is not recommended to use the `styles` prop as the primary means of styling components, as the `classNames` prop is more flexible and has better performance.
+
+### Avoid dynamic class names
+
+When inspecting elements in the browser, you may see generated class names like `m_77c9d27d`. These are internal to Mantine and can change between versions. Don’t target these in your CSS.
 
 Instead, use:
 

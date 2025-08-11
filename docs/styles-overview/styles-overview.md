@@ -91,6 +91,9 @@ multiple elements, for example the `TextInput` includes `label`, `description`, 
 
 Use the `classNames` or `styles` props to target the nested elements.  See more information in the [StylesAPI](/styles-api) section.
 
+- `styles` prop: Used to apply inline styles directly to specific inner elements of a Mantine component.
+- `classNames`prop: Used to apply custom CSS class names to specific inner elements of a Mantine component
+
 ### theme prop in MantineProvider
 
 DMC includes a great default theme that supports light and dark mode. Use the `theme` prop to change the global styles.
