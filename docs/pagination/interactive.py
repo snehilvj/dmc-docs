@@ -4,7 +4,7 @@ from lib.configurator import Configurator
 
 target = dmc.Pagination(
     total=10,
-    size="md",
+    size="sm",
     radius="sm",
     withControls=True,
     withEdges=False,
@@ -14,7 +14,7 @@ target = dmc.Pagination(
 configurator = Configurator(target)
 
 configurator.add_colorpicker("color", "indigo")
-configurator.add_slider("size", "md")
+configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
 configurator.add_switch("withControls", True)
 configurator.add_switch("withEdges", False)

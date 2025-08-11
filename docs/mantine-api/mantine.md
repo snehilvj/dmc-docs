@@ -10,12 +10,8 @@ dmc: false
 
 ### MantineProvider
 
-Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
-It is responsible for:  
-
-1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
-2. Manages light or dark mode.
-3. Adding CSS variables to the document
+Wrap your `app.layout` with a `MantineProvider` to manage your app’s overall theme, including colors, spacing, fonts,
+and light/dark mode. It also exposes Mantine CSS variables based on your theme settings.
 
 
 ```python
@@ -33,16 +29,33 @@ if __name__ == "__main__":
 ```
 
 
-### Theme object
-The `theme` object is a  dictionary that stores design tokens, components default props, context styles and other data
-that can be accessed by any Mantine component. Most of the theme values are exposed as CSS variables and can be accessed
-both in component props and CSS.
+### Light Dark Color scheme  
 
-To customize the theme, pass a theme dictionary to the `theme` prop of the `MantineProvider` component. The provided
-theme will be deeply merged with Mantine's [default theme](/theme-object#default-theme).
+All Mantine components support light, dark and auto color schemes.
+
+The default color scheme is light.  You can set the default color scheme on `MantineProvider`:
+
+.. exec::docs.mantine-api.light_dark
+    :code: false
+
+
+See the Theming section for examples of a [Theme Switch Component](/theme-switch)
+
+
+
+### Theme object
+
+Mantine’s  [default theme](/theme-object#default-theme) makes Dash apps look great in both light and dark modes. If you’re new to Dash Mantine Components,
+start with the default theme. You can customize the theme globally by editing the `theme` prop in the `MantineProvider`.
+
+The `theme` object is a dictionary where you can set things like colors, border radius, spacing, fonts, and breakpoints globally.
+Mantine will merge your custom theme with the defaults, so you just need to provide what you want to change.
+
+See the [Theme Object documentation](/theme-object) for all options.
+
 
 ```python
-# Your theme configuration is merged with default theme
+# Your theme  is merged with default theme
 theme = {
     "fontFamily": "Montserrat, sans-serif",
     "defaultRadius": "md",    
@@ -55,7 +68,26 @@ app.layout = dmc.MantineProvider(
 ```
 
 
-Accessing theme values in a .css file in the /assets folder:
+This example demonstrates how changing the `theme` updates the entire app’s appearance. Here, we change:
+- Primary accent color
+- Border radius
+- Card shadow style
+- Color scheme (light/dark)
+
+Try it live: [DMC Theme Builder on Pycafe](https://py.cafe/app/dash.mantine.components/dash-mantine-theme-builder)
+
+---
+
+.. image::/assets/dmc-theme-builder.gif
+    :w: 400px
+    :h: 400px
+
+---
+
+Most of the theme values are exposed as CSS variables and can be accessed
+both in component props and CSS.
+
+Accessing theme values in a `.css` file in the `/assets` folder:
 
 ```css
 .demo {
@@ -74,49 +106,89 @@ dmc.Card(style={"backgroundColor":"var(--mantine-color-red-1)"})
 
 
 
-### Styling props
+### Component specific props
+Most of the components provide props that allow you to customize their styles. For example, `Button` component has
+`color`, `variant`, `size` and `radius` props that control its appearance:
 
-Dash components typically provide `style` and `className` props for styling, and Dash Mantine Components (DMC) also 
-supports these props in the same way as other libraries. For example:
 
-#### style prop
-You can use the `style` prop to define inline styles:
+.. exec::docs.button.interactive
+    :code: false
+
+
+### Style props
+
+[Style props](/style-props) work similar to component specific props, but with several differences:
+
+- Style props are not component specific, they can be used with any component.
+- Style props always control a single CSS property. For example, `c` prop controls CSS `color` property, while `color` prop controls a set of properties: `color`, `background-color` and `border-color`.
+- Style props are set in style attribute. It is not possible to override them with CSS without using `!important`.
+
+[Style props](/style-props) are useful when you need to change a single CSS property without creating a separate file for styles. Some of the most common use cases are:
+
+
+- Changing text color and font-size
+
+```python
+
+dmc.Card([
+    dmc.Text("Card title", c="blue.8", fz="lg"),
+    dmc.Text("Card description", c="dimmed", fz="sm")
+])
+```
+
+- Applying margins to inputs inside a form:
+
+```python
+dmc.Paper([
+    dmc.TextInput(label="First name"),
+    dmc.TextInput(label="Last name", mt="md"),
+    dmc.TextInput(label="Email", mt="md")    
+])
+```
+
+- Adding padding to various elements:
+
+```python
+dmc.Paper("My custom card", p="xl")
+```
+
+Note that style props were never intended to be used as a primary way of styling components. In most cases, it is better
+to limit the number of style props used per component to 3-4. If you find yourself using more than 4 style props, 
+consider creating a separate CSS file with styles – it will be easier to maintain and will be more performant.
+
+
+### style prop
+
+You can use the `style` prop to define inline styles, just like in other dash components:
 ```python
 dmc.Card(style={"backgroundColor": "blue", "color": "white"})
 ```
 
-#### className prop
-You can define custom CSS classes in a `.css` file located in the `/assets` folder. These can then be referenced 
-using the `className` prop:
+### className prop
+You can define CSS classes in a `.css` file in the `/assets` folder. These can then be referenced using the `className` prop, just like in other dash components:
 
-```python
-dmc.Card(className="header-style")
+```python 
+dmc.Card(className="card-style")
 ```
 
+.css file:
 ```css
-.header-style {
+.card-style {
     background-color: blue;
     color: white;
 }
 ```
 
-Dash Mantine Components go beyond traditional Dash styling by offering additional tools for customization using 
-[style props](/style-props) and the [Styles API](/styles-api).
+### Styles API
 
-#### Style Props
-DMC includes [Style Props](/style-props), which let you set individual CSS variables directly via component props. For example, you
-can set the background color with the `bg` prop and  text color with the `c` prop:
-```python
-dmc.Card(bg="blue", c="white")
-```
+Note that the `style` and the `className` props will apply style to the root of the component.  Many DMC components contain
+multiple elements, for example the `TextInput` includes `label`, `description`, `error` props.  
 
+Use the `classNames` or `styles` props to target the nested elements.  
+- `styles` prop: Used to apply inline styles directly to specific inner elements of a Mantine component.
+- `classNames`prop: Used to apply custom CSS class names to specific inner elements of a Mantine component
 
-#### styles and classNames props
-DMC also supports the [Styles API](/styles-api), enabling deep customization of inner elements through `styles` and `classNames`
-props. Note: These props are different from `style` and `className`:
-- `styles`: Inline styles for specific elements inside a component.
-- `classNames`: Custom class names for specific elements inside a component.
-
+See more information in the [StylesAPI](/styles-api) section.
 
 
 
@@ -141,7 +213,7 @@ To access colors in styles use CSS variables:
 ```
 
 ### CSS variables
-Theme values are converted to CSS variables and are available to use in your styles. All Mantine CSS variables are
+Theme values are converted to [CSS variables](/css-variables) and are available to use in your styles. All Mantine CSS variables are
 prefixed with `--mantine-`, for example:
 
 - theme["fontFamily"] → --mantine-font-family
@@ -150,76 +222,4 @@ prefixed with `--mantine-`, for example:
 
 ### CSS Variables list
 
-For a list of all Mantine CSS variables that are generated from default theme, see the [Mantine docs](https://mantine.dev/styles/css-variables-list/)
-
-### Styles API
-
-[Styles API](/styles-api) is a set of props and techniques that allows you to customize styles of any element inside
-Mantine component inline or with theme object. All Mantine components that have styles support Styles API.
-
-Every Mantine component has a set of elements names that can be used to apply styles to inner elements inside the
-component. Example of Checkbox component selectors:
-
-
-| Selector       | Static selector              | Description                                             |
-|----------------|--------------------------------|---------------------------------------------------------|
-| root           | .mantine-Checkbox-root         | Root element                                            |
-| input          | .mantine-Checkbox-input        | Input element (input[type="checkbox"])                  |
-| icon           | .mantine-Checkbox-icon         | Checkbox icon, used to display checkmark and indeterminate state icon |
-| inner          | .mantine-Checkbox-inner        | Wrapper for icon and input                              |
-| body           | .mantine-Checkbox-body         | Input body, contains all other elements                 |
-| labelWrapper   | .mantine-Checkbox-labelWrapper | Contains label, description, and error                  |
-| label          | .mantine-Checkbox-label        | Label element                                           |
-| description    | .mantine-Checkbox-description  | Description displayed below the label                   |
-| error          | .mantine-Checkbox-error        | Error message displayed below the label                 |
-
-These selectors can be used to apply styles to inner elements with `classNames` or `styles` props:
-
-Here's an example of styling a `Checkbox`
-
-.. exec::docs.mantine-api.styles-api
-   
-The following is added to a `.css` file in the `/assets` folder
-```css
-
-.dmc-api-demo-root {
-  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
-  border-radius: var(--mantine-radius-md);
-  font-weight: 500;
-  cursor: pointer;
-
-  &[data-checked] {
-    background-color: var(--mantine-color-blue-filled);
-    border-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
-  }
-}
-
-``` 
-
-
-### Color scheme
-All Mantine components support light, dark and auto color schemes. By default, the color scheme is light, it can be
-changed by the user and will be persisted in localStorage.
-
-You can configure the default color scheme on MantineProvider:
-
-```python
-
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-    defaultColorScheme="dark"
-)
-```
-or use:
-
-```python
-app.layout = dmc.MantineProvider(
-    # children=[] your layout here
-    forceColorScheme="dark",
-)
-```
-
-See the Theming section for examples of a [Theme Switch Component](/theme-switch)
-
+For a list of all Mantine CSS variables that are generated from default theme, see the [CSS variables](/css-variables) section.

@@ -10,12 +10,6 @@ category: Date Pickers
 
 
 
-### CSS Extensions
-
-As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
-
 ### DateInput props
 
 DateInput supports most of the [DatePicker](/components/datepicker) props, read through DatePicker
@@ -53,6 +47,14 @@ Set `minDate` and `maxDate` props to define min and max dates. If date that is a
 
 .. exec::docs.dateinput.interactive
    :code: false
+
+
+### CSS Extensions
+
+As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
+
+
 
 ### Styles API
 

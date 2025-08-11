@@ -3,14 +3,14 @@ name: Responsive Styles
 description: Responsive styles let you adjust the appearance of individual components, including font size, visibility, spacing, and colors, based on screen size.
 endpoint: /responsive-styles
 package: dash_mantine_components
-category: Theming
-order: 7  # sets order in navbar section
+category: Styling
+order: 5 # sets order in navbar section
 ---
 
 .. toc::
 
 Note:  If you are looking for how to structure app’s layout responsively, use components like
-[Grid](/components/grid) and [Group](/components/group), [Stack](/components/stack) and others. Check out the [GitHub Discussions](https://github.com/snehilvj/dash-mantine-components/discussions/468) 
+[Grid](/components/grid) and [Group](/components/group), [Stack](/components/stack) and others. Check out the [Layout Overview](/layout-overview) section
 for tips on selecting the right layout components.  
 
 ### Media Queries

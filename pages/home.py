@@ -15,7 +15,7 @@ dash.register_page(
     title=PAGE_TITLE_PREFIX + "Home",
     description="Official documentation and collection of ready-made Plotly Dash Components created using Dash "
     "Mantine Components. Dash Mantine Components is an extensive UI components library for Plotly Dash "
-    "with more than 90 components and supports dark theme natively.",
+    "with more than 100 components and supports dark theme natively.",
 )
 
 
@@ -46,11 +46,12 @@ def create_contributors_avatars():
 
 
 def create_tile(icon, heading, description, href):
-    return dmc.Card(
+    return dmc.Anchor(dmc.Card(
         radius="md",
         p="xl",
         withBorder=True,
         m=5,
+        className="homepage-tile",
         children=[
             DashIconify(
                 icon=icon,
@@ -60,7 +61,8 @@ def create_tile(icon, heading, description, href):
             dmc.Text(heading, size="lg", mt="md"),
             dmc.Text(description, size="sm", c="dimmed", mt="sm"),
         ],
-    )
+    ), href=href, underline = "never", style={"display":"flex", "height": "100%"})
+
 
 
 layout = html.Div(
@@ -69,19 +71,21 @@ layout = html.Div(
             size="lg",
             mt=30,
             children=[
-                create_title(
-                    "Give your Dash apps an upgrade with Dash Mantine Components",
+                dmc.Title(
+                    "Dash Mantine Components",
                     id="features",
+                    order=1,
+                    ta="center",
+                    fz=40
+
                 ),
-                dmc.Highlight(
-                    "With more than 90 components from Mantine React Library",
+                dmc.Text(
+                    "Build feature-rich, accessible Dash apps faster than ever! Dash Mantine Components includes over 100 customizable components based on the React Mantine library, with consistent styling, theming, and full support for light and dark mode.",
                     ta="center",
                     mt=10,
                     mb=20,
-                    mx=0,
-                    highlight=["more than 90 components"],
+                    mx=20,
                 ),
-
                 dmc.Box([
                     dmc.Text("Version Info:", ta="center"),
                     #version-update
@@ -134,13 +138,13 @@ layout = html.Div(
                             icon="akar-icons:calendar",
                             heading="Best DatePickers out there!",
                             description="Easily switch between different years and months while looking great too.",
-                            href="/components/datepicker",
+                            href="/datepickers-overview",
                         ),
                         create_tile(
                             icon="uil:paint-tool",
                             heading="Dark Theme Support",
                             description="Use dark theme across all components with no additional steps.",
-                            href="/components/mantineprovider",
+                            href="/mantine-api#color-scheme",
                         ),
                         create_tile(
                             icon="ph:notification-bold",
@@ -151,21 +155,21 @@ layout = html.Div(
                         ),
                         create_tile(
                             icon="radix-icons:dashboard",
-                            heading="Responsive Grid System",
-                            description="Design your layouts faster with DMC's Grid and SimpleGrid components.",
-                            href="/components/grid",
-                        ),
-                        create_tile(
-                            icon="el:gift",
-                            heading="Unique Components",
-                            description="Components such as Segmented Control only available with DMC.",
-                            href="/components/segmentedcontrol",
+                            heading="Responsive Layouts",
+                            description="Design your layouts faster with components like Grid, SimpleGrid, Group, Stack and AppShell.",
+                            href="/layout-overview",
                         ),
                         create_tile(
                             icon="lucide:text-cursor-input",
                             heading="Better Inputs",
                             description="Add label, description, errors, etc. easily to all inputs.",
-                            href="/components/select",
+                            href="/inputs-overview",
+                        ),
+                        create_tile(
+                            icon="el:gift",
+                            heading="Unique Components",
+                            description=" Start exploring all the components available in DMC today!",
+                            href="/",
                         ),
                     ],
                 )
@@ -181,21 +185,7 @@ layout = html.Div(
                 target="_blank",
             )
         ),
-        # dmc.Group(
-        #     [
-        #         dcc.Link(
-        #             dmc.Image(
-        #                 src="https://avatars.githubusercontent.com/u/14855837?s=200&v=4",
-        #                 alt="ascend.io",
-        #                 h=85,
-        #                 fit="contain",
-        #             ),
-        #             href="http://www.ascend.io",
-        #             target="_blank",
-        #         )
-        #     ],
-        #     justify="center",
-        # ),
+
         dmc.Space(h=40),
         create_title("Contributors", id="contributors"),
         create_heading(
@@ -209,7 +199,7 @@ layout = html.Div(
         dmc.Space(h=10),
         (create_contributors_avatars() if "CONTRIB_TOKEN" in environ else None),
         dmc.Space(h=40),
-        dmc.Center(
+        dmc.Box(
             [
                 dmc.Group(
                     gap="xs",
@@ -219,7 +209,15 @@ layout = html.Div(
                         dmc.Text("by Snehil Vijay"),
                     ],
                     justify="center",
-                )
+                ),
+                dmc.Group([
+                dmc.Text("Lead maintainer: ", span=True),
+                dmc.Anchor(
+                    "AnnMarieW ",
+                    underline=False,
+                    href="https://github.com/AnnMarieW",
+                    target="_blank",
+                )], mt="sm", justify="center")
             ],
             h=100,
         ),

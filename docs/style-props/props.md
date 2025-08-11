@@ -4,15 +4,20 @@ endpoint: /style-props
 head: With style props you can add responsive styles to any Mantine component that supports these props.
 description: With style props you can add responsive styles to any Mantine component that supports these props.
 package: dash_mantine_components
-category: Theming
-order: 5  # sets order in navbar section
+category: Styling
+order: 3  # sets order in navbar section
 ---
 
 .. toc::
 
+
 ### Supported props
 
 Style props add styles to the root element, if you want to style nested elements use [Styles API](/styles-api) instead.
+
+```python
+dmc.Box(mx="auto", maw=400, c="blue.6", bg="#fff")
+```
 
 .. exec::docs.style-props.props
     :code: false

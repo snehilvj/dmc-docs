@@ -8,7 +8,7 @@ target = dmc.Flex(
         dmc.Button("Button 2"),
         dmc.Button("Button 3"),
     ],
-    mih=50,
+    mih=80,
     bg="rgba(0, 0, 0, .3)",
     gap="md",
     justify="flex-start",

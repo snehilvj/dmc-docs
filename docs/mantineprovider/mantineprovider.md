@@ -10,13 +10,13 @@ order: 1  # sets order in navbar section
 .. toc::
 
 
-Your `app.layout` must be wrapped with a single `MantineProvider`. Only one `MantineProvider` should be used in an app. 
-It is responsible for:  
+Wrap your `app.layout` with a single `MantineProvider` to enable theming and styling features across your app. There should only be one `MantineProvider` in your app.
 
-1. Controls the overall theme of the app (for example, colors, spacing, fonts).  
-2. Manages light or dark mode.
-3. Adding CSS variables to the document
+The `MantineProvider`:
 
+1. Sets the global theme, including colors, spacing, and fonts.
+2. Handles light and dark mode toggling.
+3. Provides Mantine CSS variables according to the selected theme.
 
 ### Usage
 
@@ -40,7 +40,7 @@ See the [Theme Object](/theme-object) section to learn how to customize the defa
 
 See the [Colors](/colors) section to learn how to customize the theme colors.
 
-### Color Scheme
+### Light and Dark Color Schemes
 Mantine supports both light and dark color schemes.  The default color scheme is "light".
 When the `MantineProvider` is added to your app, it automatically sets the `data-mantine-color-scheme` attribute at the 
 top level of the app. This attribute controls whether the app uses light or dark mode. All components in the app 

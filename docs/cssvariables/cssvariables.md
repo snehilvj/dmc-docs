@@ -3,8 +3,8 @@ name: CSS Variables
 description: How to use CSS variables with Dash Mantine Components.
 endpoint: /css-variables
 package: dash_mantine_components
-category: Theming
-order: 3  # sets order in navbar section
+category: Styling
+order: 4  # sets order in navbar section
 ---
 
 .. toc::

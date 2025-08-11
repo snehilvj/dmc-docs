@@ -6,6 +6,11 @@ component = dmc.Tabs(
         dmc.TabsList(
             [
                 dmc.TabsTab(
+                    "Gallery",
+                    leftSection=DashIconify(icon="tabler:photo"),
+                    value="gallery",
+                ),
+                dmc.TabsTab(
                     "Messages",
                     leftSection=DashIconify(icon="tabler:message"),
                     value="messages",

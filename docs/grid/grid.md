@@ -82,13 +82,12 @@ Since grid is a flexbox container, you can control justify-content and align-ite
 
 ```python
 import dash_mantine_components as dmc
-from dash import html
 
 dmc.Grid(
     children=[
-        dmc.GridCol(html.Div("1"), span=4),
-        dmc.GridCol(html.Div("2", style={"minHeight":80}), span=4),
-        dmc.GridCol(html.Div("3", style={"minHeight":120}), span=4),
+        dmc.GridCol(dmc.Box("1"), span=4),
+        dmc.GridCol(dmc.Box("2", style={"minHeight":80}), span=4),
+        dmc.GridCol(dmc.Box("3", style={"minHeight":120}), span=4),
     ],
     justify="center",
     align="stretch",

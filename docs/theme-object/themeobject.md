@@ -9,6 +9,31 @@ order: 2  # sets order in navbar section
 
 .. toc::
 
+### Theme overview
+
+Mantine’s  [default theme](/theme-object#default-theme) makes Dash apps look great in both light and dark modes. If you’re new to Dash Mantine Components,
+start with the default theme. You can customize the theme globally by editing the `theme` prop in the `MantineProvider`.
+
+The `theme` object is a dictionary where you can set things like colors, border radius, spacing, fonts, and breakpoints.
+Mantine will merge your custom theme with the defaults, so you just need to provide what you want to change.
+
+This example demonstrates how changing the `theme` updates the entire app’s appearance. Here, we change:
+- Primary accent color
+- Border radius
+- Card shadow style
+- Color scheme (light/dark)
+
+Try it live: [DMC Theme Builder on Pycafe](https://py.cafe/app/dash.mantine.components/dash-mantine-theme-builder)
+
+---
+
+.. image::/assets/dmc-theme-builder.gif
+    :w: 400px
+    :h: 400px
+
+---
+
+
 ### Usage
 
 

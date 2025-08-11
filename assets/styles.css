@@ -204,3 +204,20 @@ input:invalid {
     }
   }
 }
+
+:root {
+  --my-light-dark-gray-background: var(--mantine-color-gray-1);
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --my-light-dark-gray-background: var(--mantine-color-dark-5);
+}
+
+
+.homepage-tile {
+  &:hover {
+      background-color: var(--my-light-dark-gray-background);
+     transition: background-color 0.2s ease;
+  }
+  height: "100%"
+}

@@ -5,7 +5,7 @@ import dash_mantine_components as dmc
 
 initial_values = [
     {"label": "Receive email notifications", "checked": False},
-    {"label": "Receive sms notifications", "checked": False},
+    {"label": "Receive sms notifications", "checked": True},
     {"label": "Receive push notifications", "checked": False},
 ]
 

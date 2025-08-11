@@ -21,6 +21,7 @@ category_data = {
     "Overlay": {"icon": "material-symbols:full-coverage-rounded"},
     "Layout": {"icon": "material-symbols:responsive-layout-rounded"},
     "Theming": {"icon": "material-symbols:invert-colors-rounded"},
+    "Styling": {"icon": "material-symbols:palette"},
     "Inputs": {"icon": "material-symbols:trackpad-input-rounded"},
     "Data Display": {"icon": "material-symbols:display-settings-rounded"},
     "Navigation": {"icon": "material-symbols:navigation-rounded"},
@@ -60,7 +61,7 @@ def create_content(data, idtype):
             ),
             create_main_link(
                 icon="material-symbols:style",
-                label="Mantine API Overview",
+                label="Mantine Overview",
                 href="/mantine-api",
                 id={"type": idtype, "index": "/mantine-api"},
             ),
@@ -96,6 +97,7 @@ def create_content(data, idtype):
     # set the order of the categories in the sidebar
     category_order = [
         "Theming",
+        "Styling",
         "Layout",
         "Inputs",
         "Combobox",
