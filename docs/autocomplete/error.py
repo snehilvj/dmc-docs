@@ -5,7 +5,6 @@ component = dmc.Autocomplete(
     data=["USDINR", "EURUSD", "USDTWD", "USDJPY"],
     id="autocomplete-error",
     value="USDJPY",
-    w=200,
 )
 
 

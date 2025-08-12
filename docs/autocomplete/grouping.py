@@ -11,5 +11,4 @@ component = dmc.Autocomplete(
             "items": ["TensorFlow", "PyTorch"],
         },
     ],
-    w=400,
 )

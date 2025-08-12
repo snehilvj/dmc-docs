@@ -8,7 +8,6 @@ component = html.Div(
             placeholder="Pick value or enter anything",
             id="framework-autocomplete",
             data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
-            w=200,
             mb=10,
         ),
         dmc.Text(id="autocomplete-value"),

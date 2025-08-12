@@ -1,7 +1,6 @@
 import dash_mantine_components as dmc
 
 component = dmc.Popover(
-    width=300,
     position="bottom",
     withArrow=True,
     shadow="md",
