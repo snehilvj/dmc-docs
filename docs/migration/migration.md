@@ -9,13 +9,6 @@ order: 500
 .. toc::
 
 
-### Release Announcements
-
-Check out the [release announcements](https://github.com/snehilvj/dash-mantine-components/discussions/categories/releases) to see what’s new in each version.
-
-Explore the [v2.0.0 release announcement](/release-2-0-0) for a full overview with live examples of new features!
-
-
 ### Version Compatibility  
 
 Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions.
