@@ -70,7 +70,7 @@ The `StarterKit` extension includes essential text-editing features such as:
 - Headings & Lists: `Heading`, `OrderedList`, `BulletList`, `ListItem`  
 - Structural Elements: `Paragraph`, `Blockquote`, `CodeBlock`, `HardBreak`, `HorizontalRule`, `Document`  
 - Cursor & History Features: `Dropcursor`, `Gapcursor`, `History`  
-
+- Source Code editing: `SourceCode`
 
 #### Customizing Extensions
 
@@ -140,6 +140,7 @@ Here are the control icons available for use in the `toolbar`:
 - Hr
 - Undo
 - Redo
+- SourceCode
 
 **Controls that require the Link extension**
 - Link
@@ -334,6 +335,11 @@ For details on the schema and ProseMirror format, see the [Tiptap documentation]
 Try editing the content in this example to see the JSON and HTML format:
 .. exec::docs.richtexteditor.content
 
+### Source code mode
+
+You can use the `SourceCode` control to see and edit source code of editor content:
+
+.. exec::docs.richtexteditor.sourcecode
 
 ### Selected text
 
