@@ -1,9 +1,9 @@
 import dash_mantine_components as dmc
 
 component = dmc.Autocomplete(
-    label="Option cannot be deselected",
+    label="Your favorite library",
+    placeholder="Pick value or enter anything",
     data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
-    placeholder="Pick value",
     autoSelectOnBlur=True,
     clearable=True,
 )
