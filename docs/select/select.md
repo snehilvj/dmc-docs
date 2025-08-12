@@ -64,6 +64,15 @@ data = [
 ]
 ```
 
+### autoSelectOnBlur
+
+Set `autoSelectOnBlur=True` to automatically select the highlighted option when the input loses focus. To see this
+feature in action: select an option with up/down arrows, then click outside the input:
+
+
+.. exec::docs.select.autoselectonblur
+
+
 ### Searchable
 
 Set `searchable` prop to allow filtering options by user input.
