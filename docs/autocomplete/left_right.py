@@ -9,7 +9,6 @@ component = dmc.Paper(
             placeholder="Pick value or enter anythings",
             leftSectionPointerEvents="none",
             leftSection=DashIconify(icon="bi-book"),
-            w=400,
         ),
         dmc.Autocomplete(
             label="Your favorite library",
@@ -17,7 +16,6 @@ component = dmc.Paper(
             placeholder="Pick value or enter anything",
             rightSectionPointerEvents="none",
             rightSection=DashIconify(icon="bi-book"),
-            w=400,
             mt="md",
         ),
     ]

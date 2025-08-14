@@ -67,6 +67,33 @@ Set `disabled` prop to disable all controls:
 
 .. styles_api_text::
 
+#### TimeGrid selectors
+
+| Selector   | Static selector                | Description               |
+| ---------- | ------------------------------ | ------------------------- |
+| root       | `.mantine-TimeGrid-root`       | Root element              |
+| control    | `.mantine-TimeGrid-control`    | Time grid control         |
+| simpleGrid | `.mantine-TimeGrid-simpleGrid` | SimpleGrid component root |
+
+
+
+#### TimeGrid CSS variables
+
+| Selector | Variable             | Description                                       |
+| -------- | -------------------- | ------------------------------------------------- |
+| root     | `--time-grid-fz`     | Controls `font-size` property of all controls     |
+| root     | `--time-grid-radius` | Controls `border-radius` property of all controls |
+
+
+
+#### TimeGrid data attributes
+
+| Selector | Attribute       | Condition                                                                                  |
+| -------- | --------------- | ------------------------------------------------------------------------------------------ |
+| control  | `data-active`   | Current component value is the same as control value                                       |
+| control  | `data-disabled` | Component is disabled by one of the props: `minTime`, `maxTime`, `disableTime`, `disabled` |
+
+
 ### Keyword Arguments
 
 #### TimeGrid

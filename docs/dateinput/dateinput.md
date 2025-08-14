@@ -61,37 +61,63 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 
 .. styles_api_text::
 
-| Name                      | Static selector                              | Description                                                          |
-|:--------------------------|:---------------------------------------------|:---------------------------------------------------------------------|
-| wrapper                   | .mantine-DateInput-wrapper                   | Root element of the Input                                            |
-| input                     | .mantine-DateInput-input                     | Input element                                                        |
-| section                   | .mantine-DateInput-section                   | Left and right sections                                              |
-| root                      | .mantine-DateInput-root                      | Root element                                                         |
-| label                     | .mantine-DateInput-label                     | Label element                                                        |
-| required                  | .mantine-DateInput-required                  | Required asterisk element, rendered inside label                     |
-| description               | .mantine-DateInput-description               | Description element                                                  |
-| error                     | .mantine-DateInput-error                     | Error element                                                        |
-| calendarHeader            | .mantine-DateInput-calendarHeader            | Calendar header root element                                         |
-| calendarHeaderControl     | .mantine-DateInput-calendarHeaderControl     | Previous/next calendar header controls                               |
-| calendarHeaderControlIcon | .mantine-DateInput-calendarHeaderControlIcon | Icon of previous/next calendar header controls                       |
-| calendarHeaderLevel       | .mantine-DateInput-calendarHeaderLevel       | Level control (changes levels when clicked, month -> year -> decade) |
-| levelsGroup               | .mantine-DateInput-levelsGroup               | Group of decades levels                                              |
-| yearsList                 | .mantine-DateInput-yearsList                 | Years list table element                                             |
-| yearsListRow              | .mantine-DateInput-yearsListRow              | Years list row element                                               |
-| yearsListCell             | .mantine-DateInput-yearsListCell             | Years list cell element                                              |
-| yearsListControl          | .mantine-DateInput-yearsListControl          | Button used to pick months and years                                 |
-| monthsList                | .mantine-DateInput-monthsList                | Years list table element                                             |
-| monthsListRow             | .mantine-DateInput-monthsListRow             | Years list row element                                               |
-| monthsListCell            | .mantine-DateInput-monthsListCell            | Years list cell element                                              |
-| monthsListControl         | .mantine-DateInput-monthsListControl         | Button used to pick months and years                                 |
-| monthThead                | .mantine-DateInput-monthThead                | thead element of month table                                         |
-| monthRow                  | .mantine-DateInput-monthRow                  | tr element of month table                                            |
-| monthTbody                | .mantine-DateInput-monthTbody                | tbody element of month table                                         |
-| monthCell                 | .mantine-DateInput-monthCell                 | td element of month table                                            |
-| month                     | .mantine-DateInput-month                     | Month table element                                                  |
-| weekdaysRow               | .mantine-DateInput-weekdaysRow               | Weekdays tr element                                                  |
-| weekday                   | .mantine-DateInput-weekday                   | Weekday th element                                                   |
-| day                       | .mantine-DateInput-day                       | Month day control                                                    |
+#### DateInput selectors
+
+| Selector                  | Static selector                                | Description                                                        |
+| ------------------------- | ---------------------------------------------- | ------------------------------------------------------------------ |
+| wrapper                   | `.mantine-DateInput-wrapper`                   | Root element of the Input                                          |
+| input                     | `.mantine-DateInput-input`                     | Input element                                                      |
+| section                   | `.mantine-DateInput-section`                   | Left and right sections                                            |
+| root                      | `.mantine-DateInput-root`                      | Root element                                                       |
+| label                     | `.mantine-DateInput-label`                     | Label element                                                      |
+| required                  | `.mantine-DateInput-required`                  | Required asterisk element, rendered inside label                   |
+| description               | `.mantine-DateInput-description`               | Description element                                                |
+| error                     | `.mantine-DateInput-error`                     | Error element                                                      |
+| calendarHeader            | `.mantine-DateInput-calendarHeader`            | Calendar header root element                                       |
+| calendarHeaderControl     | `.mantine-DateInput-calendarHeaderControl`     | Previous/next calendar header controls                             |
+| calendarHeaderControlIcon | `.mantine-DateInput-calendarHeaderControlIcon` | Icon of previous/next calendar header controls                     |
+| calendarHeaderLevel       | `.mantine-DateInput-calendarHeaderLevel`       | Level control (changes levels when clicked, month → year → decade) |
+| levelsGroup               | `.mantine-DateInput-levelsGroup`               | Group of months levels                                             |
+| yearsList                 | `.mantine-DateInput-yearsList`                 | Years list table element                                           |
+| yearsListRow              | `.mantine-DateInput-yearsListRow`              | Years list row element                                             |
+| yearsListCell             | `.mantine-DateInput-yearsListCell`             | Years list cell element                                            |
+| yearsListControl          | `.mantine-DateInput-yearsListControl`          | Button used to pick months and years                               |
+| monthsList                | `.mantine-DateInput-monthsList`                | Months list table element                                          |
+| monthsListRow             | `.mantine-DateInput-monthsListRow`             | Months list row element                                            |
+| monthsListCell            | `.mantine-DateInput-monthsListCell`            | Months list cell element                                           |
+| monthsListControl         | `.mantine-DateInput-monthsListControl`         | Button used to pick months and years                               |
+| monthThead                | `.mantine-DateInput-monthThead`                | `thead` element of month table                                     |
+| monthRow                  | `.mantine-DateInput-monthRow`                  | `tr` element of month table                                        |
+| monthTbody                | `.mantine-DateInput-monthTbody`                | `tbody` element of month table                                     |
+| monthCell                 | `.mantine-DateInput-monthCell`                 | `td` element of month table                                        |
+| month                     | `.mantine-DateInput-month`                     | Month table element                                                |
+| weekdaysRow               | `.mantine-DateInput-weekdaysRow`               | Weekdays `tr` element                                              |
+| weekday                   | `.mantine-DateInput-weekday`                   | Weekday `th` element                                               |
+| day                       | `.mantine-DateInput-day`                       | Month day control                                                  |
+| weekNumber                | `.mantine-DateInput-weekNumber`                | Week number `td` element                                           |
+| datePickerRoot            | `.mantine-DateInput-datePickerRoot`            | Date picker root element, contains calendar and presets            |
+| presetsList               | `.mantine-DateInput-presetsList`               | Presets wrapper element                                            |
+| presetButton              | `.mantine-DateInput-presetButton`              | Preset button                                                      |
+
+
+
+#### DateInput data attributes
+
+| Selector              | Attribute             | Condition                                                             | Value                                                  |
+| --------------------- | --------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
+| calendarHeaderControl | `data-direction`      | –                                                                     | `"previous"` or `"next"` depending on the control type |
+| calendarHeaderControl | `data-disabled`       | Control is disabled for any reason                                    | –                                                      |
+| monthCell             | `data-with-spacing`   | `withCellSpacing` prop is set                                         | –                                                      |
+| day                   | `data-today`          | Date is the same as `new Date()`                                      | –                                                      |
+| day                   | `data-hidden`         | Day is outside of current month and `hideOutsideDates` is set         | –                                                      |
+| day                   | `data-disabled`       | Day disabled by one of the props (`excludeDate`, `getDayProps`, etc.) | –                                                      |
+| day                   | `data-weekend`        | Day is weekend                                                        | –                                                      |
+| day                   | `data-outside`        | Day is outside of the current month                                   | –                                                      |
+| day                   | `data-selected`       | Day is selected                                                       | –                                                      |
+| day                   | `data-in-range`       | Day is in range selection                                             | –                                                      |
+| day                   | `data-first-in-range` | Day is first in range selection                                       | –                                                      |
+| day                   | `data-last-in-range`  | Day is last in range selection                                        | –                                                      |
+
 
 ### Keyword Arguments
 

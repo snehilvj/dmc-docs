@@ -42,6 +42,15 @@ without needing to press the arrow down key first.
 .. exec::docs.autocomplete.select_first_option
 
 
+### autoSelectOnBlur
+
+Set `autoSelectOnBlur=True` to automatically select the highlighted option when the input loses focus. To see this
+feature in action: select an option with up/down arrows, then click outside the input:
+
+
+.. exec::docs.autocomplete.autoselectonblur
+
+
 ### Data Format
 
 `Autoselect` `data` prop accepts data in one of the following formats:

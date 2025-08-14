@@ -64,11 +64,31 @@ data = [
 ]
 ```
 
+### autoSelectOnBlur
+
+Set `autoSelectOnBlur=True` to automatically select the highlighted option when the input loses focus. To see this
+feature in action: select an option with up/down arrows, then click outside the input:
+
+
+.. exec::docs.select.autoselectonblur
+
+
+
 ### Searchable
 
-Set `searchable` prop to allow filtering options by user input.
+Set `searchable=True` to allow filtering options by user input.
 
 .. exec::docs.select.searchable
+
+
+### clearSearchOnFocus
+
+When `clearSearchOnFocus=True` and the `Select` is in searchable mode, the search input will be cleared each time the
+field gains focus.  This is useful when you want the user to start with an empty search box each time, without having 
+to manually delete the existing text.
+
+
+.. exec::docs.select.clearsearchonfocus
 
 
 ### Nothing Found

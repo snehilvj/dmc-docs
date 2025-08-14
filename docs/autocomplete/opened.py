@@ -10,7 +10,6 @@ component = html.Div(
             id="autocomplete-opened",
             data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
             comboboxProps={"position": "bottom", "middlewares": {"flip": False, "shift": False}},
-            w=400,
             mb=10,
         ),
     ]

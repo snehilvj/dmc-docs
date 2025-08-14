@@ -43,5 +43,6 @@ configurator.add_select(
 )
 configurator.add_switch("disableChevronRotation", False)
 configurator.add_slider("radius", "sm")
+configurator.add_number_slider("chevronIconSize", 16, min=8, max=50)
 
 component = configurator.panel

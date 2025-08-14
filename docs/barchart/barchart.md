@@ -313,6 +313,12 @@ To display value above each bar, set `withBarValueLabel=True`:
 
 .. exec::docs.barchart.bar_value_label
 
+### Bar value label props
+You can pass props down to [recharts LabelList](https://recharts.org/en-US/api/LabelList) component with `valueLabelProps` prop. 
+
+
+.. exec::docs.barchart.bar_value_label_props
+
 ### clickData
 Use the `clickData` property in a callback to retrieve data from the most recent click event.
 To get the name of the clicked series, use the `clickSeriesName` property.

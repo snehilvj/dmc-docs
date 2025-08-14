@@ -5,5 +5,4 @@ component = dmc.Autocomplete(
     data=[f"Option {i}" for i in range(100000)],
     placeholder="use limit to optimize performance",
     limit=10,
-    w=400,
 )

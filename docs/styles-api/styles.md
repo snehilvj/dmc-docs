@@ -222,6 +222,15 @@ Example CSS targeting data attributes:
 .. exec::docs.styles-api.data-attributes
 
 
+### attributes prop
+
+Use `attributes` prop to pass attributes to inner elements of all components that support Styles API. For example,
+it can be used to add data attributes for testing purposes:
+
+
+.. exec::docs.styles-api.attributes
+
+
 
 ### More Examples
 

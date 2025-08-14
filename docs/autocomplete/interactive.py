@@ -6,7 +6,6 @@ target = dmc.Autocomplete(
         label="",
         placeholder="placeholder",
         data=["Pandas", "NumPy", "TensorFlow", "PyTorch"],
-        w=250,
         id="autocomplete"
     )
 

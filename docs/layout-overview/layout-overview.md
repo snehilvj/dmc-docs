@@ -10,12 +10,6 @@ order: 1  # sets order in navbar section
 .. toc::
 
 
-### Grid
-Use [Grid](/components/grid) if you need columns with different sizes. The `span` prop also accepts a dictionary to change column width based on viewport width.
-
-.. exec::docs.grid.simple
-    :code: false
-
 
 ### SimpleGrid
 Use [SimpleGrid](/components/simplegrid) if you need columns with equal size. The `cols`, `spacing` and `verticalSpacing` props accepts dictionaries to set responsive values based on viewport width.
@@ -25,14 +19,21 @@ Use [SimpleGrid](/components/simplegrid) if you need columns with equal size. Th
     :code: false
 
 
+### Grid
+Use [Grid](/components/grid) if you need columns with different sizes.   You can also set spans, spacing, offsets, and ordering and more.
+
+
+.. exec::docs.grid.simple
+    :code: false
+
 ### Group
-Use [Group](/components/group) if you want to put several items next to each other horizontally.
+Use [Group](/components/group) if you want to put items next to each other horizontally.
 
 .. exec::docs.group.interactive
     :code: false
 
 ### Stack
-Use [Stack](/components/stack) if you want to put several items next to each other vertically
+Use [Stack](/components/stack) if you want to put items next to each other vertically
 
 
 .. exec::docs.stack.interactive
