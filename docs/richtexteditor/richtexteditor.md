@@ -8,11 +8,6 @@ category: Inputs
 
 .. toc::
 
-### CSS Extensions
-
-As of DMC 1.2.0, RichTextEditor component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
 ### Tiptap editor
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
   
@@ -427,6 +422,11 @@ For example `persisted_props=['html']`.
 
 .. exec::docs.richtexteditor.variant
 
+
+### CSS Extensions
+
+As of DMC 1.2.0, RichTextEditor component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 
 ### Styles API
