@@ -11,10 +11,11 @@ component = dmc.RichTextEditor(
                         "aria-label": "Custom Button",
                         "title": "Custom Button",
                         "children": DashIconify(icon="mdi:star", width=20, height=20),
-                        "function": "insertStar",
+                        "onClick": {"function": "insertContent", "options": "⭐"},
                     },
                 },
             ],
         ],
     },
+
 )

@@ -11,7 +11,7 @@ toolbar = {
                     "ariaLabel": "Insert Table",
                     "title": "Insert Table",
                     "children": [DashIconify(icon="mdi:table-plus", width=20, height=20)],
-                    "function": "insertTable",
+                    "onClick": {"function": "insertTable"},
                 },
             },
             {
@@ -19,7 +19,7 @@ toolbar = {
                     "ariaLabel": "Add Column Before",
                     "title": "Add Column Before",
                     "children": [DashIconify(icon="mdi:table-column-plus-before", width=20, height=20)],
-                    "function": "addColumnBefore",
+                    "onClick": {"function": "addColumnBefore"},
                 },
             },
             {
@@ -27,7 +27,7 @@ toolbar = {
                     "ariaLabel": "Delete Column",
                     "title": "Delete Column",
                     "children": [DashIconify(icon="mdi:table-column-remove", width=20, height=20)],
-                    "function": "deleteColumn",
+                    "onClick": {"function": "deleteColumn"},
                 },
             },
         ],

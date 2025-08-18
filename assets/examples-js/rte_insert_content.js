@@ -1,8 +1,8 @@
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 
-dmcfuncs.insertStar = (_,__,{editor}) => {
-    if (!editor) {
+dmcfuncs.insertContent = (e, options, {editor}) => {
+     if (!editor) {
         return;
     }
-    editor?.commands.insertContent('⭐')
+    editor?.commands.insertContent(options)
 }
