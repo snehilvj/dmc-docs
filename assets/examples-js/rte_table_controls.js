@@ -1,25 +1,14 @@
 
 var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
 
-dmcfuncs.insertTable = (_,__,{editor}) => {
-    if (!editor) {
-        return;
-    }
+dmcfuncs.insertTable = ({editor}) => {
     editor?.chain().focus().insertTable({ rows: 5, cols: 3, withHeaderRow: true }).run()
 }
 
-
-dmcfuncs.addColumnBefore = (_,__,{editor}) => {
-    if (!editor) {
-        return;
-    }
+dmcfuncs.addColumnBefore = ({editor}) => {
     editor?.chain().focus().addColumnBefore().run()
 }
 
-
-dmcfuncs.deleteColumn= (_,__,{editor}) => {
-    if (!editor) {
-        return;
-    }
+dmcfuncs.deleteColumn= ({editor}) => {
     editor?.chain().focus().deleteColumn().run()
 }
