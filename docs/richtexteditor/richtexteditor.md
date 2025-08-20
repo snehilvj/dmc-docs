@@ -8,11 +8,6 @@ category: Inputs
 
 .. toc::
 
-### CSS Extensions
-
-As of DMC 1.2.0, RichTextEditor component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
-
 ### Tiptap editor
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
   
@@ -70,7 +65,7 @@ The `StarterKit` extension includes essential text-editing features such as:
 - Headings & Lists: `Heading`, `OrderedList`, `BulletList`, `ListItem`  
 - Structural Elements: `Paragraph`, `Blockquote`, `CodeBlock`, `HardBreak`, `HorizontalRule`, `Document`  
 - Cursor & History Features: `Dropcursor`, `Gapcursor`, `History`  
-
+- Source Code editing: `SourceCode`
 
 #### Customizing Extensions
 
@@ -140,6 +135,7 @@ Here are the control icons available for use in the `toolbar`:
 - Hr
 - Undo
 - Redo
+- SourceCode
 
 **Controls that require the Link extension**
 - Link
@@ -164,6 +160,17 @@ Here are the control icons available for use in the `toolbar`:
 
 
 
+### Typography styles
+By default, `RichTextEditor` renders content with [TypographyStylesProvider](/components/typographystylesprovider) and
+some additional styles. You can disable these styles by setting `withTypographyStyles=False`.  Then you can add your own 
+CSS files, or style with the Styles API.
+
+
+```python
+ dmc.RichTextEditor(       
+     withTypographyStyles=False
+)
+```
 
 ### Placeholder
 
@@ -220,7 +227,10 @@ To display tables, you will need to include the following extensions:
 )
 ```
 
-The tables will be styles with a Mantine theme. For more information refer to the [TypographyStylesProvider](components/typographystylesprovider) section.
+The tables will be styles with a Mantine theme. For more information refer to the [TypographyStylesProvider](/components/typographystylesprovider) section.
+You can disable these styles by setting `withTypographyStyles=False`
+
+To add controls in the toolbar for table features, see the Custom Controls section below.
 
 .. exec::docs.richtexteditor.table
 
@@ -334,6 +344,39 @@ For details on the schema and ProseMirror format, see the [Tiptap documentation]
 Try editing the content in this example to see the JSON and HTML format:
 .. exec::docs.richtexteditor.content
 
+### Source code mode
+
+You can use the `SourceCode` control to see and edit source code of editor content:
+
+.. exec::docs.richtexteditor.sourcecode
+
+### Custom controls
+Use `CustomControl` in the `controlsGroups` to create create custom controls in the `toolbar`. Note that you will need 
+to set `aria-label` attribute to make control visible for screen readers.
+
+Mantine wraps TipTap V2.9.  To see the commands available for use in your custom controls see the [TipTap documentation](https://v2.tiptap.dev/docs/editor/api/commands)
+
+.. functions_as_props::
+
+#### Example: Insert content 
+
+.. exec::docs.richtexteditor.custom_control_star
+    :code: false
+
+.. sourcetabs::docs/richtexteditor/custom_control_star.py, assets/examples-js/rte_insert_content.js
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
+#### Example: Table controls 
+
+.. exec::docs.richtexteditor.custom_controls_table
+    :code: false
+
+.. sourcetabs::docs/richtexteditor/custom_controls_table.py, assets/examples-js/rte_table_controls.js, assets/examples/rte-table.css
+    :defaultExpanded: false
+    :withExpandedButton: true 
+
 
 ### Selected text
 
@@ -380,17 +423,11 @@ For example `persisted_props=['html']`.
 .. exec::docs.richtexteditor.variant
 
 
-### Typography styles
-By default, `RichTextEditor` renders content with [TypographyStylesProvider](/components/typographystylesprovider) and
-some additional styles. You can disable these styles by setting `withTypographyStyles=False`.  Then you can add your own 
-CSS files, or style with the Styles API.
+### CSS Extensions
 
+As of DMC 1.2.0, RichTextEditor component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
-```python
- dmc.RichTextEditor(       
-     withTypographyStyles=False
-)
-```
 
 ### Styles API
 

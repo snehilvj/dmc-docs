@@ -70,6 +70,8 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 
 .. styles_api_text::
 
+#### YearPickerInput selectors
+
 | Selector                   | Static selector                                      | Description                                                           |
 | ---------------------------| ---------------------------------------------------- | --------------------------------------------------------------------- |
 | `wrapper`                  | `.mantine-YearPickerInput-wrapper`                   | Root element of the Input                                              |
@@ -91,7 +93,7 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 | `yearsListControl`         | `.mantine-YearPickerInput-yearsListControl`          | Button used to pick months and years                                   |
 | `placeholder`              | `.mantine-YearPickerInput-placeholder`               | Placeholder element                                                    |
 
-### YearPickerInput data attributes
+#### YearPickerInput data attributes
 
 | Selector              | Attribute      | Condition                           | Value                              |
 | --------------------- | -------------- | ----------------------------------- | ---------------------------------- |

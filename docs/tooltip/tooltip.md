@@ -163,6 +163,18 @@ and reset if user moves mouse over/out of target element before delay is expired
 
 .. exec::docs.tooltip.floating
 
+
+### Target
+
+`target` prop is an alternative to the `Tooltip` `children`. It accepts a string (selector), an HTML element or a `ref`
+object with HTML element. Use target prop when you do not render tooltip target as JSX element, like when creating a Tooltip
+component in a clientside callback.
+
+Example of using target prop with a string selector:
+
+.. exec::docs.tooltip.target
+
+
 ### Limitations
 #### Setting width
 
@@ -172,11 +184,11 @@ Tooltip children are wrapped in a `Box` with a default width of `fit-content`, w
 
 .. exec::docs.tooltip.boxwrapperprops
 
-#### Tooltip Target
+#### Tooltip margin
 
-Any component you specify in dmc.Tooltip is wrapped by a dmc.Box component under the hood. So adding a margin
+Any component you specify in `Tooltip` `children` prop is wrapped by a `Box` component under the hood. So adding a margin
 to your target component will also move the tooltip away. In order to prevent this, add margin to the wrapper component
-using the prop `boxWrapperProps` in dmc.Tooltip.
+using the prop `boxWrapperProps` in `Tooltip`.
 
 
 

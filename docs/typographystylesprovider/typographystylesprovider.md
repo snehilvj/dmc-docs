@@ -18,7 +18,7 @@ dmc.TypographyStylesProvider(
 )
 ```
 
-The styles applied to `TypographyStylesProvider` children can be found in the [Mantine GitHub repository](https://github.com/mantinedev/mantine/blob/master/packages/%40mantine/core/src/components/TypographyStylesProvider/TypographyStylesProvider.module.css).  
+The styles applied to `TypographyStylesProvider` children can be found in the [Mantine GitHub repository](https://github.com/mantinedev/mantine/blob/master/packages/%40mantine/core/src/components/Typography/Typography.module.css).  
 
 ### Included Styles
 `TypographyStylesProvider` provides default styling for:  
