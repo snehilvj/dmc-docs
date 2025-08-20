@@ -8,7 +8,7 @@ toolbar = {
 
             {
                 "CustomControl": {
-                    "ariaLabel": "Insert Table",
+                    "aria-label": "Insert Table",
                     "title": "Insert Table",
                     "children": [DashIconify(icon="mdi:table-plus", width=20, height=20)],
                     "onClick": {"function": "insertTable"},
@@ -16,7 +16,7 @@ toolbar = {
             },
             {
                 "CustomControl": {
-                    "ariaLabel": "Add Column Before",
+                    "aria-label": "Add Column Before",
                     "title": "Add Column Before",
                     "children": [DashIconify(icon="mdi:table-column-plus-before", width=20, height=20)],
                     "onClick": {"function": "addColumnBefore"},
@@ -24,7 +24,7 @@ toolbar = {
             },
             {
                 "CustomControl": {
-                    "ariaLabel": "Delete Column",
+                    "aria-label": "Delete Column",
                     "title": "Delete Column",
                     "children": [DashIconify(icon="mdi:table-column-remove", width=20, height=20)],
                     "onClick": {"function": "deleteColumn"},
