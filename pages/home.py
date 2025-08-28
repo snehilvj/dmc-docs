@@ -13,9 +13,10 @@ dash.register_page(
     __name__,
     "/",
     title=PAGE_TITLE_PREFIX + "Home",
-    description="Official documentation and collection of ready-made Plotly Dash Components created using Dash "
-    "Mantine Components. Dash Mantine Components is an extensive UI components library for Plotly Dash "
-    "with more than 100 components and supports dark theme natively.",
+    description="""
+    Documentation for Dash Mantine Components, a component library to use with Plotly Dash apps.
+    100+ customizable components built on the React Mantine library, with consistent styling, theming, full light/dark mode support, and accessibility out of the box.        
+    """,
 )
 
 

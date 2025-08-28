@@ -12,7 +12,7 @@ order: 1  # sets order in navbar section
 ### Introduction to Mantine Inputs
 
 Mantine Input components use a common base Input component giving all the inputs shared styles and features.  This helps
-give your app a consistent design in your app.
+give your app a consistent design.
 
 .. exec::docs.inputs-overview.inputs_demo
     :code: false
