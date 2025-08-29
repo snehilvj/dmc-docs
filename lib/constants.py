@@ -53,3 +53,8 @@ PROPS_TO_EXCLUDE = [
     "flex",
     "bdrs"
 ]
+
+ALIGN_ITEMS_CSS_PROPERTY = ["stretch", "center", "flex-end", "flex-start"]
+JUSTIFY_CONTENT_CSS_PROPERTY = ["flex-start", "center", "flex-end", "space-around", "space-between"]
+FLEX_DIRECTION_CSS_PROPERTY = ["row", "column", "row-reverse", "column-reverse"]
+FLEX_WRAP_CSS_PROPERTY = ["wrap", "nowrap", "wrap-reverse"]
