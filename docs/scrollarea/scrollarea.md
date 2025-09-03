@@ -21,6 +21,7 @@ The ScrollArea component works well with light and dark color schemes and suppor
 - `offsetScrollbars` - offset scrollbars with padding
 - `scrollbarSize` - scrollbar size, controls scrollbar and thumb width/height
 - `scrollHideDelay` - delay in ms to hide scrollbars, applicable only when type is hover or scroll
+- `scrollTo` sets scroll position of the viewport
 
 This example has a vertical scroll bar. 
 
@@ -46,6 +47,23 @@ html.Div(
 The horizontal scroll bar will be displayed when the content of the ScrollArea is wider than the ScrollArea.
 
 .. exec::docs.scrollarea.horizontal
+
+### Scroll To
+
+The `scrollTo` prop sets the scroll position of the viewport with the following options:
+
+  * `top` – vertical position in percent (`0–100`)
+  * `left` – horizontal position in percent (`0–100`)
+  * `behavior` – scroll behavior: `auto` (instant) or `smooth` (animated), `auto` by default
+
+.. exec::docs.scrollarea.scrollto
+
+### Autosize
+
+`ScrollAreaAutosize` component allows to create scrollable containers when given max-height is reached.
+
+.. exec::docs.scrollarea.autosize
+
 
 ### Styles API
 
