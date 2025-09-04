@@ -10,17 +10,23 @@ category: Miscellaneous
 
 ### Introduction
 
-The ScrollArea component works well with light and dark color schemes and supports the following props:
+The ScrollArea component supports the following props:
 
 - `type` defines scrollbars behavior:
     - `hover` - scrollbars are visible on hover
     - `scroll` - scrollbars are visible on scroll
-    - `auto` - similar to overflow: auto - scrollbars are always visible when the content is overflowing
+    - `auto` - similar to `overflow: auto` - scrollbars are always visible when the content is overflowing
     - `always` - same as auto but scrollbars are always visible regardless of whether the content is overflowing
     - `never` - scrollbars are always hidden
 - `offsetScrollbars` - offset scrollbars with padding
+    - x – adds padding to offset horizontal scrollbar only
+    - y – adds padding to offset vertical scrollbar only
+    - xy – adds padding to offset both scrollbars
+    - present – adds padding only when scrollbars are visible
+
 - `scrollbarSize` - scrollbar size, controls scrollbar and thumb width/height
 - `scrollHideDelay` - delay in ms to hide scrollbars, applicable only when type is hover or scroll
+- `overscrollBehavior` – controls overscroll-behavior of the viewport
 - `scrollTo` sets scroll position of the viewport
 
 This example has a vertical scroll bar. 
@@ -48,6 +54,14 @@ The horizontal scroll bar will be displayed when the content of the ScrollArea i
 
 .. exec::docs.scrollarea.horizontal
 
+
+### Disable horizontal scrollbars
+To disable horizontal scrollbars set `scrollbars="y"` prop:
+
+
+.. exec::docs.scrollarea.horizontal_disabled
+
+
 ### Scroll To
 
 The `scrollTo` prop sets the scroll position of the viewport with the following options:
@@ -58,7 +72,7 @@ The `scrollTo` prop sets the scroll position of the viewport with the following 
 
 .. exec::docs.scrollarea.scrollto
 
-### Autosize
+### ScrollAreaAutosize
 
 `ScrollAreaAutosize` component allows to create scrollable containers when given max-height is reached.
 
