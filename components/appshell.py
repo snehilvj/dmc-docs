@@ -1,5 +1,6 @@
 import dash_mantine_components as dmc
-from dash import html, Output, Input, clientside_callback, dcc, page_container
+from dash import  Output, Input, State, callback, clientside_callback, dcc, page_container, no_update
+from dash_iconify import DashIconify
 
 from components.header import create_header
 from components.navbar import create_navbar, create_navbar_drawer
@@ -7,7 +8,7 @@ from lib.constants import PRIMARY_COLOR
 
 
 def create_appshell(data):
-    return dmc.MantineProvider(
+    return dmc.DirectionProvider(dmc.MantineProvider(
         id="m2d-mantine-provider",
         theme={
             "primaryColor": PRIMARY_COLOR,
@@ -79,7 +80,7 @@ def create_appshell(data):
                 },
             ),
         ], className="dmc-code", px={"base": 0, "xxl": 50}),
-    )
+    ), id="direction", direction="ltr")
 
 
 clientside_callback(
@@ -110,3 +111,18 @@ clientside_callback(
     Output("docs-color-scheme-switch", "id"),
     Input("docs-color-scheme-switch", "checked"),
 )
+
+
+@callback(
+    Output("rtl-icon", "icon"),
+    Output("direction", "direction"),
+    Input("rtl-toggle", "n_clicks"),
+    State("direction", "direction")
+)
+def toggle_direction(n, d):
+    if n is None:
+        return no_update
+
+    new_dir = "ltr" if d == "rtl" else "rtl"
+    return f"tabler:text-direction-{d}", new_dir
+

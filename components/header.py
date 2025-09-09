@@ -108,6 +108,8 @@ theme_toggle = dmc.Switch(
     size="md"
 )
 
+rtl_toggle = dmc.ActionIcon(DashIconify(icon="tabler:text-direction-rtl", width=18, id="rtl-icon"), id="rtl-toggle", variant="outline", color="gray")
+
 def create_header(data):
     return dmc.AppShellHeader(
         px=25,
@@ -154,6 +156,7 @@ def create_header(data):
                                     create_link(
                                         "bi:discord", "https://discord.gg/KuJkh4Pyq5"
                                     ),
+                                    rtl_toggle,
                                     theme_toggle,
                                 ],
                             ),
