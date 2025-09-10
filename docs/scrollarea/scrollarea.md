@@ -113,16 +113,16 @@ dmc.ScrollArea(scrollTo={"top": 200, "left": "50%", "behavior": "auto"})
 
 | Selector | Variable                     | Description    |
 |----------|------------------------------|----------------|
-| root     | --scrollarea-scrollbar-size   | Scrollbar size |
+| root     | `--scrollarea-scrollbar-size`   | Scrollbar size |
 
 
 #### ScrollArea data attributes
 
 | Selector         | Attribute          | Condition                          | Value                               |
 |------------------|--------------------|------------------------------------|-------------------------------------|
-| scrollbar, corner| data-hidden         | `type="never"`                     | –                                   |
-| corner           | data-hovered        | One of the scrollbars is hovered   | –                                   |
-| scrollbar        | data-orientation    | –                                  | "horizontal" or "vertical" depending on scrollbar position |
+| scrollbar, corner| `data-hidden`         | `type="never"`                     | –                                   |
+| corner           | `data-hovered`        | One of the scrollbars is hovered   | –                                   |
+| scrollbar        | `data-orientation`    | –                                  | "horizontal" or "vertical" depending on scrollbar position |
 
 
 
