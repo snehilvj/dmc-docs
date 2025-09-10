@@ -20,6 +20,18 @@ if you set `color="#000"` and `backgroundOpacity={0.85}` background-color will b
 
 .. exec::docs.overlay.simple
 
+### Gradient
+Set `gradient` prop to use `background-image` instead of `background-color`. When `gradient` prop is set, `color`
+and `backgroundOpacity` props are ignored.
+
+.. exec::docs.overlay.gradient
+
+### Blur
+Set `blur` prop to add `backdrop-filter: blur({value})` styles. Note that `backdrop-filter` is not supported in all browsers.
+
+.. exec::docs.overlay.blur
+
+
 ### Styles API
 
 .. styles_api_text::
@@ -30,7 +42,7 @@ Here’s your content formatted as Markdown tables:
 
 | Selector | Static selector       | Description  |
 | -------- | --------------------- | ------------ |
-| root     | .mantine-Overlay-root | Root element |
+| root     | `.mantine-Overlay-root` | Root element |
 
 ---
 
@@ -38,10 +50,10 @@ Here’s your content formatted as Markdown tables:
 
 | Selector | Variable          | Description               |
 | -------- | ----------------- | ------------------------- |
-| root     | --overlay-bg      | Controls background-color |
-| root     | --overlay-filter  | Controls backdrop-filter  |
-| root     | --overlay-radius  | Controls border-radius    |
-| root     | --overlay-z-index | Controls z-index          |
+| root     | `--overlay-bg`      | Controls background-color |
+| root     | `--overlay-filter`  | Controls backdrop-filter  |
+| root     | `--overlay-radius`  | Controls border-radius    |
+| root     | `--overlay-z-index` | Controls z-index          |
 
 ---
 
@@ -49,8 +61,8 @@ Here’s your content formatted as Markdown tables:
 
 | Selector | Attribute   | Condition          |
 | -------- | ----------- | ------------------ |
-| root     | data-center | center prop is set |
-| root     | data-fixed  | fixed prop is set  |
+| root     | `data-center` | center prop is set |
+| root     | `data-fixed`  | fixed prop is set  |
 
 Do you want me to keep this as three separate tables (like above), or merge them into one big table with a "Type" column (`Selector / CSS variable / Data attribute`) for easier scanning?
 
