@@ -61,14 +61,28 @@ To disable horizontal scrollbars set `scrollbars="y"` prop:
 
 .. exec::docs.scrollarea.horizontal_disabled
 
-
 ### Scroll To
 
 The `scrollTo` prop sets the scroll position of the viewport with the following options:
 
-  * `top` – vertical position in percent (`0–100`)
-  * `left` – horizontal position in percent (`0–100`)
-  * `behavior` – scroll behavior: `auto` (instant) or `smooth` (animated), `auto` by default
+  * `top` – The vertical position as pixels (number) or percentage (string) from '0%' to '100%'
+  * `left` – The horizontal position as pixels (number) or percentage (string) from '0%' to '100%'
+  * `behavior` – scroll behavior: `auto` (instant) or `smooth` (animated), `smooth` by default
+
+For example:
+
+```python
+# Scroll to specific pixel positions
+dmc.ScrollArea(scrollTo={"top": 100, "left": 50})
+
+# Scroll to percentage positions
+dmc.ScrollArea(scrollTo={"top": "25%", "left": "75%"})
+
+# Mixed usage
+dmc.ScrollArea(scrollTo={"top": 200, "left": "50%", "behavior": "auto"})
+```
+
+---
 
 .. exec::docs.scrollarea.scrollto
 
