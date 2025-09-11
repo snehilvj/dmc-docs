@@ -28,6 +28,8 @@ def create_version_menu():
                     '2.2',
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
+                    variant="outline",
+                    visibleFrom="md",
                 )
             ),
             dmc.MenuDropdown(
@@ -104,8 +106,21 @@ theme_toggle = dmc.Switch(
     onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
     id="docs-color-scheme-switch",
     persistence=True,
-    color="grey",
+    color="gray",
     size="md"
+)
+
+rtl_toggle = dmc.Tooltip(
+    dmc.ActionIcon(
+        DashIconify(
+            icon="tabler:text-direction-rtl",
+            width=18, id="rtl-icon"),
+        id="rtl-toggle",
+        variant="light",
+        color="gray",
+        visibleFrom="sm",
+    ),
+    label="Text Direction"
 )
 
 def create_header(data):
@@ -134,7 +149,6 @@ def create_header(data):
                                     dmc.Anchor(
                                         "DMC", size="xl", href="/", underline=False
                                     ),
-                                    create_version_menu(),
                                 ]
                             ),
                             span="content",
@@ -146,6 +160,7 @@ def create_header(data):
                                 h=31,
                                 gap="md",
                                 children=[
+                                    create_version_menu(),
                                     create_search(data),
                                     create_link(
                                         "radix-icons:github-logo",
@@ -154,6 +169,7 @@ def create_header(data):
                                     create_link(
                                         "bi:discord", "https://discord.gg/KuJkh4Pyq5"
                                     ),
+                                    rtl_toggle,
                                     theme_toggle,
                                 ],
                             ),

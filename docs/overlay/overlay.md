@@ -10,7 +10,7 @@ category: Feedback
 
 ### Usage
 
-`Overlay` takes 100% width and height of its parent container by default. When the `fixed` prop is set, it takes 100%
+`Overlay` takes 100% width and height of its parent container by default. When the `fixed=True` prop is set, it takes 100%
 width and height of the viewport instead.
 
 Set `color` and `backgroundOpacity` props to change `Overlay` background-color.
