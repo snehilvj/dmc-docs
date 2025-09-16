@@ -52,25 +52,21 @@ Multiple sections can be displayed instead of just one single bar.
 .. exec::docs.progress.sections
 
 
-### Limitations - Tooltips
+### Vertical orientation
 
-There is a limitation in Dash that makes it challenging to style the width of some tooltip children. For more details, see [GitHub #319.](https://github.com/snehilvj/dash-mantine-components/issues/319)
+.. exec::docs.progress.orientation
 
-Tooltip children are wrapped in a `Box` with a default style of `{'width': 'fit-content'}`, which may override the width defined in the children. To work around this, you can set the width using `boxWrapperProps`.
 
-`boxWrapperProps` is a dictionary of style properties passed to the `Box` that wraps the tooltip children.
+### With Tooltip
 
-#### With Tooltip
-
-In this example, the width of the `ProgressSection` is set to 100%, and the width of each section is defined using the `boxWrapperProps`.
+Use the [Tooltip target](/components/tooltip#target) prop rather than using `ProgressSection` as Tooltip children.
 
 
 .. exec::docs.progress.tooltip
 
-#### With FloatingTooltip
+### With FloatingTooltip
 
-Another even better workaround is to use `FloatingTooltips`.  In this case, set `boxWrapperProps={'display': 'contents'}`
-
+When using `FloatingTooltips`  set `boxWrapperProps={'display': 'contents'}` for best results:
 
 .. exec::docs.progress.floatingtooltip
 
@@ -79,11 +75,29 @@ Another even better workaround is to use `FloatingTooltips`.  In this case, set 
 
 .. styles_api_text::
 
-| Name    | Static selector           | Description                     |
-|:--------|:--------------------------|:--------------------------------|
-| root    | .mantine-Progress-root    | Root element                    |
-| section | .mantine-Progress-section | `Progress.Section` root element |
-| label   | .mantine-Progress-label   | `Progress.Label` root element   |
+#### Progress selectors
+
+| Selector | Static selector | Description |
+|----------|----------------|-------------|
+| root | `.mantine-Progress-root` | Root element |
+| section | `.mantine-Progress-section` | `Progress.Section` root element |
+| label | `.mantine-Progress-label` | `Progress.Label` root element |
+
+#### Progress CSS variables
+
+| Selector | Variable | Description |
+|----------|----------|-------------|
+| root | `--progress-radius` | Controls `border-radius` of track and sections |
+| root | `--progress-size` | Controls height of progress bar |
+| root | `--progress-transition-duration` | Controls width `transition-duration` of progress bar |
+
+#### Progress data attributes
+
+| Selector | Attribute | Condition |
+|----------|-----------|-----------|
+| section | `data-striped` | `striped` or `animated` props are set |
+| section | `data-animated` | `animated` prop is set |
+
 
 ### Keyword Arguments
 

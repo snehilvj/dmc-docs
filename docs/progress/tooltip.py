@@ -1,28 +1,44 @@
 import dash_mantine_components as dmc
 
-component = dmc.ProgressRoot(
+
+component = dmc.Box(
     [
+        dmc.ProgressRoot(
+            [
+                dmc.ProgressSection(
+                    dmc.ProgressLabel("Documents"),
+                    value=33,
+                    color="cyan",
+                    id="progress-section1",
+                ),
+                dmc.ProgressSection(
+                    dmc.ProgressLabel("Photos"),
+                    value=28,
+                    color="pink",
+                    id="progress-section2",
+                ),
+                dmc.ProgressSection(
+                    dmc.ProgressLabel("Others"),
+                    value=15,
+                    color="orange",
+                    id="progress-section3",
+                ),
+            ],
+            size="40",
+        ),
         dmc.Tooltip(
-            dmc.ProgressSection(
-                dmc.ProgressLabel("Documents"), value=33, color="cyan", w="100%"
-            ),
+            target="#progress-section1",
             label="Documents – 33Gb",
-            boxWrapperProps={"w": "33%"},
         ),
         dmc.Tooltip(
-            dmc.ProgressSection(
-                dmc.ProgressLabel("Photos"), value=28, color="pink", w="100%"
-            ),
+            target="#progress-section2",
             label="Photos – 28Gb",
-            boxWrapperProps={"w": "28%"},
         ),
         dmc.Tooltip(
-            dmc.ProgressSection(
-                dmc.ProgressLabel("Other"), value=25, color="orange", w="100%"
-            ),
+            target="#progress-section3",
             label="Other – 15Gb",
-            boxWrapperProps={"w": "25%"},
         ),
-    ],
-    size=40,
+    ]
 )
+
+
