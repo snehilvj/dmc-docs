@@ -10,6 +10,11 @@ category: Inputs
 
 ### Tiptap editor
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
+
+TipTap version note:
+
+- DMC 2.3.0 and later uses Tiptap v3.3.
+- Older versions of DMC used Tiptap v2.9.
   
 .. exec::docs.richtexteditor.usage
 
@@ -17,8 +22,7 @@ The `RichTextEditor` component is built on top of the [Tiptap editor](https://ti
 ### Editing Shortcuts:
 
 - Keyboard Shortcuts:  
-  - Utilize [Tiptap’s keyboard shortcuts](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts#text-formatting) for quick text formatting.  
-  - The **Ctrl + K** shortcut also works for adding links.  
+  - Utilize [Tiptap’s keyboard shortcuts](https://tiptap.dev/docs/editor/core-concepts/keyboard-shortcuts#text-formatting) for quick text formatting.   
 
 - Markdown Shortcuts:  
   - Markdown-style formatting is supported. For example:  
@@ -40,9 +44,7 @@ By default, all the available extensions are enabled:
 ```python
 dmc.RichTextEditor(       
     extensions=[
-        "StarterKit",
-        "Underline",
-        "Link",
+        "StarterKit",   
         "Superscript",
         "Subscript",
         "Highlight",
@@ -55,13 +57,21 @@ dmc.RichTextEditor(
         "Color",
         "TextStyle",
         "Image",
+        # The following is available in DMC >= 2.3.0
+        "BackgroundColor",
+        "FontFamily",
+        "FontSize",
+        "LineHeight",
+        # The following is included in StarterKit in DMC >=2.3.0
+        # "Underline",
+        # "Link",
     ]
 )
 ```  
 
 The `StarterKit` extension includes essential text-editing features such as:  
 
-- Text Formatting: `Text`, `Bold`, `Italic`, `Strike`, `Code`  
+- Text Formatting: `Text`, `Bold`, `Italic`, `Strike`, `Code`, `Underline`, `Link`
 - Headings & Lists: `Heading`, `OrderedList`, `BulletList`, `ListItem`  
 - Structural Elements: `Paragraph`, `Blockquote`, `CodeBlock`, `HardBreak`, `HorizontalRule`, `Document`  
 - Cursor & History Features: `Dropcursor`, `Gapcursor`, `History`  
@@ -78,7 +88,7 @@ Each extension can be defined in two ways:
 - As a dictionary to specify configuration options (for example `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
 
  **Important:** Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
-`"Image"`, that feature will no longer be available.  
+`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension list above that you need.
 
 Additionally, some features require multiple extensions. For example:  
 - color formatting requires both `"Color"` and `"TextStyle"`.  
@@ -136,10 +146,10 @@ Here are the control icons available for use in the `toolbar`:
 - Undo
 - Redo
 - SourceCode
-
-**Controls that require the Link extension**
+The following is included by default in DMC >=2.3.0
 - Link
 - Unlink
+- Underline
 
 **Controls that require TextAlign extension:**
 - AlignLeft
@@ -153,7 +163,7 @@ Here are the control icons available for use in the `toolbar`:
 - UnsetColor
 
 **Other controls with required extensions:**
-- Underline requires Underline extension
+- Underline requires Underline extension in DMC <=2.3.0
 - Superscript requires Superscript extension
 - Subscript requires Subscript extension
 - Highlight requires Highlight extension
@@ -182,6 +192,7 @@ To use the placeholder or change the placeholder default text, include (at least
      extensions=[
          "StarterKit",
          {"Placeholder": {"placeholder": "Write something..."}},
+         # other needed extensions
      ],
 )
 ```
@@ -189,19 +200,6 @@ To use the placeholder or change the placeholder default text, include (at least
 .. exec::docs.richtexteditor.placeholder
 
 ### Text color
-
-To use text color you will need to include (at least) the following extensions:
-
-```python
- dmc.RichTextEditor(       
-     extensions=[
-         "StarterKit",
-         "Color",
-         "TextStyle", # required when using Color
-     ],
-)
-```
-
 
 You can use the following toolbar controls to change text color:
 
@@ -213,20 +211,6 @@ You can use the following toolbar controls to change text color:
 
 ### Table
 
-To display tables, you will need to include the following extensions:
-
-```python
- dmc.RichTextEditor(       
-     extensions=[
-         "StarterKit",
-         "Table",
-         "TableCell",
-         "TableHeader",
-         "TableRow",
-     ],
-)
-```
-
 The tables will be styles with a Mantine theme. For more information refer to the [TypographyStylesProvider](/components/typographystylesprovider) section.
 You can disable these styles by setting `withTypographyStyles=False`
 
@@ -235,18 +219,6 @@ To add controls in the toolbar for table features, see the Custom Controls secti
 .. exec::docs.richtexteditor.table
 
 ### Image
-
-To display images, you will need to include the following extensions:
-
-
-```python
- dmc.RichTextEditor(       
-     extensions=[
-         "StarterKit",
-         "Image",
-     ],
-)
-```
 
 .. exec::docs.richtexteditor.image
 
