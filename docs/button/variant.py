@@ -8,5 +8,7 @@ component = dmc.Group(
         dmc.Button("Filled button", variant="filled"),
         dmc.Button("Light button", variant="light"),
         dmc.Button("Outline button", variant="outline"),
+        dmc.Button("link", variant="link"),
+        dmc.Button("Transparent", variant="transparent"),
     ]
 )
