@@ -1,6 +1,7 @@
 import dash_mantine_components as dmc
 
 component = dmc.RichTextEditor(
+    variant = "subtle",
     html="Subtle rich text editor variant",
     extensions=[
         "StarterKit",
@@ -10,7 +11,6 @@ component = dmc.RichTextEditor(
     toolbar={
         "sticky": True,
         "stickyOffset": 60,
-        "variant": "subtle",
         "controlsGroups": [
             [
                 "Bold",

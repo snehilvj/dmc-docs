@@ -354,7 +354,13 @@ You can use the `SourceCode` control to see and edit source code of editor conte
 Use `CustomControl` in the `controlsGroups` to create create custom controls in the `toolbar`. Note that you will need 
 to set `aria-label` attribute to make control visible for screen readers.
 
-Mantine wraps TipTap V2.9.  To see the commands available for use in your custom controls see the [TipTap documentation](https://v2.tiptap.dev/docs/editor/api/commands)
+
+TipTap version note:  
+
+- DMC 2.3.0 and later uses [TipTap v3.3 commands](https://tiptap.dev/docs/editor/api/commands).
+- Older versions of DMC used [TipTap v2.9 commands](https://v2.tiptap.dev/docs/editor/api/commands).
+
+Use the appropriate TipTap documentation above to see the full list of editor commands available for your custom controls.
 
 .. functions_as_props::
 
@@ -374,6 +380,18 @@ Mantine wraps TipTap V2.9.  To see the commands available for use in your custom
     :code: false
 
 .. sourcetabs::docs/richtexteditor/custom_controls_table.py, assets/examples-js/rte_table_controls.js, assets/examples/rte-table.css
+    :defaultExpanded: false
+    :withExpandedButton: true 
+
+#### Example: Font size controls
+
+Note: FontSize is available in DMC>=v2.3.0 which uses TipTap v3.
+
+
+.. exec::docs.richtexteditor.custom_controls_fontsize
+    :code: false
+
+.. sourcetabs::docs/richtexteditor/custom_controls_fontsize.py, assets/examples-js/rte_fontsize.js
     :defaultExpanded: false
     :withExpandedButton: true 
 
