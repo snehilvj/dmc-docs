@@ -15,6 +15,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
 | **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
 | **2.2.0**               | Aug 2025     | 8.2.5           | `dash>=2.0.0` |
 | **2.1.0**               | Jul 2025     | 8.1.2           | `dash>=2.0.0` |
@@ -29,10 +30,14 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 | **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
 
 
-### Migrating from 1.2.0 to 2.0.0
+### Migrating from 1.2.0 to 2.x
 
 DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://mantine.dev/changelog/8-0-0/)
 and the [DMC 2.0.0 Release announcement.]( /release-2-0-0)
+
+Starting with DMC v2.3.0, the `RichTextEditor` now uses [TipTap v3.3.1](https://tiptap.dev/docs/editor/getting-started/overview) (previous versions used TipTap v2.9.0).  There are
+no known breaking changes. However, if you have implemented custom controls, review your implementation against the
+updated TipTap API to ensure compatibility.
 
 #### Switch withThumbIndicator
 
