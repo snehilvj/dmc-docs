@@ -14,6 +14,7 @@ component = dmc.Group(
             "default",
             "transparent",
             "gradient",
+            "white"
         ]
     ]
 )
