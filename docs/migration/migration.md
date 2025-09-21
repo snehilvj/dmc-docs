@@ -35,6 +35,12 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://mantine.dev/changelog/8-0-0/)
 and the [DMC 2.0.0 Release announcement.]( /release-2-0-0)
 
+Starting with DMC v2.3.0,` RichTextEditor` uses Tiptap v3. There are no known breaking changes, but projects with
+customizations—such as clientside callbacks that rely on the Tiptap API or custom controls—should check for compatibility.
+The Text Style API has also been updated, which may affect how JSON and HTML content are generated. For details on
+changes and new features, see the [Tiptap v3 changelog](https://tiptap.dev/docs/resources/whats-new).
+
+
 #### Switch withThumbIndicator
 
 [Switch](/components/switch) component default styles were updated, it now includes checked state indicator inside the
