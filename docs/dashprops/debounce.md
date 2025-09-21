@@ -55,7 +55,7 @@ The `debounce` prop is supported by many DMC input components, including:
 
 - JsonInput
 
-- Select, MultiSelect
+- Select, MultiSelect, Autocomplete
 
 - DateInput, DateTimePicker, DatePickerInput
 

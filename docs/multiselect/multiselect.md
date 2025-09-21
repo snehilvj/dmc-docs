@@ -87,6 +87,13 @@ no data available. If the `nothingFoundMessage` prop is not set, the `MultiSelec
 
 .. exec::docs.multiselect.nothing_found
 
+### Clear search on change
+
+Set the `clearSearchOnChange=False` to enable selecting multiple items using the same search query.
+
+
+.. exec::docs.multiselect.clearsearch
+
 
 ### Checked option icon
 
