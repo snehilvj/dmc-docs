@@ -11,7 +11,7 @@ order: 2  # sets order in navbar section
 
 ### Theme overview
 
-Mantine’s  [default theme](/theme-object#default-theme) makes Dash apps look great in both light and dark modes. If you’re new to Dash Mantine Components,
+Mantine’s default theme makes Dash apps look great in both light and dark modes. If you’re new to Dash Mantine Components,
 start with the default theme. You can customize the theme globally by editing the `theme` prop in the `MantineProvider`.
 
 The `theme` object is a dictionary where you can set things like colors, border radius, spacing, fonts, and breakpoints.
