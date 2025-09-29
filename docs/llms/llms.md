@@ -14,10 +14,10 @@ dmc: false
 
 Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (~1.6MB)
 
-* [View online](https://www.dash-mantine-components.com/assets/llms.txt)
+* [View DMC llms.txt online](https://www.dash-mantine-components.com/assets/llms.txt)
 * [Download](https://www.dash-mantine-components.com/assets/llms.txt)
 
-You can also find the upstream Mantine LLMs document:
+You can also find the upstream Mantine LLMs documentation:
 * [View Mantine llms.txt online](https://mantine.dev/llms.txt)
 
 ### Usage with AI Tools
