@@ -25,11 +25,11 @@ def read_file_content(file_path: Path) -> str:
 
 def replace_sourcetabs(md: str) -> str:
     """
-    Replace .. sourcetabs::file1, file2, ...
+    Replace .. sourcetabs::file1, file2, ...  or ..source_llms::file1, file2
     with code blocks containing the file contents.
     """
     pattern = re.compile(
-        r"^\.\. sourcetabs::([^\n]+)(?:\n\s*:[^\n]+)*",
+        r"^\.\.\s+(?:sourcetabs|source_llms)::([^\n]+)(?:\n\s*:[^\n]+)*",
         re.MULTILINE
     )
 
