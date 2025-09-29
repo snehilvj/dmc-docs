@@ -97,7 +97,7 @@ Change transition properties with:
 
 ### Components in label
 
-.. exec:: docs.segmentedcontrol.react
+.. exec::docs.segmentedcontrol.react
 
 ### Styles API
 

@@ -12,6 +12,7 @@ class SC(SourceCode):
     def render(self, renderer, title: str, content: str, **options) -> Component:
         defaultExpanded = options.pop("defaultExpanded", "false")
         withExpandedButton = options.pop("withExpandedButton", "true")
+        display = options.pop("display", "block")
 
         mapping = {
             "py": {"language": "python", "icon": DashIconify(icon="devicon:python")},
@@ -35,15 +36,19 @@ class SC(SourceCode):
             defaultExpanded=defaultExpanded=="true",
             withExpandButton=withExpandedButton=='true',
             maxCollapsedHeight="325px",
+            display=display
         )
 
 
 """
 sample usage:
 
+use :display: "none" to include in llms.txt but not shown in docs
+
 
 .. sourcetabs::docs/alert/auto.py, assets/styles.css
     :defaultExpanded: false
     :withExpandedButton: true
+    :display: none
 
 """
