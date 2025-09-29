@@ -573,7 +573,6 @@ dmc.Modal(
 .. exec::docs.cssvariables.cssvariable_list
    :code: false
 
-
 #### Light color scheme only variables 
 .. exec::docs.cssvariables.cssvariable_list_light
    :code: false
@@ -582,3 +581,7 @@ dmc.Modal(
 #### Dark color scheme only variables
 .. exec::docs.cssvariables.cssvariable_list_dark
    :code: false
+
+
+.. sourcetabs::docs/cssvariables/cssvariables_lists.txt
+    :display:none
