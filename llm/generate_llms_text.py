@@ -33,12 +33,12 @@ for file in Path("../docs").glob("**/*.md"):
 pages.sort(key=lambda x: (x.get("category", ""), x["name"]))
 
 # Apply transformations
-llm_text = ""
+llms_text = ""
 for page in pages:
     md_output = add_title_from_metadata(page)
     for transform in TRANSFORMS:
         md_output = transform(md_output)
-    llm_text += md_output
+    llms_text += md_output
 
 # add intro
 intro = f"""
@@ -58,11 +58,11 @@ Assume the reader is a Dash developer familiar with callbacks and layout, but no
 ================================================================================
 
 """
-llm_text = intro + llm_text
+llms_text = intro + llms_text
 
 
-output_file = Path("../assets/llm.txt")
-output_file.write_text(llm_text, encoding="utf-8")
+output_file = Path("../assets/llms.txt")
+output_file.write_text(llms_text, encoding="utf-8")
 print(f"Wrote {output_file.resolve()}")
 
 
