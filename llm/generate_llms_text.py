@@ -1,5 +1,6 @@
 from pathlib import Path
 import frontmatter
+import json
 
 from replace_exec import replace_exec_directives
 from replace_sourcetabs import replace_sourcetabs
@@ -38,6 +39,7 @@ for page in pages:
     md_output = add_title_from_metadata(page)
     for transform in TRANSFORMS:
         md_output = transform(md_output)
+    page["content"] = md_output
     llms_text += md_output
 
 # add intro
@@ -60,10 +62,16 @@ intro = f"""
 """
 llms_text = intro + llms_text
 
-
+# Write text file
 output_file = Path("../assets/llms.txt")
 output_file.write_text(llms_text, encoding="utf-8")
 print(f"Wrote {output_file.resolve()}")
+
+# Write the JSON file
+json_file = Path("../assets/llms.json")  # Using Path for consistency
+with open(json_file, "w", encoding="utf-8") as f:
+    json.dump(pages, f, indent=2, ensure_ascii=False)
+print(f"Wrote {json_file.resolve()}")
 
 
 
