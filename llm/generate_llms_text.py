@@ -10,7 +10,7 @@ from replace_other_directives import replace_other_directives
 from add_title_from_metadata import add_title_from_metadata
 
 MANTINE_VERSION = "v8"
-DMC_VERSION = "v2.3.0"
+DMC_VERSION = "v2"
 
 # Define transformation pipeline
 TRANSFORMS = [

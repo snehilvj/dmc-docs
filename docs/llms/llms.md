@@ -17,6 +17,9 @@ Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (
 * [View online](https://www.dash-mantine-components.com/assets/llms.txt)
 * [Download](https://www.dash-mantine-components.com/assets/llms.txt)
 
+You can also find the upstream Mantine LLMs document:
+* [View Mantine llms.txt online](https://mantine.dev/llms.txt)
+
 ### Usage with AI Tools
 
 #### Cursor
