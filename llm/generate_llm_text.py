@@ -1,14 +1,3 @@
-"""
-todo
-
- - add examples from AppShell
- - add colors from mantine llm.txt
-
- - how to host?  save file to assets and use https://www.dash-mantine-components.com/assets/llm.txt
- - add llm.md page like mantine's
- - check content for .. before running replace_other_directives
-"""
-
 from pathlib import Path
 import frontmatter
 
