@@ -3,8 +3,8 @@ todo
 
  - add examples from AppShell
  - add colors from mantine llm.txt
- - add llm.txt to .gitignore?  may not be necessary since the dmc-docs is sep from dmc
- - how to host?
+
+ - how to host?  save file to assets and use https://www.dash-mantine-components.com/assets/llm.txt
  - add llm.md page like mantine's
  - check content for .. before running replace_other_directives
 """
@@ -71,7 +71,8 @@ Assume the reader is a Dash developer familiar with callbacks and layout, but no
 """
 llm_text = intro + llm_text
 
-output_file = Path("llm.txt")
+
+output_file = Path("../assets/llm.txt")
 output_file.write_text(llm_text, encoding="utf-8")
 print(f"Wrote {output_file.resolve()}")
 

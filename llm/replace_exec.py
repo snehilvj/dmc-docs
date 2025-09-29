@@ -32,7 +32,7 @@ def replace_exec_directives(md: str) -> str:
 
     # Pattern for simple exec directives (replace with code)
     code_pattern = re.compile(
-        r'^\.\.\s+exec::([a-zA-Z0-9_.]+)\s*$',
+        r'^\.\.\s+exec::([a-zA-Z0-9_.-]+)\s*$',
         re.MULTILINE
     )
 

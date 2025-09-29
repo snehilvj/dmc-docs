@@ -6,5 +6,5 @@ def add_title_from_metadata(page: dict) -> str:
     category = page.get("category", "")
     content = page.get("content","")
 
-    updated_content = f"## {name}  \n{description}  \nCategory: {category}  \n\n{content}"
+    updated_content = f"\n\n## {name}  \n{description}  \nCategory: {category}  \n\n{content}"
     return updated_content
