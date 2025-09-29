@@ -25,11 +25,11 @@ def read_file_content(file_path: Path) -> str:
 
 def replace_sourcetabs(md: str) -> str:
     """
-    Replace .. sourcetabs::file1, file2, ...  or ..source_llms::file1, file2
+    Replace .. sourcetabs::file1, file2, ...
     with code blocks containing the file contents.
     """
     pattern = re.compile(
-        r"^\.\.\s+(?:sourcetabs|source_llms)::([^\n]+)(?:\n\s*:[^\n]+)*",
+        r"^\.\. sourcetabs::([^\n]+)(?:\n\s*:[^\n]+)*",
         re.MULTILINE
     )
 
@@ -51,6 +51,7 @@ if __name__ == "__main__":
 .. sourcetabs::docs/dashprops/slider_label.py, assets/examples-js/celcius_label.js
     :defaultExpanded: true
     :withExpandedButton: true
+    :display: none
 """
 
     new_md = replace_sourcetabs(md)
