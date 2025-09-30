@@ -64,3 +64,12 @@ for file in files:
         category=metadata.category,
         order=metadata.order
     )
+
+logger.info("""
+********************************
+To update llms.txt and llms.json:
+
+From the llm directory, run:
+    python generate_llms_text.py
+********************************
+""")
