@@ -45259,7 +45259,6 @@ dmc.Modal(
 #### CSS variables not depending on color scheme
 #### Light color scheme only variables 
 #### Dark color scheme only variables
-```
 
 
 ### CSS Variables Not Depending on Color Scheme
@@ -45811,7 +45810,6 @@ dmc.Modal(
 | --mantine-color-orange-light-color | var(--mantine-color-orange-3) |
 | --mantine-color-orange-outline | var(--mantine-color-orange-4) |
 | --mantine-color-orange-outline-hover | rgba(255, 169, 77, 0.05) |
-```
 
 ## Responsive Styles  
 Responsive styles let you adjust the appearance of individual components, including font size, visibility, spacing, and colors, based on screen size.  

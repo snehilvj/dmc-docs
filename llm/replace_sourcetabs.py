@@ -21,6 +21,8 @@ def read_file_content(file_path: Path) -> str:
         return ""
     lang = get_language_from_suffix(file_path)
     content = file_path.read_text(encoding="utf-8").rstrip()
+    if lang == "":
+        return content
     return f"```{lang}\n{content}\n```"
 
 def replace_sourcetabs(md: str) -> str:

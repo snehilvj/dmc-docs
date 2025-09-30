@@ -18,6 +18,8 @@ class SC(SourceCode):
             "py": {"language": "python", "icon": DashIconify(icon="devicon:python")},
             "css": {"language": "css", "icon": DashIconify(icon="devicon:css3")},
             "js": {"language": "js", "icon": DashIconify(icon="devicon:javascript")},
+            "txt": {"language": "text", "icon": DashIconify(icon="material-symbols:description")},
+            "md": {"language": "md", "icon": DashIconify(icon="material-symbols:description")},
         }
         files = title.split(", ")
         code = []
