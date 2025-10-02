@@ -7,6 +7,7 @@ category: Date Pickers
 ---
 
 .. toc::
+.. llms_copy::DatePicker
 
 > Looking for a date picker with an input field and a dropdown calendar? Try `DateInput` or `DatePickerInput`.
 

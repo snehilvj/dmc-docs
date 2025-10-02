@@ -8,6 +8,7 @@ order: 1  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::MantineProvider
 
 
 Wrap your `app.layout` with a single `MantineProvider` to enable theming and styling features across your app. There should only be one `MantineProvider` in your app.

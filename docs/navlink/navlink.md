@@ -7,6 +7,7 @@ category: Navigation
 ---
 
 .. toc::
+.. llms_copy::NavLink
 
 ### Basic usage
 

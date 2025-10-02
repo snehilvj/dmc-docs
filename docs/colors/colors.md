@@ -8,6 +8,7 @@ order: 3  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Colors
 
 Mantine uses [open-color](https://yeun.github.io/open-color/) in default theme with some additions. Each color has 10 shades.
 

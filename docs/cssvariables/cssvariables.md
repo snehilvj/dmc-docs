@@ -8,6 +8,7 @@ order: 4  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::CSS Variables
 
 MantineProvider exposes all Mantine CSS variables based on the given theme. You can use these variables in CSS files,
 style prop or any other styles. See the full list of variables at the bottom of the page.

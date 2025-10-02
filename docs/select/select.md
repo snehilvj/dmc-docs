@@ -7,6 +7,7 @@ category: Combobox
 ---
 
 .. toc::  
+.. llms_copy::Select
 
 > Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput` or `Autocomplete`
 

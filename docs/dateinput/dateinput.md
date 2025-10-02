@@ -7,7 +7,7 @@ category: Date Pickers
 ---
 
 .. toc::
-
+.. llms_copy::DateInput
 
 
 ### DateInput props

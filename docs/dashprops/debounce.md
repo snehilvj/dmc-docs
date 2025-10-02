@@ -7,6 +7,7 @@ category: Dash
 
 
 .. toc::
+.. llms_copy::debounce prop
 
 
 ### About the debounce prop

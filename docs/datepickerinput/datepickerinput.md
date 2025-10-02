@@ -7,13 +7,7 @@ category: Date Pickers
 ---
 
 .. toc::
-
-
-
-### CSS Extensions
-
-As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
-If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
+.. llms_copy::DatePickerInput
 
 ### Simple Example
 
@@ -70,6 +64,12 @@ set `clearable=False`.
 ### Localization
 
 For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
+
+
+### CSS Extensions
+
+As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.
 
 ### Styles API
 

@@ -8,6 +8,7 @@ order: 11  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Plotly figure templates
 
 ---
 

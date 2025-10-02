@@ -8,6 +8,9 @@ category: Overlay
 
 .. toc::
 
+.. llms_copy::Affix
+
+
 ### Simple Example
 
 Look at the bottom right!

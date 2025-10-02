@@ -1,3 +1,5 @@
+import json
+
 PAGE_TITLE_PREFIX = "Dash Mantine Components | "
 PRIMARY_COLOR = "blue"
 PROPS_TO_EXCLUDE = [
@@ -53,3 +55,7 @@ PROPS_TO_EXCLUDE = [
     "flex",
     "bdrs"
 ]
+
+
+with open('assets/llms.json', encoding='utf-8') as f:
+    LLMS = json.load(f)

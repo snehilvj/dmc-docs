@@ -7,6 +7,7 @@ category: Combobox
 ---
 
 .. toc::
+.. llms_copy::MultiSelect
 
 ### Simple Example
 

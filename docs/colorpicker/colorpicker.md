@@ -7,6 +7,7 @@ category: Inputs
 ---
 
 .. toc::
+.. llms_copy::ColorPicker
 
 ### Simple Example
 

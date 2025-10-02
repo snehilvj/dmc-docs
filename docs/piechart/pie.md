@@ -7,6 +7,7 @@ category: Charts
 ---
 
 .. toc::
+.. llms_copy::PieChart
 
 ### Introduction
 

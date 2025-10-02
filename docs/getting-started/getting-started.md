@@ -7,6 +7,7 @@ order: 1  # sets order in section and in search
 ---
 
 .. toc::
+.. llms_copy::Getting Started
 
 
 ### Installation

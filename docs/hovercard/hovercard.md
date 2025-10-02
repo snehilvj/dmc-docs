@@ -7,6 +7,7 @@ category: Overlay
 ---
 
 .. toc::
+.. llms_copy::HoverCard
 
 ### Simple Example
 

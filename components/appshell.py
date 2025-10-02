@@ -125,3 +125,16 @@ def toggle_direction(n, d):
 
     new_dir = "ltr" if d == "rtl" else "rtl"
     return f"tabler:text-direction-{d}", new_dir
+
+
+clientside_callback(
+            """
+            function(n_clicks) {
+                if (n_clicks) {
+                    document.querySelector('#clipboard-target').click();
+                }     
+            }
+            """,
+            Input("copy-label", "n_clicks"),
+            prevent_initial_call=True
+        )

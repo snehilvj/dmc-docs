@@ -7,6 +7,7 @@ category: Buttons
 ---
 
 .. toc::
+.. llms_copy::Button
 
 ### Introduction
 

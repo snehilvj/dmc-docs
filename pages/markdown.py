@@ -14,6 +14,7 @@ from lib.directives.kwargs import Kwargs
 from lib.directives.source import SC
 from lib.directives.toc import TOC
 from lib.directives.styles_api_text import StylesApiText
+from lib.directives.llms_copy import LlmsCopy
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -37,7 +38,7 @@ def make_endpoint(name):
     return "-".join(name.lower().split())
 
 
-directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText(), FunctionsAsProps()]
+directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText(), FunctionsAsProps(), LlmsCopy()]
 parse = create_parser(directives)
 
 for file in files:
