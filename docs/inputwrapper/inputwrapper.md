@@ -7,6 +7,7 @@ category: Inputs
 ---
 
 .. toc::
+.. llms_copy::InputWrapper
 
 
 The `InputWrapper` component is built into all Dash Mantine input components, such as `TextInput`, `NumberInput`,

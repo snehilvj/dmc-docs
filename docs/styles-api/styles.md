@@ -9,6 +9,7 @@ order: 2  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Styles API
 
 
 ### Styles API Overview

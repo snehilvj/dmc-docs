@@ -7,6 +7,7 @@ category: Data Display
 ---
 
 .. toc::
+.. llms_copy::Avatar
 
 ### Simple Usage
 

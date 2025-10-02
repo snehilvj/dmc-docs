@@ -8,6 +8,7 @@ order: 10  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Right-to-left direction
 
 ### DirectionProvider
 

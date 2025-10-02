@@ -8,7 +8,6 @@ order: 500
 
 .. toc::
 
-
 ### Version Compatibility  
 
 Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions.

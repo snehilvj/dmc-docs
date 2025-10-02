@@ -8,6 +8,7 @@ order: 5 # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Responsive Styles
 
 Note:  If you are looking for how to structure app’s layout responsively, use components like
 [Grid](/components/grid) and [Group](/components/group), [Stack](/components/stack) and others. Check out the [Layout Overview](/layout-overview) section

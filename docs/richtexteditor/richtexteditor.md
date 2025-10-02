@@ -7,6 +7,7 @@ category: Inputs
 ---
 
 .. toc::
+.. llms_copy::RichTextEditor
 
 ### Tiptap editor
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.

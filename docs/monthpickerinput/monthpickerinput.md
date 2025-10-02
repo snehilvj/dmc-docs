@@ -7,6 +7,7 @@ category: Date Pickers
 ---
 
 .. toc::
+.. llms_copy::MonthPickerInput
 
 
 

@@ -7,6 +7,7 @@ category: Typography
 ---
 
 .. toc::
+.. llms_copy::Title
 
 ### Simple Example
 

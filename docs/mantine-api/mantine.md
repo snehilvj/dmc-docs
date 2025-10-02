@@ -7,6 +7,7 @@ dmc: false
 ---
 
 .. toc::
+.. llms_copy::Mantine API Overview
 
 ### MantineProvider
 

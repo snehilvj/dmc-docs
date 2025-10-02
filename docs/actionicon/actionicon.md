@@ -8,6 +8,8 @@ category: Buttons
 
 .. toc::
 
+.. llms_copy::ActionIcon
+
 ### Introduction
 
 .. exec::docs.actionicon.interactive

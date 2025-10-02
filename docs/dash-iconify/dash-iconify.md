@@ -7,6 +7,7 @@ category: Dash
 ---
 
 .. toc::
+.. llms_copy::Dash Iconify
 
 ### Why Use This?
 
