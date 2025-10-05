@@ -1,6 +1,6 @@
 Maintainer Notes:
 
-- Update versions in `migration.md` and `pages/home.py` and major versions on `llm/generate_llms_text.py`
+- Update versions in `migration.md` `lib.constants`
 - Update dependencies in pyproject.toml and requirements.txt
 - run `poetry update ` and push changes to `poetry.lock`
 - run llm/generate_llms_txt.py.  Push changes to assets/llms.txt
