@@ -1,6 +1,7 @@
 import dash_mantine_components as dmc
 from dash import Output, Input, clientside_callback
 from dash_iconify import DashIconify
+from lib.constants import DMC_VERSION
 
 
 def create_link(icon, href):
@@ -25,7 +26,7 @@ def create_version_menu():
             dmc.MenuTarget(
                 #version-update
                 dmc.Button(
-                    '2.3',
+                    DMC_VERSION[:3],
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                     variant="outline",

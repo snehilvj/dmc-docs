@@ -1,5 +1,10 @@
 import json
 
+DMC_VERSION = "2.3.0"
+MANTINE_VERSION = "8.3.1"
+LATEST_RELEASE_ENDPOINT = "/release-2-3-0"
+
+
 PAGE_TITLE_PREFIX = "Dash Mantine Components | "
 PRIMARY_COLOR = "blue"
 PROPS_TO_EXCLUDE = [

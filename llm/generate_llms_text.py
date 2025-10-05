@@ -9,9 +9,7 @@ from replace_functions_as_props import replace_functions_as_props
 from replace_styles_api_text import replace_styles_api_text
 from replace_other_directives import replace_other_directives
 from add_title_from_metadata import add_title_from_metadata
-
-MANTINE_VERSION = "v8"
-DMC_VERSION = "v2"
+from lib.constants import MANTINE_VERSION, DMC_VERSION
 
 # Define transformation pipeline
 TRANSFORMS = [
@@ -73,34 +71,3 @@ with open(json_file, "w", encoding="utf-8") as f:
     json.dump(pages, f, indent=2, ensure_ascii=False)
 print(f"Wrote {json_file.resolve()}")
 
-
-
-## test string
-md_input = """
-### Simple Example
-
-.. exec::docs.burger.simple
-
-Some text after.
-
-.. exec::docs.dashprops.slider_label
-    :code: false
-
-More text.
-
-.. functions_as_props::
-
-
-.. exec::docs.compositechart.line-color-light-dark
-    :code: false
-
-
-### Example
-.. functions_as_props::
-
-.. sourcetabs::docs/dashprops/slider_label.py, assets/examples-js/celcius_label.js
-    :defaultExpanded: true
-    :withExpandedButton: true
-
-.. kwargs::Burger
-"""
