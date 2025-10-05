@@ -7,6 +7,7 @@ category: Combobox
 ---
 
 .. toc::
+.. llms_copy::MultiSelect
 
 ### Simple Example
 
@@ -86,6 +87,13 @@ Set the `nothingFoundMessage` prop to display a given message when no options ma
 no data available. If the `nothingFoundMessage` prop is not set, the `MultiSelect` dropdown will be hidden.
 
 .. exec::docs.multiselect.nothing_found
+
+### Clear search on change
+
+Set the `clearSearchOnChange=False` to enable selecting multiple items using the same search query.
+
+
+.. exec::docs.multiselect.clearsearch
 
 
 ### Checked option icon

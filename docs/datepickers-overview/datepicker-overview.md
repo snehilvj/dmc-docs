@@ -8,6 +8,9 @@ order: 1  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Date Pickers Overview
+
+
 
 The Mantine date pickers let users quickly navigate by months or years to select dates in the past or future.
 .. image::https://raw.githubusercontent.com/snehilvj/dash-mantine-components/master/assets/datepicker.gif
@@ -77,14 +80,17 @@ and 12-hour/24-hour formats, and time pre-sets.
 ### TimeGrid
 [TimeGrid](/components/timegrid)  captures time value from the user with a predefined set of options.
 
-
 .. exec::docs.timegrid.interactive
     :code: false
 
 ### DateTimePicker
 [DateTimePicker](/components/): Selects both date and time from user.
 
-
-
 .. exec::docs.datetimepicker.simple
     :code: false
+
+
+### CSS Extensions
+
+As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
+If you're using an older version of DMC, refer to the [migration guide](/migration) for instructions on including optional stylesheets.

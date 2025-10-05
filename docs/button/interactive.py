@@ -8,7 +8,7 @@ configurator = Configurator(target, center_component=True)
 
 configurator.add_select(
     "variant",
-    ["link", "filled", "outline", "light", "gradient", "subtle", "default"],
+    ["filled", "outline", "light", "gradient", "subtle", "default", "transparent", "white"],
     "filled",
 )
 configurator.add_colorpicker("color", "indigo")

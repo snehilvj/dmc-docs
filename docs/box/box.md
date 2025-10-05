@@ -7,6 +7,7 @@ category: Miscellaneous
 ---
 
 .. toc::
+.. llms_copy::Box
 
 ### Usage
 

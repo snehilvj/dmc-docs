@@ -7,6 +7,7 @@ category: Typography
 ---
 
 .. toc::
+.. llms_copy::Table
 
 > Looking for advanced table capabilities? [Dash AG Grid](/dash-ag-grid) pairs well with DMC and supports editing, sorting, filtering, selecting, conditional formatting and much more.
 

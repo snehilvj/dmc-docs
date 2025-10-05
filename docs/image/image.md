@@ -7,6 +7,7 @@ category: Data Display
 ---
 
 .. toc::
+.. llms_copy::Image
 
 ### Simple Example
 `Image` is a wrapper for HTML `img` with minimal styles. By default, the image will take 100% of parent width. The 

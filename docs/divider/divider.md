@@ -7,6 +7,7 @@ category: Miscellaneous
 ---
 
 .. toc::
+.. llms_copy::Divider
 
 ### Simple Example
 

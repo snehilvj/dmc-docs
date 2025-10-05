@@ -11,7 +11,8 @@ excluded_links = [
     "/getting-started",
     "/mantine-api",
     "/",
-    "/help-center"
+    "/help-center",
+    "/llms"
 ]
 
 category_data = {
@@ -70,6 +71,12 @@ def create_content(data, idtype):
                 label="Help Center",
                 href="/help-center",
                 id={"type": idtype, "index": "/help-center"},
+            ),
+            create_main_link(
+                icon="material-symbols:auto-awesome-rounded",
+                label="LLMs",
+                href="/llms",
+                id={"type": idtype, "index": "/llms"},
             ),
             dmc.Anchor("Mantine V8 docs", href="https://mantine.dev/", target="_blank", ml="lg", pt="md"),
 

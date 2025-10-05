@@ -7,6 +7,7 @@ category: Layout
 ---
 
 .. toc::
+.. llms_copy::Group
 
 ### Usage
 

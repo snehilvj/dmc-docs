@@ -7,6 +7,7 @@ category: Layout
 ---
 
 .. toc::
+.. llms_copy::Grid
 
 ### Usage
 
@@ -28,7 +29,7 @@ dmc.GridCol(span=12) # 12 / 12 = 100% of row width
 `span` prop also supports dictionary syntax to change column width based on viewport width, it accepts `xs`, `sm`, `md`,
 `lg` and `xl` keys and values from 1 to 12. The syntax is the same as in `style` props.
 
-In the following example `span={'base': 12, 'md': 6, 'lg': 3`:
+In the following example `span={'base': 12, 'md': 6, 'lg': 3`}:
 
 - `base` – 12 / 12 = 100% of row width when viewport width is less than `md` breakpoint
 - `md` – 6 / 12 = 50% of row width when viewport width is between md and `lg` breakpoints

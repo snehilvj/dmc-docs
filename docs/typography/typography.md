@@ -8,6 +8,7 @@ order: 3  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Typography
 
 ### Change fonts
 

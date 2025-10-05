@@ -1,3 +1,10 @@
+import json
+
+DMC_VERSION = "2.3.0"
+MANTINE_VERSION = "8.3.1"
+LATEST_RELEASE_ENDPOINT = "/release-2-3-0"
+
+
 PAGE_TITLE_PREFIX = "Dash Mantine Components | "
 PRIMARY_COLOR = "blue"
 PROPS_TO_EXCLUDE = [
@@ -58,3 +65,6 @@ ALIGN_ITEMS_CSS_PROPERTY = ["stretch", "center", "flex-end", "flex-start"]
 JUSTIFY_CONTENT_CSS_PROPERTY = ["flex-start", "center", "flex-end", "space-around", "space-between"]
 FLEX_DIRECTION_CSS_PROPERTY = ["row", "column", "row-reverse", "column-reverse"]
 FLEX_WRAP_CSS_PROPERTY = ["wrap", "nowrap", "wrap-reverse"]
+
+with open('assets/llms.json', encoding='utf-8') as f:
+    LLMS = json.load(f)

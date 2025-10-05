@@ -8,6 +8,7 @@ order: 10  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Theme Switch Components
 
 ### Mantine Light and dark themes
 

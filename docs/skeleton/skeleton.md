@@ -7,6 +7,7 @@ category: Feedback
 ---
 
 .. toc::
+.. llms_copy::Skeleton
 
 ### Simple Usage
 

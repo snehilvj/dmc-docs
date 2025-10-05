@@ -6,7 +6,7 @@ import requests
 from dash import html
 from dash_iconify import DashIconify
 
-from lib.constants import PAGE_TITLE_PREFIX, PRIMARY_COLOR
+from lib.constants import PAGE_TITLE_PREFIX, PRIMARY_COLOR, MANTINE_VERSION, DMC_VERSION, LATEST_RELEASE_ENDPOINT
 from lib.directives.toc import TOC
 
 dash.register_page(
@@ -90,8 +90,8 @@ layout = html.Div(
                 dmc.Box([
                     dmc.Text("Version Info:", ta="center"),
                     #version-update
-                    dmc.Center(dmc.Anchor("dash-mantine-components=2.2.1" , underline=False, href="/release-2-2-0")),
-                    dmc.Center(dmc.Anchor("mantine=8.2.7" , underline=False, href="https://mantine.dev/", target='_blank')),
+                    dmc.Center(dmc.Anchor(f"dash-mantine-components={DMC_VERSION}" , underline=False, href=LATEST_RELEASE_ENDPOINT)),
+                    dmc.Center(dmc.Anchor(f"mantine={MANTINE_VERSION}" , underline=False, href="https://mantine.dev/", target='_blank')),
                 ]),
 
                 dmc.Group(

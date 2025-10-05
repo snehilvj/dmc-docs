@@ -8,6 +8,7 @@ order: 2  # sets order in navbar section
 ---
 
 .. toc::
+.. llms_copy::Theme Object
 
 ### Theme overview
 

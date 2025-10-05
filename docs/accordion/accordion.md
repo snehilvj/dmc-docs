@@ -8,6 +8,9 @@ category: Data Display
 
 .. toc::
 
+
+.. llms_copy::Accordion
+
 ### Introduction
 
 .. exec::docs.accordion.interactive
