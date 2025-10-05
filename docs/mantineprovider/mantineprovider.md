@@ -32,9 +32,9 @@ app.layout = dmc.MantineProvider(
 )
 ```
 
-### theme object
+### Theme object
 
-See the [Theme Object](/theme-object) section to learn how to customize the default Mantine theme`.
+See the [Theme Object](/theme-object) section to learn how to customize the default Mantine theme.
 
 
 ### Custom Colors
@@ -49,7 +49,7 @@ reference this attribute to decide which colors to apply.
 
 You can change the color scheme with the `forceColorScheme` prop.
 
-In the [Theme Switch Componets](/theme-switch) section, learn how to add a component to allow users to select either light or dark mode.
+In the [Theme Switch Components](/theme-switch) section, learn how to add a component to allow users to select either light or dark mode.
 
 ```python
 import dash_mantine_components as dmc

@@ -1,6 +1,7 @@
 import dash_mantine_components as dmc
 
 from lib.configurator import Configurator
+from lib.constants import ALIGN_ITEMS_CSS_PROPERTY, JUSTIFY_CONTENT_CSS_PROPERTY
 
 target = dmc.Stack(
     [
@@ -16,11 +17,11 @@ target = dmc.Stack(
 configurator = Configurator(target)
 
 configurator.add_select(
-    "align", ["stretch", "center", "flex-end", "flex-start"], "flex-start"
+    "align", ALIGN_ITEMS_CSS_PROPERTY, "flex-start"
 )
 configurator.add_select(
     "justify",
-    ["space-between", "space-around", "center", "flex-end", "flex-start"],
+    JUSTIFY_CONTENT_CSS_PROPERTY,
     "center",
 )
 configurator.add_slider("gap", "sm")
