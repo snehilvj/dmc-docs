@@ -3,7 +3,7 @@
 def add_title_from_metadata(page: dict) -> str:
     description = page.get("description","")
     name = page["name"]
-    category = page.get("category", "")
+    category = page.get("category", "General")
     content = page.get("content","")
 
     updated_content = f"\n\n## {name}  \n{description}  \nCategory: {category}  \n\n{content}"
