@@ -1,4 +1,5 @@
 import json
+import os
 
 DMC_VERSION = "2.3.0"
 MANTINE_VERSION = "8.3.1"
@@ -61,6 +62,9 @@ PROPS_TO_EXCLUDE = [
     "bdrs"
 ]
 
+# Get path to assets/llms.json relative to this file
+constants_dir = os.path.dirname(os.path.abspath(__file__))
+llms_path = os.path.join(constants_dir, '../assets/llms.json')
 
-with open('assets/llms.json', encoding='utf-8') as f:
+with open(llms_path, encoding='utf-8') as f:
     LLMS = json.load(f)

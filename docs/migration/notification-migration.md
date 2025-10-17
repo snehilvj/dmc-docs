@@ -2,6 +2,7 @@
 name: Notifications Migration Guide
 endpoint: /migration-notifications
 description: This page helps you migrate from the NotificationProvider to the NotificationContainer
+category: Releases
 dmc: false
 ---
 

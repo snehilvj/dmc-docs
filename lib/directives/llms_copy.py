@@ -15,6 +15,7 @@ class LlmsCopy(BaseDirective):
         llm_intro = textwrap.dedent(f"""
         > Dash Mantine Components v{DMC_VERSION} Documentation for {title}
         > See complete docs at https://www.dash-mantine-components.com/assets/llms.txt  
+        > All relative links in this file should be resolved against https://www.dash-mantine-components.com
         
         """)
 
