@@ -6,7 +6,7 @@ authors = ["Snehil Vijay <snehilvj@outlook.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 dash = "^3.0.0"
 dash-iconify = "^0.1.0"
 dash-ag-grid = "31.3.1"
