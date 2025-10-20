@@ -1,9 +1,9 @@
 dash>=2.5.0
 dash-iconify>=0.1.0
-requests>=2.27.1
 python-frontmatter>=1.0.0
 dash-mantine-components>=0.15
 pydantic>=2.3.0
 gunicorn>=21.2.0
-git+https://github.com/AnnMarieW/markdown2dash-amw.git#egg=markdown2dash
+markdown2dash==0.1.2
 pandas==2.2.3
+dash-ag-grid==31.3.1
