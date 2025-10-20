@@ -340,7 +340,9 @@ Set `highlightHover=True` to highlight the series when hovered, mirroring the be
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### CompositeChart
 

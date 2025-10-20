@@ -66,7 +66,9 @@ Inputs do not have associated labels, set aria-label to make component visible t
 | pinInput | .mantine-PinInput-pinInput | Input item wrapper |
 | input    | .mantine-PinInput-input    | Input element      |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### PinInput
 

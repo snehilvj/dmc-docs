@@ -333,7 +333,9 @@ hovered series, use the `hoverSeriesName` property.
 |                | --chart-text-color | Controls color of the axis labels         |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### ScatterChart
 

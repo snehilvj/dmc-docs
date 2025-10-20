@@ -44,7 +44,9 @@ component = dmc.Spoiler(
 | content | .mantine-Spoiler-content | Wraps content to set max-height and transition |
 | control | .mantine-Spoiler-control | Show/hide content control                      |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Spoiler
 

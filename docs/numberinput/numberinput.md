@@ -154,7 +154,9 @@ Controls are not rendered in these cases:
 | control  | data-direction   | "up" or "down" depending on control |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### NumberInput
 

@@ -90,7 +90,9 @@ listens to `mousedown` and `touchstart` events. You can change it to any other e
 | dropdown  | data-position   | Value of floating UI dropdown position |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Popover
 

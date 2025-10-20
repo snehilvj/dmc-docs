@@ -71,7 +71,9 @@ You can also add icons in the switch labels.
 | description  | .mantine-Switch-description  | Description displayed below the label           |
 | error        | .mantine-Switch-error        | Error message displayed below the label         |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Switch
 

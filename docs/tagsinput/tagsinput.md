@@ -298,7 +298,9 @@ Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/
 | inputField  | .mantine-TagsInput-inputField  | Input field                                      |
 | pillsList   | .mantine-TagsInput-pillsList   | List of pills, also contains input field         |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### TagsInput
 

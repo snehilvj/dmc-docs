@@ -259,7 +259,9 @@ Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Tabs
 

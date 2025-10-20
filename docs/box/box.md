@@ -40,7 +40,11 @@ dmc.Box(
 > Please see the [Style Props](/style-props) section for more information.
 
 
+
+
 ### Keyword Arguments
+.. style_props_text::
+.. style_props_text::
 
 #### Box
 

@@ -169,7 +169,9 @@ dmc.Grid([
 |          | --grid-align      | Controls `align-items` property  |
 |          | --grid-justify    | Controls `justify-content` property |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Grid
 

@@ -24,17 +24,20 @@ class LlmsCopy(BaseDirective):
             print(f"Unable to find {title} in llms.json")
 
         component = dmc.Box([
-            html.Label(
-                "Copy for llm",
-                id="copy-label",
-                style={"cursor": "pointer", "marginRight": 5}
-            ),
-            dcc.Clipboard(
-                id="clipboard-target",
-                content=llm_intro + llm_content,
-                style={"display": "inline-block", "cursor": "pointer"}
+            dmc.Box([
+                html.Label(
+                    "Copy for llm",
+                    id="copy-label",
+                    style={"cursor": "pointer", "marginRight": 5}
+                ),
+                dcc.Clipboard(
+                    id="clipboard-target",
+                    content=llm_intro + llm_content,
+                    style={"display": "inline-block", "cursor": "pointer"}
 
-            )
-        ], id="clipboard-wrapper", c="dimmed", my="md")
+                )
+            ], id="clipboard-wrapper", c="dimmed", my="md", display="inline-block"),
+            dmc.Tooltip(target="#clipboard-wrapper", label="Copy documentation in AI-friendly format")
+        ], display="inline-blick")
 
         return component

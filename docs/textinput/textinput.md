@@ -62,7 +62,9 @@ Add icon or loading indicator to the right section of the input.
 | description | .mantine-TextInput-description | Description element                              |
 | error       | .mantine-TextInput-error       | Error element                                    |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### TextInput
 

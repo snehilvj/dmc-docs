@@ -103,7 +103,9 @@ By default, the Recharts data animation is disabled. To enable and customize the
 |                  | --chart-text-color   | Controls color of all text elements in the chart|
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### RadarChart
 

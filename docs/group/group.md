@@ -68,7 +68,9 @@ dmc.Group([
 |----------|-------------|-----------------|
 | root     | data-grow   | `grow` prop is set |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Group
 

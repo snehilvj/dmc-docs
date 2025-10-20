@@ -93,7 +93,9 @@ You can also change completed icon for each step, for example, to indicate error
 | stepDescription         | .mantine-Stepper-stepDescription         | Step description                              |
 | stepLoader              | .mantine-Stepper-stepLoader              | Step loader                                   |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Stepper
 

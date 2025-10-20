@@ -261,7 +261,9 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 | `root`   | `--notifications-z-index` | Controls notifications container z-index |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### NotificationContainer
 

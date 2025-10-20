@@ -424,7 +424,9 @@ dmc.AppShell(
 | navbar, header, aside, footer | data-with-border | `withBorder` prop is set either on the AppShell or on the associated component | – |
 | section          | data-grow         | `grow` prop is set on the AppShell.Section | – |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 ### AppShell
 .. kwargs::AppShell

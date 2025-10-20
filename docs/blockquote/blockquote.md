@@ -32,7 +32,9 @@ Here's an example using [DashIconify](/dash-iconify).
 | icon   | .mantine-Blockquote-icon  | Icon wrapper       |
 | cite   | .mantine-Blockquote-cite  | Cite element       |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Blockquote
 

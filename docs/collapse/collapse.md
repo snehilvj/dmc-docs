@@ -27,7 +27,9 @@ Set following props to control transition:
 .. exec::docs.collapse.nested
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Collapse
 

@@ -43,7 +43,9 @@ Set `withPages=False` to hide pages controls:
 | control | .mantine-Pagination-control | Control element: items, next/previous, first/last buttons |
 | dots    | .mantine-Pagination-dots    | Dots icon wrapper                                         |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Pagination
 

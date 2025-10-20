@@ -95,7 +95,9 @@ Set `disabled` prop to disable all controls:
 | control  | `data-disabled` | Component is disabled by one of the props: `minTime`, `maxTime`, `disableTime`, `disabled` |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### TimeGrid
 

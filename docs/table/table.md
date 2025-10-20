@@ -117,7 +117,9 @@ This example also shows how to include other dash components in table cells.
 | `tr`      | `data-hover` | `highlightOnHover` prop is set on Table component | – |
 | `tr`      | `data-size` | – | Value of `captionSize` prop on Table component |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Table
 

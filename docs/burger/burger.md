@@ -59,7 +59,9 @@ dmc.Burger(id="burger-button", opened=False, lineSize=2, size="md")
 |----------|--------------|--------------------|
 | burger   | data-opened  | `opened` prop is set |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Burger
 

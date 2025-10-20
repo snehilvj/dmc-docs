@@ -225,7 +225,9 @@ will be removed in DMC v1.0.0
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Carousel
 

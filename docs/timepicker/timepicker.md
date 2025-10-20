@@ -213,7 +213,9 @@ Set aria labels for hours, minutes, seconds and am/pm inputs and clear button wi
 | dropdown | `--control-font-size` | Controls font-size of dropdown controls |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### TimePicker
 

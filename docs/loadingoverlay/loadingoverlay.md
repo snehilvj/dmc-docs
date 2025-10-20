@@ -38,7 +38,9 @@ It is usually used to indicate loading state of forms.
 | overlay | .mantine-LoadingOverlay-overlay | `Overlay` component |
 | loader  | .mantine-LoadingOverlay-loader  | `Loader` component  |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### LoadingOverlay
 

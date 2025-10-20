@@ -302,7 +302,9 @@ select less than 2 currency pairs.
 | `group`      | `.mantine-Autocomplete-group`          | Options group wrapper                                    |
 | `groupLabel` | `.mantine-Autocomplete-groupLabel`     | Options group label                                      |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Autocomplete
 

@@ -100,7 +100,9 @@ When using `FloatingTooltips`  set `boxWrapperProps={'display': 'contents'}` for
 | section | `data-animated` | `animated` prop is set |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Progress
 

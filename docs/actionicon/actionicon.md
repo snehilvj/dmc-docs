@@ -252,7 +252,9 @@ dmc.ActionIconGroup([
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### ActionIcon
 

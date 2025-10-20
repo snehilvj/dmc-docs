@@ -39,7 +39,9 @@ category: Inputs
 | symbolBody  | .mantine-Rating-symbolBody  | Wrapper around star icon for centering      |
 | symbolGroup | .mantine-Rating-symbolGroup | Group of symbols, used to display fractions |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Rating
 

@@ -101,7 +101,9 @@ To enable deselecting a radio chip, set `deselectable=True`
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Chip
 

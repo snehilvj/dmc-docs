@@ -379,7 +379,9 @@ Set `highlightHover=True` to highlight the series when hovered, mirroring the be
 |                  | --chart-text-color   | Controls color of the axis labels                |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### LineChart
 

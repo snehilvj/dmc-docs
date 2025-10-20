@@ -37,7 +37,9 @@ Set `disabled` prop to disable all inputs and buttons inside the fieldset:
 | -------- | ------------------ | ------------------------- |
 | `root`   | `--fieldset-radius` | Controls border-radius     |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### TextInput
 

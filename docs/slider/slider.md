@@ -210,7 +210,9 @@ Here is an example:
 | mark | `data-filled` | mark position is less or equal slider value |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Slider
 

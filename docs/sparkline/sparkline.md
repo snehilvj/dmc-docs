@@ -73,7 +73,9 @@ By default, the Recharts data animation is disabled. To enable and customize the
 |:-----------------|:---------------------|:-----------------------------------|
 | root             | --chart-color        | Controls stroke and fill colors    |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Sparkline
 

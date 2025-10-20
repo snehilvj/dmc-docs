@@ -238,7 +238,9 @@ export interface RenderTreeNodePayload {
 | node         | data-level     | –                      | Nesting level of the node |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Tree
 

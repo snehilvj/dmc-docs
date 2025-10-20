@@ -21,7 +21,9 @@ Set `prefix` and `suffix` props to add given string to the start or end of the v
 
 .. exec::docs.numberformatter.prefix_suffix
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### NumberFormatter
 
