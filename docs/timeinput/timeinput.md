@@ -65,7 +65,9 @@ You can display an error with a red border and add an error message.
 | description | .mantine-TimeInput-description | Description element                              |
 | error       | .mantine-TimeInput-error       | Error element                                    |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### TimeInput
 

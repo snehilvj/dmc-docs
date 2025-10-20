@@ -70,7 +70,9 @@ Here is an example of `delay_hide` prop in `dcc.Loading` to prevent the `Skeleto
 | root     | data-animate | `animate` prop is set   |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Skeleton
 

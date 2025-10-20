@@ -44,7 +44,9 @@ Adjust stack styles with `align`, `justify`, and `spacing` props.
 |          | --stack-gap      | Controls `gap` property         |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Stack
 

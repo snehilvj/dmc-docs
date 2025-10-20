@@ -44,7 +44,9 @@ html.Div([
 ])
 ```
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Space
 

@@ -113,7 +113,9 @@ Change transition properties with:
 | indicator  | .mantine-SegmentedControl-indicator  | Floating indicator that moves between items             |
 | innerLabel | .mantine-SegmentedControl-innerLabel | Wrapper of label element children                       |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### SegmentedControl
 

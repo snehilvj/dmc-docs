@@ -106,7 +106,9 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 | `calendarHeaderControl`| `data-direction`| –                                   | "previous" or "next" depending on the control type |
 | `calendarHeaderControl`| `data-disabled`| Control is disabled for any reason  | –                                  |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### MonthPickerInput
 

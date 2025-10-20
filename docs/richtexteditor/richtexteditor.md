@@ -446,7 +446,9 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 |-----------|--------------|---------------------------|
 | `control` | `data-active` | Control is active        |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### RichTextEditor
 

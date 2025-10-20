@@ -40,7 +40,9 @@ using the prop `boxWrapperProps` in dmc.HoverCardTarget.
 | dropdown | .mantine-HoverCard-dropdown | Dropdown element |
 | arrow    | .mantine-HoverCard-arrow    | Dropdown arrow   |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### HoverCard
 

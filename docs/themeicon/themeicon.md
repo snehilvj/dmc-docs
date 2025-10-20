@@ -43,7 +43,9 @@ To use gradient as ThemeIcon background:
 |:------------|:------------------------|:-------------------------------------------------|
 | root        | .mantine-ThemeIcon-root | Root element                                     |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### ThemeIcon
 

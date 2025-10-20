@@ -66,7 +66,9 @@ dmc.RingProgress(
 | curve | .mantine-RingProgress-curve | circle element |
 | label | .mantine-RingProgress-label | Label element  |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### RingProgress
 

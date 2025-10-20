@@ -40,7 +40,9 @@ CardSection is a special component that is used to remove Card padding from its 
 | root    | .mantine-Card-root    | Root element                |
 | section | .mantine-Card-section | `Card.Section` root element |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Card
 

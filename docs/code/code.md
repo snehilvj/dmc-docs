@@ -34,7 +34,9 @@ component.
 |:-------------|:-------------------|:----------------------------------------------|
 | root         | .mantine-Code-root | Root element                                  |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Code
 

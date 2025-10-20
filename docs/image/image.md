@@ -70,7 +70,9 @@ given `src`, background-size to cover and background-position to center.
 | root     | `data-fallback` | Image failed to load |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Image
 

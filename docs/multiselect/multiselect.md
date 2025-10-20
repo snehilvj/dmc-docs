@@ -331,7 +331,9 @@ You can use CSS to remove the placeholder in the `MultiSelect` component when va
 | inputField  | .mantine-MultiSelect-inputField  | Input field                                      |
 | pillsList   | .mantine-MultiSelect-pillsList   | List of pills, also contains input field         |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### MultiSelect
 

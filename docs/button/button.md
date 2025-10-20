@@ -261,7 +261,9 @@ dmc.ButtonGroup([
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Button
 

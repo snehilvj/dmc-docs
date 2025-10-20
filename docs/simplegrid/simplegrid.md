@@ -71,7 +71,9 @@ corner of the demo:
 |:------------|:-------------------------|:-------------------------------------------------|
 | root        | .mantine-SimpleGrid-root | Root element                                     |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### SimpleGrid
 

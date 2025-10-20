@@ -12,8 +12,8 @@ class StylesApiText(BaseDirective):
             dmc.Text("This component supports the ", span=True),
             dmc.Anchor("Styles API", href="/styles-api"),
             dmc.Text("""
-            allowing you to customize the styles of any inner element.  For full control over component styling, refer
-             to the theming section of our documentation.
+            allowing you to customize the styles of any inner element.  
+            
             """, span=True),
-        ])
+        ], mb="sm")
         return component

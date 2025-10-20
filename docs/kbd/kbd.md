@@ -21,7 +21,9 @@ category: Data Display
 |:------------|:------------------|:-------------------------------------------------|
 | root        | .mantine-Kbd-root | Root element                                     |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Kbd
 

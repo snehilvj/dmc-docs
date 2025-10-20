@@ -25,7 +25,9 @@ Breadcrumbs accept any react nodes as children and places given separator (defau
 | breadcrumb | .mantine-Breadcrumbs-breadcrumb | Breadcrumb item wrapper    |
 | separator  | .mantine-Breadcrumbs-separator  | Separator between children |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Breadcrumbs
 

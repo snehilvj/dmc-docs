@@ -66,7 +66,9 @@ Control timeline appearance with the following props:
 | item, itemBullet | data-active    | Item index is `<=` Timeline `active` prop   |
 | item           | data-line-active | Item index is `<` Timeline `active` prop    |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Timeline
 

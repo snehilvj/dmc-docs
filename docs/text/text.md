@@ -84,7 +84,9 @@ The root element of `Text` is an HTML `p` component.  To change it to an HTML `s
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Text
 

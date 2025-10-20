@@ -176,7 +176,9 @@ This example also shows how to add hover styles
 | card     | data-checked    | `checked` prop is set      |
 | card     | data-with-border | `withBorder` prop is set  |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### RadioGroup
 

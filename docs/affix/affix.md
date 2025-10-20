@@ -64,7 +64,9 @@ dmc.Affix(
 | root     | --affix-right    | Controls `right` property |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Affix
 

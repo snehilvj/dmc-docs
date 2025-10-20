@@ -42,7 +42,9 @@ Set `offset` to change indicator position. It is useful when Indicator component
 | root      | .mantine-Indicator-root      | Root element      |
 | indicator | .mantine-Indicator-indicator | Indicator element |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Indicator
 

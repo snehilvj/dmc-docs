@@ -59,7 +59,9 @@ See an example in the [Loading Overlay](/components/loadingoverlay) section,
 |          | --loader-color   | Controls loader color                                              |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Loader
 

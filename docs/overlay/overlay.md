@@ -68,7 +68,9 @@ Here’s your content formatted as Markdown tables:
 Do you want me to keep this as three separate tables (like above), or merge them into one big table with a "Type" column (`Selector / CSS variable / Data attribute`) for easier scanning?
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Overlay
 

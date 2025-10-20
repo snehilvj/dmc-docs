@@ -50,7 +50,9 @@ To display just the swatches and no picker, initialize the component with `withP
 | swatch            | .mantine-ColorPicker-swatch            | Color swatch                                                        |
 | swatches          | .mantine-ColorPicker-swatches          | Color swatches list                                                 |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### ColorPicker
 

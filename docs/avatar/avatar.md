@@ -72,7 +72,9 @@ Here's an example of a dynamically created AvatarGroup from GitHub contributors 
 | image           | .mantine-Avatar-image           | `img` element                                             |
 | placeholder     | .mantine-Avatar-placeholder     | Placeholder element, rendered when image cannot be loaded |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Avatar
 

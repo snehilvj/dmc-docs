@@ -134,7 +134,9 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 | day                   | `data-first-in-range` | Day is first in range selection                                       | –                                                      |
 | day                   | `data-last-in-range`  | Day is last in range selection                                        | –                                                      |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### DatePickerInput
 

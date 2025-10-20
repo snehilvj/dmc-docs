@@ -38,7 +38,9 @@ category: Typography
 | itemLabel   | .mantine-List-itemLabel   | ListItem content                                      |
 | itemWrapper | .mantine-List-itemWrapper | ListItem wrapper element, container, icon and content |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### List
 

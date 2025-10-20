@@ -28,7 +28,9 @@ To use `Center` with inline elements set `inline` prop. For example, you can cen
 |------|--------------------|--------------|
 | root | .mantine-Card-root | Root element |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Center
 

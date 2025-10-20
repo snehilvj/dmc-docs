@@ -93,7 +93,9 @@ dmc.ColorInput(**{"aria-label": "My input"}) # ok, label is not visible but will
 | eyeDropperButton  | .mantine-ColorInput-eyeDropperButton  | Eye dropper button                                                  |
 | eyeDropperIcon    | .mantine-ColorInput-eyeDropperIcon    | Default eye dropper icon                                            |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### ColorInput
 

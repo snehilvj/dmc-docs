@@ -47,7 +47,9 @@ container. To make it work inside flex container, you need to set `width` or `fl
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### AspectRatio
 
