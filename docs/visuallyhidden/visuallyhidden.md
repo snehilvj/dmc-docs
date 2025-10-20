@@ -20,7 +20,7 @@ This example uses it with the `ActionIcon` component:
 
 
 ### Keyword Arguments
-.. style_props_text::
+
 
 #### VisuallyHidden
 
