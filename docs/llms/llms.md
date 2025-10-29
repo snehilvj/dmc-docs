@@ -11,7 +11,7 @@ dmc: false
 
 Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (~1.6MB)
 
-* [View DMC llms.txt online](/assets/llms.txt)
+* [View DMC llms.txt online](https://www.dash-mantine-components.com/assets/llms.txt)
 * [View Mantine llms.txt online](https://mantine.dev/llms.txt) (upstream Mantine documentation)
 
 
@@ -88,7 +88,7 @@ Use the interactive tool below to select specific component categories (for exam
 
 #### Option 2 — Build your own from llms.json
 
-You can also manually create your own `llms.txt` file using the structured data in  [llms.json](/assets/llms.json).
+You can also manually create your own `llms.txt` file using the structured data in  [llms.json](https://www.dash-mantine-components.com/assets/llms.json).
 
 Each entry in `llms.json` represents one documentation page, including fields like `name`, `description`, `category`,
 and full `content`.  You can filter and combine only the components you need — for example, by category or name.

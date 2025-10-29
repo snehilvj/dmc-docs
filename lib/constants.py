@@ -68,3 +68,4 @@ llms_path = os.path.join(constants_dir, '../assets/llms.json')
 
 with open(llms_path, encoding='utf-8') as f:
     LLMS = json.load(f)
+    NAME_CONTENT_MAP = [{item["name"]: item["content"]} for item in LLMS]
