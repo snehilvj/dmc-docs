@@ -3,14 +3,14 @@ import dash_mantine_components as dmc
 from dash import  dcc, html
 from dash.development.base_component import Component
 from markdown2dash import BaseDirective
-from lib.constants import LLMS, DMC_VERSION
+from lib.constants import NAME_CONTENT_MAP, DMC_VERSION
 
 
 class LlmsCopy(BaseDirective):
     NAME = "llms_copy"
 
     def render(self, renderer, title: str, content: str, **options) -> Component:
-        llm_content = next((i["content"] for i in LLMS if i["name"] == title), None)
+        llm_content = NAME_CONTENT_MAP[0].get(title, "")
 
         llm_intro = textwrap.dedent(f"""
         > Dash Mantine Components v{DMC_VERSION} Documentation for {title}

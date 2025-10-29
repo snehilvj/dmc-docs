@@ -8,6 +8,7 @@ category: Dash
 
 
 .. toc::
+.. llms_copy::Functions as Props
 
 
 ### How Function Props Work
