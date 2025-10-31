@@ -310,3 +310,11 @@ Additional Supported props in V2.1.0
 | MonthPickerInput | getYearControlProps, getMonthControlProps                         |
 | YearPickerInput  | getYearControlProps                                               |
 | Tree             | renderNode                                                        |
+
+
+Additional Supported props in V2.4.0
+
+| Component                                                                 | Props                                              |
+| ------------------------------------------------------------------------- | -------------------------------------------------- |
+| AreaChart, BarChart, BubbleChart, CompositeChart, LineChart, ScatterChart | xAxisProps, yAxisProps, gridProps, rightYAxisProps |
+| BubbleChart                                                               | zAxisProps                                         |

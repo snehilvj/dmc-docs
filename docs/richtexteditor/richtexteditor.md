@@ -45,7 +45,8 @@ By default, all the available extensions are enabled:
 ```python
 dmc.RichTextEditor(       
     extensions=[
-        "StarterKit",   
+        {"StarterKit": {"codeBlock": False}},
+        "CodeBlockLowlight", # available in DMC >= 2.4.0
         "Superscript",
         "Subscript",
         "Highlight",
@@ -89,7 +90,15 @@ Each extension can be defined in two ways:
 - As a dictionary to specify configuration options (for example `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
 
  **Important:** Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
-`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension list above that you need.
+`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension that you need.
+
+Here is the default `extensions` for corresponding DMC versions.
+
+
+.. sourcetabs::docs/richtexteditor/template-v2-4-0.py, docs/richtexteditor/template-v2-3-0.py, docs/richtexteditor/template-v1-1-0.py
+    :defaultExpanded: false
+    :withExpandedButton: true 
+
 
 Additionally, some features require multiple extensions. For example:  
 - color formatting requires both `"Color"` and `"TextStyle"`.  
@@ -168,6 +177,7 @@ The following is included by default in DMC >=2.3.0
 - Superscript requires Superscript extension
 - Subscript requires Subscript extension
 - Highlight requires Highlight extension
+- Code highlighting requires 'CodeBlockLowlight extension (available in DMC >=2.4.0)
 
 
 
@@ -223,6 +233,34 @@ To add controls in the toolbar for table features, see the Custom Controls secti
 
 .. exec::docs.richtexteditor.image
 
+### Code highlight  
+
+*new in DMC 2.4.0*  
+
+To use code highlight you will need to ensure to include at least the following extensions:
+
+
+```python
+ dmc.RichTextEditor(       
+     extensions=[
+         {"StarterKit": {"codeBlock": False}},
+        "CodeBlockLowlight",         
+         # other needed extensions
+     ],
+)
+```
+Note:  You must set `{"codeBlock": False}` in the `StarterKit` configuration to prevent a conflict with the more
+advanced `CodeBlockLowlight` extension. 
+
+Current supported languages: 
+  ts
+  js
+  python/ py 
+  css
+  bash / shell  
+  text
+
+Set language to text to supress code highlighting.
 
 ### Sticky toolbar
 Set `sticky` prop on `RichTextEditor` `toolbar` prop to make toolbar sticky, control top property with `stickyOffset`. 
