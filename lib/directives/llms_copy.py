@@ -10,7 +10,8 @@ class LlmsCopy(BaseDirective):
     NAME = "llms_copy"
 
     def render(self, renderer, title: str, content: str, **options) -> Component:
-        llm_content = NAME_CONTENT_MAP[0].get(title, "")
+        llm_content = NAME_CONTENT_MAP.get(title, "")
+
 
         llm_intro = textwrap.dedent(f"""
         > Dash Mantine Components v{DMC_VERSION} Documentation for {title}
@@ -37,7 +38,7 @@ class LlmsCopy(BaseDirective):
 
                 )
             ], id="clipboard-wrapper", c="dimmed", my="md", display="inline-block"),
-            dmc.Tooltip(target="#clipboard-wrapper", label="Copy documentation in AI-friendly format")
+            dmc.Tooltip(target="#clipboard-wrapper", label="Copy page as markdown for LLMs")
         ], display="inline-blick")
 
         return component
