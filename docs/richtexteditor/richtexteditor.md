@@ -412,6 +412,23 @@ The `selected` prop contains the currently selected text.  Note that it is text 
 
 .. exec::docs.richtexteditor.selected
 
+
+### Accessing the Editor Instance clientside
+
+The `dash_mantine_components.getEditor(id)` function provides direct access to the underlying Tiptap editor instance 
+in clientside callbacks. This allows you full access to the editor API including executing commands, inspecting
+content, and updating the editor state.  See the [Tiptap editor API](https://tiptap.dev/docs/editor/api/commands) for more details.
+
+
+This returns the Tiptap editor instance for the specified component ID, or `undefined` if the editor doesn't exist:
+
+```javascript
+const editor = dash_mantine_components.getEditor('editor-id');
+```
+
+This example shows how to access the editor in a clientside callback and provide a word count of the content.
+
+
 ### Debounce
 
 The `debounce` prop controls how updates to the `html`, `json`, and `selected` props are triggered in the `RichTextEditor`.
