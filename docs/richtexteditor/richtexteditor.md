@@ -262,6 +262,8 @@ Current supported languages:
 
 Set language to text to supress code highlighting.
 
+
+
 ### Sticky toolbar
 Set `sticky` prop on `RichTextEditor` `toolbar` prop to make toolbar sticky, control top property with `stickyOffset`. 
 For example, in the dmc docs website there is a header with 60px height, in this case we will need to set 

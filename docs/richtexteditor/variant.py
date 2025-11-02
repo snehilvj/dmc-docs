@@ -4,7 +4,6 @@ component = dmc.RichTextEditor(
     html="Subtle rich text editor variant",
     extensions=[
         "StarterKit",
-        "Underline",
         "Highlight",
     ],
     toolbar={
