@@ -235,9 +235,9 @@ To add controls in the toolbar for table features, see the Custom Controls secti
 
 ### Code highlight  
 
-*new in DMC 2.4.0*  
+*New in V2.4.0*  
 
-To use code highlight you will need to ensure to include at least the following extensions:
+To use code highlight you will need to include at least the following extensions:
 
 
 ```python
@@ -262,6 +262,7 @@ Current supported languages:
 
 Set language to text to supress code highlighting.
 
+If you would like other languages included, please [open a feature request on our GitHub.](https://github.com/snehilvj/dash-mantine-components/issues)
 
 
 ### Sticky toolbar
@@ -397,8 +398,7 @@ Use the appropriate Tiptap documentation above to see the full list of editor co
     :withExpandedButton: true 
 
 #### Example: Font size controls
-
-Note: FontSize is available in DMC>=2.3.0 which uses Tiptap v3.
+*New in V2.3.0* 
 
 .. exec::docs.richtexteditor.custom_controls_fontsize
     :code: false

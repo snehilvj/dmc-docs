@@ -17,16 +17,8 @@ app.layout = dmc.MantineProvider(
 if __name__ == "__main__":
     app.run(debug=True)"""
 
-# Replace special HTML characters manually
-escaped_code = (code_example
-    .replace("&", "&amp;")
-    .replace("<", "&lt;")
-    .replace(">", "&gt;")
-    .replace('"', "&quot;"))
-
-
 component= dmc.RichTextEditor(
-    html=f"<p>Regular paragraph</p><pre><code>{escaped_code}</code></pre>",
+    html=f"<p>Regular paragraph</p><pre><code>{code_example}</code></pre>",
     extensions=[
         {"StarterKit": { "codeBlock": False }},
         "CodeBlockLowlight"
