@@ -265,6 +265,32 @@ Set language to text to supress code highlighting.
 If you would like other languages included, please [open a feature request on our GitHub.](https://github.com/snehilvj/dash-mantine-components/issues)
 
 
+### Focus
+
+Use the `focus` prop to control the editor's focus state.
+
+- `focus=True` - Focus the editor at the current cursor position
+- `focus=False` - Blur (remove focus from) the editor
+- `focus="start"` - Focus at the start of the document
+- `focus="end"` - Focus at the end of the document
+- `focus={"position": 10}` - Focus at a specific position (character offset)
+- `focus="all"` - Focus and select all content
+
+**Example:**
+
+
+
+### Editable 
+
+The `editable` prop controls whether the editor content can be modified. When `editable=False`:
+- The editor becomes read-only
+- Users can still select and copy text
+- The toolbar is automatically hidden
+
+**Example:**
+
+
+
 ### Sticky toolbar
 Set `sticky` prop on `RichTextEditor` `toolbar` prop to make toolbar sticky, control top property with `stickyOffset`. 
 For example, in the dmc docs website there is a header with 60px height, in this case we will need to set 
