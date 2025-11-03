@@ -267,6 +267,8 @@ If you would like other languages included, please [open a feature request on ou
 
 ### Focus
 
+*New in V2.4.0*  
+
 Use the `focus` prop to control the editor's focus state.
 
 - `focus=True` - Focus the editor at the current cursor position
@@ -281,6 +283,8 @@ Use the `focus` prop to control the editor's focus state.
 
 
 ### Editable 
+
+*New in V2.4.0*  
 
 The `editable` prop controls whether the editor content can be modified. When `editable=False`:
 - The editor becomes read-only
