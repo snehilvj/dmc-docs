@@ -38,16 +38,24 @@ class Configurator:
         )
         setattr(self.target, target_prop, mapping[value])
         self.control_props.append({ 'prop': target_prop, 'value': mapping[value] })
-        self.controls.append(
-            dmc.ColorPicker(
-                id=cid,
-                size="sm",
-                withPicker=False,
-                swatches=list(mapping.values()),
-                swatchesPerRow=7,
-                value=mapping[value],
-            )
+
+        control = dmc.Stack(
+            [
+                dmc.Text(create_label(target_prop), size="sm", fw=500),
+                dmc.ColorPicker(
+                    id=cid,
+                    size="sm",
+                    withPicker=False,
+                    swatches=list(mapping.values()),
+                    swatchesPerRow=7,
+                    value=mapping[value],
+                )
+            ],
+            gap=0,
         )
+        self.controls.append(control)
+
+
 
     def add_switch(self, target_prop: str, checked: bool):
         cid = {"prop": target_prop, 'id': self.new_id, 'arg': len(self.inputs)}
