@@ -20,7 +20,7 @@ component = dmc.AreaChart(
         {"name": "Oranges", "color": "blue.6"},
         {"name": "Tomatoes", "color": "teal.6"}
     ],
-    curveType="linear",
+    curveType="Monotone",
     tickLine="xy",
     withGradient=False,
     withDots=False,
