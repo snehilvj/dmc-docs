@@ -14,13 +14,15 @@ component = dmc.Group([
         children=DashIconify(icon="tabler:clipboard"),
         copiedChildren=DashIconify(icon="tabler:check"),
         color="blue",
-        copiedColor="teal"
+        copiedColor="teal",
+        variant="outline"
     ),
     dmc.CopyButton(
         value="This text is copied",
         children=DashIconify(icon="fa-regular:copy"),
         copiedChildren=DashIconify(icon="fa-regular:check-circle"),
-        color="blue",
-        copiedColor="teal",
+        color="gray",
+        copiedColor="gray.2",
+        variant="transparent"
     )
 ])
