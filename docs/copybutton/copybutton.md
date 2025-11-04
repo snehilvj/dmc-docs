@@ -109,11 +109,7 @@ Learn more about [navigator.clipboard](https://web.dev/articles/async-clipboard)
 | Selector       | Attribute             | Condition               | Value                           |
 |----------------|------------------------|--------------------------|---------------------------------|
 | root           | data-disabled          | `disabled` prop is set   | –                               |
-| root, label    | data-loading           | `loading` prop is set    | –                               |
 | root           | data-block             | `fullWidth` prop is set  | –                               |
-| root           | data-with-left-section | `leftSection` is set     | –                               |
-| root           | data-with-right-section| `rightSection` is set    | –                               |
-| section        | data-position          | –                        | Section position: left or right |
 
 
 ### Keyword Arguments
