@@ -5,10 +5,10 @@ component = dmc.Box([
     dmc.Select(
         id="copy-select",
         data=["Job A", "Job B", "Job C"],
-        value="Job A",
         label="Select Job",
         description="Results are copied to the clipboard"
     ),
+    dmc.Text(id="copy-select-output"),
     dmc.CopyButton(
         id="copy-trigger",
         style={"visibility": "hidden"},
@@ -17,9 +17,11 @@ component = dmc.Box([
 ])
 
 @callback(
+    Output("copy-select-output", "children"),
     Output("copy-trigger", "value"),
     Output("copy-trigger", "triggerCopy"),
     Input("copy-select", "value")
 )
 def update_clipboard(v):
-    return f"Results from {v}", True
+    results = f"Results from {v}"
+    return results, results, True

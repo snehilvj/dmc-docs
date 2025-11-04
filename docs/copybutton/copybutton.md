@@ -51,6 +51,22 @@ The `timeout` prop controls how long the "copied" state is displayed (in millise
 
 .. exec::docs.copybutton.timeout
 
+### Custom Copy Button
+
+Create a custom copy button using a JavaScript function. This example uses an `ActionIcon` and `Tooltip` that respond to the copied state.
+
+.. functions_as_props::
+
+
+.. exec::docs.copybutton.customcopy
+    :code: false
+
+.. sourcetabs::docs/copybutton/customcopy.py, assets/examples-js/custom_copy.js
+    :defaultExpanded: true
+    :withExpandedButton: true 
+
+
+
 ### Security
 Due to security reasons `CopyButton` components will not work in iframes and may not work with local files opened with `file://` protocol.  
 
