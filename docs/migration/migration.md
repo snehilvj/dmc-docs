@@ -14,6 +14,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
 | **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
 | **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
 | **2.2.0**               | Aug 2025     | 8.2.5           | `dash>=2.0.0` |
