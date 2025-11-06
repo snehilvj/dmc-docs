@@ -4,7 +4,7 @@ import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 component = dmc.Box([
-    dmc.Button("Generate an excuse", id="new-reason-btn", mb="lg"),
+    dmc.Button("Get rejection reason", id="new-reason-btn", mb="lg"),
     dmc.Group([
         dmc.Text(id="reason-text", mt=10),
         dmc.CopyButton(
@@ -16,7 +16,7 @@ component = dmc.Box([
             variant="outline",
             size="xs"
         )
-    ])
+    ], align="flex-start",  wrap="nowrap",)
 ])
 
 @callback(
