@@ -81,6 +81,7 @@ def search_data(data):
         {"label": "Skeleton while loading", "value": "/components/skeleton#display-skeleton-while-loading"},
         {"label": "FloatingTooltip", "value": "/components/tooltip#floating-tooltip"},
         {"label": "Tiptap", "value": "/components/richtexteditor#tiptap-editor"},
+        {"label": "Clipbaord", "value": "/components/copybutton#"},
     ]
     return docs_pages + other_search_terms
 
