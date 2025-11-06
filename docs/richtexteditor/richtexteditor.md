@@ -27,8 +27,8 @@ Tiptap version note:
 
 - Markdown Shortcuts:  
   - Markdown-style formatting is supported. For example:  
-    - Use `#` followed by a space for **headings**.  
-    - Use `-` or `*` for **bullet lists**.  
+    - Use `#` followed by a space for headings.  
+    - Use `-` or `*` for bullet lists.  
   - See the full list of [Markdown shortcuts](https://tiptap.dev/docs/examples/basics/markdown-shortcuts#page-title).
 
 ### Tiptap Extensions  
@@ -89,18 +89,8 @@ Each extension can be defined in two ways:
 - As a string to use default settings (for example, `"Color"`)  
 - As a dictionary to specify configuration options (for example `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
 
- **Important:** Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
-`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension that you need.
 
-Here is the default `extensions` for corresponding DMC versions.
-
-
-.. sourcetabs::docs/richtexteditor/template-v2-4-0.py, docs/richtexteditor/template-v2-3-0.py, docs/richtexteditor/template-v1-1-0.py
-    :defaultExpanded: false
-    :withExpandedButton: true 
-
-
-Additionally, some features require multiple extensions. For example:  
+Some features require multiple extensions. For example:  
 - color formatting requires both `"Color"` and `"TextStyle"`.  
 - Tables require `"Table"`, `"TableCell"`, `"TableHeader"`, and `"TableRow"`.  
 
@@ -110,13 +100,25 @@ extensions=["StarterKit"]
 ```  
 For a full list of extensions and configuration options, refer to the [Tiptap documentation](https://tiptap.dev/docs/extensions).
 
+
+ Note:  Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
+`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension that you need.
+
+Here are the default `extensions` for corresponding DMC versions.
+
+
+.. sourcetabs::docs/richtexteditor/extensions-v2-4-0.py, docs/richtexteditor/extensions-v2-3-0.py, docs/richtexteditor/extensions-v1-1-0.py
+    :defaultExpanded: false
+    :withExpandedButton: true 
+
+
 ### Toolbar Controls 
 
 Customize the toolbar by grouping control icons using the `controlsGroups` parameter. Each nested list within
 `controlsGroups` represents a separate group of toolbar icons.
 
  Note that even if a toolbar icon is not included, features provided by enabled extensions can still be accessed
- through available keyboard shortcuts and Markdown syntax where applicable.
+ through  keyboard shortcuts and Markdown syntax.
 
 ```python
 dmc.RichTextEditor(
@@ -156,7 +158,8 @@ Here are the control icons available for use in the `toolbar`:
 - Undo
 - Redo
 - SourceCode
-The following is included by default in DMC >=2.3.0
+
+The following is included by default in DMC >=2.3.0:
 - Link
 - Unlink
 - Underline
@@ -173,12 +176,10 @@ The following is included by default in DMC >=2.3.0
 - UnsetColor
 
 **Other controls with required extensions:**
-- Underline requires Underline extension in DMC <=2.3.0
-- Superscript requires Superscript extension
-- Subscript requires Subscript extension
-- Highlight requires Highlight extension
-- Code highlighting requires 'CodeBlockLowlight extension (available in DMC >=2.4.0)
-
+- Underline requires `Underline` extension in DMC <=2.3.0
+- Superscript requires `Superscript` extension
+- Subscript requires `Subscript` extension
+- Highlight requires `Highlight` extension
 
 
 ### Typography styles
@@ -198,23 +199,13 @@ CSS files, or style with the Styles API.
 To use the placeholder or change the placeholder default text, include (at least) the following extensions:
 
 
-```python
- dmc.RichTextEditor(       
-     extensions=[
-         "StarterKit",
-         {"Placeholder": {"placeholder": "Write something..."}},
-         # other needed extensions
-     ],
-)
-```
-
 .. exec::docs.richtexteditor.placeholder
 
 ### Text color
 
 You can use the following toolbar controls to change text color:
 
-- `ColorPicker` – allows to pick colors from given predefined color swatches and with ColorPicker component
+- `ColorPicker` – allows to pick colors from given predefined color swatches and with `ColorPicker` component
 - `Color` – allows to apply given color with one click
 - `UnsetColor` – clears color styles
 
@@ -265,6 +256,15 @@ Set language to text to supress code highlighting.
 If you would like other languages included, please [open a feature request on our GitHub.](https://github.com/snehilvj/dash-mantine-components/issues)
 
 
+.. exec::docs.richtexteditor.code_highlight
+
+
+### Source code mode
+
+You can use the `SourceCode` control to see and edit source code of editor content:
+
+.. exec::docs.richtexteditor.sourcecode
+
 ### Focus
 
 *New in V2.4.0*  
@@ -275,7 +275,7 @@ Use the `focus` prop to control the editor's focus state.
 - `focus=False` - Blur (remove focus from) the editor
 - `focus="start"` - Focus at the start of the document
 - `focus="end"` - Focus at the end of the document
-- `focus={"position": 10}` - Focus at a specific position (character offset)
+- `focus=10` - Focus at a specific position (character offset) Positive values start at the beginning of the document - negative values at the end.
 - `focus="all"` - Focus and select all content
 
 **Example:**
@@ -292,8 +292,8 @@ The `editable` prop controls whether the editor content can be modified. When `e
 - Users can still select and copy text
 - The toolbar is automatically hidden
 
-**Example:**
 
+.. exec::docs.richtexteditor.editable
 
 
 ### Sticky toolbar
@@ -302,6 +302,13 @@ For example, in the dmc docs website there is a header with 60px height, in this
 `stickyOffset=60` to make sticky position correctly with fixed positioned header element.
 
 Note the sticky toolbar as you scroll past the example below.
+
+
+### Subtle Variant  
+
+`variant="subtle"` removes borders from the controls groups, makes controls larger and reduces spacing of the toolbar:
+
+.. exec::docs.richtexteditor.variant
 
 ### Labels and localization
 `RichTextEditor` supports changing labels for all controls with labels prop:
@@ -389,12 +396,6 @@ For details on the schema and ProseMirror format, see the [Tiptap documentation]
 Try editing the content in this example to see the JSON and HTML format:
 .. exec::docs.richtexteditor.content
 
-### Source code mode
-
-You can use the `SourceCode` control to see and edit source code of editor content:
-
-.. exec::docs.richtexteditor.sourcecode
-
 ### Custom controls
 Use `CustomControl` in the `controlsGroups` to create create custom controls in the `toolbar`. Note that you will need 
 to set `aria-label` attribute to make control visible for screen readers.
@@ -461,6 +462,8 @@ const editor = dash_mantine_components.getEditor('editor-id');
 
 This example shows how to access the editor in a clientside callback and provide a word count of the content.
 
+.. exec::docs.richtexteditor.geteditor
+
 
 ### Debounce
 
@@ -494,11 +497,6 @@ Notes:
  - If you want to set an initial value while also enabling persistence, set `persisted_props` to only the prop used for the initial value.
 For example `persisted_props=['html']`.
 
-### Subtle Variant  
-
-`variant="subtle"` removes borders from the controls groups, makes controls larger and reduces spacing of the toolbar:
-
-.. exec::docs.richtexteditor.variant
 
 
 ### CSS Extensions
