@@ -15,8 +15,8 @@ component = dmc.Group([
         target_id="text-to-copy",
         children=DashIconify(icon="fa-regular:copy"),
         copiedChildren=DashIconify(icon="fa-regular:check-circle"),
-        color="blue",
-        copiedColor="teal",
+        color="var(--mantine-color-dimmed)",
+        copiedColor="gray",
         variant="outline",
         size="xs"
     )

@@ -12,7 +12,7 @@ category: Buttons
 ### Introduction
 
 `CopyButton` is a ready-to-use clipboard button built with the Mantine `Button` component.
-It supports props for dynamic text, icons and colors while copying plus all standard Button props.
+It supports props for dynamic text, icons and colors while copying plus all standard `Button` props.
 
 
 .. exec::docs.copybutton.interactive
@@ -22,7 +22,8 @@ It supports props for dynamic text, icons and colors while copying plus all stan
 
 ### Colors
 
-Use `color` and `copiedColor` props to change the button’s appearance before and after copying.
+Use `color` and `copiedColor` props to change the button’s color before and after copying.
+Note - if `copiedColor` is not provided, the color will remain unchanged during copying.
 
 .. exec::docs.copybutton.color
 
@@ -39,8 +40,12 @@ Use `target_id` to copy text (or value prop) from another component instead of u
 
 ### Copy in a callback
 
+Set `triggerCopy=True` to trigger the copy from a callback. This property automatically resets to `False` after copying.
 
-Update the `value` and set `triggerCopy=True` in a callback to copy text programmatically. In this example, the `CopyButton` is hidden, and copying happens when a dropdown value changes.
+Note that the  `value` and `triggerCopy` properties can be updated in the same callback.
+
+
+In this example, the `CopyButton` is hidden, and `triggerCopy` is set to `True` when the `value` of the `Select` component changes.
 
 .. exec::docs.copybutton.triggercopy
 

@@ -22,7 +22,7 @@ component = dmc.Group([
         children=DashIconify(icon="fa-regular:copy"),
         copiedChildren=DashIconify(icon="fa-regular:check-circle"),
         color="gray",
-        copiedColor="gray.2",
+        copiedColor="dark",
         variant="transparent"
     )
 ])

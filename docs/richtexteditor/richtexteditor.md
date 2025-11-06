@@ -280,6 +280,7 @@ Use the `focus` prop to control the editor's focus state.
 
 **Example:**
 
+.. exec::docs.richtexteditor.focus
 
 
 ### Editable 
