@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.3.0**, which wraps **Mantine 8.3.1**.  
+> This documentation applies to **DMC 2.4.0**, which wraps **Mantine 8.3.6**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -15,7 +15,7 @@
 
 
 ## Getting Started  
-Dash Mantine Components (DMC) integrates the Mantine UI library with Dash, making it easy to create modern, responsive, and highly customizable applications—right out of the box.  
+Build feature-rich, accessible Dash apps faster than ever! Dash Mantine Components includes over 100 customizable components based on the React Mantine library, with consistent styling, theming, and full support for light and dark mode.  
 Category: General  
 
 ### Installation
@@ -153,50 +153,53 @@ We welcome contributions!
 Dash Mantine Components provides LLM-friendly documentation to help AI tools like Cursor, Windsurf, GitHub Copilot, ChatGPT, and Claude understand and work with the DMC library.  
 Category: General  
 
-`llms.txt` documentation is updated with every DMC release.
-
-
 ### Complete Documentation
 
 Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (~1.6MB)
 
 * [View DMC llms.txt online](https://www.dash-mantine-components.com/assets/llms.txt)
-* [Download](https://www.dash-mantine-components.com/assets/llms.txt)
+* [View Mantine llms.txt online](https://mantine.dev/llms.txt) (upstream Mantine documentation)
 
-You can also find the upstream Mantine LLMs documentation:
-* [View Mantine llms.txt online](https://mantine.dev/llms.txt)
+
+### Customized llms.txt
+
+While the full `llms.txt` file contains everything, customizing it for your project can significantly improve both accuracy and efficiency when working with AI tools.
+
+Benefits of a Customized File:
+* Faster and more relevant AI responses— smaller, focused documentation files help tools like ChatGPT or Cursor zero in on exactly the components and props you’re using.
+* Reduced context noise — by stripping out unrelated sections, large component sets, or advanced examples you don’t use, AI tools spend their context window entirely on your project-relevant APIs.
+* Improved compatibility with code assistants that have input size limits (like GitHub Copilot or Claude).
+
+You’ll find detailed options for generating your own `llms.txt` at the bottom of this page.
 
 ### Usage with AI Tools
 
 #### Cursor
-
-In Cursor, you can reference the documentation using the `@Docs` feature:
-
 1. Type `@Docs` in your prompt
 2. Reference the DMC documentation URL: `https://www.dash-mantine-components.com/assets/llms.txt`
 3. Ask questions about DMC components, styling, or implementation
 
+Tip: You’ll get even better results if you upload your customized `llms.txt` file directly or reference it locally instead of the full version.
+
 #### Windsurf
-
-For Windsurf users:
-
 1. Reference the documentation using `@https://www.dash-mantine-components.com/assets/llms.txt`
-2. Or add it to your `.windsurfrules` file for persistent access
+2. Or add your custom file path to your `.windsurfrules` file for persistent access
+3. Smaller, project-specific files make Windsurf faster to index and query.
 
 #### ChatGPT & Claude
-
-When using ChatGPT or Claude:
-
-1. Mention that you're using Dash Mantine Components v2
+1. Mention that you're using Dash Mantine Components v2.
 2. Reference the documentation URL: `https://www.dash-mantine-components.com/assets/llms.txt`
-3. The AI will fetch and use the documentation to provide accurate answers
+3. For best results, upload your customized llms.txt (containing only the components used in your app). This improves
+the model’s ability to generate correct code using DMC props.
 
 #### GitHub Copilot
 
 While Copilot doesn't directly support external documentation, you can:
 
-1. Include relevant documentation snippets in your comments
-2. Reference component names and props accurately for better suggestions
+1. Include relevant documentation snippets or short versions of `llms.txt` in your project.
+2. Reference component names and props accurately in comments for better inline completions.
+
+
 
 ### Example Prompts
 
@@ -206,12 +209,37 @@ Here are some example prompts you can use with AI tools:
 * "Show me how to use the AppShell component with a collapsible navbar"
 * "How can I customize the theme colors in MantineProvider?"
 * "How to align input with a button in a flex container?"
+* "Refer only to my custom llms.txt file (layout and feedback components) for examples."
+
+
 
 ### Documentation Generation
 
-The LLM documentation is automatically generated from our source files.
+The LLM documentation is automatically generated from our source files.  To ensure you have the latest documentation, 
+we regenerate the `llms.txt` file with each release.  The file follows the [LLMs.txt](https://llmstxt.org/) standard
+for better compatibility with AI tools.
 
-To ensure you have the latest documentation, we regenerate the llms.txt file with each release. The file follows the [LLMs.txt](https://llmstxt.org/) standard for better compatibility with AI tools.
+### Creating a Custom llms.txt File
+
+You’ll get the best results by using  only the sections of the documentation that you need. 
+
+
+#### Option 1 — Download using customization app
+Use the interactive tool below to select specific component categories (for example, layout, inputs, feedback) or individual components (like `AppShell`, `Card`, or `Button`), then download your file.
+
+#### Option 2 — Build your own from llms.json
+
+You can also manually create your own `llms.txt` file using the structured data in  [llms.json](https://www.dash-mantine-components.com/assets/llms.json).
+
+Each entry in `llms.json` represents one documentation page, including fields like `name`, `description`, `category`,
+and full `content`.  You can filter and combine only the components you need — for example, by category or name.
+
+#### Option 3 — Use the “Copy for LLMs” feature
+
+Each documentation page includes a “Copy for LLMs” button that copies that page’s content in LLM-friendly format.
+Use this when you want to paste a few pages directly into a chat session (e.g. ChatGPT or Cursor) without downloading the entire documentation.
+
+Use this for quick one-off conversations, when you only need to reference one or two components.
 
 ### Contributing
 
@@ -793,8 +821,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### ActionIcon
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -1349,8 +1377,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Button
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -1534,6 +1562,380 @@ This component supports Styles API. With Styles API, you can customize styles of
 - visibleFrom (optional):
     Breakpoint below which the component is hidden with `display:
     none`.
+
+## Copy Button  
+Copies given text to clipboard.  A DMC alternative to dcc.Clipboard.  
+Category: Buttons  
+
+### Introduction
+
+`CopyButton` is a ready-to-use clipboard button built with the Mantine `Button` component.
+It supports props for dynamic text, icons and colors while copying plus all standard `Button` props.
+
+
+### Colors
+
+Use `color` and `copiedColor` props to change the button’s color before and after copying.
+Note - if `copiedColor` is not provided, the color will remain unchanged during copying.
+
+```python
+import dash_mantine_components as dmc
+
+component = dmc.CopyButton(
+    value="https://www.dash-mantine-components.com/",
+    children="Copy URL",
+    color="blue",
+    copiedColor="teal"
+)
+```
+### Copy State Display 
+
+Use `children` and `copiedChildren` to change what’s displayed before and after copying.  You can use text, icons, or any Dash components.
+
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+component = dmc.Group([
+    dmc.CopyButton(
+        value="https://www.dash-mantine-components.com/",
+        children="Copy URL",
+        copiedChildren="Copied!",
+        color="blue",
+        copiedColor="teal"
+    ),
+    dmc.CopyButton(
+        value="This text is copied",
+        children=DashIconify(icon="tabler:clipboard"),
+        copiedChildren=DashIconify(icon="tabler:check"),
+        color="blue",
+        copiedColor="teal",
+        variant="outline"
+    ),
+    dmc.CopyButton(
+        value="This text is copied",
+        children=DashIconify(icon="fa-regular:copy"),
+        copiedChildren=DashIconify(icon="fa-regular:check-circle"),
+        color="gray",
+        copiedColor="dark",
+        variant="transparent"
+    )
+])
+```
+### Copy from another component
+Use `target_id` to copy text (or value prop) from another component instead of using a static value. No callback required!
+
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+
+component = dmc.Group([
+    dmc.Textarea(
+        "Type here.  This text will be copied.",
+        id="text-to-copy",
+        autosize=True,
+        minRows=3,
+        w=300
+    ),
+    dmc.CopyButton(
+        target_id="text-to-copy",
+        children=DashIconify(icon="fa-regular:copy"),
+        copiedChildren=DashIconify(icon="fa-regular:check-circle"),
+        color="var(--mantine-color-dimmed)",
+        copiedColor="gray",
+        variant="outline",
+        size="xs"
+    )
+], gap=0, align="flex-start" )
+```
+### Copy in a callback
+
+Set `triggerCopy=True` to trigger the copy from a callback. This property automatically resets to `False` after copying.
+
+Note that the  `value` and `triggerCopy` properties can be updated in the same callback.
+
+
+In this example, the `CopyButton` is hidden, and `triggerCopy` is set to `True` when the `value` of the `Select` component changes.
+
+```python
+import dash_mantine_components as dmc
+from dash import Input, Output, callback
+
+component = dmc.Box([
+    dmc.Select(
+        id="copy-select",
+        data=["Job A", "Job B", "Job C"],
+        label="Select Job",
+        description="Results are copied to the clipboard"
+    ),
+    dmc.Text(id="copy-select-output"),
+    dmc.CopyButton(
+        id="copy-trigger",
+        style={"visibility": "hidden"},
+        value=""
+    )
+])
+
+@callback(
+    Output("copy-select-output", "children"),
+    Output("copy-trigger", "value"),
+    Output("copy-trigger", "triggerCopy"),
+    Input("copy-select", "value")
+)
+def update_clipboard(v):
+    results = f"Results from {v}"
+    return results, results, True
+```
+### Timeout
+
+The `timeout` prop controls how long the "copied" state is displayed (in milliseconds). The default is 1000ms.
+
+
+```python
+import dash_mantine_components as dmc
+
+component = dmc.CopyButton(
+    value="copied text",
+    children="Copy",
+    copiedChildren="Copied",
+    color="dark.3",
+    copiedColor="gray.2",
+    autoContrast=True,
+    timeout="2000"
+)
+```
+### Custom Copy Button
+
+Create a custom copy button using a JavaScript function. This example uses an `ActionIcon` and `Tooltip` that respond to the copied state.
+
+
+Note: This example uses custom JavaScript defined in the assets folder. Learn more in the "Functions As Props" section of this document.
+
+
+
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+component = dmc.CustomCopyButton(
+    value="Custom Copy demo",
+    children={"function": "copyActionIcon"},
+)
+```
+
+```javascript
+var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+var dmc = window.dash_mantine_components;
+var DashIconify = window.dash_iconify.DashIconify;
+
+dmcfuncs.copyActionIcon = function({ copied, copy }) {
+  return React.createElement(
+    dmc.Tooltip,
+    {
+      label: copied ? 'Copied' : 'Copy',
+      withArrow: true,
+      position: 'right'
+    },
+    React.createElement(
+      dmc.ActionIcon,
+      {
+        color: copied ? 'teal' : 'gray',
+        variant: 'subtle',
+        onClick: copy
+      },
+      copied
+        ? React.createElement(DashIconify, { icon: 'tabler:check', style: { width: 16, height: 16 } })
+        : React.createElement(DashIconify, { icon: 'tabler:copy', style: { width: 16, height: 16 } })
+    )
+  );
+};
+```
+
+
+
+### Security
+Due to security reasons `CopyButton` components will not work in iframes and may not work with local files opened with `file://` protocol.  
+
+It will work with local websites using `http://` protocol, but when deployed it must use `https//` (secure).
+
+Learn more about [navigator.clipboard](https://web.dev/articles/async-clipboard).
+
+
+### Styles API
+
+
+This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
+
+
+#### CopyButton Selectors
+
+| Selector | Static selector          | Description                                        |
+|----------|---------------------------|----------------------------------------------------|
+| root     | .mantine-Button-root      | Root element                                       |
+| loader   | .mantine-Button-loader    | Loader component, displayed only when `loading` prop is set |
+| inner    | .mantine-Button-inner     | Contains all other elements, child of the root element |
+| section  | .mantine-Button-section   | Left and right sections of the button             |
+| label    | .mantine-Button-label     | Button children                                   |
+
+#### CopyButton CSS Variables
+
+| Selector | Variable                  | Description                                       |
+|----------|---------------------------|---------------------------------------------------|
+| root     | --button-bg               | Controls background                               |
+|          | --button-bd               | Controls border                                   |
+|          | --button-hover            | Controls background when hovered                 |
+|          | --button-color            | Controls text color                               |
+|          | --button-hover-color      | Controls text color when hovered                 |
+|          | --button-radius           | Controls border-radius                            |
+|          | --button-height           | Controls height of the button                     |
+|          | --button-padding-x        | Controls horizontal padding of the button         |
+|          | --button-fz               | Controls font-size of the button                  |
+|          | --button-justify          | Controls `justify-content` of the inner element   |
+
+#### CopyButton Data Attributes
+
+| Selector       | Attribute             | Condition               | Value                           |
+|----------------|------------------------|--------------------------|---------------------------------|
+| root           | data-disabled          | `disabled` prop is set   | –                               |
+| root           | data-block             | `fullWidth` prop is set  | –                               |
+
+
+### Keyword Arguments
+#### CopyButton
+
+- children (a list of or a singular dash component, string or number; optional):
+    Button content displayed before copying.
+
+- id (string; optional):
+    Unique ID to identify this component in Dash callbacks.
+
+- aria-* (string; optional):
+    Wild card aria attributes.
+
+- attributes (boolean | number | string | dict | list; optional):
+    Passes attributes to inner elements of a component.  See Styles
+    API docs.
+
+- autoContrast (boolean; optional):
+    Determines whether button text color with filled variant should
+    depend on `background-color`. If luminosity of the `color` prop is
+    less than `theme.luminosityThreshold`, then `theme.white` will be
+    used for text color, otherwise `theme.black`. Overrides
+    `theme.autoContrast`.
+
+- className (string; optional):
+    Class added to the root element, if applicable.
+
+- classNames (dict; optional):
+    Adds custom CSS class names to inner elements of a component.  See
+    Styles API docs.
+
+- color (optional):
+    Key of `theme.colors` or any valid CSS color, used when the value
+    has not been copied yet.
+
+- copiedChildren (a list of or a singular dash component, string or number; optional):
+    Button content displayed after the value has been copied to
+    clipboard.
+
+- copiedColor (optional):
+    Key of `theme.colors` or any valid CSS color, used after the value
+    has been copied to clipboard.
+
+- darkHidden (boolean; optional):
+    Determines whether component should be hidden in dark color scheme
+    with `display: none`.
+
+- data-* (string; optional):
+    Wild card data attributes.
+
+- disabled (boolean; optional):
+    Indicates disabled state.
+
+- fullWidth (boolean; optional):
+    Determines whether button should take 100% width of its parent
+    container, `False` by default.
+
+- gradient (dict; optional):
+    Gradient configuration used when `variant="gradient"`, default
+    value is `theme.defaultGradient`.
+
+    `gradient` is a dict with keys:
+
+- hiddenFrom (optional):
+    Breakpoint above which the component is hidden with `display:
+    none`.
+
+- lightHidden (boolean; optional):
+    Determines whether component should be hidden in light color
+    scheme with `display: none`.
+
+- loading_state (dict; optional):
+    Object that holds the loading state object coming from
+    dash-renderer. For use with dash<3.
+
+    `loading_state` is a dict with keys:
+
+- mod (string; optional):
+    Element modifiers transformed into `data-` attributes, for
+    example, `{ 'data-size': 'xl' }`, falsy values are removed.
+
+- n_clicks (number; default 0):
+    An integer that represents the number of times that this element
+    has been clicked on.
+
+- radius (number; optional):
+    Key of `theme.radius` or any valid CSS value to set
+    `border-radius`, `theme.defaultRadius` by default.
+
+- size (optional):
+    Controls button `height`, `font-size` and horizontal `padding`,
+    `'sm'` by default.
+
+- styles (boolean | number | string | dict | list; optional):
+    Adds inline styles directly to inner elements of a component.  See
+    Styles API docs.
+
+- tabIndex (number; optional):
+    tab-index.
+
+- target_id (string; optional):
+    The id of target component containing text to copy to the
+    clipboard. The inner text of the `children` prop will be copied to
+    the clipboard.  If none, then the text from the  `value` prop will
+    be copied.
+
+- timeout (number; default 1000):
+    Copied status timeout in ms, `1000` by default.
+
+- triggerCopy (boolean; default False):
+    Set to True to trigger copy in a callback - will auto-reset to
+    False after copy.
+
+- value (string; default ''):
+    Value to be copied to clipboard.
+
+- variant (string; optional):
+    variant.
+
+- visibleFrom (optional):
+    Breakpoint below which the component is hidden with `display:
+    none`.
+#### CustomCopyButton
+
+- children (boolean | number | string | dict | list; optional):
+    Function that receives {copied, copy} and returns a component  See
+    https://www.dash-mantine-components.com/functions-as-props.
+
+- id (string; optional):
+    Unique ID to identify this component in Dash callbacks.
+
+- timeout (number; default 1000):
+    Copied status timeout in ms, `1000` by default.
+
+- value (string; required):
+    Value to be copied to clipboard.
 
 ## An Introduction to Charts  
 Getting started with chart components.  
@@ -2539,8 +2941,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                    | --chart-text-color   | Controls color of the axis labels                |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### AreaChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -3766,8 +4168,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                  | --chart-cursor-fill  | Controls fill color of the cursor line           |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### BarChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -4254,8 +4656,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |          | --chart-text-color    | Controls color of the axis labels           |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### BubbleChart
 
 - id (string; optional):
@@ -5205,8 +5607,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### CompositeChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -5753,8 +6155,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                  | --chart-size           | Controls size of the chart               |
 |                  | --chart-stroke-color   | Controls color of the chart stroke       |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### DonutChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -6867,8 +7269,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                  | --chart-text-color   | Controls color of the axis labels                |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### LineChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -7391,8 +7793,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                  | --chart-size           | Controls size of the chart               |
 |                  | --chart-stroke-color   | Controls color of the chart stroke       |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### PieChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -7743,8 +8145,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                  | --chart-text-color   | Controls color of all text elements in the chart|
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### RadarChart
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -8658,8 +9060,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |                | --chart-text-color | Controls color of the axis labels         |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### ScatterChart
 
 - id (string; optional):
@@ -8959,8 +9361,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:-----------------|:---------------------|:-----------------------------------|
 | root             | --chart-color        | Controls stroke and fill colors    |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Sparkline
 
 - id (string; optional):
@@ -9676,8 +10078,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | `group`      | `.mantine-Autocomplete-group`          | Options group wrapper                                    |
 | `groupLabel` | `.mantine-Autocomplete-groupLabel`     | Options group label                                      |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Autocomplete
 
 - id (string; optional):
@@ -10695,8 +11097,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | inputField  | .mantine-MultiSelect-inputField  | Input field                                      |
 | pillsList   | .mantine-MultiSelect-pillsList   | List of pills, also contains input field         |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### MultiSelect
 
 - id (string; optional):
@@ -11691,8 +12093,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | group       | .mantine-Select-group       | Options group wrapper                            |
 | groupLabel  | .mantine-Select-groupLabel  | Options group label                              |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Select
 
 - id (string; optional):
@@ -12684,8 +13086,8 @@ Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/
 | inputField  | .mantine-TagsInput-inputField  | Input field                                      |
 | pillsList   | .mantine-TagsInput-pillsList   | List of pills, also contains input field         |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### TagsInput
 
 - id (string; optional):
@@ -14176,6 +14578,14 @@ Additional Supported props in V2.1.0
 | YearPickerInput  | getYearControlProps                                               |
 | Tree             | renderNode                                                        |
 
+
+Additional Supported props in V2.4.0
+
+| Component                                                                 | Props                                              |
+| ------------------------------------------------------------------------- | -------------------------------------------------- |
+| AreaChart, BarChart, BubbleChart, CompositeChart, LineChart, ScatterChart | xAxisProps, yAxisProps, gridProps, rightYAxisProps |
+| BubbleChart                                                               | zAxisProps                                         |
+
 ## debounce prop  
 Learn how to use the debounce prop in Dash Mantine Components to control when input values update. Reduce callback load and improve performance in text inputs, dropdowns, pickers, and more.  
 Category: Dash  
@@ -14797,8 +15207,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Accordion
 
 - children (a list of or a singular dash component, string or number; required):
@@ -15283,8 +15693,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | image           | .mantine-Avatar-image           | `img` element                                             |
 | placeholder     | .mantine-Avatar-placeholder     | Placeholder element, rendered when image cannot be loaded |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Avatar
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -15576,8 +15986,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | label        | .mantine-Badge-label        | Badge children          |
 | section      | .mantine-Badge-section      | Left and right sections |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Badge
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -15816,8 +16226,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root    | .mantine-Card-root    | Root element                |
 | section | .mantine-Card-section | `Card.Section` root element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Card
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -16518,8 +16928,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Carousel
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -16821,8 +17231,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root     | `data-fallback` | Image failed to load |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Image
 
 - id (string; optional):
@@ -17042,8 +17452,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root      | .mantine-Indicator-root      | Root element      |
 | indicator | .mantine-Indicator-indicator | Indicator element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Indicator
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -17175,8 +17585,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:------------|:------------------|:-------------------------------------------------|
 | root        | .mantine-Kbd-root | Root element                                     |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Kbd
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -17268,7 +17678,6 @@ component = html.Div([
 ])
 ```
 ### Keyword Arguments
-
 #### NumberFormatter
 
 - id (string; optional):
@@ -17356,8 +17765,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | content | .mantine-Spoiler-content | Wraps content to set max-height and transition |
 | control | .mantine-Spoiler-control | Show/hide content control                      |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Spoiler
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -17547,8 +17956,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:------------|:------------------------|:-------------------------------------------------|
 | root        | .mantine-ThemeIcon-root | Root element                                     |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### ThemeIcon
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -17800,8 +18209,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | item, itemBullet | data-active    | Item index is `<=` Timeline `active` prop   |
 | item           | data-line-active | Item index is `<` Timeline `active` prop    |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Timeline
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -18199,8 +18608,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | day                   | `data-last-in-range`  | Day is last in range selection                                        | –                                                      |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### DateInput
 
 - id (string; optional):
@@ -19118,8 +19527,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | day                   | `data-last-in-range`  | Last day in selected range                   | –                        |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### DatePicker
 
 - id (string; optional):
@@ -19641,8 +20050,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | day                   | `data-first-in-range` | Day is first in range selection                                       | –                                                      |
 | day                   | `data-last-in-range`  | Day is last in range selection                                        | –                                                      |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### DatePickerInput
 
 - id (string; optional):
@@ -20190,8 +20599,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | day                   | data-last-in-range | Day is last in range selection                            | –                                            |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### DateTimePicker
 
 - id (string; optional):
@@ -20772,8 +21181,8 @@ Here’s your content reformatted as Markdown tables:
 
 ---
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### MiniCalendar
 
 - id (string; optional):
@@ -21053,8 +21462,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | `calendarHeaderControl`| `data-direction`| –                                   | "previous" or "next" depending on the control type |
 | `calendarHeaderControl`| `data-disabled`| Control is disabled for any reason  | –                                  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### MonthPickerInput
 
 - id (string; optional):
@@ -21544,8 +21953,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | control  | `data-disabled` | Component is disabled by one of the props: `minTime`, `maxTime`, `disableTime`, `disabled` |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### TimeGrid
 
 - id (string; optional):
@@ -21773,8 +22182,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | description | .mantine-TimeInput-description | Description element                              |
 | error       | .mantine-TimeInput-error       | Error element                                    |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### TimeInput
 
 - id (string; optional):
@@ -22424,8 +22833,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | dropdown | `--control-font-size` | Controls font-size of dropdown controls |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### TimePicker
 
 - id (string; optional):
@@ -22888,8 +23297,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | `calendarHeaderControl`| `data-direction`| –                                   | "previous" or "next" depending on the control type |
 | `calendarHeaderControl`| `data-disabled`| Control is disabled for any reason  | –                                  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### YearPickerInput
 
 - id (string; optional):
@@ -23272,8 +23681,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | icon        | .mantine-Alert-icon        | Icon wrapper                                  |
 | closeButton | .mantine-Alert-closeButton | Close button, defined by withCloseButton prop |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Alert
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -23443,8 +23852,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |          | --loader-color   | Controls loader color                                              |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Loader
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -23683,8 +24092,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | overlay | .mantine-LoadingOverlay-overlay | `Overlay` component |
 | loader  | .mantine-LoadingOverlay-loader  | `Loader` component  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### LoadingOverlay
 
 - id (string; optional):
@@ -24361,8 +24770,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | `root`   | `--notifications-z-index` | Controls notifications container z-index |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### NotificationContainer
 
 - id (string; optional):
@@ -24650,8 +25059,8 @@ Here’s your content formatted as Markdown tables:
 Do you want me to keep this as three separate tables (like above), or merge them into one big table with a "Type" column (`Selector / CSS variable / Data attribute`) for easier scanning?
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Overlay
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -24959,8 +25368,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | section | `data-animated` | `animated` prop is set |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Progress
 
 - id (string; optional):
@@ -25185,8 +25594,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | curve | .mantine-RingProgress-curve | circle element |
 | label | .mantine-RingProgress-label | Label element  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### RingProgress
 
 - id (string; optional):
@@ -25366,8 +25775,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | `label`  | `data-position` | Value of `labelPosition` prop |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### SemiCircleProgress
 
 - id (string; optional):
@@ -25592,8 +26001,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root     | data-animate | `animate` prop is set   |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Skeleton
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -26217,8 +26626,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | card     | data-checked    | `checked` prop is set      |
 | card     | data-with-border | `withBorder` prop is set  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Checkbox
 
 - id (string; optional):
@@ -26909,8 +27318,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Chip
 
 - children (a list of or a singular dash component, string or number; required):
@@ -27252,8 +27661,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | eyeDropperButton  | .mantine-ColorInput-eyeDropperButton  | Eye dropper button                                                  |
 | eyeDropperIcon    | .mantine-ColorInput-eyeDropperIcon    | Default eye dropper icon                                            |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### ColorInput
 
 - id (string; optional):
@@ -27602,8 +28011,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | swatch            | .mantine-ColorPicker-swatch            | Color swatch                                                        |
 | swatches          | .mantine-ColorPicker-swatches          | Color swatches list                                                 |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### ColorPicker
 
 - id (string; optional):
@@ -27762,8 +28171,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | -------- | ------------------ | ------------------------- |
 | `root`   | `--fieldset-radius` | Controls border-radius     |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### TextInput
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -28005,8 +28414,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | description | --input-description-size  | Controls description font-size        |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### InputWrapper
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -28243,8 +28652,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | description | .mantine-JsonInput-description | Description element                              |
 | error       | .mantine-JsonInput-error       | Error element                                    |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### JsonInput
 
 - id (string; optional):
@@ -28772,8 +29181,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | control  | data-direction   | "up" or "down" depending on control |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### NumberInput
 
 - id (string; optional):
@@ -29144,8 +29553,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | innerInput       | .mantine-PasswordInput-innerInput       | Actual input element                             |
 | visibilityToggle | .mantine-PasswordInput-visibilityToggle | Visibility toggle button                         |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### PasswordInput
 
 - id (string; optional):
@@ -29442,8 +29851,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | pinInput | .mantine-PinInput-pinInput | Input item wrapper |
 | input    | .mantine-PinInput-input    | Input element      |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### PinInput
 
 - id (string; optional):
@@ -29941,8 +30350,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | card     | data-checked    | `checked` prop is set      |
 | card     | data-with-border | `withBorder` prop is set  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### RadioGroup
 
 - children (a list of or a singular dash component, string or number; required):
@@ -30469,8 +30878,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | symbolBody  | .mantine-Rating-symbolBody  | Wrapper around star icon for centering      |
 | symbolGroup | .mantine-Rating-symbolGroup | Group of symbols, used to display fractions |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Rating
 
 - id (string; optional):
@@ -30637,8 +31046,8 @@ component = dmc.RichTextEditor(
 
 - Markdown Shortcuts:  
   - Markdown-style formatting is supported. For example:  
-    - Use `#` followed by a space for **headings**.  
-    - Use `-` or `*` for **bullet lists**.  
+    - Use `#` followed by a space for headings.  
+    - Use `-` or `*` for bullet lists.  
   - See the full list of [Markdown shortcuts](https://tiptap.dev/docs/examples/basics/markdown-shortcuts#page-title).
 
 ### Tiptap Extensions  
@@ -30655,7 +31064,8 @@ By default, all the available extensions are enabled:
 ```python
 dmc.RichTextEditor(       
     extensions=[
-        "StarterKit",   
+        {"StarterKit": {"codeBlock": False}},
+        "CodeBlockLowlight", # available in DMC >= 2.4.0
         "Superscript",
         "Subscript",
         "Highlight",
@@ -30698,10 +31108,8 @@ Each extension can be defined in two ways:
 - As a string to use default settings (for example, `"Color"`)  
 - As a dictionary to specify configuration options (for example `{"TextAlign": {"types": ["heading", "paragraph"]}}`)  
 
- **Important:** Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
-`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension list above that you need.
 
-Additionally, some features require multiple extensions. For example:  
+Some features require multiple extensions. For example:  
 - color formatting requires both `"Color"` and `"TextStyle"`.  
 - Tables require `"Table"`, `"TableCell"`, `"TableHeader"`, and `"TableRow"`.  
 
@@ -30711,13 +31119,90 @@ extensions=["StarterKit"]
 ```  
 For a full list of extensions and configuration options, refer to the [Tiptap documentation](https://tiptap.dev/docs/extensions).
 
+
+ Note:  Setting the `extensions` prop replaces the default list, so if you exclude an extension, for example,
+`"Image"`, that feature will no longer be available.  Be sure to include all the features from the default extension that you need.
+
+Here are the default `extensions` for corresponding DMC versions.
+
+
+```python
+# RichTextEditor default extensions in dmc version V2.4.0
+extensions = [
+    { 'StarterKit': { 'codeBlock': False } },
+    'CodeBlockLowlight',
+    'Superscript',
+    'Subscript',
+    'Highlight',
+    'Table',
+    'TableCell',
+    'TableHeader',
+    'TableRow',
+    { 'Placeholder': { 'placeholder': 'Write or paste content here...' } },
+    { 'TextAlign': { 'types': ['heading', 'paragraph'] } },
+    'Color',
+    'TextStyle',
+    'BackgroundColor',
+    'FontFamily',
+    'FontSize',
+    'LineHeight',
+    'Image',
+]
+```
+
+```python
+# RichTextEditor default extensions in dmc version V2.3.0
+extensions = [
+    'StarterKit',
+    'Superscript',
+    'Subscript',
+    'Highlight',
+    'Table',
+    'TableCell',
+    'TableHeader',
+    'TableRow',
+    { 'Placeholder': { 'placeholder': 'Write or paste content here...' } },
+    { 'TextAlign': { 'types': ['heading', 'paragraph'] } },
+    'Color',
+    'TextStyle',
+    'BackgroundColor',
+    'FontFamily',
+    'FontSize',
+    'LineHeight',
+    'Image',
+]
+```
+
+```python
+
+# RichTextEditor default extensions in dmc version V1.1.0
+extensions = [
+    'StarterKit',
+    'Underline',
+    'Link',
+    'Superscript',
+    'Subscript',
+    'Highlight',
+    'Table',
+    'TableCell',
+    'TableHeader',
+    'TableRow',
+    {'Placeholder': {'placeholder': 'Write or paste content here...'}},
+    {'TextAlign': {'types': ['heading', 'paragraph']}},
+    'Color',
+    'TextStyle',
+    'Image',
+]
+```
+
+
 ### Toolbar Controls 
 
 Customize the toolbar by grouping control icons using the `controlsGroups` parameter. Each nested list within
 `controlsGroups` represents a separate group of toolbar icons.
 
  Note that even if a toolbar icon is not included, features provided by enabled extensions can still be accessed
- through available keyboard shortcuts and Markdown syntax where applicable.
+ through  keyboard shortcuts and Markdown syntax.
 
 ```python
 dmc.RichTextEditor(
@@ -30757,7 +31242,8 @@ Here are the control icons available for use in the `toolbar`:
 - Undo
 - Redo
 - SourceCode
-The following is included by default in DMC >=2.3.0
+
+The following is included by default in DMC >=2.3.0:
 - Link
 - Unlink
 - Underline
@@ -30774,11 +31260,10 @@ The following is included by default in DMC >=2.3.0
 - UnsetColor
 
 **Other controls with required extensions:**
-- Underline requires Underline extension in DMC <=2.3.0
-- Superscript requires Superscript extension
-- Subscript requires Subscript extension
-- Highlight requires Highlight extension
-
+- Underline requires `Underline` extension in DMC <=2.3.0
+- Superscript requires `Superscript` extension
+- Subscript requires `Subscript` extension
+- Highlight requires `Highlight` extension
 
 
 ### Typography styles
@@ -30799,16 +31284,6 @@ To use the placeholder or change the placeholder default text, include (at least
 
 
 ```python
- dmc.RichTextEditor(       
-     extensions=[
-         "StarterKit",
-         {"Placeholder": {"placeholder": "Write something..."}},
-         # other needed extensions
-     ],
-)
-```
-
-```python
 from dash import html
 import dash_mantine_components as dmc
 
@@ -30823,7 +31298,7 @@ component = dmc.RichTextEditor(
 
 You can use the following toolbar controls to change text color:
 
-- `ColorPicker` – allows to pick colors from given predefined color swatches and with ColorPicker component
+- `ColorPicker` – allows to pick colors from given predefined color swatches and with `ColorPicker` component
 - `Color` – allows to apply given color with one click
 - `UnsetColor` – clears color styles
 
@@ -30934,6 +31409,201 @@ component = dmc.RichTextEditor(
     ],
 )
 ```
+### Code highlight  
+
+*New in V2.4.0*  
+
+To use code highlight you will need to include at least the following extensions:
+
+
+```python
+ dmc.RichTextEditor(       
+     extensions=[
+         {"StarterKit": {"codeBlock": False}},
+        "CodeBlockLowlight",         
+         # other needed extensions
+     ],
+)
+```
+Note:  You must set `{"codeBlock": False}` in the `StarterKit` configuration to prevent a conflict with the more
+advanced `CodeBlockLowlight` extension. 
+
+Current supported languages: 
+  ts
+  js
+  python/ py 
+  css
+  bash / shell  
+  text
+
+Set language to text to supress code highlighting.
+
+If you would like other languages included, please [open a feature request on our GitHub.](https://github.com/snehilvj/dash-mantine-components/issues)
+
+
+```python
+import dash_mantine_components as dmc
+
+code_example = """import dash_mantine_components as dmc
+from dash import Dash
+
+app = Dash()
+
+app.layout = dmc.MantineProvider(
+    dmc.Alert(
+       "Welcome to Dash Mantine Components",
+       title="Hello!",
+       color="violet",
+    )
+)
+
+if __name__ == "__main__":
+    app.run(debug=True)"""
+
+component= dmc.RichTextEditor(
+    html=f"<p>Regular paragraph</p><pre><code>{code_example}</code></pre>",
+    extensions=[
+        {"StarterKit": { "codeBlock": False }},
+        "CodeBlockLowlight"
+    ],
+    toolbar={
+        "controlsGroups": [
+            [
+                "Bold",
+                "Italic",
+                "Underline",
+                "Strikethrough",
+                "CodeBlock"
+            ],
+        ],
+    },
+)
+```
+### Source code mode
+
+You can use the `SourceCode` control to see and edit source code of editor content:
+
+```python
+import dash_mantine_components as dmc
+
+
+content= '<p>Source code control example</p><p>New line with <strong>bold text</strong></p><p>New line with <em>italic</em> <em>text</em></p>'
+
+component =dmc.RichTextEditor(
+    html=content,
+    toolbar={
+        "sticky": True,
+        "controlsGroups": [
+            ["SourceCode"],
+            [
+                "Blockquote",
+                "Bold",
+                "Italic",
+                "Underline",
+                "Strikethrough",
+                "ClearFormatting",
+                "Highlight",
+            ],
+        ],
+    },
+)
+```
+### Focus
+
+*New in V2.4.0*  
+
+Use the `focus` prop to control the editor's focus state.
+
+- `focus=True` - Focus the editor at the current cursor position
+- `focus=False` - Blur (remove focus from) the editor
+- `focus="start"` - Focus at the start of the document
+- `focus="end"` - Focus at the end of the document
+- `focus=10` - Focus at a specific position (character offset) Positive values start at the beginning of the document - negative values at the end.
+- `focus="all"` - Focus and select all content
+
+**Example:**
+
+```python
+import dash_mantine_components as dmc
+from dash import  Input, Output, callback, ctx, no_update
+
+component =  dmc.Box([
+    dmc.Group([
+        dmc.Button("Focus Start", id="rte-btn-focus-start"),
+        dmc.Button("Focus End", id="rte-btn-focus-end"),
+        dmc.Button("Blur", id="rte-btn-blur"),
+    ]),
+    dmc.RichTextEditor(
+        id="rte-focus",
+        html="<p>Click the buttons to control focus.</p>",
+    ),
+])
+
+
+@callback(
+    Output("rte-focus", "focus"),
+    Input("rte-btn-focus-start", "n_clicks"),
+    Input("rte-btn-focus-end", "n_clicks"),
+    Input("rte-btn-blur", "n_clicks"),
+    prevent_initial_call=True
+)
+def control_focus(start, end, blur):
+    if not ctx.triggered:
+        return no_update
+
+    button_id = ctx.triggered_id
+    if button_id == "rte-btn-focus-start":
+        return "start"
+    elif button_id == "rte-btn-focus-end":
+        return "end"
+    elif button_id == "rte-btn-blur":
+        return False
+```
+### Editable 
+
+*New in V2.4.0*  
+
+The `editable` prop controls whether the editor content can be modified. When `editable=False`:
+- The editor becomes read-only
+- Users can still select and copy text
+- The toolbar is automatically hidden
+
+
+```python
+import dash_mantine_components as dmc
+from dash import  Input, Output, callback
+
+component = dmc.Box([
+    dmc.Switch(
+        id="rte-toggle-editable",
+        label="Editable",
+        checked=True,
+    ),
+    dmc.RichTextEditor(
+        id="rte-editable",
+        html="<p>This editor can be toggled between editable and read-only mode.</p>",
+        editable=True,
+        toolbar={
+            "controlsGroups": [
+                [
+                    "Bold",
+                    "Italic",
+                    "Underline",
+                    "Strikethrough",
+                    "CodeBlock"
+                ],
+            ],
+        },
+    ),
+])
+
+@callback(
+    Output("rte-editable", "editable"),
+    Input("rte-toggle-editable", "checked"),
+)
+def toggle_editable(checked):
+    return checked
+```
 ### Sticky toolbar
 Set `sticky` prop on `RichTextEditor` `toolbar` prop to make toolbar sticky, control top property with `stickyOffset`. 
 For example, in the dmc docs website there is a header with 60px height, in this case we will need to set 
@@ -30941,6 +31611,38 @@ For example, in the dmc docs website there is a header with 60px height, in this
 
 Note the sticky toolbar as you scroll past the example below.
 
+
+### Subtle Variant  
+
+`variant="subtle"` removes borders from the controls groups, makes controls larger and reduces spacing of the toolbar:
+
+```python
+import dash_mantine_components as dmc
+
+component = dmc.RichTextEditor(
+    html="Subtle rich text editor variant",
+    extensions=[
+        "StarterKit",
+        "Highlight",
+    ],
+    toolbar={
+        "sticky": True,
+        "stickyOffset": 60,
+        "variant": "subtle",
+        "controlsGroups": [
+            [
+                "Bold",
+                "Italic",
+                "Underline",
+                "Strikethrough",
+                "ClearFormatting",
+                "Highlight",
+                "Code",
+            ],
+        ],
+    },
+)
+```
 ### Labels and localization
 `RichTextEditor` supports changing labels for all controls with labels prop:
 
@@ -31113,35 +31815,6 @@ def update_content(content: str):
 def update_content(content: str):
     return f"{content}"
 ```
-### Source code mode
-
-You can use the `SourceCode` control to see and edit source code of editor content:
-
-```python
-import dash_mantine_components as dmc
-
-
-content= '<p>Source code control example</p><p>New line with <strong>bold text</strong></p><p>New line with <em>italic</em> <em>text</em></p>'
-
-component =dmc.RichTextEditor(
-    html=content,
-    toolbar={
-        "sticky": True,
-        "controlsGroups": [
-            ["SourceCode"],
-            [
-                "Blockquote",
-                "Bold",
-                "Italic",
-                "Underline",
-                "Strikethrough",
-                "ClearFormatting",
-                "Highlight",
-            ],
-        ],
-    },
-)
-```
 ### Custom controls
 Use `CustomControl` in the `controlsGroups` to create create custom controls in the `toolbar`. Note that you will need 
 to set `aria-label` attribute to make control visible for screen readers.
@@ -31268,8 +31941,7 @@ dmcfuncs.deleteColumn= ({editor}) => {
 ```
 
 #### Example: Font size controls
-
-Note: FontSize is available in DMC>=2.3.0 which uses Tiptap v3.
+*New in V2.3.0* 
 
 ```python
 
@@ -31368,6 +32040,63 @@ component = html.Div(
 def update_content(content: str):
     return f"Your selected text: {content}"
 ```
+### Accessing the Editor Instance clientside
+
+The `dash_mantine_components.getEditor(id)` function provides direct access to the underlying Tiptap editor instance 
+in clientside callbacks. This allows you full access to the editor API including executing commands, inspecting
+content, and updating the editor state.  See the [Tiptap editor API](https://tiptap.dev/docs/editor/api/commands) for more details.
+
+
+This returns the Tiptap editor instance for the specified component ID, or `undefined` if the editor doesn't exist:
+
+```javascript
+const editor = dash_mantine_components.getEditor('editor-id');
+```
+
+This example shows how to access the editor in a clientside callback and provide a word count of the content.
+
+```python
+import dash_mantine_components as dmc
+from dash import Dash, Input, Output, clientside_callback
+
+component = dmc.Box([
+    dmc.RichTextEditor(
+        id="get-editor-id",
+        toolbar={
+                "controlsGroups": [
+                    [
+                        "Bold",
+                        "Italic",
+                        "Underline",
+                        "Strikethrough",
+                    ],
+                ],
+            },
+        html="<p>Try typing some text in this editor. Click the button below to see your character and word count.</p>"
+    ),
+    dmc.Button("Get Stats", id="btn-rte-stats", n_clicks=0),
+    dmc.Box(id="stats"),
+])
+
+clientside_callback(
+    """
+    function(n_clicks) {
+        if (n_clicks > 0) {
+            const editor = dash_mantine_components.getEditor('get-editor-id');
+            if (editor) {
+                const text = editor.getText();
+                const chars = text.length;
+                const words = text.split(/\\s+/).filter(Boolean).length;
+                return `Characters: ${chars} | Words: ${words}`;
+            }
+        }
+        return dash_clientside.no_update;
+    }
+    """,
+    Output("stats", "children"),
+    Input("btn-rte-stats", "n_clicks"),
+)
+```
 ### Debounce
 
 The `debounce` prop controls how updates to the `html`, `json`, and `selected` props are triggered in the `RichTextEditor`.
@@ -31400,38 +32129,8 @@ Notes:
  - If you want to set an initial value while also enabling persistence, set `persisted_props` to only the prop used for the initial value.
 For example `persisted_props=['html']`.
 
-### Subtle Variant  
 
-`variant="subtle"` removes borders from the controls groups, makes controls larger and reduces spacing of the toolbar:
 
-```python
-import dash_mantine_components as dmc
-
-component = dmc.RichTextEditor(
-    html="Subtle rich text editor variant",
-    extensions=[
-        "StarterKit",
-        "Underline",
-        "Highlight",
-    ],
-    toolbar={
-        "sticky": True,
-        "stickyOffset": 60,
-        "variant": "subtle",
-        "controlsGroups": [
-            [
-                "Bold",
-                "Italic",
-                "Underline",
-                "Strikethrough",
-                "ClearFormatting",
-                "Highlight",
-                "Code",
-            ],
-        ],
-    },
-)
-```
 ### CSS Extensions
 
 As of DMC 1.2.0, RichTextEditor component styles are bundled automatically, so you no longer need to include a separate CSS file.
@@ -31467,8 +32166,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |-----------|--------------|---------------------------|
 | `control` | `data-active` | Control is active        |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### RichTextEditor
 
 - id (string; optional):
@@ -31501,6 +32200,9 @@ This component supports Styles API. With Styles API, you can customize styles of
     will be sent when the value has been stable for that number of
     milliseconds.
 
+- editable (boolean; optional):
+    If True, the editor will be editable. True by default.
+
 - extensions (list; optional):
     List of extensions to be loaded by the editor. Each item can be
     either a string with the extension name (e.g. 'Color') or an
@@ -31511,6 +32213,12 @@ This component supports Styles API. With Styles API, you can customize styles of
     {'Placeholder': {'placeholder': 'Write or paste content
     here...'}}, {'TextAlign': {'types': ['heading', 'paragraph']}},
     'Color', 'TextStyle', 'Image'] by default.
+
+- focus (number; optional):
+    If True, the editor will be focused. If False, the editor will be
+    blurred. Can also be a string ('start', 'end', 'all') or number to
+    focus at a specific position. Positive values start at the
+    beginning of the document - negative values at the end.
 
 - hiddenFrom (optional):
     Breakpoint above which the component is hidden with `display:
@@ -31821,8 +32529,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | indicator  | .mantine-SegmentedControl-indicator  | Floating indicator that moves between items             |
 | innerLabel | .mantine-SegmentedControl-innerLabel | Wrapper of label element children                       |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### SegmentedControl
 
 - id (string; optional):
@@ -32456,8 +33164,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | mark | `data-filled` | mark position is less or equal slider value |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Slider
 
 - id (string; optional):
@@ -32911,8 +33619,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | description  | .mantine-Switch-description  | Description displayed below the label           |
 | error        | .mantine-Switch-error        | Error message displayed below the label         |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Switch
 
 - id (string; optional):
@@ -33132,8 +33840,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | description | .mantine-TextInput-description | Description element                              |
 | error       | .mantine-TextInput-error       | Error element                                    |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### TextInput
 
 - id (string; optional):
@@ -33423,8 +34131,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | description | .mantine-Textarea-description | Description element                              |
 | error       | .mantine-Textarea-error       | Error element                                    |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Textarea
 
 - id (string; optional):
@@ -34659,8 +35367,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | navbar, header, aside, footer | data-with-border | `withBorder` prop is set either on the AppShell or on the associated component | – |
 | section          | data-grow         | `grow` prop is set on the AppShell.Section | – |
 
-### Keyword Arguments
 
+### Keyword Arguments
 ### AppShell
 - children (a list of or a singular dash component, string or number; required):
     Content.
@@ -35196,8 +35904,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### AspectRatio
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -35315,8 +36023,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |------|--------------------|--------------|
 | root | .mantine-Card-root | Root element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Center
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -35522,8 +36230,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Container
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -35667,8 +36375,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:-----|:-------------------|:-------------|
 | root | .mantine-Flex-root | Root element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Flex
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -36070,8 +36778,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |          | --grid-align      | Controls `align-items` property  |
 |          | --grid-justify    | Controls `justify-content` property |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Grid
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -36346,8 +37054,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |----------|-------------|-----------------|
 | root     | data-grow   | `grow` prop is set |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Group
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -36605,8 +37313,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:------------|:-------------------------|:-------------------------------------------------|
 | root        | .mantine-SimpleGrid-root | Root element                                     |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### SimpleGrid
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -36731,8 +37439,8 @@ html.Div([
 ])
 ```
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Space
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -36827,8 +37535,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |          | --stack-gap      | Controls `gap` property         |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Stack
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -36935,8 +37643,9 @@ dmc.Box(
 > Please see the [Style Props](/style-props) section for more information.
 
 
-### Keyword Arguments
 
+
+### Keyword Arguments
 #### Box
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -37088,7 +37797,6 @@ def update(n):
     return True
 ```
 ### Keyword Arguments
-
 #### Collapse
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -37237,8 +37945,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root  | .mantine-Divider-root  | Root element  |
 | label | .mantine-Divider-label | Label element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Divider
 
 - id (string; optional):
@@ -37365,8 +38073,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:-----|:--------------------|:-------------|
 | root | .mantine-Paper-root | Root element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Paper
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -37668,8 +38376,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### ScrollArea
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -37782,6 +38490,7 @@ component = dmc.ActionIcon([
 ], variant="outline")
 ```
 ### Keyword Arguments
+
 
 #### VisuallyHidden
 
@@ -37961,8 +38670,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root     | data-inherit | `inherit` prop is set | – |
 | root     | data-underline | – | Value of `underline` prop |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Anchor
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -38109,8 +38818,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | breadcrumb | .mantine-Breadcrumbs-breadcrumb | Breadcrumb item wrapper    |
 | separator  | .mantine-Breadcrumbs-separator  | Separator between children |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Breadcrumbs
 
 - children (a list of or a singular dash component, string or number; required):
@@ -38252,8 +38961,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |----------|--------------|--------------------|
 | burger   | data-opened  | `opened` prop is set |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Burger
 
 - id (string; optional):
@@ -38595,8 +39304,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | chevron     | .mantine-NavLink-chevron     | Default chevron icon                         |
 | collapse    | .mantine-NavLink-collapse    | Nested links Collapse container              |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### NavLink
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -38815,8 +39524,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | control | .mantine-Pagination-control | Control element: items, next/previous, first/last buttons |
 | dots    | .mantine-Pagination-dots    | Dots icon wrapper                                         |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Pagination
 
 - id (string; optional):
@@ -39222,8 +39931,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | stepDescription         | .mantine-Stepper-stepDescription         | Step description                              |
 | stepLoader              | .mantine-Stepper-stepLoader              | Step loader                                   |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Stepper
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -39890,8 +40599,8 @@ Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Tabs
 
 - children (a list of or a singular dash component, string or number; required):
@@ -40714,8 +41423,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | node         | data-level     | –                      | Nesting level of the node |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Tree
 
 - id (string; optional):
@@ -40903,8 +41612,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | root     | --affix-right    | Controls `right` property |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Affix
 
 - children (a list of or a singular dash component, string or number; optional)
@@ -41279,8 +41988,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |          | --drawer-height    | Controls height property of Drawer.Content |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Drawer
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -41741,8 +42450,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | dropdown | .mantine-HoverCard-dropdown | Dropdown element |
 | arrow    | .mantine-HoverCard-arrow    | Dropdown arrow   |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### HoverCard
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -42208,8 +42917,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 **a.** Want this table exported to HTML or reStructuredText?
 **b.** Want a full CSS override example using these selectors in a Dash app?
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Menu
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -42897,8 +43606,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | body    | .mantine-Modal-body    | Modal body, displayed after header                                    |
 | close   | .mantine-Modal-close   | Close button                                                          |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Modal
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -43484,8 +44193,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | dropdown  | data-position   | Value of floating UI dropdown position |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Popover
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -43979,8 +44688,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | tooltip  | data-multiline | `multiline` prop is set |
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Tooltip
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -44274,6 +44983,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
 | **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
 | **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
 | **2.2.0**               | Aug 2025     | 8.2.5           | `dash>=2.0.0` |
@@ -45051,7 +45761,9 @@ def cleanQueue_notification(n_clicks):
 ```
 
 
+
 ### Keyword Arguments
+
 
 #### NotificationProvider
 
@@ -46911,6 +47623,273 @@ the user stops interacting, reducing callback frequency.
 You can now use LLMs.txt file with Cursor and other IDEs. The file is automatically updated with each release and
 includes every demo and documentation page from the DMC docs site. It is about 1.6MB. You can find the latest version 
 of LLMs.txt and documentation in the  [LLMs](/llms) section.
+
+## Version 2.4.0  
+Release announcement for Dash Mantine Components v2.4.0  
+Category: Releases  
+
+November 6, 2025  
+
+Based on Mantine 8.3.6
+
+### New: Copy to Clipboard Components
+
+The new  `CopyButton` and `CustomCopyButton` components is like `dcc.Clipboard` with a Mantine theme.
+
+- Customizable icons, colors, and labels for copied state
+- Support for copying from another component using `target_id`
+- Trigger copy in callbacks with `triggerCopy=True`
+- Build fully custom copy to clipboard buttons with `CustomCopyButton`
+
+Check out the new [Copy Button docs](/components/copybutton)
+
+#### Example:  Styling the CopyButton
+
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+component = dmc.Group([
+    dmc.CopyButton(
+        value="https://www.dash-mantine-components.com/",
+        children="Copy URL",
+        copiedChildren="Copied!",
+        color="blue",
+        copiedColor="teal"
+    ),
+    dmc.CopyButton(
+        value="This text is copied",
+        children=DashIconify(icon="tabler:clipboard"),
+        copiedChildren=DashIconify(icon="tabler:check"),
+        color="blue",
+        copiedColor="teal",
+        variant="outline"
+    ),
+    dmc.CopyButton(
+        value="This text is copied",
+        children=DashIconify(icon="fa-regular:copy"),
+        copiedChildren=DashIconify(icon="fa-regular:check-circle"),
+        color="gray",
+        copiedColor="dark",
+        variant="transparent"
+    )
+])
+```
+---
+#### Example: Copy from another component:
+Need a quick way to say “no”? Fetch a random answer from [No-as-a-Service](https://github.com/hotheadhacker/no-as-a-service) and copy it with a single click.
+
+```python
+import requests
+from dash import Input, Output, callback
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+component = dmc.Box([
+    dmc.Button("Get rejection reason", id="new-reason-btn", mb="lg"),
+    dmc.Group([
+        dmc.Text(id="reason-text", mt=10),
+        dmc.CopyButton(
+            target_id="reason-text",
+            children=DashIconify(icon="fa-regular:copy"),
+            copiedChildren=DashIconify(icon="fa-regular:check-circle"),
+            color="blue",
+            copiedColor="teal",
+            variant="outline",
+            size="xs"
+        )
+    ], align="flex-start",  wrap="nowrap",)
+])
+
+@callback(
+    Output("reason-text", "children"),
+    Input("new-reason-btn", "n_clicks"),
+    running=[(Output("new-reason-btn", "loading"), True, False)],
+)
+def fetch_reason(_):
+    try:
+        res = requests.get("https://naas.isalman.dev/no")
+        res.raise_for_status()
+        return res.json().get("reason", "No reason found.")
+    except Exception:
+        return "No reason. Just No."
+```
+### More chart props now support functions
+
+The `AreaChart`, `BarChart`, `BubbleChart`, `CompositeChart`, `LineChart`, and `ScatterChart` now accept functions for these props:
+
+* `xAxisProps`, `yAxisProps`, `gridProps`, `rightYAxisProps` (all charts)
+* `zAxisProps` (`BubbleChart` only)
+
+See the [Functions As Props guide](/functions-as-props) for details.
+
+#### Example: format x-axis tick labels
+
+This example uses a JavaScript function to format x-axis tick labels for datetime values.
+
+```python
+
+import dash_mantine_components as dmc
+from dash import Dash
+from datetime import datetime
+
+data = [
+  {"date": datetime(2025, 3, 22), "Apples": 2890, "Oranges": 2338, "Tomatoes": 2452},
+  {"date": datetime(2025, 3, 23), "Apples": 2756, "Oranges": 2103, "Tomatoes": 2402},
+  {"date": datetime(2025, 3, 24), "Apples": 3322, "Oranges": 986, "Tomatoes": 1821},
+  {"date": datetime(2025, 3, 25), "Apples": 3470, "Oranges": 2108, "Tomatoes": 2809},
+  {"date": datetime(2025, 3, 26), "Apples": 3129, "Oranges": 1726, "Tomatoes": 2290}
+]
+
+component = dmc.AreaChart(
+    h=300,
+    dataKey="date",
+    data=data,
+    series = [
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"}
+    ],
+    curveType="Monotone",
+    tickLine="xy",
+    withGradient=False,
+    withDots=False,
+    xAxisProps={"tickFormatter": {"function": "formatDatetime"}},
+    valueFormatter={"function": "formatNumberIntl"},
+)
+```
+
+```javascript
+
+var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+
+dmcfuncs.formatDatetime = function (datetimeStr) {
+  const date = new Date(datetimeStr);
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+};
+```
+
+### New RichTextEditor features
+
+- Code highlighting is now available
+- New Props:  `editable`, `focus`  Thanks for the PR [@chgiesse](https://github.com/chgiesse)
+- Access Editor API in a clientside callback
+
+
+See examples of all the new features in the [RichTextEditor docs](/components/richtexteditor)
+
+#### Example: Editable prop
+Note the toolbar is hidden when the editor is read-only
+
+```python
+import dash_mantine_components as dmc
+from dash import  Input, Output, callback
+
+component = dmc.Box([
+    dmc.Switch(
+        id="rte-toggle-editable",
+        label="Editable",
+        checked=True,
+    ),
+    dmc.RichTextEditor(
+        id="rte-editable",
+        html="<p>This editor can be toggled between editable and read-only mode.</p>",
+        editable=True,
+        toolbar={
+            "controlsGroups": [
+                [
+                    "Bold",
+                    "Italic",
+                    "Underline",
+                    "Strikethrough",
+                    "CodeBlock"
+                ],
+            ],
+        },
+    ),
+])
+
+@callback(
+    Output("rte-editable", "editable"),
+    Input("rte-toggle-editable", "checked"),
+)
+def toggle_editable(checked):
+    return checked
+```
+#### Example:  Accessing Editor clientside
+Get full access to the editor API in clientside callbacks, including executing commands, inspecting
+content, and updating the editor state.  
+
+```python
+import dash_mantine_components as dmc
+from dash import Dash, Input, Output, clientside_callback
+
+component = dmc.Box([
+    dmc.RichTextEditor(
+        id="get-editor-id",
+        toolbar={
+                "controlsGroups": [
+                    [
+                        "Bold",
+                        "Italic",
+                        "Underline",
+                        "Strikethrough",
+                    ],
+                ],
+            },
+        html="<p>Try typing some text in this editor. Click the button below to see your character and word count.</p>"
+    ),
+    dmc.Button("Get Stats", id="btn-rte-stats", n_clicks=0),
+    dmc.Box(id="stats"),
+])
+
+clientside_callback(
+    """
+    function(n_clicks) {
+        if (n_clicks > 0) {
+            const editor = dash_mantine_components.getEditor('get-editor-id');
+            if (editor) {
+                const text = editor.getText();
+                const chars = text.length;
+                const words = text.split(/\\s+/).filter(Boolean).length;
+                return `Characters: ${chars} | Words: ${words}`;
+            }
+        }
+        return dash_clientside.no_update;
+    }
+    """,
+    Output("stats", "children"),
+    Input("btn-rte-stats", "n_clicks"),
+)
+```
+### AI-friendly documentation
+
+LLM-friendly documentation is now available for Dash Mantine Components. It follows the `llms.txt` standard, enabling AI
+tools like ChatGPT, Cursor, Windsurf, and Claude to better understand DMC components and props.
+
+New in this release:
+* Generate a custom `llms.txt` file that includes only the components you use — improving AI accuracy and response speed.
+* Each docs page now includes a "Copy for LLMs" button for copying AI-friendly content directly into a chat.
+
+See the [LLMs section](/llms) for full details and customization options.
+
+
+### Other notable updates
+
+* Mantine patch updates from 8.3.1 through 8.3.6. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
+* Improved rendering in several components, including the `Stepper`. Thanks to @chgiesse for [PR #664](https://github.com/snehilvj/dash-mantine-components/pull/664).
+
+### Thanks
+
+Special thanks to:
+
+* [@chgiesse](https://github.com/chgiesse) for contributing two PRs in this release
+* [@BSd3v](https://github.com/BSd3v) for providing help and guidance along the way
+* [@alexcjohnson](https://github.com/alexcjohnson) for thoughtful feedback during code reviews
 
 ## CSS Variables  
 How to use CSS variables with Dash Mantine Components.  
@@ -49408,7 +50387,9 @@ app.layout = dmc.MantineProvider(
 )
 ```
 
+
 ### Keyword Arguments
+
 
 #### MantineProvider
 
@@ -50510,8 +51491,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | icon   | .mantine-Blockquote-icon  | Icon wrapper       |
 | cite   | .mantine-Blockquote-cite  | Cite element       |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Blockquote
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -50648,8 +51629,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:-------------|:-------------------|:----------------------------------------------|
 | root         | .mantine-Code-root | Root element                                  |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Code
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -50894,8 +51875,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |----------|-------------------------------------|----------------|
 | code     | .mantine-InlineCodeHighlight-code   | Root element   |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### CodeHighlight
 
 - id (string; optional):
@@ -51218,8 +52199,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:-----|:------------------------|:-------------|
 | root | .mantine-Highlight-root | Root element |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Highlight
 
 - children (string; optional):
@@ -51440,8 +52421,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | itemLabel   | .mantine-List-itemLabel   | ListItem content                                      |
 | itemWrapper | .mantine-List-itemWrapper | ListItem wrapper element, container, icon and content |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### List
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -51626,8 +52607,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:------------|:-------------------|:-------------------------------------------------|
 | root        | .mantine-Mark-root | Root element                                     |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Mark
 
 - children (string; optional):
@@ -51949,8 +52930,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 | `tr`      | `data-hover` | `highlightOnHover` prop is set on Table component | – |
 | `tr`      | `data-size` | – | Value of `captionSize` prop on Table component |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Table
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -52293,8 +53274,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Text
 
 - children (a list of or a singular dash component, string or number; optional):
@@ -52417,8 +53398,8 @@ This component supports Styles API. With Styles API, you can customize styles of
 |:------------|:--------------------|:-------------------------------------------------|
 | root        | .mantine-Title-root | Root element                                     |
 
-### Keyword Arguments
 
+### Keyword Arguments
 #### Title
 
 - children (a list of or a singular dash component, string or number; optional):
