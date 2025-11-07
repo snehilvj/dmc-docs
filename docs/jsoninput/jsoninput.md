@@ -31,7 +31,9 @@ JsonInput is based on [Textarea](/components/textarea) component, it includes js
 | description | .mantine-JsonInput-description | Description element                              |
 | error       | .mantine-JsonInput-error       | Error element                                    |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### JsonInput
 

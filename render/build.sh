@@ -1,2 +1,1 @@
-pip install poetry
-poetry install --no-root
+pip install -r requirements.txt

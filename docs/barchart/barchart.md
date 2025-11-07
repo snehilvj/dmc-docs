@@ -377,7 +377,9 @@ Set `highlightHover=True` to highlight the series when hovered, mirroring the be
 |                  | --chart-cursor-fill  | Controls fill color of the cursor line           |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### BarChart
 

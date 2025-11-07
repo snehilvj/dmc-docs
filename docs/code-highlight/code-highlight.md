@@ -146,7 +146,9 @@ Note - the expandable code feature is only available in the  `CodeHighlightTabs`
 |----------|-------------------------------------|----------------|
 | code     | .mantine-InlineCodeHighlight-code   | Root element   |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### CodeHighlight
 

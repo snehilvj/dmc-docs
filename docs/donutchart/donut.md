@@ -215,7 +215,9 @@ hovered series, use the `hoverSeriesName` property.
 |                  | --chart-size           | Controls size of the chart               |
 |                  | --chart-stroke-color   | Controls color of the chart stroke       |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### DonutChart
 

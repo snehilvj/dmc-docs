@@ -128,7 +128,9 @@ dmc.ScrollArea(scrollTo={"top": 200, "left": "50%", "behavior": "auto"})
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### ScrollArea
 

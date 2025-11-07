@@ -51,7 +51,9 @@ The alerts can also be timed out using the `duration` prop which accepts time in
 | icon        | .mantine-Alert-icon        | Icon wrapper                                  |
 | closeButton | .mantine-Alert-closeButton | Close button, defined by withCloseButton prop |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Alert
 

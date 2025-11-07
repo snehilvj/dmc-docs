@@ -58,7 +58,9 @@ dmc.Paper(
 |:-----|:--------------------|:-------------|
 | root | .mantine-Paper-root | Root element |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Paper
 

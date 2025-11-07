@@ -61,7 +61,9 @@ Add icon to the left side of the input.
 | innerInput       | .mantine-PasswordInput-innerInput       | Actual input element                             |
 | visibilityToggle | .mantine-PasswordInput-visibilityToggle | Visibility toggle button                         |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### PasswordInput
 

@@ -76,7 +76,9 @@ Text props
 | root     | data-inherit | `inherit` prop is set | – |
 | root     | data-underline | – | Value of `underline` prop |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Anchor
 

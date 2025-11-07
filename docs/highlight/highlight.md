@@ -61,7 +61,9 @@ Highlight component supports same props as Text component.
 |:-----|:------------------------|:-------------|
 | root | .mantine-Highlight-root | Root element |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Highlight
 

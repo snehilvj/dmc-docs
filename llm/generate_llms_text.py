@@ -25,9 +25,8 @@ TRANSFORMS = [
 pages = []
 for file in Path("../docs").glob("**/*.md"):
     metadata, content = frontmatter.parse(file.read_text())
-    if metadata.get("category") != "Releases":
-        metadata["content"] = content
-        pages.append(metadata)
+    metadata["content"] = content
+    pages.append(metadata)
 
 pages.sort(key=lambda x: (x.get("category", ""), x["name"]))
 
@@ -49,9 +48,7 @@ intro = f"""
 >
 > This documentation applies to **DMC {DMC_VERSION}**, which wraps **Mantine {MANTINE_VERSION}**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
->
-> The following sections describe DMC components, their props, usage examples in Python Dash, and relevant style and theme APIs.  
-> All examples use Python Dash syntax. JavaScript or CSS examples may also be included where appropriate.
+> All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
 > Assume the reader is a Dash developer familiar with callbacks and layout, but not necessarily with Mantine.
 

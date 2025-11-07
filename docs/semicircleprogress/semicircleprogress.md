@@ -70,7 +70,9 @@ By default, transitions are disabled, to enable them, set `transitionDuration` p
 | `label`  | `data-position` | Value of `labelPosition` prop |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### SemiCircleProgress
 

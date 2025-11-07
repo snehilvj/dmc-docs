@@ -63,7 +63,9 @@ Differences from using multiple Modal components:
 | body    | .mantine-Modal-body    | Modal body, displayed after header                                    |
 | close   | .mantine-Modal-close   | Close button                                                          |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Modal
 

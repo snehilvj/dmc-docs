@@ -46,7 +46,9 @@ Set the Divider color from one of the colors of Mantine default theme using the 
 | root  | .mantine-Divider-root  | Root element  |
 | label | .mantine-Divider-label | Label element |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Divider
 

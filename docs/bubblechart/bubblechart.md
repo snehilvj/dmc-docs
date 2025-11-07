@@ -140,7 +140,9 @@ Use the `hoverData` property in a callback to retrieve data from the most recent
 |          | --chart-text-color    | Controls color of the axis labels           |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### BubbleChart
 

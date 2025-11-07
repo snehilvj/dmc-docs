@@ -58,7 +58,9 @@ In this example, `maxLength` is used to limit the number of characters a user ca
 | description | .mantine-Textarea-description | Description element                              |
 | error       | .mantine-Textarea-error       | Error element                                    |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Textarea
 

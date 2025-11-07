@@ -18,7 +18,9 @@ This example uses it with the `ActionIcon` component:
 
 .. exec::docs.visuallyhidden.simple
 
+
 ### Keyword Arguments
+
 
 #### VisuallyHidden
 

@@ -90,7 +90,9 @@ Differences from using multiple Drawer components:
 |          | --drawer-height    | Controls height property of Drawer.Content |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Drawer
 

@@ -61,7 +61,9 @@ app.layout = dmc.MantineProvider(
 )
 ```
 
+
 ### Keyword Arguments
+
 
 #### MantineProvider
 

@@ -1,0 +1,20 @@
+# RichTextEditor default extensions in dmc version V2.3.0
+extensions = [
+    'StarterKit',
+    'Superscript',
+    'Subscript',
+    'Highlight',
+    'Table',
+    'TableCell',
+    'TableHeader',
+    'TableRow',
+    { 'Placeholder': { 'placeholder': 'Write or paste content here...' } },
+    { 'TextAlign': { 'types': ['heading', 'paragraph'] } },
+    'Color',
+    'TextStyle',
+    'BackgroundColor',
+    'FontFamily',
+    'FontSize',
+    'LineHeight',
+    'Image',
+]

@@ -151,7 +151,9 @@ if __name__ == "__main__":
 | chevron     | .mantine-NavLink-chevron     | Default chevron icon                         |
 | collapse    | .mantine-NavLink-collapse    | Nested links Collapse container              |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### NavLink
 

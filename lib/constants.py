@@ -1,8 +1,9 @@
 import json
+import os
 
-DMC_VERSION = "2.3.0"
-MANTINE_VERSION = "8.3.1"
-LATEST_RELEASE_ENDPOINT = "/release-2-3-0"
+DMC_VERSION = "2.4.0"
+MANTINE_VERSION = "8.3.6"
+LATEST_RELEASE_ENDPOINT = "/release-2-4-0"
 
 
 PAGE_TITLE_PREFIX = "Dash Mantine Components | "
@@ -66,5 +67,10 @@ JUSTIFY_CONTENT_CSS_PROPERTY = ["flex-start", "center", "flex-end", "space-aroun
 FLEX_DIRECTION_CSS_PROPERTY = ["row", "column", "row-reverse", "column-reverse"]
 FLEX_WRAP_CSS_PROPERTY = ["wrap", "nowrap", "wrap-reverse"]
 
-with open('assets/llms.json', encoding='utf-8') as f:
+# Get path to assets/llms.json relative to this file
+constants_dir = os.path.dirname(os.path.abspath(__file__))
+llms_path = os.path.join(constants_dir, '../assets/llms.json')
+
+with open(llms_path, encoding='utf-8') as f:
     LLMS = json.load(f)
+    NAME_CONTENT_MAP = {item["name"]: item["content"] for item in LLMS}

@@ -163,7 +163,10 @@ dmc.AccordionControl(children=[...], disabled=True)
 
 
 
+
 ### Keyword Arguments
+.. style_props_text::
+
 
 #### Accordion
 

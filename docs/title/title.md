@@ -24,7 +24,9 @@ Pass the `order` prop to render specific element (h1-h6), default order is 1.
 |:------------|:--------------------|:-------------------------------------------------|
 | root        | .mantine-Title-root | Root element                                     |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Title
 

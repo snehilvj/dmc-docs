@@ -1,7 +1,7 @@
 ---
 name: Getting Started
 endpoint: /getting-started
-description: Dash Mantine Components (DMC) integrates the Mantine UI library with Dash, making it easy to create modern, responsive, and highly customizable applications—right out of the box.
+description: Build feature-rich, accessible Dash apps faster than ever! Dash Mantine Components includes over 100 customizable components based on the React Mantine library, with consistent styling, theming, and full support for light and dark mode.
 dmc: false
 order: 1  # sets order in section and in search
 ---

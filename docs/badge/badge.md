@@ -55,7 +55,9 @@ dmc.Badge("Orange", color="orange")
 | label        | .mantine-Badge-label        | Badge children          |
 | section      | .mantine-Badge-section      | Left and right sections |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Badge
 

@@ -255,7 +255,9 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 | day                   | `data-last-in-range`  | Last day in selected range                   | –                        |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### DatePicker
 

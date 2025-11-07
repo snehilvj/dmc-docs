@@ -219,7 +219,9 @@ using the prop `boxWrapperProps` in `Tooltip`.
 | tooltip  | data-multiline | `multiline` prop is set |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Tooltip
 

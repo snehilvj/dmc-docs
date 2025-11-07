@@ -97,7 +97,9 @@ Menu component can be customised by changing icons, right section and even color
 **a.** Want this table exported to HTML or reStructuredText?
 **b.** Want a full CSS override example using these selectors in a Dash app?
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Menu
 

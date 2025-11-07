@@ -323,7 +323,9 @@ select less than 2 currency pairs.
 | group       | .mantine-Select-group       | Options group wrapper                            |
 | groupLabel  | .mantine-Select-groupLabel  | Options group label                              |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Select
 

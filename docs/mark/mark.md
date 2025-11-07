@@ -25,7 +25,9 @@ category: Typography
 |:------------|:-------------------|:-------------------------------------------------|
 | root        | .mantine-Mark-root | Root element                                     |
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### Mark
 

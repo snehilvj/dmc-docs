@@ -143,7 +143,9 @@ dmc.InputWrapper(
 | description | --input-description-size  | Controls description font-size        |
 
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### InputWrapper
 

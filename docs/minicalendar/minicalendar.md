@@ -92,7 +92,9 @@ Here’s your content reformatted as Markdown tables:
 
 ---
 
+
 ### Keyword Arguments
+.. style_props_text::
 
 #### MiniCalendar
 
