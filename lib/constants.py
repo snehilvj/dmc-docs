@@ -62,6 +62,11 @@ PROPS_TO_EXCLUDE = [
     "bdrs"
 ]
 
+ALIGN_ITEMS_CSS_PROPERTY = ["stretch", "center", "flex-end", "flex-start"]
+JUSTIFY_CONTENT_CSS_PROPERTY = ["flex-start", "center", "flex-end", "space-around", "space-between"]
+FLEX_DIRECTION_CSS_PROPERTY = ["row", "column", "row-reverse", "column-reverse"]
+FLEX_WRAP_CSS_PROPERTY = ["wrap", "nowrap", "wrap-reverse"]
+
 # Get path to assets/llms.json relative to this file
 constants_dir = os.path.dirname(os.path.abspath(__file__))
 llms_path = os.path.join(constants_dir, '../assets/llms.json')
