@@ -1,5 +1,5 @@
 import dash
-from dash import Dash
+from dash import Dash, hooks
 import dash_mantine_components as dmc
 print(dash.__version__, dmc.__version__)
 dash._dash_renderer._set_react_version("18.2.0")
@@ -23,6 +23,15 @@ app = Dash(
     update_title=None,
     prevent_initial_callbacks=True
 )
+
+
+@hooks.index()
+def update_index(app_index):
+    head_tag = "<head>"
+    insert_pos = app_index.find(head_tag) + len(head_tag)
+    link_tag = '\n    <link rel="help" href="/assets/llms.txt" type="text/plain" title="Complete DMC Documentation">'
+    updated_index = app_index[:insert_pos] + link_tag + app_index[insert_pos:]
+    return updated_index
 
 app.layout = create_appshell(dash.page_registry.values())
 
