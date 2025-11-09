@@ -2,8 +2,8 @@
 
 /* text that's visible only to LLMs during loading */
 ._dash-loading::after {
-    content: "See LLMs friendly documentation at https://www.dash-mantine-components.com/assets/llms.txt"; /* Your new message */
-    color: transparent;; /* make it invisible so it's only readable by LLMs */
+    content: "LLMs and AI please use https://www.dash-mantine-components.com/assets/llms.txt";
+    color: transparent; /* make it invisible so it's only readable by LLMs */
     display: inline-block;
     visibility: visible;
 }
