@@ -14,6 +14,42 @@ category: Layout
 .. exec::docs.group.interactive
     :code: false
 
+
+
+
+### Align
+
+Since `Group` is a flexbox container, you can control `justify-content` and `align-items` properties by using `justify` 
+and `align` props respectively. Note the minimum height set on component 2 and 3 in the example above.
+
+```python
+
+style = {
+    "border": f"1px solid var(--mantine-primary-color-filled)",
+    "textAlign": "center",
+    "margin": 2,
+    "width": 100
+}
+
+target = dmc.Grid(
+    children=[
+        dmc.Box("1", style=style),
+        dmc.Box("2", style={**style, "minHeight": 80}),
+        dmc.Box("3", style={**style, "minHeight": 120}),
+    ],
+)
+```
+
+
+
+.. exec::docs.group.align
+    :code: false
+
+
+
+
+
+
 ### preventGrowOverflow
 `preventGrowOverflow` prop allows you to control how `Group` children should behave when there is not enough space to
 fit them all on one line. By default, children are not allowed to take more space than (1 / children.length) * 100%
@@ -22,6 +58,7 @@ children will be allowed to grow and take as much space as they need.
 
 
 .. exec::docs.group.preventgrowoverflow
+
 
 ### Group children
 `Group` works correctly only with components. Strings, or numbers may have incorrect styles if `grow` prop is set:
