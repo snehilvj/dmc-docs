@@ -11,7 +11,7 @@ from lib.appshell import create_table_of_contents
 dash.register_page(
     __name__,
     "/",
-    title="Dash Mantine Components",
+    title="Dash Mantine Components v0.12",
     description="Official documentation and collection of ready-made Plotly Dash Components created using Dash "
     "Mantine Components. Dash Mantine Components is an extensive UI components library for Plotly Dash "
     "with over 70 components which support dark theme natively.",

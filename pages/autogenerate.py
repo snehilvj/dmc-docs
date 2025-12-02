@@ -136,7 +136,7 @@ for file in files:
         meta.name,
         path_prefix + make_endpoint(meta.name),
         name=meta.name,
-        title="Dash Mantine Components - " + meta.name,
+        title="Dash Mantine Components v0.12 - " + meta.name,
         description=meta.description,
         section=meta.section,
         layout=layout,
