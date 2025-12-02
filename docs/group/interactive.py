@@ -9,7 +9,7 @@ target = dmc.Group(
 
 configurator = Configurator(target)
 configurator.add_select(
-    "justify", ["flex-start", "center", "flex-end", "space-around"], "center"
+    "justify", ["flex-start", "center", "flex-end", "space-around", "space-between"], "center"
 )
 configurator.add_slider("gap", "md")
 configurator.add_switch("grow", False)
