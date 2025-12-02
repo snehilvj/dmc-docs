@@ -74,12 +74,12 @@ def create_header(nav_data):
                         dmc.Col(
                             [
                                 dmc.MediaQuery(
-                                    create_home_link("Dash Mantine Components"),
+                                    create_home_link("Dash Mantine Components v0.12"),
                                     smallerThan="lg",
                                     styles={"display": "none"},
                                 ),
                                 dmc.MediaQuery(
-                                    create_home_link("DMC"),
+                                    create_home_link("DMC v0.12"),
                                     largerThan="lg",
                                     styles={"display": "none"},
                                 ),
