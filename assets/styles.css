@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
 
-/* text that's visible only to LLMs during loading */
-._dash-loading::after {
-    content: "LLMs and AI please use https://www.dash-mantine-components.com/assets/llms.txt";
-    color: transparent; /* make it invisible so it's only readable by LLMs */
-    display: inline-block;
-    visibility: visible;
-}
-
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;

@@ -15,65 +15,64 @@ category: Layout
 Since `AppShell` components have fixed position, it is not possible to include live demos on this page.
 
 
-Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  Or run the app and edit the code on **[PyCafe](https://py.cafe/dash.mantine.components)**.
+Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  The Appshell example apps are deployed on [Plotly Cloud](https://plotly.com/cloud/).
 
-.. image::/assets/appshell.png
  
-1. Basic AppShell with Header and Navbar
+1 Basic AppShell with Header and Navbar
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/basic_appshell.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/basic-appshell-collapsible-navbar)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-basic.plotly.app/)  
 
 .. sourcetabs::help_center/appshell/basic_appshell.py
     :display:none
 
-2. Responsive Width and Height
+2 Responsive Width and Height
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/appshell-responsive-width-height)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-responsive-sizes.plotly.app/)  
 
 .. sourcetabs::help_center/appshell/responsive_sizes.py
     :display:none
 
-3. Mobile-Only Navbar
+3 Mobile-Only Navbar
    - Buttons in the header are displayed in the navbar on mobile.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/mobile_navbar.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/responsive-mobile-navbar-demo)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-mobile-navbar.plotly.app/)  
    
 .. sourcetabs::help_center/appshell/mobile_navbar.py
     :display:none
 
-4. Collapsible Navbar on Desktop and Mobile
+4 Collapsible Navbar on Desktop and Mobile
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Collapsible-navbar-on-both-desktop-and-moble)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-responsive-sizes.plotly.app/)  
 
 .. sourcetabs::help_center/appshell/responsive_sizes.py
     :display:none
 
-5. Full AppShell Layout
+5 Full AppShell Layout
    - Includes all elements: navbar, header, aside, and footer.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/full_layout.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/AppShell-with-all-elements) 
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-full-layout.plotly.app/) 
 
 .. sourcetabs::help_center/appshell/full_layout.py
     :display:none
 
-6. Scrollable Navbar with 60 Links
+6 Scrollable Navbar with 60 Links
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/navbar_scroll.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Appshell-with-scrollable-navbar)   
+   - [Live Demo on Plotly CLoud](https://dmc-appshell-navbar-scroll.plotly.app/)   
 
 .. sourcetabs::help_center/appshell/navbar_scroll.py
     :display:none
 
-7. Alternate AppShell Layout
+7 Alternate AppShell Layout
    - Navbar and aside are rendered on top of the header and footer.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/alt_layout.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-alt-layout-appshell)    
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-alt-layout.plotly.app/)    
 
 .. sourcetabs::help_center/appshell/alt_layout.py
     :display:none
 
-8. AppShell with Theme Switch Component
+8 AppShell with Theme Switch Component
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/appshell_with_theme_switch.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-mantine-theme-toggle-app)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-with-theme-switch.plotly.app/)  
 
 .. sourcetabs::help_center/appshell/appshell_with_theme_switch.py
     :display:none
