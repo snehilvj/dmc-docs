@@ -1,8 +1,8 @@
 import json
 import os
 
-DMC_VERSION = "2.4.0"
-MANTINE_VERSION = "8.3.6"
+DMC_VERSION = "2.4.1"
+MANTINE_VERSION = "8.3.10"
 LATEST_RELEASE_ENDPOINT = "/release-2-4-0"
 
 

@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.4.0**, which wraps **Mantine 8.3.6**.  
+> This documentation applies to **DMC 2.4.1**, which wraps **Mantine 8.3.10**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -11359,6 +11359,10 @@ This component supports Styles API. With Styles API, you can customize styles of
     Breakpoint below which the component is hidden with `display:
     none`.
 
+- withAlignedLabels (boolean; optional):
+    If set, unchecked labels are aligned with the checked one
+    @,default,`False`.
+
 - withAsterisk (boolean; optional):
     Determines whether the required asterisk should be displayed.
     Overrides `required` prop. Does not add required attribute to the
@@ -12352,6 +12356,10 @@ This component supports Styles API. With Styles API, you can customize styles of
 - visibleFrom (optional):
     Breakpoint below which the component is hidden with `display:
     none`.
+
+- withAlignedLabels (boolean; optional):
+    If set, unchecked labels are aligned with the checked one
+    @,default,`False`.
 
 - withAsterisk (boolean; optional):
     Determines whether the required asterisk should be displayed.
@@ -16059,7 +16067,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -17519,7 +17527,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -17630,7 +17638,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -17824,7 +17832,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Maximum height of the visible content, when this point is reached
     spoiler appears, `100` by default.
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -23901,7 +23909,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -24139,7 +24147,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -25125,7 +25133,7 @@ Do you want me to keep this as three separate tables (like above), or merge them
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -25639,7 +25647,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -25836,7 +25844,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -26057,7 +26065,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -28221,7 +28229,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -30940,7 +30948,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -31000,9 +31008,10 @@ Category: Inputs
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
 
 Tiptap version note:
-
-- DMC 2.3.0 and later uses Tiptap v3.3.  There are no known breaking changes, but see the [Migration guilde](/migration) for details.
-- Older versions of DMC used Tiptap v2.9.
+- DMC 2.4.1 uses Tiptap v3.14.0.
+- DMC 2.3.0–2.4.0 use Tiptap v3.3. There are no known breaking changes; however, review the migration guide
+ for details.
+- DMC versions prior to 2.3.0 use Tiptap v2.9.
   
 ```python
 import dash_mantine_components as dmc
@@ -32590,7 +32599,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -33741,10 +33750,8 @@ This component supports Styles API. With Styles API, you can customize styles of
     If set, the indicator will be displayed inside thumb, `True` by
     default.
 
-- wrapperProps (dict; optional):
+- wrapperProps (dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Props passed down to the root element.
-
-    `wrapperProps` is a dict with keys:
 
 ## TextInput  
 Use TextInput component to capture string input from user. Customize the input with label, description, error message etc.  
@@ -34358,12 +34365,12 @@ Category: Layout
 Since `AppShell` components have fixed position, it is not possible to include live demos on this page.
 
 
-Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  Or run the app and edit the code on **[PyCafe](https://py.cafe/dash.mantine.components)**.
+Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  The Appshell example apps are deployed on [Plotly Cloud](https://plotly.com/cloud/).
 
  
-1. Basic AppShell with Header and Navbar
+1 Basic AppShell with Header and Navbar
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/basic_appshell.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/basic-appshell-collapsible-navbar)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-basic.plotly.app/)  
 
 ```python
 """
@@ -34428,9 +34435,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-2. Responsive Width and Height
+2 Responsive Width and Height
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/appshell-responsive-width-height)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-responsive-sizes.plotly.app/)  
 
 ```python
 """
@@ -34503,10 +34510,10 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-3. Mobile-Only Navbar
+3 Mobile-Only Navbar
    - Buttons in the header are displayed in the navbar on mobile.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/mobile_navbar.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/responsive-mobile-navbar-demo)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-mobile-navbar.plotly.app/)  
    
 ```python
 """
@@ -34596,9 +34603,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-4. Collapsible Navbar on Desktop and Mobile
+4 Collapsible Navbar on Desktop and Mobile
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Collapsible-navbar-on-both-desktop-and-moble)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-responsive-sizes.plotly.app/)  
 
 ```python
 """
@@ -34671,10 +34678,10 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-5. Full AppShell Layout
+5 Full AppShell Layout
    - Includes all elements: navbar, header, aside, and footer.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/full_layout.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/AppShell-with-all-elements) 
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-full-layout.plotly.app/) 
 
 ```python
 """
@@ -34755,9 +34762,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-6. Scrollable Navbar with 60 Links
+6 Scrollable Navbar with 60 Links
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/navbar_scroll.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Appshell-with-scrollable-navbar)   
+   - [Live Demo on Plotly CLoud](https://dmc-appshell-navbar-scroll.plotly.app/)   
 
 ```python
 """
@@ -34828,10 +34835,10 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-7. Alternate AppShell Layout
+7 Alternate AppShell Layout
    - Navbar and aside are rendered on top of the header and footer.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/alt_layout.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-alt-layout-appshell)    
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-alt-layout.plotly.app/)    
 
 ```python
 """
@@ -34914,9 +34921,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-8. AppShell with Theme Switch Component
+8 AppShell with Theme Switch Component
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/appshell_with_theme_switch.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-mantine-theme-toggle-app)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-with-theme-switch.plotly.app/)  
 
 ```python
 """
@@ -35948,7 +35955,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36071,7 +36078,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36278,7 +36285,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36434,7 +36441,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36947,6 +36954,31 @@ Category: Layout
 
 ### Usage
 
+### Align
+
+Since `Group` is a flexbox container, you can control `justify-content` and `align-items` properties by using `justify` 
+and `align` props respectively. Note the minimum height set on component 2 and 3 in the example above.
+
+```python
+
+style = {
+    "border": f"1px solid var(--mantine-primary-color-filled)",
+    "textAlign": "center",
+    "margin": 2,
+    "width": 100
+}
+
+target = dmc.Grid(
+    children=[
+        dmc.Box("1", style=style),
+        dmc.Box("2", style={**style, "minHeight": 80}),
+        dmc.Box("3", style={**style, "minHeight": 120}),
+    ],
+)
+```
+
+
+
 ### preventGrowOverflow
 `preventGrowOverflow` prop allows you to control how `Group` children should behave when there is not enough space to
 fit them all on one line. By default, children are not allowed to take more space than (1 / children.length) * 100%
@@ -37113,7 +37145,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37360,7 +37392,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37475,7 +37507,7 @@ html.Div([
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37495,7 +37527,7 @@ Category: Layout
 `Stack` is a vertical flex container. If you need a horizontal flex container, use `Group` component instead. If you
 need to have full control over flex container properties, use `Flex` component.
 
-Adjust stack styles with `align`, `justify`, and `spacing` props.
+Adjust stack styles with `align`, `justify`, and `gap` props.
 
 ```python
 import dash_mantine_components as dmc
@@ -37590,7 +37622,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37680,7 +37712,7 @@ dmc.Box(
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37838,7 +37870,7 @@ def update(n):
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37997,7 +38029,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -38118,7 +38150,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -38680,6 +38712,11 @@ This component supports Styles API. With Styles API, you can customize styles of
 - id (string; optional):
     Unique ID to identify this component in Dash callbacks.
 
+- anchorProps (dict; optional):
+    Props passed down to the `Anchor` component.
+
+    `anchorProps` is a dict with keys:
+
 - aria-* (string; optional):
     Wild card aria attributes.
 
@@ -38734,7 +38771,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -38863,7 +38900,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39010,7 +39047,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39387,7 +39424,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39592,7 +39629,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -44983,6 +45020,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.4.1**               | Dec 2025     | 8.3.10           | `dash>=2.0.0` |
 | **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
 | **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
 | **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
@@ -47632,16 +47670,28 @@ November 6, 2025
 
 Based on Mantine 8.3.6
 
+
+### Version 2.4.1
+
+December 20, 2025  
+
+Based on Mantine 8.3.10  
+
+See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.4.1)  
+
+
+
 ### New: Copy to Clipboard Components
 
-The new  `CopyButton` and `CustomCopyButton` components is like `dcc.Clipboard` with a Mantine theme.
+The new `CopyButton` and `CustomCopyButton` components are similar to `dcc.Clipboard`, but with full Mantine styling and customization.
 
-- Customizable icons, colors, and labels for copied state
+- Customizable icons, colors, and labels for the copied state
 - Support for copying from another component using `target_id`
-- Trigger copy in callbacks with `triggerCopy=True`
-- Build fully custom copy to clipboard buttons with `CustomCopyButton`
+- Trigger copying in callbacks with `triggerCopy=True`
+- Build fully custom copy-to-clipboard buttons with `CustomCopyButton`
 
-Check out the new [Copy Button docs](/components/copybutton)
+Check out the new [Copy Button docs](/components/copybutton).
+
 
 #### Example:  Styling the CopyButton
 
@@ -47677,7 +47727,7 @@ component = dmc.Group([
 ```
 ---
 #### Example: Copy from another component:
-Need a quick way to say “no”? Fetch a random answer from [No-as-a-Service](https://github.com/hotheadhacker/no-as-a-service) and copy it with a single click.
+Need a quick way to say “No”? Fetch a random excuse from [No-as-a-Service](https://github.com/hotheadhacker/no-as-a-service) and copy it with a single click.
 
 ```python
 import requests
@@ -47880,14 +47930,20 @@ See the [LLMs section](/llms) for full details and customization options.
 
 ### Other notable updates
 
-* Mantine patch updates from 8.3.1 through 8.3.6. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
+* Mantine patch updates from 8.3.1 through 8.3.10. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
 * Improved rendering in several components, including the `Stepper`. Thanks to @chgiesse for [PR #664](https://github.com/snehilvj/dash-mantine-components/pull/664).
+
+In 2.4.1:
+* Added `anchorProps` to `Anchor` allowing to pass any valid attribute (like `download`) to the `Anchor` component. Thanks to @jksinton for  [PR #676](https://github.com/snehilvj/dash-mantine-components/pull/676).
+* Added `withAlignedLabels` prop to support offsetting the selected check icon in `Select` and `MultiSelect`
+* Updated to TipTap 3.14.0
 
 ### Thanks
 
 Special thanks to:
 
 * [@chgiesse](https://github.com/chgiesse) for contributing two PRs in this release
+* [@jksinton](https://github.com/jksinton) first time contributor, for ading `anchorProps` prop to `Anchor`
 * [@BSd3v](https://github.com/BSd3v) for providing help and guidance along the way
 * [@alexcjohnson](https://github.com/alexcjohnson) for thoughtful feedback during code reviews
 
@@ -50415,8 +50471,8 @@ app.layout = dmc.MantineProvider(
     `cssVariablesResolver` is a dict with keys:
 
 - cssVariablesSelector (string; optional):
-    CSS selector to which CSS variables should be added, `:root` by
-    default.
+    CSS selector to which CSS variables should be added, by default
+    variables are applied to `:root` and `:host`.
 
 - deduplicateCssVariables (boolean; optional):
     Determines whether CSS variables should be deduplicated: if CSS
@@ -51550,7 +51606,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -51682,7 +51738,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -52274,7 +52330,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -52655,7 +52711,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
