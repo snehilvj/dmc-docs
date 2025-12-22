@@ -44,7 +44,7 @@ parse = create_parser(directives)
 
 for file in files:
     logger.info("Loading %s..", file)
-    metadata, content = frontmatter.parse(file.read_text())
+    metadata, content = frontmatter.parse(file.read_text(encoding="utf-8"))
     metadata = Meta(**metadata)
     layout = parse(content)
 
