@@ -55,7 +55,7 @@ for file in files:
     section = [
         dmc.Group([
             dmc.Tooltip(
-                label="Open the https://mantine.dev/ documentation",
+                label="Open the https://mantine.dev/ documentation of this component",
                 position="top",
                 withArrow=True,
                 children=dmc.Anchor(
