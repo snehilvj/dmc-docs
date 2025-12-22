@@ -54,6 +54,7 @@ for file in files:
     title = dmc.Title(metadata.name, order=2, className="m2d-heading")
     section = [
         dmc.Group([
+            title,
             dmc.Tooltip(
                 label="Open the https://mantine.dev/ documentation of this component",
                 position="top",
@@ -61,12 +62,11 @@ for file in files:
                 children=dmc.Anchor(
                     dmc.ActionIcon(
                         DashIconify(icon="material-symbols:open-in-new", style={"width": "70%", "height": "70%"}),
-                        size="md", variant="default", radius="xl"
+                        size="md", variant="transparent", color="var(--mantine-color-dimmed)"
                     ),
                     href=f"https://mantine.dev{metadata.mantine}", target="_blank", variant="transparent"
                 )
-            ),
-            title
+            )
         ], gap="xs") if metadata.mantine else title,
         dmc.Text(metadata.description, className="m2d-paragraph"),
     ]
