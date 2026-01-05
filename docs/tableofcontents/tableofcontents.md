@@ -72,33 +72,67 @@ Note that `autoContrast` feature works only if you use `color` prop to change ba
 
 ### reinitialize
 
-By default, `TableOfContents` does not track changes in the DOM. If you want to update headings data in a callback, for
-example, when using `Tabs`, or when switching pages in a multi-page app, set  `reinitialize=True` in a callback.
+By default, heading changes are not tracked automatically. If the content updates dynamically, such as when switching
+tabs or navigating between pages, you can trigger a refresh of the `TableOfContents` by setting `reinitialize=True` in a callback.
 
-Here is an example of the callback for a multi-page that refreshes the `TableOfContents` when the URL changes:
+The example below refreshes the table of contents when the tab changes:
 
 ```python
+    dmc.AppShell(
+        dmc.AppShellMain(
+            [
+                dmc.Tabs(
+                    [
+                        dmc.TabsList(
+                            [
+                                dmc.TabsTab("Tab one", value="1"),
+                                dmc.TabsTab("Tab two", value="2", id="tab2"),
+                            ]
+                        ),
+                    ],
+                    id="tabs-example",
+                    value="1",
+                ),
+                html.Div(id="tabs-content"),
+                dmc.AppShellAside(dmc.TableOfContents(id="toc")),
+            ]
+        )
+    )    
 
-app.layout = dmc.MantineProvider(    
-    children=dmc.AppShell(
-        [
-            dcc.Location(id="url"),           
-            dmc.AppShellMain(dash.page_container, id="page-container"),
-            dmc.AppShellAside(dmc.TableOfContents(id="table-of-contents")),
-        ],       
-    ),
-)
+    @callback(
+        Output("tabs-content", "children"),
+        Output("toc", "refresh"),
+        Input("tabs-example", "value"),
+    )
+    def render_content(active):
+        if active == "1":
+            return make_tab1_content(), True
+        return make_tab2_content(), True
 
-@callback(
-    Output("table-of-contents", "reinitialize"),
-    Input("url", "pathname")
-)
-def update(x):
-    return True
 ```
 
 
+### target_id
 
+With Dash 3+, you do not need to trigger `reinitialize` in a callback. Instead, set `target_id` to the `id` of a component
+that is updated by a callback, and the `TableOfContents` will refresh automatically when that update completes.
+
+Using the example above, the callback can be simplified. No `reinitialize` output is required when `target_id` is set:
+
+```python
+dmc.TableOfContents(
+    id="toc",
+    target_id="tabs-content"
+)
+```
+
+When using Dash Pages, `target_id` defaults to the page container id, so the table of contents is automatically
+refreshed on each page change without any additional configuration.
+
+### Dash version support
+
+* Dash 3+ only: `target_id` is supported and replaces the `reinitialize` callback pattern.
+* Dash 2: Use the `reinitialize` prop in a callback as shown above.
 
 
 ### Styles API
