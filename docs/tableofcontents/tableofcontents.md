@@ -9,12 +9,11 @@ category: Navigation
 .. toc::
 .. llms_copy::TableOfContents
 
-
 ### Usage
-Use `TableOfContents` component to display table of contents like in the sidebar of mantine.dev documentation. The
+Use the `TableOfContents` component to display a table of contents similar to the sidebar in these docs. The
 component tracks scroll position and highlights current heading in the list.
 
-You can set the style of the `TableOfContents` controls with the `variant`, `color`, `size` and `radius` props:
+You can set the style of the `TableOfContents` items (controls) with the `variant`, `color`, `size` and `radius` props:
 
 .. exec::docs.tableofcontents.interactive
     :code: false
@@ -50,15 +49,16 @@ The `TableOfContents` items (controls) are rendered as HTML `<a>` elements.
 Each control’s `href` attribute is the id of a heading element, and its `children` are set to the heading
 element’s `textContent`.
 
-The active control (the currently visible heading), includes a data-active="true" attribute, which can be used for styling or testing.
+The active control (the currently visible heading) includes a `data-active="true"` attribute, which can be used for styling or testing.
 
 ### depth offset
-Use `minDepthToOffset` prop to set minimum depth at which offset should be applied. By default, `minDepthToOffset` is 1,
-which means that first and second level headings will not be offset. Set it to 0 to apply offset to all headings.
+Use the `minDepthToOffset` prop to control the minimum heading depth at which indentation is applied. By 
+default, `minDepthToOffset` is 1, which means that first and second level headings will not be offset. Set it to 0 to
+apply offset to all headings.
 
 To control offset value in px, set `depthOffset` prop:
 
-.. exec::docs.tableofcontents.debthoffset
+.. exec::docs.tableofcontents.depthoffset
 
 ### autoContrast  
 
@@ -72,67 +72,60 @@ Note that `autoContrast` feature works only if you use `color` prop to change ba
 
 ### reinitialize
 
-By default, heading changes are not tracked automatically. If the content updates dynamically, such as when switching
-tabs or navigating between pages, you can trigger a refresh of the `TableOfContents` by setting `reinitialize=True` in a callback.
+By default, heading changes are not tracked automatically. If the content updates in a callback (for example, when switching
+tabs) you can trigger a refresh of the `TableOfContents` by setting `reinitialize=True` in a callback.
 
-The example below refreshes the table of contents when the tab changes:
 
-```python
-    dmc.AppShell(
-        dmc.AppShellMain(
-            [
-                dmc.Tabs(
-                    [
-                        dmc.TabsList(
-                            [
-                                dmc.TabsTab("Tab one", value="1"),
-                                dmc.TabsTab("Tab two", value="2", id="tab2"),
-                            ]
-                        ),
-                    ],
-                    id="tabs-example",
-                    value="1",
-                ),
-                html.Div(id="tabs-content"),
-                dmc.AppShellAside(dmc.TableOfContents(id="toc")),
-            ]
-        )
-    )    
-
-    @callback(
-        Output("tabs-content", "children"),
-        Output("toc", "refresh"),
-        Input("tabs-example", "value"),
-    )
-    def render_content(active):
-        if active == "1":
-            return make_tab1_content(), True
-        return make_tab2_content(), True
-
-```
-
+.. sourcetabs::help_center/table_of_contents/toc_tabs_reinitialize.py
+    
 
 ### target_id
 
-With Dash 3+, you do not need to trigger `reinitialize` in a callback. Instead, set `target_id` to the `id` of a component
-that is updated by a callback, and the `TableOfContents` will refresh automatically when that update completes.
+With Dash 3+, you do not need to set `reinitialize` in a callback. Instead, set `target_id` to the `id` of a component
+that is updated by callbacks, and the `TableOfContents` will refresh automatically when that update completes.
 
 Using the example above, the callback can be simplified. No `reinitialize` output is required when `target_id` is set:
 
-```python
-dmc.TableOfContents(
-    id="toc",
-    target_id="tabs-content"
-)
-```
+
+.. sourcetabs::help_center/table_of_contents/toc_tabs_target_id.py
 
 When using Dash Pages, `target_id` defaults to the page container id, so the table of contents is automatically
 refreshed on each page change without any additional configuration.
 
-### Dash version support
+#### Dash version support
 
-* Dash 3+ only: `target_id` is supported and replaces the `reinitialize` callback pattern.
+* Dash 3+: `target_id` is supported and replaces the `reinitialize` callback pattern.
 * Dash 2: Use the `reinitialize` prop in a callback as shown above.
+
+### scrollIntoViewOptions
+
+`scrollIntoViewOptions` prop controls how the page scrolls when a heading is clicked in the `TableOfContents`.
+
+This prop is passed directly to the browser’s [`Element.scrollIntoView`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)
+API and lets you customize the scrolling behavior and alignment of the target heading.
+
+For example, you can enable smooth scrolling or control where the heading appears in the viewport:
+
+```python
+dmc.TableOfContents(
+    scrollIntoViewOptions={
+        "behavior": "smooth",
+        "block": "start",
+    }
+)
+```
+
+### Apps with fixed headers
+
+
+This example shows how to handle scrolling when the app has a fixed header, such as when using `AppShellHeader`
+
+ - The `scrollMarginTop` CSS property is applied to headings so that when a `TableOfContents` item is clicked, the heading is not hidden behind the header.
+ - The `offset` prop is passed to the `useScrollSpy` hook to track the correct heading when the app has a fixed header.
+   Set it to the header height so the active item in the `TableOfContents` updates properly when scrolling.
+  
+
+.. sourcetabs::help_center/table_of_contents/toc_multipage_appshell_header.py
 
 
 ### Styles API
