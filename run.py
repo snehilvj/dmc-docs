@@ -11,7 +11,7 @@ scripts = [
     "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/locale/fr.min.js",
     "https://www.googletagmanager.com/gtag/js?id=G-4PJELX1C4W",
     "https://media.ethicalads.io/media/client/ethicalads.min.js",
-    "https://unpkg.com/hotkeys-js/dist/hotkeys.min.js",
+    "https://cdn.jsdelivr.net/npm/hotkeys-js@4.0.0/dist/hotkeys-js.min.js",
    # "https://unpkg.com/react-scan/dist/auto.global.js"  # performance monitor
 ]
 
