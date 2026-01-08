@@ -11,7 +11,7 @@ component = dmc.Center(
                     style={
                         "height": 100,
                         "padding": 10,
-                        "border": f"2px solid {dmc.DEFAULT_THEME['colors']['gray'][5]}",
+                        "border": "2px solid  var(--mantine-color-gray-6)",
                     },
                 )
             ],
