@@ -160,8 +160,9 @@ clientside_callback(
                 const y =
                     el.getBoundingClientRect().top +
                     window.pageYOffset -
-                    80;                
-                window.scrollTo({ top: y, behavior: "auto" });
+                    80;
+                        
+                window.scrollTo({ top: y, behavior: "instant" });
             } else {
                 requestAnimationFrame(tryScroll);
             }
