@@ -55,6 +55,7 @@ def create_appshell(data):
         children=dmc.Box([
             dcc.Location(id="url", refresh="callback-nav"),
             dcc.Store(id="color-scheme-storage", storage_type="local"),
+            dcc.Store(id="initial-scroll-done", data=False),
             dmc.NotificationContainer(id="notification-container"),
              dmc.AppShell(
                 [
@@ -128,13 +129,50 @@ def toggle_direction(n, d):
 
 
 clientside_callback(
-            """
-            function(n_clicks) {
-                if (n_clicks) {
-                    document.querySelector('#clipboard-target').click();
-                }     
+    """
+    function(n_clicks) {
+        if (n_clicks) {
+            document.querySelector('#clipboard-target').click();
+        }     
+    }
+    """,
+    Input("copy-label", "n_clicks"),
+    prevent_initial_call=True
+)
+
+# Scrolls to the URL hash target on initial page load or refresh.
+clientside_callback(
+    """
+    function(hash, done) {        
+        if (done) {
+            return true;
+        }
+
+        if (!hash) {
+            return true;
+        }
+
+        const id = hash.replace('#', '');
+
+        const tryScroll = () => {
+            const el = document.getElementById(id);
+            if (el) {
+                const y =
+                    el.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    80;
+                        
+                window.scrollTo({ top: y, behavior: "instant" });
+            } else {
+                requestAnimationFrame(tryScroll);
             }
-            """,
-            Input("copy-label", "n_clicks"),
-            prevent_initial_call=True
-        )
+        };
+        requestAnimationFrame(tryScroll);
+                return true;
+    }
+    """,
+    Output("initial-scroll-done", "data"),
+    Input("url", "hash"),
+    State("initial-scroll-done", "data"),
+)
+

@@ -12,12 +12,12 @@ logo = "https://github.com/user-attachments/assets/c1ff143b-4365-4fd1-880f-3e97a
 
 theme_toggle = dmc.Switch(
     offLabel=DashIconify(
-        icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]
+        icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"
     ),
     onLabel=DashIconify(
         icon="radix-icons:moon",
         width=15,
-        color=dmc.DEFAULT_THEME["colors"]["yellow"][6],
+        color= "var(--mantine-color-yellow-6)",
     ),
     id="color-scheme-toggle",
     persistence=True,

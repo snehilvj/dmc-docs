@@ -3,7 +3,7 @@ from dash_iconify import DashIconify
 
 component = dmc.Switch(
     thumbIcon=DashIconify(
-        icon="tabler:walk", width=16, color=dmc.DEFAULT_THEME["colors"]["teal"][5]
+        icon="tabler:walk", width=16, color= "var(--mantine-color-teal-5)"
     ),
     size="lg",
     color="teal",

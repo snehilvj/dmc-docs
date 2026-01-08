@@ -10121,13 +10121,13 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data displayed in the dropdown.
 
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -10228,7 +10228,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -11143,13 +11143,13 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data used to generate options.
 
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -11268,7 +11268,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -12152,13 +12152,13 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data used to generate options.
 
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -12266,7 +12266,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -13141,7 +13141,7 @@ Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data displayed in the dropdown.
 
 - data-* (string; optional):
@@ -13243,7 +13243,7 @@ Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -14970,7 +14970,7 @@ component = dmc.Accordion(
                     "Personal Information",
                     icon=DashIconify(
                         icon="tabler:user",
-                        color=dmc.DEFAULT_THEME["colors"]["blue"][6],
+                        color="var(--mantine-color-blue-6)",
                         width=20,
                     ),
                 ),
@@ -14984,7 +14984,7 @@ component = dmc.Accordion(
                     "Shipping Address",
                     icon=DashIconify(
                         icon="tabler:map-pin",
-                        color=dmc.DEFAULT_THEME["colors"]["red"][6],
+                        color= "var(--mantine-color-red-6)",
                         width=20,
                     ),
                 ),
@@ -14998,7 +14998,7 @@ component = dmc.Accordion(
                     "Confirmation",
                     icon=DashIconify(
                         icon="tabler:circle-check",
-                        color=dmc.DEFAULT_THEME["colors"]["green"][6],
+                        color= "var(--mantine-color-green-6)",
                         width=20,
                     ),
                 ),
@@ -15298,7 +15298,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -16957,10 +16957,10 @@ This component supports Styles API. With Styles API, you can customize styles of
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoScroll (boolean | number | string | dict | list; optional):
+- autoScroll (boolean; optional):
     Enables autoScroll with optional configuration.
 
-- autoplay (boolean | number | string | dict | list; optional):
+- autoplay (boolean; optional):
     Enables autoplay with optional configuration.
 
 - className (string; optional):
@@ -17726,7 +17726,7 @@ component = html.Div([
 - tabIndex (number; optional):
     tab-index.
 
-- thousandSeparator (string; optional):
+- thousandSeparator (string | boolean; optional):
     A character used to separate thousands, `','` by default.
 
 - thousandsGroupStyle (a value equal to: 'none', 'thousand', 'lakh', 'wan'; optional):
@@ -18667,7 +18667,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -18837,7 +18837,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -19676,7 +19676,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -20116,7 +20116,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -20288,7 +20288,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -20817,7 +20817,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -21267,7 +21267,7 @@ Here’s your content reformatted as Markdown tables:
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -21528,7 +21528,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     Debounce time in ms.
 
 - decadeLabelFormat (string; optional):
@@ -21687,7 +21687,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -22044,7 +22044,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -22218,7 +22218,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -22312,7 +22312,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -22887,7 +22887,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -23020,7 +23020,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -23473,7 +23473,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -24792,7 +24792,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoClose (number; optional):
+- autoClose (number | boolean; optional):
     Auto close timeout for all notifications in ms, `False` to disable
     auto close, can be overwritten for individual notifications in
     `notifications.show` function, `4000` by defualt.
@@ -26729,7 +26729,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -26852,7 +26852,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -26982,7 +26982,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27081,7 +27081,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27402,7 +27402,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27481,7 +27481,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27791,7 +27791,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -28087,7 +28087,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -28697,7 +28697,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -28795,7 +28795,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -29244,7 +29244,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -29351,7 +29351,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -29433,7 +29433,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- thousandSeparator (string; optional):
+- thousandSeparator (string | boolean; optional):
     A character used to separate thousands.
 
 - thousandsGroupStyle (a value equal to: 'none', 'thousand', 'lakh', 'wan'; optional):
@@ -29594,7 +29594,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -29680,7 +29680,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -29957,7 +29957,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30447,7 +30447,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30575,7 +30575,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30688,7 +30688,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30788,7 +30788,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30961,7 +30961,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -32203,7 +32203,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; optional):
+- debounce (number | boolean; optional):
     If True, changes will be sent back to Dash only when losing focus.
     If False, data will be sent on every change. If a number, data
     will be sent when the value has been stable for that number of
@@ -32223,7 +32223,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     here...'}}, {'TextAlign': {'types': ['heading', 'paragraph']}},
     'Color', 'TextStyle', 'Image'] by default.
 
-- focus (number; optional):
+- focus (number | boolean; optional):
     If True, the editor will be focused. If False, the editor will be
     blurred. Can also be a string ('start', 'end', 'all') or number to
     focus at a specific position. Positive values start at the
@@ -32272,7 +32272,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -32615,7 +32615,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33268,7 +33268,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33441,7 +33441,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33602,7 +33602,7 @@ from dash_iconify import DashIconify
 
 component = dmc.Switch(
     thumbIcon=DashIconify(
-        icon="tabler:walk", width=16, color=dmc.DEFAULT_THEME["colors"]["teal"][5]
+        icon="tabler:walk", width=16, color= "var(--mantine-color-teal-5)"
     ),
     size="lg",
     color="teal",
@@ -33707,7 +33707,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33880,7 +33880,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -33966,7 +33966,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -34175,7 +34175,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -34269,7 +34269,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -34940,12 +34940,12 @@ logo = "https://github.com/user-attachments/assets/c1ff143b-4365-4fd1-880f-3e97a
 
 theme_toggle = dmc.Switch(
     offLabel=DashIconify(
-        icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]
+        icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"
     ),
     onLabel=DashIconify(
         icon="radix-icons:moon",
         width=15,
-        color=dmc.DEFAULT_THEME["colors"]["yellow"][6],
+        color= "var(--mantine-color-yellow-6)",
     ),
     id="color-scheme-toggle",
     persistence=True,
@@ -36116,7 +36116,7 @@ from dash import html
 
 style = {
     "height": 100,
-    "border": f"1px solid {dmc.DEFAULT_THEME['colors']['indigo'][4]}",
+    "border": "1px solid var(--mantine-color-blue-outline)",
     "marginTop": 20,
     "marginBottom": 20,
 }
@@ -38457,7 +38457,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
-- offsetScrollbars (optional):
+- offsetScrollbars (boolean; optional):
     Determines whether scrollbars should be offset with padding on
     given axis, `False` by default.
 
@@ -38478,7 +38478,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Scrollbar size, any valid CSS value for width/height, numbers are
     converted to rem, default value is 0.75rem.
 
-- scrollbars (optional):
+- scrollbars (boolean; optional):
     Axis at which scrollbars must be rendered, `'xy'` by default.
 
 - styles (boolean | number | string | dict | list; optional):
@@ -38791,7 +38791,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - target (a value equal to: '_blank', '_self'; optional):
     Target.
 
-- truncate (optional):
+- truncate (boolean; optional):
     Side on which Text must be truncated, if `True`, text is truncated
     from the start.
 
@@ -39060,7 +39060,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -39351,7 +39351,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - id (string; optional):
     Unique ID to identify this component in Dash callbacks.
 
-- active (default False):
+- active (boolean; default False):
     Controls whether the link is styled as active (default: `False`).
 
 - aria-* (string; optional):
@@ -39444,7 +39444,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -39638,7 +39638,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -40724,7 +40724,7 @@ Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -42188,7 +42188,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - aria-* (string; optional):
     Wild card aria attributes.
 
-- close (string; optional):
+- close (string | list of strings; optional):
     Closes one or more drawers by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -42204,7 +42204,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- open (string; optional):
+- open (string | list of strings; optional):
     Opens one or more drawers by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -42216,7 +42216,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- toggle (string; optional):
+- toggle (string | list of strings; optional):
     Toggles one or more drawers by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 #### ManagedDrawer
@@ -43814,7 +43814,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - aria-* (string; optional):
     Wild card aria attributes.
 
-- close (string; optional):
+- close (string | list of strings; optional):
     Closes one or more modals by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -43830,7 +43830,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- open (string; optional):
+- open (string | list of strings; optional):
     Opens one or more modals by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -43842,7 +43842,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- toggle (string; optional):
+- toggle (string | list of strings; optional):
     Toggles one or more modals by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 #### ManagedModal
@@ -44647,7 +44647,7 @@ component = dmc.Center(
                     style={
                         "height": 100,
                         "padding": 10,
-                        "border": f"2px solid {dmc.DEFAULT_THEME['colors']['gray'][5]}",
+                        "border": "2px solid  var(--mantine-color-gray-6)",
                     },
                 )
             ],
@@ -45815,7 +45815,7 @@ def cleanQueue_notification(n_clicks):
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoClose (number; optional):
+- autoClose (number | boolean; optional):
     Auto close timeout for all notifications in ms, `False` to disable
     auto close, can be overwritten for individual notifications in
     `notifications.show` function, `4000` by defualt.
@@ -45903,7 +45903,7 @@ def cleanQueue_notification(n_clicks):
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoClose (number; optional):
+- autoClose (number | boolean; optional):
     Determines whether notification should be closed automatically,
     number is auto close timeout in ms, overrides `autoClose` from
     `Notifications`.
@@ -49783,10 +49783,10 @@ component = dmc.TextInput(
     description="Description below the input",
     w=300,
     styles={
-        "input": {"borderColor": dmc.DEFAULT_THEME["colors"]["violet"][4]},
+        "input": {"borderColor":  "var(--mantine-color-violet-4)"},
         "label": {
             "color": "blue",
-            "backgroundColor": dmc.DEFAULT_THEME["colors"]["yellow"][1],
+            "backgroundColor":  "var(--mantine-color-yellow-1)",
         },
     },
 )
@@ -50663,8 +50663,8 @@ dmc.add_figure_templates()
 
 # Theme switch in the dmc-docs header:
 # dmc.Switch(
-#     offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
-#     onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
+#     offLabel=DashIconify(icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"),
+#     onLabel=DashIconify(icon="radix-icons:moon", width=15, color= "var(--mantine-color-yellow-6)"),
 #     id="docs-color-scheme-switch",
 #     persistence=True,
 #     color="grey",
@@ -51256,8 +51256,8 @@ from dash import Dash, Input, Output,  clientside_callback
 
 
 theme_toggle = dmc.Switch(
-    offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
-    onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
+    offLabel=DashIconify(icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"),
+    onLabel=DashIconify(icon="radix-icons:moon", width=15, color= "var(--mantine-color-yellow-6)"),
     id="color-scheme-switch",
     persistence=True,
     color="grey",
@@ -52348,7 +52348,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- truncate (optional):
+- truncate (boolean; optional):
     Side on which Text must be truncated, if `True`, text is truncated
     from the start.
 
@@ -53073,7 +53073,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Offset from top at which `Table.Thead` should become sticky, `0`
     by default.
 
-- striped (optional):
+- striped (boolean; optional):
     Determines whether every odd/even row background should be changed
     to `strippedColor`, if set to `True`, then `odd` value will be
     used, `False` by default.
@@ -53409,7 +53409,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- truncate (optional):
+- truncate (boolean; optional):
     Side on which Text must be truncated, if `True`, text is truncated
     from the start.
 
