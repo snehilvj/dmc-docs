@@ -143,36 +143,21 @@ clientside_callback(
 # Scrolls to the URL hash target on initial page load or refresh.
 clientside_callback(
     """
-    function(hash, done) {        
-        if (done) {
-            return true;
-        }
+    function(event, hash) {
+        function scrollToHash(retries = 10) {
+            if (retries <= 0 || hash == '') return;
 
-        if (!hash) {
-            return true;
-        }
-
-        const id = hash.replace('#', '');
-
-        const tryScroll = () => {
-            const el = document.getElementById(id);
-            if (el) {
-                const y =
-                    el.getBoundingClientRect().top +
-                    window.pageYOffset -
-                    80;
-                        
-                window.scrollTo({ top: y, behavior: "instant" });
+            var targetId = hash.replace('#', '');
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
             } else {
-                requestAnimationFrame(tryScroll);
+                setTimeout(() => scrollToHash(retries - 1), 100);
             }
-        };
-        requestAnimationFrame(tryScroll);
-                return true;
+        }
+        scrollToHash();        
     }
     """,
-    Output("initial-scroll-done", "data"),
-    Input("url", "hash"),
-    State("initial-scroll-done", "data"),
+    Input("url", "pathname"),
+    State("url", "hash")
 )
-
