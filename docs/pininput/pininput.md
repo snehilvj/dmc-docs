@@ -9,9 +9,10 @@ category: Inputs
 .. toc::
 .. llms_copy::PinInput
 
-### Simple Example
+### Usage
 
-.. exec::docs.pininput.simple
+.. exec::docs.pininput.interactive
+    :code: false
 
 ### Length
 
