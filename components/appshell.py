@@ -139,25 +139,3 @@ clientside_callback(
     Input("copy-label", "n_clicks"),
     prevent_initial_call=True
 )
-
-# Scrolls to the URL hash target on initial page load or refresh.
-clientside_callback(
-    """
-    function(event, hash) {
-        function scrollToHash(retries = 10) {
-            if (retries <= 0 || hash == '') return;
-
-            var targetId = hash.replace('#', '');
-            var target = document.getElementById(targetId);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                setTimeout(() => scrollToHash(retries - 1), 100);
-            }
-        }
-        scrollToHash();        
-    }
-    """,
-    Input("url", "pathname"),
-    State("url", "hash")
-)
