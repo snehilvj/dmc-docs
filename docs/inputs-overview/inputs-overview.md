@@ -95,7 +95,7 @@ Use [InputWrapper](/components/inputwrapper) to add label, description and error
 ### PinInput
 
 
-.. exec::docs.pininput.simple
+.. exec::docs.pininput.interactive
     :code: false
 
 ### RadioGroup
