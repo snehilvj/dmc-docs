@@ -1,5 +1,5 @@
 ---
-name: Copy Button
+name: CopyButton
 description: Copies given text to clipboard.  A DMC alternative to dcc.Clipboard.
 endpoint: /components/copybutton
 package: dash_mantine_components
@@ -29,7 +29,16 @@ Note - if `copiedColor` is not provided, the color will remain unchanged during 
 
 ### Copy State Display 
 
-Use `children` and `copiedChildren` to change what’s displayed before and after copying.  You can use text, icons, or any Dash components.
+Use `children` and `copiedChildren` to control the content of the underlying button before and after copying.
+
+The `CopyButton` renders a Mantine `Button` internally, and `children` / `copiedChildren` are passed directly as the
+button’s children. For this reason, they must not contain interactive elements (for example: buttons, links, inputs,
+or other clickable controls), as nesting interactive components inside a button results in invalid HTML and accessibility issues.
+
+Use text, icons, or non-interactive Dash components (such as `Text`, `Group`, `Stack`, or `Icon` components) to customize the button content.
+
+If you would like to use something other than a button (like an `ActionIcon`), use the `CustomCopyButton` instead.
+
 
 .. exec::docs.copybutton.children
 
