@@ -44,6 +44,15 @@ when type prop is not range.
 
 .. exec::docs.datepicker.rangesingledate
 
+### Presets
+Use `presets` prop to add custom date presets. Presets are displayed next to the calendar:
+
+.. exec::docs.datepicker.presets
+
+To use `presets` with `type="range"`, define value a tuple of two dates:
+
+.. exec::docs.datepicker.presetsrange
+
 ### Default date
 
 Use `defaultDate` prop to set date value that will be used to determine which year should be displayed initially. For 

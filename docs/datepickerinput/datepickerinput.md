@@ -30,6 +30,16 @@ Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
 .. exec::docs.datepickerinput.range
 
+### Presets
+
+Use `presets` prop to add custom date presets. Presets are displayed next to the calendar:
+
+.. exec::docs.datepickerinput.presets
+
+To use `presets` with `type="range"`, define value a tuple of two dates:
+
+.. exec::docs.datepickerinput.presetsrange
+
 ### Open picker in modal
 
 By default, `DatePickerInput` is rendered inside `Popover`. You can change that to `Modal` by setting `dropdownType="modal"`
