@@ -23,6 +23,12 @@ category: Date Pickers
 
 .. exec::docs.datetimepicker.seconds
 
+### Presets
+
+Use `presets` prop to add custom date presets. Presets are displayed next to the calendar:
+
+.. exec::docs.datetimepicker.presets
+
 ### TimePicker props
 You can pass props down to the underlying `TimePicker` component with `timePickerProps` prop. Example of enabling 
 dropdown and setting 12h format for time picker:
