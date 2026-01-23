@@ -54,7 +54,7 @@ no matter the screen size.  Great for images and videos.
 
 
 ### Center
-Use [Center](/compnents/center) component to center content vertically and horizontally.
+Use [Center](/components/center) component to center content vertically and horizontally.
 This example centers an icon with a link with the `inline` prop:
 
 

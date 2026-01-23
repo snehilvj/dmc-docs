@@ -109,10 +109,10 @@ dmc.MantineProvider(
 ### Supported color formats
 You can use the following color formats in theme.colors:
 
-- HEX: #fff, #ffffff
-- RGB: rgb(255, 255, 255), rgba(255, 255, 255, 0.5)
-- HSL: hsl(0, 0%, 100%), hsla(0, 0%, 100%, 0.5)
-- OKLCH: oklch(96.27% 0.0217 238.66), oklch(96.27% 0.0217 238.66 / 0.5)
+- HEX: `#fff`, `#ffffff`
+- RGB: `rgb(255, 255, 255)`, `rgba(255, 255, 255, 0.5)`
+- HSL: `hsl(0, 0%, 100%)`, `hsla(0, 0%, 100%, 0.5)`
+- OKLCH: `oklch(96.27% 0.0217 238.66)`, `oklch(96.27% 0.0217 238.66 / 0.5)`
 
 ### Changing Theme Object defaults
 
@@ -137,6 +137,7 @@ dmc.MantineProvider(
     
 )
 ```
+
 
 > Note You cannot assign CSS color values to `defaultColor`  It must be a defined color in the `theme` object.
 
