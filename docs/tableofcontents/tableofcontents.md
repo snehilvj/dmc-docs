@@ -44,7 +44,7 @@ dmc.TableOfContents(
 )
 ```
 
-### controls
+### Controls
 
 The `TableOfContents` items (controls) are rendered as HTML `<a>` elements.
 Each control’s `href` attribute is the id of a heading element, and its `children` are set to the heading
@@ -52,7 +52,8 @@ element’s `textContent`.
 
 The active control (the currently visible heading) includes a `data-active="true"` attribute, which can be used for styling or testing.
 
-### depth offset
+### Depth offset
+
 Use the `minDepthToOffset` prop to control the minimum heading depth at which indentation is applied. By 
 default, `minDepthToOffset` is 1, which means that first and second level headings will not be offset. Set it to 0 to
 apply offset to all headings.
@@ -71,7 +72,7 @@ Note that `autoContrast` feature works only if you use `color` prop to change ba
 
 .. exec::docs.tableofcontents.autocontrast
 
-### reinitialize
+### Reinitialize
 
 By default, heading changes are not tracked automatically. If the content updates in a callback (for example, when switching
 tabs) you can trigger a refresh of the `TableOfContents` by setting `reinitialize=True` in a callback.
