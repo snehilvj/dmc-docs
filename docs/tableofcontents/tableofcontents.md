@@ -10,6 +10,7 @@ category: Navigation
 .. llms_copy::TableOfContents
 
 ### Usage
+
 Use the `TableOfContents` component to display a table of contents similar to the sidebar in these docs. The
 component tracks scroll position and highlights current heading in the list.
 
