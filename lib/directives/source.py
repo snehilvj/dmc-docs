@@ -28,7 +28,7 @@ class SC(SourceCode):
             code.append(
                 {
                     "fileName": os.path.basename(file),
-                    "code": open(file, "r").read(),
+                    "code": open(file, "r", encoding="utf-8").read(),
                     "language": mapping[extension]["language"],
                     "icon": mapping[extension]["icon"],
                 }

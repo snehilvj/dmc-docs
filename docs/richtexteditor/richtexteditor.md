@@ -13,9 +13,10 @@ category: Inputs
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
 
 Tiptap version note:
-
-- DMC 2.3.0 and later uses Tiptap v3.3.  There are no known breaking changes, but see the [Migration guilde](/migration) for details.
-- Older versions of DMC used Tiptap v2.9.
+- DMC 2.4.1 uses Tiptap v3.14.0.
+- DMC 2.3.0–2.4.0 use Tiptap v3.3. There are no known breaking changes; however, review the migration guide
+ for details.
+- DMC versions prior to 2.3.0 use Tiptap v2.9.
   
 .. exec::docs.richtexteditor.usage
 

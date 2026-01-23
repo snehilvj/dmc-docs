@@ -14,7 +14,7 @@ category: Layout
 `Stack` is a vertical flex container. If you need a horizontal flex container, use `Group` component instead. If you
 need to have full control over flex container properties, use `Flex` component.
 
-Adjust stack styles with `align`, `justify`, and `spacing` props.
+Adjust stack styles with `align`, `justify`, and `gap` props.
 
 .. exec::docs.stack.simple
 

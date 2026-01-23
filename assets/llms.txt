@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.4.0**, which wraps **Mantine 8.3.6**.  
+> This documentation applies to **DMC 2.4.1**, which wraps **Mantine 8.3.10**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -10121,13 +10121,13 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data displayed in the dropdown.
 
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -10228,7 +10228,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -11143,13 +11143,13 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data used to generate options.
 
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -11268,7 +11268,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -11358,6 +11358,10 @@ This component supports Styles API. With Styles API, you can customize styles of
 - visibleFrom (optional):
     Breakpoint below which the component is hidden with `display:
     none`.
+
+- withAlignedLabels (boolean; optional):
+    If set, unchecked labels are aligned with the checked one
+    @,default,`False`.
 
 - withAsterisk (boolean; optional):
     Determines whether the required asterisk should be displayed.
@@ -12148,13 +12152,13 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data used to generate options.
 
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -12262,7 +12266,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -12352,6 +12356,10 @@ This component supports Styles API. With Styles API, you can customize styles of
 - visibleFrom (optional):
     Breakpoint below which the component is hidden with `display:
     none`.
+
+- withAlignedLabels (boolean; optional):
+    If set, unchecked labels are aligned with the checked one
+    @,default,`False`.
 
 - withAsterisk (boolean; optional):
     Determines whether the required asterisk should be displayed.
@@ -13133,7 +13141,7 @@ Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/
     Determines whether component should be hidden in dark color scheme
     with `display: none`.
 
-- data (list of strings | list of strings; optional):
+- data (list of strings; optional):
     Data displayed in the dropdown.
 
 - data-* (string; optional):
@@ -13235,7 +13243,7 @@ Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -14962,7 +14970,7 @@ component = dmc.Accordion(
                     "Personal Information",
                     icon=DashIconify(
                         icon="tabler:user",
-                        color=dmc.DEFAULT_THEME["colors"]["blue"][6],
+                        color="var(--mantine-color-blue-6)",
                         width=20,
                     ),
                 ),
@@ -14976,7 +14984,7 @@ component = dmc.Accordion(
                     "Shipping Address",
                     icon=DashIconify(
                         icon="tabler:map-pin",
-                        color=dmc.DEFAULT_THEME["colors"]["red"][6],
+                        color= "var(--mantine-color-red-6)",
                         width=20,
                     ),
                 ),
@@ -14990,7 +14998,7 @@ component = dmc.Accordion(
                     "Confirmation",
                     icon=DashIconify(
                         icon="tabler:circle-check",
-                        color=dmc.DEFAULT_THEME["colors"]["green"][6],
+                        color= "var(--mantine-color-green-6)",
                         width=20,
                     ),
                 ),
@@ -15290,7 +15298,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -16059,7 +16067,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -16949,10 +16957,10 @@ This component supports Styles API. With Styles API, you can customize styles of
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoScroll (boolean | number | string | dict | list; optional):
+- autoScroll (boolean; optional):
     Enables autoScroll with optional configuration.
 
-- autoplay (boolean | number | string | dict | list; optional):
+- autoplay (boolean; optional):
     Enables autoplay with optional configuration.
 
 - className (string; optional):
@@ -17519,7 +17527,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -17630,7 +17638,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -17718,7 +17726,7 @@ component = html.Div([
 - tabIndex (number; optional):
     tab-index.
 
-- thousandSeparator (string; optional):
+- thousandSeparator (string | boolean; optional):
     A character used to separate thousands, `','` by default.
 
 - thousandsGroupStyle (a value equal to: 'none', 'thousand', 'lakh', 'wan'; optional):
@@ -17824,7 +17832,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Maximum height of the visible content, when this point is reached
     spoiler appears, `100` by default.
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -18659,7 +18667,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -18829,7 +18837,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -19668,7 +19676,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -20108,7 +20116,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -20280,7 +20288,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -20809,7 +20817,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -21259,7 +21267,7 @@ Here’s your content reformatted as Markdown tables:
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -21520,7 +21528,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     Debounce time in ms.
 
 - decadeLabelFormat (string; optional):
@@ -21679,7 +21687,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -22036,7 +22044,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -22210,7 +22218,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -22304,7 +22312,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -22879,7 +22887,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -23012,7 +23020,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -23465,7 +23473,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -23901,7 +23909,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -24139,7 +24147,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -24784,7 +24792,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoClose (number; optional):
+- autoClose (number | boolean; optional):
     Auto close timeout for all notifications in ms, `False` to disable
     auto close, can be overwritten for individual notifications in
     `notifications.show` function, `4000` by defualt.
@@ -25125,7 +25133,7 @@ Do you want me to keep this as three separate tables (like above), or merge them
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -25639,7 +25647,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -25836,7 +25844,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -26057,7 +26065,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -26721,7 +26729,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -26844,7 +26852,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -26974,7 +26982,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27073,7 +27081,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27394,7 +27402,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27473,7 +27481,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -27783,7 +27791,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -28079,7 +28087,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -28221,7 +28229,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -28689,7 +28697,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -28787,7 +28795,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -29236,7 +29244,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -29343,7 +29351,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -29425,7 +29433,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- thousandSeparator (string; optional):
+- thousandSeparator (string | boolean; optional):
     A character used to separate thousands.
 
 - thousandsGroupStyle (a value equal to: 'none', 'thousand', 'lakh', 'wan'; optional):
@@ -29586,7 +29594,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -29672,7 +29680,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -29949,7 +29957,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30439,7 +30447,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30567,7 +30575,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30680,7 +30688,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30780,7 +30788,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -30940,7 +30948,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -30953,7 +30961,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -31000,9 +31008,10 @@ Category: Inputs
 The `RichTextEditor` component is built on top of the [Tiptap editor](https://tiptap.dev/api/editor)  For more information see the documentation on [tiptap.dev](https://tiptap.dev) website.
 
 Tiptap version note:
-
-- DMC 2.3.0 and later uses Tiptap v3.3.  There are no known breaking changes, but see the [Migration guilde](/migration) for details.
-- Older versions of DMC used Tiptap v2.9.
+- DMC 2.4.1 uses Tiptap v3.14.0.
+- DMC 2.3.0–2.4.0 use Tiptap v3.3. There are no known breaking changes; however, review the migration guide
+ for details.
+- DMC versions prior to 2.3.0 use Tiptap v2.9.
   
 ```python
 import dash_mantine_components as dmc
@@ -32194,7 +32203,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; optional):
+- debounce (number | boolean; optional):
     If True, changes will be sent back to Dash only when losing focus.
     If False, data will be sent on every change. If a number, data
     will be sent when the value has been stable for that number of
@@ -32214,7 +32223,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     here...'}}, {'TextAlign': {'types': ['heading', 'paragraph']}},
     'Color', 'TextStyle', 'Image'] by default.
 
-- focus (number; optional):
+- focus (number | boolean; optional):
     If True, the editor will be focused. If False, the editor will be
     blurred. Can also be a string ('start', 'end', 'all') or number to
     focus at a specific position. Positive values start at the
@@ -32263,7 +32272,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -32590,7 +32599,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -32606,7 +32615,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33259,7 +33268,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33432,7 +33441,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33593,7 +33602,7 @@ from dash_iconify import DashIconify
 
 component = dmc.Switch(
     thumbIcon=DashIconify(
-        icon="tabler:walk", width=16, color=dmc.DEFAULT_THEME["colors"]["teal"][5]
+        icon="tabler:walk", width=16, color= "var(--mantine-color-teal-5)"
     ),
     size="lg",
     color="teal",
@@ -33698,7 +33707,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -33741,10 +33750,8 @@ This component supports Styles API. With Styles API, you can customize styles of
     If set, the indicator will be displayed inside thumb, `True` by
     default.
 
-- wrapperProps (dict; optional):
+- wrapperProps (dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Props passed down to the root element.
-
-    `wrapperProps` is a dict with keys:
 
 ## TextInput  
 Use TextInput component to capture string input from user. Customize the input with label, description, error message etc.  
@@ -33873,7 +33880,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -33959,7 +33966,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -34168,7 +34175,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - data-* (string; optional):
     Wild card data attributes.
 
-- debounce (number; default False):
+- debounce (number | boolean; default False):
     (boolean | number; default False): If True, changes to input will
     be sent back to the Dash server only on enter or when losing
     focus. If it's False, it will send the value back on every change.
@@ -34262,7 +34269,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -34358,12 +34365,12 @@ Category: Layout
 Since `AppShell` components have fixed position, it is not possible to include live demos on this page.
 
 
-Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  Or run the app and edit the code on **[PyCafe](https://py.cafe/dash.mantine.components)**.
+Please see the code in the [dmc-docs GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell).  The Appshell example apps are deployed on [Plotly Cloud](https://plotly.com/cloud/).
 
  
-1. Basic AppShell with Header and Navbar
+1 Basic AppShell with Header and Navbar
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/basic_appshell.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/basic-appshell-collapsible-navbar)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-basic.plotly.app/)  
 
 ```python
 """
@@ -34428,9 +34435,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-2. Responsive Width and Height
+2 Responsive Width and Height
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/appshell-responsive-width-height)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-responsive-sizes.plotly.app/)  
 
 ```python
 """
@@ -34503,10 +34510,10 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-3. Mobile-Only Navbar
+3 Mobile-Only Navbar
    - Buttons in the header are displayed in the navbar on mobile.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/mobile_navbar.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/responsive-mobile-navbar-demo)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-mobile-navbar.plotly.app/)  
    
 ```python
 """
@@ -34596,9 +34603,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-4. Collapsible Navbar on Desktop and Mobile
+4 Collapsible Navbar on Desktop and Mobile
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/responsive_sizes.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Collapsible-navbar-on-both-desktop-and-moble)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-responsive-sizes.plotly.app/)  
 
 ```python
 """
@@ -34671,10 +34678,10 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-5. Full AppShell Layout
+5 Full AppShell Layout
    - Includes all elements: navbar, header, aside, and footer.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/full_layout.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/AppShell-with-all-elements) 
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-full-layout.plotly.app/) 
 
 ```python
 """
@@ -34755,9 +34762,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-6. Scrollable Navbar with 60 Links
+6 Scrollable Navbar with 60 Links
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/navbar_scroll.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/Appshell-with-scrollable-navbar)   
+   - [Live Demo on Plotly CLoud](https://dmc-appshell-navbar-scroll.plotly.app/)   
 
 ```python
 """
@@ -34828,10 +34835,10 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-7. Alternate AppShell Layout
+7 Alternate AppShell Layout
    - Navbar and aside are rendered on top of the header and footer.  
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/alt_layout.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-alt-layout-appshell)    
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-alt-layout.plotly.app/)    
 
 ```python
 """
@@ -34914,9 +34921,9 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-8. AppShell with Theme Switch Component
+8 AppShell with Theme Switch Component
    - [View Code on GitHub](https://github.com/snehilvj/dmc-docs/tree/main/help_center/appshell/appshell_with_theme_switch.py)  
-   - [Live Demo on PyCafe](https://py.cafe/dash.mantine.components/dash-mantine-theme-toggle-app)  
+   - [Live Demo on Plotly Cloud](https://dmc-appshell-with-theme-switch.plotly.app/)  
 
 ```python
 """
@@ -34933,12 +34940,12 @@ logo = "https://github.com/user-attachments/assets/c1ff143b-4365-4fd1-880f-3e97a
 
 theme_toggle = dmc.Switch(
     offLabel=DashIconify(
-        icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]
+        icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"
     ),
     onLabel=DashIconify(
         icon="radix-icons:moon",
         width=15,
-        color=dmc.DEFAULT_THEME["colors"]["yellow"][6],
+        color= "var(--mantine-color-yellow-6)",
     ),
     id="color-scheme-toggle",
     persistence=True,
@@ -35948,7 +35955,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36071,7 +36078,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36109,7 +36116,7 @@ from dash import html
 
 style = {
     "height": 100,
-    "border": f"1px solid {dmc.DEFAULT_THEME['colors']['indigo'][4]}",
+    "border": "1px solid var(--mantine-color-blue-outline)",
     "marginTop": 20,
     "marginBottom": 20,
 }
@@ -36278,7 +36285,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36434,7 +36441,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -36947,6 +36954,31 @@ Category: Layout
 
 ### Usage
 
+### Align
+
+Since `Group` is a flexbox container, you can control `justify-content` and `align-items` properties by using `justify` 
+and `align` props respectively. Note the minimum height set on component 2 and 3 in the example above.
+
+```python
+
+style = {
+    "border": f"1px solid var(--mantine-primary-color-filled)",
+    "textAlign": "center",
+    "margin": 2,
+    "width": 100
+}
+
+target = dmc.Grid(
+    children=[
+        dmc.Box("1", style=style),
+        dmc.Box("2", style={**style, "minHeight": 80}),
+        dmc.Box("3", style={**style, "minHeight": 120}),
+    ],
+)
+```
+
+
+
 ### preventGrowOverflow
 `preventGrowOverflow` prop allows you to control how `Group` children should behave when there is not enough space to
 fit them all on one line. By default, children are not allowed to take more space than (1 / children.length) * 100%
@@ -37113,7 +37145,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37360,7 +37392,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37475,7 +37507,7 @@ html.Div([
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37495,7 +37527,7 @@ Category: Layout
 `Stack` is a vertical flex container. If you need a horizontal flex container, use `Group` component instead. If you
 need to have full control over flex container properties, use `Flex` component.
 
-Adjust stack styles with `align`, `justify`, and `spacing` props.
+Adjust stack styles with `align`, `justify`, and `gap` props.
 
 ```python
 import dash_mantine_components as dmc
@@ -37590,7 +37622,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37680,7 +37712,7 @@ dmc.Box(
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37838,7 +37870,7 @@ def update(n):
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -37997,7 +38029,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -38118,7 +38150,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -38425,7 +38457,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
-- offsetScrollbars (optional):
+- offsetScrollbars (boolean; optional):
     Determines whether scrollbars should be offset with padding on
     given axis, `False` by default.
 
@@ -38446,7 +38478,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Scrollbar size, any valid CSS value for width/height, numbers are
     converted to rem, default value is 0.75rem.
 
-- scrollbars (optional):
+- scrollbars (boolean; optional):
     Axis at which scrollbars must be rendered, `'xy'` by default.
 
 - styles (boolean | number | string | dict | list; optional):
@@ -38680,6 +38712,11 @@ This component supports Styles API. With Styles API, you can customize styles of
 - id (string; optional):
     Unique ID to identify this component in Dash callbacks.
 
+- anchorProps (dict; optional):
+    Props passed down to the `Anchor` component.
+
+    `anchorProps` is a dict with keys:
+
 - aria-* (string; optional):
     Wild card aria attributes.
 
@@ -38734,7 +38771,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -38754,7 +38791,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - target (a value equal to: '_blank', '_self'; optional):
     Target.
 
-- truncate (optional):
+- truncate (boolean; optional):
     Side on which Text must be truncated, if `True`, text is truncated
     from the start.
 
@@ -38863,7 +38900,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39010,7 +39047,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39023,7 +39060,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -39314,7 +39351,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - id (string; optional):
     Unique ID to identify this component in Dash callbacks.
 
-- active (default False):
+- active (boolean; default False):
     Controls whether the link is styled as active (default: `False`).
 
 - aria-* (string; optional):
@@ -39387,7 +39424,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39407,7 +39444,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -39592,7 +39629,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -39601,7 +39638,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -40687,7 +40724,7 @@ Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/
     the component or the page. Since only `value` is allowed this prop
     can normally be ignored.
 
-- persistence (string | number; optional):
+- persistence (string | number | boolean; optional):
     Used to allow user interactions in this component to be persisted
     when the component - or the page - is refreshed. If `persisted` is
     truthy and hasn't changed from its previous value, a `value` that
@@ -42151,7 +42188,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - aria-* (string; optional):
     Wild card aria attributes.
 
-- close (string; optional):
+- close (string | list of strings; optional):
     Closes one or more drawers by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -42167,7 +42204,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- open (string; optional):
+- open (string | list of strings; optional):
     Opens one or more drawers by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -42179,7 +42216,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- toggle (string; optional):
+- toggle (string | list of strings; optional):
     Toggles one or more drawers by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 #### ManagedDrawer
@@ -43777,7 +43814,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - aria-* (string; optional):
     Wild card aria attributes.
 
-- close (string; optional):
+- close (string | list of strings; optional):
     Closes one or more modals by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -43793,7 +43830,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- open (string; optional):
+- open (string | list of strings; optional):
     Opens one or more modals by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 
@@ -43805,7 +43842,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- toggle (string; optional):
+- toggle (string | list of strings; optional):
     Toggles one or more modals by ID. Accepts a single ID (string or
     dict) or a list of IDs.
 #### ManagedModal
@@ -44610,7 +44647,7 @@ component = dmc.Center(
                     style={
                         "height": 100,
                         "padding": 10,
-                        "border": f"2px solid {dmc.DEFAULT_THEME['colors']['gray'][5]}",
+                        "border": "2px solid  var(--mantine-color-gray-6)",
                     },
                 )
             ],
@@ -44983,6 +45020,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.4.1**               | Dec 2025     | 8.3.10           | `dash>=2.0.0` |
 | **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
 | **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
 | **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
@@ -45777,7 +45815,7 @@ def cleanQueue_notification(n_clicks):
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoClose (number; optional):
+- autoClose (number | boolean; optional):
     Auto close timeout for all notifications in ms, `False` to disable
     auto close, can be overwritten for individual notifications in
     `notifications.show` function, `4000` by defualt.
@@ -45865,7 +45903,7 @@ def cleanQueue_notification(n_clicks):
     Passes attributes to inner elements of a component.  See Styles
     API docs.
 
-- autoClose (number; optional):
+- autoClose (number | boolean; optional):
     Determines whether notification should be closed automatically,
     number is auto close timeout in ms, overrides `autoClose` from
     `Notifications`.
@@ -47632,16 +47670,28 @@ November 6, 2025
 
 Based on Mantine 8.3.6
 
+
+### Version 2.4.1
+
+December 20, 2025  
+
+Based on Mantine 8.3.10  
+
+See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.4.1)  
+
+
+
 ### New: Copy to Clipboard Components
 
-The new  `CopyButton` and `CustomCopyButton` components is like `dcc.Clipboard` with a Mantine theme.
+The new `CopyButton` and `CustomCopyButton` components are similar to `dcc.Clipboard`, but with full Mantine styling and customization.
 
-- Customizable icons, colors, and labels for copied state
+- Customizable icons, colors, and labels for the copied state
 - Support for copying from another component using `target_id`
-- Trigger copy in callbacks with `triggerCopy=True`
-- Build fully custom copy to clipboard buttons with `CustomCopyButton`
+- Trigger copying in callbacks with `triggerCopy=True`
+- Build fully custom copy-to-clipboard buttons with `CustomCopyButton`
 
-Check out the new [Copy Button docs](/components/copybutton)
+Check out the new [Copy Button docs](/components/copybutton).
+
 
 #### Example:  Styling the CopyButton
 
@@ -47677,7 +47727,7 @@ component = dmc.Group([
 ```
 ---
 #### Example: Copy from another component:
-Need a quick way to say “no”? Fetch a random answer from [No-as-a-Service](https://github.com/hotheadhacker/no-as-a-service) and copy it with a single click.
+Need a quick way to say “No”? Fetch a random excuse from [No-as-a-Service](https://github.com/hotheadhacker/no-as-a-service) and copy it with a single click.
 
 ```python
 import requests
@@ -47880,14 +47930,20 @@ See the [LLMs section](/llms) for full details and customization options.
 
 ### Other notable updates
 
-* Mantine patch updates from 8.3.1 through 8.3.6. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
+* Mantine patch updates from 8.3.1 through 8.3.10. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
 * Improved rendering in several components, including the `Stepper`. Thanks to @chgiesse for [PR #664](https://github.com/snehilvj/dash-mantine-components/pull/664).
+
+In 2.4.1:
+* Added `anchorProps` to `Anchor` allowing to pass any valid attribute (like `download`) to the `Anchor` component. Thanks to @jksinton for  [PR #676](https://github.com/snehilvj/dash-mantine-components/pull/676).
+* Added `withAlignedLabels` prop to support offsetting the selected check icon in `Select` and `MultiSelect`
+* Updated to TipTap 3.14.0
 
 ### Thanks
 
 Special thanks to:
 
 * [@chgiesse](https://github.com/chgiesse) for contributing two PRs in this release
+* [@jksinton](https://github.com/jksinton) first time contributor, for ading `anchorProps` prop to `Anchor`
 * [@BSd3v](https://github.com/BSd3v) for providing help and guidance along the way
 * [@alexcjohnson](https://github.com/alexcjohnson) for thoughtful feedback during code reviews
 
@@ -49727,10 +49783,10 @@ component = dmc.TextInput(
     description="Description below the input",
     w=300,
     styles={
-        "input": {"borderColor": dmc.DEFAULT_THEME["colors"]["violet"][4]},
+        "input": {"borderColor":  "var(--mantine-color-violet-4)"},
         "label": {
             "color": "blue",
-            "backgroundColor": dmc.DEFAULT_THEME["colors"]["yellow"][1],
+            "backgroundColor":  "var(--mantine-color-yellow-1)",
         },
     },
 )
@@ -50415,8 +50471,8 @@ app.layout = dmc.MantineProvider(
     `cssVariablesResolver` is a dict with keys:
 
 - cssVariablesSelector (string; optional):
-    CSS selector to which CSS variables should be added, `:root` by
-    default.
+    CSS selector to which CSS variables should be added, by default
+    variables are applied to `:root` and `:host`.
 
 - deduplicateCssVariables (boolean; optional):
     Determines whether CSS variables should be deduplicated: if CSS
@@ -50607,8 +50663,8 @@ dmc.add_figure_templates()
 
 # Theme switch in the dmc-docs header:
 # dmc.Switch(
-#     offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
-#     onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
+#     offLabel=DashIconify(icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"),
+#     onLabel=DashIconify(icon="radix-icons:moon", width=15, color= "var(--mantine-color-yellow-6)"),
 #     id="docs-color-scheme-switch",
 #     persistence=True,
 #     color="grey",
@@ -51200,8 +51256,8 @@ from dash import Dash, Input, Output,  clientside_callback
 
 
 theme_toggle = dmc.Switch(
-    offLabel=DashIconify(icon="radix-icons:sun", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][8]),
-    onLabel=DashIconify(icon="radix-icons:moon", width=15, color=dmc.DEFAULT_THEME["colors"]["yellow"][6]),
+    offLabel=DashIconify(icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"),
+    onLabel=DashIconify(icon="radix-icons:moon", width=15, color= "var(--mantine-color-yellow-6)"),
     id="color-scheme-switch",
     persistence=True,
     color="grey",
@@ -51550,7 +51606,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -51682,7 +51738,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -52274,7 +52330,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -52292,7 +52348,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- truncate (optional):
+- truncate (boolean; optional):
     Side on which Text must be truncated, if `True`, text is truncated
     from the start.
 
@@ -52655,7 +52711,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 
     `loading_state` is a dict with keys:
 
-- mod (string; optional):
+- mod (string | dict with strings as keys and values of type boolean | number | string | dict | list; optional):
     Element modifiers transformed into `data-` attributes, for
     example, `{ 'data-size': 'xl' }`, falsy values are removed.
 
@@ -53017,7 +53073,7 @@ This component supports Styles API. With Styles API, you can customize styles of
     Offset from top at which `Table.Thead` should become sticky, `0`
     by default.
 
-- striped (optional):
+- striped (boolean; optional):
     Determines whether every odd/even row background should be changed
     to `strippedColor`, if set to `True`, then `odd` value will be
     used, `False` by default.
@@ -53353,7 +53409,7 @@ This component supports Styles API. With Styles API, you can customize styles of
 - tabIndex (number; optional):
     tab-index.
 
-- truncate (optional):
+- truncate (boolean; optional):
     Side on which Text must be truncated, if `True`, text is truncated
     from the start.
 

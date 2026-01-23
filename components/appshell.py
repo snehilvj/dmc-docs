@@ -55,6 +55,7 @@ def create_appshell(data):
         children=dmc.Box([
             dcc.Location(id="url", refresh="callback-nav"),
             dcc.Store(id="color-scheme-storage", storage_type="local"),
+            dcc.Store(id="initial-scroll-done", data=False),
             dmc.NotificationContainer(id="notification-container"),
              dmc.AppShell(
                 [
@@ -128,13 +129,13 @@ def toggle_direction(n, d):
 
 
 clientside_callback(
-            """
-            function(n_clicks) {
-                if (n_clicks) {
-                    document.querySelector('#clipboard-target').click();
-                }     
-            }
-            """,
-            Input("copy-label", "n_clicks"),
-            prevent_initial_call=True
-        )
+    """
+    function(n_clicks) {
+        if (n_clicks) {
+            document.querySelector('#clipboard-target').click();
+        }     
+    }
+    """,
+    Input("copy-label", "n_clicks"),
+    prevent_initial_call=True
+)

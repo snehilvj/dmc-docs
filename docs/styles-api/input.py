@@ -6,10 +6,10 @@ component = dmc.TextInput(
     description="Description below the input",
     w=300,
     styles={
-        "input": {"borderColor": dmc.DEFAULT_THEME["colors"]["violet"][4]},
+        "input": {"borderColor":  "var(--mantine-color-violet-4)"},
         "label": {
             "color": "blue",
-            "backgroundColor": dmc.DEFAULT_THEME["colors"]["yellow"][1],
+            "backgroundColor":  "var(--mantine-color-yellow-1)",
         },
     },
 )

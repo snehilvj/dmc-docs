@@ -57,7 +57,7 @@ def create_tile(icon, heading, description, href):
             DashIconify(
                 icon=icon,
                 height=20,
-                color=dmc.DEFAULT_THEME["colors"][PRIMARY_COLOR][5],
+                color= "var(--mantine-color-blue-filled)",
             ),
             dmc.Text(heading, size="lg", mt="md"),
             dmc.Text(description, size="sm", c="dimmed", mt="sm"),

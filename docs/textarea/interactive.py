@@ -11,6 +11,7 @@ configurator.add_text_input("description", "", **{"placeholder": "Description"})
 configurator.add_text_input("error", "", **{"placeholder": "Error"})
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
+configurator.add_segmented_control("variant", ["default", "filled", "unstyled"], "default")
 configurator.add_switch("required", True)
 
 component = configurator.panel
