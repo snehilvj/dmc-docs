@@ -11,6 +11,13 @@ category: Combobox
 
 > Need users to select multiple items? See `MultiSelect`.  Need users to type their own options? See `TagsInput` or `Autocomplete`
 
+### Made with Combobox
+
+`Select` is built on top of `Combobox` and covers common use cases. If you need more advanced behavior or want to extend
+its functionality, you can create your own custom `Select` using `Combobox`.
+
+For working examples and guidance, see this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).
+
 
 ### Simple Example
 

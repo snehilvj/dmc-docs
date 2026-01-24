@@ -9,6 +9,16 @@ category: Combobox
 .. toc::
 .. llms_copy::TagsInput
 
+
+### Made with Combobox
+
+`TagsInput` is built on top of `Combobox` and covers common use cases. If you need more advanced behavior or want to extend
+its functionality, you can create your own custom `TagsInput` using `Combobox`.
+
+For working examples and guidance, see this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).
+
+
+
 ### Simple Example
 
 `TagsInput` provides a way to enter multiple values. It can be used with suggestions or without them.

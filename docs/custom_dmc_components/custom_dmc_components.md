@@ -10,8 +10,6 @@ category: Dash
 .. llms_copy::Custom DMC Components
 
 
-### Custom DMC components
-
 As of DMC version 2.5.0, `MantineHooks`, `MantineCore`, and `MantineDates` are exported from dash-mantine-components, giving component authors access to the same hooks and utilities DMC uses internally.
 
 This allows you to build custom components, such as a `Select` built on lower-level building blocks like `Combobox`, while maintaining consistent theming in Dash.
