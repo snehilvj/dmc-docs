@@ -29,10 +29,8 @@ the suggestions, user can type anything. If you need a searchable select, use `S
 
 ### Made with Combobox
 
-`Autocomplete` is built on top of `Combobox` and covers common use cases. If you need more advanced behavior or want to extend
-its functionality, you can create your own custom `Autocomplete` using `Combobox`.
-
-For working examples and guidance, see this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).
+`Autocomplete` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+its functionality, you can create your own custom `Autocomplete` component.  See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 ### Simple Example
 
