@@ -9,6 +9,14 @@ category: Combobox
 .. toc::
 .. llms_copy::TagsInput
 
+
+### Made with Combobox
+
+`TagsInput` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+its functionality, you can create your own custom `TagsInput` component.  See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
+
+
+
 ### Simple Example
 
 `TagsInput` provides a way to enter multiple values. It can be used with suggestions or without them.

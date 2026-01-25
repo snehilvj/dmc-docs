@@ -27,6 +27,11 @@ the suggestions, user can type anything. If you need a searchable select, use `S
  To learn more about the differences between Autocomplete and Select, check [help center article](https://help.mantine.dev/q/select-autocomplete-difference).
 
 
+### Made with Combobox
+
+`Autocomplete` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+its functionality, you can create your own custom `Autocomplete` component.  See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
+
 ### Simple Example
 
 `Autocomplete` provides user a list of suggestions based on the input, however user is not limited to suggestions and can type anything.

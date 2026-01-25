@@ -9,6 +9,13 @@ category: Combobox
 .. toc::
 .. llms_copy::MultiSelect
 
+
+### Made with Combobox
+
+`MultiSelect` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+its functionality, you can create your own custom `MultiSelect` component. See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
+
+
 ### Simple Example
 
 MultiSelect component allows user to pick any number of option from the given data.

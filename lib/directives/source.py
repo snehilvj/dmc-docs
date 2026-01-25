@@ -1,4 +1,5 @@
 import os
+import uuid
 
 import dash_mantine_components as dmc
 from dash.development.base_component import Component
@@ -34,12 +35,13 @@ class SC(SourceCode):
                 }
             )
         return dmc.CodeHighlightTabs(
+            id=str(uuid.uuid4()),
             code=code,
-            defaultExpanded=defaultExpanded=="true",
-            withExpandButton=withExpandedButton=='true',
-            maxCollapsedHeight="325px",
-            display=display
-        )
+                defaultExpanded=defaultExpanded=="true",
+                withExpandButton=withExpandedButton=='true',
+                maxCollapsedHeight="325px",
+                display=display
+            )
 
 
 """
