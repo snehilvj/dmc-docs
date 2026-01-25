@@ -94,7 +94,7 @@ Using the example above, the callback can be simplified. No `reinitialize` outpu
 When using Dash Pages, `target_id` defaults to the page container id, so the table of contents is automatically
 refreshed on each page change without any additional configuration.
 
-#### Dash version support
+### Dash version support
 
 * Dash 3+: `target_id` is supported and replaces the `reinitialize` callback pattern.
 * Dash 2: Use the `reinitialize` prop in a callback as shown above.

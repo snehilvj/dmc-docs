@@ -1,7 +1,7 @@
 dash>=2.5.0
 dash-iconify>=0.1.0
 python-frontmatter>=1.0.0
-dash-mantine-components>=0.15
+dash-mantine-components>=2.5.0
 pydantic>=2.3.0
 gunicorn>=21.2.0
 markdown2dash==0.1.2
