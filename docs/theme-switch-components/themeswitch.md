@@ -17,13 +17,8 @@ This allows it to apply global styles dynamically based on the theme.
 
 To switch themes in a Dash app you can set the `data-mantine-color-scheme` in a clientside callback.
 
-### Example 1 Theme Toggle
 
-This example demonstrates how to toggle between light and dark modes using  `ActionIcon` as the theme switch component.
-
-.. exec::docs.theme-switch-components.themeswitch
-
-### Example 2 Theme Switch
+### Example 1 Theme Switch
 
 This example shows how to use the `Switch` component with icon labels to create a theme switch component.   The `Switch`
 is set with `persistence=True` to retain the selected theme even after a browser refresh.
@@ -67,5 +62,59 @@ clientside_callback(
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+```
+
+
+### Example 2 Theme Toggle
+
+This example demonstrates how to toggle between light and dark modes using  `ActionIcon` as the theme switch component.
+To see this live, see the theme toggle component in the header of the [Mantine documention](https://mantine.dev/getting-started/).
+
+```python
+
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+from dash import Dash, Input, Output, clientside_callback
+
+app=Dash()
+
+theme_toggle = dmc.ActionIcon(
+    [
+        dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
+        dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
+    ],
+    variant="transparent",
+    color="yellow",
+    id="color-scheme-toggle",
+    size="lg",
+)
+
+
+component=dmc.Group([
+    dmc.Text("Theme Switch Demo"),
+    theme_toggle
+])
+app.layout = dmc.MantineProvider(component)
+
+
+clientside_callback(
+    """
+    (n) => {
+        document.documentElement.setAttribute(
+            'data-mantine-color-scheme',
+            (n % 2) ? 'dark' : 'light'
+        );
+        return window.dash_clientside.no_update      
+    }
+    """,
+    Output("color-scheme-toggle", "id"),
+    Input("color-scheme-toggle", "n_clicks"),
+)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 ```

@@ -1,8 +1,8 @@
 
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
-from dash import Dash, Input, Output, clientside_callback, _dash_renderer
-_dash_renderer._set_react_version("18.2.0")
+from dash import Dash, Input, Output, clientside_callback
+
 
 theme_toggle = dmc.ActionIcon(
     [
