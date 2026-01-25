@@ -12,7 +12,7 @@ category: Date Pickers
 
 
 ### DatePicker props
-`DateTimePicker` supports most of the `DatePicker` props, read through `DatePicker` documentation to learn about all component features that are not listed on this page.
+`DateTimePicker` supports most of the `DatePicker` props, read through [DatePicker](/components/datepicker) documentation to learn about all component features that are not listed on this page.
 
 ### Simple Example
 
@@ -30,7 +30,7 @@ Use `presets` prop to add custom date presets. Presets are displayed next to the
 .. exec::docs.datetimepicker.presets
 
 ### TimePicker props
-You can pass props down to the underlying `TimePicker` component with `timePickerProps` prop. Example of enabling 
+You can pass props down to the underlying [TimePicker](//components/timepicker) component with `timePickerProps` prop. Example of enabling 
 dropdown and setting 12h format for time picker:
 
 .. exec::docs.datetimepicker.time-picker-props
