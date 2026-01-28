@@ -79,6 +79,12 @@ def update(scheme):
     return f"Current color scheme: {scheme}"
 ```
 
+### Custom theme switch components
+
+If you want to create your own custom theme switch or need more control over how themes toggle, check out 
+the [Theme Switch Components](/theme-switch) page for examples using `Switch` and `ActionIcon`.
+
+
 ### Setting theme when the app is loading
 
 The selected color scheme from `ColorSchemeToggle` is saved in `localStorage` under `mantine-color-scheme-value`, allowing
