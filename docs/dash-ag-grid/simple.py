@@ -12,7 +12,7 @@ component = dag.AgGrid(
 
 @callback(
     Output("dag-simple", "className"),
-    Input("docs-color-scheme-switch", "checked")
+    Input("docs-color-scheme-switch", "computedColorScheme")
 )
-def update_theme(switch_on):
-    return "ag-theme-alpine-dark" if switch_on else "ag-theme-alpine"
+def update_theme(color):
+    return "ag-theme-alpine-dark" if color=="dark" else "ag-theme-alpine"

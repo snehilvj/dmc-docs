@@ -10,6 +10,18 @@ order: 10  # sets order in navbar section
 .. toc::
 .. llms_copy::Theme Switch Components
 
+
+### New ColorSchemeToggle
+
+For most apps, use the [ColorSchemeToggle](/color-scheme-toggle) component. It automatically toggles between light and
+dark themes, persists the selection in localStorage.  The `pre_render_color_shcheme()` helper can be used to apply 
+styles before the app renders to prevent flashes of the wrong theme.
+
+The examples below show how to create a custom theme switch or implement one if you are using `dash-mantine-components` version < 2.6.0.
+
+
+
+
 ### Mantine Light and dark themes
 
 Mantine sets the light and dark color schemes using the `data-mantine-color-scheme` attribute on the `<html>` element.
