@@ -61,12 +61,12 @@ component = dmc.Box([sample_controls, graphs])
 
 @callback(
     Output({"type": "graph", "index": ALL}, "figure"),
-    Input("docs-color-scheme-switch", "checked"),
+    Input("docs-color-scheme-switch", "computedColorScheme"),
     State({"type": "graph", "index": ALL}, "id"),
 )
-def update_figure(switch_on, ids):
+def update_figure(color, ids):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
+    template = pio.templates["mantine_dark"] if color=="dark" else pio.templates["mantine_light"]
     patched_figures = []
     for i in ids:
         patched_fig = Patch()

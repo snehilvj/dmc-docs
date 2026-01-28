@@ -128,11 +128,11 @@ import plotly.io as pio
 
 @callback(
     Output("figure-templates-bar", "figure"),
-    Input("docs-color-scheme-switch", "checked"),
+    Input("docs-color-scheme-switch", "computedColorScheme"),
 )
-def update_figure(switch_on):
+def update_figure(color):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
+    template = pio.templates["mantine_dark"] if color=="dark" else pio.templates["mantine_light"]
     patched_fig = Patch()
     patched_fig["layout"]["template"] = template
     return patched_fig
