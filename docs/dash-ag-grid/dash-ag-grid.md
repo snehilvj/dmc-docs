@@ -76,23 +76,61 @@ The next sections show how to apply AG Grid themes that match your Mantine light
 components as custom cell renderers and editors. 
 
 
-### Theming: Light and Dark Mode Support
+### Theming: Light and Dark Mode
 
-This example uses `dash-ag-grid` v31.3.0. The grid theme is set with the `className` prop.
+#### Dash AG Grid ≥ v33
 
-To apply a built-in theme:
+Dash AG Grid v33+ introduced a new theming API that makes it much easier to style the grid.
+
+More details and examples are available in the [dash-ag-grid documentation](https://dash.plotly.com/dash-ag-grid/styling-themes).
+If you are upgrading from an earlier version, see the [migration guide](https://dash.plotly.com/dash-ag-grid/migration-guide).
+
+In earlier versions of dash-ag-grid, the grid theme was set using the `className` prop. Switching between light and
+dark mode typically required updating `className` in a callback, which caused the grid to re-render and often resulted
+in visible lag.
+
+With v33+, the same built-in themes are still available, but they are applied through the new `theme` API instead
+of `className`. Theme values can be customized using any valid CSS values, and using CSS variables works well for light and
+dark mode support.  See also the [Ag Grid documentation](https://www.ag-grid.com/react-data-grid/theming-colors/) for more information.
+
+Below are two simple examples.
+
+Example 1: No callback
+
+This example uses a built-in light theme and applies Mantine CSS variables for background and text colors. When the app 
+theme changes, the grid updates automatically. No callback is required.
+
+.. exec::docs.dash-ag-grid.theme_switch33
+
+Example 2: Callback to switch built-in theme
+
+Because the first example is based on a light theme, some elements such as scrollbars may not appear correctly in dark mode.
+
+This example switches between the light and dark variants of the built-in Quartz theme. It also demonstrates additional
+customization using the `theme` prop to set fonts and accent colors.
+
+.. exec::docs.dash-ag-grid.theme_switch33_callback
+
+
+
+#### Dash AG Grid < v33
+
+Before dash-ag-grid v33, the grid theme was set using the `className` prop. Four built-in themes were available, each with light and dark variants.
+
+For example, to apply the Alpine theme:
 
 * Light mode: `className="ag-theme-alpine"` (default)
 * Dark mode: `className="ag-theme-alpine-dark"`
 
-Switch between light and dark themes by updating the `className` prop in a callback.
+Switching between light and dark mode required updating the `className` prop in a callback.
 
-For more details and a full list of built-in themes and how to customize the theme, see the [Dash AG Grid styling guide](https://dash.plotly.com/dash-ag-grid/styling-themes) or the [AG Grid v31.3 theme docs](https://www.ag-grid.com/archive/31.3.0/react-data-grid/themes/).
+For more details on available themes and customization options, see the [Dash AG Grid styling guide](https://dash.plotly.com/dash-ag-grid/styling-themes) or the [AG Grid v31.3 theme documentation](https://www.ag-grid.com/archive/31.3.0/react-data-grid/themes/).
 
-Click the theme switch in the top right of this page to see the grid theme update live.
+Here is an example of the callback:
 
-.. exec::docs.dash-ag-grid.simple
-
+.. sourcetabs::docs/dash-ag-grid/theme_switch31.py
+    :defaultExpanded: true
+    :withExpandedButton: true
 
 ###  Custom Cell Renderers with DMC
 
