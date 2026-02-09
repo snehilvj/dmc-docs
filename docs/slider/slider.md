@@ -154,6 +154,11 @@ You can invert the track by setting `inverted=True`:
 .. exec::docs.slider.inverted
 
 
+### Dash 4 Slider and RangeSlider
+
+The Dash 4 [`dcc.Slider`](https://dash.plotly.com/dash-core-components/slider) and `dcc.RangeSlider` components supports 
+some features that are not available in DMC, for example integrated numeric input fields and vertical sliders. To style
+the `dcc.Slider` with a Mantine theme see the   [Dash 4 components](/dash4-components) section.
 
 ### Styling the Slider
 
