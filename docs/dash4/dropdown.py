@@ -6,7 +6,7 @@ component = dmc.Card([
         [
             dmc.InputWrapper(
                 dcc.Dropdown([f"option {i}" for i in range(100)],  value=["option 1", "option 2", "option 3"], multi=True, id="dcc-dropdown"),
-                label="dcc.Dropdown with a dmc.InputWrapper",
+                label="dcc.Dropdown",
                 htmlFor="dcc-dropdown"
             ),
             dmc.NumberInput(
@@ -24,6 +24,5 @@ component = dmc.Card([
     withBorder=True,
     shadow="sm",
     radius="md",
-    p="md",
     className="dmc"  # applies Mantine styles
 )
