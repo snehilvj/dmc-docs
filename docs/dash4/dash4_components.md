@@ -10,41 +10,14 @@ category: Dash
 
 Dash 4 completely redesigned its core components for a consistent look and feel and added many new features. Components 
 like `dcc.Slider` and `dcc.Dropdown` now include functionality not available in DMC, making them useful to mix into your
-app when needed. 
-
-This section explains how to style Dash 4 components to match a Mantine theme in light and dark mode.
+app when needed.  This section shows how to style Dash 4 components to match a Mantine theme in light and dark mode.
 
 
-### dcc.Dropdown
+### Dash 4 Accent Color
 
-The Dash 4 `dcc.Dropdown` features not in `dmc.Select` or `dmc.MultiSelect`:
+The accent for Dash 4 components is controlled by a CSS variable so it's easy to change. The value can be any valid CSS color.
 
-* Built-in search input inside the menu
-* Select all and deselect all actions
-* Virtualization for large option lists
-* Compact display when `multi=True`
-
-
-
-### dcc.Slider
-
-The Dash 4 `dcc.Slider` adds:
-
-* Optional numeric input fields
-* Automatic mark generation based on range and width
-* Vertical slider option
-
-
-
-### Styling Dash 4 Components
-
-Dash 4 components do not automatically use Mantine styles. To keep a consistent appearance, you can style them using
-Mantine CSS variables. Styles can be applied using the `style` or `className` prop.
-
-
-### Accent Color
-
-To change the accent color of Dash 4 components, set the Dash CSS variable. This example matches the accent color to your Mantine primary color:
+This example changes the default purple color to your Mantine primary color:
 
 ```python
 style={
@@ -52,13 +25,13 @@ style={
 }
 ```
 
-This is sufficient for apps that only use light mode.
 
+### Dark Mode Support
 
+Dash 4 components do not include built-in dark mode support. You can enable light and dark mode by mapping Dash CSS
+variables to Mantine theme variables.
 
-### Light and Dark Mode
-
-For apps with light and dark mode, map Dash CSS variables to Mantine theme variables. Add the following CSS to `assets/`:
+Add the following CSS to `assets/`:
 
 ```css
 .dmc {
@@ -81,7 +54,7 @@ For apps with light and dark mode, map Dash CSS variables to Mantine theme varia
 }
 ```
 
-Wrap your layout:
+Wrap your app layout with  `dmc` class:
 
 ```python
 app.layout = dmc.MantineProvider(
@@ -95,19 +68,26 @@ app.layout = dmc.MantineProvider(
 Dash 4 components inside this container will follow the Mantine color scheme and update automatically when the theme changes.
 
 
+### Example 1: dcc.Dropdown
 
-### Example 1: A Mix of DMC and Dash 4 Components
+This example shows how a `dcc.Dropdown` works well with other DMC inputs in grids or forms.
 
-This example shows how a styled Dash 4 component works well with DMC inputs (`NumberInput`, `DatePickerInput`) in grids or forms.
+The Dash 4 `dcc.Dropdown` supports virtualization, which renders only the visible options instead of the entire list.
+This improves performance and responsiveness when working with large data sets. It also includes a search input and
+Select all / Deselect all buttons inside the dropdown menu. When `multi=True`, it displays a count of selected items,
+preventing the input from resizing as selections grow.
 
-Use `dmc.InputWrapper` to add elements like `label`, `description`, and `error` to components such as `dcc.Dropdown`,
-making them consistent with DMC inputs. The `htmlFor` prop links the label to the component for focus and accessibility.
+The `dmc.InputWrapper` is used to add elements like `label`, `description`, and `error` to the `dcc.Dropdown`,
+making it consistent with the other DMC inputs. The `htmlFor` prop links the label to the component for focus and accessibility.
 
 .. exec::docs.dash4.dropdown
 
 
 
-### Example 2: Slider
+### Example 2: dcc.Slider
+
+The `dcc.Slider` includes optional numeric input fields and automatic mark generation based on range and width.  There is
+also an option for a vertical slider.
 
 This example shows the `dcc.Slider` styled with a Mantine theme.
 

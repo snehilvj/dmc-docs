@@ -19,7 +19,7 @@ its functionality, you can create your own custom `MultiSelect` component. See t
 ### Simple Example
 
 MultiSelect component allows user to pick any number of option from the given data.
-I you would like users to be able to enter custom values, see `TagsInput`.
+If you would like users to be able to enter custom values, see `TagsInput`.
 
 .. exec::docs.multiselect.simple
 
@@ -312,6 +312,20 @@ You can use CSS to remove the placeholder in the `MultiSelect` component when va
     :defaultExpanded: true
     :withExpandedButton: true 
 
+
+### Dash 4 dcc.Dropdown
+
+The Dash 4 [dcc.Dropdown](https://dash.plotly.com/dash-core-components/dropdown) supports some features that are not 
+available in DMC.  For example, virtualization, which renders only the visible options instead of the entire list. This improves performance and responsiveness when working 
+with large data sets. It also includes a search input and Select all / Deselect all buttons inside the dropdown menu.
+When `multi=True`, it displays a count of selected items, preventing the input from resizing as selections grow.
+
+The `dmc.InputWrapper` can be used to add elements like `label`, `description`, and `error` to the `dcc.Dropdown`,
+making it consistent with the other DMC inputs. The `htmlFor` prop links the label to the component for focus and accessibility.
+
+To style the `dcc.Dropdown` with a Mantine theme see the   [Dash 4 components](/dash4-components) section.
+
+.. exec::docs.multiselect.dccdropdown
 
 
 ### Styles API
