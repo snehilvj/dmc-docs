@@ -70,7 +70,8 @@ app.layout = dmc.MantineProvider(
 
 Dash 4 components inside this container will follow the Mantine color scheme and update automatically when the theme changes. 
 
-See this live in the examples below by clicking on the switch in the header to change themes.
+> Toggle the theme switch in the header to see the examples below update between light and dark mode.
+
 
 
 
