@@ -91,8 +91,6 @@ For more details and a full list of built-in themes and how to customize the the
 
 Click the theme switch in the top right of this page to see the grid theme update live.
 
-.. exec::docs.dash-ag-grid.simple
-
 
 ###  Custom Cell Renderers with DMC
 
