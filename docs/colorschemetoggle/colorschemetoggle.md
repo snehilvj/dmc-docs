@@ -82,7 +82,7 @@ def update(scheme):
 ### Custom theme switch components
 
 If you want to create your own custom theme switch or need more control over how themes toggle, check out 
-the [Theme Switch Components](/theme-switch) page for examples using `Switch` and `ActionIcon`.
+the [Theme Switch Components](/theme-switch) page for and example using `Switch`.
 
 
 ### Setting theme when the app is loading
@@ -99,7 +99,7 @@ import dash_mantine_components as dmc
 dmc.pre_render_color_scheme()
 ```
 
-
+Note:  `pre_render_color_scheme()` required dash>=3.0
 
 ### Styles API
 
