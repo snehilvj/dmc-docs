@@ -6,4 +6,4 @@ pydantic>=2.3.0
 gunicorn>=21.2.0
 markdown2dash==0.1.2
 pandas==2.2.3
-dash-ag-grid==31.3.1
+dash-ag-grid==33.3.3
