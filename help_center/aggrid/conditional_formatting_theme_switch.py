@@ -7,11 +7,11 @@ Example of
 
 
 import dash_mantine_components as dmc
-from dash import Dash, _dash_renderer, Input, Output, clientside_callback, callback
+from dash import Dash,  Input, Output, clientside_callback, callback
 from dash_iconify import DashIconify
 import dash_ag_grid as dag
 import pandas as pd
-_dash_renderer._set_react_version("18.2.0")
+
 
 def make_grid():
     df = pd.read_csv(

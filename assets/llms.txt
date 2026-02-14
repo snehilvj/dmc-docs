@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.5.0**, which wraps **Mantine 8.3.13**.  
+> This documentation applies to **DMC 2.6.0**, which wraps **Mantine 8.3.14**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -1552,6 +1552,230 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 - orientation (a value equal to: 'horizontal', 'vertical'; optional):
     Orientation of the group, `horizontal` by default.
+
+- styles (boolean | number | string | dict | list; optional):
+    Adds inline styles directly to inner elements of a component.  See
+    Styles API docs.
+
+- tabIndex (number; optional):
+    tab-index.
+
+- variant (string; optional):
+    variant.
+
+- visibleFrom (string; optional):
+    Breakpoint below which the component is hidden with `display:
+    none`.
+
+## ColorSchemeToggle  
+Use ColorSchemeToggle to switch light and dark color schemes.  
+Category: Buttons  
+
+The `ColorSchemeToggle` is a button that lets users switch between light and dark color themes.
+
+It is built on the `ActionIcon` component. See the [ActionIcon documentation](/components/actionicon) for examples of 
+styling with props such as `size`, `color`, and `gradient`.
+
+
+### Usage
+
+Copy this app to run it locally. For a live demo, click the `ColorSchemeToggle` in the header of these docs.
+
+Note that the toggle switches themes automatically and does not require a Dash callback.
+
+```python
+import dash_mantine_components as dmc
+from dash import Dash
+from dash_iconify import DashIconify
+
+app = Dash()
+
+component = dmc.ColorSchemeToggle(
+    lightIcon=DashIconify(icon="radix-icons:sun", width=20),
+    darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+    color="yellow",
+    size="lg",
+    m="xl",
+)
+
+app.layout = dmc.MantineProvider(component)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+
+### lightIcon and darkIcon
+
+The `lightIcon` and `darkIcon` props accept any Dash component. For example, you can pass `DashIconify` to display icons 
+for each theme. You can also wrap the icon with a tooltip component to show text on hover:
+
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.ColorSchemeToggle(
+    lightIcon=dmc.Tooltip(DashIconify(icon="radix-icons:sun"), label="Light mode"),
+    darkIcon=dmc.Tooltip(DashIconify(icon="radix-icons:moon"), label="Dark mode"),
+)
+```
+
+### computedColorScheme
+
+The `computedColorScheme` prop is read-only and can be used as an `Input` in a Dash callback. This is useful when
+you need to update Plotly figures or components such as `dash-ag-grid` based on the current Mantine theme. See examples
+in the [Figure Templates](/components/figure-templates) and [Dash Ag Grid](/dash-ag-grid) sections.
+
+`computedColorScheme` always returns `"light"` or `"dark"`, even if the toggle is set to `"auto"`.
+
+```python
+from dash import Input, Output
+import dash_mantine_components as dmc
+
+@app.callback(
+    Output("color-scheme-output", "children"),
+    Input("color-scheme-toggle", "computedColorScheme"),
+)
+def update(scheme):
+    return f"Current color scheme: {scheme}"
+```
+
+### Custom theme switch components
+
+If you want to create your own custom theme switch or need more control over how themes toggle, check out 
+the [Theme Switch Components](/theme-switch) page for and example using `Switch`.
+
+
+### Setting theme when the app is loading
+
+The selected color scheme from `ColorSchemeToggle` is saved in `localStorage` under `mantine-color-scheme-value`, allowing
+the correct styles to be applied before the app renders and preventing flashes of the wrong color on page load or refresh.
+
+Use `pre_render_color_scheme()` at the top of your app to initialize the Mantine color scheme immediately, matching the
+user’s preference or system theme:
+
+```python
+import dash_mantine_components as dmc
+
+dmc.pre_render_color_scheme()
+```
+
+Note:  `pre_render_color_scheme()` required dash>=3.0
+
+### Styles API
+
+
+This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
+
+
+#### ColorSchemeToggle Selectors
+
+| Selector | Static selector               | Description                                                |
+|----------|--------------------------------|------------------------------------------------------------|
+| root     | .mantine-ActionIcon-root       | Root element                                               |
+| icon     | .mantine-ActionIcon-icon       | Inner icon wrapper                                         |
+
+
+#### ColorSchemeToggle CSS Variables
+
+| Selector | Variable        | Description                                  |
+|----------|-----------------|----------------------------------------------|
+| root     | --ai-bg         | Controls background                         |
+|          | --ai-hover      | Controls background when hovered            |
+|          | --ai-bd         | Controls border                             |
+|          | --ai-color      | Controls icon color                         |
+|          | --ai-hover-color| Controls icon color when hovered            |
+|          | --ai-radius     | Controls border-radius                      |
+|          | --ai-size       | Controls width, height, min-width, and min-height styles |
+
+
+#### ActionIcon Data Attributes
+
+| Selector      | Attribute       | Condition                  |
+|---------------|-----------------|----------------------------|
+| root          | data-disabled   | `disabled` prop is set     |
+
+
+
+
+### Keyword Arguments
+#### ColorSchemeToggle
+- id (string; optional):
+    Unique ID to identify this component in Dash callbacks.
+
+- aria-* (string; optional):
+    Wild card aria attributes.
+
+- attributes (boolean | number | string | dict | list; optional):
+    Passes attributes to inner elements of a component.  See Styles
+    API docs.
+
+- autoContrast (boolean; optional):
+    If set, adjusts text color based on background color for `filled`
+    variant.
+
+- className (string; optional):
+    Class added to the root element, if applicable.
+
+- classNames (dict; optional):
+    Adds custom CSS class names to inner elements of a component.  See
+    Styles API docs.
+
+- color (optional):
+    Key of `theme.colors` or any valid CSS color. default
+    `theme.primaryColor`.
+
+- computedColorScheme (a value equal to: 'dark', 'light'; optional):
+    Read-only Color Scheme.
+
+- darkHidden (boolean; optional):
+    Determines whether component should be hidden in dark color scheme
+    with `display: none`.
+
+- darkIcon (a list of or a singular dash component, string or number; optional):
+    Icon shown when scheme is dark.
+
+- data-* (string; optional):
+    Wild card data attributes.
+
+- disabled (boolean; optional):
+    Sets `disabled` attribute, prevents interactions.
+
+- gradient (dict; optional):
+    Gradient values used with `variant="gradient"`. default
+    `theme.defaultGradient`.
+
+    `gradient` is a dict with keys:
+
+- hiddenFrom (string; optional):
+    Breakpoint above which the component is hidden with `display:
+    none`.
+
+- lightHidden (boolean; optional):
+    Determines whether component should be hidden in light color
+    scheme with `display: none`.
+
+- lightIcon (a list of or a singular dash component, string or number; optional):
+    Icon shown when scheme is light.
+
+- loading_state (dict; optional):
+    Object that holds the loading state object coming from
+    dash-renderer. For use with dash<3.
+
+    `loading_state` is a dict with keys:
+
+- mod (string | dict | list of string | dicts; optional):
+    Element modifiers transformed into `data-` attributes. For
+    example: "xl" or {"data-size": "xl"}. Can also be a list of
+    strings or dicts for multiple modifiers. Falsy values are removed.
+
+- radius (number; optional):
+    Key of `theme.radius` or any valid CSS value to set border-radius.
+    Numbers are converted to rem. default `theme.defaultRadius`.
+
+- size (number; optional):
+    Controls width and height of the button. Numbers are converted to
+    rem. default `'md'`.
 
 - styles (boolean | number | string | dict | list; optional):
     Adds inline styles directly to inner elements of a component.  See
@@ -13473,13 +13697,16 @@ or `MultiSelect` on top of Mantine’s [Combobox](https://mantine.dev/core/combo
 For examples and step-by-step instructions, see the custom DMC components in this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).
 
 ## Dash 4 Components  
-Style Dash 4 Core Components with a Mantine theme  
+How to style Dash 4 Core Components with a Mantine theme  
 Category: Dash  
 
-Dash 4 completely redesigned its core components for a consistent look and feel and added many new features. Components 
-like `dcc.Slider` and `dcc.Dropdown` now include functionality not available in DMC, making them useful to mix into your
-app when needed.  This section shows how to style Dash 4 components to match a Mantine theme in light and dark mode.
+Dash 4 completely redesigned its core components for a consistent look and feel and added many new features. For a full 
+overview of what changed, see the [Dash 4 release post](https://community.plotly.com/t/dash-core-components-gets-a-design-driven-refresh-with-dash-4/96322).
 
+It's usually best to  stick with DMC components for a consistent design and UI. But some new DCC components such as `dcc.Dropdown` 
+and the `dcc.Slider` include features you won’t find in DMC so you might want to mix them in. 
+
+This section shows how to style Dash 4 components to match a Mantine theme in light and dark mode.
 
 ### Dash 4 Accent Color
 
@@ -13497,7 +13724,7 @@ style={
 ### Dark Mode Support
 
 Dash 4 components do not include built-in dark mode support. You can enable light and dark mode by mapping Dash CSS
-variables to Mantine theme variables.
+variables to Mantine theme variables.  The following is the CSS used in these docs.
 
 Add the following CSS to `assets/`:
 
@@ -13533,17 +13760,24 @@ app.layout = dmc.MantineProvider(
 )
 ```
 
-Dash 4 components inside this container will follow the Mantine color scheme and update automatically when the theme changes.
+Dash 4 components inside this container will follow the Mantine color scheme and update automatically when the theme changes. 
+
+> Toggle the theme switch in the header to see the examples below update between light and dark mode.
+
+
+
 
 
 ### Example 1: dcc.Dropdown
 
-This example shows how a `dcc.Dropdown` works well with other DMC inputs in grids or forms.
+This example shows how a [dcc.Dropdown](https://dash.plotly.com/dash-core-components/dropdown) works well with other DMC inputs in grids or forms.
 
 The Dash 4 `dcc.Dropdown` supports virtualization, which renders only the visible options instead of the entire list.
-This improves performance and responsiveness when working with large data sets. It also includes a search input and
-Select all / Deselect all buttons inside the dropdown menu. When `multi=True`, it displays a count of selected items,
-preventing the input from resizing as selections grow.
+This improves performance and responsiveness when working with large data sets.  The dropdown menu also includes a built-in
+search input. 
+
+For MultiSelect (set `multi=True`) the menu also includes  Select all and Deselect all buttons. When multiple 
+items are selected, it displays a count of selected items, preventing the input from resizing as selections grow.
 
 The `dmc.InputWrapper` is used to add elements like `label`, `description`, and `error` to the `dcc.Dropdown`,
 making it consistent with the other DMC inputs. The `htmlFor` prop links the label to the component for focus and accessibility.
@@ -13557,7 +13791,7 @@ component = dmc.Card([
         [
             dmc.InputWrapper(
                 dcc.Dropdown([f"option {i}" for i in range(100)],  value=["option 1", "option 2", "option 3"], multi=True, id="dcc-dropdown"),
-                label="dcc.Dropdown with a dmc.InputWrapper",
+                label="dcc.Dropdown",
                 htmlFor="dcc-dropdown"
             ),
             dmc.NumberInput(
@@ -13575,16 +13809,15 @@ component = dmc.Card([
     withBorder=True,
     shadow="sm",
     radius="md",
-    p="md",
     className="dmc"  # applies Mantine styles
 )
 ```
 ### Example 2: dcc.Slider
 
-The `dcc.Slider` includes optional numeric input fields and automatic mark generation based on range and width.  There is
-also an option for a vertical slider.
+The [dcc.Slider](https://dash.plotly.com/dash-core-components/slider) and `dcc.RangeSlider` includes optional numeric
+input fields and automatic mark generation based on range and width.  There is also an option for a vertical slider.
 
-This example shows the `dcc.Slider` styled with a Mantine theme.
+This example shows the `dcc.RandeSlider` styled with a Mantine theme.
 
 ```python
 import dash_mantine_components as dmc
@@ -13875,10 +14108,10 @@ component = dag.AgGrid(
 
 @callback(
     Output("dag-dmc-card-grid", "className"),
-    Input("docs-color-scheme-switch", "checked")
+    Input("docs-color-scheme-switch", "computedColorScheme")
 )
-def update_theme(switch_on):
-    return "ag-theme-alpine-dark" if switch_on else "ag-theme-alpine"
+def update_theme(color):
+    return "ag-theme-alpine-dark" if color=="dark" else "ag-theme-alpine"
 ```
 
 ```javascript
@@ -14030,10 +14263,10 @@ def showChange(n):
 
 @callback(
     Output("dag-dmc-btn-grid", "className"),
-    Input("docs-color-scheme-switch", "checked")
+    Input("docs-color-scheme-switch", "computedColorScheme")
 )
-def update_theme(switch_on):
-    return "ag-theme-alpine-dark" if switch_on else "ag-theme-alpine"
+def update_theme(color):
+    return "ag-theme-alpine-dark" if color=="dark" else "ag-theme-alpine"
 ```
 
 ```javascript
@@ -14175,10 +14408,10 @@ component = dag.AgGrid(
 
 @callback(
     Output("dag-dmc-cell-editor", "className"),
-    Input("docs-color-scheme-switch", "checked")
+    Input("docs-color-scheme-switch", "computedColorScheme")
 )
-def update_theme(switch_on):
-    return "ag-theme-alpine-dark" if switch_on else "ag-theme-alpine"
+def update_theme(color):
+    return "ag-theme-alpine-dark" if color=="dark" else "ag-theme-alpine"
 ```
 
 ```javascript
@@ -46247,6 +46480,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.6.0**               | Feb 2026     | 8.3.14          | `dash>=2.0.0` |
 | **2.5.0**               | Jan 2026     | 8.3.13          | `dash>=2.0.0` |
 | **2.4.1**               | Dec 2025     | 8.3.10          | `dash>=2.0.0` |
 | **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
@@ -49290,6 +49524,80 @@ Special thanks to:
 * [@BSd3v](https://github.com/BSd3v) for PR #653 to make it possible to make custom DMC components.
 * [@alexcjohnson](https://github.com/alexcjohnson) for your thoughtful feedback during code reviews.
 
+## Version 2.6.0  
+Release announcement for Dash Mantine Components v2.6.0  
+Category: Releases  
+
+Feb 14, 2026  
+
+Based on Mantine 8.3.14
+
+See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.6.0)  
+
+
+
+### New ColorSchemeToggle Component
+
+`ColorSchemeToggle` automatically switches between light and dark themes and persists the user’s selection in localStorage.
+
+Copy this app to run it locally. For a live demo, click the `ColorSchemeToggle` in the header of these docs.
+
+> The toggle handles theme switching internally and does not require a Dash callback.
+
+For more information, see the  [ColorSchemeToggle](/components/colorschemetoggle) documentation.
+
+```python
+import dash_mantine_components as dmc
+from dash import Dash
+from dash_iconify import DashIconify
+
+app = Dash()
+
+component = dmc.ColorSchemeToggle(
+    lightIcon=DashIconify(icon="radix-icons:sun", width=20),
+    darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+    color="yellow",
+    size="lg",
+    m="xl",
+)
+
+app.layout = dmc.MantineProvider(component)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+### Prevent flash of incorrect theme on load
+
+This release fixes the light/dark “flash” that could occur when the app is loading initially or on refresh.
+
+`ColorSchemeToggle` now persists the selected color scheme in `localStorage` (`mantine-color-scheme-value`).
+The new `pre_render_color_scheme()` helper reads that value and applies the correct Mantine theme before Dash mounts, so the app loads with the proper styles immediately.
+
+```python
+import dash_mantine_components as dmc
+
+dmc.pre_render_color_scheme()
+```
+
+Requires `dash>=3.0` and `ColorSchemeToggle`
+
+
+### Other notable updates
+
+- Mantine patch update to 8.3.14. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
+
+- Fixed prop types in `Grid` and `SimpleGrid`
+- Fixed incorrect clamping in `NumberInput` when `min` or `max` was set to `None`
+- New in the docs:  Updated Dash Ag Grid examples for theming in versions >=33
+
+### Thanks
+
+Special thanks to:
+  
+* [@BSd3v](https://github.com/BSd3v) for the `pre_render_color_scheme()` helper function to Fix The Flash!
+* [@alexcjohnson](https://github.com/alexcjohnson) for your helpful feedback during code reviews.
+
 ## CSS Variables  
 How to use CSS variables with Dash Mantine Components.  
 Category: Styling  
@@ -52006,21 +52314,21 @@ dff = df[df.year == 2007]
 dmc.add_figure_templates()
 
 # Theme switch in the dmc-docs header:
-# dmc.Switch(
-#     offLabel=DashIconify(icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"),
-#     onLabel=DashIconify(icon="radix-icons:moon", width=15, color= "var(--mantine-color-yellow-6)"),
+# dmc.ColorSchemeToggle(
+#     lightIcon=DashIconify(icon="radix-icons:sun", width=20),
+#     darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+#     variant="light",
+#     color="gray",
 #     id="docs-color-scheme-switch",
-#     persistence=True,
-#     color="grey",
 # )
 component = dcc.Graph(id="figure-templates-histogram")
 
 @callback(
     Output("figure-templates-histogram", "figure"),
-    Input("docs-color-scheme-switch", "checked"),
+    Input("docs-color-scheme-switch", "computedColorScheme"),
 )
-def update_figure(switch_on):
-    template = "mantine_dark" if switch_on else "mantine_light"
+def update_figure(color):
+    template = "mantine_dark" if color=="dark" else "mantine_light"
     return px.bar(dff, x="continent", y="pop", title="Population by Continent", template=template)
 ```
 For better performance, you can update the figure template using [Partial Property Updates.](https://dash.plotly.com/partial-properties)
@@ -52036,11 +52344,11 @@ import plotly.io as pio
 
 @callback(
     Output("figure-templates-bar", "figure"),
-    Input("docs-color-scheme-switch", "checked"),
+    Input("docs-color-scheme-switch", "computedColorScheme"),
 )
-def update_figure(switch_on):
+def update_figure(color):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
+    template = pio.templates["mantine_dark"] if color=="dark" else pio.templates["mantine_light"]
     patched_fig = Patch()
     patched_fig["layout"]["template"] = template
     return patched_fig
@@ -52117,12 +52425,12 @@ component = dmc.Box([sample_controls, graphs])
 
 @callback(
     Output({"type": "graph", "index": ALL}, "figure"),
-    Input("docs-color-scheme-switch", "checked"),
+    Input("docs-color-scheme-switch", "computedColorScheme"),
     State({"type": "graph", "index": ALL}, "id"),
 )
-def update_figure(switch_on, ids):
+def update_figure(color, ids):
     # template must be template object rather than just the template string name
-    template = pio.templates["mantine_dark"] if switch_on else pio.templates["mantine_light"]
+    template = pio.templates["mantine_dark"] if color=="dark" else pio.templates["mantine_light"]
     patched_figures = []
     for i in ids:
         patched_fig = Patch()
@@ -52534,20 +52842,54 @@ When you pass theme override to MantineProvider, it will be deeply merged with t
 Examples of components to switch between light and dark modes  
 Category: Theming  
 
+### ColorSchemeToggle Component
+For apps using DMC versions ≥ 2.6, it is recommended to use the [ColorSchemeToggle](/components/colorschemetoggle)  component.
+It automatically switches between light and dark themes and persists the user’s selection in localStorage.
+
+Copy this app to run it locally. For a live demo, click the ColorSchemeToggle in the header of these docs.
+
+> The toggle handles theme switching internally and does not require a Dash callback.
+
+For more information, see the  [ColorSchemeToggle](/components/colorschemetoggle) documentation.
+
+```python
+import dash_mantine_components as dmc
+from dash import Dash
+from dash_iconify import DashIconify
+
+app = Dash()
+
+component = dmc.ColorSchemeToggle(
+    lightIcon=DashIconify(icon="radix-icons:sun", width=20),
+    darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+    color="yellow",
+    size="lg",
+    m="xl",
+)
+
+app.layout = dmc.MantineProvider(component)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+
+
 ### Mantine Light and dark themes
 
 Mantine sets the light and dark color schemes using the `data-mantine-color-scheme` attribute on the `<html>` element.
 This allows it to apply global styles dynamically based on the theme.
 
-To switch themes in a Dash app you can set the `data-mantine-color-scheme` in a clientside callback.
+If you are not using the `ColorSchemeToggle` component, you can switch themes by setting the `data-mantine-color-scheme` in a clientside callback.
 
 
-### Example 1 Theme Switch
+### Custom Theme Switch
 
 This example shows how to use the `Switch` component with icon labels to create a theme switch component.   The `Switch`
 is set with `persistence=True` to retain the selected theme even after a browser refresh.
 
-This is the theme switch used in these docs.  Click on the switch in the header to change themes.
+Use this approach if you are on DMC < 2.6.0 or want a custom control (such as `Switch`, `SegmentedControl`, or `Button` etc.) 
+instead of the `ActionIcon` used by `ColorSchemeToggle`.
 
 Here is a complete minimal example:
 
@@ -52586,60 +52928,6 @@ clientside_callback(
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-```
-
-
-### Example 2 Theme Toggle
-
-This example demonstrates how to toggle between light and dark modes using  `ActionIcon` as the theme switch component.
-To see this live, see the theme toggle component in the header of the [Mantine documention](https://mantine.dev/getting-started/).
-
-```python
-
-
-import dash_mantine_components as dmc
-from dash_iconify import DashIconify
-from dash import Dash, Input, Output, clientside_callback
-
-app=Dash()
-
-theme_toggle = dmc.ActionIcon(
-    [
-        dmc.Paper(DashIconify(icon="radix-icons:sun", width=25), darkHidden=True),
-        dmc.Paper(DashIconify(icon="radix-icons:moon", width=25), lightHidden=True),
-    ],
-    variant="transparent",
-    color="yellow",
-    id="color-scheme-toggle",
-    size="lg",
-)
-
-
-component=dmc.Group([
-    dmc.Text("Theme Switch Demo"),
-    theme_toggle
-])
-app.layout = dmc.MantineProvider(component)
-
-
-clientside_callback(
-    """
-    (n) => {
-        document.documentElement.setAttribute(
-            'data-mantine-color-scheme',
-            (n % 2) ? 'dark' : 'light'
-        );
-        return window.dash_clientside.no_update      
-    }
-    """,
-    Output("color-scheme-toggle", "id"),
-    Input("color-scheme-toggle", "n_clicks"),
-)
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
 
 ```
 
