@@ -125,7 +125,7 @@ def toggle_direction(n, d):
         return no_update
 
     new_dir = "ltr" if d == "rtl" else "rtl"
-    return f"tabler:text-direction-{d}", new_dir
+    return f"tabler:text-direction-{new_dir}", new_dir
 
 
 clientside_callback(
