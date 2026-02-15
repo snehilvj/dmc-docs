@@ -105,8 +105,8 @@ def create_search(data):
 
 
 theme_toggle =  dmc.ColorSchemeToggle(
-    lightIcon=DashIconify(icon="radix-icons:sun", width=20),
-    darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+    lightIcon=dmc.Tooltip(DashIconify(icon="radix-icons:sun", width=20),label="Switch to Dark Mode"),
+    darkIcon=dmc.Tooltip(DashIconify(icon="radix-icons:moon", width=20),label="Switch to Light Mode"),
     variant="light",
     color="gray",
     id="docs-color-scheme-switch",
@@ -115,7 +115,7 @@ theme_toggle =  dmc.ColorSchemeToggle(
 rtl_toggle = dmc.Tooltip(
     dmc.ActionIcon(
         DashIconify(
-            icon="tabler:text-direction-rtl",
+            icon="tabler:text-direction-ltr",
             width=20, id="rtl-icon"),
         id="rtl-toggle",
         variant="light",

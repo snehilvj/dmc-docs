@@ -71,7 +71,7 @@ def toggle_direction(n, d):
         raise PreventUpdate
 
     new_dir = "ltr" if d == "rtl" else "rtl"
-    return DashIconify(icon=f"tabler:text-direction-{d}", width=18), new_dir
+    return DashIconify(icon=f"tabler:text-direction-{new_dir}", width=18), new_dir
 
 
 if __name__ == "__main__":
