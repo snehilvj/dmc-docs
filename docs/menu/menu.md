@@ -19,7 +19,7 @@ used as a button, you can write callbacks on it.
 
 ### Submenus
 
-Note:  For callbacks to work on menu items in `SubMenu`, set `Menu(keepMounted=True)`
+Note: For callbacks on `SubMenu` items to work reliably, set `Menu(keepMounted=True)`.
 
 .. exec::docs.menu.submenus
     :code: false
