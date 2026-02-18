@@ -11,12 +11,15 @@ category: Overlay
 
 ### Simple Example
 
-Menu is built using MenuItem(s), MenuDropdown and MenuTarget. You can use MenuItem as either a link or a button. Just passing the `href` property will make it a link otherwise it will act as a button.
-When MenuItem is used as a button, you can write callbacks on it.
+`Menu` is built using `MenuItem`(s), `MenuDropdown` and `MenuTarget`. You can use `MenuItem` as either a link or a
+button. Just passing the `href` property will make it a link otherwise it will act as a button. When `MenuItem` is
+used as a button, you can write callbacks on it.
 
 .. exec::docs.menu.simple
 
 ### Submenus
+
+Note:  For callbacks to work on menu items in `SubMenu`, set `Menu(keepMounted=True)`
 
 .. exec::docs.menu.submenus
     :code: false
