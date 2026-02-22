@@ -5,6 +5,8 @@ print(dash.__version__, dmc.__version__)
 dash._dash_renderer._set_react_version("18.2.0")
 
 from components.appshell import create_appshell
+from llm.llms_routing import register_llm_middleware
+
 
 scripts = [
     "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js",
@@ -23,6 +25,8 @@ app = Dash(
     update_title='',
     prevent_initial_callbacks=True
 )
+
+register_llm_middleware(app)
 
 dmc.pre_render_color_scheme()
 
