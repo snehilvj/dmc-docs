@@ -5,6 +5,7 @@ import dash_mantine_components as dmc
 menu = dmc.Menu(
     width=200,
     position="bottom-start",
+    keepMounted=True, # required when using SubMenu
     children=[
         dmc.MenuTarget(
             dmc.Button("Toggle Menu")

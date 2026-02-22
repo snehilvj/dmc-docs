@@ -80,10 +80,6 @@ Dash 4 components inside this container will follow the Mantine color scheme and
 
 This example shows how a [dcc.Dropdown](https://dash.plotly.com/dash-core-components/dropdown) works well with other DMC inputs in grids or forms.
 
-The Dash 4 `dcc.Dropdown` supports virtualization, which renders only the visible options instead of the entire list.
-This improves performance and responsiveness when working with large data sets.  The dropdown menu also includes a built-in
-search input. 
-
 For MultiSelect (set `multi=True`) the menu also includes  Select all and Deselect all buttons. When multiple 
 items are selected, it displays a count of selected items, preventing the input from resizing as selections grow.
 

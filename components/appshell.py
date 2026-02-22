@@ -101,17 +101,17 @@ clientside_callback(
 )
 
 
-
-clientside_callback(
-    """
-    (switchOn) => {
-       document.documentElement.setAttribute('data-mantine-color-scheme', switchOn ? 'dark' : 'light');
-       return window.dash_clientside.no_update
-    }
-    """,
-    Output("docs-color-scheme-switch", "id"),
-    Input("docs-color-scheme-switch", "checked"),
-)
+#
+# clientside_callback(
+#     """
+#     (switchOn) => {
+#        document.documentElement.setAttribute('data-mantine-color-scheme', switchOn ? 'dark' : 'light');
+#        return window.dash_clientside.no_update
+#     }
+#     """,
+#     Output("docs-color-scheme-switch", "id"),
+#     Input("docs-color-scheme-switch", "checked"),
+# )
 
 
 @callback(
@@ -125,7 +125,7 @@ def toggle_direction(n, d):
         return no_update
 
     new_dir = "ltr" if d == "rtl" else "rtl"
-    return f"tabler:text-direction-{d}", new_dir
+    return f"tabler:text-direction-{new_dir}", new_dir
 
 
 clientside_callback(

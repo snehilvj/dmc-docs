@@ -22,12 +22,13 @@ app = Dash(
     suppress_callback_exceptions=True,
     use_pages=True,
     external_scripts=scripts,
-    update_title=None,
+    update_title='',
     prevent_initial_callbacks=True
 )
 
 register_llm_middleware(app)
 
+dmc.pre_render_color_scheme()
 
 @hooks.index()
 def update_index(app_index):

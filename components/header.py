@@ -104,20 +104,19 @@ def create_search(data):
     )
 
 
-theme_toggle = dmc.Switch(
-    offLabel=DashIconify(icon="radix-icons:sun", width=15, color= "var(--mantine-color-yellow-8)"),
-    onLabel=DashIconify(icon="radix-icons:moon", width=15, color="var(--mantine-color-yellow-6)"),
-    id="docs-color-scheme-switch",
-    persistence=True,
+theme_toggle =  dmc.ColorSchemeToggle(
+    lightIcon=dmc.Tooltip(DashIconify(icon="radix-icons:sun", width=20),label="Switch to Dark Mode"),
+    darkIcon=dmc.Tooltip(DashIconify(icon="radix-icons:moon", width=20),label="Switch to Light Mode"),
+    variant="light",
     color="gray",
-    size="md"
+    id="docs-color-scheme-switch",
 )
 
 rtl_toggle = dmc.Tooltip(
     dmc.ActionIcon(
         DashIconify(
-            icon="tabler:text-direction-rtl",
-            width=18, id="rtl-icon"),
+            icon="tabler:text-direction-ltr",
+            width=20, id="rtl-icon"),
         id="rtl-toggle",
         variant="light",
         color="gray",
@@ -150,7 +149,7 @@ def create_header(data):
                                         hiddenFrom="lg",
                                     ),
                                     dmc.Anchor(
-                                        "DMC", size="xl", href="/", underline=False
+                                        "DMC", size="xl", href="/", underline="never"
                                     ),
                                 ]
                             ),
@@ -173,7 +172,7 @@ def create_header(data):
                                         "bi:discord", "https://discord.gg/KuJkh4Pyq5"
                                     ),
                                     rtl_toggle,
-                                    theme_toggle,
+                                    theme_toggle
                                 ],
                             ),
                         ),

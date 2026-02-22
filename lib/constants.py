@@ -1,9 +1,9 @@
 import json
 import os
 
-DMC_VERSION = "2.5.0"
-MANTINE_VERSION = "8.3.13"
-LATEST_RELEASE_ENDPOINT = "/release-2-5-0"
+DMC_VERSION = "2.6.0"
+MANTINE_VERSION = "8.3.14"
+LATEST_RELEASE_ENDPOINT = "/release-2-6-0"
 
 
 PAGE_TITLE_PREFIX = "Dash Mantine Components | "
