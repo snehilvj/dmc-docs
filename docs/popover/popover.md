@@ -21,7 +21,10 @@ using the prop `boxWrapperProps` in dmc.PopoverTarget.
 
 ### Focus Trap
 
-If you need to use any interactive elements within Popover, set `trapFocus` prop:
+
+If you need to use any interactive elements within Popover, set `trapFocus` prop.
+
+Note: To preserve the state of interactive elements inside `PopoverDropdown` when the popover is closed and reopened, set `Popover(keepMounted=True)`.
 
 .. exec::docs.popover.focustrap
 

@@ -41,6 +41,7 @@ The `CodeHighlight` components supports syntax highlighting for the top 10 most 
 * `bash` / `sh`
 * `sql`
 * `markdown` / `md`
+* `plaintext`
 
 If you set `language="some-unsupported-lang"`, the code will render with no syntax highlighting.
 
