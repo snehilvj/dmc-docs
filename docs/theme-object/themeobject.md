@@ -253,6 +253,9 @@ Default props
 You can define default props for every Mantine component by setting `theme.components`. These props will be used by
 default by all components of your application unless they are overridden by component props.
 
+Note that Dash-specific props such as `persistence` and `debounce` are not supported in `theme.components` and must be
+set directly on each component.
+
 See a live demo of `defaultProps` in the [Mantine Docs](https://mantine.dev/theming/default-props/)
 
 

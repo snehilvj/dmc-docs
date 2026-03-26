@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.6.0**, which wraps **Mantine 8.3.14**.  
+> This documentation applies to **DMC 2.6.1**, which wraps **Mantine 8.3.17**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -13771,10 +13771,6 @@ Dash 4 components inside this container will follow the Mantine color scheme and
 ### Example 1: dcc.Dropdown
 
 This example shows how a [dcc.Dropdown](https://dash.plotly.com/dash-core-components/dropdown) works well with other DMC inputs in grids or forms.
-
-The Dash 4 `dcc.Dropdown` supports virtualization, which renders only the visible options instead of the entire list.
-This improves performance and responsiveness when working with large data sets.  The dropdown menu also includes a built-in
-search input. 
 
 For MultiSelect (set `multi=True`) the menu also includes  Select all and Deselect all buttons. When multiple 
 items are selected, it displays a count of selected items, preventing the input from resizing as selections grow.
@@ -44166,8 +44162,9 @@ Category: Overlay
 
 ### Simple Example
 
-Menu is built using MenuItem(s), MenuDropdown and MenuTarget. You can use MenuItem as either a link or a button. Just passing the `href` property will make it a link otherwise it will act as a button.
-When MenuItem is used as a button, you can write callbacks on it.
+`Menu` is built using `MenuItem`(s), `MenuDropdown` and `MenuTarget`. You can use `MenuItem` as either a link or a
+button. Just passing the `href` property will make it a link otherwise it will act as a button. When `MenuItem` is
+used as a button, you can write callbacks on it.
 
 ```python
 from dash_iconify import DashIconify
@@ -44203,6 +44200,8 @@ def click_menu(n_clicks):
 ```
 ### Submenus
 
+Note: For callbacks on `SubMenu` items to work reliably, set `Menu(keepMounted=True)`.
+
 ```python
 
 import dash_mantine_components as dmc
@@ -44211,6 +44210,7 @@ import dash_mantine_components as dmc
 menu = dmc.Menu(
     width=200,
     position="bottom-start",
+    keepMounted=True, # required when using SubMenu
     children=[
         dmc.MenuTarget(
             dmc.Button("Toggle Menu")
@@ -45487,7 +45487,10 @@ using the prop `boxWrapperProps` in dmc.PopoverTarget.
 
 ### Focus Trap
 
-If you need to use any interactive elements within Popover, set `trapFocus` prop:
+
+If you need to use any interactive elements within Popover, set `trapFocus` prop.
+
+Note: To preserve the state of interactive elements inside `PopoverDropdown` when the popover is closed and reopened, set `Popover(keepMounted=True)`.
 
 ```python
 import dash_mantine_components as dmc
@@ -46480,6 +46483,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
+| **2.6.1**               | Feb 2026     | 8.3.17          | `dash>=2.0.0` |
 | **2.6.0**               | Feb 2026     | 8.3.14          | `dash>=2.0.0` |
 | **2.5.0**               | Jan 2026     | 8.3.13          | `dash>=2.0.0` |
 | **2.4.1**               | Dec 2025     | 8.3.10          | `dash>=2.0.0` |
@@ -47695,6 +47699,7 @@ import dash_mantine_components as dmc
 menu = dmc.Menu(
     width=200,
     position="bottom-start",
+    keepMounted=True, # required when using SubMenu
     children=[
         dmc.MenuTarget(
             dmc.Button("Toggle Menu")
@@ -49535,6 +49540,14 @@ Based on Mantine 8.3.14
 See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.6.0)  
 
 
+### Version 2.6.1
+
+March 26, 2026  
+
+Based on Mantine 8.3.17
+
+See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.6.1)  
+
 
 ### New ColorSchemeToggle Component
 
@@ -51019,7 +51032,7 @@ def toggle_direction(n, d):
         raise PreventUpdate
 
     new_dir = "ltr" if d == "rtl" else "rtl"
-    return DashIconify(icon=f"tabler:text-direction-{d}", width=18), new_dir
+    return DashIconify(icon=f"tabler:text-direction-{new_dir}", width=18), new_dir
 
 
 if __name__ == "__main__":
@@ -52705,6 +52718,9 @@ Default props
 You can define default props for every Mantine component by setting `theme.components`. These props will be used by
 default by all components of your application unless they are overridden by component props.
 
+Note that Dash-specific props such as `persistence` and `debounce` are not supported in `theme.components` and must be
+set directly on each component.
+
 See a live demo of `defaultProps` in the [Mantine Docs](https://mantine.dev/theming/default-props/)
 
 
@@ -53452,6 +53468,7 @@ The `CodeHighlight` components supports syntax highlighting for the top 10 most 
 * `bash` / `sh`
 * `sql`
 * `markdown` / `md`
+* `plaintext`
 
 If you set `language="some-unsupported-lang"`, the code will render with no syntax highlighting.
 
