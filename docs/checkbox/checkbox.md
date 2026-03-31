@@ -188,7 +188,7 @@ This example also shows how to add hover styles
 
 .. styles_api_text::
 
-> Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://mantine.dev/core/checkbox/#styles-api)
+> Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://v8.mantine.dev/core/checkbox/#styles-api)
 > lets you hover over selectors to see which elements they correspond to.
 
 #### Checkbox Selectors

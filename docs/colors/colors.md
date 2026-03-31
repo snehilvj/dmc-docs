@@ -30,7 +30,7 @@ When using the `color` or other style props like `c`, `bd` or `bg` prop, you can
 ### Colors as CSS Variables
 
 Mantine also exposes colors as CSS variables. A complete list of Mantine CSS variables is available in the 
-[Mantine Docs](https://mantine.dev/styles/css-variables-list/).
+[Mantine Docs](https://v8.mantine.dev/styles/css-variables-list/).
 
 If you define custom colors in the `theme` object (via the `MantineProvider` component), these will also be included as
 CSS variables.
@@ -99,7 +99,7 @@ dmc.MantineProvider(
 >
 > Colors override must include at least 10 shades per color. Otherwise, you will get a TypeScript error and some 
 > variants will not have proper colors. If you only have one color value, you can either pick the remaining colors 
-> manually or use the [colors generator tool](https://mantine.dev/colors-generator/).
+> manually or use the [colors generator tool](https://v8.mantine.dev/colors-generator/).
 > 
 > You can add more than 10 shades per color: these values will not be used by Mantine components with the default 
 > colors resolver, but you can still reference them by index, for example, color="blue.11".

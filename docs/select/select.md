@@ -13,7 +13,7 @@ category: Combobox
 
 ### Made with Combobox
 
-`Select` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`Select` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `Select` component. See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 

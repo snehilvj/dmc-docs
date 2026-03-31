@@ -76,7 +76,7 @@ dmc.Tooltip(
 
 To control `offset` on both axis, pass dictionary with `mainAxis` and `crossAxis` properties:
 
-For an interactive demo see the [Mantine docs](https://mantine.dev/core/tooltip/#offset)
+For an interactive demo see the [Mantine docs](https://v8.mantine.dev/core/tooltip/#offset)
 
 ```python
 import dash_mantine_components as dmc

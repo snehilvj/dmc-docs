@@ -19,6 +19,6 @@ not work as expected.
 
 DMC now exports `MantineHooks` and `MantineCore`, allowing custom components to use the same Mantine hooks, utilities,
 and context as the built-in components. This enables a wide range of custom components, such as building advanced `Select`
-or `MultiSelect` on top of Mantine’s [Combobox](https://mantine.dev/core/combobox/), while keeping theme and behavior consistent inside a Dash app.
+or `MultiSelect` on top of Mantine’s [Combobox](https://v8.mantine.dev/core/combobox/), while keeping theme and behavior consistent inside a Dash app.
 
 For examples and step-by-step instructions, see the custom DMC components in this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).

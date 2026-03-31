@@ -171,7 +171,7 @@ in clientside callbacks using:
 dash_mantine_components.appNotifications
 ```
 
-You can use the the full [Mantine notifications API](https://mantine.dev/x/notifications/):
+You can use the the full [Mantine notifications API](https://v8.mantine.dev/x/notifications/):
 
 - Show: `appNotifications.api.show({...})`
 

@@ -12,7 +12,7 @@ category: Combobox
 
 ### Made with Combobox
 
-`TagsInput` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`TagsInput` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `TagsInput` component.  See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 
@@ -283,7 +283,7 @@ Set `disabled` to disable the input. When `disabled` is set, user cannot interac
 
 .. styles_api_text::
 
-Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/core/tags-input/#styles-api) for help in identifying each selector.
+Refer to the Mantine TagsInput Style API [interactive demo](https://v8.mantine.dev/core/tags-input/#styles-api) for help in identifying each selector.
 
 
 | Name        | Static selector                | Description                                      |

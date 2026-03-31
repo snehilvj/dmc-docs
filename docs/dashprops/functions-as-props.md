@@ -13,7 +13,7 @@ category: Dash
 
 ### How Function Props Work
 
-In JavaScript libraries like [Mantine](https://mantine.dev), some component props accept functions — for example, to
+In JavaScript libraries like [Mantine](https://v8.mantine.dev), some component props accept functions — for example, to
 dynamically format a value, render custom content, or control behavior. Here is an example of formating the label of the `Slider`
 
 **In Mantine**
@@ -72,7 +72,7 @@ Here are some examples:
 For a full list of supported function props in Dash Mantine Components, see the table at the bottom of this page.
 
 Each function must match the structure expected by Mantine. To learn what arguments each one receives — and how they’re
-used — refer to the [Mantine documentation](https://mantine.dev). You’ll also find complete working examples in the relevant sections of the DMC docs.
+used — refer to the [Mantine documentation](https://v8.mantine.dev). You’ll also find complete working examples in the relevant sections of the DMC docs.
 
 
 

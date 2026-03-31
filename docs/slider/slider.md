@@ -165,7 +165,7 @@ the `dcc.Slider` with a Mantine theme see the   [Dash 4 components](/dash4-compo
 The `Slider` component can be fully customized using Mantine's Styles API. Each element of the `Slider` - from the
 thumb to the track markers - has its own unique selector that can be styled independently.
 
-Try the [interactive example](https://mantine.dev/core/slider/#styles-api) in the upstream Mantine documentation to see
+Try the [interactive example](https://v8.mantine.dev/core/slider/#styles-api) in the upstream Mantine documentation to see
 how these selectors correspond to different parts of the Slider component. Below, you'll find a comprehensive reference
 of all available selectors, CSS variables, and data attributes.
 

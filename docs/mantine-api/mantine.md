@@ -196,7 +196,7 @@ See more information in the [StylesAPI](/styles-api) section.
 ### Colors
 
 Colors are stored in `theme['colors']` dict and are exposed as CSS variables. Each color must have at least 10 shades.
-You can generate new colors based on a single color value with the [Mantine colors generator](https://mantine.dev/colors-generator/).
+You can generate new colors based on a single color value with the [Mantine colors generator](https://v8.mantine.dev/colors-generator/).
 
 Colors are numbered from 0 to 9 where 0 is the lightest and 9 is the darkest color. Example of blue color from the default theme:
 
