@@ -22,7 +22,7 @@ You can set the style of the `TableOfContents` items (controls) with the `varian
 
 ### Selector
 
-`TableOfContents` is based on Mantine’s [`use-scroll-spy`](https://mantine.dev/hooks/use-scroll-spy/) hook. The `selector`
+`TableOfContents` is based on Mantine’s [`use-scroll-spy`](https://v8.mantine.dev/hooks/use-scroll-spy/) hook. The `selector`
 prop is passed directly to this hook.
 
 The `selector` prop is a CSS selector string used to locate and observe heading elements in the DOM.

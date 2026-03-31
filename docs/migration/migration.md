@@ -36,7 +36,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 ### Migrating from 1.2.0 to 2.x
 
-DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://mantine.dev/changelog/8-0-0/)
+DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://v8.mantine.dev/changelog/8-0-0/)
 and the [DMC 2.0.0 Release announcement.]( /release-2-0-0)
 
 Starting with DMC v2.3.0,` RichTextEditor` uses Tiptap v3. There are no known breaking changes, but projects with
@@ -188,7 +188,7 @@ Please see the [Notification Migration Guide](/migration-notifications) for a st
 `reuseTargetNode` prop of `Portal` component is now enabled by default. This option improves performance by reusing the
 target node between portal renders, but in some edge cases, it might cause issues with z-index stacking context.
 
-For more information see the [Mantine Portal documentation.](https://mantine.dev/core/portal/)
+For more information see the [Mantine Portal documentation.](https://v8.mantine.dev/core/portal/)
 
 If you experience issues with z-index, change `reuseTargetNode` prop to `False` in `theme`:
 
@@ -286,7 +286,7 @@ dash._dash_renderer._set_react_version("18.2.0")
 ### Migrating from 0.14 to 0.15
 
 The `DatePicker` component has been renamed to `DatePickerInput` to align with the component names of  the upstream
-Mantine Library.  We plan to add the Mantine [`DatePicker`](https://mantine.dev/dates/date-picker/) component in a future release.
+Mantine Library.  We plan to add the Mantine [`DatePicker`](https://v8.mantine.dev/dates/date-picker/) component in a future release.
 
 We still expect far fewer breaking changes going forward compared to what you may have experienced in the past. For more details, please see our [Roadmap](https://github.com/snehilvj/dash-mantine-components/discussions/377).
 
@@ -299,7 +299,7 @@ There are many breaking changes going from DMC `v0.12` to DMC `v0.14`. The major
 underlying Mantine `v5` to Mantine `v7` and DMC tries to be as aligned with Mantine as possible. 
 
 It's helpful to also refer to the upstream docs as well for a description of breaking changes:
-  - [Mantine V7.0](https://mantine.dev/changelog/7-0-0/)
+  - [Mantine V7.0](https://v8.mantine.dev/changelog/7-0-0/)
   - [Mantine V6.0](https://v6.mantine.dev/changelog/6-0-0/)
 
 This hard alignment ensures that I can continue developing and maintaining this library alongside my day job. However, 

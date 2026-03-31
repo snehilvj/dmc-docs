@@ -65,7 +65,7 @@ hover_card = dmc.Stack([
                     dmc.Avatar(src="https://avatars.githubusercontent.com/u/79146003?s=200&v=4", radius="xl"),
                     dmc.Stack([
                         dmc.Text("Mantine", size="sm", fw=700, lh=1, c="bright"),
-                        dmc.Anchor("documentation", href="https://mantine.dev/", size="xs", c="dimmed", lh=1)
+                        dmc.Anchor("documentation", href="https://v8.mantine.dev/", size="xs", c="dimmed", lh=1)
                     ], gap=5)
                 ], style={"width": "max-content"}), withBorder=True),
             ),
@@ -74,7 +74,7 @@ hover_card = dmc.Stack([
                     dmc.Avatar(src="https://avatars.githubusercontent.com/u/79146003?s=200&v=4", radius="xl"),
                     dmc.Stack([
                         dmc.Text("Mantine", size="sm", fw=700, lh=1, c="bright"),
-                        dmc.Anchor("documentation", href="https://mantine.dev/", size="xs", c="dimmed", lh=1)
+                        dmc.Anchor("documentation", href="https://v8.mantine.dev/", size="xs", c="dimmed", lh=1)
                     ], gap=5)
                 ]),
                 dmc.Text("DMC is based on the React Mantine components and hooks library with focus on usability, accessibility and developer experience", size="sm", mt="md"),

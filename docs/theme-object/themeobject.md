@@ -131,7 +131,7 @@ See more information and examples in [Responsive Styles](/responsive-styles) sec
 `luminanceThreshold` controls which luminance value is used to determine if text color should be light or dark. It is 
 used only if `theme.autoContrast` is set to `True`. Default value is 0.3.
 
-See a live demo of `luminanceThreshold` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#luminancethreshold)
+See a live demo of `luminanceThreshold` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#luminancethreshold)
 
 ```python
 dmc.MantineProvider(
@@ -153,7 +153,7 @@ dmc.MantineProvider(
 - 'never' – focus ring is always hidden, it is not recommended – users who navigate with keyboard will not have visual indication of the current focused element
 
 
-See a live demo of `focusRing` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#focusring)
+See a live demo of `focusRing` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#focusring)
 
 #### focusClassName
 
@@ -161,7 +161,7 @@ See a live demo of `focusRing` in the [Mantine Docs](https://mantine.dev/theming
 `ActionIcon`. It can be used to customize focus ring styles of all interactive components except inputs. Note that when
 `theme.focusClassName` is set, `theme.focusRing` is ignored.
 
-See a live demo of `focusClassName` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#focusclassname)
+See a live demo of `focusClassName` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#focusclassname)
 
 ```python
 dmc.MantineProvider(
@@ -189,17 +189,17 @@ Define the class in the `.css` file in `/assets` folder
 To disable active styles for all components, set `theme.activeClassName` to an empty string.
 
 
-See a live demo of `activeClassName` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#activeclassname)
+See a live demo of `activeClassName` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#activeclassname)
 
 #### defaultRadius 
 
 `theme.defaultRadius` controls the default border-radius property in most components, for example, `Button` or `TextInput`.
 You can set to either one of the values from `theme.radius` or a number/string to use exact value. Note that numbers are
 treated as pixels, but converted to rem. For example, `{'defaultRadius': 4}` will be converted to 0.25rem. You can learn
-more about rem conversion in the [rem units guide](https://mantine.dev/styles/rem/).
+more about rem conversion in the [rem units guide](https://v8.mantine.dev/styles/rem/).
 
 
-See a live demo of `defaultRadius` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#defaultradius)
+See a live demo of `defaultRadius` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#defaultradius)
 
 ```python
 
@@ -217,7 +217,7 @@ dmc.MantineProvider(
 by default. For example, `Checkbox`.
 
 
-See a live demo of `cursorType` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#cursortype)
+See a live demo of `cursorType` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#cursortype)
 
 
 ```python
@@ -232,7 +232,7 @@ dmc.MantineProvider(
 (Button, ActionIcon, Badge, etc.).
 
 
-See a live demo of `defaultGradient` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#defaultgradient)
+See a live demo of `defaultGradient` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#defaultgradient)
 
 ```python
 dmc.MantineProvider(
@@ -256,7 +256,7 @@ default by all components of your application unless they are overridden by comp
 Note that Dash-specific props such as `persistence` and `debounce` are not supported in `theme.components` and must be
 set directly on each component.
 
-See a live demo of `defaultProps` in the [Mantine Docs](https://mantine.dev/theming/default-props/)
+See a live demo of `defaultProps` in the [Mantine Docs](https://v8.mantine.dev/theming/default-props/)
 
 
 ```python

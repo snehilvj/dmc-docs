@@ -12,7 +12,7 @@ dmc: false
 Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (~1.6MB)
 
 * [View DMC llms.txt online](https://www.dash-mantine-components.com/assets/llms.txt)
-* [View Mantine llms.txt online](https://mantine.dev/llms.txt) (upstream Mantine documentation)
+* [View Mantine llms.txt online](https://v8.mantine.dev/llms.txt) (upstream Mantine documentation)
 
 
 ### Customized llms.txt

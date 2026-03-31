@@ -44,10 +44,10 @@ intro = f"""
 # Dash Mantine Components Documentation  
 
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
-> It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
+> It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://v8.mantine.dev/) React library.
 >
 > This documentation applies to **DMC {DMC_VERSION}**, which wraps **Mantine {MANTINE_VERSION}**.  
-> For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
+> For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://v8.mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
 > Assume the reader is a Dash developer familiar with callbacks and layout, but not necessarily with Mantine.

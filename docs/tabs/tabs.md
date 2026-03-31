@@ -222,7 +222,7 @@ Put the following in a `.css` file in the `/assets` folder
 
 .. styles_api_text::
 
-Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
+Refer to the Mantine Tabs Style API [interactive demo](https://v8.mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
 
 #### Tabs Selectors
 
