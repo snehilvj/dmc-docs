@@ -2,10 +2,10 @@
 # Dash Mantine Components Documentation  
 
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
-> It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://mantine.dev/) React library.
+> It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://v8.mantine.dev/) React library.
 >
 > This documentation applies to **DMC 2.6.1**, which wraps **Mantine 8.3.17**.  
-> For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://mantine.dev/
+> For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://v8.mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
 > Assume the reader is a Dash developer familiar with callbacks and layout, but not necessarily with Mantine.
@@ -51,6 +51,9 @@ if __name__ == "__main__":
 
 ### Important Notes 
 
+#### Version information
+
+Dash Mantine Components v2 is based on [Mantine v8](https://v8.mantine.dev/). Do not use Mantine v9 docs for API reference.
 
 #### Wrap the layout with `MantineProvider`
 
@@ -158,7 +161,7 @@ Category: General
 Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (~1.6MB)
 
 * [View DMC llms.txt online](https://www.dash-mantine-components.com/assets/llms.txt)
-* [View Mantine llms.txt online](https://mantine.dev/llms.txt) (upstream Mantine documentation)
+* [View Mantine llms.txt online](https://v8.mantine.dev/llms.txt) (upstream Mantine documentation)
 
 
 ### Customized llms.txt
@@ -424,7 +427,7 @@ See more information in the [StylesAPI](/styles-api) section.
 ### Colors
 
 Colors are stored in `theme['colors']` dict and are exposed as CSS variables. Each color must have at least 10 shades.
-You can generate new colors based on a single color value with the [Mantine colors generator](https://mantine.dev/colors-generator/).
+You can generate new colors based on a single color value with the [Mantine colors generator](https://v8.mantine.dev/colors-generator/).
 
 Colors are numbered from 0 to 9 where 0 is the lightest and 9 is the darkest color. Example of blue color from the default theme:
 
@@ -9726,7 +9729,7 @@ the suggestions, user can type anything. If you need a searchable select, use `S
 
 ### Made with Combobox
 
-`Autocomplete` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`Autocomplete` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `Autocomplete` component.  See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 ### Simple Example
@@ -10598,7 +10601,7 @@ Category: Combobox
 
 ### Made with Combobox
 
-`MultiSelect` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`MultiSelect` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `MultiSelect` component. See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 
@@ -11690,7 +11693,7 @@ Category: Combobox
 
 ### Made with Combobox
 
-`Select` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`Select` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `Select` component. See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 
@@ -12700,7 +12703,7 @@ Category: Combobox
 
 ### Made with Combobox
 
-`TagsInput` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`TagsInput` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `TagsInput` component.  See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 
@@ -13391,7 +13394,7 @@ component = dmc.TagsInput(
 This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
 
 
-Refer to the Mantine TagsInput Style API [interactive demo](https://mantine.dev/core/tags-input/#styles-api) for help in identifying each selector.
+Refer to the Mantine TagsInput Style API [interactive demo](https://v8.mantine.dev/core/tags-input/#styles-api) for help in identifying each selector.
 
 
 | Name        | Static selector                | Description                                      |
@@ -13692,7 +13695,7 @@ not work as expected.
 
 DMC now exports `MantineHooks` and `MantineCore`, allowing custom components to use the same Mantine hooks, utilities,
 and context as the built-in components. This enables a wide range of custom components, such as building advanced `Select`
-or `MultiSelect` on top of Mantine’s [Combobox](https://mantine.dev/core/combobox/), while keeping theme and behavior consistent inside a Dash app.
+or `MultiSelect` on top of Mantine’s [Combobox](https://v8.mantine.dev/core/combobox/), while keeping theme and behavior consistent inside a Dash app.
 
 For examples and step-by-step instructions, see the custom DMC components in this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).
 
@@ -14831,7 +14834,7 @@ Category: Dash
 
 ### How Function Props Work
 
-In JavaScript libraries like [Mantine](https://mantine.dev), some component props accept functions — for example, to
+In JavaScript libraries like [Mantine](https://v8.mantine.dev), some component props accept functions — for example, to
 dynamically format a value, render custom content, or control behavior. Here is an example of formating the label of the `Slider`
 
 **In Mantine**
@@ -14896,7 +14899,7 @@ Here are some examples:
 For a full list of supported function props in Dash Mantine Components, see the table at the bottom of this page.
 
 Each function must match the structure expected by Mantine. To learn what arguments each one receives — and how they’re
-used — refer to the [Mantine documentation](https://mantine.dev). You’ll also find complete working examples in the relevant sections of the DMC docs.
+used — refer to the [Mantine documentation](https://v8.mantine.dev). You’ll also find complete working examples in the relevant sections of the DMC docs.
 
 
 
@@ -25498,7 +25501,7 @@ in clientside callbacks using:
 dash_mantine_components.appNotifications
 ```
 
-You can use the the full [Mantine notifications API](https://mantine.dev/x/notifications/):
+You can use the the full [Mantine notifications API](https://v8.mantine.dev/x/notifications/):
 
 - Show: `appNotifications.api.show({...})`
 
@@ -27414,7 +27417,7 @@ component =  dmc.Checkbox(
 This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
 
 
-> Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://mantine.dev/core/checkbox/#styles-api)
+> Check the Mantine documentation to explore the available selectors.  The [interactive demo](https://v8.mantine.dev/core/checkbox/#styles-api)
 > lets you hover over selectors to see which elements they correspond to.
 
 #### Checkbox Selectors
@@ -33033,20 +33036,21 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 #### RichTextEditor Selectors
 
-| Selector                         | Static Selector                                         | Description |
-|----------------------------------|------------------------------------------------------|-------------|
-| `root`                           | `.mantine-RichTextEditor-root`                        | Root element |
-| `toolbar`                        | `.mantine-RichTextEditor-toolbar`                     | Toolbar element |
-| `content`                        | `.mantine-RichTextEditor-content`                     | Content area |
-| `typographyStylesProvider`       | `.mantine-RichTextEditor-typographyStylesProvider`    | TypographyStylesProvider component, wraps content |
-| `control`                        | `.mantine-RichTextEditor-control`                     | `RichTextEditor.Control` root element, used as a base for all controls |
-| `controlIcon`                    | `.mantine-RichTextEditor-controlIcon`                 | Control icon element |
-| `controlsGroup`                  | `.mantine-RichTextEditor-controlsGroup`               | `RichTextEditor.ControlsGroup` component root |
-| `linkEditor`                     | `.mantine-RichTextEditor-linkEditor`                  | Link editor root element |
-| `linkEditorSave`                 | `.mantine-RichTextEditor-linkEditorSave`              | Link editor save button |
-| `linkEditorInput`                | `.mantine-RichTextEditor-linkEditorInput`             | Link editor URL input |
-| `linkEditorExternalControl`      | `.mantine-RichTextEditor-linkEditorExternalControl`   | Link editor external button |
-| `linkEditorDropdown`             | `.mantine-RichTextEditor-linkEditorDropdown`          | Link editor popover dropdown element |
+| Selector                    | Static Selector                       | Description                                                      |
+|-----------------------------|---------------------------------------|------------------------------------------------------------------|
+| `root`                      | `.mantine-RichTextEditor-root`        | Root element                                                     |
+| `toolbar`                   | `.mantine-RichTextEditor-toolbar`     | Toolbar element                                                  |
+| `content`                   | `.mantine-RichTextEditor-content`     | Content area                                                     |
+| `typographyStylesProvider`  | `.mantine-RichTextEditor-typographyStylesProvider` | (Deprecated, use Typography) TypographyStylesProvider component, wraps content |
+| `Typography`                | `.mantine-RichTextEditor-Typography`  | Typography component, wraps content                              |
+| `control`                   | `.mantine-RichTextEditor-control`     | `RichTextEditor.Control` root element, used as a base for all controls |
+| `controlIcon`               | `.mantine-RichTextEditor-controlIcon` | Control icon element                                             |
+| `controlsGroup`             | `.mantine-RichTextEditor-controlsGroup` | `RichTextEditor.ControlsGroup` component root                    |
+| `linkEditor`                | `.mantine-RichTextEditor-linkEditor`  | Link editor root element                                         |
+| `linkEditorSave`            | `.mantine-RichTextEditor-linkEditorSave` | Link editor save button                                          |
+| `linkEditorInput`           | `.mantine-RichTextEditor-linkEditorInput` | Link editor URL input                                            |
+| `linkEditorExternalControl` | `.mantine-RichTextEditor-linkEditorExternalControl` | Link editor external button                                      |
+| `linkEditorDropdown`        | `.mantine-RichTextEditor-linkEditorDropdown` | Link editor popover dropdown element                             |
 
 #### RichTextEditor Data Attributes
 
@@ -33959,7 +33963,7 @@ the `dcc.Slider` with a Mantine theme see the   [Dash 4 components](/dash4-compo
 The `Slider` component can be fully customized using Mantine's Styles API. Each element of the `Slider` - from the
 thumb to the track markers - has its own unique selector that can be styled independently.
 
-Try the [interactive example](https://mantine.dev/core/slider/#styles-api) in the upstream Mantine documentation to see
+Try the [interactive example](https://v8.mantine.dev/core/slider/#styles-api) in the upstream Mantine documentation to see
 how these selectors correspond to different parts of the Slider component. Below, you'll find a comprehensive reference
 of all available selectors, CSS variables, and data attributes.
 
@@ -36892,7 +36896,7 @@ component = dmc.Center(
     style={"height": 200, "width": "100%"},
     children=[
         dmc.Badge("Free", style={"marginRight": 5}),
-        dmc.Anchor("Click now!", href="https://mantine.dev/"),
+        dmc.Anchor("Click now!", href="https://v8.mantine.dev/"),
     ],
 )
 ```
@@ -36906,7 +36910,7 @@ from dash_iconify import DashIconify
 
 component = dmc.Box(
     dmc.Anchor(
-        href="https://mantine.dev",
+        href="https://v8.mantine.dev",
         target="_blank",
         children=dmc.Center(
             [
@@ -41134,7 +41138,7 @@ You can set the style of the `TableOfContents` items (controls) with the `varian
 
 ### Selector
 
-`TableOfContents` is based on Mantine’s [`use-scroll-spy`](https://mantine.dev/hooks/use-scroll-spy/) hook. The `selector`
+`TableOfContents` is based on Mantine’s [`use-scroll-spy`](https://v8.mantine.dev/hooks/use-scroll-spy/) hook. The `selector`
 prop is passed directly to this hook.
 
 The `selector` prop is a CSS selector string used to locate and observe heading elements in the DOM.
@@ -42038,7 +42042,7 @@ Put the following in a `.css` file in the `/assets` folder
 This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
 
 
-Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
+Refer to the Mantine Tabs Style API [interactive demo](https://v8.mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
 
 #### Tabs Selectors
 
@@ -45972,7 +45976,7 @@ dmc.Tooltip(
 
 To control `offset` on both axis, pass dictionary with `mainAxis` and `crossAxis` properties:
 
-For an interactive demo see the [Mantine docs](https://mantine.dev/core/tooltip/#offset)
+For an interactive demo see the [Mantine docs](https://v8.mantine.dev/core/tooltip/#offset)
 
 ```python
 import dash_mantine_components as dmc
@@ -46505,7 +46509,7 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 ### Migrating from 1.2.0 to 2.x
 
-DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://mantine.dev/changelog/8-0-0/)
+DMC V2 is based on Mantine V8.  For more information see the [Mantine 8 Changelog.](https://v8.mantine.dev/changelog/8-0-0/)
 and the [DMC 2.0.0 Release announcement.]( /release-2-0-0)
 
 Starting with DMC v2.3.0,` RichTextEditor` uses Tiptap v3. There are no known breaking changes, but projects with
@@ -46657,7 +46661,7 @@ Please see the [Notification Migration Guide](/migration-notifications) for a st
 `reuseTargetNode` prop of `Portal` component is now enabled by default. This option improves performance by reusing the
 target node between portal renders, but in some edge cases, it might cause issues with z-index stacking context.
 
-For more information see the [Mantine Portal documentation.](https://mantine.dev/core/portal/)
+For more information see the [Mantine Portal documentation.](https://v8.mantine.dev/core/portal/)
 
 If you experience issues with z-index, change `reuseTargetNode` prop to `False` in `theme`:
 
@@ -46755,7 +46759,7 @@ dash._dash_renderer._set_react_version("18.2.0")
 ### Migrating from 0.14 to 0.15
 
 The `DatePicker` component has been renamed to `DatePickerInput` to align with the component names of  the upstream
-Mantine Library.  We plan to add the Mantine [`DatePicker`](https://mantine.dev/dates/date-picker/) component in a future release.
+Mantine Library.  We plan to add the Mantine [`DatePicker`](https://v8.mantine.dev/dates/date-picker/) component in a future release.
 
 We still expect far fewer breaking changes going forward compared to what you may have experienced in the past. For more details, please see our [Roadmap](https://github.com/snehilvj/dash-mantine-components/discussions/377).
 
@@ -46768,7 +46772,7 @@ There are many breaking changes going from DMC `v0.12` to DMC `v0.14`. The major
 underlying Mantine `v5` to Mantine `v7` and DMC tries to be as aligned with Mantine as possible. 
 
 It's helpful to also refer to the upstream docs as well for a description of breaking changes:
-  - [Mantine V7.0](https://mantine.dev/changelog/7-0-0/)
+  - [Mantine V7.0](https://v8.mantine.dev/changelog/7-0-0/)
   - [Mantine V6.0](https://v6.mantine.dev/changelog/6-0-0/)
 
 This hard alignment ensures that I can continue developing and maintaining this library alongside my day job. However, 
@@ -47489,7 +47493,7 @@ Released Jun 3, 2025
 
 ### Migration Guide
 
-This version is built on [Mantine 8](https://mantine.dev/changelog/8-0-0/), so there are some breaking changes, but as promised, far fewer than in previous
+This version is built on [Mantine 8](https://v8.mantine.dev/changelog/8-0-0/), so there are some breaking changes, but as promised, far fewer than in previous
 major releases.  See our [Migration Guide](/migration) for step-by-step instructions for updating your apps.
 
 ### What's New
@@ -47959,7 +47963,7 @@ Switch component styles were updated to include indicator inside the thumb. You 
 ### Other changes
 - [CodeHighlight](/components/code-highlight) - To reduce the bundle size only the top 10 languages are supported.  If you would like to include other, please open an issue on our GitHub
 - DatesProvider timezone -DatesProvider component no longer supports timezone option – all Mantine dates components now use strings in YYYY-MM-DD HH:mm:ss format as values and do not contain timezone information.
-- See the [Mantine Changelog](https://mantine.dev/changelog/8-0-0/#other-changes) for other changes.
+- See the [Mantine Changelog](https://v8.mantine.dev/changelog/8-0-0/#other-changes) for other changes.
 
 ---
 
@@ -48003,7 +48007,7 @@ Released July 1, 2025
 * Function support expanded across more components and props
 * Custom rendering options for calendar and tree views
 * UI refinements and new props across the board
-* Based on [Mantine 8.1.2](https://mantine.dev/changelog/8-1-0/)
+* Based on [Mantine 8.1.2](https://v8.mantine.dev/changelog/8-1-0/)
 
 
 ### New ModalStack and DrawerStack components
@@ -48401,10 +48405,10 @@ component = dmc.Autocomplete(
 ```
 ### Other Changes
 
-See the [Mantine Changelog](https://mantine.dev/changelog/8-1-0/#other-changes) for more.
+See the [Mantine Changelog](https://v8.mantine.dev/changelog/8-1-0/#other-changes) for more.
 
-* [`presets` for DatePicker](https://mantine.dev/changelog/8-1-0/#datepicker-presets): Adds predefined date ranges next to the calendar
-* [Popover behavior improvements](https://mantine.dev/changelog/8-1-0/#popover-middlewares-improvements): More consistent dropdown positioning with dynamic content
+* [`presets` for DatePicker](https://v8.mantine.dev/changelog/8-1-0/#datepicker-presets): Adds predefined date ranges next to the calendar
+* [Popover behavior improvements](https://v8.mantine.dev/changelog/8-1-0/#popover-middlewares-improvements): More consistent dropdown positioning with dynamic content
 * All components now support the `bdrs` style prop for border radius
 * `Tooltip` now supports the `autoContrast` prop for improved legibility
 
@@ -49447,7 +49451,7 @@ not work as expected.
 
 DMC now exports `MantineHooks` and `MantineCore`, allowing custom components to use the same Mantine hooks, utilities,
 and context as the built-in components. This enables a wide range of custom components, such as building advanced `Select`
-or `MultiSelect` on top of Mantine’s [Combobox](https://mantine.dev/core/combobox/), while keeping theme and behavior consistent inside a Dash app.
+or `MultiSelect` on top of Mantine’s [Combobox](https://v8.mantine.dev/core/combobox/), while keeping theme and behavior consistent inside a Dash app.
 
 For examples and step-by-step instructions, see the custom DMC components in this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components).
 
@@ -49544,7 +49548,7 @@ See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag
 
 March 26, 2026  
 
-Based on Mantine 8.3.17
+Based on Mantine 8.3.17  (Last Mantine v8.x release before v9)
 
 See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.6.1)  
 
@@ -51687,7 +51691,7 @@ component = dmc.Group([
 ### Colors as CSS Variables
 
 Mantine also exposes colors as CSS variables. A complete list of Mantine CSS variables is available in the 
-[Mantine Docs](https://mantine.dev/styles/css-variables-list/).
+[Mantine Docs](https://v8.mantine.dev/styles/css-variables-list/).
 
 If you define custom colors in the `theme` object (via the `MantineProvider` component), these will also be included as
 CSS variables.
@@ -51753,7 +51757,7 @@ dmc.MantineProvider(
 >
 > Colors override must include at least 10 shades per color. Otherwise, you will get a TypeScript error and some 
 > variants will not have proper colors. If you only have one color value, you can either pick the remaining colors 
-> manually or use the [colors generator tool](https://mantine.dev/colors-generator/).
+> manually or use the [colors generator tool](https://v8.mantine.dev/colors-generator/).
 > 
 > You can add more than 10 shades per color: these values will not be used by Mantine components with the default 
 > colors resolver, but you can still reference them by index, for example, color="blue.11".
@@ -52596,7 +52600,7 @@ component = dmc.Box([
 `luminanceThreshold` controls which luminance value is used to determine if text color should be light or dark. It is 
 used only if `theme.autoContrast` is set to `True`. Default value is 0.3.
 
-See a live demo of `luminanceThreshold` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#luminancethreshold)
+See a live demo of `luminanceThreshold` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#luminancethreshold)
 
 ```python
 dmc.MantineProvider(
@@ -52618,7 +52622,7 @@ dmc.MantineProvider(
 - 'never' – focus ring is always hidden, it is not recommended – users who navigate with keyboard will not have visual indication of the current focused element
 
 
-See a live demo of `focusRing` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#focusring)
+See a live demo of `focusRing` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#focusring)
 
 #### focusClassName
 
@@ -52626,7 +52630,7 @@ See a live demo of `focusRing` in the [Mantine Docs](https://mantine.dev/theming
 `ActionIcon`. It can be used to customize focus ring styles of all interactive components except inputs. Note that when
 `theme.focusClassName` is set, `theme.focusRing` is ignored.
 
-See a live demo of `focusClassName` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#focusclassname)
+See a live demo of `focusClassName` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#focusclassname)
 
 ```python
 dmc.MantineProvider(
@@ -52654,17 +52658,17 @@ Define the class in the `.css` file in `/assets` folder
 To disable active styles for all components, set `theme.activeClassName` to an empty string.
 
 
-See a live demo of `activeClassName` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#activeclassname)
+See a live demo of `activeClassName` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#activeclassname)
 
 #### defaultRadius 
 
 `theme.defaultRadius` controls the default border-radius property in most components, for example, `Button` or `TextInput`.
 You can set to either one of the values from `theme.radius` or a number/string to use exact value. Note that numbers are
 treated as pixels, but converted to rem. For example, `{'defaultRadius': 4}` will be converted to 0.25rem. You can learn
-more about rem conversion in the [rem units guide](https://mantine.dev/styles/rem/).
+more about rem conversion in the [rem units guide](https://v8.mantine.dev/styles/rem/).
 
 
-See a live demo of `defaultRadius` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#defaultradius)
+See a live demo of `defaultRadius` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#defaultradius)
 
 ```python
 
@@ -52682,7 +52686,7 @@ dmc.MantineProvider(
 by default. For example, `Checkbox`.
 
 
-See a live demo of `cursorType` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#cursortype)
+See a live demo of `cursorType` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#cursortype)
 
 
 ```python
@@ -52697,7 +52701,7 @@ dmc.MantineProvider(
 (Button, ActionIcon, Badge, etc.).
 
 
-See a live demo of `defaultGradient` in the [Mantine Docs](https://mantine.dev/theming/theme-object/#defaultgradient)
+See a live demo of `defaultGradient` in the [Mantine Docs](https://v8.mantine.dev/theming/theme-object/#defaultgradient)
 
 ```python
 dmc.MantineProvider(
@@ -52721,7 +52725,7 @@ default by all components of your application unless they are overridden by comp
 Note that Dash-specific props such as `persistence` and `debounce` are not supported in `theme.components` and must be
 set directly on each component.
 
-See a live demo of `defaultProps` in the [Mantine Docs](https://mantine.dev/theming/default-props/)
+See a live demo of `defaultProps` in the [Mantine Docs](https://v8.mantine.dev/theming/default-props/)
 
 
 ```python

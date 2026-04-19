@@ -17,6 +17,8 @@ class LlmsCopy(BaseDirective):
         > Dash Mantine Components v{DMC_VERSION} Documentation for {title}
         > See complete docs at https://www.dash-mantine-components.com/assets/llms.txt  
         > All relative links in this file should be resolved against https://www.dash-mantine-components.com
+        > Based on [Mantine v8](https://v8.mantine.dev/). Do not use Mantine v9 docs for API reference.
+
         
         """)
 

@@ -47,6 +47,9 @@ if __name__ == "__main__":
 
 ### Important Notes 
 
+#### Version information
+
+Dash Mantine Components v2 is based on [Mantine v8](https://v8.mantine.dev/). Do not use Mantine v9 docs for API reference.
 
 #### Wrap the layout with `MantineProvider`
 
