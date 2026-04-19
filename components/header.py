@@ -99,7 +99,6 @@ def create_search(data):
         rightSectionWidth=60,
         leftSection=DashIconify(icon="mingcute:search-3-line"),
         data=search_data(data),
-        visibleFrom="sm",
         comboboxProps={"shadow": "md"},
     )
 
@@ -149,7 +148,10 @@ def create_header(data):
                                         hiddenFrom="lg",
                                     ),
                                     dmc.Anchor(
-                                        "DMC", size="xl", href="/", underline="never"
+                                        "DMC", size="xl", href="/", underline="never", hiddenFrom="sm"
+                                    ),
+                                    dmc.Anchor(
+                                        "Dash Mantine Components", size="lg", href="/", underline="never", visibleFrom="sm"
                                     ),
                                 ]
                             ),
