@@ -49,7 +49,11 @@ if __name__ == "__main__":
 
 #### Version information
 
-Dash Mantine Components v2 is based on [Mantine v8](https://v8.mantine.dev/). Do not use Mantine v9 docs for API reference.
+Dash Mantine Components v2 is built on Mantine v8. When referring to the upstream Mantine documentation, please use
+[Mantine v8](https://v8.mantine.dev/).  Avoid the Mantine v9 documentation, as it includes breaking changes that are
+not compatible with DMC v2.
+
+
 
 #### Wrap the layout with `MantineProvider`
 
@@ -71,18 +75,6 @@ It’s required to:
 
 - Register custom themes or override styles
 
-#### Using Dash 2.x?
-You must set React to version 18.2.0:
-```python
-# required for dash 2.x
-import dash
-dash._dash_renderer._set_react_version("18.2.0")
-```
-
-#### Using DMC < 1.2.0?
-
-If you are using DMC < 1.2.0 it is required to include additional stylesheets for certain components. See the
-[migration guide](/migration) for more information.
 
 ### Documentation
 
@@ -103,6 +95,8 @@ theming and customizations and to see the [theme used in these docs.](/theme-obj
 
 Please read the [Mantine API Overview](/mantine-api) section before starting development to learn about all of the
 available theming and styling features.
+
+Using older versions of dash or DMC?  See our [Migration Guide](/migration) for more information.
 
 ### Questions?
 
