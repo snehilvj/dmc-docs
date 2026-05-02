@@ -14,7 +14,8 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
-| **2.6.1**               | Feb 2026     | 8.3.17          | `dash>=2.0.0` |
+| **2.7.0**               | May 2026     | 8.3.18          | `dash>=2.0.0` |
+| **2.6.1**               | Mar 2026     | 8.3.17          | `dash>=2.0.0` |
 | **2.6.0**               | Feb 2026     | 8.3.14          | `dash>=2.0.0` |
 | **2.5.0**               | Jan 2026     | 8.3.13          | `dash>=2.0.0` |
 | **2.4.1**               | Dec 2025     | 8.3.10          | `dash>=2.0.0` |
@@ -32,6 +33,18 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 | **0.14.0**              | Apr 2024     | 7.0             | `dash>=2.0.0,<3.0.0` |
 | **0.13.0a1**            | Aug 2023     | 6.0             | `dash>=2.0.0,<3.0.0` |
 | **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
+
+
+### Upstream Mantine documentation
+
+Be sure to refer to the Mantine docs that match your DMC version:
+
+| DMC version      | Mantine docs                          |
+|------------------|----------------------------------------|
+| v2               | https://v8.mantine.dev/               |
+| v0.14–v1         | https://v7.mantine.dev/               |
+| v0.13            | https://v6.mantine.dev/               |
+| v0.12            | https://v5.mantine.dev/               |
 
 
 ### Migrating from 1.2.0 to 2.x

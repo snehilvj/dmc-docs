@@ -42,11 +42,13 @@ dmc.NavLink(
 The `active` prop in `NavLink` controls whether a link is highlighted as active. It can be set manually (`True`/`False`)
 or automatically based on the current URL.  
 
-*New in dash-mantine-components > = 1.0.0*  
 
-Now, `active` can be set dynamically:  
-- `"exact"` → Active when the current pathname matches `href`.  
-- `"partial"` → Active when the current pathname starts with `href` (includes subpages).  
+`active` can be set dynamically without using dash callbacks:  
+- `"exact"` → Active when the current pathname matches `href` path
+- `"exact-with-search`→ Active when the current pathname matches `href` path and query strings
+- `"partial"` → Active when the current pathname starts with `href` (includes subpages)
+- `"children"` → Parent link active when any child link is active
+
 
 Example:
 - User on `/page-1/subject-1` → The second and third links are active (since `"partial"` includes subpages).  
@@ -97,42 +99,70 @@ To create nested links put dmc.NavLink as children of another dmc.NavLink.
 
 
 ### Multi-Page App Example with Active Links
-Here's a minimal multi-page app example using Pages. It demonstrates how `active="exact"` and `active="partial"`
-automatically apply active styles based on the current URL
+
+
+This example uses [Dash Pages](https://dash.plotly.com/urls) to create a simple multi-page app. For simplicity, all
+pages are defined in a single file instead of separate folders.
+
+It demonstrates `active="exact-with-search"` with query strings and shows how `active="children"` keeps a parent link
+active when a child route is selected.
+
+
+.. image::/assets/dmc-navlink-active.png
+    :w: 500px
+
 
 ```python
 import dash
 import dash_mantine_components as dmc
-from dash import Dash, html
 
-app = Dash(use_pages=True, pages_folder="")
+app = dash.Dash(use_pages=True, pages_folder="")
 
-dash.register_page("home", path="/", layout=html.Div("I'm home"))
-dash.register_page("page1", path="/page-1", layout=html.Div("Info about page 1 subjects"))
-dash.register_page("page1s1", path="/page-1/sub-1", layout=html.Div("page 1 subject 1"))
-dash.register_page("page1s2", path="/page-1/sub-2", layout=html.Div("page 1 subject 2"))
 
-component = dmc.Box([
-    dmc.NavLink(label="home", href="/", active='exact'),
+def reports_layout(type=None, **kwargs):
+    return dmc.Box(f"{type} Report ")
+
+dash.register_page("home", path="/", layout=dmc.Box("Home"))
+dash.register_page("reports", path="/reports", layout=reports_layout)
+dash.register_page("settings", path="/settings", layout=dmc.Box("Settings"))
+
+
+nav = dmc.Box([
+    dmc.NavLink(label="Home", href="/", active="exact"),
     dmc.NavLink(
-            label="Page 1",
-            childrenOffset=28,
-            href="/page-1",
-            active='partial',
-            children=[
-                dmc.NavLink(label="Subject 1", href="/page-1/sub-1", active="exact"),
-                dmc.NavLink(label="Subject 2", href="/page-1/sub-2", active="exact"),
-            ],
+        label="Reports",
+        active="children",
+        childrenOffset=28,
+        children=[
+            dmc.NavLink(
+                label="Sales",
+                href="/reports?type=Sales",
+                active="exact-with-search",
+            ),
+            dmc.NavLink(
+                label="Inventory",
+                href="/reports?type=Inventory",
+                active="exact-with-search",
+            ),
+        ],
     ),
-    dmc.Divider(mb="lg"),
-    dash.page_container
+    dmc.NavLink(label="Settings", href="/settings", active="exact"),
 ])
 
-
-app.layout = dmc.MantineProvider([component])
+app.layout = dmc.MantineProvider(
+    dmc.AppShell(
+        [
+            dmc.AppShellNavbar(nav),
+            dmc.AppShellMain(dash.page_container),
+        ],
+        padding="xl",
+        navbar={"width": 300},
+    )
+)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 ```
 
