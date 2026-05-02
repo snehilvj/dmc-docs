@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://v8.mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.6.1**, which wraps **Mantine 8.3.17**.  
+> This documentation applies to **DMC 2.7.0**, which wraps **Mantine 8.3.18**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://v8.mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -53,7 +53,11 @@ if __name__ == "__main__":
 
 #### Version information
 
-Dash Mantine Components v2 is based on [Mantine v8](https://v8.mantine.dev/). Do not use Mantine v9 docs for API reference.
+Dash Mantine Components v2 is built on Mantine v8. When referring to the upstream Mantine documentation, please use
+[Mantine v8](https://v8.mantine.dev/).  Avoid the Mantine v9 documentation, as it includes breaking changes that are
+not compatible with DMC v2.
+
+
 
 #### Wrap the layout with `MantineProvider`
 
@@ -75,18 +79,6 @@ It’s required to:
 
 - Register custom themes or override styles
 
-#### Using Dash 2.x?
-You must set React to version 18.2.0:
-```python
-# required for dash 2.x
-import dash
-dash._dash_renderer._set_react_version("18.2.0")
-```
-
-#### Using DMC < 1.2.0?
-
-If you are using DMC < 1.2.0 it is required to include additional stylesheets for certain components. See the
-[migration guide](/migration) for more information.
 
 ### Documentation
 
@@ -104,6 +96,8 @@ theming and customizations and to see the [theme used in these docs.](/theme-obj
 
 Please read the [Mantine API Overview](/mantine-api) section before starting development to learn about all of the
 available theming and styling features.
+
+Using older versions of dash or DMC?  See our [Migration Guide](/migration) for more information.
 
 ### Questions?
 
@@ -848,6 +842,9 @@ This component supports Styles API. With Styles API, you can customize styles of
     used for text color, otherwise `theme.black`. Overrides
     `theme.autoContrast`.
 
+- buttonProps (dict; optional):
+    Props passed down to the `Button` component.
+
 - className (string; optional):
     Class added to the root element, if applicable.
 
@@ -1405,6 +1402,9 @@ This component supports Styles API. With Styles API, you can customize styles of
     less than `theme.luminosityThreshold`, then `theme.white` will be
     used for text color, otherwise `theme.black`. Overrides
     `theme.autoContrast`.
+
+- buttonProps (dict; optional):
+    Props passed down to the `Button` component.
 
 - className (string; optional):
     Class added to the root element, if applicable.
@@ -2063,6 +2063,9 @@ This component supports Styles API. With Styles API, you can customize styles of
     less than `theme.luminosityThreshold`, then `theme.white` will be
     used for text color, otherwise `theme.black`. Overrides
     `theme.autoContrast`.
+
+- buttonProps (dict; optional):
+    Props passed down to the `Button` component.
 
 - className (string; optional):
     Class added to the root element, if applicable.
@@ -40117,11 +40120,13 @@ dmc.NavLink(
 The `active` prop in `NavLink` controls whether a link is highlighted as active. It can be set manually (`True`/`False`)
 or automatically based on the current URL.  
 
-*New in dash-mantine-components > = 1.0.0*  
 
-Now, `active` can be set dynamically:  
-- `"exact"` → Active when the current pathname matches `href`.  
-- `"partial"` → Active when the current pathname starts with `href` (includes subpages).  
+`active` can be set dynamically without using dash callbacks:  
+- `"exact"` → Active when the current pathname matches `href` path
+- `"exact-with-search`→ Active when the current pathname matches `href` path and query strings
+- `"partial"` → Active when the current pathname starts with `href` (includes subpages)
+- `"children"` → Parent link active when any child link is active
+
 
 Example:
 - User on `/page-1/subject-1` → The second and third links are active (since `"partial"` includes subpages).  
@@ -40214,42 +40219,66 @@ component = html.Div(
 )
 ```
 ### Multi-Page App Example with Active Links
-Here's a minimal multi-page app example using Pages. It demonstrates how `active="exact"` and `active="partial"`
-automatically apply active styles based on the current URL
+
+
+This example uses [Dash Pages](https://dash.plotly.com/urls) to create a simple multi-page app. For simplicity, all
+pages are defined in a single file instead of separate folders.
+
+It demonstrates `active="exact-with-search"` with query strings and shows how `active="children"` keeps a parent link
+active when a child route is selected.
+
 
 ```python
 import dash
 import dash_mantine_components as dmc
-from dash import Dash, html
 
-app = Dash(use_pages=True, pages_folder="")
+app = dash.Dash(use_pages=True, pages_folder="")
 
-dash.register_page("home", path="/", layout=html.Div("I'm home"))
-dash.register_page("page1", path="/page-1", layout=html.Div("Info about page 1 subjects"))
-dash.register_page("page1s1", path="/page-1/sub-1", layout=html.Div("page 1 subject 1"))
-dash.register_page("page1s2", path="/page-1/sub-2", layout=html.Div("page 1 subject 2"))
 
-component = dmc.Box([
-    dmc.NavLink(label="home", href="/", active='exact'),
+def reports_layout(type=None, **kwargs):
+    return dmc.Box(f"{type} Report ")
+
+dash.register_page("home", path="/", layout=dmc.Box("Home"))
+dash.register_page("reports", path="/reports", layout=reports_layout)
+dash.register_page("settings", path="/settings", layout=dmc.Box("Settings"))
+
+
+nav = dmc.Box([
+    dmc.NavLink(label="Home", href="/", active="exact"),
     dmc.NavLink(
-            label="Page 1",
-            childrenOffset=28,
-            href="/page-1",
-            active='partial',
-            children=[
-                dmc.NavLink(label="Subject 1", href="/page-1/sub-1", active="exact"),
-                dmc.NavLink(label="Subject 2", href="/page-1/sub-2", active="exact"),
-            ],
+        label="Reports",
+        active="children",
+        childrenOffset=28,
+        children=[
+            dmc.NavLink(
+                label="Sales",
+                href="/reports?type=Sales",
+                active="exact-with-search",
+            ),
+            dmc.NavLink(
+                label="Inventory",
+                href="/reports?type=Inventory",
+                active="exact-with-search",
+            ),
+        ],
     ),
-    dmc.Divider(mb="lg"),
-    dash.page_container
+    dmc.NavLink(label="Settings", href="/settings", active="exact"),
 ])
 
-
-app.layout = dmc.MantineProvider([component])
+app.layout = dmc.MantineProvider(
+    dmc.AppShell(
+        [
+            dmc.AppShellNavbar(nav),
+            dmc.AppShellMain(dash.page_container),
+        ],
+        padding="xl",
+        navbar={"width": 300},
+    )
+)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 ```
 
@@ -42357,6 +42386,9 @@ Refer to the Mantine Tabs Style API [interactive demo](https://v8.mantine.dev/co
 - attributes (boolean | number | string | dict | list; optional):
     Passes attributes to inner elements of a component.  See Styles
     API docs.
+
+- buttonProps (dict; optional):
+    Props passed down to the `Button` component.
 
 - className (string; optional):
     Class added to the root element, if applicable.
@@ -46487,7 +46519,8 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 | Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
 |-------------------------|--------------|-----------------|----|
-| **2.6.1**               | Feb 2026     | 8.3.17          | `dash>=2.0.0` |
+| **2.7.0**               | May 2026     | 8.3.18          | `dash>=2.0.0` |
+| **2.6.1**               | Mar 2026     | 8.3.17          | `dash>=2.0.0` |
 | **2.6.0**               | Feb 2026     | 8.3.14          | `dash>=2.0.0` |
 | **2.5.0**               | Jan 2026     | 8.3.13          | `dash>=2.0.0` |
 | **2.4.1**               | Dec 2025     | 8.3.10          | `dash>=2.0.0` |
@@ -46505,6 +46538,18 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 | **0.14.0**              | Apr 2024     | 7.0             | `dash>=2.0.0,<3.0.0` |
 | **0.13.0a1**            | Aug 2023     | 6.0             | `dash>=2.0.0,<3.0.0` |
 | **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
+
+
+### Upstream Mantine documentation
+
+Be sure to refer to the Mantine docs that match your DMC version:
+
+| DMC version      | Mantine docs                          |
+|------------------|----------------------------------------|
+| v2               | https://v8.mantine.dev/               |
+| v0.14–v1         | https://v7.mantine.dev/               |
+| v0.13            | https://v6.mantine.dev/               |
+| v0.12            | https://v5.mantine.dev/               |
 
 
 ### Migrating from 1.2.0 to 2.x
@@ -49613,6 +49658,145 @@ Requires `dash>=3.0` and `ColorSchemeToggle`
 Special thanks to:
   
 * [@BSd3v](https://github.com/BSd3v) for the `pre_render_color_scheme()` helper function to Fix The Flash!
+* [@alexcjohnson](https://github.com/alexcjohnson) for your helpful feedback during code reviews.
+
+## Version 2.7.0  
+Release announcement for Dash Mantine Components v2.7.0  
+Category: Releases  
+
+May 2, 2026  
+
+Based on Mantine 8.3.18
+
+See [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.7.0)  
+
+### NavLink active improvements
+
+The `active` prop in `NavLink` controls whether a link is highlighted as active. It can be set manually (True/False)
+or automatically based on the current URL.
+
+Two new `active` modes were added in this release:
+
+#### active="exact-with-search"
+
+This mode matches the current route using both the pathname and the query string. It is ideal when query parameters
+define the page content.
+
+Example:
+`/products?category=shoes` will not match `/products?category=hats`.
+
+#### active="children"
+
+Sets the parent `NavLink` as active when any of its child links are active. This is useful for nested navigation, where
+the parent should reflect the active state of its child links.
+
+
+### NavLink Example with a multi-page app
+
+This example uses [Dash Pages](https://dash.plotly.com/urls) to create a simple multi-page app. For simplicity, all
+pages are defined in a single file instead of separate folders.
+
+It demonstrates `active="exact-with-search"` with query strings and shows how `active="children"` keeps a parent link
+active when a child route is selected.
+
+
+```python
+import dash
+import dash_mantine_components as dmc
+
+app = dash.Dash(use_pages=True, pages_folder="")
+
+
+def reports_layout(type=None, **kwargs):
+    return dmc.Box(f"{type} Report ")
+
+dash.register_page("home", path="/", layout=dmc.Box("Home"))
+dash.register_page("reports", path="/reports", layout=reports_layout)
+dash.register_page("settings", path="/settings", layout=dmc.Box("Settings"))
+
+
+nav = dmc.Box([
+    dmc.NavLink(label="Home", href="/", active="exact"),
+    dmc.NavLink(
+        label="Reports",
+        active="children",
+        childrenOffset=28,
+        children=[
+            dmc.NavLink(
+                label="Sales",
+                href="/reports?type=Sales",
+                active="exact-with-search",
+            ),
+            dmc.NavLink(
+                label="Inventory",
+                href="/reports?type=Inventory",
+                active="exact-with-search",
+            ),
+        ],
+    ),
+    dmc.NavLink(label="Settings", href="/settings", active="exact"),
+])
+
+app.layout = dmc.MantineProvider(
+    dmc.AppShell(
+        [
+            dmc.AppShellNavbar(nav),
+            dmc.AppShellMain(dash.page_container),
+        ],
+        padding="xl",
+        navbar={"width": 300},
+    )
+)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+```
+
+
+
+### buttonProps
+
+Pass props directly to the underlying `<button>` element. Available on `Button`, `ActionIcon`, `UnstyledButton`, and `CopyButton`.
+
+Props are applied to the underlying `<button>` element rather than the wrapper component. This is intended for native
+attributes such as `type`, `name`, `form`, or `aria-*`. Component-level props like `color` and `variant` should still
+be set directly on the DMC component itself.
+
+#### Examples
+
+Using `buttonProps` ensures attributes like `type="submit"` are applied to the native element:
+
+```python
+html.Form(
+    [..., dmc.Button("Submit", buttonProps={"type": "submit"})],
+    method="dialog",
+)
+````
+
+
+
+
+### Other changes
+
+Mantine patch update to 8.3.18. See the [Mantine Releases](https://github.com/mantinedev/mantine/releases) for details.
+
+Note:  This is the last Mantine update for V8 before the V9 release
+
+
+
+### Important version information
+
+Dash Mantine Components v2.x is built on Mantine v8. When referring to the upstream Mantine documentation, please use
+[Mantine v8](https://v8.mantine.dev/).  Avoid the Mantine v9 documentation, as it includes breaking changes that are
+not compatible with DMC v2.x.
+
+
+### Thanks
+
+Special thanks to:
+ 
 * [@alexcjohnson](https://github.com/alexcjohnson) for your helpful feedback during code reviews.
 
 ## CSS Variables  
