@@ -4,6 +4,7 @@ description: Use the Accordion and AccordionX components to toggle between hidin
 endpoint: /components/accordion
 package: dash_mantine_components
 category: Data Display
+mantine: /core/accordion
 ---
 
 .. toc::

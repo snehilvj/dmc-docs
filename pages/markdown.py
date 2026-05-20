@@ -5,6 +5,7 @@ from typing import Optional
 import dash
 import dash_mantine_components as dmc
 import frontmatter
+from dash_iconify import DashIconify
 from markdown2dash import Admonition, BlockExec, Divider, Image, create_parser
 from pydantic import BaseModel
 
@@ -33,6 +34,7 @@ class Meta(BaseModel):
     package: str = "dash_mantine_components"
     category: Optional[str] = None
     order: Optional[int] = None
+    mantine: Optional[str] = None
 
 
 def make_endpoint(name):
@@ -49,8 +51,23 @@ for file in files:
     layout = parse(content)
 
     # add heading and description to the layout
+    title = dmc.Title(metadata.name, order=2, className="m2d-heading")
     section = [
-        dmc.Title(metadata.name, order=2, className="m2d-heading"),
+        dmc.Group([
+            title,
+            dmc.Tooltip(
+                label="Open the https://mantine.dev/ documentation of this component",
+                position="top",
+                withArrow=True,
+                children=dmc.Anchor(
+                    dmc.ActionIcon(
+                        DashIconify(icon="material-symbols:open-in-new", style={"width": "70%", "height": "70%"}),
+                        size="md", variant="transparent", color="var(--mantine-color-dimmed)"
+                    ),
+                    href=f"https://mantine.dev{metadata.mantine}", target="_blank", variant="transparent"
+                )
+            )
+        ], gap="xs") if metadata.mantine else title,
         dmc.Text(metadata.description, className="m2d-paragraph"),
     ]
     layout = section + layout
