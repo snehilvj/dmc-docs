@@ -122,8 +122,8 @@ data = {
 }
 ```
 
-Based on the domain, `Heatmap` calculates colors for each rect: 1 – min heat level,
-4 – max heat level. To specify the domain manually, use the `domain` prop. It is useful
+Based on the domain, `Heatmap` calculates colors for each rect: 1 (min heat level),
+4 (max heat level). To specify the domain manually, use the `domain` prop. It is useful
 when your data does not cover the whole range of possible values. For example,
 the subset of data passed to the heatmap has values from 1 to 4, but the actual
 range is from 1 to 10. In this case, you can pass `[1, 10]` to the `domain` prop:
