@@ -1,0 +1,15 @@
+/* applied in light color-scheme */
+.heatmap-light-dark {
+     --heatmap-level-1: var(--mantine-color-blue-2);
+    --heatmap-level-2: var(--mantine-color-blue-4);
+    --heatmap-level-3: var(--mantine-color-blue-6);
+    --heatmap-level-4: var(--mantine-color-blue-9);
+}
+
+/* applied in dark color-scheme */
+ [data-mantine-color-scheme='dark'] .heatmap-light-dark {
+     --heatmap-level-1: rgba(253, 126, 20, 0.35);
+    --heatmap-level-2:  rgba(253, 126, 20, 0.65);
+    --heatmap-level-3: var(--mantine-color-orange-6);
+    --heatmap-level-4: var(--mantine-color-yellow-4);
+}
