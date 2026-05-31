@@ -1,7 +1,5 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
-
 data = [
     {"product": "Apples", "sales_january": 120, "sales_february": 100},
     {"product": "Oranges", "sales_january": 98, "sales_february": 90},
@@ -11,7 +9,7 @@ data = [
     {"product": "Lemons", "sales_january": 65, "sales_february": 150},
 ]
 
-target = dmc.RadarChart(
+component = dmc.RadarChart(
     h=300,
     data=data,
     dataKey="product",
@@ -19,21 +17,7 @@ target = dmc.RadarChart(
         {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
         {"name": "sales_february", "color": "cyan.4", "opacity": 0.1},
     ],
-    withPolarGrid=True,
-    withPolarAngleAxis=True,
-    withPolarRadiusAxis=True,
-    withTooltip=False,
-    withDots=False,
+    withTooltip=True,
+    withDots=True,
 )
 
-
-configurator = Configurator(target)
-
-
-configurator.add_switch("withPolarGrid", True)
-configurator.add_switch("withPolarAngleAxis", True)
-configurator.add_switch("withPolarRadiusAxis", True)
-configurator.add_switch("withTooltip", False)
-configurator.add_switch("withDots", False)
-
-component = configurator.panel

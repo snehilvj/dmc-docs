@@ -47,8 +47,8 @@ data = [
 
 component = dmc.RadarChart(
     h=300,
-    data=data,    dataKey="product",
-
+    data=data,    
+    dataKey="product",
     series=[
       {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
       {"name": "sales_february", "color": "cyan.4", "opacity": 0.1}
@@ -56,24 +56,41 @@ component = dmc.RadarChart(
     withPolarGrid=True,
     withPolarAngleAxis=False,
     withPolarRadiusAxis=True,
+    withTooltip=False,
+    withDots=False,
 )
 
 
 ```
 
 
+### With tooltip and dots
+
+
+.. exec::docs.radarchart.tooltip
+
+
 ### Rechart props
 
-To pass props down to the underlying recharts components, use the following props:
+To pass props down to the underlying Recharts components, use the following props:
 - `radarProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
 - `radarChartProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
 - `polarGridProps` passed props to [PolarGrid](https://recharts.org/en-US/api/PolarGrid) component
 - `polarAngleAxisProps` passed props to [PolarAngleAxis](https://recharts.org/en-US/api/PolarAngleAxis) component
 - `polarRadiusAxisProps` passed props to [PolarRadiusAxis](https://recharts.org/en-US/api/PolarRadiusAxis) component
+- Also available:  `legendProps`, `dotProps`, `activeDotProps`, `tooltipProps`
 
-Example of passing props down to PolarRadiusAxis component:
+It's also possible to pass functions to the Recharts component.  This example passes props to `PolarRadiusAxis` component.  
+
+.. functions_as_props::  
+
 
 .. exec::docs.radarchart.rechartprops
+    :code: false
+
+.. sourcetabs::docs/radarchart/rechartprops.py, assets/examples-js/format-number-intl.js
+    :defaultExpanded: true
+    :withExpandedButton: true
 
 
 ### Radar animation
@@ -83,25 +100,44 @@ By default, the Recharts data animation is disabled. To enable and customize the
 .. exec::docs.radarchart.radar_animation
 
 
+### Legend
+
+Set the `withLegend` prop to display the legend:
+
+
+.. exec::docs.radarchart.legend
+
+
 ### Styles API
 
 .. styles_api_text::
 
 #### RadarChart selectors
 
-| Selector    | Static selector               | Description                                      |
-|:------------|:------------------------------|:-------------------------------------------------|
-| root        | .mantine-RadarChart-root      | Root element                                    |
-| container   | .mantine-RadarChart-container | Recharts ResponsiveContainer component          |
+| Selector | Static selector | Description |
+|----------|----------------|-------------|
+| root | .mantine-RadarChart-root | Root element |
+| container | .mantine-RadarChart-container | Recharts ResponsiveContainer component |
+| tooltip | .mantine-RadarChart-tooltip | Tooltip root element |
+| tooltipBody | .mantine-RadarChart-tooltipBody | Tooltip wrapper around all items |
+| tooltipItem | .mantine-RadarChart-tooltipItem | Tooltip item representing data series |
+| tooltipItemBody | .mantine-RadarChart-tooltipItemBody | Tooltip item wrapper around item color and name |
+| tooltipItemColor | .mantine-RadarChart-tooltipItemColor | Tooltip item color |
+| tooltipItemName | .mantine-RadarChart-tooltipItemName | Tooltip item name |
+| tooltipItemData | .mantine-RadarChart-tooltipItemData | Tooltip item data |
+| tooltipLabel | .mantine-RadarChart-tooltipLabel | Label of the tooltip |
+| legend | .mantine-RadarChart-legend | Legend root element |
+| legendItem | .mantine-RadarChart-legendItem | Legend item representing data series |
+| legendItemColor | .mantine-RadarChart-legendItemColor | Legend item color |
+| legendItemName | .mantine-RadarChart-legendItemName | Legend item name |
 
 
 #### RadarChart CSS variables
 
-| Selector         | Variable             | Description                                   |
-|:-----------------|:---------------------|:----------------------------------------------|
-| root             | --chart-grid-color   | Controls color of the chart grid              |
-|                  | --chart-text-color   | Controls color of all text elements in the chart|
-
+| Selector | Variable | Description |
+|----------|----------|-------------|
+| root | --chart-grid-color | Controls color of the chart grid |
+| root | --chart-text-color | Controls color of all text elements in the chart |
 
 
 ### Keyword Arguments
