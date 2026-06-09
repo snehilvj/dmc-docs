@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://v8.mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.7.0**, which wraps **Mantine 8.3.18**.  
+> This documentation applies to **DMC 2.8.0**, which wraps **Mantine 8.3.18**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://v8.mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -6546,6 +6546,806 @@ This component supports Styles API. With Styles API, you can customize styles of
     Determines whether the tooltip should be displayed when one of the
     section is hovered, `True` by default.
 
+## FunnelChart  
+FunnelChart component  
+Category: Charts  
+
+### Usage
+
+`FunnelChart` is based on the [FunnelChart recharts component](https://recharts.org/en-US/api/FunnelChart):
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component=dmc.FunnelChart(data=data)
+```
+### Data
+
+Here is the data imported for the examples on this page:
+
+```python
+data = [
+    {"name": "USA", "value": 400, "color": "indigo.6"},
+    {"name": "India", "value": 300, "color": "yellow.6"},
+    {"name": "Japan", "value": 100, "color": "teal.6"},
+    {"name": "Other", "value": 200, "color": "gray.6"},
+]
+
+```
+
+
+
+### Segments labels
+
+Set the `withLabels` prop to display labels next to each segment.
+Use the `labelPosition` prop to control the position of labels relative to the corresponding segment. Supported values are 'left', 'right', and 'inside'.
+
+
+### Size and thickness
+
+Set the `size` prop to control the width and height of the chart.
+You can override this behavior by setting the `h` [style prop](/style-props).
+
+### Segment color
+
+You can reference colors from [theme](/theme-object) the same way as in
+other components, for example, `blue`, `red.5`, `orange.7`, etc. Any valid CSS
+color value is also accepted.
+
+```python
+import dash_mantine_components as dmc
+
+component = dmc.FunnelChart(
+    data=[
+        { 'name': 'USA', 'value': 400, 'color': 'blue' },
+        { 'name': 'Other', 'value': 200, 'color': 'gray.6' },
+      ]
+)
+```
+### Without tooltip
+
+To remove the tooltip, set `withTooltip=False`:
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component=dmc.FunnelChart(
+    data=data,
+    withTooltip=False
+)
+```
+### Segments stroke
+
+Use the `strokeWidth` prop to control the width of the stroke around each segment:
+
+
+To change the color of the stroke, use the `strokeColor` prop. You can reference colors from the [theme](/colors) the same way as in
+other components, for example, `blue`, `red.5`, `orange.7`, etc. Any valid CSS color value is also accepted.
+
+```python
+import dash_mantine_components as dmc
+
+dmc.FunnelChart(data=data, strokeColor="red.5")
+
+```
+
+
+
+### clickData
+Use the `clickData` property in a callback to retrieve data from the most recent click event. To get the name of the
+clicked series, use the `clickSeriesName` property.
+```python
+import dash_mantine_components as dmc
+from dash import Input, Output, callback
+from .data import data
+
+component = dmc.Stack(
+    [
+        dmc.FunnelChart(
+            id="figure-funnelchart-click",
+            data=data,
+        ),
+        dmc.Text(id="clickdata-funnelchart1"),
+        dmc.Text(id="clickdata-funnelchart2"),
+    ]
+)
+
+@callback(
+    Output("clickdata-funnelchart1", "children"),
+    Output("clickdata-funnelchart2", "children"),
+    Input("figure-funnelchart-click", "clickData"),
+    Input("figure-funnelchart-click", "clickSeriesName"),
+)
+def update(data, name):
+    return f"clickData:  {data}", f"clickSeriesName: {name}"
+```
+### hoverData
+Use the `hoverData` property in a callback to retrieve data from the most recent hover event. To get the name of the 
+hovered series, use the `hoverSeriesName` property.
+
+```python
+import dash_mantine_components as dmc
+from dash import Input, Output, callback
+from .data import data
+
+component = dmc.Stack(
+    [
+        dmc.FunnelChart(
+            id="figure-funnelchart",
+            data=data,
+        ),
+        dmc.Text(id="hoverdata-funnelchart1"),
+        dmc.Text(id="hoverdata-funnelchart2"),
+    ]
+)
+
+@callback(
+    Output("hoverdata-funnelchart1", "children"),
+    Output("hoverdata-funnelchart2", "children"),
+    Input("figure-funnelchart", "hoverData"),
+    Input("figure-funnelchart", "hoverSeriesName"),
+)
+def update(data, name):
+    return f"hoverData:  {data}", f"hoverSeriesName: {name}"
+```
+### Styles API
+
+
+This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
+
+
+#### FunnelChart selectors
+
+
+| Selector | Static selector | Description |
+|----------|----------------|-------------|
+| root | .mantine-FunnelChart-root | Root element |
+| tooltip | .mantine-FunnelChart-tooltip | Tooltip root element |
+| tooltipBody | .mantine-FunnelChart-tooltipBody | Tooltip wrapper around all items |
+| tooltipItem | .mantine-FunnelChart-tooltipItem | Tooltip item representing data series |
+| tooltipItemBody | .mantine-FunnelChart-tooltipItemBody | Tooltip item wrapper around item color and name |
+| tooltipItemColor | .mantine-FunnelChart-tooltipItemColor | Tooltip item color |
+| tooltipItemName | .mantine-FunnelChart-tooltipItemName | Tooltip item name |
+| tooltipItemData | .mantine-FunnelChart-tooltipItemData | Tooltip item data |
+| tooltipLabel | .mantine-FunnelChart-tooltipLabel | Label of the tooltip |
+
+#### FunnelChart CSS variables
+
+| Selector | Variable | Description |
+|----------|----------|-------------|
+| root | --chart-labels-color | Controls color of the chart labels |
+| root | --chart-size | Controls size of the chart |
+| root | --chart-stroke-color | Controls color of the chart stroke |
+
+
+
+
+
+### Keyword Arguments
+#### FunnelChart
+
+- children (a list of or a singular dash component, string or number; optional):
+    Additional elements rendered inside `FunnelChart` component.
+
+- id (string; optional):
+    Unique ID to identify this component in Dash callbacks.
+
+- aria-* (string; optional):
+    Wild card aria attributes.
+
+- attributes (boolean | number | string | dict | list; optional):
+    Passes attributes to inner elements of a component.  See Styles
+    API docs.
+
+- className (string; optional):
+    Class added to the root element, if applicable.
+
+- classNames (dict; optional):
+    Adds custom CSS class names to inner elements of a component.  See
+    Styles API docs.
+
+- clickData (dict with strings as keys and values of type boolean | number | string | dict | list; optional):
+    Click data.
+
+- clickSeriesName (dict with strings as keys and values of type boolean | number | string | dict | list; optional):
+    Name of the series that was clicked.
+
+- darkHidden (boolean; optional):
+    Determines whether component should be hidden in dark color scheme
+    with `display: none`.
+
+- data (list of dicts; required):
+    Data used to render chart.
+
+    `data` is a list of dicts with keys:
+
+- data-* (string; optional):
+    Wild card data attributes.
+
+- funnelChartProps (dict; optional):
+    Props passed down to recharts `FunnelChart` component.
+
+- funnelProps (dict; optional):
+    Props passed down to recharts `Funnel` component.
+
+- hiddenFrom (string; optional):
+    Breakpoint above which the component is hidden with `display:
+    none`.
+
+- hoverData (dict with strings as keys and values of type boolean | number | string | dict | list; optional):
+    Hover data.
+
+- hoverSeriesName (dict with strings as keys and values of type boolean | number | string | dict | list; optional):
+    Name of the series that is hovered.
+
+- labelColor (optional):
+    Controls text color of all labels Default 'white'.
+
+- labelsPosition (a value equal to: 'left', 'right', 'inside'; optional):
+    Controls labels position relative to the segment.Default 'right'.
+
+- lightHidden (boolean; optional):
+    Determines whether component should be hidden in light color
+    scheme with `display: none`.
+
+- loading_state (dict; optional):
+    Object that holds the loading state object coming from
+    dash-renderer. For use with dash<3.
+
+    `loading_state` is a dict with keys:
+
+- mod (string | dict | list of string | dicts; optional):
+    Element modifiers transformed into `data-` attributes. For
+    example: "xl" or {"data-size": "xl"}. Can also be a list of
+    strings or dicts for multiple modifiers. Falsy values are removed.
+
+- size (number; optional):
+    Controls chart width and height Default 300.
+
+- strokeColor (optional):
+    Controls color of the segments stroke, by default depends on color
+    scheme.
+
+- strokeWidth (number; optional):
+    Controls width of segments stroke Default 1.
+
+- styles (boolean | number | string | dict | list; optional):
+    Adds inline styles directly to inner elements of a component.  See
+    Styles API docs.
+
+- tabIndex (number; optional):
+    tab-index.
+
+- tooltipAnimationDuration (number; optional):
+    Tooltip animation duration in ms Default 0.
+
+- tooltipDataSource (a value equal to: 'segment', 'all'; optional):
+    Determines which data is displayed in the tooltip. `'all'` –
+    display all values, `'segment'` – display only hovered segment.
+    Default 'all'.
+
+- tooltipProps (dict; optional):
+    Props passed down to `Tooltip` recharts component.
+
+- valueFormatter (boolean | number | string | dict | list; optional):
+    A function to format values inside the tooltip and labels.
+
+- variant (string; optional):
+    variant.
+
+- visibleFrom (string; optional):
+    Breakpoint below which the component is hidden with `display:
+    none`.
+
+- withLabels (boolean; optional):
+    Determines whether each segment should have associated label.
+    Default False.
+
+- withTooltip (boolean; optional):
+    Determines whether the tooltip should be displayed when a section
+    is hovered Default True.
+
+## Heatmap  
+Heatmap component  
+Category: Charts  
+
+### Usage
+
+`Heatmap` is used to display data in a table where each column represents a week.
+The only required prop is `data`, a dictionary where keys are dates in `YYYY-MM-DD` format and values are numbers.
+
+The `startDate` and `endDate` props are optional; they are used to define the heatmap range.
+If not set, the heatmap will display data for the last year.
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16"
+)
+```
+## Data format
+
+`Heatmap` expects data in the following format:
+
+```python
+data = {
+  '2025-02-14': 2,
+  '2025-02-11': 3,
+  '2025-02-06': 4,
+  '2025-02-05': 1,
+  '2025-02-03': 2,
+  '2025-02-01': 2,
+  '2025-01-31': 4,
+  '2025-01-30': 2,
+  # ...
+}
+```
+
+### With tooltip
+
+
+Note: This example uses custom JavaScript defined in the assets folder. Learn more in the "Functions As Props" section of this document.
+  
+
+Set the `withTooltip` and `getTooltipLabel` props to display a tooltip when
+`Heatmap` cells are hovered. `getTooltipLabel` is called with date and value
+and must return a string to display in the tooltip.
+
+
+
+This example uses [dayjs](https://day.js.org/) to simplify working with dates in JavaScript.
+
+To use `dayjs` in your Dash app, load it as an external script:
+
+```python
+app = Dash(external_scripts=[
+    "https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.8/dayjs.min.js"
+])
+```
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    withTooltip=True,
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+    getTooltipLabel={"function": "heatmapTooltip"}
+)
+```
+
+```javascript
+var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+var dayjs = window.dayjs;
+
+dmcfuncs.heatmapTooltip = ({ date, value }) =>
+    `${dayjs(date).format('DD MMM, YYYY')} – ${value === null || value === 0 ? 'No contributions' : `${value} contribution${value > 1 ? 's' : ''}`}`
+```
+
+
+
+### Change colors
+
+`Heatmap` colors can be changed with the `colors` prop. It should be an array of any
+valid CSS color values (hex, rgba, CSS variables, etc.). By default, `Heatmap`
+uses 4 colors to indicate heat level, but you can pass any number of colors.
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    colors=[
+        'var(--mantine-color-orange-4)',
+        'var(--mantine-color-orange-6)',
+        'var(--mantine-color-orange-7)',
+        'var(--mantine-color-orange-9)',
+      ]
+)
+```
+### Colors depending on color scheme
+
+If you want to change colors depending on the color scheme,
+you should define those colors in `.css` file:
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    className="heatmap-light-dark",
+)
+```
+
+```css
+/* applied in light color-scheme */
+.heatmap-light-dark {
+    --heatmap-level-1: var(--mantine-color-blue-2);
+    --heatmap-level-2: var(--mantine-color-blue-4);
+    --heatmap-level-3: var(--mantine-color-blue-6);
+    --heatmap-level-4: var(--mantine-color-blue-9);
+}
+
+/* applied in dark color-scheme */
+ [data-mantine-color-scheme='dark'] .heatmap-light-dark {
+    --heatmap-level-1: rgba(253, 126, 20, 0.35);
+    --heatmap-level-2:  rgba(253, 126, 20, 0.65);
+    --heatmap-level-3: var(--mantine-color-orange-6);
+    --heatmap-level-4: var(--mantine-color-yellow-4);
+}
+```
+
+
+Note that in this case, you can only use 4 colors without passing the `colors` prop.
+If you need more colors, you should pass them manually to the component:
+
+```python
+dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    colors=[
+        'var(--heatmap-level-1)',
+        'var(--heatmap-level-2)',
+        'var(--heatmap-level-3)',
+        'var(--heatmap-level-4)',
+        'var(--heatmap-level-5)',
+        'var(--heatmap-level-6)',
+      ]
+)
+```
+
+### Values domain
+
+By default, `Heatmap` calculates domain based on data values, for example, for
+the following data, the domain will be `[1, 4]`:
+
+```python
+data = {
+  '2025-02-14': 2,
+  '2025-02-11': 3,
+  '2025-02-06': 4,
+  '2025-02-05': 1,
+}
+```
+
+Based on the domain, `Heatmap` calculates colors for each rect: 1 (min heat level),
+4 (max heat level). To specify the domain manually, use the `domain` prop. It is useful
+when your data does not cover the whole range of possible values. For example,
+the subset of data passed to the heatmap has values from 1 to 4, but the actual
+range is from 1 to 10. In this case, you can pass `[1, 10]` to the `domain` prop:
+
+```python
+data = {
+  '2025-02-14': 2,
+  '2025-02-11': 3,
+  '2025-02-06': 4,
+  '2025-02-05': 1,
+}
+
+dmc.Heatmap(data=data, domain=[1, 10])
+
+```
+
+### Weekdays and months labels
+
+Set  `withMonthLabels=True` and `withWeekdayLabels=True` to display chart labels:
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+)
+```
+### Change labels text
+
+To change labels, use the `weekdayLabels` and `monthLabels` props.
+The `weekdayLabels` prop must be an array of 7 strings with weekday names starting from Sunday.
+The `monthLabels` prop must be an array of 12 strings with month names starting from January.
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+    weekdayLabels=["Dim", "Lun", "", "Mer", "", "Ven", ""],
+    monthLabels=[
+        "Jan",
+        "Fév",
+        "Mar",
+        "Avr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Aoû",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Déc",
+    ]
+)
+```
+### Rect size, gap and radius
+
+### hoverData and clickData 
+
+
+```python
+from dash import Input, Output, callback
+import dash_mantine_components as dmc
+from .data import data
+
+
+component = dmc.Box([
+        dmc.Heatmap(
+        id="heatmap-chart",
+        data=data,
+        startDate="2024-02-16",
+        endDate="2025-02-16"
+    ),
+    dmc.Text(id="heatmap-clickdata"),
+    dmc.Text(id="heatmap-hoverdata")
+])
+
+
+@callback(
+  Output("heatmap-clickdata", "children"),
+  Input("heatmap-chart", "clickData")
+)
+def update_clickdata(clickData):
+    return f"You clicked on: {clickData}"
+
+
+@callback(
+  Output("heatmap-hoverdata", "children"),
+  Input("heatmap-chart", "hoverData")
+)
+def update_hoverdata(hoverData):
+  return f"You hovered over: {hoverData}"
+```
+### Hide outside dates
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2024-04-16",
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+    withOutsideDates=False
+)
+```
+### First day of week
+
+The default first day of the week is Monday; you can change it with the `firstDayOfWeek` prop:
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2024-04-26",
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+    firstDayOfWeek=0,
+    weekdayLabels=['', 'Mon', '', 'Wed', '', 'Fri', '']
+)
+```
+### Split months
+
+Use `splitMonths` to separate months visually with a spacer column and show only days that belong to the current month in each column. Month labels will be shifted by one column when `splitMonths` is enabled and months with fewer than 2 weeks are not labeled.
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-26",
+    withMonthLabels=True,
+    splitMonths=True
+)
+```
+### Styles API
+
+
+This component supports Styles API. With Styles API, you can customize styles of any inner element. See the Styling and Theming sections of these docs for more information.
+
+
+#### Heatmap selectors
+
+
+| Selector | Static selector | Description |
+|----------|----------------|-------------|
+| root | .mantine-Heatmap-root | Root element |
+| weekdayLabel | .mantine-Heatmap-weekdayLabel | Weekday text element |
+| monthLabel | .mantine-Heatmap-monthLabel | Month text element |
+| rect | .mantine-Heatmap-rect | Rect that represents date |
+| legend | .mantine-Heatmap-legend | Legend group element |
+| legendLabel | .mantine-Heatmap-legendLabel | Legend text label (Less/More) |
+| legendRect | .mantine-Heatmap-legendRect | Legend color rect |
+
+
+
+### Keyword Arguments
+#### Heatmap
+
+- id (string; optional):
+    Unique ID to identify this component in Dash callbacks.
+
+- aria-* (string; optional):
+    Wild card aria attributes.
+
+- attributes (boolean | number | string | dict | list; optional):
+    Passes attributes to inner elements of a component.  See Styles
+    API docs.
+
+- className (string; optional):
+    Class added to the root element, if applicable.
+
+- classNames (dict; optional):
+    Adds custom CSS class names to inner elements of a component.  See
+    Styles API docs.
+
+- clickData (dict; optional):
+    Clicked heatmap cell data containing date and value.
+
+    `clickData` is a dict with keys:
+
+- colors (list of strings; optional):
+    Colors array, used to calculate color for each value, by default 4
+    shades of green colors are used.
+
+- darkHidden (boolean; optional):
+    Determines whether component should be hidden in dark color scheme
+    with `display: none`.
+
+- data (dict with strings as keys and values of type number; required):
+    Heatmap data, key is date in `YYYY-MM-DD` format (interpreted as a
+    UTC calendar day).
+
+- data-* (string; optional):
+    Wild card data attributes.
+
+- domain (list of 2 elements: [number, number]; optional):
+    Heatmap domain, array of 2 numbers, min and max values, calculated
+    from data by default.
+
+- endDate (string; optional):
+    Heatmap end date. Current date by default. Date is normalized to
+    UTC midnight of the intended calendar day.
+
+- firstDayOfWeek (a value equal to: 0, 2, 1, 3, 4, 5, 6; optional):
+    First day of week, 0 – Sunday, 1 – Monday. Default 1 – Monday.
+
+- fontSize (number; optional):
+    Font size of month and weekday labels. Default 12.
+
+- gap (number; optional):
+    Gap between rects in px. Default 1.
+
+- getTooltipLabel (boolean | number | string | dict | list; optional):
+    A function to generate tooltip label based on the hovered rect
+    date and value, required for the tooltip to be visible.
+
+- hiddenFrom (string; optional):
+    Breakpoint above which the component is hidden with `display:
+    none`.
+
+- hoverData (dict with strings as keys and values of type number; optional):
+    Hovered heatmap cell data containing date and value.
+
+- lightHidden (boolean; optional):
+    Determines whether component should be hidden in light color
+    scheme with `display: none`.
+
+- loading_state (dict; optional):
+    Object that holds the loading state object coming from
+    dash-renderer. For use with dash<3.
+
+    `loading_state` is a dict with keys:
+
+- mod (string | dict | list of string | dicts; optional):
+    Element modifiers transformed into `data-` attributes. For
+    example: "xl" or {"data-size": "xl"}. Can also be a list of
+    strings or dicts for multiple modifiers. Falsy values are removed.
+
+- monthLabels (list of strings; optional):
+    Month labels, array of 12 elements, can be used for localization.
+
+- monthsLabelsHeight (number; optional):
+    Height of month labels row. Default 30.
+
+- rectRadius (number; optional):
+    Rect radius in px. Default 2.
+
+- rectSize (number; optional):
+    Size of day rect in px. Default 10.
+
+- splitMonths (boolean; optional):
+    If set, inserts a spacer column between months. Default False.
+
+- startDate (string; optional):
+    Heatmap start date. Current date - 1 year by default. Date is
+    normalized to UTC midnight of the intended calendar day.
+
+- styles (boolean | number | string | dict | list; optional):
+    Adds inline styles directly to inner elements of a component.  See
+    Styles API docs.
+
+- tabIndex (number; optional):
+    tab-index.
+
+- tooltipProps (boolean | number | string | dict | list; optional):
+    Props passed down to the `Tooltip.Floating` component.
+
+- variant (string; optional):
+    variant.
+
+- visibleFrom (string; optional):
+    Breakpoint below which the component is hidden with `display:
+    none`.
+
+- weekdayLabels (list of strings; optional):
+    Weekday labels, array of 7 elements, can be used for localization.
+
+- weekdaysLabelsWidth (number; optional):
+    Width of weekday labels column. Default 30.
+
+- withMonthLabels (boolean; optional):
+    If set, month labels are displayed. Default False.
+
+- withOutsideDates (boolean; optional):
+    If set, trailing dates that do not fall into the given `startDate`
+    – `endDate` range are displayed to fill empty space. Default True.
+
+- withTooltip (boolean; optional):
+    If set, tooltip is displayed on rect hover. Default False.
+
+- withWeekdayLabels (boolean; optional):
+    If set, weekday labels are displayed. Ddefault False.
+
 ## LineChart  
 Line chart component  
 Category: Charts  
@@ -8282,8 +9082,8 @@ data = [
 
 component = dmc.RadarChart(
     h=300,
-    data=data,    dataKey="product",
-
+    data=data,    
+    dataKey="product",
     series=[
       {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
       {"name": "sales_february", "color": "cyan.4", "opacity": 0.1}
@@ -8291,26 +9091,19 @@ component = dmc.RadarChart(
     withPolarGrid=True,
     withPolarAngleAxis=False,
     withPolarRadiusAxis=True,
+    withTooltip=False,
+    withDots=False,
 )
 
 
 ```
 
 
-### Rechart props
+### With tooltip and dots
 
-To pass props down to the underlying recharts components, use the following props:
-- `radarProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
-- `radarChartProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
-- `polarGridProps` passed props to [PolarGrid](https://recharts.org/en-US/api/PolarGrid) component
-- `polarAngleAxisProps` passed props to [PolarAngleAxis](https://recharts.org/en-US/api/PolarAngleAxis) component
-- `polarRadiusAxisProps` passed props to [PolarRadiusAxis](https://recharts.org/en-US/api/PolarRadiusAxis) component
-
-Example of passing props down to PolarRadiusAxis component:
 
 ```python
 import dash_mantine_components as dmc
-
 
 data = [
     {"product": "Apples", "sales_january": 120, "sales_february": 100},
@@ -8325,14 +9118,66 @@ component = dmc.RadarChart(
     h=300,
     data=data,
     dataKey="product",
+    series=[
+        {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
+        {"name": "sales_february", "color": "cyan.4", "opacity": 0.1},
+    ],
+    withTooltip=True,
+    withDots=True,
+)
+```
+### Rechart props
+
+To pass props down to the underlying Recharts components, use the following props:
+- `radarProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
+- `radarChartProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
+- `polarGridProps` passed props to [PolarGrid](https://recharts.org/en-US/api/PolarGrid) component
+- `polarAngleAxisProps` passed props to [PolarAngleAxis](https://recharts.org/en-US/api/PolarAngleAxis) component
+- `polarRadiusAxisProps` passed props to [PolarRadiusAxis](https://recharts.org/en-US/api/PolarRadiusAxis) component
+- Also available:  `legendProps`, `dotProps`, `activeDotProps`, `tooltipProps`
+
+It's also possible to pass functions to the Recharts component.  This example passes props to `PolarRadiusAxis` component.  
+
+
+Note: This example uses custom JavaScript defined in the assets folder. Learn more in the "Functions As Props" section of this document.
+  
+
+
+```python
+import dash_mantine_components as dmc
+
+
+data = [
+    {"product": "Apples", "sales_january": 12000, "sales_february": 10000},
+    {"product": "Oranges", "sales_january": 9800, "sales_february": 9000},
+    {"product": "Tomatoes", "sales_january": 8600, "sales_february": 7000},
+    {"product": "Grapes", "sales_january": 9900, "sales_february": 8000},
+    {"product": "Bananas", "sales_january": 8500, "sales_february": 12000},
+    {"product": "Lemons", "sales_january": 6500, "sales_february": 15000},
+]
+
+component = dmc.RadarChart(
+    h=300,
+    data=data,
+    dataKey="product",
     withPolarRadiusAxis=True,
-    polarRadiusAxisProps={"angle": 30},
+    polarRadiusAxisProps={"angle": 30, "tickFormatter": {"function": "formatNumberIntl"}},
     series=[
         {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
         {"name": "sales_february", "color": "cyan.4", "opacity": 0.1},
     ],
 )
 ```
+
+```javascript
+var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+
+dmcfuncs.formatNumberIntl = (value) => {
+  return new Intl.NumberFormat('en-US').format(value);
+};
+```
+
+
 ### Radar animation
 By default, the Recharts data animation is disabled. To enable and customize the animation, use `radarProps` to pass properties to the Recharts `Radar` component.
 
@@ -8374,6 +9219,67 @@ def update(n):
         {"product": "Lemons", "sales": randint(20, 100)},
     ]
 ```
+### Legend
+
+Set the `withLegend` prop to display the legend:
+
+
+```python
+import dash_mantine_components as dmc
+
+data = [
+    {
+        "product": "Apples",
+        "Sales January": 120,
+        "Sales February": 100,
+    },
+    {
+        "product": "Oranges",
+        "Sales January": 98,
+        "Sales February": 90,
+    },
+    {
+        "product": "Tomatoes",
+        "Sales January": 86,
+        "Sales February": 70,
+    },
+    {
+        "product": "Grapes",
+        "Sales January": 99,
+        "Sales February": 80,
+    },
+    {
+        "product": "Bananas",
+        "Sales January": 85,
+        "Sales February": 120,
+    },
+    {
+        "product": "Lemons",
+        "Sales January": 65,
+        "Sales February": 150,
+    },
+]
+
+component = dmc.RadarChart(
+    h=300,
+    data=data,
+    dataKey="product",
+    withPolarRadiusAxis=True,
+    withLegend=True,
+    series=[
+        {
+            "name": "Sales January",
+            "color": "blue.6",
+            "opacity": 0.2,
+        },
+        {
+            "name": "Sales February",
+            "color": "orange.6",
+            "opacity": 0.2,
+        },
+    ],
+)
+```
 ### Styles API
 
 
@@ -8382,19 +9288,30 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 #### RadarChart selectors
 
-| Selector    | Static selector               | Description                                      |
-|:------------|:------------------------------|:-------------------------------------------------|
-| root        | .mantine-RadarChart-root      | Root element                                    |
-| container   | .mantine-RadarChart-container | Recharts ResponsiveContainer component          |
+| Selector | Static selector | Description |
+|----------|----------------|-------------|
+| root | .mantine-RadarChart-root | Root element |
+| container | .mantine-RadarChart-container | Recharts ResponsiveContainer component |
+| tooltip | .mantine-RadarChart-tooltip | Tooltip root element |
+| tooltipBody | .mantine-RadarChart-tooltipBody | Tooltip wrapper around all items |
+| tooltipItem | .mantine-RadarChart-tooltipItem | Tooltip item representing data series |
+| tooltipItemBody | .mantine-RadarChart-tooltipItemBody | Tooltip item wrapper around item color and name |
+| tooltipItemColor | .mantine-RadarChart-tooltipItemColor | Tooltip item color |
+| tooltipItemName | .mantine-RadarChart-tooltipItemName | Tooltip item name |
+| tooltipItemData | .mantine-RadarChart-tooltipItemData | Tooltip item data |
+| tooltipLabel | .mantine-RadarChart-tooltipLabel | Label of the tooltip |
+| legend | .mantine-RadarChart-legend | Legend root element |
+| legendItem | .mantine-RadarChart-legendItem | Legend item representing data series |
+| legendItemColor | .mantine-RadarChart-legendItemColor | Legend item color |
+| legendItemName | .mantine-RadarChart-legendItemName | Legend item name |
 
 
 #### RadarChart CSS variables
 
-| Selector         | Variable             | Description                                   |
-|:-----------------|:---------------------|:----------------------------------------------|
-| root             | --chart-grid-color   | Controls color of the chart grid              |
-|                  | --chart-text-color   | Controls color of all text elements in the chart|
-
+| Selector | Variable | Description |
+|----------|----------|-------------|
+| root | --chart-grid-color | Controls color of the chart grid |
+| root | --chart-text-color | Controls color of all text elements in the chart |
 
 
 ### Keyword Arguments
@@ -8406,6 +9323,10 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 - id (string; optional):
     Unique ID to identify this component in Dash callbacks.
+
+- activeDotProps (dict; optional):
+    Props passed down to all active dots. Ignored if `withDots=False`
+    is set.
 
 - aria-* (string; optional):
     Wild card aria attributes.
@@ -8436,6 +9357,9 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 - dataKey (string; required):
     Key of the `data` object for axis values.
+
+- dotProps (dict; optional):
+    Props passed down to all dots. Ignored if `withDots=False` is set.
 
 - gridColor (optional):
     Controls color of the grid lines. By default, color depends on the
@@ -8494,12 +9418,21 @@ This component supports Styles API. With Styles API, you can customize styles of
     Controls color of all text elements. By default, color depends on
     the color scheme.
 
+- tooltipAnimationDuration (number; optional):
+    Tooltip position animation duration in ms.  Default 0.
+
+- tooltipProps (dict; optional):
+    Props passed down to recharts Tooltip component.
+
 - variant (string; optional):
     variant.
 
 - visibleFrom (string; optional):
     Breakpoint below which the component is hidden with `display:
     none`.
+
+- withDots (boolean; optional):
+    Determines whether dots should be displayed. Default False.
 
 - withLegend (boolean; optional):
     Determines whether chart legend should be displayed, `False` by
@@ -8516,6 +9449,10 @@ This component supports Styles API. With Styles API, you can customize styles of
 - withPolarRadiusAxis (boolean; optional):
     Determines whether PolarRadiusAxisProps component should be
     displayed, `False` by default.
+
+- withTooltip (boolean; optional):
+    Determines whether Tooltip component should be displayed. Default
+    False.
 
 ## ScatterChart  
 Scatter chart component  
@@ -49799,6 +50736,148 @@ Special thanks to:
  
 * [@alexcjohnson](https://github.com/alexcjohnson) for your helpful feedback during code reviews.
 
+## Version 2.8.0  
+Release announcement for Dash Mantine Components v2.8.0  
+Category: Releases  
+
+Jun 9, 2026  
+
+Based on Mantine 8.3.18
+
+See the full [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/2.8.0)  
+
+### FunnelChart
+
+The new [FunnelChart](/components/funnelchart) is based on the [FunnelChart recharts component](https://recharts.org/en-US/api/FunnelChart):
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component=dmc.FunnelChart(data=data)
+```
+### Heatmap
+
+The new [Heatmap](/components/heatmap) component is used to display data in a table where each column represents a week:
+
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16"
+)
+```
+It also supports split months:
+
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-26",
+    withMonthLabels=True,
+    splitMonths=True
+)
+```
+### RadarChart updates
+
+`RadarChart` now supports  [functions as props](/functions-as-props) passed to Recharts components, making it possible to use custom components and advanced chart customization.
+Also added new props: `withTooltip`, `tooltipProps`, `tooltipAnimationDuration`, `withDots`, `dotProps`, `activeDotProps`.
+
+
+#### Recharts props available for RadarChart
+
+To pass props down to the underlying Recharts components, use the following props:
+- `radarProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
+- `radarChartProps` passed props to [RadarChart](https://recharts.org/en-US/api/RadarChart) component
+- `polarGridProps` passed props to [PolarGrid](https://recharts.org/en-US/api/PolarGrid) component
+- `polarAngleAxisProps` passed props to [PolarAngleAxis](https://recharts.org/en-US/api/PolarAngleAxis) component
+- `polarRadiusAxisProps` passed props to [PolarRadiusAxis](https://recharts.org/en-US/api/PolarRadiusAxis) component
+- Also available:  `legendProps`, `dotProps`, `activeDotProps`, `tooltipProps`
+
+The following example demonstrates passing functions as props to Recharts components. In this case, props are passed to the `PolarRadiusAxis` component.
+
+```python
+import dash_mantine_components as dmc
+
+
+data = [
+    {"product": "Apples", "sales_january": 12000, "sales_february": 10000},
+    {"product": "Oranges", "sales_january": 9800, "sales_february": 9000},
+    {"product": "Tomatoes", "sales_january": 8600, "sales_february": 7000},
+    {"product": "Grapes", "sales_january": 9900, "sales_february": 8000},
+    {"product": "Bananas", "sales_january": 8500, "sales_february": 12000},
+    {"product": "Lemons", "sales_january": 6500, "sales_february": 15000},
+]
+
+component = dmc.RadarChart(
+    h=300,
+    data=data,
+    dataKey="product",
+    withPolarRadiusAxis=True,
+    polarRadiusAxisProps={"angle": 30, "tickFormatter": {"function": "formatNumberIntl"}},
+    series=[
+        {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
+        {"name": "sales_february", "color": "cyan.4", "opacity": 0.1},
+    ],
+)
+```
+
+```javascript
+var dmcfuncs = window.dashMantineFunctions = window.dashMantineFunctions || {};
+
+dmcfuncs.formatNumberIntl = (value) => {
+  return new Intl.NumberFormat('en-US').format(value);
+};
+```
+
+#### RadarCharts with tooltips and dots
+New props in this release:  `withTooltip`, `tooltipProps`, `tooltipAnimationDuration`, `withDots`, `dotProps`, `activeDotProps`.
+
+```python
+import dash_mantine_components as dmc
+
+data = [
+    {"product": "Apples", "sales_january": 120, "sales_february": 100},
+    {"product": "Oranges", "sales_january": 98, "sales_february": 90},
+    {"product": "Tomatoes", "sales_january": 86, "sales_february": 70},
+    {"product": "Grapes", "sales_january": 99, "sales_february": 80},
+    {"product": "Bananas", "sales_january": 85, "sales_february": 120},
+    {"product": "Lemons", "sales_january": 65, "sales_february": 150},
+]
+
+component = dmc.RadarChart(
+    h=300,
+    data=data,
+    dataKey="product",
+    series=[
+        {"name": "sales_january", "color": "lime.4", "opacity": 0.1},
+        {"name": "sales_february", "color": "cyan.4", "opacity": 0.1},
+    ],
+    withTooltip=True,
+    withDots=True,
+)
+```
+### Other notable changes
+
+- Fixed an issue where `dcc.Markdown` could override the dark theme styling of `CodeHighlight` components.
+- Added the `getStyleNonce` prop to `MantineProvider`
+- `BarChart` now supports custom label components in the `valueLabelProp` property. Special thanks to first time contributor @almostBurtMacklin for adding this feature!
+
+
+### Important version information
+
+Dash Mantine Components v2.x is built on Mantine v8. When referring to the upstream Mantine documentation, please use
+[Mantine v8](https://v8.mantine.dev/).  Avoid the Mantine v9 documentation, as it includes breaking changes that are
+not compatible with DMC v2.x.
+
 ## CSS Variables  
 How to use CSS variables with Dash Mantine Components.  
 Category: Styling  
@@ -52343,6 +53422,11 @@ app.layout = dmc.MantineProvider(
 - forceColorScheme (a value equal to: 'dark', 'light'; optional):
     Forces color scheme value, if set, MantineProvider ignores
     `colorSchemeManager` and `defaultColorScheme`.
+
+- getStyleNonce (boolean | number | string | dict | list; optional):
+    getStyleNonce is a function to generate
+    [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce)
+    attribute added to dynamic generated `<style />` tags.
 
 - stylesTransform (dict; optional):
     An object to transform `styles` and `sx` props into css classes,
