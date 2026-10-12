@@ -14,45 +14,52 @@ order: 1  # sets order in section and in search
 
 ```bash
 pip install dash-mantine-components
+pip install dash>=4.5
 ```
 
-```bash
-poetry add dash-mantine-components
+### Requires React 19
+
+`dash-mantine-components>=3 requires React 19.
+Set in your app:
+
+```python
+import dash
+dash._dash_renderer._set_react_version("19.2.4")
+
+app = dash.Dash()
 ```
+Or set the React version with an environment variable:
+```bash
+REACT_VERSION=19.2.4 python app.py
+````
 
 ### Basic Usage
 
 .. exec::docs.getting-started.hello_world
    :code: false
 
-
 ```python
 import dash_mantine_components as dmc
-from dash import Dash
+from dash import Dash, _dash_renderer
+
+_dash_renderer._set_react_version("19.2.4")
 
 app = Dash()
 
 app.layout = dmc.MantineProvider(
-    dmc.Alert(
-       "Welcome to Dash Mantine Components",
-       title="Hello!",
-       color="violet",
-    )
+   dmc.Alert(
+      "Welcome to Dash Mantine Components",
+      title="Hello!",
+      color="violet",
+   )
 )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+   app.run(debug=True)
 ```
 
 
 ### Important Notes 
-
-#### Version information
-
-Dash Mantine Components v2 is built on Mantine v8. When referring to the upstream Mantine documentation, please use
-[Mantine v8](https://v8.mantine.dev/).  Avoid the Mantine v9 documentation, as it includes breaking changes that are
-not compatible with DMC v2.
-
 
 
 #### Wrap the layout with `MantineProvider`
