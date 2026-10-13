@@ -53,9 +53,7 @@ possible to enter value outside of min/max range. Note that this option may caus
 Set `selectAllOnFocus` to automatically select the entire input value when the field receives focus. This is useful when 
 you expect users to replace the value rather than edit it:
 
-```python
-dmc.NumberInput(value=123, selectAllOnFocus=True)
-```
+.. exec::docs.numberinput.selectall
 
 ### Prefix and suffix
 Set `prefix` and `suffix` props to add given string to the start or end of the input value:
