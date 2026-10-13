@@ -90,6 +90,11 @@ the expanded/collapsed display of the nodes with children.
 
 .. exec::docs.tree.expanded-preset
 
+### Connecting lines
+Set `withLines` prop to display connecting lines showing parent-child relationships. Lines adapt to `levelOffset` spacing automatically.
+
+.. exec::docs.tree.withlines
+
 ### Expand or Collapse All
 
 Expand all will include all items of the `data` prop in the `expanded` prop.
@@ -180,11 +185,17 @@ export interface RenderTreeNodePayload {
   /** `true` if the node is expanded, applicable only for nodes with `children` */
   expanded: boolean;
 
-  /** `true` if the node has non-empty `children` array */
+  /** `true` if the node has non-empty `children` array or `hasChildren` is set to `true` */
   hasChildren: boolean;
 
   /** `true` if the node is selected */
   selected: boolean;
+
+  /** `true` if the node's children are currently being loaded */
+  isLoading: boolean;
+
+  /** Error from the last failed load attempt, or `null` */
+  loadError: Error | null;
 
   /** Node data from the `data` prop of `Tree` */
   node: TreeNodeData;
@@ -198,11 +209,21 @@ export interface RenderTreeNodePayload {
     style: React.CSSProperties;
     onClick: (event: React.MouseEvent) => void;
     'data-selected': boolean | undefined;
-    'data-value': string;    
+    'data-value': string;
   };
+
+  /** Props to spread into the drag handle element when `withDragHandle` is set on `Tree`,
+   * `undefined` otherwise */
+  dragHandleProps: { onMouseDown: (event: React.MouseEvent) => void } | undefined;
 }
 
 ```
+
+### More examples
+
+See the upstream [Mantine Tree documentation](https://mantine.dev/core/tree/) for other custom examples including features such as drag-and-drop,
+search with `Highlight`, `single-selection`, `hover-revealed actions menu,  and `withLines`
+
 
 
 ### Styles API
