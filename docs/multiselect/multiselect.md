@@ -187,7 +187,7 @@ You can reorder pills with a mouse (drag-and-drop) or keyboard:
 - `ArrowLeft` and `ArrowRight` move focus between pills (RTL-aware). Pressing `ArrowRight` on the last pill returns focus to the input.
 - `Alt + ArrowLeft` and `Alt + ArrowRight` reorder the focused pill (RTL-aware).
 - 
-Focus follows the moved pill so multiple moves can be chained without re-focusing.
+Focus follows the moved pill so multiple moves can be chained without re-focusing. Reordering is automatically disabled when disabled or readOnly is set. 
 
 
 .. exec::docs.multiselect.reorder
