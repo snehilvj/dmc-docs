@@ -65,10 +65,9 @@ Set in your app:
 
 ```python
 import dash
-
 dash._dash_renderer._set_react_version("19.2.4")
 
-app = Dash(__name__)
+app = dash.Dash()
 ```
 
 Or set the React version with an environment variable:
@@ -105,7 +104,7 @@ In 8.x, the default `border-radius` (`theme.defaultRadius`) was `sm` (4px). In 9
 
 
 ```Python
-dmc.MantineProvider(theme={"defaultRadius": "sm"},
+dmc.MantineProvider(theme={"defaultRadius": "sm"})
 
 ```
 
@@ -113,7 +112,7 @@ dmc.MantineProvider(theme={"defaultRadius": "sm"},
 New `fontWeights` property was added to the [theme object](https://www.dash-mantine-components.com/theme-object). It allows you to control font-weight values used across all components.  To revert the medium font weight from 600 back to 500 (the default in Mantine 8):
 
 ```Python
-dmc.MantineProvider(theme={"fontWeights": {"medium": 500}},
+dmc.MantineProvider(theme={"fontWeights": {"medium": 500}})
 ```
 
 #### Recharts v3
@@ -127,9 +126,6 @@ If you have written custom JavaScript functions that work with DMC charts, revie
 #### Custom JavaScript functions
 
 If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
-
-The Mantine migration guide also covers changes that may apply when accessing Mantine components or APIs directly.
-
 
 
 
