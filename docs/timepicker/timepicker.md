@@ -79,6 +79,13 @@ values range in the dropdown.
 
 .. exec::docs.timepicker.step
 
+### Duration type
+Set `type="duration"` to allow entering durations that exceed 24 hours. In this mode, the hours field has no upper limit
+and the input width adjusts dynamically based on the entered value. The format prop is ignored (always 24h) and the
+dropdown is disabled.
+
+.. exec::docs.timepicker.duration
+
 ### Time presets
 You can define time presets with `presets` prop. Presets are displayed in the dropdown and can be selected by clicking
 on them. Time values for presets should be in hh:mm:ss or hh:mm 24-hour time format. Presets display value is generated
