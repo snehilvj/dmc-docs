@@ -181,5 +181,28 @@ In this case the element will have the following styles:
 }
 ```
 
+### Deduplicating responsive style props
+*new in dmc v3*
+
+If you have many components with the same responsive style props, you can set `deduplicateInlineStyles=True` on `MantineProvider`
+to automatically share `<style /> tags` between components with identical responsive styles. This uses React 19 style
+hoisting to deduplicate and hoist styles to `<head />`
+
+Default is  `True`. This can significantly improve performance when rendering large lists of components with identical responsive style props. 
+
+
+```python
+app.layout = dmc.MantineProvider(
+    deduplicateInlineStyles=True # This is the default
+    # Components with the same responsive style props  will now share a single <style /> tag
+)
+
+```
+
+Note that deduplication only helps when multiple components share the same responsive style prop values. If every
+component has unique responsive values, each still requires its own `<style />` tag.
+
+Currently, deduplication applies to style props on all components and to responsive props on the `Flex` component.
+Components like `Grid` and `SimpleGrid` are not yet covered.
 
 
