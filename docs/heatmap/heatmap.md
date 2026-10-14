@@ -190,6 +190,12 @@ Use `splitMonths` to separate months visually with a spacer column and show only
 .. exec::docs.heatmap.split_months
 
 
+### Legend
+Set `withLegend=True` to display a color legend below the heatmap. Use `legendLabels` prop to customize the labels
+(default: `['Less', 'More']`):
+
+.. exec::docs.heatmap.legend
+
 ### Styles API
 
 .. styles_api_text::
