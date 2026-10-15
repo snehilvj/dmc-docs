@@ -158,6 +158,13 @@ In the following demo, the value x represents the value 2^x. Increasing x by one
 
 .. functions_as_props::
 
+### Start point
+Use the `startPointValue` prop to change the origin of the filled bar. When set, the bar extends from the given value
+toward the current value – to the left for values below the start point and to the right for values above it. This prop
+is ignored when `inverted` is set.  Available in `Slider` component only.
+
+
+.. exec::docs.slider.startpoint
 
 ### Inverted
 You can invert the track by setting `inverted=True`:
