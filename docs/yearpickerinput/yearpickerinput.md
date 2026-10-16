@@ -28,6 +28,15 @@ Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
 .. exec::docs.yearpickerinput.range
 
+### Presets
+Use the `presets` prop to add custom year presets. Presets are displayed next to the calendar:
+
+.. exec::docs.yearpickerinput.presets
+
+To use `presets` with `type="range"`, define the value as a tuple of two dates:
+
+.. exec::docs.yearpickerinput.presets_range
+
 ### Open picker in modal
 
 By default, YearPickerInput is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
