@@ -28,6 +28,9 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 .. exec::docs.dateinput.formats
 
+`valueFormat` also accepts a function that receives the value as a YYYY-MM-DD string and returns the formatted value.  For
+more details and examples, see [Mantine DateInput](https://mantine.dev/dates/date-input/#value-format) documentation, and the [Functions As Props](/functions-as-props) section.
+
 
 ### Clearable
 

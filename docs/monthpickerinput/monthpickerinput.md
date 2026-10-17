@@ -56,6 +56,25 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 .. exec::docs.monthpickerinput.valueformat
 
 
+
+### Value formatter
+`valueFormatter` is a more powerful alternative to the `valueFormat` prop. It allows formatting the value label with a
+custom function. The function is the same for all component types (default, multiple and range) – you need to perform
+additional checks inside the function to handle different types.
+
+Example of using a custom formatter function with `type="multiple"`:
+
+
+.. functions_as_props::  
+
+
+.. exec::docs.monthpickerinput.valueformatter
+    :code: false
+
+.. sourcetabs::docs/monthpickerinput/valueformatter.py, assets/examples-js/format-dates-selected.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 ### Clearable
 
 Set `clearable=True` prop to display clear button in the right section. Note that if you set `rightSection` prop, clear button will not be displayed.

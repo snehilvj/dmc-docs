@@ -56,6 +56,26 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 .. exec::docs.datepickerinput.formats
 
+### Value formatter
+`valueFormatter` is a more powerful alternative to the `valueFormat` prop. It allows formatting the value label with a
+custom function. The function is the same for all component types (default, multiple and range) – you need to perform
+additional checks inside the function to handle different types.
+
+Example of using a custom formatter function with `type="multiple"`:
+
+
+.. functions_as_props::  
+
+
+.. exec::docs.datepickerinput.valueformatter
+    :code: false
+
+.. sourcetabs::docs/datepickerinput/valueformatter.py, assets/examples-js/format-dates-selected.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
 
 ### Clearable
 

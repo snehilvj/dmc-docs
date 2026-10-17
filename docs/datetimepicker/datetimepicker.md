@@ -50,6 +50,20 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 .. exec::docs.datetimepicker.valueformat
 
+`valueFormat` also accepts a function that receives the value as a YYYY-MM-DD HH:mm:ss string and returns a custom
+formatted value. Use it when the formatting logic cannot be expressed with a dayjs format string:
+
+.. functions_as_props::  
+
+
+.. exec::docs.datetimepicker.valueformat-function
+    :code: false
+
+.. sourcetabs::docs/datetimepicker/valueformat-function.py, assets/examples-js/format-datetimepicker.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Disabled state
 
 .. exec::docs.datetimepicker.disabled
