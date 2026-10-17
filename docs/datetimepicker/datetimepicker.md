@@ -18,6 +18,15 @@ category: Date Pickers
 
 .. exec::docs.datetimepicker.simple
 
+### Range
+Set `type="range"` to allow selecting a date and time range. In range mode, two time inputs are rendered for start and
+end times, and a range summary is displayed below:
+
+
+.. exec::docs.datetimepicker.range
+
+
+
 ### With Seconds
 
 
