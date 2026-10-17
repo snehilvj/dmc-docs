@@ -63,7 +63,6 @@ additional checks inside the function to handle different types.
 
 Example of using a custom formatter function with `type="multiple"`:
 
-
 .. functions_as_props::  
 
 
