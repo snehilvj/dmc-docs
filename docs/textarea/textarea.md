@@ -20,6 +20,14 @@ Textarea will grow until `maxRows` are reached or indefinitely if `maxRows` is n
 
 .. exec::docs.textarea.autosize
 
+
+### bottom section
+
+Use `bottomSection` prop to render content inside the input border at the bottom. This is useful for displaying
+character counters, hints, or other supplementary information:
+
+.. exec::docs.textarea.bottom_section
+
 ### Invalid State and Error
 
 Use `error` prop to convey an error with an error message and a red border around the input.
