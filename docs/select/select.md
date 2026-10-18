@@ -203,7 +203,12 @@ dropdown styles with `Styles API`.
 
 .. exec::docs.select.scrollable
 
+### Fit dropdown to viewport height
+Set `floatingHeight="viewport"` to make the dropdown grow to fill the available vertical space in the viewport. The
+flip middleware is disabled in this mode – the dropdown always opens in the configured direction and is constrained
+to the viewport edges instead of flipping to the other side. Useful when working with large option lists:
 
+.. exec::docs.select.floatingheight
 
 ### Grouping Items
 
