@@ -103,6 +103,10 @@ If you change `arrowPosition` to `side`, then the arrow will be positioned on th
 will be able to control arrow offset with `arrowOffset` prop. Note that when `arrowPosition` is set to `center`, 
 `arrowOffset` prop is ignored.
 
+If you set `arrowPosition` to `merge`, the arrow will form a right triangle merged with the corresponding corner of the
+tooltip, and the border radius of that corner will be removed. This mode only works with `*-start` and `*-end` positions.
+Note that `arrowOffset` and `arrowRadius` props are ignored when `arrowPosition` is set to `merge`.
+
 .. exec::docs.tooltip.interactive-arrow
     :code: false
 
