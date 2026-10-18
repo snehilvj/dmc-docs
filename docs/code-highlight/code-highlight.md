@@ -96,11 +96,30 @@ dmc.CodeHighlightTabs(code=code)
 If the code snippet is too long, you can make it expandable with `withExpandButton` and `defaultExpanded=False` props.
 To change label of the expand/collapse control tooltip, use `expandCodeLabel` and `collapseCodeLabel`.
 
-Note - the expandable code feature is only available in the  `CodeHighlightTabs` component.
-
 
 .. exec::docs.code-highlight.expandable
     :code: false
+
+```python
+dmc.CodeHighlightTabs(
+    code=code,
+    withExpandButton=True,
+    expandCodeLabel="Show full code",
+    collapseCodeLabel="Show less",
+    defaultExpanded=False
+)
+```
+
+### Line Numbers
+
+Set `withLineNumbers=True`  to display line numbers alongside the code:
+
+.. exec::docs.code-highlight.linenumbers
+
+### Radius and Border
+
+.. exec::docs.code-highlight.radius_border
+
 
 ### Inline code
 
