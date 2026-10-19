@@ -146,6 +146,12 @@ Set  `withMonthLabels=True` and `withWeekdayLabels=True` to display chart labels
 
 .. exec::docs.heatmap.labels
 
+### Month labels position
+Set monthLabelsPosition="bottom" to display month labels below the heatmap:
+
+
+.. exec::docs.heatmap.labelsposition
+
 ### Change labels text
 
 To change labels, use the `weekdayLabels` and `monthLabels` props.
