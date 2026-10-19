@@ -107,6 +107,11 @@ directly in the `presets` prop.
 
 .. exec::docs.timepicker.presetsrange
 
+### Close dropdown on preset select
+Set `closeDropdownOnPresetSelect` prop to close the dropdown once a value is selected from the presets list:
+
+
+.. exec::docs.timepicker.presetsdropdown
 
 ### Dropdown position
 By default, the dropdown is displayed below the input if there is enough space; otherwise it is displayed above the 
