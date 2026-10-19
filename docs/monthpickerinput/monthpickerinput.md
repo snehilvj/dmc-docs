@@ -102,6 +102,10 @@ The `clearSectionMode` prop determines how the `clear` button and `rightSection`
 
 .. exec::docs.monthpickerinput.minmax
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements.
+
+.. exec::docs.monthpickerinput.nativeselect
 
 ### CSS Extensions
 

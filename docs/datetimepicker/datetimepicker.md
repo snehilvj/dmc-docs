@@ -98,7 +98,11 @@ By default, `DateTimePicker` is rendered inside `Popover`. You can change that t
 .. exec::docs.datetimepicker.modal
 
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements. At 
+the month level, two selects are rendered for month and year. At the year level, one select is rendered for year.
 
+.. exec::docs.datetimepicker.nativeselect
 
 ### CSS Extensions
 

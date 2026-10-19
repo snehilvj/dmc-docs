@@ -210,6 +210,11 @@ format of decade/year label:
 
 For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements. At 
+the month level, two selects are rendered for month and year. At the year level, one select is rendered for year.
+
+.. exec::docs.datepicker.nativeselect
 
 ### CSS Extensions
 

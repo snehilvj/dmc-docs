@@ -111,6 +111,12 @@ set `clearable=False`.
 For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
 
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements. At 
+the month level, two selects are rendered for month and year. At the year level, one select is rendered for year.
+
+.. exec::docs.datepickerinput.nativeselect
+
 ### CSS Extensions
 
 As of DMC 1.2.0, Date component styles are bundled automatically, so you no longer need to include a separate CSS file.
