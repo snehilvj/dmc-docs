@@ -93,13 +93,18 @@ The `clearSectionMode` prop determines how the `clear` button and `rightSection`
 
 .. exec::docs.datepickerinput.clear_section_mode
 
-### Error Display
+### Error state
 
 You can convey errors in your date picker by setting the `error` prop. For instance, in the below example we try to
 convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
 set `clearable=False`.
 
 .. exec::docs.datepickerinput.errors
+
+
+### Success state
+
+.. exec::docs.datepickerinput.success
 
 ### Localization
 

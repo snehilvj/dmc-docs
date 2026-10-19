@@ -163,11 +163,14 @@ TimeInput supports all props from Input and InputWrapper components such as `rad
 .. exec::docs.timepicker.interactive
     :code: false
 
-### Invalid State And Error
+### Error State
 
 You can display an error with a red border and add an error message.
 
 .. exec::docs.timepicker.error
+
+### Success state
+.. exec::docs.timepicker.success
 
 ### Accessibility
 
