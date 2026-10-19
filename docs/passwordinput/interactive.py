@@ -22,6 +22,7 @@ configurator.add_text_input(
     **{"placeholder": "Description"}
 )
 configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_text_input("success", "", **{"placeholder": "Success"})
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")
 configurator.add_segmented_control("variant", ["default", "filled", "unstyled"], "default")

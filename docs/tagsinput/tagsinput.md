@@ -341,6 +341,15 @@ Set `disabled` to disable the input. When `disabled` is set, user cannot interac
 
 .. exec::docs.tagsinput.disabled
 
+### Error state
+
+.. exec::docs.tagsinput.error
+
+### Success state
+
+
+.. exec::docs.tagsinput.success
+
 ### Styles API
 
 .. styles_api_text::

@@ -28,7 +28,7 @@ character counters, hints, or other supplementary information:
 
 .. exec::docs.textarea.bottom_section
 
-### Invalid State and Error
+### Error State
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -42,6 +42,11 @@ input:invalid {
 ```
 
 .. exec::docs.textarea.error
+
+### Success state
+
+.. exec::docs.textarea.success
+
 
 ### inputProps
 

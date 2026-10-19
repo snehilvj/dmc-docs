@@ -333,12 +333,18 @@ You can use the following props to control sections styles and content:
 
 
 
-### Invalid State And Error
+### Error State
 
 You can let the user know if the selected value is invalid. In the example below, you will get an error message if you
 select less than 2 currency pairs.
 
 .. exec::docs.multiselect.error
+
+
+### Success State
+
+.. exec::docs.multiselect.success
+
 
 ### Input Props
 `MultiSelect` component supports `Input` and Input Wrapper components features and all input element props.

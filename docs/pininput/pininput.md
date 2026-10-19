@@ -39,6 +39,11 @@ Set `placeholder` to change placeholder of all fields. Note that it only accepts
 
 .. exec::docs.pininput.error
 
+
+### Success state
+
+.. exec::docs.pininput.success
+
 ### Masked
 
 .. exec::docs.pininput.masked

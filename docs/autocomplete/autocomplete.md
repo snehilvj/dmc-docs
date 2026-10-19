@@ -284,7 +284,7 @@ call onChange function.
 .. exec::docs.autocomplete.readonly
 
 
-### Invalid State And Error
+###  Error State
 
 
 Note: Dash adds some css by default which can lead you to see a red box when setting the `required` or `error` 
@@ -300,6 +300,12 @@ You can let the user know if the selected value is invalid. In the example below
 select less than 2 currency pairs.
 
 .. exec::docs.autocomplete.error
+
+### Success State
+
+.. exec::docs.autocomplete.success
+
+
 
 
 ### Styles API

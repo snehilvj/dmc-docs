@@ -17,7 +17,7 @@ visibility, if you do not want this feature, use [TextInput](/components/textinp
 .. exec::docs.passwordinput.interactive
     :code: false
 
-### Invalid State and Error
+### Error State
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -31,6 +31,12 @@ input:invalid {
 ```
 
 .. exec::docs.passwordinput.error
+
+### Success State
+
+
+.. exec::docs.passwordinput.success
+
 
 ### Disabled State
 

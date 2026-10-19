@@ -21,7 +21,7 @@ You can change the position with the `loadingPosition` prop to 'left' or 'right'
 
 .. exec::docs.textinput.loading
 
-### Invalid State and Error
+### Error State
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -35,6 +35,10 @@ input:invalid {
 ```
 
 .. exec::docs.textinput.error
+
+### Success state
+
+.. exec::docs.textinput.success
 
 ### Disabled State
 

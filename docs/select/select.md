@@ -304,7 +304,7 @@ You can use the following props to control sections styles and content:
    :code: false
 
 
-### Invalid State And Error
+### Error State
 
 
 Note: Dash adds some css by default which can lead you to see a red box when setting the `required` or `error` 
@@ -320,6 +320,11 @@ You can let the user know if the selected value is invalid. In the example below
 select less than 2 currency pairs.
 
 .. exec::docs.select.error
+
+
+### Success State
+
+.. exec::docs.select.success
 
 
 ### Styles API

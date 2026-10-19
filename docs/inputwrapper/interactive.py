@@ -15,5 +15,6 @@ configurator = Configurator(target, center_component=True)
 configurator.add_text_input("label", "Your label", placeholder="Label")
 configurator.add_text_input("description", "Your description", placeholder="Description")
 configurator.add_text_input("error", "Your error message", placeholder="Error")
+configurator.add_text_input("success", "", placeholder="Success")
 configurator.add_switch("withAsterisk", True)
 component = configurator.panel
