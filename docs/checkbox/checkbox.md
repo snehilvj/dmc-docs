@@ -43,9 +43,7 @@ set `withErrorStyles=False`.
 ### Light variant
 
 Checkbox supports `filled` (default), `outline` and `light` variants. With `variant="light"`, checked and indeterminate
-states have a light background and a contrasting icon. Colors of the light variant are resolved with `theme.variantColorResolver`,
-the same way as in `Button` – color can be a key of `theme.colors` or any valid CSS color:
-
+states have a light background and a contrasting icon. 
 
 .. exec::docs.checkbox.light_variant
 
