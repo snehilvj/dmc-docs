@@ -74,6 +74,18 @@ positive values and one for negative values. Split area chart supports only one 
 
 .. exec::docs.areachart.split
 
+### Streamgraph
+Set `type="stream"` to render a streamgraph (also known as ThemeRiver). A streamgraph is a stacked area chart whose 
+baseline flows around a central axis instead of being fixed to zero, producing the characteristic organic "river" shape.
+It is useful for showing how the composition of a total shifts over time when the overall flow and proportions matter more
+than exact values.
+
+Since the baseline floats, the y-axis values are not meaningful to read off – the y-axis is hidden by default for `type="stream"`.
+You can set `withYAxis` back to `True` if you need it.
+
+
+.. exec::docs.areachart.streamchart
+
 ### Split colors
 Set `splitColors` prop to an array of two colors to customize the fill color of split area chart. The first color is
 used for positive values and the second color for negative values. `splitColors` prop is ignored in other types of area charts.
@@ -370,6 +382,33 @@ Set `strokeDasharray` property in series to change line style to dashed:
 Use `referenceLines` prop to render reference lines. Reference lines are always rendered behind the chart.
 
 .. exec::docs.areachart.referencelines
+
+### Reference areas
+Use the `referenceAreas` prop to highlight a rectangular region of the chart. Each area is bounded by x1/x2 (horizontal)
+and y1/y2 (vertical) data values – omit one pair to span the full opposite axis, for example provide only x1/x2 to
+highlight a time range across the entire height of the chart. Set `color` to any theme color or CSS color and label
+to display text inside the area. Reference areas are rendered behind the chart series.
+
+.. exec::docs.areachart.referenceareas
+
+### Reference dots
+Use the `referenceDots` prop to mark individual points on the chart – a peak, an event, a record value or an anomaly. 
+Each dot is positioned by x and y data coordinates and supports `r` (radius), `color` (any theme color or CSS color) and
+`label`. Reference dots are rendered on top of the chart series.
+
+.. exec::docs.areachart.referencedots
+
+### Brush
+Set the `withBrush` prop to display a brush (range selector) under the chart. Drag the brush handles (travellers) to
+zoom into a subset of the data. The chart updates to show only the selected range. The brush border and background are
+themed to match the chart grid and adapt to the color scheme. `withBrush` is `False` by default and is supported by
+`AreaChart`, `BarChart`, `LineChart` and `CompositeChart` components with `horizontal` orientation.
+.. exec::docs.areachart.brush
+
+### Brush props
+Use the `brushProps` prop to pass props down to the underlying recharts Brush component. For example, you can set the
+initially selected range with `startIndex`/`endIndex`, change the brush height, or subscribe to range changes with onChange:
+.. exec::docs.areachart.brushprops
 
 ### clickData
 Use the `clickData` property in a callback to retrieve data from the most recent click event.
