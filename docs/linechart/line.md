@@ -318,6 +318,21 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 .. exec::docs.linechart.referencelines
 
 
+### Reference areas
+Use the `referenceAreas` prop to highlight a rectangular region of the chart. Each area is bounded by x1/x2 (horizontal)
+and y1/y2 (vertical) data values – omit one pair to span the full opposite axis, for example provide only x1/x2 to
+highlight a time range across the entire height of the chart. Set `color` to any theme color or CSS color and label
+to display text inside the area. Reference areas are rendered behind the chart series.
+
+.. exec::docs.linechart.referenceareas
+
+### Reference dots
+Use the `referenceDots` prop to mark individual points on the chart – a peak, an event, a record value or an anomaly. 
+Each dot is positioned by x and y data coordinates and supports `r` (radius), `color` (any theme color or CSS color) and
+`label`. Reference dots are rendered on top of the chart series.
+
+.. exec::docs.linechart.referencedots
+
 
 
 ### Brush (Range Slider)
