@@ -1,4 +1,5 @@
 import dash_mantine_components as dmc
+from dash import callback, Input, Output
 
 data = [
     {"date": "Mar 1", "Apples": 2200, "Oranges": 1400},
@@ -19,13 +20,24 @@ data = [
     {"date": "Mar 16", "Apples": 2500, "Oranges": 1900},
 ]
 
-component = dmc.AreaChart(
-    h=300,
-    data=data,
-    dataKey="date",
-    withBrush=True,
-    series=[
-        {"name": "Apples", "color": "indigo.6"},
-        {"name": "Oranges", "color": "blue.6"},
-    ],
+component = dmc.Stack([
+    dmc.AreaChart(
+        h=300,
+        data=data,
+        dataKey="date",
+        withBrush=True,
+        series=[
+            {"name": "Apples", "color": "indigo.6"},
+            {"name": "Oranges", "color": "blue.6"},
+        ],
+        id="areachart-brush"
+    ),
+    dmc.Text(id="areachart-brush-dragend")
+])
+
+@callback(
+    Output("areachart-brush-dragend", "children"),
+    Input("areachart-brush", "brushDragEnd"),
 )
+def brushDragEnd(brushDragEnd):
+    return f"Brush range selected: {brushDragEnd}"

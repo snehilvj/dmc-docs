@@ -398,16 +398,21 @@ Each dot is positioned by x and y data coordinates and supports `r` (radius), `c
 
 .. exec::docs.areachart.referencedots
 
-### Brush
-Set the `withBrush` prop to display a brush (range selector) under the chart. Drag the brush handles (travellers) to
+### Brush (Range Slider)
+Set the `withBrush` prop to display a brush (range slider) under the chart. Drag the brush handles to
 zoom into a subset of the data. The chart updates to show only the selected range. The brush border and background are
 themed to match the chart grid and adapt to the color scheme. `withBrush` is `False` by default and is supported by
 `AreaChart`, `BarChart`, `LineChart` and `CompositeChart` components with `horizontal` orientation.
+
+Use the `brushDragEnd` prop to get the `startIndex` and `endIndex` of the selected range when dragging ends. 
+
+
 .. exec::docs.areachart.brush
 
 ### Brush props
-Use the `brushProps` prop to pass props down to the underlying recharts Brush component. For example, you can set the
-initially selected range with `startIndex`/`endIndex`, change the brush height, or subscribe to range changes with onChange:
+Use the `brushProps` prop to pass props down to the underlying [recharts Brush](https://recharts.github.io/en-US/api/Brush/) component. For example, you can set the
+initially selected range with `startIndex`/`endIndex`, change the brush height and more:
+
 .. exec::docs.areachart.brushprops
 
 ### clickData

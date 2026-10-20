@@ -279,6 +279,21 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 .. exec::docs.compositechart.referencelines
 
 
+
+### Brush (Range Slider)
+Set the `withBrush` prop to display a brush (range slider) under the chart. Drag the brush handles to
+zoom into a subset of the data. The chart updates to show only the selected range. The brush border and background are
+themed to match the chart grid and adapt to the color scheme. `withBrush` is `False` by default and is supported by
+`AreaChart`, `BarChart`, `LineChart` and `CompositeChart` components with `horizontal` orientation.
+
+Use the `brushDragEnd` prop to get the `startIndex` and `endIndex` of the selected range when dragging ends. 
+
+Use the `brushProps` prop to pass props down to the underlying [recharts Brush](https://recharts.github.io/en-US/api/Brush/) component. For example, you can set the
+initially selected range with `startIndex`/`endIndex`, change the brush height and more:
+
+
+.. exec::docs.compositechart.brush
+
 ### clickData
 Use the `clickData` property in a callback to retrieve data from the most recent click event.
 To get the name of the clicked series, use the `clickSeriesName` property.
