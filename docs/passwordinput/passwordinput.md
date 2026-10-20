@@ -58,6 +58,15 @@ You can change the position with the `loadingPosition` prop to 'left' or 'right'
 
 .. exec::docs.passwordinput.loading
 
+### Visibility toggle focus
+By default, the visibility toggle button is excluded from the tab order (`tabindex="-1"`). This mimics the native browser
+password reveal control and keeps the form flow uninterrupted: pressing `Tab` moves focus to the next field rather than 
+to the toggle button. The toggle remains operable with a mouse, touch and assistive technologies that navigate by element
+rather than by tab order.
+
+If your users expect to reach the toggle with Tab, set the `visibilityToggleFocusable=True` prop. The button then receives
+`tabindex="0"` and can be activated with `Enter` or `Space`
+
 
 ### Styles API
 
