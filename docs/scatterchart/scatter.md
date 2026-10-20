@@ -169,6 +169,16 @@ be used to change orientation of axis:
 
 .. exec::docs.scatterchart.xyaxis
 
+### Right Y axis
+To display an additional Y axis on the right side of the chart, set the `withRightYAxis` prop. You can pass props down
+to the recharts `YAxis` component with the `rightYAxisProps` prop and assign a label to the right Y axis with the
+`rightYAxisLabel` prop. Note that you need to bind data series to the right Y axis by setting `yAxisId: 'right'` in the
+data object. Series that do not have `yAxisId` are bound to the left Y axis. Both axes use the same `dataKey.y` value,
+but their scales are calculated independently from the series assigned to them.
+
+
+.. exec::docs.scatterchart.rightyaxis
+
 ### Point labels
 Set `pointLabels` prop to `x` or `y` to display labels on data points for the corresponding axis:
 
