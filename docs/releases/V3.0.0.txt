@@ -49,6 +49,10 @@ REACT_VERSION=19.2.4 python app.py
 
 
 .. exec::docs.collapse.horizontal
+    :code: false
+    :code: false
+    :defaultExpanded: false
+    :withExpandedButton: true
 
 ### Card horizontal orientation
 `Card` component now supports horizontal orientation:
