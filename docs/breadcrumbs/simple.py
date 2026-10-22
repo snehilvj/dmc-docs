@@ -16,10 +16,10 @@ component = html.Div(
         dmc.Breadcrumbs(
             separator="→",
             children=[
-                dmc.Anchor("Home", href="/", underline=False),
-                dmc.Anchor("Dash Mantine Components", href="/", underline=False),
+                dmc.Anchor("Home", href="/", underline="never"),
+                dmc.Anchor("Dash Mantine Components", href="/", underline="never"),
                 dmc.Anchor(
-                    "Breadcrumbs", href="/components/breadcrumbs", underline=False
+                    "Breadcrumbs", href="/components/breadcrumbs", underline="never"
                 ),
             ],
         ),

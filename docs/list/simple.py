@@ -7,7 +7,7 @@ component = dmc.List(
                 [
                     "Join our ",
                     dmc.Anchor(
-                        "Discord", href="https://discord.gg/KuJkh4Pyq5", underline=False
+                        "Discord", href="https://discord.gg/KuJkh4Pyq5", underline="never"
                     ),
                     " Community.",
                 ]

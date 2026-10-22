@@ -8,7 +8,7 @@ import frontmatter
 from markdown2dash import Admonition, BlockExec, Divider, Image, create_parser
 from pydantic import BaseModel
 
-from lib.constants import PAGE_TITLE_PREFIX
+from lib.constants import PAGE_TITLE_SUFFIX
 from lib.directives.functions_as_props import FunctionsAsProps
 from lib.directives.kwargs import Kwargs
 from lib.directives.source import SC
@@ -60,7 +60,7 @@ for file in files:
         metadata.name,
         metadata.endpoint,
         name=metadata.name,
-        title=PAGE_TITLE_PREFIX + metadata.name,
+        title=metadata.name + PAGE_TITLE_SUFFIX,
         description=metadata.description,
         layout=layout,
         category=metadata.category,
