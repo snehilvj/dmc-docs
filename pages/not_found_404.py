@@ -1,9 +1,9 @@
 import dash
 import dash_mantine_components as dmc
 
-from lib.constants import PAGE_TITLE_PREFIX
+from lib.constants import PAGE_TITLE_SUFFIX
 
-dash.register_page(__name__, title=PAGE_TITLE_PREFIX + "404", path="/404")
+dash.register_page(__name__, title="404" + PAGE_TITLE_SUFFIX, path="/404")
 
 layout = dmc.Stack(
     align="center",
@@ -13,14 +13,14 @@ layout = dmc.Stack(
                 "If you think this page should exist, create an issue ",
                 dmc.Anchor(
                     "here",
-                    underline=False,
+                    underline="never",
                     target="_blank",
                     href="https://github.com/snehilvj/dmc-docs/issues/new",
                 ),
                 ".",
             ]
         ),
-        dmc.Anchor("Go back to home ->", href="/", underline=False),
+        dmc.Anchor("Go back to home ->", href="/", underline="never"),
     ],
     mt=100,
 )
