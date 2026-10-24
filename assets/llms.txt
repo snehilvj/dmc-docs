@@ -4,7 +4,7 @@
 > Dash Mantine Components (DMC) is a component library for building modern web applications with [Dash](https://dash.plotly.com/).  
 > It provides a wide range of accessible, themeable, and performant UI components built on top of the [Mantine](https://v8.mantine.dev/) React library.
 >
-> This documentation applies to **DMC 2.8.0**, which wraps **Mantine 8.3.18**.  
+> This documentation applies to **DMC 2.8.1**, which wraps **Mantine 8.3.18**.  
 > For additional details about underlying component behavior and styling, refer to the Mantine documentation: https://v8.mantine.dev/
 > All relative links in this file should be resolved against https://www.dash-mantine-components.com
 >
@@ -14912,6 +14912,15 @@ theme =  {
     )
 }
 
+# Theme switch in the dmc-docs header:
+# dmc.ColorSchemeToggle(
+#     lightIcon=DashIconify(icon="radix-icons:sun", width=20),
+#     darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+#     variant="light",
+#     color="gray",
+#     id="docs-color-scheme-switch",
+# )
+
 component = html.Div([
     dag.AgGrid(
         id="theme-color-scheme33",
@@ -14923,19 +14932,20 @@ component = html.Div([
             "rowSelection": {"mode": "multiRow"}
         },
     ),
-    html.Div(id="dummy-output")
 ])
 
 
 clientside_callback(
     """
-    (switchOn) => {
-       document.documentElement.setAttribute('data-ag-theme-mode', switchOn ? 'dark' : 'light');  
-       return window.dash_clientside.no_update;        
+    (colorScheme) => {
+        document.documentElement.setAttribute(
+            'data-ag-theme-mode',
+            colorScheme
+        );
+        return window.dash_clientside.no_update;
     }
     """,
-    Output("dummy-output", "children"),
-    Input("docs-color-scheme-switch", "checked"),
+    Input("docs-color-scheme-switch", "computedColorScheme"),
 )
 ```
 #### Dash AG Grid < v33
@@ -40700,10 +40710,10 @@ component = html.Div(
         dmc.Breadcrumbs(
             separator="→",
             children=[
-                dmc.Anchor("Home", href="/", underline=False),
-                dmc.Anchor("Dash Mantine Components", href="/", underline=False),
+                dmc.Anchor("Home", href="/", underline="never"),
+                dmc.Anchor("Dash Mantine Components", href="/", underline="never"),
                 dmc.Anchor(
-                    "Breadcrumbs", href="/components/breadcrumbs", underline=False
+                    "Breadcrumbs", href="/components/breadcrumbs", underline="never"
                 ),
             ],
         ),
@@ -43904,6 +43914,10 @@ This component supports Styles API. With Styles API, you can customize styles of
 - checked (list of strings; optional):
     Determines checked nodes as a list of values (note that only
     leaves can be checked), `[]` by default.
+
+- checkedDebounce (number; default 0):
+    Determines the debounce time in milliseconds for the `checked`
+    property, `0` by default.
 
 - className (string; optional):
     Class added to the root element, if applicable.
@@ -55315,7 +55329,7 @@ component = dmc.List(
                 [
                     "Join our ",
                     dmc.Anchor(
-                        "Discord", href="https://discord.gg/KuJkh4Pyq5", underline=False
+                        "Discord", href="https://discord.gg/KuJkh4Pyq5", underline="never"
                     ),
                     " Community.",
                 ]

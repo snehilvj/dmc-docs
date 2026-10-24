@@ -6,16 +6,16 @@ import requests
 from dash import html
 from dash_iconify import DashIconify
 
-from lib.constants import PAGE_TITLE_PREFIX, PRIMARY_COLOR, MANTINE_VERSION, DMC_VERSION, LATEST_RELEASE_ENDPOINT
+from lib.constants import PAGE_TITLE_SUFFIX, PRIMARY_COLOR, MANTINE_VERSION, DMC_VERSION, LATEST_RELEASE_ENDPOINT
 from lib.directives.toc import TOC
 
 dash.register_page(
     __name__,
     "/",
-    title=PAGE_TITLE_PREFIX + "Home",
+    title="Home" + PAGE_TITLE_SUFFIX,
     description="""
-    Documentation for Dash Mantine Components, a component library to use with Plotly Dash apps.
-    100+ customizable components built on the React Mantine library, with consistent styling, theming, full light/dark mode support, and accessibility out of the box.        
+    Explore the Dash Mantine Components documentation. Build Plotly Dash apps with 100+ customizable components based
+     on React Mantine, featuring consistent styling, flexible theming, light and dark mode, and accessibility support.        
     """,
 )
 
@@ -90,8 +90,8 @@ layout = html.Div(
                 dmc.Box([
                     dmc.Text("Version Info:", ta="center"),
                     #version-update
-                    dmc.Center(dmc.Anchor(f"dash-mantine-components={DMC_VERSION}" , underline=False, href=LATEST_RELEASE_ENDPOINT)),
-                    dmc.Center(dmc.Anchor(f"mantine={MANTINE_VERSION}" , underline=False, href="https://v8.mantine.dev/", target='_blank')),
+                    dmc.Center(dmc.Anchor(f"dash-mantine-components={DMC_VERSION}" , underline="never", href=LATEST_RELEASE_ENDPOINT)),
+                    dmc.Center(dmc.Anchor(f"mantine={MANTINE_VERSION}" , underline="never", href="https://v8.mantine.dev/", target='_blank')),
                 ]),
 
                 dmc.Group(
@@ -181,7 +181,7 @@ layout = html.Div(
         create_heading(
             dmc.Anchor(
                 "Become a sponsor",
-                underline=False,
+                underline="never",
                 href="https://github.com/sponsors/snehilvj",
                 target="_blank",
             )
@@ -192,7 +192,7 @@ layout = html.Div(
         create_heading(
             dmc.Anchor(
                 "Become a contributor",
-                underline=False,
+                underline="never",
                 href="https://github.com/snehilvj/dash-mantine-components",
                 target="_blank",
             )
@@ -215,7 +215,7 @@ layout = html.Div(
                 dmc.Text("Lead maintainer: ", span=True),
                 dmc.Anchor(
                     "AnnMarieW ",
-                    underline=False,
+                    underline="never",
                     href="https://github.com/AnnMarieW",
                     target="_blank",
                 )], mt="sm", justify="center")

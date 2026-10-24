@@ -11,7 +11,7 @@ component = html.Div([
 ])
 
 @callback(
-    Output("notification-container", "sendNotifications"),
+    Output("notification-container", "sendNotifications", allow_duplicate=True),
     Input("notification-show", "n_clicks"),
     prevent_initial_call=True,
 )

@@ -23,7 +23,7 @@ def show_notifications(n):
             {
                 "action": "show",
                 "title": f"Notification {i + 1}",
-                "message": "Most notifications are added to queue 2",
+                "message": "Most notifications are added to queue",
                 "autoClose": False,
             }
             for i in range(10)
@@ -32,7 +32,7 @@ def show_notifications(n):
 
 
 @callback(
-    Output("notification-container", "cleanQueue"),
+    Output("notification-container", "cleanQueue", allow_duplicate=True),
     Input("clean-queue-btn", "n_clicks"),
     prevent_initial_call=True
 )

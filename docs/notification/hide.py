@@ -4,7 +4,7 @@ from dash import Output, Input, html, ctx, callback, no_update
 
 component = html.Div(
     [
-        #dmc.NotificationContainer(id="notification-container"),
+       # dmc.NotificationContainer(id="notification-container"),
         dmc.Group(
             [
                 dmc.Button(
