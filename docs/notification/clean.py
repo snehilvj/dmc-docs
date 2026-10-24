@@ -17,19 +17,20 @@ component = dmc.Group(
     prevent_initial_call=True
 )
 def show_notifications(n):
-    return [
-        {
-            "action": "show",
-            "title": f"Notification {i + 1}",
-            "message": "Most notifications are added to queue",
-            "autoClose": False,
-        }
-        for i in range(10)
-    ]
+    if n > 0:
+        return [
+            {
+                "action": "show",
+                "title": f"Notification {i + 1}",
+                "message": "Most notifications are added to queue",
+                "autoClose": False,
+            }
+            for i in range(10)
+        ]
 
 
 @callback(
-    Output("notification-container", "cleanQueue"),
+    Output("notification-container", "cleanQueue", allow_duplicate=True),
     Input("clean-queue-btn", "n_clicks"),
     prevent_initial_call=True
 )
