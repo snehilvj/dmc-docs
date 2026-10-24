@@ -8,6 +8,6 @@ configurator = Configurator(target)
 
 configurator.add_switch("withLabelsLine", True)
 configurator.add_segmented_control("labelsPosition", ["inside", "outside"], "outside")
-configurator.add_segmented_control("labelsType", ["value", "percent"], "value")
+configurator.add_segmented_control("labelsType", ["value", "percent", "name"], "value")
 
 component = configurator.panel

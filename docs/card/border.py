@@ -27,7 +27,7 @@ component = dmc.Card(
             inheritPadding=True,
             py="xs",
         ),
-        dmc.Text(
+        dmc.Box(
             children=[
                 dmc.Text(
                     "200+ images uploaded",
@@ -38,7 +38,6 @@ component = dmc.Card(
             ],
             mt="sm",
             c="dimmed",
-            size="sm",
         ),
         dmc.CardSection(
             dmc.Image(

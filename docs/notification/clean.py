@@ -7,6 +7,7 @@ component = dmc.Group(
         dmc.Button("Show 10 notifications", id="show-btn", n_clicks=0),
         dmc.Button("Clean queue", id="clean-queue-btn", variant="default", n_clicks=0),
         dmc.Button("Clean all", id="clean-all-btn", variant="outline", color="red", n_clicks=0),
+        # Place one NotificationContainer in app.layout)
     ]
 )
 
@@ -27,6 +28,7 @@ def show_notifications(n):
             }
             for i in range(10)
         ]
+    return no_update
 
 
 @callback(

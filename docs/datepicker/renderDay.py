@@ -1,4 +1,3 @@
-from dash import Dash
 import dash_mantine_components as dmc
 
 

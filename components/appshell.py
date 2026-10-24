@@ -24,6 +24,7 @@ def create_appshell(data):
         theme={
             "primaryColor": PRIMARY_COLOR,
             "fontFamily": "'Inter', sans-serif",
+            "fontWeights": {"medium": 500},
             "breakpoints": {
                 "sm": "43em",
                 "lg": "67.5em",  #allows navbar to be visible on an ipad

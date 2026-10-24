@@ -24,15 +24,22 @@ Each Radio item in a RadioGroup can be customized. The Radio component is a wrap
 
 ### Color
 
-In a RadioGroup component, the color property can be customized at the individual Radio level.
+In a `RadioGroup` component, the `color` property can be customized at the individual `Radio` level.
 
 .. exec::docs.radiogroup.color
 
 ### Size
 
-You can set the size of all the Radio items by using the `size` prop in the RadioGroup component.  Use one of xs, sm, md, lg and xl.
+You can set the size of all the `Radio` items by using the `size` prop in the `RadioGroup` component.  Use one of xs, sm, md, lg and xl.
 
 .. exec::docs.radiogroup.size
+
+### Variant
+
+
+In a `RadioGroup` component, the `variant` property can be customized at the individual `Radio` level.
+
+.. exec::docs.radiogroup.variant
 
 ### Group or Stack
 

@@ -49,6 +49,15 @@ Set `withEyeDropper` prop to display eye dropper icon in the right section. This
 .. exec::docs.colorinput.interactive
    :code:  false
 
+
+### Loading state
+
+Set `loading` prop to display a loading indicator. By default, the loader is displayed on the right side of the input.
+You can change the position with the `loadingPosition` prop to 'left' or 'right'.
+
+.. exec::docs.colorinput.loading
+
+
 ### Accessibility
 #### Color picker focus
 Color picker is not focusable, users without mouse access can select color only by entering it into input manually. If you want to make component accessible do not disable free input.

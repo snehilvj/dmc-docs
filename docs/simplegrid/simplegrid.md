@@ -61,6 +61,34 @@ corner of the demo:
 
 .. exec::docs.simplegrid.container
 
+### Auto-fill columns
+Set the `minColWidth` prop to use CSS Grid `auto-fill` to automatically adjust the number of columns based on available
+space and minimum column width. When `minColWidth` is set, the cols prop is ignored.
+
+
+.. exec::docs.simplegrid.auto_fill
+
+
+
+### auto-fill vs auto-fit
+
+By default, `minColWidth` uses `auto-fill` behavior. You can change it to `auto-fit` with the
+`autoFlow` prop. The difference between the two:
+
+- `auto-fill` creates as many tracks as possible without overflowing the container, leaving empty tracks if items don't fill the row
+- `auto-fit` works the same way but collapses empty tracks, allowing items to stretch and fill the remaining space
+
+
+.. exec::docs.simplegrid.auto_fill_vs_fit
+
+### Auto rows
+Set the `autoRows` prop to control the size of implicitly created grid rows. This is useful when you need all rows to
+have equal height or a minimum height.
+
+
+.. exec::docs.simplegrid.auto_rows
+
+
 
 ### Styles API
 

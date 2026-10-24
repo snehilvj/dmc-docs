@@ -13,5 +13,6 @@ configurator.add_text_input("error", "", **{"placeholder": "Error"})
 configurator.add_colorpicker("color", "indigo")
 configurator.add_slider("size", "sm")
 configurator.add_switch("disabled", False)
+configurator.add_segmented_control("variant", ["filled", "outline", "light"], "filled")
 
 component = configurator.panel

@@ -28,6 +28,13 @@ it will be represented as a string (e.g., '90071992547409910').
 - Multiple Zeros: Numbers that consist only of zeros or have trailing zeros are represented as strings (e.g., '0.', '0.0', '-0.00', etc.).
 
 
+### Loading state
+
+Set `loading` prop to display a loading indicator. By default, the loader is displayed on the right side of the input.
+You can change the position with the `loadingPosition` prop to 'left' or 'right'.
+
+.. exec::docs.numberinput.loading
+
 ### min and max
 
 Set `min` and `max` props to limit the input value:
@@ -41,6 +48,12 @@ possible to enter value outside of min/max range. Note that this option may caus
 `min` and `max`, for example `min=10` and `max=20`. If you need to disable value clamping entirely, set `clampBehavior="none"`.
 
 .. exec::docs.numberinput.clamp
+
+### Select all on focus
+Set `selectAllOnFocus` to automatically select the entire input value when the field receives focus. This is useful when 
+you expect users to replace the value rather than edit it:
+
+.. exec::docs.numberinput.selectall
 
 ### Prefix and suffix
 Set `prefix` and `suffix` props to add given string to the start or end of the input value:

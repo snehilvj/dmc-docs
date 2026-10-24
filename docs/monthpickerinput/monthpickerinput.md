@@ -27,6 +27,18 @@ Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
 .. exec::docs.monthpickerinput.range
 
+### Presets
+Use the `presets` prop to add custom month presets. Presets are displayed next to the calendar:
+
+.. exec::docs.monthpickerinput.presets
+
+To use `presets`` with type="range"`, define the value as a tuple of two dates:
+
+.. exec::docs.monthpickerinput.presets_range
+
+
+
+
 ### Open picker in modal
 
 By default, MonthPickerInput is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
@@ -44,11 +56,41 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 .. exec::docs.monthpickerinput.valueformat
 
 
+
+### Value formatter
+`valueFormatter` is a more powerful alternative to the `valueFormat` prop. It allows formatting the value label with a
+custom function. The function is the same for all component types (default, multiple and range) – you need to perform
+additional checks inside the function to handle different types.
+
+Example of using a custom formatter function with `type="multiple"`:
+
+
+.. functions_as_props::  
+
+
+.. exec::docs.monthpickerinput.valueformatter
+    :code: false
+
+.. sourcetabs::docs/monthpickerinput/valueformatter.py, assets/examples-js/format-dates-selected.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 ### Clearable
 
 Set `clearable=True` prop to display clear button in the right section. Note that if you set `rightSection` prop, clear button will not be displayed.
 
 .. exec::docs.monthpickerinput.clearable
+
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.monthpickerinput.clear_section_mode
 
 
 ### With Icon
@@ -60,6 +102,10 @@ Set `clearable=True` prop to display clear button in the right section. Note tha
 
 .. exec::docs.monthpickerinput.minmax
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements.
+
+.. exec::docs.monthpickerinput.nativeselect
 
 ### CSS Extensions
 

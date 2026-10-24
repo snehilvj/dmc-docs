@@ -46,7 +46,7 @@ graphs = dmc.Grid(
         dmc.GridCol(dcc.Graph(figure=line_fig, id={"type": "graph", "index": "line"}), span={"base": 12, "md":6}),
         dmc.GridCol(dcc.Graph(figure=map_fig, id={"type": "graph", "index": "map"}), span={"base": 12, "md":6}),
     ],
-    gutter="xl",
+    gap="xl",
 )
 
 sample_controls = dmc.Box([

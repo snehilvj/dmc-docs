@@ -15,7 +15,7 @@ component = dmc.Box(
             dmc.GridCol(dmc.Box("3", style=style), span={"base": 12, "md": 6, "lg": 3}),
             dmc.GridCol(dmc.Box("4", style=style), span={"base": 12, "md": 6, "lg": 3}),
         ],
-        gutter="xl",
+        gap="xl",
         type="container",
         breakpoints={
             "xs": "100px",

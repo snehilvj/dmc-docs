@@ -169,6 +169,16 @@ be used to change orientation of axis:
 
 .. exec::docs.scatterchart.xyaxis
 
+### Right Y axis
+To display an additional Y axis on the right side of the chart, set the `withRightYAxis` prop. You can pass props down
+to the recharts `YAxis` component with the `rightYAxisProps` prop and assign a label to the right Y axis with the
+`rightYAxisLabel` prop. Note that you need to bind data series to the right Y axis by setting `yAxisId: 'right'` in the
+data object. Series that do not have `yAxisId` are bound to the left Y axis. Both axes use the same `dataKey.y` value,
+but their scales are calculated independently from the series assigned to them.
+
+
+.. exec::docs.scatterchart.rightyaxis
+
 ### Point labels
 Set `pointLabels` prop to `x` or `y` to display labels on data points for the corresponding axis:
 
@@ -282,6 +292,21 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 
 .. exec::docs.scatterchart.referencelines
 
+
+### Reference areas
+Use the `referenceAreas` prop to highlight a rectangular region of the chart. Each area is bounded by x1/x2 (horizontal)
+and y1/y2 (vertical) data values – omit one pair to span the full opposite axis, for example provide only x1/x2 to
+highlight a time range across the entire height of the chart. Set `color` to any theme color or CSS color and label
+to display text inside the area. Reference areas are rendered behind the chart series.
+
+.. exec::docs.scatterchart.referenceareas
+
+### Reference dots
+Use the `referenceDots` prop to mark individual points on the chart – a peak, an event, a record value or an anomaly. 
+Each dot is positioned by x and y data coordinates and supports `r` (radius), `color` (any theme color or CSS color) and
+`label`. Reference dots are rendered on top of the chart series.
+
+.. exec::docs.scatterchart.referencedots
 
 ### clickData
 Use the `clickData` property in a callback to retrieve data from the most recent click event. To get the name of the

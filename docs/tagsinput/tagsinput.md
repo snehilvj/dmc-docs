@@ -45,6 +45,13 @@ data = [
 ]
 ```
 
+### Loading state
+
+Set `loading` prop to display a loading indicator. By default, the loader is displayed on the right side of the input.
+You can change the position with the `loadingPosition` prop to 'left' or 'right'.
+
+.. exec::docs.tagsinput.loading
+
 ### Clearable
 
 Set `clearable` prop to display the clear button in the right section. The button is not displayed when:
@@ -54,6 +61,17 @@ Set `clearable` prop to display the clear button in the right section. The butto
 * The component is read only
 
 .. exec::docs.tagsinput.clearable
+
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.tagsinput.clear_section_mode
 
 ### Max selected values
 
@@ -124,6 +142,43 @@ Example of `TagsInput` with 100 000 options, 5 options are rendered at the same 
     :withExpandedButton: true
 
 
+### renderPill
+
+The `renderPill` function allows you to customize pill rendering. The function receives the `option` (that was passed to data),
+`value`, `onRemove` and `disabled` props. It must return a React node.  Note that since `TagsInput` allows adding custom values,
+`option` property might be generated on the fly.
+
+
+.. functions_as_props::
+
+
+.. exec::docs.tagsinput.render_pill
+    :code: false
+
+.. sourcetabs::docs/tagsinput/render_pill.py, assets/examples-js/render_pill_tagsinput.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
+### Reorder pills
+
+Set the `withPillsReorder` prop to allow reordering pills. Dropping a pill before or after another pill updates the
+component `value` accordingly. Reordering is automatically disabled when `disabled` or `readOnly` is set.
+
+You can reorder pills with a mouse (drag-and-drop) or keyboard:
+
+- Pills are not part of the `Tab` order. With focus on the input, press `ArrowLeft` (when the caret is at the start of the input) to move focus to the last pill.
+- `ArrowLeft` and `ArrowRight` move focus between pills (RTL-aware). Pressing `ArrowRight` on the last pill returns focus to the input.
+- `Alt + ArrowLeft` and `Alt + ArrowRight` reorder the focused pill (RTL-aware).
+- 
+Focus follows the moved pill so multiple moves can be chained without re-focusing.
+
+
+.. exec::docs.tagsinput.reorder
+
+
+
 ### Options filtering
 
 By default, `TagsInput` filters options by checking if the option label contains input value. You can change this behavior 
@@ -171,6 +226,13 @@ dropdown styles with `Styles API`.
 
 
 .. exec::docs.tagsinput.scrollable
+
+### Fit dropdown to viewport height
+Set `floatingHeight="viewport"` to make the dropdown grow to fill the available vertical space in the viewport. The
+flip middleware is disabled in this mode – the dropdown always opens in the configured direction and is constrained
+to the viewport edges instead of flipping to the other side. Useful when working with large option lists:
+
+.. exec::docs.tagsinput.floatingheight
 
 ### Disabled options  
 
@@ -278,6 +340,15 @@ cannot be updated by the user entering data in the input.
 Set `disabled` to disable the input. When `disabled` is set, user cannot interact with the input and `TagsInput` will not show suggestions.
 
 .. exec::docs.tagsinput.disabled
+
+### Error state
+
+.. exec::docs.tagsinput.error
+
+### Success state
+
+
+.. exec::docs.tagsinput.success
 
 ### Styles API
 

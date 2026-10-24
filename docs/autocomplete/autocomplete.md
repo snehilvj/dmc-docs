@@ -152,6 +152,12 @@ dropdown styles with `Styles API`.
 .. exec::docs.autocomplete.scrollable
 
 
+### Fit dropdown to viewport height
+Set `floatingHeight="viewport"` to make the dropdown grow to fill the available vertical space in the viewport. The
+flip middleware is disabled in this mode – the dropdown always opens in the configured direction and is constrained
+to the viewport edges instead of flipping to the other side. Useful when working with large option lists:
+
+.. exec::docs.autocomplete.floatingheight
 
 ### Group options
 
@@ -194,6 +200,17 @@ Set `clearable` prop to display the clear button in the right section. The butto
 - The component is read only
 
 .. exec::docs.autocomplete.clearable
+
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.autocomplete.clear_section_mode
 
 ### Dropdown open in a callback
 
@@ -267,7 +284,7 @@ call onChange function.
 .. exec::docs.autocomplete.readonly
 
 
-### Invalid State And Error
+###  Error State
 
 
 Note: Dash adds some css by default which can lead you to see a red box when setting the `required` or `error` 
@@ -283,6 +300,12 @@ You can let the user know if the selected value is invalid. In the example below
 select less than 2 currency pairs.
 
 .. exec::docs.autocomplete.error
+
+### Success State
+
+.. exec::docs.autocomplete.success
+
+
 
 
 ### Styles API

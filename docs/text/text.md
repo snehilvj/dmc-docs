@@ -40,6 +40,14 @@ Note that `padding-bottom` cannot be set on text element:
 .. exec::docs.text.lineclamp
     :code: false
 
+### Text Wrap
+Use the `textWrap` prop to control the `text-wrap` CSS property. For example, `balance` evens out line lengths and
+`pretty` prevents orphaned words on the last line:
+
+.. exec::docs.text.textwrap
+    :code: false
+
+
 ### Inherit styles
 
 `Text` always applies `font-size`, `font-family` and `line-height` styles, but in some cases this is not a desired 

@@ -16,6 +16,7 @@ from lib.directives.toc import TOC
 from lib.directives.styles_api_text import StylesApiText
 from lib.directives.llms_copy import LlmsCopy
 from lib.directives.style_props_text import StylePropsText
+from lib.directives.execv3 import Exec3
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -39,7 +40,7 @@ def make_endpoint(name):
     return "-".join(name.lower().split())
 
 
-directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText(), FunctionsAsProps(), LlmsCopy(), StylePropsText()]
+directives = [Admonition(), BlockExec(), Divider(), Image(), Kwargs(), SC(), TOC(), StylesApiText(), FunctionsAsProps(), LlmsCopy(), StylePropsText(), Exec3()]
 parse = create_parser(directives)
 
 for file in files:

@@ -26,9 +26,10 @@ If you would like users to be able to enter custom values, see `TagsInput`.
 ### Data Format
 
 The data can be provided as either:
-* an array of strings - use when label and value are same.
-* an array of dicts with `label` and `value` properties.
-* an array of dict with `group` and `items` as keys where items are one of the previous two types.
+* a list of primitive values (strings, numbers, booleans): - use when label and value are same.
+* a list of dicts with `label` and `value` properties.
+* a list of dict with `group` and `items` as keys where items are one of the previous two types.
+
 
 ```python
 data = ["Pandas", "NumPy", "TensorFlow", "PyTorch"]
@@ -79,6 +80,17 @@ Set `clearable` prop to display the clear button in the right section. The butto
 
 
 .. exec::docs.multiselect.clearable
+
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.multiselect.clear_section_mode
 
 
 ### Searchable
@@ -148,6 +160,38 @@ Example of `MultiSelect` with 100 000 options, 10 options are rendered at the sa
     :withExpandedButton: true
 
 
+
+### renderPill
+
+The `renderPill` function allows you to customize pill rendering. The function receives the `option` (that was passed to data),
+`value`, `onRemove` and `disabled` props. It must return a React node.
+
+
+.. functions_as_props::
+
+
+.. exec::docs.multiselect.render_pill
+    :code: false
+
+.. sourcetabs::docs/multiselect/render_pill.py, assets/examples-js/render_pill_multiselect.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+### Reorder pills
+Set the `withPillsReorder` prop to allow reordering pills. Dropping a pill before or after another pill updates the
+component `value` accordingly. Reordering is automatically disabled when `disabled` or `readOnly` is set.
+
+You can reorder pills with a mouse (drag-and-drop) or keyboard:
+
+- Pills are not part of the `Tab` order. With focus on the input, press `ArrowLeft` (when the caret is at the start of the input) to move focus to the last pill.
+- `ArrowLeft` and `ArrowRight` move focus between pills (RTL-aware). Pressing `ArrowRight` on the last pill returns focus to the input.
+- `Alt + ArrowLeft` and `Alt + ArrowRight` reorder the focused pill (RTL-aware).
+- 
+Focus follows the moved pill so multiple moves can be chained without re-focusing. Reordering is automatically disabled when disabled or readOnly is set. 
+
+
+.. exec::docs.multiselect.reorder
+
 ### Options filtering
 
 By default, `MultiSelect` filters options by checking if the option label contains input value. You can change this behavior 
@@ -195,6 +239,14 @@ dropdown styles with `Styles API`.
 
 
 .. exec::docs.multiselect.scrollable
+
+
+### Fit dropdown to viewport height
+Set `floatingHeight="viewport"` to make the dropdown grow to fill the available vertical space in the viewport. The
+flip middleware is disabled in this mode – the dropdown always opens in the configured direction and is constrained
+to the viewport edges instead of flipping to the other side. Useful when working with large option lists:
+
+.. exec::docs.multiselect.floatingheight
 
 ### Grouping
 
@@ -281,12 +333,18 @@ You can use the following props to control sections styles and content:
 
 
 
-### Invalid State And Error
+### Error State
 
 You can let the user know if the selected value is invalid. In the example below, you will get an error message if you
 select less than 2 currency pairs.
 
 .. exec::docs.multiselect.error
+
+
+### Success State
+
+.. exec::docs.multiselect.success
+
 
 ### Input Props
 `MultiSelect` component supports `Input` and Input Wrapper components features and all input element props.

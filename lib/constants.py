@@ -59,7 +59,11 @@ PROPS_TO_EXCLUDE = [
     "inset",
     "display",
     "flex",
-    "bdrs"
+    "bdrs",
+    "mie",
+    "mis",
+    "pie",
+    "pis"
 ]
 
 ALIGN_ITEMS_CSS_PROPERTY = ["stretch", "center", "flex-end", "flex-start"]

@@ -20,9 +20,32 @@ Use the property `checked` in the callbacks.
 
 .. exec::docs.checkbox.simple
 
+### Read only
+Set the `readOnly` prop to prevent the checkbox value from being changed by user interaction. The checkbox still
+displays its current value and reflects programmatic updates to the checked prop, but clicking it (or pressing Space) 
+does not toggle its state:
+
+
+.. exec::docs.checkbox.readonly
+
 ### States
 
 .. exec::docs.checkbox.states
+
+### Error state
+
+Use the `error` prop to display error message below the checkbox label. If you want to apply error styles to checkbox 
+without error message, use boolean `error` prop. If you want to display error message without applying error styles,
+set `withErrorStyles=False`.
+
+.. exec::docs.checkbox.error
+
+### Light variant
+
+Checkbox supports `filled` (default), `outline` and `light` variants. With `variant="light"`, checked and indeterminate
+states have a light background and a contrasting icon. 
+
+.. exec::docs.checkbox.light_variant
 
 ### Change icons
 
@@ -131,12 +154,21 @@ app.layout = dmc.MantineProvider(
 
 ### Checkbox Group component
 
-Use CheckboxGroup component to create inputs with multiple checkbox elements and label, description, etc. You can use either
+Use `CheckboxGroup` component to create inputs with multiple checkbox elements and label, description, etc. You can use either
 the dmc.Group or dmc.Stack to customize the orientation and spacing of checkbox elements.
 
 Use `value` property of the checkbox group in the callbacks.
 
 .. exec::docs.checkbox.group
+
+### Max Selected Values
+
+Use `maxSelectedValues` prop to limit the number of selected values in `CheckboxGroup`. When the limit is reached, the remaining checkboxes are disabled and cannot be selected.
+
+
+.. exec::docs.checkbox.group_max_select
+
+
 
 ### CheckboxIndicator component
 

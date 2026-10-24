@@ -24,10 +24,30 @@ Alternatively, you can set width and height with `style` prop if you still want 
 .. exec::docs.indicator.inline
 
 ### Offset
-
-Set `offset` to change indicator position. It is useful when Indicator component is used with children that have border-radius:
+Set `offset` to change the indicator position. It is useful when the `Indicator` component is used with children that
+have `border-radius`. You can provide a number for uniform offset or a dictionary with `x` and `y` properties for
+separate horizontal and vertical offsets
 
 .. exec::docs.indicator.offset
+
+### Max value
+Set `maxValue` prop to display `{maxValue}+` when the label exceeds the maximum value. This is useful for notification
+counters that should not show exact large numbers:
+
+.. exec::docs.indicator.maxvalue
+
+
+### Show zero
+By default, the indicator is displayed when the label is 0. Set `showZero=False` to hide the indicator when the label is 0
+
+
+.. exec::docs.indicator.showzero
+
+### Auto contrast
+Set `autoContrast` prop to automatically adjust text color based on the background color to ensure readable contrast:
+
+.. exec::docs.indicator.autocontrast
+
 
 ### Processing Animation
 

@@ -103,6 +103,10 @@ If you change `arrowPosition` to `side`, then the arrow will be positioned on th
 will be able to control arrow offset with `arrowOffset` prop. Note that when `arrowPosition` is set to `center`, 
 `arrowOffset` prop is ignored.
 
+If you set `arrowPosition` to `merge`, the arrow will form a right triangle merged with the corresponding corner of the
+tooltip, and the border radius of that corner will be removed. This mode only works with `*-start` and `*-end` positions.
+Note that `arrowOffset` and `arrowRadius` props are ignored when `arrowPosition` is set to `merge`.
+
 .. exec::docs.tooltip.interactive-arrow
     :code: false
 
@@ -157,6 +161,24 @@ You can delay tooltip open/close events by setting `openDelay` and `closeDelay` 
 and reset if user moves mouse over/out of target element before delay is expired.
 
 .. exec::docs.tooltip.delay
+
+### Interactive tooltip
+By default, the tooltip closes as soon as the pointer leaves the target element, and the tooltip body ignores pointer
+events. Set the `interactive` prop to keep the tooltip open while the pointer travels from the target to the tooltip
+and rests over its content.
+
+The `interactive` prop satisfies the hoverable condition of WCAG 2.1 success criterion 1.4.13: Content on Hover or Focus,
+so the pointer can reach the tooltip body without dismissing it, for example to read or select its content.
+
+Do not put interactive or focusable content (links, buttons, inputs) inside a tooltip. Interactive content should be put
+in a Popover instead, which is reachable by mouse, keyboard, and touch.
+
+Note that an interactive tooltip receives pointer events, which means that while it is open, it intercepts clicks and 
+hover events of the elements that it overlaps. The tooltip stops receiving pointer events as soon as it starts closing.
+The interactive prop is not supported by `TooltipFloating`, which always follows the mouse.
+
+
+.. exec::docs.tooltip.interactive_prop
 
 ### Floating Tooltip
 

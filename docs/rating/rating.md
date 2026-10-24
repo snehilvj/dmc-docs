@@ -22,6 +22,15 @@ category: Inputs
 
 .. exec::docs.rating.fractions
 
+### Allow Clear
+
+Set `allowClear` prop to allow users to reset the rating to 0 by clicking the same rating value again. This is useful 
+when you want to give users the ability to undo their rating selection:
+
+
+.. exec::docs.rating.allowclear
+
+
 ### Custom Symbol
 
 .. exec::docs.rating.icons

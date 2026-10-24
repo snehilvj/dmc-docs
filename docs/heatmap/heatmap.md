@@ -146,6 +146,12 @@ Set  `withMonthLabels=True` and `withWeekdayLabels=True` to display chart labels
 
 .. exec::docs.heatmap.labels
 
+### Month labels position
+Set monthLabelsPosition="bottom" to display month labels below the heatmap:
+
+
+.. exec::docs.heatmap.labelsposition
+
 ### Change labels text
 
 To change labels, use the `weekdayLabels` and `monthLabels` props.
@@ -189,6 +195,12 @@ Use `splitMonths` to separate months visually with a spacer column and show only
 
 .. exec::docs.heatmap.split_months
 
+
+### Legend
+Set `withLegend=True` to display a color legend below the heatmap. Use `legendLabels` prop to customize the labels
+(default: `['Less', 'More']`):
+
+.. exec::docs.heatmap.legend
 
 ### Styles API
 

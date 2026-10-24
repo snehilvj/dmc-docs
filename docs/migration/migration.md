@@ -39,12 +39,94 @@ Below is a list of Dash Mantine Components (DMC) versions, their corresponding M
 
 Be sure to refer to the Mantine docs that match your DMC version:
 
-| DMC version      | Mantine docs                          |
-|------------------|----------------------------------------|
-| v2               | https://v8.mantine.dev/               |
-| v0.14–v1         | https://v7.mantine.dev/               |
-| v0.13            | https://v6.mantine.dev/               |
-| v0.12            | https://v5.mantine.dev/               |
+| DMC version | Mantine docs               |
+|-------------|----------------------------|
+| v3          | https://mantine.dev/  (v9) |
+| v2          | https://v8.mantine.dev/    |
+| v0.14–v1    | https://v7.mantine.dev/    |
+| v0.13       | https://v6.mantine.dev/    |
+| v0.12       | https://v5.mantine.dev/    |
+
+
+### Migrating from 2.x to 3.x
+
+
+DMC v3 is based on Mantine v9. See the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for a complete list of changes.
+
+Many of the breaking changes in the upstream Mantine Migration Guide are handled by DMC and do not require changes to your Dash app. The following are the known exceptions.
+
+#### Requirements
+
+DMC v3 requires dash>=4.5 and React 19
+
+#### React 19
+
+Set in your app:
+
+```python
+import dash
+dash._dash_renderer._set_react_version("19.2.4")
+
+app = dash.Dash()
+```
+
+Or set the React version with an environment variable:
+
+```bash
+REACT_VERSION=19.2.4 python app.py
+```
+
+
+#### TypographyStylesProvider
+
+`TypographyStylesProvider` was renamed to `Typography`.
+
+#### Grid
+
+The `gutter` prop was renamed to `gap` for consistency with other layout components such as `Flex` and `SimpleGrid`. New `rowGap` and `columnGap` props can be used when separate vertical and horizontal spacing is needed.
+
+#### Spoiler
+The `initialState` prop was renamed to `defaultExpanded`
+
+#### Popover and Tooltip
+`Popover` and `Tooltip` components no longer accept the `positionDependencies` prop. Remove it, the position is now recalculated automatically.
+
+
+#### Light variant color changes.
+In Mantine 9, the light variant CSS variables were changed to use solid color values instead of transparency. If you need to keep 8.x behavior during migration, set `useV8CssVariablesResolver=True` in the `MantineProvider`
+
+```Python
+dmc.MantineProvider(useV8CssVariablesResolver=True)
+```
+
+#### Default border-radius change
+In 8.x, the default `border-radius` (`theme.defaultRadius`) was `sm` (4px). In 9.x, the default `border-radius` was changed to `md` (8px). To keep the previous behavior, set `defaultRadius` to `sm` in the theme.
+
+
+```Python
+dmc.MantineProvider(theme={"defaultRadius": "sm"})
+
+```
+
+#### Font weights
+New `fontWeights` property was added to the [theme object](https://www.dash-mantine-components.com/theme-object). It allows you to control font-weight values used across all components.  To revert the medium font weight from 600 back to 500 (the default in Mantine 8):
+
+```Python
+dmc.MantineProvider(theme={"fontWeights": {"medium": 500}})
+```
+
+#### Recharts v3
+
+DMC v3 upgrades Recharts from v2 to v3.
+
+There are no known breaking changes to the DMC chart props. However, some charts now include additional data in `clickData` and `hoverData`.
+
+If you have written custom JavaScript functions that work with DMC charts, review the [Recharts v3 documentation](https://recharts.org/en-US/).  There were substantial changes in Recharts v3.
+
+#### Custom JavaScript functions
+
+If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
+
 
 
 ### Migrating from 1.2.0 to 2.x

@@ -2,7 +2,7 @@ import dash
 from dash import Dash, hooks, html
 import dash_mantine_components as dmc
 print(dash.__version__, dmc.__version__)
-dash._dash_renderer._set_react_version("18.2.0")
+dash._dash_renderer._set_react_version("19.2.4")
 
 from components.appshell import create_appshell
 from llm.llms_routing import register_llm_middleware
