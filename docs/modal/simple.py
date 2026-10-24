@@ -1,29 +1,13 @@
 import dash_mantine_components as dmc
-from dash import html, Output, Input, State, callback
+from dash import html, Output, Input, callback
 
 component = html.Div(
     [
-        dmc.Button("Open Modal", id="modal-demo-button"),
+        dmc.Button("Open Modal", id="modal-demo-button", n_clicks=0),
         dmc.Modal(
             title="New Modal",
             id="modal-simple",
-            children=[
-                dmc.Text("I am in a modal component."),
-                dmc.Space(h=20),
-                dmc.Group(
-                    [
-                        dmc.Button("Submit", id="modal-submit-button"),
-                        dmc.Button(
-                            "Close",
-                            color="red",
-                            variant="outline",
-                            id="modal-close-button",
-                        ),
-                    ],
-                    justify="flex-end",
-                ),
-            ],
-        ),
+            children=dmc.Text("I am in a modal component."),                      ),
     ]
 )
 
@@ -31,10 +15,8 @@ component = html.Div(
 @callback(
     Output("modal-simple", "opened"),
     Input("modal-demo-button", "n_clicks"),
-    Input("modal-close-button", "n_clicks"),
-    Input("modal-submit-button", "n_clicks"),
-    State("modal-simple", "opened"),
     prevent_initial_call=True,
 )
-def modal_demo(nc1, nc2, nc3, opened):
-    return not opened
+def modal_demo(n):
+    if n > 0:
+        return True
