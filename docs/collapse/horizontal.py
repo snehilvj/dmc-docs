@@ -9,7 +9,7 @@ component = dmc.Box([
         opened=False,
         id="collapse-horizontal"
     )
-])
+], h=120)
 
 @callback(
     Output("collapse-horizontal", "opened"),

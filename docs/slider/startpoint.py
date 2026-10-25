@@ -2,6 +2,7 @@ import dash_mantine_components as dmc
 
 component = dmc.Slider(
     startPointValue=0,
+    updatemode="drag",
     min=-100,
     max=100,
     value=40,
