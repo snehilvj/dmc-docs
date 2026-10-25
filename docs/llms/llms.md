@@ -7,99 +7,74 @@ dmc: false
 .. toc::
 
 
-### Complete Documentation
+### Documentation
 
-Full DMC documentation following the [LLMs.txt](https://llmstxt.org/) standard (~1.6MB)
+The complete DMC documentation is available in an LLM-friendly format.
 
-* [View DMC llms.txt online](https://www.dash-mantine-components.com/assets/llms.txt)
-* [View Mantine llms.txt online](https://v8.mantine.dev/llms.txt) (upstream Mantine documentation)
+- [View DMC llms.txt](https://www.dash-mantine-components.com/assets/llms.txt)
+- [View DMC llms.json](https://www.dash-mantine-components.com/assets/llms.json)
+- [View Mantine v9 llms.txt](https://mantine.dev/llms.txt)
 
+DMC v3 is based on Mantine v9. Mantine's documentation, MCP server, and skills can help AI tools understand component APIs and behavior. See the [Mantine guide for LLMs](https://mantine.dev/llms.txt) for details.
 
-### Customized llms.txt
+### Getting Documentation for AI Tools
 
-While the full `llms.txt` file contains everything, customizing it for your project can significantly improve both accuracy and efficiency when working with AI tools.
+You can provide documentation to AI tools in several ways.
 
-Benefits of a Customized File:
-* Faster and more relevant AI responses— smaller, focused documentation files help tools like ChatGPT or Cursor zero in on exactly the components and props you’re using.
-* Reduced context noise — by stripping out unrelated sections, large component sets, or advanced examples you don’t use, AI tools spend their context window entirely on your project-relevant APIs.
-* Improved compatibility with code assistants that have input size limits (like GitHub Copilot or Claude).
+#### Complete documentation
 
-You’ll find detailed options for generating your own `llms.txt` at the bottom of this page.
+Reference the [DMC llms.txt](https://www.dash-mantine-components.com/assets/llms.txt) URL in your prompt or add it to your coding tool's documentation sources.
 
-### Usage with AI Tools
+For best results, specify that you are using DMC v3 and ask the AI to use DMC's Python API rather than Mantine's React API. Mantine documentation can help explain component behavior, but check the DMC documentation for supported props and Dash-specific usage.
 
-#### Cursor
-1. Type `@Docs` in your prompt
-2. Reference the DMC documentation URL: `https://www.dash-mantine-components.com/assets/llms.txt`
-3. Ask questions about DMC components, styling, or implementation
+#### Individual documentation pages
 
-Tip: You’ll get even better results if you upload your customized `llms.txt` file directly or reference it locally instead of the full version.
+You can get a text version of any DMC documentation page by adding `.txt` to its URL.
 
-#### Windsurf
-1. Reference the documentation using `@https://www.dash-mantine-components.com/assets/llms.txt`
-2. Or add your custom file path to your `.windsurfrules` file for persistent access
-3. Smaller, project-specific files make Windsurf faster to index and query.
+For example, the text version of the Chip documentation is available at [components/chip.txt](https://www.dash-mantine-components.com/components/chip.txt).
 
-#### ChatGPT & Claude
-1. Mention that you're using Dash Mantine Components v2.
-2. Reference the documentation URL: `https://www.dash-mantine-components.com/assets/llms.txt`
-3. For best results, upload your customized llms.txt (containing only the components used in your app). This improves
-the model’s ability to generate correct code using DMC props.
+Each documentation page also includes a **Copy for LLMs** button that copies the page content in a format suitable for AI tools. Use this when you only need to provide documentation for a few components.
 
-#### GitHub Copilot
+#### Customized documentation
 
-While Copilot doesn't directly support external documentation, you can:
+You can create a smaller `llms.txt` file containing only the components and categories relevant to your project. This can reduce unrelated content and help AI tools focus on the APIs you use.
 
-1. Include relevant documentation snippets or short versions of `llms.txt` in your project.
-2. Reference component names and props accurately in comments for better inline completions.
+Options for creating a custom file are provided below.
 
-
-
-### Example Prompts
-
-Here are some example prompts you can use with AI tools:
-
-* "Using Dash Mantine Components v2, how do I create a dark mode toggle?"
-* "Show me how to use the AppShell component with a collapsible navbar"
-* "How can I customize the theme colors in MantineProvider?"
-* "How to align input with a button in a flex container?"
-* "Refer only to my custom llms.txt file (layout and feedback components) for examples."
-
-
-
-### Documentation Generation
-
-The LLM documentation is automatically generated from our source files.  To ensure you have the latest documentation, 
-we regenerate the `llms.txt` file with each release.  The file follows the [LLMs.txt](https://llmstxt.org/) standard
-for better compatibility with AI tools.
-
-### Creating a Custom llms.txt File
-
-You’ll get the best results by using  only the sections of the documentation that you need. 
-
-
-#### Option 1 — Download using customization app
-Use the interactive tool below to select specific component categories (for example, layout, inputs, feedback) or individual components (like `AppShell`, `Card`, or `Button`), then download your file.
 
 .. exec::docs.llms.llms_download
     :code: false
 
+### Example Prompts
 
+- "Using DMC v3, create a dark mode toggle with MantineProvider."
+- "Build a responsive layout using DMC v3. Use Mantine v9 documentation for component behavior and the DMC docs for Python props and examples."
+- "Show me how to use AppShell with a collapsible navbar in DMC."
+- "Use DMC components to align an input and a button in a flex container."
+- "Refer only to these DMC documentation pages when generating examples: [paste documentation URLs]."
 
-#### Option 2 — Build your own from llms.json
+### Documentation Generation
 
-You can also manually create your own `llms.txt` file using the structured data in  [llms.json](https://www.dash-mantine-components.com/assets/llms.json).
+The LLM documentation is generated from the DMC documentation source and updated with each release.
 
-Each entry in `llms.json` represents one documentation page, including fields like `name`, `description`, `category`,
-and full `content`.  You can filter and combine only the components you need — for example, by category or name.
+### Creating a Custom llms.txt File
 
-#### Option 3 — Use the “Copy for LLMs” feature
+Using only the documentation you need can make AI responses more focused.
 
-Each documentation page includes a “Copy for LLMs” button that copies that page’s content in LLM-friendly format.
-Use this when you want to paste a few pages directly into a chat session (e.g. ChatGPT or Cursor) without downloading the entire documentation.
+#### Option 1: Use the customization app
 
-Use this for quick one-off conversations, when you only need to reference one or two components.
+Use the interactive tool below to select component categories, such as layout, inputs, or feedback, or individual components such as `AppShell`, `Card`, or `Button`. Then download your customized file.
+
+#### Option 2: Build your own from llms.json
+
+Use the structured data in [llms.json](https://www.dash-mantine-components.com/assets/llms.json) to create a custom file.
+
+Each entry represents a documentation page and includes fields such as `name`, `description`, `category`, and `content`. You can filter and combine entries based on the components or categories relevant to your project.
+
+#### Option 3: Copy individual pages
+
+Use the **Copy for LLMs** button on a documentation page to copy its content directly into an AI conversation. This is useful when you only need information about one or two components.
 
 ### Contributing
 
-If you find any issues with the LLM documentation or have suggestions for improvement, please [open an issue](https://github.com/snehilvj/dmc-docs/issues) on our documentation GitHub repository.
+If you find issues with the LLM documentation or have suggestions for improvement, please [open an issue](https://github.com/snehilvj/dmc-docs/issues) in the documentation repository.
