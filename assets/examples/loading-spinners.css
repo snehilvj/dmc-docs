@@ -1,10 +1,10 @@
 
 /* Output Base Hidden + Loader Target */
-*[data-dash-is-loading="true"] {
+.output-example-loading[data-dash-is-loading="true"] {
     visibility: hidden;
     position: relative;
 }
-*[data-dash-is-loading="true"]::before {
+.output-example-loading[data-dash-is-loading="true"]::before {
     visibility: visible;
     position: absolute;
     left: 50%;
