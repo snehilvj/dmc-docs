@@ -75,15 +75,16 @@ Or set the React version with an environment variable:
 ```bash
 REACT_VERSION=19.2.4 python app.py
 ```
+### v3 Breaking Changes
 
-
-#### TypographyStylesProvider
-
-`TypographyStylesProvider` was renamed to `Typography`.
 
 #### Grid
 
 The `gutter` prop was renamed to `gap` for consistency with other layout components such as `Flex` and `SimpleGrid`. New `rowGap` and `columnGap` props can be used when separate vertical and horizontal spacing is needed.
+
+#### TypographyStylesProvider
+
+`TypographyStylesProvider` was renamed to `Typography`.
 
 #### Spoiler
 The `initialState` prop was renamed to `defaultExpanded`
@@ -91,6 +92,25 @@ The `initialState` prop was renamed to `defaultExpanded`
 #### Popover and Tooltip
 `Popover` and `Tooltip` components no longer accept the `positionDependencies` prop. Remove it, the position is now recalculated automatically.
 
+#### Text color prop
+The `color` prop of the `Text` and `Anchor` components was removed. Use the `c` style prop instead.
+
+
+#### Custom JavaScript functions
+
+If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
+
+
+#### Recharts updatated to v3
+
+DMC v3 upgrades Recharts from v2 to v3.
+
+There are no known breaking changes to the DMC chart props. However, some charts now include additional data in `clickData` and `hoverData`.
+
+If you have written custom JavaScript functions that work with DMC charts, review the [Recharts v3 documentation](https://recharts.org/en-US/).  There were substantial changes in Recharts v3.
+
+
+### v3 Behavior and Style Changes
 
 #### Light variant color changes.
 In Mantine 9, the light variant CSS variables were changed to use solid color values instead of transparency. If you need to keep 8.x behavior during migration, set `useV8CssVariablesResolver=True` in the `MantineProvider`
@@ -115,17 +135,12 @@ New `fontWeights` property was added to the [theme object](https://www.dash-mant
 dmc.MantineProvider(theme={"fontWeights": {"medium": 500}})
 ```
 
-#### Recharts v3
+#### v3 Other changes
 
-DMC v3 upgrades Recharts from v2 to v3.
-
-There are no known breaking changes to the DMC chart props. However, some charts now include additional data in `clickData` and `hoverData`.
-
-If you have written custom JavaScript functions that work with DMC charts, review the [Recharts v3 documentation](https://recharts.org/en-US/).  There were substantial changes in Recharts v3.
-
-#### Custom JavaScript functions
-
-If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
+- `Tree` no longer defines the `data-hovered` attribute for hover state. Apply hover styles with `&:hover` instead.
+- The `PasswordInput` visibility toggle icon has changed.
+- Notifications now pause the auto-close timer for all visible notifications when any notification is hovered. Set `pauseResetOnHover="notification"` to restore the previous behavior of pausing only the hovered notification.
+- The `mod` prop converts camelCase keys to kebab-case for data attributes.
 
 
 
