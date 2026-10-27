@@ -7,6 +7,6 @@ You can find it hosted [here](https://dash-mantine-components.com).
 ## Steps to run the docs app locally:
 ```
 pip install -r requirements.txt
-python run.py
+python app.py
 ```
 

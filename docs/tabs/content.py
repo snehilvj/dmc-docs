@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.utils import create_graph
+from utils.utils import create_graph
 
 component = dmc.Tabs(
     [

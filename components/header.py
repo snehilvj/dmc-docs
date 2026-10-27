@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash import Output, Input, clientside_callback
 from dash_iconify import DashIconify
-from lib.constants import DMC_VERSION
+from utils.constants import DMC_VERSION
 
 
 def create_link(icon, href):

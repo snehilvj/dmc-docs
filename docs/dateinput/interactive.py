@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.DateInput(label="Enter date", placeholder="Enter date", w=250)
 

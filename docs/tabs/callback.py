@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash import Input, Output, html, callback
 
-from lib.utils import create_graph
+from utils.utils import create_graph
 
 component = html.Div(
     [

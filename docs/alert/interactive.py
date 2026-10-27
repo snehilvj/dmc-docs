@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.Alert(
     icon=DashIconify(icon="radix-icons:cross-circled"),

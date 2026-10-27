@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 data = [
     {"product": "Apples", "sales_january": 120, "sales_february": 100},

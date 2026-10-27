@@ -4,7 +4,7 @@ from dash_iconify import DashIconify
 
 from components.header import create_header
 from components.navbar import create_navbar, create_navbar_drawer
-from lib.constants import PRIMARY_COLOR
+from utils.constants import PRIMARY_COLOR
 
 version_alert =  dmc.Alert(
     [

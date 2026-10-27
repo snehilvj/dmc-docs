@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.Sparkline(w=200, h=60, data=[10, 20, 40, 20, 40, 10, 50])
 
