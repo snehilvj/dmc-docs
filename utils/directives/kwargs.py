@@ -1,6 +1,6 @@
 from markdown2dash import Kwargs as KwargsBase
 
-from lib.constants import PROPS_TO_EXCLUDE
+from utils.constants import PROPS_TO_EXCLUDE
 
 mapping = {
     "; optional": "",

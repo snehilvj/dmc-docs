@@ -9,7 +9,7 @@ from replace_functions_as_props import replace_functions_as_props
 from replace_styles_api_text import replace_styles_api_text
 from replace_other_directives import replace_other_directives
 from add_title_from_metadata import add_title_from_metadata
-from lib.constants import MANTINE_VERSION, DMC_VERSION
+from utils.constants import MANTINE_VERSION, DMC_VERSION
 
 # Define transformation pipeline
 TRANSFORMS = [

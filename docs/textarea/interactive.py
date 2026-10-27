@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.Textarea(label="Your comment", placeholder="Your comment", required=True)
 

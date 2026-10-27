@@ -1,7 +1,7 @@
 import dash
 import dash_mantine_components as dmc
 
-from lib.constants import PAGE_TITLE_SUFFIX
+from utils.constants import PAGE_TITLE_SUFFIX
 
 dash.register_page(__name__, title="404" + PAGE_TITLE_SUFFIX, path="/404")
 

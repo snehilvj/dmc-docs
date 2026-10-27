@@ -4,7 +4,7 @@ import dash
 import dash_mantine_components as dmc
 from dash import  dcc, callback, Input, Output, State
 
-from lib.constants import DMC_VERSION, LLMS
+from utils.constants import DMC_VERSION, LLMS
 
 category_order = [
     "General",

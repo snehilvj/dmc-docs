@@ -6,8 +6,8 @@ import requests
 from dash import html
 from dash_iconify import DashIconify
 
-from lib.constants import PAGE_TITLE_SUFFIX, PRIMARY_COLOR, MANTINE_VERSION, DMC_VERSION, LATEST_RELEASE_ENDPOINT
-from lib.directives.toc import TOC
+from utils.constants import PAGE_TITLE_SUFFIX, PRIMARY_COLOR, MANTINE_VERSION, DMC_VERSION, LATEST_RELEASE_ENDPOINT
+from utils.directives.toc import TOC
 
 dash.register_page(
     __name__,

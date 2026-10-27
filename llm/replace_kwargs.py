@@ -2,7 +2,7 @@ import re
 from textwrap import dedent
 import dash_mantine_components as dmc
 
-from lib.constants import PROPS_TO_EXCLUDE
+from utils.constants import PROPS_TO_EXCLUDE
 
 
 def filter_kwargs(kwargs_text: str) -> str:
