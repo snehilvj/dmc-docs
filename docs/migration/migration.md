@@ -101,7 +101,7 @@ The `color` prop of the `Text` and `Anchor` components was removed. Use the `c` 
 If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
 
 
-#### Recharts updatated to v3
+#### Recharts updated to v3
 
 DMC v3 upgrades Recharts from v2 to v3.
 

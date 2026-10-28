@@ -99,7 +99,7 @@ non-adjacent panels when the immediate neighbor is at its min/max:
 ### Thumb styling
 
 - Use `thumbIcon` to use a different grip icon.
-- Use the styles API to change the background color of the thumb.  By default it's the body color.
+- Use the styles API to change the background color of the thumb.  By default, it's the body color.
 
 
 .. exec::docs.splitter.thumb
@@ -146,32 +146,10 @@ dmc.Splitter(
 | root | --splitter-handle-color | Controls the color of the separator line between panes |
 
 
-
-
-
-
 ### Keyword Arguments
 .. style_props_text::
 
 #### Splitter
 
 .. kwargs::Splitter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
