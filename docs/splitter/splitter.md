@@ -153,3 +153,8 @@ dmc.Splitter(
 
 .. kwargs::Splitter
 
+
+#### SplitterPane
+
+.. kwargs::SplitterPane
+
