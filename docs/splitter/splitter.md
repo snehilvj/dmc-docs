@@ -11,13 +11,15 @@ category: Layout
 
 ### Usage
 
+`Splitter` component provides resizable split pane layout.
+
 .. exec::docs.splitter.usage
 
 
 
 ### CSS units
 
-`Splitter.Pane` `defaultSize`, `min` and `max` props accept CSS units in addition to plain numbers:
+`SplitterPane` `defaultSize`, `min` and `max` props accept CSS units in addition to plain numbers:
 
 * A plain `number` or a `%` string (`'30%'`) is a flexible size – the pane shares the leftover
   space with other flexible panes.
@@ -42,9 +44,11 @@ Set `orientation="vertical"` to split panes vertically:
 
 ### Collapsible panes
 
-Set `collapsible` prop on `Splitter.Pane` to allow the pane to be collapsed
-by dragging past its minimum size. Use `splitterRef` to access imperative API
-for programmatic collapse/expand:
+Set `collapsible` prop on `SplitterPane` to allow the pane to be collapsed
+by dragging past its minimum size.
+
+The `collapsed` prop is a list of indices of collapsed panes. Set this prop to collapse or expand collapsible panes,
+restoring their previous sizes. Updated when panes are collapsed or expanded.
 
 
 .. exec::docs.splitter.collapse
@@ -81,16 +85,43 @@ non-adjacent panels when the immediate neighbor is at its min/max:
 
 .. exec::docs.splitter.redistribute
 
-### Line Size, Handle Color, Show Handle
+### Line Size, Line Color, Show Handle
 
 
 - Use  the `lineSize` prop to control the thickness of the separator line between panes
-- Use the `handleColor` prop to set the line color. By default, it uses the body color, which may not be visible when the panes have no background color. Set `handleColor`  in this case.
+- Use `handleColor` to set the line color. The default is the body color, which may blend into panes without a background color.
 - Use `withHandle` prop to display or hide the handle
 
 
 .. exec::docs.splitter.interactive
     :code: false
+
+### Thumb styling
+
+- Use `thumbIcon` to use a different grip icon.
+- Use the styles API to change the background color of the thumb.  By default it's the body color.
+
+
+.. exec::docs.splitter.thumb
+
+
+
+### Don't Wrap SplitterPane
+
+`Splitter` component relies on `SplitterPane` order. Wrapping `SplitterPane` in another component is not supported,
+`SplitterPane` must be a direct child of `Splitter`.
+
+```python
+
+dmc.Splitter(
+    children=[
+        dmc.SplitterPane("First pane"),
+        # will not work - do not wrap SplitterPane in another component
+        dmc.Box(dmc.SplitterPane("Second pane")),
+    ]
+)
+```
+
 
 ### Styles API
 
@@ -102,7 +133,7 @@ non-adjacent panels when the immediate neighbor is at its min/max:
 | Selector | Static selector | Description |
 |----------|----------------|-------------|
 | root | .mantine-Splitter-root | Root element |
-| pane | .mantine-Splitter-pane | Pane element (`Splitter.Pane` component) |
+| pane | .mantine-Splitter-pane | Pane element (`SplitterPane` component) |
 | handle | .mantine-Splitter-handle | Handle element between panes, contains the separator line and the thumb |
 | thumb | .mantine-Splitter-thumb | Thumb element inside the handle, contains the grip icon |
 

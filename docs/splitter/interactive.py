@@ -5,18 +5,17 @@ from lib.configurator import Configurator
 target = dmc.Splitter(
     h=200,
     classNames={"pane": "splitter-examples"},
+    bd="1px solid var(--mantine-color-default-border)",
     children=[
         dmc.SplitterPane(
             "First pane",
             defaultSize=50,
             min=20,
-            bd="1px solid var(--mantine-color-gray-4)",
         ),
         dmc.SplitterPane(
             "Second pane",
             defaultSize=50,
             min=20,
-            bd="1px solid var(--mantine-color-gray-4)",
         ),
     ],
 )

@@ -2,6 +2,7 @@ import dash_mantine_components as dmc
 
 component = dmc.Splitter(
     h=200,
+    classNames={"pane": "splitter-examples"},
     children=[
         dmc.SplitterPane(
             "Fixed 240px sidebar",
