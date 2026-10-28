@@ -42945,11 +42945,98 @@ predefined layouts or display the current pane sizes.
 When resizing by dragging, sizes updates when the user releases the handle. It updates immediately when resizing with
 the keyboard, collapsing or expanding a pane, or double-clicking a handle to reset the sizes.
 
+```python
+from dash import Dash, Input, Output,  callback, ctx
+import dash_mantine_components as dmc
+
+component = dmc.Box([
+        dmc.Splitter(
+        h=200,
+        mb="md",
+        classNames={"pane": "splitter-examples"},
+        resetOnDoubleClick=True,
+        id="splitter-sizes",
+        children=[
+            dmc.SplitterPane(
+                "Panel A (50%)",
+                id="panel-a",
+                defaultSize=50,
+                min=20,
+                bg="blue",
+            ),
+            dmc.SplitterPane(
+                "Panel B (50%)",
+                id="panel-b",
+                defaultSize=50,
+                min=20,
+                bg="teal",
+            ),
+        ],
+    ),
+    dmc.Button("30/70", id="button-30-70", mr="sm"),
+    dmc.Button("50/50", id="button-50-50", mr="sm"),
+    dmc.Button("70/30", id="button-70-30"),
+])
+
+
+@callback(
+    Output("splitter-sizes", "sizes"),
+    Input("button-30-70", "n_clicks"),
+    Input("button-50-50", "n_clicks"),
+    Input("button-70-30", "n_clicks"),
+    prevent_initial_call=True
+)
+def handle_size_buttons_click(n_clicks_30_70, n_clicks_50_50, n_clicks_70_30):
+    if ctx.triggered_id == "button-30-70":
+        return [30, 70]
+    elif ctx.triggered_id == "button-70-30":
+        return [70, 30]
+    else:
+        return [50, 50]
+
+@callback(
+    Output("panel-a", "children"),
+    Output("panel-b", "children"),
+    Input("splitter-sizes", "sizes"),
+    prevent_initial_call=True
+)
+def handle_size_change(sizes):
+    sizes = sizes or [50, 50]
+    return f"Panel A ({sizes[0]:.0f}%)", f"Panel B ({sizes[1]:.0f}%)"
+```
 ### Multiple panes
 
 `Splitter` supports any number of panes. Handles are automatically rendered between panes:
 
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Splitter(
+    h=200,
+    classNames={"pane": "splitter-examples"},
+    children=[
+        dmc.SplitterPane(
+            "First",
+            defaultSize=25,
+            min=10,
+            bg="blue",
+        ),
+        dmc.SplitterPane(
+            "Second",
+            defaultSize=50,
+            min=10,
+            bg="teal",
+        ),
+        dmc.SplitterPane(
+            "Third",
+            defaultSize=25,
+            min=10,
+            bg="grape",
+        ),
+    ],
+)
+```
 ### Nested splitters
 
 You can nest `Splitter` components to create complex layouts:
@@ -56024,6 +56111,22 @@ Marquee supports customizable scrolling direction, speed, and spacing between it
 
 Thanks [@budescode](https://github.com/budescode) for adding this component
 
+```python
+import dash_mantine_components as dmc
+
+marquee_content = [
+    dmc.Badge("Python", color="red", variant="light", w=80),
+    dmc.Badge("Plotly", color="blue", variant="light", w=80),
+    dmc.Badge("Dash", color="violet", variant="light", w=80),
+    dmc.Badge("Mantine", color="yellow", variant="light", w=80),
+    dmc.Badge("React", color="teal", variant="light", w=80),
+]
+
+component = dmc.Stack([
+    dmc.Marquee(marquee_content),
+    dmc.Marquee(marquee_content, reverse=True),
+])
+```
 #### New Splitter component
 
 `Splitter` lets users resize panels by dragging the divider between them. You can create layouts with side-by-side panels
@@ -56033,6 +56136,43 @@ to control how much space is available for different views.
 Thanks [@datenzauberai](https://github.com/datenzauberai) for adding this component
 
 
+```python
+import dash_mantine_components as dmc
+from dash import Input, Output, State, callback
+
+component = dmc.Box([
+    dmc.Splitter(
+        id="splitter-collapse",
+        h=200,
+        classNames={"pane": "splitter-examples"},
+        children=[
+            dmc.SplitterPane(
+                "Collapsible sidebar",
+                collapsible=True,
+                defaultSize=30,
+                min=20,
+                bg="blue",
+            ),
+            dmc.SplitterPane(
+                "Main content",
+                defaultSize=70,
+                min=30,
+                bg="teal",
+            ),
+        ],
+    ),
+    dmc.Button("Toggle Sidebar", id="splitter-collapse-toggle-button", mt="md")
+])
+
+@callback(
+    Output("splitter-collapse", "collapsed"),
+    Input("splitter-collapse-toggle-button", "n_clicks"),
+    State("splitter-collapse", "collapsed"),
+    prevent_initial_call=True,
+)
+def toggle_sidebar(n_clicks, collapsed):
+    return [0] if not collapsed or 0 not in collapsed else []
+```
 ### New Features
 
 ### Layout
@@ -56041,10 +56181,107 @@ Thanks [@datenzauberai](https://github.com/datenzauberai) for adding this compon
 
 `Collapse` now supports horizontal orientation.
 
+```python
+from dash import callback, Input, Output
+import dash_mantine_components as dmc
+
+component = dmc.Box([
+    dmc.Button("Toggle Content", id="collapse-horizontal-btn", n_clicks=0),
+    dmc.Collapse(
+        children=dmc.Text("Hello World!", my="lg", w=200, bg="blue.3", c="white", p="lg"),
+        orientation="horizontal",
+        opened=False,
+        id="collapse-horizontal"
+    )
+], h=120)
+
+@callback(
+    Output("collapse-horizontal", "opened"),
+    Input("collapse-horizontal-btn", "n_clicks"),
+)
+def update(n):
+    if n % 2 == 0:
+        return False
+    return True
+```
 #### Card horizontal orientation
 
 `Card` now supports horizontal orientation.
 
+```python
+import dash_mantine_components as dmc
+
+completed = 1887
+total = 2334
+
+stats = [
+    {"value": 447, "label": "Remaining"},
+    {"value": 76, "label": "In progress"},
+]
+
+items = [
+    dmc.Box([
+        dmc.Text(stat["value"]),
+        dmc.Text(stat["label"], size="xs", c="dimmed"),
+    ])
+    for stat in stats
+]
+
+component = dmc.Card(
+    [
+        dmc.CardSection(
+            dmc.RingProgress(
+                roundCaps=True,
+                thickness=6,
+                size=150,
+                sections=[
+                    {
+                        "value": (completed / total) * 100,
+                        "color": "blue",
+                    }
+                ],
+                label=dmc.Box([
+                    dmc.Text(
+                        f"{((completed / total) * 100):.0f}%",
+                        ta="center",
+                        fz="lg",
+                    ),
+                    dmc.Text(
+                        "Completed",
+                        ta="center",
+                        fz="xs",
+                        c="dimmed",
+                    ),
+                ]),
+            ),
+            inheritPadding=True,
+            px="xs",
+            withBorder=True,
+        ),
+        dmc.CardSection(
+            [
+                dmc.Text("Project tasks", fz="xl"),
+                dmc.Box(
+                    [
+                        dmc.Text("1887"),
+                        dmc.Text("Completed", fz="xs", c="dimmed"),
+                    ],
+                    mt="xs",
+                ),
+                dmc.Group(items, mt="sm"),
+            ],
+            inheritPadding=True,
+            px="md",
+            withBorder=True,
+            ml="lg"
+        ),
+    ],
+    padding="sm",
+    withBorder=True,
+    orientation="horizontal",
+    w=400
+)
+```
 #### Grid improvements
 
 `Grid` now uses CSS `gap` instead of negative margins for column spacing. This removes the need for `overflow="hidden"` to prevent overflow caused by negative margins.
@@ -56055,6 +56292,26 @@ The `gutter` prop has been renamed to `gap`. New `rowGap` and `columnGap` props 
 
 `SimpleGrid` now supports `minColWidth` to automatically adjust the number of columns based on available width. When set, `cols` is ignored. Use `autoFlow` to choose between `auto-fill` and `auto-fit`.
 
+```python
+import dash_mantine_components as dmc
+from dash import html
+
+style = {
+    "border": "1px solid var(--mantine-primary-color-filled)",
+    "textAlign": "center",
+}
+
+component = dmc.SimpleGrid(
+    minColWidth="200px",
+    children=[
+        html.Div("1", style=style),
+        html.Div("2", style=style),
+        html.Div("3", style=style),
+        html.Div("4", style=style),
+        html.Div("5", style=style),
+    ],
+)
+```
 #### AppShell static mode
 
 `AppShell` now supports `mode="static"`, which places its elements in the normal document flow using CSS Grid instead of fixed positioning. The `layout="alt"` option places the navbar and aside at full height, with the header and footer adjusted between them.
@@ -56063,6 +56320,22 @@ The `gutter` prop has been renamed to `gap`. New `rowGap` and `columnGap` props 
 
 `ScrollArea` now supports `startScrollPosition` to set the initial scroll position when mounted.
 
+```python
+import dash_mantine_components as dmc
+
+from docs.scrollarea.text import text
+
+component = dmc.Center(
+    dmc.ScrollArea(
+        h=200,
+        w=350,
+        startScrollPosition={ "y": 250},
+        children=dmc.Paper(
+            [dmc.Title("Charizard (Pokémon)", order=3), dmc.Text(text)], w=600
+        ),
+    ),
+)
+```
 #### ScrollArea scrollbar position
 
 `ScrollArea` now supports `verticalScrollbarPosition` to pin the scrollbar to the left or right side regardless of text direction.
@@ -56073,12 +56346,41 @@ The `gutter` prop has been renamed to `gap`. New `rowGap` and `columnGap` props 
 
 All input components based on `Input` now support `loading` and `loadingPosition` props to display a loading indicator on either side of the input.
 
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+component = dmc.TextInput(
+    label="Your Email",
+    w=200,
+    placeholder="Enter Your Email",
+    loading=True
+)
+```
 #### Input success state
 
 Inputs based on `Input` and `Input.Wrapper` now support a `success` prop. It changes the input border color and can display a success message below it. When both `error` and `success` are set, `error` takes precedence.
 
 A new `--mantine-color-success` CSS variable resolves to `teal-6` in light mode and `teal-8` in dark mode.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Stack(
+    [
+        dmc.TextInput(
+            label="Success as boolean",
+            placeholder="Success as boolean",
+            success=True,
+        ),
+        dmc.TextInput(
+            label="Success as React node",
+            placeholder="Success as React node",
+            success="Username is available",
+        ),
+    ],
+)
+```
 #### Shared default props
 
 Default props set on `Input` and `InputWrapper` in `theme.components` now cascade to derived components. This lets you configure shared properties such as `size`, `radius`, `variant`, and `withAsterisk` for all inputs, while retaining component-specific overrides.
@@ -56087,34 +56389,293 @@ Default props set on `Input` and `InputWrapper` in `theme.components` now cascad
 
 `CheckboxGroup` now supports `maxSelectedValues` to limit the number of selected values. Remaining options are disabled when the limit is reached.
 
+```python
+import dash_mantine_components as dmc
+from dash import html, Output, Input, callback
+
+component = html.Div(
+    [
+        dmc.CheckboxGroup(
+            id="checkbox-group-max",
+            label="Select your favorite library",
+            description="This is anonymous",
+            withAsterisk=True,
+            mb=10,
+            children=dmc.Group(
+                [
+                    dmc.Checkbox(label="Pandas", value="pandas"),
+                    dmc.Checkbox(label="Polars", value="polars"),
+                    dmc.Checkbox(label="Vaex", value="vaex"),
+                    dmc.Checkbox(label="Dask", value="dask"),
+                ],
+                mt=10,
+            ),
+            value=["pandas", "polars"],
+            maxSelectedValues=2
+        ),
+        dmc.Text(id="checkbox-group-max-output"),
+    ]
+)
+
+
+@callback(Output("checkbox-group--max-output", "children"), Input("checkbox-group-max", "value"))
+def checkbox(value):
+    return ", ".join(value) if value else None
+```
 #### Radio and Checkbox light variant
 
 `Checkbox` and `Radio` now support `variant="light"`. Checked and indeterminate states have a light background and a contrasting icon.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Stack(
+    [
+        dmc.Checkbox(
+            variant="light",
+            checked=True,
+            label="Light checkbox",
+        ),
+        dmc.Checkbox(
+            variant="light",
+            indeterminate=True,
+            label="Light indeterminate checkbox",
+        ),
+        dmc.Checkbox(
+            variant="light",
+            color="teal",
+            checked=True,
+            label="Teal light checkbox",
+        ),
+        dmc.Checkbox(
+            variant="light",
+            color="grape",
+            checked=True,
+            label="Grape light checkbox",
+        ),
+        dmc.Checkbox(
+            variant="light",
+            color="#e64980",
+            checked=True,
+            label="Light checkbox with CSS color",
+        ),
+    ],
+    gap=7,
+)
+```
 #### Textarea bottomSection
 
 `Textarea` now supports `bottomSection` to display content inside the bottom of the input border, such as a character counter.
 
+```python
+import dash_mantine_components as dmc
+from dash import  Input, Output, clientside_callback
+
+component = dmc.Textarea(
+    id="textarea-bottom-section",
+    autosize=True,
+    minRows=3,
+    label="Message",
+    bottomSection=dmc.Text(
+        id="char-count",
+        size="xs",
+        c="dimmed",
+    ),
+)
+
+clientside_callback(
+    """
+    function(value) {
+        const length = (value || "").length;
+        return `${length}/500 characters`;
+    }
+    """,
+    Output("char-count", "children"),
+    Input("textarea-bottom-section", "value"),
+)
+```
 #### RichTextEditor table controls
 
 `RichTextEditor` now includes toolbar controls for inserting and editing tables. You can insert tables of a selected size, add or remove rows and columns, toggle header rows and columns, and merge or split cells. Table controls are disabled when the cursor is outside a table.
 
+```python
+import dash_mantine_components as dmc
+
+table = """
+<table>
+  <tbody>
+    <tr>
+      <th><p>Name</p></th>
+      <th><p>Role</p></th>
+      <th><p>Department</p></th>
+    </tr>
+    <tr>
+      <td><p>Alex Morgan</p></td>
+      <td><p>Developer</p></td>
+      <td><p>Engineering</p></td>
+    </tr>
+    <tr>
+      <td><p>Jamie Lee</p></td>
+      <td><p>Designer</p></td>
+      <td><p>Design</p></td>
+    </tr>
+  </tbody>
+</table>
+<p></p>
+"""
+
+component = dmc.RichTextEditor(
+    html=table,
+    toolbar={
+        "controlsGroups": [
+            ["Bold", "Italic", "Underline"],
+            ["TableInsert", "TableDelete"],
+            ["TableColumnBefore", "TableColumnAfter", "TableColumnDelete"],
+            ["TableRowBefore", "TableRowAfter", "TableRowDelete"],
+            [
+                "TableToggleHeaderRow",
+                "TableToggleHeaderColumn",
+                "TableMergeCells",
+                "TableSplitCell",
+            ],
+        ],
+    },
+)
+```
 #### NumberInput selectAllOnFocus
 
 `NumberInput` now supports `selectAllOnFocus` to select all text when the input receives focus.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.NumberInput(value=123456, selectAllOnFocus=True)
+```
 #### Slider improvements
 
 `Slider` and `RangeSlider` now support vertical orientation.
 
+```python
+import dash_mantine_components as dmc
+
+marks = [
+    {"value": 20, "label": "20%"},
+    {"value": 50, "label": "50%"},
+    {"value": 80, "label": "80%"},
+]
+
+component = dmc.Group(
+    [
+        dmc.Slider(
+            orientation="vertical",
+            value=45,
+            marks=marks,
+        ),
+        dmc.RangeSlider(
+            orientation="vertical",
+            value=[25, 65],
+            marks=marks,
+        ),
+    ],
+    gap=60,
+)
+```
 `Slider` also supports hidden marks for snapping to specific values without displaying marks on the track. Use `restrictToMarks` to enable this behavior.
 
+```python
+from dash import Input, Output, callback
+import dash_mantine_components as dmc
+
+marks = [
+    {"value": 0, "label": "0%"},
+    {"value": 25, "hidden": True},
+    {"value": 50, "label": "50%"},
+    {"value": 75, "hidden": True},
+    {"value": 100, "label": "100%"},
+]
+
+component = dmc.Stack(
+    [
+        dmc.Text(
+            id="hidden-marks-slider-value",
+            size="sm",
+            children="Hidden marks allow you to snap to specific values "
+            "without displaying them visually. Current value: 50",
+        ),
+        dmc.Slider(
+            id="hidden-marks-slider",
+            value=50,
+            min=0,
+            max=100,
+            step=1,
+            restrictToMarks=True,
+            marks=marks,
+        ),
+    ],
+)
+
+@callback(
+    Output("hidden-marks-slider-value", "children"),
+    Input("hidden-marks-slider", "value"),
+)
+def update_value(value):
+    return (
+        "Hidden marks allow you to snap to specific values without displaying "
+        f"them visually. Current value: {value}"
+    )
+```
 The new `startPointValue` prop sets the origin of the filled bar, which extends toward the current value.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Slider(
+    startPointValue=0,
+    updatemode="drag",
+    min=-100,
+    max=100,
+    value=40,
+    marks=[
+        {"value": -100, "label": "-100"},
+        {"value": -50, "label": "-50"},
+        {"value": 0, "label": "0"},
+        {"value": 50, "label": "50"},
+        {"value": 100, "label": "100"},
+    ],
+)
+```
 #### Rating allowClear
 
 `Rating` now supports `allowClear` to reset the rating to zero by clicking the selected value again.
 
+```python
+from dash import Input, Output, callback
+import dash_mantine_components as dmc
+
+component = dmc.Stack(
+    [
+        dmc.Text("Click the same star to clear the rating", size="sm"),
+        dmc.Rating(id="rating-clear", value=3, allowClear=True),
+        dmc.Group(
+            [
+                dmc.Text("Current rating:", size="sm", c="dimmed"),
+                dmc.Text(id="rating-clear-value", size="sm", fw=600, children="3"),
+            ],
+            gap="xs",
+        ),
+    ],
+    gap="md",
+    align="center",
+)
+
+
+@callback(
+    Output("rating-clear-value", "children"),
+    Input("rating-clear", "value"),
+)
+def update_rating(value):
+    return "Not rated" if value == 0 else value
+```
 ### Combobox
 
 #### Reorder selected pills
@@ -56123,6 +56684,17 @@ The new `startPointValue` prop sets the origin of the filled bar, which extends 
 
 Use the arrow keys to move focus between pills. Press `Alt + ArrowLeft` or `Alt + ArrowRight` to reorder the focused pill. Focus follows the moved pill, allowing multiple moves without refocusing. Reordering is disabled when `disabled` or `readOnly` is set.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.MultiSelect(
+    label="Select your favorite superpowers",
+    description="Drag pills to put them in order of preference.",
+    data=["Teleport", "Time Travel", "Fly", "Invisibility", "Mind Reading"],
+    value=["Teleport", "Time Travel", "Fly", "Invisibility", "Mind Reading"],
+    withPillsReorder=True,
+)
+```
 #### Custom pills
 
 `MultiSelect` and `TagsInput` now support `renderPill` to customize how selected pills are rendered.
@@ -56239,32 +56811,150 @@ Clearable inputs now support `clearSectionMode` to control how the clear button 
 
 Supported components include `Select`, `Autocomplete`, `MultiSelect`, `TagsInput`, and the date and time input components.
 
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+data = [f"Option-{i}" for i in range(6)]
+
+component = dmc.Stack([
+    dmc.MultiSelect(
+        label="clearSectionMode='both' (default)",
+        placeholder="Select options",
+        data=data,
+        value=["Option-1", "Option-2"],
+        clearable=True,
+        rightSection=DashIconify(icon="tabler:chevron-down", width=16),
+        clearSectionMode="both",
+    ),
+    dmc.MultiSelect(
+        label="clearSectionMode='rightSection'",
+        placeholder="Select options",
+        data=data,
+        value=["Option-1", "Option-2"],
+        clearable=True,
+        rightSection=DashIconify(icon="tabler:chevron-down", width=16),
+        clearSectionMode="rightSection",
+    ),
+    dmc.MultiSelect(
+        label="clearSectionMode='clear'",
+        placeholder="Select options",
+        data=data,
+        value=["Option-1", "Option-2"],
+        clearable=True,
+        rightSection=DashIconify(icon="tabler:chevron-down", width=16),
+        clearSectionMode="clear",
+    ),
+])
+```
 #### Dropdown height
 
 `Combobox`, `Select`, `MultiSelect`, `Autocomplete`, and `TagsInput` now support `floatingHeight="viewport"` to let dropdowns fill the available viewport height. This is useful for large option lists.
 
+```python
+import dash_mantine_components as dmc
+
+data = [f"Option {i}" for i in range(100)]
+
+component = dmc.MultiSelect(
+    label="Fits viewport height",
+    placeholder="Pick value",
+    data=data,
+    floatingHeight="viewport",
+)
+```
 ### Buttons & Navigation
 
 #### Pagination sizing
 
 Pagination controls are smaller than inputs and buttons by default. Use the `input-` prefix with the `size` prop to match their size.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Stack([
+    dmc.Group([
+        dmc.Pagination(total=45, size="sm"),
+        dmc.Button("sm button", size="sm"),
+        dmc.TextInput(size="sm", placeholder="sm input"),
+    ]),
+    dmc.Group([
+        dmc.Pagination(total=45, size="input-sm"),
+        dmc.Button("sm button", size="sm"),
+        dmc.TextInput(size="sm", placeholder="sm input"),
+    ], mt="md"),
+])
+```
 #### Pagination start value
 
 `Pagination` now supports `startValue` to set the first page number.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Stack([
+    dmc.Text("Pages 5–15 (startValue=5, total=15)", mb="xs"),
+    dmc.Pagination(total=15, startValue=5, value=5),
+])
+```
 #### Responsive pagination
 
 `Pagination` now supports `layout="responsive"`, which switches between page buttons and a compact "Page X of Y" label based on available width. Use `formatLabel` to customize the label.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Box(
+    dmc.Pagination(total=20, layout="responsive"),
+    style={
+        "resize": "horizontal",
+        "overflow": "auto",
+        "minWidth": 200,
+        "maxWidth": "100%",
+        "border": "1px solid var(--mantine-color-gray-5)",
+        "padding": "16px",
+    },
+)
+```
 #### Stepper label position
 
 `Stepper` now supports `labelPosition="bottom"` to display step labels and descriptions below their icons.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Stepper(
+    [
+        dmc.StepperStep(label="Account"),
+        dmc.StepperStep(label="Verification"),
+        dmc.StepperStep(label="Access"),
+    ],
+    id="stepper",
+    active=1,
+    labelPosition="bottom",
+)
+```
 #### Tree connecting lines
 
 `Tree` now supports `withLines` to display connecting lines between parent and child nodes. The lines adapt to `levelOffset`.
 
+```python
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+from .data import data
+
+component = dmc.Tree(
+    data=data,
+    withLines=True,
+    levelOffset=40,
+    expanded=[
+        "node_modules",
+        "node_modules/@mantine",
+        "node_modules/@mantine/form",
+        "node_modules/@mantine/form/index.d.ts",
+    ],
+)
+```
 ### Feedback
 
 #### Notifications
@@ -56276,10 +56966,115 @@ Notifications now support swipe dismissal, auto-close progress, stacked layout, 
 - Stacked layout: `layout="stacked"` displays the latest notification in front, with older notifications peeking out behind it.
 - Priority: notifications with higher `priority` take visible slots when the active notification limit is reached. Equal priorities retain insertion order. The default priority is `0`.
 
+```python
+import dash_mantine_components as dmc
+from dash import Output, Input, html, callback, no_update
+from dash_iconify import DashIconify
+
+
+component = html.Div([
+    # Place one NotificationContainer in app.layout)
+    dmc.Button("Show Notification", id="notification-progress-show")
+
+])
+
+@callback(
+    Output("notification-container", "sendNotifications", allow_duplicate=True),
+    Input("notification-progress-show", "n_clicks"),
+    prevent_initial_call=True,
+)
+def show(n_clicks):
+    if n_clicks is None:
+        return no_update
+    return [dict(
+        title="Hey there!",
+        id="show-notify",
+        action="show",
+        message="Notifications in Dash, Awesome!",
+        icon=DashIconify(icon="ic:round-celebration"),
+        withAutoCloseProgress=True
+    )]
+```
 #### RingProgress improvements
 
 `RingProgress` now supports `sectionGap` to separate sections and `startAngle` to control where the progress starts.
 
+```python
+import dash_mantine_components as dmc
+
+sections = [
+    {"value": 40, "color": "cyan"},
+    {"value": 25, "color": "orange"},
+    {"value": 15, "color": "grape"},
+]
+
+component = dmc.Stack(
+    [
+        dmc.Box(
+            [
+                dmc.Text("No gap (default)", size="sm", ta="center", mb="xs"),
+                dmc.RingProgress(sections=sections),
+            ]
+        ),
+        dmc.Box(
+            [
+                dmc.Text("5° gap", size="sm", ta="center", mb="xs"),
+                dmc.RingProgress(sections=sections, sectionGap=5),
+            ]
+        ),
+        dmc.Box(
+            [
+                dmc.Text("10° gap", size="sm", ta="center", mb="xs"),
+                dmc.RingProgress(sections=sections, sectionGap=10),
+            ]
+        ),
+    ],
+    align="center",
+)
+```
+```python
+import dash_mantine_components as dmc
+
+sections = [{"value": 40, "color": "cyan"}]
+
+component = dmc.Group(
+    [
+        dmc.Stack(
+            [
+                dmc.RingProgress(sections=sections, startAngle=0),
+                dmc.Text("0° (right)", size="sm"),
+            ],
+            align="center",
+            gap="xs",
+        ),
+        dmc.Stack(
+            [
+                dmc.RingProgress(sections=sections, startAngle=90),
+                dmc.Text("90° (bottom)", size="sm"),
+            ],
+            align="center",
+            gap="xs",
+        ),
+        dmc.Stack(
+            [
+                dmc.RingProgress(sections=sections, startAngle=180),
+                dmc.Text("180° (left)", size="sm"),
+            ],
+            align="center",
+            gap="xs",
+        ),
+        dmc.Stack(
+            [
+                dmc.RingProgress(sections=sections, startAngle=270),
+                dmc.Text("270° (top)", size="sm"),
+            ],
+            align="center",
+            gap="xs",
+        ),
+    ],
+    justify="center",
+)
+```
 ### Overlay
 
 #### Tooltip arrow position
@@ -56305,6 +57100,18 @@ dmc.Select(
 
 `Tooltip` now supports `interactive` to keep the tooltip open while the pointer moves from its target to the tooltip content. This allows users to interact with content such as links and supports WCAG 2.1 success criterion 1.4.13.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Tooltip(
+    label="This tooltip stays open while you move the pointer onto it, so you can read or select its full contents without it closing.",
+    interactive=True,
+    withArrow=True,
+    multiline=True,
+    w=220,
+    children=dmc.Button("Hover to read the tooltip"),
+)
+```
 #### Tooltip hideDetached
 
 `Tooltip` now supports `hideDetached`, matching the behavior of `Popover`. It is enabled by default and hides the tooltip when its target is removed from the DOM, hidden with `display: none`, or scrolled out of a clipping container.
@@ -56321,12 +57128,152 @@ On touch devices, `HoverCard` no longer opens on tap by default. Set `events={"f
 
 `Accordion` now supports `disableCollapse`. In single mode (`multiple=False`), the open item cannot be collapsed by clicking it again. Use `value` to ensure an item is open initially.
 
+```python
+import dash_mantine_components as dmc
+
+data = [
+    {
+        "emoji": "🍎",
+        "value": "Apples",
+        "description": "Crisp and refreshing fruit. Apples are known for their versatility and nutritional benefits. They come in a variety of flavors and are great for snacking, baking, or adding to salads.",
+    },
+    {
+        "emoji": "🍌",
+        "value": "Bananas",
+        "description": "Naturally sweet and potassium-rich fruit. Bananas are a popular choice for their energy-boosting properties and can be enjoyed as a quick snack, added to smoothies, or used in baking.",
+    },
+    {
+        "emoji": "🥦",
+        "value": "Broccoli",
+        "description": "Nutrient-packed green vegetable. Broccoli is packed with vitamins, minerals, and fiber. It has a distinct flavor and can be enjoyed steamed, roasted, or added to stir-fries.",
+    },
+]
+
+component = dmc.Accordion(
+    [
+        dmc.AccordionItem(
+            [
+                dmc.AccordionControl(item["value"], icon=item["emoji"]),
+                dmc.AccordionPanel(item["description"]),
+            ],
+            value=item["value"],
+        )
+        for item in data
+    ],
+    value="Apples",
+    disableCollapse=True,
+    order=3,
+)
+```
 #### Timeline opposite and alternate content
 
 `TimelineItem` now supports `opposite` to display content on the opposite side of the timeline. When used, the timeline switches to a centered layout.
 
 Use `alternate` on individual items to switch the positions of the main and opposite content.
 
+```python
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+component = dmc.Timeline(
+    [
+        dmc.TimelineItem(
+            title="New branch",
+            bullet=DashIconify(icon="tabler:git-branch", width=12),
+            opposite=dmc.Text("2 hours ago", size="sm", c="dimmed"),
+            children=dmc.Text(
+                [
+                    "You've created new branch ",
+                    dmc.Text("fix-notifications", variant="link", span=True, inherit=True),
+                    " from master",
+                ],
+                c="dimmed",
+                size="sm",
+            ),
+        ),
+        dmc.TimelineItem(
+            title="Commits",
+            bullet=DashIconify(icon="tabler:git-commit", width=12),
+            opposite=dmc.Text("52 minutes ago", size="sm", c="dimmed"),
+            children=dmc.Text(
+                [
+                    "You've pushed 23 commits to ",
+                    dmc.Text("fix-notifications branch", variant="link", span=True, inherit=True),
+                ],
+                c="dimmed",
+                size="sm",
+            ),
+        ),
+        dmc.TimelineItem(
+            title="Pull request",
+            bullet=DashIconify(icon="tabler:git-pull-request", width=12),
+            lineVariant="dashed",
+            opposite=dmc.Text("34 minutes ago", size="sm", c="dimmed"),
+            children=dmc.Text(
+                [
+                    "You've submitted a pull request ",
+                    dmc.Text(
+                        "Fix incorrect notification message (#187)",
+                        variant="link",
+                        span=True,
+                        inherit=True,
+                    ),
+                ],
+                c="dimmed",
+                size="sm",
+            ),
+        ),
+        dmc.TimelineItem(
+            title="Code review",
+            bullet=DashIconify(icon="tabler:message-circle", width=12),
+            children=dmc.Text(
+                [
+                    dmc.Text("Claude", variant="link", span=True, inherit=True),
+                    " left a code review on your pull request",
+                ],
+                c="dimmed",
+                size="sm",
+            ),
+        ),
+    ],
+    active=1,
+    bulletSize=24,
+    lineWidth=2,
+)
+```
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Timeline(
+    [
+        dmc.TimelineItem(
+            title="Project started",
+            opposite=dmc.Text("Jan 2025", size="sm", c="dimmed"),
+            children="Initial planning and requirements gathering.",
+        ),
+        dmc.TimelineItem(
+            title="Beta release",
+            opposite=dmc.Text("Apr 2025", size="sm", c="dimmed"),
+            alternate=True,
+            children="Released the first version to early adopters.",
+        ),
+        dmc.TimelineItem(
+            title="General availability",
+            opposite=dmc.Text("Aug 2025", size="sm", c="dimmed"),
+            children="Launched publicly with full documentation.",
+        ),
+        dmc.TimelineItem(
+            title="Version 2.0",
+            opposite=dmc.Text("Jan 2026", size="sm", c="dimmed"),
+            alternate=True,
+            children="Introduced a redesigned interface and new features.",
+        ),
+    ],
+    active=3,
+    bulletSize=16,
+    lineWidth=2,
+)
+```
 #### Indicator improvements
 
 `Indicator` now supports:
@@ -56335,16 +57282,113 @@ Use `alternate` on individual items to switch the positions of the main and oppo
 - `showZero` to control whether an indicator with a label of `0` is visible. Defaults to `True`.
 - `offset` with separate `x` and `y` values.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Group(
+    [
+        dmc.Indicator(
+            dmc.Avatar(
+                size="lg",
+                radius="xl",
+                src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png",
+            ),
+            inline=True,
+            label=50,
+            maxValue=99,
+        ),
+        dmc.Indicator(
+            dmc.Avatar(
+                size="lg",
+                radius="xl",
+                src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
+            ),
+            inline=True,
+            label=100,
+            maxValue=99,
+        ),
+        dmc.Indicator(
+            dmc.Avatar(
+                size="lg",
+                radius="xl",
+                src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-3.png",
+            ),
+            inline=True,
+            label=1000,
+            maxValue=999,
+        ),
+    ]
+)
+```
 ### Typography
 
 #### Highlight improvements
 
 `Highlight` now supports custom colors for individual terms using a list of dictionaries containing text and color properties.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Highlight(
+    "Error: Invalid input. Warning: Check this field. Success: All tests passed.",
+    highlight=[
+        {"text": "error", "color": "red"},
+        {"text": "warning", "color": "yellow"},
+        {"text": "success", "color": "green"},
+    ],
+)
+```
 Use `wholeWord` to match complete words only.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Box([
+    dmc.Text(
+        "With whole word matching (wholeWord=True)",
+        size="sm", c="dimmed",
+    ),
+    dmc.Highlight(
+        "The theme is there",
+        highlight="the",
+        wholeWord=True,
+    ),
+    dmc.Text(
+        "Without whole word matching (default)",
+        size="sm", c="dimmed", mt="lg",
+    ),
+    dmc.Highlight(
+        "The theme is there",
+        highlight="the",
+
+    ),
+])
+```
 Matching is case-insensitive and accent-insensitive by default. Use `caseInsensitive` or `accentInsensitive` to change this behavior.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Box([
+    dmc.Text(
+        "With case-insensitive matching (default)",
+        size="sm", c="dimmed",
+    ),
+    dmc.Highlight(
+        "Highlight This, definitely THIS and also this!",
+        highlight="this",
+    ),
+    dmc.Text(
+        "With case-sensitive matching (caseInsensitive=False)",
+        size="sm", c="dimmed", mt="lg",
+    ),
+    dmc.Highlight(
+        "Highlight This, definitely THIS and also this!",
+        highlight="this",
+        caseInsensitive=False,
+    ),
+])
+```
 #### Text wrapping
 
 `Text` and `Blockquote` now support `textWrap` to control the CSS `text-wrap` property.
@@ -56353,6 +57397,35 @@ Matching is case-insensitive and accent-insensitive by default. Use `caseInsensi
 
 `List` now supports the HTML attributes `start`, `reversed`, and `value` for ordered lists.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.Box(
+    [
+        dmc.Text("Start from specific number:", c="dimmed"),
+        dmc.List(
+            [
+                dmc.ListItem("This is item #5"),
+                dmc.ListItem("This is item #6"),
+                dmc.ListItem("This is item #7"),
+                dmc.ListItem("This is item #8"),
+            ],
+            type="ordered",
+            start=5,
+        ),
+        dmc.Text("Reversed numbering:", mt="lg", c="dimmed"),
+        dmc.List(
+            [
+                dmc.ListItem("This is item #3"),
+                dmc.ListItem("This is item #2"),
+                dmc.ListItem("This is item #1"),
+            ],
+            type="ordered",
+            reversed=True,
+        ),
+    ]
+)
+```
 #### CodeHighlight line numbers
 
 `CodeHighlight` and `CodeHighligtTabs` now supports `withLineNumbers` to display line numbers alongside code.
@@ -56366,6 +57439,25 @@ dmc.CodeHighlightTabs(   # or dmc.CodeHighligh(
     defaultExpanded=False
 )
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.CodeHighlight(
+    withLineNumbers=True,
+    withExpandButton=True,
+    defaultExpanded=False,
+    language="python",
+    code="""# Kadane's Algorithm
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        curr, summ = nums[0], nums[0]
+        for n in nums[1:]:
+            curr = max(n, curr + n)
+            summ = max(summ, curr)
+        return summ""",
+)
+```
 `CodeHighlight` now supports expandable code snippets with `withExpandButton`, `defaultExpanded`, `expandCodeLabel`, and
 `collapseCodeLabel` props, previously available only in `CodeHighlightTabs`.
 
@@ -56375,14 +57467,54 @@ dmc.CodeHighlightTabs(   # or dmc.CodeHighligh(
 
 `DateTimePicker` now supports `type="range"` for selecting a date and time range. Two time inputs are displayed for the start and end times, with a range summary below.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.DateTimePicker(
+    label="Pick date and time range",
+    placeholder="Pick date and time range",
+    type="range",
+)
+```
 #### TimePicker duration
 
 `TimePicker` now supports `type="duration"` for entering durations longer than 24 hours. The hours field has no upper limit, and the input width adjusts to the value. The `format` prop is ignored, the display is always 24-hour, and the dropdown is disabled.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.TimePicker(
+    label="Enter a duration",
+    withSeconds=True,
+    type="duration"
+)
+```
 #### Month and year presets
 
 `MonthPickerInput` and `YearPickerInput` now support `presets` for predefined values.
 
+```python
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
+import dash_mantine_components as dmc
+
+today = date.today()
+start_of_month = lambda months: (today.replace(day=1) + relativedelta(months=months)).isoformat()
+
+component = dmc.MonthPickerInput(
+    label="With presets",
+    placeholder="Select month",
+    presets=[
+        {"value": start_of_month(0), "label": "This month"},
+        {"value": start_of_month(1), "label": "Next month"},
+        {"value": start_of_month(-1), "label": "Last month"},
+        {"value": start_of_month(6), "label": "In 6 months"},
+        {"value": start_of_month(12), "label": "Next year"},
+        {"value": start_of_month(-12), "label": "Last year"},
+    ],
+)
+```
 #### Date formatting functions
 
 `DateTimePicker` and `DateInput` now accept functions in `valueFormat`. `DatePickerInput`, `MonthPickerInput`, and `YearPickerInput` accept functions in `valueFormatter` to customize displayed date text.
@@ -56427,46 +57559,234 @@ dmcfuncs.formatDatesSelected = ({ type, date, locale, format }) => {
 
 `TimePicker` now supports `closeDropdownOnPresetSelect` to close the dropdown after a preset is selected.
 
+```python
+import dash_mantine_components as dmc
+
+component = dmc.TimePicker(
+    label="Enter a time",
+    format="12h",
+    withDropdown=True,
+    presets=['11:30', '15:45', '18:00', '20:15', '22:30'],
+    closeDropdownOnPresetSelect=True
+)
+```
 #### Native calendar level selection
 
 Date picker components now support `withNativeLevelSelect`, which replaces the calendar header level button with native select elements for navigating to a month or year.
 
+```python
+import dash_mantine_components as dmc
+
+component =  dmc.DatePicker(withNativeLevelSelect=True, yearsSelectRange=[2020, 2035])
+```
 ### Charts
 
 #### Chart brush (range slider)
 
 `AreaChart`, `BarChart`, `LineChart`, and `CompositeChart` now support `withBrush` to add a range slider below the chart. Use `brushProps` to configure the Recharts Brush component and `brushDragEnd` to receive the selected `startIndex` and `endIndex`.
 
+```python
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+
+data = [
+    {"date": "Mar 1", "Apples": 2200, "Oranges": 1400},
+    {"date": "Mar 2", "Apples": 2500, "Oranges": 1500},
+    {"date": "Mar 3", "Apples": 2800, "Oranges": 1700},
+    {"date": "Mar 4", "Apples": 3100, "Oranges": 1600},
+    {"date": "Mar 5", "Apples": 3000, "Oranges": 1800},
+    {"date": "Mar 6", "Apples": 2700, "Oranges": 2000},
+    {"date": "Mar 7", "Apples": 2400, "Oranges": 2100},
+    {"date": "Mar 8", "Apples": 2100, "Oranges": 1900},
+    {"date": "Mar 9", "Apples": 1900, "Oranges": 1700},
+    {"date": "Mar 10", "Apples": 2200, "Oranges": 1500},
+    {"date": "Mar 11", "Apples": 2600, "Oranges": 1600},
+    {"date": "Mar 12", "Apples": 3000, "Oranges": 1800},
+    {"date": "Mar 13", "Apples": 3300, "Oranges": 2000},
+    {"date": "Mar 14", "Apples": 3100, "Oranges": 2200},
+    {"date": "Mar 15", "Apples": 2800, "Oranges": 2100},
+    {"date": "Mar 16", "Apples": 2500, "Oranges": 1900},
+]
+
+component = dmc.Stack([
+    dmc.AreaChart(
+        h=300,
+        data=data,
+        dataKey="date",
+        withBrush=True,
+        series=[
+            {"name": "Apples", "color": "indigo.6"},
+            {"name": "Oranges", "color": "blue.6"},
+        ],
+        id="areachart-brush"
+    ),
+    dmc.Text(id="areachart-brush-dragend")
+])
+
+@callback(
+    Output("areachart-brush-dragend", "children"),
+    Input("areachart-brush", "brushDragEnd"),
+)
+def brushDragEnd(brushDragEnd):
+    return f"Brush range selected: {brushDragEnd}"
+```
 #### AreaChart streamgraph
 
 `AreaChart` now supports `type="stream"` to render a streamgraph, a stacked area chart with a flowing baseline. The y-axis is hidden by default because the values are not meaningful to read against a fixed baseline.
 
+```python
+import dash_mantine_components as dmc
+
+data = [
+    {"month": "Jan", "Apples": 220, "Oranges": 140, "Tomatoes": 90, "Grapes": 60},
+    {"month": "Feb", "Apples": 260, "Oranges": 180, "Tomatoes": 120, "Grapes": 90},
+    {"month": "Mar", "Apples": 300, "Oranges": 240, "Tomatoes": 180, "Grapes": 140},
+    {"month": "Apr", "Apples": 340, "Oranges": 320, "Tomatoes": 260, "Grapes": 200},
+    {"month": "May", "Apples": 380, "Oranges": 420, "Tomatoes": 360, "Grapes": 280},
+    {"month": "Jun", "Apples": 420, "Oranges": 520, "Tomatoes": 460, "Grapes": 360},
+    {"month": "Jul", "Apples": 400, "Oranges": 560, "Tomatoes": 520, "Grapes": 420},
+    {"month": "Aug", "Apples": 360, "Oranges": 520, "Tomatoes": 560, "Grapes": 460},
+    {"month": "Sep", "Apples": 300, "Oranges": 440, "Tomatoes": 520, "Grapes": 420},
+    {"month": "Oct", "Apples": 260, "Oranges": 340, "Tomatoes": 440, "Grapes": 360},
+    {"month": "Nov", "Apples": 220, "Oranges": 260, "Tomatoes": 340, "Grapes": 280},
+    {"month": "Dec", "Apples": 200, "Oranges": 200, "Tomatoes": 260, "Grapes": 200},
+]
+
+component = dmc.AreaChart(
+    h=300,
+    data=data,
+    dataKey="month",
+    type="stream",
+    series=[
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"},
+        {"name": "Grapes", "color": "grape.6"},
+    ],
+)
+```
 #### Reference areas
 
 `AreaChart`, `BarChart`, `LineChart`, `CompositeChart`, and `ScatterChart` now support `referenceAreas` to highlight rectangular regions such as target ranges, thresholds, or weekends. Areas can be defined by x and y data values and support a theme color and label.
 
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.AreaChart(
+    h=300,
+    data=data,
+    dataKey="date",
+    type="stacked",
+    series=[
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"},
+    ],
+    referenceAreas=[
+        {"x1": "Mar 23", "x2": "Mar 25", "color": "red.6", "label": "Weekend"},
+    ],
+)
+```
 #### Reference dots
 
 `AreaChart`, `BarChart`, `LineChart`, `CompositeChart`, and `ScatterChart` now support `referenceDots` to mark individual data points. Each dot supports a radius, theme color, and label.
 
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.AreaChart(
+    h=300,
+    data=data,
+    dataKey="date",
+    series=[
+        {"name": "Apples", "color": "indigo.6"},
+        {"name": "Oranges", "color": "blue.6"},
+        {"name": "Tomatoes", "color": "teal.6"},
+    ],
+    referenceDots=[
+        {"x": "Mar 25", "y": 3470, "color": "red.6", "label": "Peak"},
+    ],
+)
+```
 #### Heatmap legend and month labels
 
 `Heatmap` now supports `withLegend` to display a color legend below the chart. Use `legendLabels` to customize the labels. The default is `["Less", "More"]`.
 
 `monthLabelsPosition` controls whether month labels appear above or below the heatmap.
 
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+    withLegend=True,
+)
+```
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.Heatmap(
+    data=data,
+    startDate="2024-02-16",
+    endDate="2025-02-16",
+    withWeekdayLabels=True,
+    withMonthLabels=True,
+    monthLabelsPosition="bottom"
+)
+```
 #### PieChart and DonutChart labels
 
 `PieChart` and `DonutChart` now support `labelsType="name"` to display segment names instead of values or percentages.
 
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.PieChart(
+    data=data,
+    withLabels=True,
+    withLabelsLine=True,
+    labelsType="name",
+)
+```
 #### Chart legends
 
 `PieChart`, `DonutChart`, and `FunnelChart` now support `withLegend` to display segment names and colors. Hovering over a legend item highlights the corresponding segment. Use `legendProps` to configure the underlying Recharts Legend component.
 
+```python
+import dash_mantine_components as dmc
+from .data import data
+
+component = dmc.FunnelChart(data=data, withLegend=True)
+```
 #### ScatterChart right Y axis
 
 `ScatterChart` now supports `withRightYAxis` to display a second y-axis on the right. Configure it with `rightYAxisProps` and `rightYAxisLabel`.
 
+```python
+import dash_mantine_components as dmc
+from .data import data3
+
+component = dmc.ScatterChart(
+    h=350,
+    data=data3,
+    dataKey={"x": "month", "y": "value"},
+    withLegend=True,
+    withRightYAxis=True,
+    xAxisLabel="Month",
+    yAxisLabel="Revenue",
+    rightYAxisLabel="Conversion rate",
+    rightYAxisProps={"unit": "%"},
+)
+```
 ### Other new features
 
 #### Theming and styling
