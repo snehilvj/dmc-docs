@@ -15,7 +15,7 @@ The complete DMC documentation is available in an LLM-friendly format.
 - [View DMC llms.json](https://www.dash-mantine-components.com/assets/llms.json)
 - [View Mantine v9 llms.txt](https://mantine.dev/llms.txt)
 
-DMC v3 is based on Mantine v9. Mantine's documentation, MCP server, and skills can help AI tools understand component APIs and behavior. See the [Mantine guide for LLMs](https://mantine.dev/llms.txt) for details.
+DMC v3 is based on Mantine v9. Mantine's documentation, MCP server, and skills can help AI tools understand component APIs and behavior. See the [Mantine guide for LLMs](https://mantine.dev/guides/llms/) for details.
 
 ### Getting Documentation for AI Tools
 

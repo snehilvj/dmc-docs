@@ -80,11 +80,13 @@ The `initialState` prop was renamed to `defaultExpanded`
 The `color` prop of the `Text` and `Anchor` components was removed. Use the `c` style prop instead.
 
 
-#### Mantine API changes
 
 #### Mantine API changes
 
-If you have written custom JavaScript that uses Mantine components or APIs, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for breaking changes that may affect your code.
+If you have written JavaScript that uses Mantine components or APIs, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for breaking changes that may affect your code.
+
+Mantine also provides an MCP server and agent skills that can help AI tools understand its component APIs and documentation.
+These tools may be useful when updating JavaScript for Mantine v9. See the [Mantine guide for LLMs](https://mantine.dev/guides/llms/) for setup instructions.
 
 
 #### Recharts updated to v3
