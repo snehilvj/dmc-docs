@@ -62,15 +62,15 @@ REACT_VERSION=19.2.4 python app.py
 ### v3 Breaking Changes
 
 
-#### Grid
+#### Grid gutter -> gap
 
 The `gutter` prop was renamed to `gap` for consistency with other layout components such as `Flex` and `SimpleGrid`. New `rowGap` and `columnGap` props can be used when separate vertical and horizontal spacing is needed.
 
-#### TypographyStylesProvider
+#### TypographyStylesProvider -> Typography
 
 `TypographyStylesProvider` was renamed to `Typography`.
 
-#### Spoiler
+#### Spoiler initialState -> default exapanded
 The `initialState` prop was renamed to `defaultExpanded`
 
 #### Popover and Tooltip
@@ -80,9 +80,10 @@ The `initialState` prop was renamed to `defaultExpanded`
 The `color` prop of the `Text` and `Anchor` components was removed. Use the `c` style prop instead.
 
 
-#### Custom JavaScript functions
+#### Mantine API changes
 
-If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
+If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for
+changes that may affect your custom JavaScript functions.
 
 
 #### Recharts updated to v3
