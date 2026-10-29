@@ -11,7 +11,7 @@ def create_link(icon, href):
         ),
         href=href,
         target="_blank",
-        visibleFrom="xs",
+        visibleFrom="sm",
     )
 
 
@@ -30,7 +30,7 @@ def create_version_menu():
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                     variant="outline",
-                    visibleFrom="md",
+                  #  visibleFrom="md",
                 )
             ),
             dmc.MenuDropdown(
@@ -148,10 +148,10 @@ def create_header(data):
                                         hiddenFrom="lg",
                                     ),
                                     dmc.Anchor(
-                                        "DMC", size="xl", href="/", underline="never", hiddenFrom="sm"
+                                        "DMC", size="xl", href="/", underline="never", hiddenFrom="md"
                                     ),
                                     dmc.Anchor(
-                                        "Dash Mantine Components", size="lg", href="/", underline="never", visibleFrom="sm"
+                                        "Dash Mantine Components", size="lg", href="/", underline="never", visibleFrom="md"
                                     ),
                                 ]
                             ),
