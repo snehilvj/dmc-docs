@@ -79,6 +79,13 @@ values range in the dropdown.
 
 .. exec::docs.timepicker.step
 
+### Duration type
+Set `type="duration"` to allow entering durations that exceed 24 hours. In this mode, the hours field has no upper limit
+and the input width adjusts dynamically based on the entered value. The format prop is ignored (always 24h) and the
+dropdown is disabled.
+
+.. exec::docs.timepicker.duration
+
 ### Time presets
 You can define time presets with `presets` prop. Presets are displayed in the dropdown and can be selected by clicking
 on them. Time values for presets should be in hh:mm:ss or hh:mm 24-hour time format. Presets display value is generated
@@ -100,6 +107,11 @@ directly in the `presets` prop.
 
 .. exec::docs.timepicker.presetsrange
 
+### Close dropdown on preset select
+Set `closeDropdownOnPresetSelect` prop to close the dropdown once a value is selected from the presets list:
+
+
+.. exec::docs.timepicker.presetsdropdown
 
 ### Dropdown position
 By default, the dropdown is displayed below the input if there is enough space; otherwise it is displayed above the 
@@ -124,6 +136,17 @@ least one of the fields has value.
 
 .. exec::docs.timepicker.clearable
 
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.timepicker.clear_section_mode
+
 ### Disabled
 
 .. exec::docs.timepicker.disabled
@@ -140,11 +163,14 @@ TimeInput supports all props from Input and InputWrapper components such as `rad
 .. exec::docs.timepicker.interactive
     :code: false
 
-### Invalid State And Error
+### Error State
 
 You can display an error with a red border and add an error message.
 
 .. exec::docs.timepicker.error
+
+### Success state
+.. exec::docs.timepicker.success
 
 ### Accessibility
 

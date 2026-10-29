@@ -14,7 +14,14 @@ category: Inputs
 .. exec::docs.textinput.interactive
     :code: false
 
-### Invalid State and Error
+### Loading state
+
+Set `loading` prop to display a loading indicator. By default, the loader is displayed on the right side of the input.
+You can change the position with the `loadingPosition` prop to 'left' or 'right'.
+
+.. exec::docs.textinput.loading
+
+### Error State
 
 Use `error` prop to convey an error with an error message and a red border around the input.
 
@@ -28,6 +35,10 @@ input:invalid {
 ```
 
 .. exec::docs.textinput.error
+
+### Success state
+
+.. exec::docs.textinput.success
 
 ### Disabled State
 

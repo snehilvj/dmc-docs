@@ -142,6 +142,11 @@ Try clicking on the active tab to see the deactivated state:
     :code: false
 
 
+### Unmount inactive tabs
+By default, inactive `TabsPanel` will stay mounted; to unmount inactive tabs, set `keepMounted=False` on Tabs. This is
+useful when you want to render components that impact performance inside `TabsPanel`. Note that components that are
+rendered inside `TabsPanel` will reset their state on each mount (tab change).
+
 ### Content As Callback
 
 Attach a callback to the Tabs `value` prop and update a container's `children` property in your callback.
@@ -222,7 +227,7 @@ Put the following in a `.css` file in the `/assets` folder
 
 .. styles_api_text::
 
-Refer to the Mantine Tabs Style API [interactive demo](https://v8.mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
+Refer to the Mantine Tabs Style API [interactive demo](https://mantine.dev/core/tabs/#styles-api) for help in identifying each selector.
 
 #### Tabs Selectors
 

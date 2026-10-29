@@ -20,12 +20,12 @@ def generate_table(dataframe, max_rows=10):
 component = html.Div(
     [
         html.Div([
-            html.H4("Example without TypographyStylesProvider"),
+            html.H4("Example without Typography"),
             generate_table(df),
         ], style={"marginBottom": 36}),
 
-        dmc.TypographyStylesProvider([
-            html.H4("Example with TypographyStylesProvider"),
+        dmc.Typography([
+            html.H4("Example with Typography"),
             generate_table(df),
         ]),
     ]

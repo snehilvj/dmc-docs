@@ -279,6 +279,36 @@ Use `referenceLines` prop to render reference lines. Reference lines are always 
 .. exec::docs.compositechart.referencelines
 
 
+### Reference areas
+Use the `referenceAreas` prop to highlight a rectangular region of the chart. Each area is bounded by x1/x2 (horizontal)
+and y1/y2 (vertical) data values – omit one pair to span the full opposite axis, for example provide only x1/x2 to
+highlight a time range across the entire height of the chart. Set `color` to any theme color or CSS color and label
+to display text inside the area. Reference areas are rendered behind the chart series.
+
+.. exec::docs.compositechart.referenceareas
+
+### Reference dots
+Use the `referenceDots` prop to mark individual points on the chart – a peak, an event, a record value or an anomaly. 
+Each dot is positioned by x and y data coordinates and supports `r` (radius), `color` (any theme color or CSS color) and
+`label`. Reference dots are rendered on top of the chart series.
+
+.. exec::docs.compositechart.referencedots
+
+
+### Brush (Range Slider)
+Set the `withBrush` prop to display a brush (range slider) under the chart. Drag the brush handles to
+zoom into a subset of the data. The chart updates to show only the selected range. The brush border and background are
+themed to match the chart grid and adapt to the color scheme. `withBrush` is `False` by default and is supported by
+`AreaChart`, `BarChart`, `LineChart` and `CompositeChart` components with `horizontal` orientation.
+
+Use the `brushDragEnd` prop to get the `startIndex` and `endIndex` of the selected range when dragging ends. 
+
+Use the `brushProps` prop to pass props down to the underlying [recharts Brush](https://recharts.github.io/en-US/api/Brush/) component. For example, you can set the
+initially selected range with `startIndex`/`endIndex`, change the brush height and more:
+
+
+.. exec::docs.compositechart.brush
+
 ### clickData
 Use the `clickData` property in a callback to retrieve data from the most recent click event.
 To get the name of the clicked series, use the `clickSeriesName` property.

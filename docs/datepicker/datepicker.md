@@ -68,6 +68,11 @@ Set `level` prop to configure initial level that will be displayed:
 
 .. exec::docs.datepicker.level
 
+### Full width
+Set the `fullWidth` prop to make the date picker stretch to fill 100% of its parent container width:
+
+.. exec::docs.datepicker.fullwidth
+
 ### Hide outside dates
 Set `hideOutsideDates=True` to remove all dates that do not belong to the current month:
 
@@ -205,6 +210,11 @@ format of decade/year label:
 
 For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements. At 
+the month level, two selects are rendered for month and year. At the year level, one select is rendered for year.
+
+.. exec::docs.datepicker.nativeselect
 
 ### CSS Extensions
 

@@ -8,43 +8,124 @@ order: 500
 
 .. toc::
 
-### Version Compatibility  
+### Version Compatibility 
 
-Below is a list of Dash Mantine Components (DMC) versions, their corresponding Mantine versions, and required Dash versions.
 
-| Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
-|-------------------------|--------------|-----------------|----|
-| **2.7.0**               | May 2026     | 8.3.18          | `dash>=2.0.0` |
-| **2.6.1**               | Mar 2026     | 8.3.17          | `dash>=2.0.0` |
-| **2.6.0**               | Feb 2026     | 8.3.14          | `dash>=2.0.0` |
-| **2.5.0**               | Jan 2026     | 8.3.13          | `dash>=2.0.0` |
-| **2.4.1**               | Dec 2025     | 8.3.10          | `dash>=2.0.0` |
-| **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
-| **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
-| **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
-| **2.2.0**               | Aug 2025     | 8.2.5           | `dash>=2.0.0` |
-| **2.1.0**               | Jul 2025     | 8.1.2           | `dash>=2.0.0` |
-| **2.0.0**               | Jun 2025     | 8.0.2           | `dash>=2.0.0` |
-| **1.3.0**               | May 2025     | 7.17.7          | `dash>=2.0.0` |
-| **1.2.0**               | Apr 2025     | 7.17.4          | `dash>=2.0.0` |
-| **1.1.0**               | Mar 2025     | 7.17.2          | `dash>=2.0.0` |
-| **1.0.0**               | Mar 2025     | 7.17.0          | `dash>=2.0.0` |
-| **0.15.0**              | Nov 2024     | 7.14.1          | `dash>=2.0.0,<3.0.0`|
-| **0.14.0**              | Apr 2024     | 7.0             | `dash>=2.0.0,<3.0.0` |
-| **0.13.0a1**            | Aug 2023     | 6.0             | `dash>=2.0.0,<3.0.0` |
-| **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |
+- **DMC 3.x:** Requires Dash 4.5 or later and React 19. DMC 3 is based on Mantine v9.
+- **DMC 2.x:** Based on Mantine v8 and supports Dash 2 and later.
+- **DMC 1.x:** Based on Mantine v7 and supports Dash 2 and later.
+- **DMC 0.12–0.15:** Based on Mantine v5–v7 and requires Dash 2, with Dash 3 excluded.
+
+See the release history at the end of this page for the Mantine version and minimum Dash version required by each DMC release.
 
 
 ### Upstream Mantine documentation
 
 Be sure to refer to the Mantine docs that match your DMC version:
 
-| DMC version      | Mantine docs                          |
-|------------------|----------------------------------------|
-| v2               | https://v8.mantine.dev/               |
-| v0.14–v1         | https://v7.mantine.dev/               |
-| v0.13            | https://v6.mantine.dev/               |
-| v0.12            | https://v5.mantine.dev/               |
+| DMC version | Mantine docs               |
+|-------------|----------------------------|
+| v3          | https://mantine.dev/  (v9) |
+| v2          | https://v8.mantine.dev/    |
+| v0.14–v1    | https://v7.mantine.dev/    |
+| v0.13       | https://v6.mantine.dev/    |
+| v0.12       | https://v5.mantine.dev/    |
+
+
+### Migrating from 2.x to 3.x
+
+
+DMC v3 is based on Mantine v9. See the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for a complete list of changes.
+
+Many of the breaking changes in the upstream Mantine Migration Guide are handled by DMC and do not require changes to your Dash app. The following are the known exceptions.
+
+#### Requirements
+
+DMC v3 requires dash>=4.5 and React 19
+
+#### React 19
+
+Set in your app:
+
+```python
+import dash
+dash._dash_renderer._set_react_version("19.2.4")
+
+app = dash.Dash()
+```
+
+Or set the React version with an environment variable:
+
+```bash
+REACT_VERSION=19.2.4 python app.py
+```
+### v3 Breaking Changes
+
+
+#### Grid
+
+The `gutter` prop was renamed to `gap` for consistency with other layout components such as `Flex` and `SimpleGrid`. New `rowGap` and `columnGap` props can be used when separate vertical and horizontal spacing is needed.
+
+#### TypographyStylesProvider
+
+`TypographyStylesProvider` was renamed to `Typography`.
+
+#### Spoiler
+The `initialState` prop was renamed to `defaultExpanded`
+
+#### Popover and Tooltip
+`Popover` and `Tooltip` components no longer accept the `positionDependencies` prop. Remove it, the position is now recalculated automatically.
+
+#### Text color prop
+The `color` prop of the `Text` and `Anchor` components was removed. Use the `c` style prop instead.
+
+
+#### Custom JavaScript functions
+
+If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
+
+
+#### Recharts updated to v3
+
+DMC v3 upgrades Recharts from v2 to v3.
+
+There are no known breaking changes to the DMC chart props. However, some charts now include additional data in `clickData` and `hoverData`.
+
+If you have written custom JavaScript functions that work with DMC charts, review the [Recharts v3 documentation](https://recharts.org/en-US/).  There were substantial changes in Recharts v3.
+
+
+### v3 Behavior and Style Changes
+
+#### Light variant color changes.
+In Mantine 9, the light variant CSS variables were changed to use solid color values instead of transparency. If you need to keep 8.x behavior during migration, set `useV8CssVariablesResolver=True` in the `MantineProvider`
+
+```Python
+dmc.MantineProvider(useV8CssVariablesResolver=True)
+```
+
+#### Default border-radius change
+In 8.x, the default `border-radius` (`theme.defaultRadius`) was `sm` (4px). In 9.x, the default `border-radius` was changed to `md` (8px). To keep the previous behavior, set `defaultRadius` to `sm` in the theme.
+
+
+```Python
+dmc.MantineProvider(theme={"defaultRadius": "sm"})
+
+```
+
+#### Font weights
+New `fontWeights` property was added to the [theme object](https://www.dash-mantine-components.com/theme-object). It allows you to control font-weight values used across all components.  To revert the medium font weight from 600 back to 500 (the default in Mantine 8):
+
+```Python
+dmc.MantineProvider(theme={"fontWeights": {"medium": 500}})
+```
+
+#### v3 Other changes
+
+- `Tree` no longer defines the `data-hovered` attribute for hover state. Apply hover styles with `&:hover` instead.
+- The `PasswordInput` visibility toggle icon has changed.
+- Notifications now pause the auto-close timer for all visible notifications when any notification is hovered. Set `pauseResetOnHover="notification"` to restore the previous behavior of pausing only the hovered notification.
+- The `mod` prop converts camelCase keys to kebab-case for data attributes.
+
 
 
 ### Migrating from 1.2.0 to 2.x
@@ -499,3 +580,30 @@ All DMC components now support `hiddenFrom` and `visibleFrom` props. These props
 and hide the component when viewport width is less than or greater than the specified breakpoint.
 
 .. exec::docs.migration.hidden
+
+
+###  Version Compatibility - all releases
+
+| Dash Mantine Components | Release Date | Mantine Version | Required Dash Version |
+|-------------------------|--------------|-----------------|----|
+| **3.0.0**               | Nov 2026     | 9.7.4           | `dash>=2.0.0` |
+| **2.8.1**               | Oct 2026     | 8.3.18          | `dash>=2.0.0` |
+| **2.7.0**               | May 2026     | 8.3.18          | `dash>=2.0.0` |
+| **2.6.1**               | Mar 2026     | 8.3.17          | `dash>=2.0.0` |
+| **2.6.0**               | Feb 2026     | 8.3.14          | `dash>=2.0.0` |
+| **2.5.0**               | Jan 2026     | 8.3.13          | `dash>=2.0.0` |
+| **2.4.1**               | Dec 2025     | 8.3.10          | `dash>=2.0.0` |
+| **2.4.0**               | Nov 2025     | 8.3.6           | `dash>=2.0.0` |
+| **2.3.0**               | Sep 2025     | 8.3.1           | `dash>=2.0.0` |
+| **2.2.1**               | Aug 2025     | 8.2.7           | `dash>=2.0.0` |
+| **2.2.0**               | Aug 2025     | 8.2.5           | `dash>=2.0.0` |
+| **2.1.0**               | Jul 2025     | 8.1.2           | `dash>=2.0.0` |
+| **2.0.0**               | Jun 2025     | 8.0.2           | `dash>=2.0.0` |
+| **1.3.0**               | May 2025     | 7.17.7          | `dash>=2.0.0` |
+| **1.2.0**               | Apr 2025     | 7.17.4          | `dash>=2.0.0` |
+| **1.1.0**               | Mar 2025     | 7.17.2          | `dash>=2.0.0` |
+| **1.0.0**               | Mar 2025     | 7.17.0          | `dash>=2.0.0` |
+| **0.15.0**              | Nov 2024     | 7.14.1          | `dash>=2.0.0,<3.0.0`|
+| **0.14.0**              | Apr 2024     | 7.0             | `dash>=2.0.0,<3.0.0` |
+| **0.13.0a1**            | Aug 2023     | 6.0             | `dash>=2.0.0,<3.0.0` |
+| **0.12.0**              | Mar 2023     | 5.10.5          | `dash>=2.0.0,<3.0.0` |

@@ -28,6 +28,9 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 .. exec::docs.dateinput.formats
 
+`valueFormat` also accepts a function that receives the value as a YYYY-MM-DD string and returns the formatted value.  For
+more details and examples, see [Mantine DateInput](https://mantine.dev/dates/date-input/#value-format) documentation, and the [Functions As Props](/functions-as-props) section.
+
 
 ### Clearable
 
@@ -36,6 +39,17 @@ Set clearable prop to allow removing value from the input. Input will be cleared
 When `clearable=True`, a clear button in the right section is displayed. Note that if you set rightSection prop, clear button will not be displayed.
 
 .. exec::docs.dateinput.clearable
+
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.dateinput.clear_section_mode
 
 ### Min and max date
 

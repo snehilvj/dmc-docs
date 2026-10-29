@@ -210,7 +210,7 @@ theme = {
 
 #### Headings
 
-`theme.headings` controls `font-size`, `line-height`, `font-weight`, and `text-wrap` CSS properties of headings in `Title` and `TypographyStylesProvider` components.
+`theme.headings` controls `font-size`, `line-height`, `font-weight`, and `text-wrap` CSS properties of headings in `Title` and `Typography` components.
 
 | Variable                        | Default value   |
 |:--------------------------------|:----------------|

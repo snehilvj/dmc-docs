@@ -17,6 +17,7 @@ component = html.Div(
                     id="update-notifications",
                     n_clicks=0
                 ),
+                # Place one NotificationContainer in app.layout)
             ],
         ),
     ],

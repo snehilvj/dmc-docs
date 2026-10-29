@@ -3,7 +3,7 @@ from dash_iconify import DashIconify
 
 component = dmc.Box(
     dmc.Anchor(
-        href="https://v8.mantine.dev",
+        href="https://mantine.dev",
         target="_blank",
         children=dmc.Center(
             [

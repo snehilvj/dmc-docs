@@ -117,6 +117,7 @@ marks = [
     :code: false
 
 
+
 ### Restrict selection to marks
 Setting `restrictToMarks=True` ensures that users can only select values matching the specific marks defined. This 
 feature is especially helpful when you have uneven or non-standard marks and want to ensure users can only pick 
@@ -125,6 +126,16 @@ from those specific points.
 Note: The `step` prop is ignored when `restrictToMarks=True`.
 
 .. exec::docs.slider.restrictomarks
+
+
+### Hidden marks
+
+Hidden marks allow you to snap to specific values without displaying them visually on the track. This is useful when
+you want to create a "sticky" snapping behavior to certain values that you don't want to show to the user. Use this
+feature together with the `restrictToMarks` prop.
+
+
+.. exec::docs.slider.hiddenmarks
 
 
 ### Disabled
@@ -147,35 +158,27 @@ In the following demo, the value x represents the value 2^x. Increasing x by one
 
 .. functions_as_props::
 
+### Start point
+Use the `startPointValue` prop to change the origin of the filled bar. When set, the bar extends from the given value
+toward the current value – to the left for values below the start point and to the right for values above it. This prop
+is ignored when `inverted` is set.  Available in `Slider` component only.
+
+
+.. exec::docs.slider.startpoint
 
 ### Inverted
 You can invert the track by setting `inverted=True`:
 
 .. exec::docs.slider.inverted
 
+### Vertical slider
 
-### Dash 4 Slider and RangeSlider
+Set `orientation="vertical"` to render the slider vertically. In vertical orientation, the minimum value is at the 
+bottom and the maximum value is at the top.
 
-The Dash 4 [`dcc.Slider`](https://dash.plotly.com/dash-core-components/slider) and `dcc.RangeSlider` components supports 
-some features that are not available in DMC, for example integrated numeric input fields and vertical sliders. To style
-the `dcc.Slider` with a Mantine theme see the   [Dash 4 components](/dash4-components) section.
 
-### Styling the Slider
+.. exec::docs.slider.vertical
 
-The `Slider` component can be fully customized using Mantine's Styles API. Each element of the `Slider` - from the
-thumb to the track markers - has its own unique selector that can be styled independently.
-
-Try the [interactive example](https://v8.mantine.dev/core/slider/#styles-api) in the upstream Mantine documentation to see
-how these selectors correspond to different parts of the Slider component. Below, you'll find a comprehensive reference
-of all available selectors, CSS variables, and data attributes.
-
-Here is an example:
-.. exec::docs.slider.styles
-    :code: false
-
-.. sourcetabs::docs/slider/styles.py, assets/examples/slider.css
-    :defaultExpanded: true
-    :withExpandedButton: true
 
 
 ### Styles API

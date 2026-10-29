@@ -28,6 +28,15 @@ Set type="range" to allow user to pick dates range. Note that `value` is a list.
 
 .. exec::docs.yearpickerinput.range
 
+### Presets
+Use the `presets` prop to add custom year presets. Presets are displayed next to the calendar:
+
+.. exec::docs.yearpickerinput.presets
+
+To use `presets` with `type="range"`, define the value as a tuple of two dates:
+
+.. exec::docs.yearpickerinput.presets_range
+
 ### Open picker in modal
 
 By default, YearPickerInput is rendered inside Popover. You can change that to Modal by setting dropdownType="modal"
@@ -46,11 +55,42 @@ Use `valueFormat` property to change the format of the date displayed in the dat
 
 Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/display/format) of value label.
 
+
+
+### Value formatter
+`valueFormatter` is a more powerful alternative to the `valueFormat` prop. It allows formatting the value label with a
+custom function. The function is the same for all component types (default, multiple and range) – you need to perform
+additional checks inside the function to handle different types.
+
+Example of using a custom formatter function with `type="multiple"`:
+
+
+.. functions_as_props::  
+
+
+.. exec::docs.yearpickerinput.valueformatter
+    :code: false
+
+.. sourcetabs::docs/yearpickerinput/valueformatter.py, assets/examples-js/format-dates-selected.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 ### Clearable
 
 Set `clearable=True` prop to display clear button in the right section. Note that if you set `rightSection` prop, clear button will not be displayed.
 
 .. exec::docs.yearpickerinput.clearable
+
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.yearpickerinput.clear_section_mode
 
 
 ### With Icon

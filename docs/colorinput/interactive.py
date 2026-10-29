@@ -16,6 +16,7 @@ configurator.add_text_input(
 configurator.add_text_input("label", "Your favorite color", **{"placeholder": "Label"})
 configurator.add_text_input("description", "", **{"placeholder": "Description"})
 configurator.add_text_input("error", "", **{"placeholder": "Error"})
+configurator.add_text_input("success", "", **{"placeholder": "Success"})
 configurator.add_select("variant", ["default", "filled", "unstyled"], "default")
 configurator.add_slider("size", "sm")
 configurator.add_slider("radius", "sm")

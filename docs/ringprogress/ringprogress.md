@@ -55,6 +55,16 @@ dmc.RingProgress(
 .. exec::docs.ringprogress.interactive
     :code: false
 
+### Section gaps
+Use the `sectionGap` prop to add visual separation between sections. The gap is specified in degrees:
+
+.. exec::docs.ringprogress.sectiongap
+
+### Start angle
+Use the `startAngle` prop to control where the progress starts. The angle is specified in degrees, where 0 = right, 90 = bottom, 180 = left, and 270 = top (default):
+
+.. exec::docs.ringprogress.startangle
+
 ### Styles API
 
 .. styles_api_text::

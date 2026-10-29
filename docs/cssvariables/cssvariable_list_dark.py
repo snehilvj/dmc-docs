@@ -6,6 +6,7 @@ dark_color_scheme =  [
     {"--mantine-color-text": "var(--mantine-color-dark-0)"},
     {"--mantine-color-body": "var(--mantine-color-dark-7)"},
     {"--mantine-color-error": "var(--mantine-color-red-8)"},
+    {"--mantine-color-success": "var(--mantine-color-teal-8)"},
     {"--mantine-color-placeholder": "var(--mantine-color-dark-3)"},
     {"--mantine-color-anchor": "var(--mantine-color-blue-4)"},
     {"--mantine-color-default": "var(--mantine-color-dark-6)"},

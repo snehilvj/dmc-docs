@@ -14,6 +14,7 @@ configurator.add_switch("mask", False)
 configurator.add_text_input("placeholder", "○")
 configurator.add_switch("disabled", False)
 configurator.add_switch("error", False)
+configurator.add_switch("success", False)
 
 
 configurator.add_select(

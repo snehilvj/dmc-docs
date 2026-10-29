@@ -26,6 +26,14 @@ category: Typography
 
 .. exec::docs.list.nested
 
+### Ordered List numbering
+- Use the `start` prop to begin numbering from a specific value
+- Use the `reversed` prop to create countdown lists:
+
+.. exec::docs.list.ordered
+
+
+
 ### Styles API
 
 .. styles_api_text::

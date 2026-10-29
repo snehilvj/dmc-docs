@@ -33,6 +33,15 @@ data = [
 ]
 ```
 
+### Legend
+To display the legend, set the `withLegend` prop. The legend displays the name and color of each segment. Hover over
+a legend item to highlight the corresponding segment.
+
+You can pass props down to the recharts Legend component with the `legendProps` prop. For example, set
+`legendProps={"verticalAlign": 'top'}` to display the legend above the chart.
+
+.. exec::docs.piechart.legend
+
 ### Segment labels
 
 Set `withLabels` prop to display labels next to each segment. Use `labelPosition` prop to control the position of labels

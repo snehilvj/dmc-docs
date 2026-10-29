@@ -14,6 +14,10 @@ category:  Miscellaneous
 
 .. exec::docs.collapse.simple
 
+### Horizontal Orientation Example
+
+.. exec::docs.collapse.horizontal
+
 ### Change transition
 Set following props to control transition:
 

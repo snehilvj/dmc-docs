@@ -7,6 +7,7 @@ light_color_scheme = [
     {"--mantine-color-text": "#000"},
     {"--mantine-color-body": "#fff"},
     {"--mantine-color-error": "var(--mantine-color-red-6)"},
+    {"--mantine-color-success": "var(--mantine-color-teal-6)"},
     {"--mantine-color-placeholder": "var(--mantine-color-gray-5)"},
     {"--mantine-color-anchor": "var(--mantine-color-blue-6)"},
     {"--mantine-color-default": "var(--mantine-color-white)"},

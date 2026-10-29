@@ -3,7 +3,7 @@ name: Overlay
 description: Overlays parent element with div element with any color and opacity
 endpoint: /components/overlay
 package: dash_mantine_components
-category: Feedback
+category: Overlay
 ---
 
 .. toc::

@@ -13,7 +13,7 @@ category: Combobox
 
 ### Made with Combobox
 
-`Select` is built on top of [Combobox](https://v8.mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
+`Select` is built on top of [Combobox](https://mantine.dev/core/combobox/) and covers common use cases. If you need more advanced behavior or want to extend
 its functionality, you can create your own custom `Select` component. See this [GitHub repository](https://github.com/AnnMarieW/dmc_custom_components) for custom DMC component examples.
 
 
@@ -27,9 +27,9 @@ its functionality, you can create your own custom `Select` component. See this [
 ### Data Format
 
 The data can be provided as either:
-* an array of strings - use when label and value are same.
-* an array of dicts with `label` and `value` properties.
-* an array of dict with `group` and `items` as keys where items are one of the previous two types.
+* a list of primitive values (strings, numbers, booleans): - use when label and value are same.
+* a list of dicts with `label` and `value` properties.
+* a list of dict with `group` and `items` as keys where items are one of the previous two types.
 
 ```python
 data = ["Pandas", "NumPy", "TensorFlow", "PyTorch"]
@@ -114,6 +114,16 @@ Set `clearable` prop to enable clearing selected values.
 
 .. exec::docs.select.clearable
 
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.select.clear_section_mode
+
 ### Allow deselect
 `allowDeselect` prop determines whether the value should be deselected when user clicks on the selected option. By 
 default, `allowDeselect` is True:
@@ -193,7 +203,12 @@ dropdown styles with `Styles API`.
 
 .. exec::docs.select.scrollable
 
+### Fit dropdown to viewport height
+Set `floatingHeight="viewport"` to make the dropdown grow to fill the available vertical space in the viewport. The
+flip middleware is disabled in this mode – the dropdown always opens in the configured direction and is constrained
+to the viewport edges instead of flipping to the other side. Useful when working with large option lists:
 
+.. exec::docs.select.floatingheight
 
 ### Grouping Items
 
@@ -289,7 +304,7 @@ You can use the following props to control sections styles and content:
    :code: false
 
 
-### Invalid State And Error
+### Error State
 
 
 Note: Dash adds some css by default which can lead you to see a red box when setting the `required` or `error` 
@@ -305,6 +320,11 @@ You can let the user know if the selected value is invalid. In the example below
 select less than 2 currency pairs.
 
 .. exec::docs.select.error
+
+
+### Success State
+
+.. exec::docs.select.success
 
 
 ### Styles API
