@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
-from lib.constants import FLEX_DIRECTION_CSS_PROPERTY, FLEX_WRAP_CSS_PROPERTY, JUSTIFY_CONTENT_CSS_PROPERTY
+from utils.configurator import Configurator
+from utils.constants import FLEX_DIRECTION_CSS_PROPERTY, FLEX_WRAP_CSS_PROPERTY, JUSTIFY_CONTENT_CSS_PROPERTY
 
 target = dmc.Flex(
     [

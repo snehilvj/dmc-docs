@@ -8,15 +8,15 @@ import frontmatter
 from markdown2dash import Admonition, BlockExec, Divider, Image, create_parser
 from pydantic import BaseModel
 
-from lib.constants import PAGE_TITLE_SUFFIX
-from lib.directives.functions_as_props import FunctionsAsProps
-from lib.directives.kwargs import Kwargs
-from lib.directives.source import SC
-from lib.directives.toc import TOC
-from lib.directives.styles_api_text import StylesApiText
-from lib.directives.llms_copy import LlmsCopy
-from lib.directives.style_props_text import StylePropsText
-from lib.directives.execv3 import Exec3
+from utils.constants import PAGE_TITLE_SUFFIX
+from utils.directives.functions_as_props import FunctionsAsProps
+from utils.directives.kwargs import Kwargs
+from utils.directives.source import SC
+from utils.directives.toc import TOC
+from utils.directives.styles_api_text import StylesApiText
+from utils.directives.llms_copy import LlmsCopy
+from utils.directives.style_props_text import StylePropsText
+from utils.directives.execv3 import Exec3
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)

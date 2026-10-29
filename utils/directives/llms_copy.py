@@ -3,7 +3,7 @@ import dash_mantine_components as dmc
 from dash import  dcc, html
 from dash.development.base_component import Component
 from markdown2dash import BaseDirective
-from lib.constants import NAME_CONTENT_MAP, DMC_VERSION
+from utils.constants import NAME_CONTENT_MAP, DMC_VERSION
 
 
 class LlmsCopy(BaseDirective):

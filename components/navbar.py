@@ -4,7 +4,7 @@ import dash_mantine_components as dmc
 from dash import callback, Input, Output, ALL, callback_context, clientside_callback
 from dash_iconify import DashIconify
 
-from lib.constants import PRIMARY_COLOR
+from utils.constants import PRIMARY_COLOR
 
 excluded_links = [
     "/404",

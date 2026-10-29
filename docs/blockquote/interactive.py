@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.Blockquote(
     "Life is like a box of chocolates - you never know what you are going to get",

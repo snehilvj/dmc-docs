@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 
 from docs.scrollarea.text import text
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.ScrollArea(
     h=250,

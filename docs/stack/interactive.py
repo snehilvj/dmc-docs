@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
-from lib.constants import ALIGN_ITEMS_CSS_PROPERTY, JUSTIFY_CONTENT_CSS_PROPERTY
+from utils.configurator import Configurator
+from utils.constants import ALIGN_ITEMS_CSS_PROPERTY, JUSTIFY_CONTENT_CSS_PROPERTY
 
 target = dmc.Stack(
     [

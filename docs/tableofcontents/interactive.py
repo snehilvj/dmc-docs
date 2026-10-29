@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.TableOfContents(
     selector=".mantine-AppShell-main :is( h2, h3, h4)",

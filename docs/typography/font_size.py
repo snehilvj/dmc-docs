@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 text="""
 Dash Mantine Components makes it easy to adjust font size (fz) and line height (lh) for better readability. You can

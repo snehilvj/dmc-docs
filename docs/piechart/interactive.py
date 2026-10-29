@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 from .data import data
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 target = dmc.PieChart(
     data=data,

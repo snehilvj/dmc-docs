@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
 
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 def get_icon(icon):
     return DashIconify(icon=icon, height=20)

@@ -1,5 +1,5 @@
 import dash_mantine_components as dmc
-from lib.configurator import Configurator
+from utils.configurator import Configurator
 
 style = {
     "border": f"1px solid var(--mantine-primary-color-filled)",
