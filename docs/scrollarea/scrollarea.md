@@ -62,6 +62,19 @@ To disable horizontal scrollbars set `scrollbars="y"` prop:
 
 .. exec::docs.scrollarea.horizontal_disabled
 
+### Vertical scrollbar position
+By default, the vertical scrollbar follows the inline-end edge: it is rendered on the right side in LTR and on the left
+side in RTL. Set the `verticalScrollbarPosition` prop to `left` or `right` to pin the vertical scrollbar to a physical
+side regardless of direction.
+
+This is useful for RTL applications where users expect the vertical scrollbar to stay on the right, matching the behavior
+of most desktop software (Windows, Office, Gmail, etc.). The prop also realigns the offset padding, the corner and the
+horizontal scrollbar gap, so it works correctly with `offsetScrollbars` and `scrollbars="xy"`. When the prop is omitted,
+the default direction-based behavior is preserved.
+
+.. exec::docs.scrollarea.position
+   :code: false
+
 ### Scroll To
 
 The `scrollTo` prop sets the scroll position of the viewport with the following options:
@@ -86,6 +99,13 @@ dmc.ScrollArea(scrollTo={"top": 200, "left": "50%", "behavior": "auto"})
 ---
 
 .. exec::docs.scrollarea.scrollto
+
+### Start scroll position
+Use the `startScrollPosition` prop to set the initial scroll position when the component mounts. This approach avoids
+the flash of content at position (0, 0):
+
+
+.. exec::docs.scrollarea.startscrollposition
 
 ### ScrollAreaAutosize
 

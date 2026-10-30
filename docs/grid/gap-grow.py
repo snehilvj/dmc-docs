@@ -14,11 +14,11 @@ target = dmc.Grid(
         dmc.GridCol(dmc.Box("4", style=style), span=4),
         dmc.GridCol(dmc.Box("5", style=style), span=4),
     ],
-    gutter="md",
+    gap="md",
 )
 
 configurator = Configurator(target)
 configurator.add_switch("grow", False)
-configurator.add_slider("gutter", "md")
+configurator.add_slider("gap", "md")
 
 component = configurator.panel

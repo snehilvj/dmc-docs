@@ -31,7 +31,17 @@ Control timeline appearance with the following props:
 
 .. exec::docs.timeline.bullets
 
+### Opposite
+Use the `opposite` prop on `TimelineItem` to render content on the opposite side of the timeline. When any `TimelineItem`
+has the opposite prop, the timeline switches to a centered layout with content on both sides of the line.
 
+.. exec::docs.timeline.opposite
+
+### Alternate
+
+Set the `alternate` prop on individual `TimelineItem` components to switch the position of content and opposite:
+
+.. exec::docs.timeline.alternate
 
     
 ### Styles API

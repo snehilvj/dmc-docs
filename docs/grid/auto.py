@@ -11,5 +11,5 @@ component = dmc.Grid(
         dmc.GridCol(dmc.Box("span=6", style=style), span=6),
         dmc.GridCol(dmc.Box("span=auto", style=style), span="auto"),
     ],
-    gutter="xl",
+    gap="xl",
 )

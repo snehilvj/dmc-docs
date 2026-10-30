@@ -93,14 +93,34 @@ Each dictionary in `sendNotifications` can include:
 * `position` – notification position. If not provided, the default from `NotificationContainer` is used.
 * `withBorder` – whether the notification should have a border
 * `withCloseButton` – whether the close button is visible
+* `allowClose` – determines whether notification can be closed with close button, drag or horizontal scroll swipe, true by default
+* `onClose` – called when the notification is unmounted
+* `onOpen` – called when the notification is mounted
 * `autoClose` – timeout in milliseconds to automatically close the notification. Set to `False` to disable.
+* `withAutoCloseProgress` – determines whether a progress line that fills up until the notification auto closes is displayed at the bottom of the notification; overrides `withAutoCloseProgress` prop of the `NotificationContainer` component
+* `priority` – display priority used when the number of active notifications exceeds limit; higher numbers are shown first, defaults to 0
 * `color` -Controls notification line or icon color, key of `theme.colors` or any valid CSS color, `theme.primaryColor` by default.
 * `icon` - Notification icon, replaces color line.
 * `title` - Notification title, displayed before body.
 * `radius` -  Key of `theme.radius` or any valid CSS value to set `border-radius`, `theme.defaultRadius` by default
 *  `loading`- Replaces colored line or icon with Loader component.
-*  `className`, `style`, `loading`
+*  `className`, `style`, `loading` - props passed down to the Notification component
 
+
+### Dismiss interactions
+Notifications can be dismissed by dragging them left or right, or with a horizontal scroll swipe while hovered. True by default.
+
+Use `allowDragDismiss=False` and `allowScrollDismiss=False` on `NotificationComponent` to disable either interaction:
+
+```python
+
+dmc.NotificationContainer(
+    id="notification-container",
+    allowDragDismiss=False,
+    allowScrollDismiss=False
+)
+```
+To make a specific notification non-dismissible, set `allowClose=False` in `sendNotifications`. This hides the close button and disables drag/scroll dismissal for that notification.
 
 ### Notification Position
 You can set position per-notification in the `sendNotifications` dictionary. 
@@ -146,6 +166,26 @@ Notifications beyond the limit are added to the queue and shown when others are 
 
 .. exec::docs.notification.queue
 
+
+### Priority
+By default, notifications are distributed between the visible state and the queue in insertion order (FIFO): the first
+limit notifications are visible and the rest wait in the queue. Set the `priority` property in notifications.show or 
+notifications.update to control which notifications take the visible slots when there are more active notifications
+than the limit allows.
+
+- Notifications with a higher `priority` are shown before notifications with a lower one.
+- Notifications with equal `priority` keep insertion order (FIFO).
+- `priority` defaults to 0, so notifications without it behave exactly as before.
+- Within the visible set, higher priority notifications are rendered first.
+- When a high priority notification is added while the visible state is already at limit, it takes a visible slot and 
+- the lowest priority visible notification is moved into the queue – even if it was already displayed. Priority is
+- applied independently for each position.
+
+Note that a notification that is moved from the visible state back into the queue is unmounted and mounted again when
+it returns to a visible slot, so its onOpen callback runs each time it becomes visible.
+
+See the upstream [Mantine Notifications](https://mantine.dev/x/notifications/) documentation for an example.
+
 ### Hide Notifications
 
 Use the `hideNotifications` prop to remove notifications by `id` from the state and queue.
@@ -162,6 +202,50 @@ Use `cleanQueue` to remove all queued notifications, and `clean` to remove all n
 
 .. exec::docs.notification.autoclose
 
+### Auto close progress
+Set `withAutoCloseProgress` prop on the `NotificationContainer` component to display a progress line at the bottom of
+every notification that auto closes. The line fills up over the auto close timeout and reaches 100% right before the notification is closed:
+
+```python
+dmc.NotificationContainer(withAutoCloseProgress=True)
+```
+The `NotificationContainer` prop sets the default for all notifications, it can be overridden for individual notifications
+with the `withAutoCloseProgress` property in `sendNotifications` prop.
+
+Note that:
+
+- The progress line is not displayed for notifications with `autoClose=False`
+- The progress line fades out when the auto close timer is paused (for example, when the notification is hovered) and fades back in, starting over, when the timer is restarted
+- The progress line uses notification color
+- Use progress Styles API selector of the Notifications component to customize the line, for example, to change its height or color
+
+
+.. exec::docs.notification.autocloseprogress
+
+### Pause auto close on hover
+By default, hovering over any notification pauses the auto close timer of all visible notifications. You can change this behavior with the `pauseResetOnHover` prop:
+
+- `pauseResetOnHover`="all" (default) – pauses auto close for all notifications when any notification is hovered
+- `pauseResetOnHover`="notification" – pauses auto close only for the hovered notification
+
+```python
+dmc.NotificationContainer(pauseResetOnHover="notification")
+```
+
+### Stacked layout
+Set `layout="stacked"` on the `NotificationContainer` component to display notifications in a stacked layout where only
+the latest notification is fully visible, and older notifications peek out behind it.
+
+The stack expands when it is hovered with a mouse, when keyboard focus moves into it, and when it is tapped on a 
+touch device – a tap outside collapses it again. While collapsed, the notifications behind the first one are inert: they
+are not focusable and are hidden from screen readers.
+
+
+```python
+dmc.NotificationContainer(layout="stacked")
+```
+See the upstream [Mantine Notifications](https://mantine.dev/x/notifications/) documentation for an example.
+
 ### Use in Clientside Callbacks
 
 `NotificationContainer` exposes the underlying Mantine notifications API globally in JavaScript. You can access this
@@ -171,7 +255,7 @@ in clientside callbacks using:
 dash_mantine_components.appNotifications
 ```
 
-You can use the the full [Mantine notifications API](https://v8.mantine.dev/x/notifications/):
+You can use the the full [Mantine notifications API](https://mantine.dev/x/notifications/):
 
 - Show: `appNotifications.api.show({...})`
 

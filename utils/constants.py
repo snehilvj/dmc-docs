@@ -1,9 +1,9 @@
 import json
 import os
 
-DMC_VERSION = "2.8.1"
-MANTINE_VERSION = "8.3.18"
-LATEST_RELEASE_ENDPOINT = "/release-2-8-0"
+DMC_VERSION = "3.0.0"
+MANTINE_VERSION = "9.7.4"
+LATEST_RELEASE_ENDPOINT = "/release-3-0-0"
 
 
 PAGE_TITLE_SUFFIX = " | Dash Mantine Components"
@@ -59,7 +59,11 @@ PROPS_TO_EXCLUDE = [
     "inset",
     "display",
     "flex",
-    "bdrs"
+    "bdrs",
+    "mie",
+    "mis",
+    "pie",
+    "pis"
 ]
 
 ALIGN_ITEMS_CSS_PROPERTY = ["stretch", "center", "flex-end", "flex-start"]

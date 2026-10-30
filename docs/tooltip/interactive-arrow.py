@@ -12,7 +12,7 @@ target = dmc.Tooltip(
 
 configurator = Configurator(target, center_component=True)
 
-configurator.add_segmented_control("arrowPosition", ["center", "side"], "center")
+configurator.add_segmented_control("arrowPosition", ["center", "side", "merge"], "merge")
 configurator.add_number_slider("arrowOffset", min=5, max=50, value=5)
 configurator.add_number_slider("arrowSize", min=1, max=15, value=8)
 configurator.add_number_slider("arrowRadius", min=1, max=10, value=3)

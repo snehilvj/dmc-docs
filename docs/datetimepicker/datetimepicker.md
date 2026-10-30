@@ -18,6 +18,15 @@ category: Date Pickers
 
 .. exec::docs.datetimepicker.simple
 
+### Range
+Set `type="range"` to allow selecting a date and time range. In range mode, two time inputs are rendered for start and
+end times, and a range summary is displayed below:
+
+
+.. exec::docs.datetimepicker.range
+
+
+
 ### With Seconds
 
 
@@ -41,6 +50,20 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 .. exec::docs.datetimepicker.valueformat
 
+`valueFormat` also accepts a function that receives the value as a YYYY-MM-DD HH:mm:ss string and returns a custom
+formatted value. Use it when the formatting logic cannot be expressed with a dayjs format string:
+
+.. functions_as_props::  
+
+
+.. exec::docs.datetimepicker.valueformat-function
+    :code: false
+
+.. sourcetabs::docs/datetimepicker/valueformat-function.py, assets/examples-js/format-datetimepicker.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
 ### Disabled state
 
 .. exec::docs.datetimepicker.disabled
@@ -59,6 +82,15 @@ Set `clearable=True` prop to display clear button in the right section. Note tha
 .. exec::docs.datetimepicker.clearable
 
 
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+.. exec::docs.datetimepicker.clear_section_mode
+
 ### Open picker in modal
 
 By default, `DateTimePicker` is rendered inside `Popover`. You can change that to `Modal` by setting `dropdownType="modal"`
@@ -66,7 +98,11 @@ By default, `DateTimePicker` is rendered inside `Popover`. You can change that t
 .. exec::docs.datetimepicker.modal
 
 
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements. At 
+the month level, two selects are rendered for month and year. At the year level, one select is rendered for year.
 
+.. exec::docs.datetimepicker.nativeselect
 
 ### CSS Extensions
 

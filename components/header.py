@@ -11,13 +11,13 @@ def create_link(icon, href):
         ),
         href=href,
         target="_blank",
-        visibleFrom="xs",
+        visibleFrom="sm",
     )
 
 
 def create_version_menu():
     versions = {
-     #   "1.3.0": "https://dmc-docs-1-3.onrender.com",
+        "2.8.1": "https://dmc-v2.plotly.app/",
         "0.12": "https://dmc-v012.plotly.app/",
       #  "0.13": "https://dmc-docs-0-13.onrender.com",
     }
@@ -30,7 +30,6 @@ def create_version_menu():
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                     variant="outline",
-                    visibleFrom="md",
                 )
             ),
             dmc.MenuDropdown(
@@ -148,10 +147,10 @@ def create_header(data):
                                         hiddenFrom="lg",
                                     ),
                                     dmc.Anchor(
-                                        "DMC", size="xl", href="/", underline="never", hiddenFrom="sm"
+                                        "DMC", size="xl", href="/", underline="never", hiddenFrom="md"
                                     ),
                                     dmc.Anchor(
-                                        "Dash Mantine Components", size="lg", href="/", underline="never", visibleFrom="sm"
+                                        "Dash Mantine Components", size="lg", href="/", underline="never", visibleFrom="md"
                                     ),
                                 ]
                             ),

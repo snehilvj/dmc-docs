@@ -56,6 +56,25 @@ Use `valueFormat` prop to change [dayjs format](https://day.js.org/docs/en/displ
 
 .. exec::docs.datepickerinput.formats
 
+### Value formatter
+`valueFormatter` is a more powerful alternative to the `valueFormat` prop. It allows formatting the value label with a
+custom function. The function is the same for all component types (default, multiple and range) – you need to perform
+additional checks inside the function to handle different types.
+
+Example of using a custom formatter function with `type="multiple"`:
+
+.. functions_as_props::  
+
+
+.. exec::docs.datepickerinput.valueformatter
+    :code: false
+
+.. sourcetabs::docs/datepickerinput/valueformatter.py, assets/examples-js/format-dates-selected.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
+
+
 
 ### Clearable
 
@@ -63,7 +82,18 @@ Set `clearable=True` prop to display clear button in the right section. Note tha
 
 .. exec::docs.datepickerinput.clearable
 
-### Error Display
+
+### Clear section mode
+The `clearSectionMode` prop determines how the `clear` button and `rightSection` are rendered:
+
+- 'both' (default) – render both the `clear` button and `rightSection`
+- 'rightSection' – render only the user-supplied `rightSection`, ignore `clear` button
+- 'clear' – render only the `clear` button, ignore `rightSection`
+
+
+.. exec::docs.datepickerinput.clear_section_mode
+
+### Error state
 
 You can convey errors in your date picker by setting the `error` prop. For instance, in the below example we try to
 convey the user that it's a required field and the date can't be an odd date. Since it's a required field, we also
@@ -71,10 +101,21 @@ set `clearable=False`.
 
 .. exec::docs.datepickerinput.errors
 
+
+### Success state
+
+.. exec::docs.datepickerinput.success
+
 ### Localization
 
 For information on setting locale, have a look at the [DatesProvider](/components/datesprovider) component.
 
+
+### Native level select
+Set the `withNativeLevelSelect` prop to replace the calendar header level button with native `<select>` elements. At 
+the month level, two selects are rendered for month and year. At the year level, one select is rendered for year.
+
+.. exec::docs.datepickerinput.nativeselect
 
 ### CSS Extensions
 

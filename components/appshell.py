@@ -6,24 +6,13 @@ from components.header import create_header
 from components.navbar import create_navbar, create_navbar_drawer
 from utils.constants import PRIMARY_COLOR
 
-version_alert =  dmc.Alert(
-    [
-        "DMC is based on Mantine 8. When refereincing Mantine docs, be sure to use  ",
-        dmc.Anchor("Mantine v8 documentation", href="https://v8.mantine.dev"),
-        "."
-    ],
-    color="blue",
-    variant="light",
-    withCloseButton=True,
-    mb=20
-)
-
 def create_appshell(data):
     return dmc.DirectionProvider(dmc.MantineProvider(
         id="m2d-mantine-provider",
         theme={
             "primaryColor": PRIMARY_COLOR,
             "fontFamily": "'Inter', sans-serif",
+            "fontWeights": {"medium": 500},
             "breakpoints": {
                 "sm": "43em",
                 "lg": "67.5em",  #allows navbar to be visible on an ipad

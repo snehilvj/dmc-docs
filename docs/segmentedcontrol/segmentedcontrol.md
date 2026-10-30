@@ -19,8 +19,8 @@ limited to certain options)
 ### Data Prop
 
 The data can be provided as either:
-* an array of strings - use when label and value are same.
-* an array of dicts with `label` and `value` properties (plus an optional `disabled` boolean).
+* a list of primitive values (strings, numbers, booleans): - use when label and value are same.
+* alist of dicts with `label` and `value` properties (plus an optional `disabled` boolean).
 
 ```python
 data = ["React", "Angular", "Svelte", "Vue"]

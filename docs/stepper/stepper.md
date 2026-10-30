@@ -71,6 +71,11 @@ You can also change completed icon for each step, for example, to indicate error
 
 .. exec::docs.stepper.vertical
 
+### Label position
+Set `labelPosition="bottom"` to display the step label and description below the step icon:
+
+.. exec::docs.stepper.label
+
 ### Styles API
 
 .. styles_api_text::

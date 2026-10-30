@@ -184,7 +184,7 @@ The following is included by default in DMC >=2.3.0:
 
 
 ### Typography styles
-By default, `RichTextEditor` renders content with [TypographyStylesProvider](/components/typographystylesprovider) and
+By default, `RichTextEditor` renders content with [Typography](/components/typographystylesprovider) and
 some additional styles. You can disable these styles by setting `withTypographyStyles=False`.  Then you can add your own 
 CSS files, or style with the Styles API.
 
@@ -214,12 +214,36 @@ You can use the following toolbar controls to change text color:
 
 ### Table
 
-The tables will be styles with a Mantine theme. For more information refer to the [TypographyStylesProvider](/components/typographystylesprovider) section.
-You can disable these styles by setting `withTypographyStyles=False`
+`RichTextEditor` supports tables through the `Table`, `TableCell`, `TableHeader` and `TableRow` extensions, which are 
+enabled by default. You can insert tables using the toolbar or provide existing table content through the `html` prop.
 
-To add controls in the toolbar for table features, see the Custom Controls section below.
+Use the following controls in `toolbar.controlsGroups` to add table editing actions:
+
+| Control | Description |
+|---|---|
+| `TableInsert` | Inserts a table and lets you select its dimensions. |
+| `TableDelete` | Deletes the current table. |
+| `TableColumnBefore` | Adds a column before the current column. |
+| `TableColumnAfter` | Adds a column after the current column. |
+| `TableColumnDelete` | Deletes the current column. |
+| `TableRowBefore` | Adds a row before the current row. |
+| `TableRowAfter` | Adds a row after the current row. |
+| `TableRowDelete` | Deletes the current row. |
+| `TableToggleHeaderRow` | Toggles the header row. |
+| `TableToggleHeaderColumn` | Toggles the header column. |
+| `TableMergeCells` | Merges selected cells. |
+| `TableSplitCell` | Splits a merged cell. |
+
+All table controls require the table extensions to be enabled. Except for `TableInsert`, controls are disabled when the
+cursor is not inside a table.
+
+The example below includes controls for inserting and editing tables.
+
+By default, table content is styled using Mantine's typography styles. Set `withTypographyStyles=False` to disable these styles.
+
 
 .. exec::docs.richtexteditor.table
+
 
 ### Image
 
@@ -421,7 +445,11 @@ Use the appropriate Tiptap documentation above to see the full list of editor co
     :withExpandedButton: true 
 
 
-#### Example: Table controls 
+#### Example: Table controls (legacy) 
+
+Since DMC v3, table controls are built in. See the Table section above.
+
+The example below is retained as a general example of adding custom controls and for users working with older DMC versions.
 
 .. exec::docs.richtexteditor.custom_controls_table
     :code: false
@@ -517,7 +545,7 @@ If you're using an older version of DMC, refer to the [migration guide](/migrati
 | `root`                      | `.mantine-RichTextEditor-root`        | Root element                                                     |
 | `toolbar`                   | `.mantine-RichTextEditor-toolbar`     | Toolbar element                                                  |
 | `content`                   | `.mantine-RichTextEditor-content`     | Content area                                                     |
-| `typographyStylesProvider`  | `.mantine-RichTextEditor-typographyStylesProvider` | (Deprecated, use Typography) TypographyStylesProvider component, wraps content |
+| `typographyStylesProvider`  | `.mantine-RichTextEditor-typographyStylesProvider` | (Deprecated, use Typography) Typography component, wraps content |
 | `Typography`                | `.mantine-RichTextEditor-Typography`  | Typography component, wraps content                              |
 | `control`                   | `.mantine-RichTextEditor-control`     | `RichTextEditor.Control` root element, used as a base for all controls |
 | `controlIcon`               | `.mantine-RichTextEditor-controlIcon` | Control icon element                                             |
