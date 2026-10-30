@@ -166,7 +166,7 @@ The complete DMC documentation is available in an LLM-friendly format.
 - [View DMC llms.json](https://www.dash-mantine-components.com/assets/llms.json)
 - [View Mantine v9 llms.txt](https://mantine.dev/llms.txt)
 
-DMC v3 is based on Mantine v9. Mantine's documentation, MCP server, and skills can help AI tools understand component APIs and behavior. See the [Mantine guide for LLMs](https://mantine.dev/llms.txt) for details.
+DMC v3 is based on Mantine v9. Mantine's documentation, MCP server, and skills can help AI tools understand component APIs and behavior. See the [Mantine guide for LLMs](https://mantine.dev/guides/llms/) for details.
 
 ### Getting Documentation for AI Tools
 
@@ -30364,7 +30364,7 @@ import time
 import dash_mantine_components as dmc
 from dash import html, Output, Input, callback
 
-from lib.utils import create_graph
+from utils.utils import create_graph
 
 component = html.Div(
     [
@@ -43340,6 +43340,83 @@ This component supports Styles API. With Styles API, you can customize styles of
 
 - withHandle (boolean; optional):
     Determines whether the handle thumb is displayed, True by default.
+#### SplitterPane
+
+- children (a list of or a singular dash component, string or number; optional):
+    Pane content.
+
+- id (string; optional):
+    Unique ID to identify this component in Dash callbacks.
+
+- aria-* (string; optional):
+    Wild card aria attributes.
+
+- attributes (boolean | number | string | dict | list; optional):
+    Passes attributes to inner elements of a component.  See Styles
+    API docs.
+
+- className (string; optional):
+    Class added to the root element, if applicable.
+
+- classNames (dict; optional):
+    Adds custom CSS class names to inner elements of a component.  See
+    Styles API docs.
+
+- collapseThreshold (number; optional):
+    Size below which the pane snaps to collapsed, defaults to min.
+
+- collapsible (boolean; optional):
+    Determines whether the pane can be collapsed, False by default.
+
+- darkHidden (boolean; optional):
+    Determines whether component should be hidden in dark color scheme
+    with `display: none`.
+
+- data-* (string; optional):
+    Wild card data attributes.
+
+- defaultSize (number; required):
+    Initial size. Numbers and percentage strings are flexible sizes;
+    px and rem strings are fixed sizes.
+
+- hiddenFrom (string; optional):
+    Breakpoint above which the component is hidden with `display:
+    none`.
+
+- lightHidden (boolean; optional):
+    Determines whether component should be hidden in light color
+    scheme with `display: none`.
+
+- loading_state (dict; optional):
+    Object that holds the loading state object coming from
+    dash-renderer. For use with dash<3.
+
+    `loading_state` is a dict with keys:
+
+- max (number; optional):
+    Maximum pane size, unlimited by default.
+
+- min (number; optional):
+    Minimum pane size, 0 by default.
+
+- mod (string | dict | list of string | dicts; optional):
+    Element modifiers transformed into `data-` attributes. For
+    example: "xl" or {"data-size": "xl"}. Can also be a list of
+    strings or dicts for multiple modifiers. Falsy values are removed.
+
+- styles (boolean | number | string | dict | list; optional):
+    Adds inline styles directly to inner elements of a component.  See
+    Styles API docs.
+
+- tabIndex (number; optional):
+    tab-index.
+
+- variant (string; optional):
+    variant.
+
+- visibleFrom (string; optional):
+    Breakpoint below which the component is hidden with `display:
+    none`.
 
 ## Stack  
 Use Stack component to compose elements and components in a vertical flex container  
@@ -47346,7 +47423,7 @@ Attach a callback to the Tabs `value` prop and update a container's `children` p
 import dash_mantine_components as dmc
 from dash import Input, Output, html, callback
 
-from lib.utils import create_graph
+from utils.utils import create_graph
 
 component = html.Div(
     [
@@ -47382,7 +47459,7 @@ the Tab component.
 ```python
 import dash_mantine_components as dmc
 
-from lib.utils import create_graph
+from utils.utils import create_graph
 
 component = dmc.Tabs(
     [
@@ -52575,15 +52652,15 @@ REACT_VERSION=19.2.4 python app.py
 ### v3 Breaking Changes
 
 
-#### Grid
+#### Grid gutter -> gap
 
 The `gutter` prop was renamed to `gap` for consistency with other layout components such as `Flex` and `SimpleGrid`. New `rowGap` and `columnGap` props can be used when separate vertical and horizontal spacing is needed.
 
-#### TypographyStylesProvider
+#### TypographyStylesProvider -> Typography
 
 `TypographyStylesProvider` was renamed to `Typography`.
 
-#### Spoiler
+#### Spoiler initialState -> default exapanded
 The `initialState` prop was renamed to `defaultExpanded`
 
 #### Popover and Tooltip
@@ -52593,9 +52670,13 @@ The `initialState` prop was renamed to `defaultExpanded`
 The `color` prop of the `Text` and `Anchor` components was removed. Use the `c` style prop instead.
 
 
-#### Custom JavaScript functions
 
-If you have written custom JavaScript functions for DMC components, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for changes that may affect your functions.
+#### Mantine API changes
+
+If you have written JavaScript that uses Mantine components or APIs, review the [Mantine v8 to v9 Migration Guide](https://mantine.dev/guides/8x-to-9x/) for breaking changes that may affect your code.
+
+Mantine also provides an MCP server and agent skills that can help AI tools understand its component APIs and documentation.
+These tools may be useful when updating JavaScript for Mantine v9. See the [Mantine guide for LLMs](https://mantine.dev/guides/llms/) for setup instructions.
 
 
 #### Recharts updated to v3
@@ -56058,26 +56139,30 @@ not compatible with DMC v2.x.
 Release announcement for Dash Mantine Components v3.0.0  
 Category: Releases  
 
-### Dash Mantine Components v3 (Powered by Mantine v9)
+Oct 30, 2026  
 
-Released XXX XX, XXXX
+Based on Mantine 9.7.4
+
+See the full [Changelog](https://github.com/snehilvj/dash-mantine-components/releases/tag/3.0.0)  
 
 DMC v3 is based on Mantine v9 and introduces new components, features, and improvements.
 
 ### Highlights
 
-- New `Marquee` component for scrolling content.
-- New `Splitter` component for resizable split pane layout.
+- New [Marquee](/components/marquee) component for scrolling content.
+- New [Splitter](/components/splitter) component for resizable split pane layout.
 - Over 100 new props and enhancements across the component library.
-- Reorderable pills in MultiSelect and TagsInput, with drag-and-drop and keyboard support.
+- [Notification](/components/notification) now support swipe dismissal, auto-close progress, stacked layout, and priority:
+- Reorderable pills in [MultiSelect](/components/multiselect) and [TagsInput](/components/tagsinput), with drag-and-drop and keyboard support.
 - New chart features, including brush selection, streamgraphs, and reference markers.
 - Expanded date and time inputs, including range selection and durations over 24 hours.
-- Input loading and success states, RichTextEditor table controls, and improved notifications and dropdown positioning.
+- Input loading and success states, [RichTextEditor](/components/richtexteditor) table controls, and improved notifications and dropdown positioning.
 - Improved responsive style performance.
 
 ### Migration Guide
+DMC v3 is based on Mantine v9 and includes some breaking changes.
 
-DMC v3 includes breaking changes from Mantine v8 to Mantine v9. See the [Migration Guide](/migration) for instructions on updating your apps.
+See the [Migration Guide](/migration) for instructions on updating your apps.
 
 See the Mantine v9 changelogs for details of upstream changes: [9.0](https://mantine.dev/changelog/9-0-0/), [9.1](https://mantine.dev/changelog/9-1-0/), [9.2](https://mantine.dev/changelog/9-2-0/), [9.3](https://mantine.dev/changelog/9-3-0/), [9.4](https://mantine.dev/changelog/9-4-0/), [9.5](https://mantine.dev/changelog/9-5-0/), [9.6](https://mantine.dev/changelog/9-6-0/), and [9.7](https://mantine.dev/changelog/9-7-0/).
 
@@ -56105,7 +56190,7 @@ REACT_VERSION=19.2.4 python app.py
 
 #### New Marquee component
 
-`Marquee` adds continuous scrolling animation for content.
+[Marquee](/components/marquee) adds continuous scrolling animation for content.
 
 Marquee supports customizable scrolling direction, speed, and spacing between items, with options to pause the animation on hover and control how content repeats. It can display a single row or multiple rows scrolling in alternating directions.
 
@@ -56129,12 +56214,11 @@ component = dmc.Stack([
 ```
 #### New Splitter component
 
-`Splitter` lets users resize panels by dragging the divider between them. You can create layouts with side-by-side panels
-or stacked sections, with adjustable sizes and min or max size constraints. It’s  useful for dashboards where users need
+[Splitter](/components/splitter) lets users resize panels by dragging the divider between them. You can create layouts with side-by-side panels
+or stacked sections, with adjustable sizes and min or max size constraints. It’s useful for dashboards where users need
 to control how much space is available for different views.
 
 Thanks [@datenzauberai](https://github.com/datenzauberai) for adding this component
-
 
 ```python
 import dash_mantine_components as dmc
@@ -56179,7 +56263,7 @@ def toggle_sidebar(n_clicks, collapsed):
 
 #### Collapse horizontal orientation
 
-`Collapse` now supports horizontal orientation.
+[Collapse](/components/collapse) now supports horizontal orientation.
 
 ```python
 from dash import callback, Input, Output
@@ -56206,7 +56290,7 @@ def update(n):
 ```
 #### Card horizontal orientation
 
-`Card` now supports horizontal orientation.
+[Card](/components/card) now supports horizontal orientation.
 
 ```python
 import dash_mantine_components as dmc
@@ -56284,13 +56368,13 @@ component = dmc.Card(
 ```
 #### Grid improvements
 
-`Grid` now uses CSS `gap` instead of negative margins for column spacing. This removes the need for `overflow="hidden"` to prevent overflow caused by negative margins.
+[Grid](/components/grid) now uses CSS `gap` instead of negative margins for column spacing. This removes the need for `overflow="hidden"` to prevent overflow caused by negative margins.
 
 The `gutter` prop has been renamed to `gap`. New `rowGap` and `columnGap` props control spacing independently, and `GridCol` now supports `align` for vertical alignment.
 
 #### SimpleGrid automatic columns
 
-`SimpleGrid` now supports `minColWidth` to automatically adjust the number of columns based on available width. When set, `cols` is ignored. Use `autoFlow` to choose between `auto-fill` and `auto-fit`.
+[SimpleGrid](/components/simplegrid) now supports `minColWidth` to automatically adjust the number of columns based on available width. When set, `cols` is ignored. Use `autoFlow` to choose between `auto-fill` and `auto-fit`.
 
 ```python
 import dash_mantine_components as dmc
@@ -56314,11 +56398,11 @@ component = dmc.SimpleGrid(
 ```
 #### AppShell static mode
 
-`AppShell` now supports `mode="static"`, which places its elements in the normal document flow using CSS Grid instead of fixed positioning. The `layout="alt"` option places the navbar and aside at full height, with the header and footer adjusted between them.
+[AppShell](/components/appshell) now supports `mode="static"`, which places its elements in the normal document flow using CSS Grid instead of fixed positioning. The `layout="alt"` option places the navbar and aside at full height, with the header and footer adjusted between them.
 
 #### ScrollArea initial position
 
-`ScrollArea` now supports `startScrollPosition` to set the initial scroll position when mounted.
+[ScrollArea](/components/scrollarea) now supports `startScrollPosition` to set the initial scroll position when mounted.
 
 ```python
 import dash_mantine_components as dmc
@@ -56338,7 +56422,7 @@ component = dmc.Center(
 ```
 #### ScrollArea scrollbar position
 
-`ScrollArea` now supports `verticalScrollbarPosition` to pin the scrollbar to the left or right side regardless of text direction.
+[ScrollArea](/components/scrollarea) now supports `verticalScrollbarPosition` to pin the scrollbar to the left or right side regardless of text direction.
 
 ### Inputs
 
@@ -56383,7 +56467,7 @@ component = dmc.Stack(
 ```
 #### Shared default props
 
-Default props set on `Input` and `InputWrapper` in `theme.components` now cascade to derived components. This lets you configure shared properties such as `size`, `radius`, `variant`, and `withAsterisk` for all inputs, while retaining component-specific overrides.
+Default props set on `Input` and [InputWrapper](/components/inputwrapper) in `theme.components` now cascade to derived components. This lets you configure shared properties such as `size`, `radius`, `variant`, and `withAsterisk` for all inputs, while retaining component-specific overrides.
 
 #### CheckboxGroup selection limit
 
@@ -56424,7 +56508,7 @@ def checkbox(value):
 ```
 #### Radio and Checkbox light variant
 
-`Checkbox` and `Radio` now support `variant="light"`. Checked and indeterminate states have a light background and a contrasting icon.
+[Checkbox](/components/checkbox) and `Radio` now support `variant="light"`. Checked and indeterminate states have a light background and a contrasting icon.
 
 ```python
 import dash_mantine_components as dmc
@@ -56465,7 +56549,7 @@ component = dmc.Stack(
 ```
 #### Textarea bottomSection
 
-`Textarea` now supports `bottomSection` to display content inside the bottom of the input border, such as a character counter.
+[Textarea](/components/textarea) now supports `bottomSection` to display content inside the bottom of the input border, such as a character counter.
 
 ```python
 import dash_mantine_components as dmc
@@ -56496,7 +56580,7 @@ clientside_callback(
 ```
 #### RichTextEditor table controls
 
-`RichTextEditor` now includes toolbar controls for inserting and editing tables. You can insert tables of a selected size, add or remove rows and columns, toggle header rows and columns, and merge or split cells. Table controls are disabled when the cursor is outside a table.
+[RichTextEditor](/components/richtexteditor) now includes toolbar controls for inserting and editing tables. You can insert tables of a selected size, add or remove rows and columns, toggle header rows and columns, and merge or split cells. Table controls are disabled when the cursor is outside a table.
 
 ```python
 import dash_mantine_components as dmc
@@ -56544,7 +56628,7 @@ component = dmc.RichTextEditor(
 ```
 #### NumberInput selectAllOnFocus
 
-`NumberInput` now supports `selectAllOnFocus` to select all text when the input receives focus.
+[NumberInput](/components/numberinput) now supports `selectAllOnFocus` to select all text when the input receives focus.
 
 ```python
 import dash_mantine_components as dmc
@@ -56553,7 +56637,7 @@ component = dmc.NumberInput(value=123456, selectAllOnFocus=True)
 ```
 #### Slider improvements
 
-`Slider` and `RangeSlider` now support vertical orientation.
+[Slider](/components/slider) and `RangeSlider` now support vertical orientation.
 
 ```python
 import dash_mantine_components as dmc
@@ -56646,7 +56730,7 @@ component = dmc.Slider(
 ```
 #### Rating allowClear
 
-`Rating` now supports `allowClear` to reset the rating to zero by clicking the selected value again.
+[Rating](/components/rating) now supports `allowClear` to reset the rating to zero by clicking the selected value again.
 
 ```python
 from dash import Input, Output, callback
@@ -56680,7 +56764,7 @@ def update_rating(value):
 
 #### Reorder selected pills
 
-`MultiSelect` and `TagsInput` now support `withPillsReorder` to reorder selected pills using drag-and-drop or the keyboard.
+[MultiSelect](/components/multiselect) and [TagsInput](/components/tagsinput) now support `withPillsReorder` to reorder selected pills using drag-and-drop or the keyboard.
 
 Use the arrow keys to move focus between pills. Press `Alt + ArrowLeft` or `Alt + ArrowRight` to reorder the focused pill. Focus follows the moved pill, allowing multiple moves without refocusing. Reordering is disabled when `disabled` or `readOnly` is set.
 
@@ -56697,7 +56781,7 @@ component = dmc.MultiSelect(
 ```
 #### Custom pills
 
-`MultiSelect` and `TagsInput` now support `renderPill` to customize how selected pills are rendered.
+[MultiSelect](/components/multiselect) and [TagsInput](/components/tagsinput) now support `renderPill` to customize how selected pills are rendered.
 
 ```python
 import dash_mantine_components as dmc
@@ -56788,7 +56872,7 @@ dmcfuncs.renderUserPill = function ({ option, onRemove }, { users }) {
 
 #### Number and boolean values
 
-`Select`, `MultiSelect`, `SegmentedControl`, `CheckboxGroup`, and other group components now accept primitive values such as numbers and booleans, rather than only strings.
+[Select](/components/select), [MultiSelect](/components/multiselect), [SegmentedControl](/components/segmentedcontrol), `CheckboxGroup`, and other group components now accept primitive values such as numbers and booleans, rather than only strings.
 
 ```python
 dmc.Select(
@@ -56809,7 +56893,7 @@ Clearable inputs now support `clearSectionMode` to control how the clear button 
 - `"rightSection"`: show only the supplied `rightSection`.
 - `"clear"`: show only the clear button.
 
-Supported components include `Select`, `Autocomplete`, `MultiSelect`, `TagsInput`, and the date and time input components.
+Supported components include [Select](/components/select), [Autocomplete](/components/autocomplete), [MultiSelect](/components/multiselect), [TagsInput](/components/tagsinput), and the date and time input components.
 
 ```python
 import dash_mantine_components as dmc
@@ -56849,7 +56933,7 @@ component = dmc.Stack([
 ```
 #### Dropdown height
 
-`Combobox`, `Select`, `MultiSelect`, `Autocomplete`, and `TagsInput` now support `floatingHeight="viewport"` to let dropdowns fill the available viewport height. This is useful for large option lists.
+`Combobox`, [Select](/components/select), [MultiSelect](/components/multiselect), [Autocomplete](/components/autocomplete), and [TagsInput](/components/tagsinput) now support `floatingHeight="viewport"` to let dropdowns fill the available viewport height. This is useful for large option lists.
 
 ```python
 import dash_mantine_components as dmc
@@ -56867,7 +56951,7 @@ component = dmc.MultiSelect(
 
 #### Pagination sizing
 
-Pagination controls are smaller than inputs and buttons by default. Use the `input-` prefix with the `size` prop to match their size.
+[Pagination](/components/pagination) controls are smaller than inputs and buttons by default. Use the `input-` prefix with the `size` prop to match their size.
 
 ```python
 import dash_mantine_components as dmc
@@ -56887,7 +56971,7 @@ component = dmc.Stack([
 ```
 #### Pagination start value
 
-`Pagination` now supports `startValue` to set the first page number.
+[Pagination](/components/pagination) now supports `startValue` to set the first page number.
 
 ```python
 import dash_mantine_components as dmc
@@ -56899,7 +56983,7 @@ component = dmc.Stack([
 ```
 #### Responsive pagination
 
-`Pagination` now supports `layout="responsive"`, which switches between page buttons and a compact "Page X of Y" label based on available width. Use `formatLabel` to customize the label.
+[Pagination](/components/pagination) now supports `layout="responsive"`, which switches between page buttons and a compact "Page X of Y" label based on available width. Use `formatLabel` to customize the label.
 
 ```python
 import dash_mantine_components as dmc
@@ -56936,7 +57020,7 @@ component = dmc.Stepper(
 ```
 #### Tree connecting lines
 
-`Tree` now supports `withLines` to display connecting lines between parent and child nodes. The lines adapt to `levelOffset`.
+[Tree](/components/tree) now supports `withLines` to display connecting lines between parent and child nodes. The lines adapt to `levelOffset`.
 
 ```python
 import dash_mantine_components as dmc
@@ -56959,7 +57043,7 @@ component = dmc.Tree(
 
 #### Notifications
 
-Notifications now support swipe dismissal, auto-close progress, stacked layout, and priority:
+[Notification](/components/notification) now support swipe dismissal, auto-close progress, stacked layout, and priority:
 
 - Swipe dismissal: dismiss notifications by dragging left or right, or by horizontal scrolling while hovering. These behaviors can be disabled on `NotificationContainer`, and individual notifications can opt out with `allowClose=False`.
 - Auto-close progress: `withAutoCloseProgress` displays a progress line showing the time remaining before a notification closes. The line pauses with the timer and uses the notification color. Set a default on the container or override it for individual notifications.
@@ -56997,7 +57081,7 @@ def show(n_clicks):
 ```
 #### RingProgress improvements
 
-`RingProgress` now supports `sectionGap` to separate sections and `startAngle` to control where the progress starts.
+[RingProgress](/components/ringprogress) now supports `sectionGap` to separate sections and `startAngle` to control where the progress starts.
 
 ```python
 import dash_mantine_components as dmc
@@ -57079,11 +57163,11 @@ component = dmc.Group(
 
 #### Tooltip arrow position
 
-`Tooltip` now supports `arrowPosition="merge"`, which merges the arrow with the corresponding corner of the dropdown.
+[Tooltip](/components/tooltip) now supports `arrowPosition="merge"`, which merges the arrow with the corresponding corner of the dropdown.
 
 #### Stable dropdown positioning
 
-`Popover` and components built on it now default to `preventPositionChangeWhenVisible=True`.
+[Popover](/components/popover) and components built on it now default to `preventPositionChangeWhenVisible=True`.
 
 A dropdown chooses its position when opened and keeps that position until closed, even when scrolling, resizing, or changes to its content affect the available space. When neither side fits, it falls back to the preferred `position`.
 
@@ -57098,7 +57182,7 @@ dmc.Select(
 
 #### Interactive Tooltip
 
-`Tooltip` now supports `interactive` to keep the tooltip open while the pointer moves from its target to the tooltip content. This allows users to interact with content such as links and supports WCAG 2.1 success criterion 1.4.13.
+[Tooltip](/components/tooltip) now supports `interactive` to keep the tooltip open while the pointer moves from its target to the tooltip content. This allows users to interact with content such as links and supports WCAG 2.1 success criterion 1.4.13.
 
 ```python
 import dash_mantine_components as dmc
@@ -57114,19 +57198,18 @@ component = dmc.Tooltip(
 ```
 #### Tooltip hideDetached
 
-`Tooltip` now supports `hideDetached`, matching the behavior of `Popover`. It is enabled by default and hides the tooltip when its target is removed from the DOM, hidden with `display: none`, or scrolled out of a clipping container.
+[Tooltip](/components/tooltip) now supports `hideDetached`, matching the behavior of [Popover](/components/popover). It is enabled by default and hides the tooltip when its target is removed from the DOM, hidden with `display: none`, or scrolled out of a clipping container.
 
 #### HoverCard accessibility and behavior
 
-`HoverCard` now opens on keyboard focus, closes with `Escape` or an outside press, and is announced by screen readers. New props include `events`, `interactive`, `role`, and `returnFocus`.
+[HoverCard](/components/hovercard) now opens on keyboard focus, closes with `Escape` or an outside press, and is announced by screen readers. New props include `events`, `interactive`, `role`, and `returnFocus`.
 
 On touch devices, `HoverCard` no longer opens on tap by default. Set `events={"focus": False, "touch": True}` and `closeOnEscape=False` to restore the previous behavior.
-
 ### Data Display
 
 #### Accordion disable collapse
 
-`Accordion` now supports `disableCollapse`. In single mode (`multiple=False`), the open item cannot be collapsed by clicking it again. Use `value` to ensure an item is open initially.
+[Accordion](/components/accordion) now supports `disableCollapse`. In single mode (`multiple=False`), the open item cannot be collapsed by clicking it again. Use `value` to ensure an item is open initially.
 
 ```python
 import dash_mantine_components as dmc
@@ -57276,7 +57359,7 @@ component = dmc.Timeline(
 ```
 #### Indicator improvements
 
-`Indicator` now supports:
+[Indicator](/components/indicator) now supports:
 
 - `maxValue` to display a capped label, such as `99+`.
 - `showZero` to control whether an indicator with a label of `0` is visible. Defaults to `True`.
@@ -57324,7 +57407,7 @@ component = dmc.Group(
 
 #### Highlight improvements
 
-`Highlight` now supports custom colors for individual terms using a list of dictionaries containing text and color properties.
+[Highlight](/components/highlight) now supports custom colors for individual terms using a list of dictionaries containing text and color properties.
 
 ```python
 import dash_mantine_components as dmc
@@ -57391,11 +57474,11 @@ component = dmc.Box([
 ```
 #### Text wrapping
 
-`Text` and `Blockquote` now support `textWrap` to control the CSS `text-wrap` property.
+[Text](/components/text) and [Blockquote](/components/blockquote) now support `textWrap` to control the CSS `text-wrap` property.
 
 #### List attributes
 
-`List` now supports the HTML attributes `start`, `reversed`, and `value` for ordered lists.
+[List](/components/list) now supports the HTML attributes `start`, `reversed`, and `value` for ordered lists.
 
 ```python
 import dash_mantine_components as dmc
@@ -57428,7 +57511,7 @@ component = dmc.Box(
 ```
 #### CodeHighlight line numbers
 
-`CodeHighlight` and `CodeHighligtTabs` now supports `withLineNumbers` to display line numbers alongside code.
+[CodeHighlight](/components/code-highlight) and `CodeHighligtTabs` now supports `withLineNumbers` to display line numbers alongside code.
 
 ``
 dmc.CodeHighlightTabs(   # or dmc.CodeHighligh(
@@ -57465,7 +57548,7 @@ class Solution:
 
 #### DateTimePicker range
 
-`DateTimePicker` now supports `type="range"` for selecting a date and time range. Two time inputs are displayed for the start and end times, with a range summary below.
+[DateTimePicker](/components/datetimepicker) now supports `type="range"` for selecting a date and time range. Two time inputs are displayed for the start and end times, with a range summary below.
 
 ```python
 import dash_mantine_components as dmc
@@ -57478,7 +57561,7 @@ component = dmc.DateTimePicker(
 ```
 #### TimePicker duration
 
-`TimePicker` now supports `type="duration"` for entering durations longer than 24 hours. The hours field has no upper limit, and the input width adjusts to the value. The `format` prop is ignored, the display is always 24-hour, and the dropdown is disabled.
+[TimePicker](/components/timepicker) now supports `type="duration"` for entering durations longer than 24 hours. The hours field has no upper limit, and the input width adjusts to the value. The `format` prop is ignored, the display is always 24-hour, and the dropdown is disabled.
 
 ```python
 import dash_mantine_components as dmc
@@ -57491,7 +57574,7 @@ component = dmc.TimePicker(
 ```
 #### Month and year presets
 
-`MonthPickerInput` and `YearPickerInput` now support `presets` for predefined values.
+[MonthPickerInput](/components/monthpickerinput) and [YearPickerInput](/components/yearpickerinput) now support `presets` for predefined values.
 
 ```python
 from datetime import date
@@ -57517,7 +57600,7 @@ component = dmc.MonthPickerInput(
 ```
 #### Date formatting functions
 
-`DateTimePicker` and `DateInput` now accept functions in `valueFormat`. `DatePickerInput`, `MonthPickerInput`, and `YearPickerInput` accept functions in `valueFormatter` to customize displayed date text.
+[DateTimePicker](/components/datetimepicker) and [DateInput](/components/dateinput) now accept functions in `valueFormat`. [DatePickerInput](/components/datepickerinput), [MonthPickerInput](/components/monthpickerinput), and [YearPickerInput](/components/yearpickerinput) accept functions in `valueFormatter` to customize displayed date text.
 
 
 Note: This example uses custom JavaScript defined in the assets folder. Learn more in the "Functions As Props" section of this document.
@@ -57557,7 +57640,7 @@ dmcfuncs.formatDatesSelected = ({ type, date, locale, format }) => {
 
 #### TimePicker preset selection
 
-`TimePicker` now supports `closeDropdownOnPresetSelect` to close the dropdown after a preset is selected.
+[TimePicker](/components/timepicker) now supports `closeDropdownOnPresetSelect` to close the dropdown after a preset is selected.
 
 ```python
 import dash_mantine_components as dmc
@@ -57583,7 +57666,7 @@ component =  dmc.DatePicker(withNativeLevelSelect=True, yearsSelectRange=[2020, 
 
 #### Chart brush (range slider)
 
-`AreaChart`, `BarChart`, `LineChart`, and `CompositeChart` now support `withBrush` to add a range slider below the chart. Use `brushProps` to configure the Recharts Brush component and `brushDragEnd` to receive the selected `startIndex` and `endIndex`.
+[AreaChart](/components/areachart), [BarChart](/components/barchart), [LineChart](/components/linechart), and [CompositeChart](/components/compositechart) now support `withBrush` to add a range slider below the chart. Use `brushProps` to configure the Recharts Brush component and `brushDragEnd` to receive the selected `startIndex` and `endIndex`.
 
 ```python
 import dash_mantine_components as dmc
@@ -57632,7 +57715,7 @@ def brushDragEnd(brushDragEnd):
 ```
 #### AreaChart streamgraph
 
-`AreaChart` now supports `type="stream"` to render a streamgraph, a stacked area chart with a flowing baseline. The y-axis is hidden by default because the values are not meaningful to read against a fixed baseline.
+[AreaChart](/components/areachart) now supports `type="stream"` to render a streamgraph, a stacked area chart with a flowing baseline. The y-axis is hidden by default because the values are not meaningful to read against a fixed baseline.
 
 ```python
 import dash_mantine_components as dmc
@@ -57667,7 +57750,7 @@ component = dmc.AreaChart(
 ```
 #### Reference areas
 
-`AreaChart`, `BarChart`, `LineChart`, `CompositeChart`, and `ScatterChart` now support `referenceAreas` to highlight rectangular regions such as target ranges, thresholds, or weekends. Areas can be defined by x and y data values and support a theme color and label.
+[AreaChart](/components/areachart), [BarChart](/components/barchart), [LineChart](/components/linechart), [CompositeChart](/components/compositechart), and [ScatterChart](/components/scatterchart) now support `referenceAreas` to highlight rectangular regions such as target ranges, thresholds, or weekends. Areas can be defined by x and y data values and support a theme color and label.
 
 ```python
 import dash_mantine_components as dmc
@@ -57690,7 +57773,7 @@ component = dmc.AreaChart(
 ```
 #### Reference dots
 
-`AreaChart`, `BarChart`, `LineChart`, `CompositeChart`, and `ScatterChart` now support `referenceDots` to mark individual data points. Each dot supports a radius, theme color, and label.
+[AreaChart](/components/areachart), [BarChart](/components/barchart), [LineChart](/components/linechart), [CompositeChart](/components/compositechart), and [ScatterChart](/components/scatterchart) now support `referenceDots` to mark individual data points. Each dot supports a radius, theme color, and label.
 
 ```python
 import dash_mantine_components as dmc
@@ -57712,7 +57795,7 @@ component = dmc.AreaChart(
 ```
 #### Heatmap legend and month labels
 
-`Heatmap` now supports `withLegend` to display a color legend below the chart. Use `legendLabels` to customize the labels. The default is `["Less", "More"]`.
+[Heatmap](/components/heatmap) now supports `withLegend` to display a color legend below the chart. Use `legendLabels` to customize the labels. The default is `["Less", "More"]`.
 
 `monthLabelsPosition` controls whether month labels appear above or below the heatmap.
 
@@ -57744,7 +57827,7 @@ component = dmc.Heatmap(
 ```
 #### PieChart and DonutChart labels
 
-`PieChart` and `DonutChart` now support `labelsType="name"` to display segment names instead of values or percentages.
+[PieChart](/components/piechart) and [DonutChart](/components/donutchart) now support `labelsType="name"` to display segment names instead of values or percentages.
 
 ```python
 import dash_mantine_components as dmc
@@ -57759,7 +57842,7 @@ component = dmc.PieChart(
 ```
 #### Chart legends
 
-`PieChart`, `DonutChart`, and `FunnelChart` now support `withLegend` to display segment names and colors. Hovering over a legend item highlights the corresponding segment. Use `legendProps` to configure the underlying Recharts Legend component.
+[PieChart](/components/piechart), [DonutChart](/components/donutchart), and [FunnelChart](/components/funnelchart) now support `withLegend` to display segment names and colors. Hovering over a legend item highlights the corresponding segment. Use `legendProps` to configure the underlying Recharts Legend component.
 
 ```python
 import dash_mantine_components as dmc
@@ -57769,7 +57852,7 @@ component = dmc.FunnelChart(data=data, withLegend=True)
 ```
 #### ScatterChart right Y axis
 
-`ScatterChart` now supports `withRightYAxis` to display a second y-axis on the right. Configure it with `rightYAxisProps` and `rightYAxisLabel`.
+[ScatterChart](/components/scatterchart) now supports `withRightYAxis` to display a second y-axis on the right. Configure it with `rightYAxisProps` and `rightYAxisLabel`.
 
 ```python
 import dash_mantine_components as dmc
@@ -57808,22 +57891,22 @@ All Mantine components now support logical margin and padding props:
 
 #### Responsive style performance
 
-`MantineProvider` now supports `deduplicateInlineStyles`, enabled by default. With React 19, repeated responsive style values can share a single style tag instead of generating one for each component.
+[MantineProvider](/components/mantineprovider) now supports `deduplicateInlineStyles`, enabled by default. With React 19, repeated responsive style values can share a single style tag instead of generating one for each component.
 
 This can improve performance when rendering large lists with identical responsive style props. See [Responsive Styles](https://www.dash-mantine-components.com/responsive-styles) for details.
 
 #### Additional component enhancements
 
-- `ColorPicker` supports `name` and `hiddenInputProps` for uncontrolled form submissions.
-- `ColorInput` supports `fullWidth` to make the dropdown match the input width.
-- `JsonInput` supports `indentSpaces` to control JSON formatting indentation.
-- `Collapse`, `NavLink`, and `AccordionPanel` support `keepMounted=False` to unmount collapsed content.
-- `Stepper`, `Tabs`, and `Tree` support `keepMounted`.
-- `Tabs` supports `keepMountedMode` to control how inactive panels are hidden when `keepMounted=True`. Use `"display-none"` to use `display: none` instead of the default `Activity` component.
-- `Menu` submenus use a safe polygon when moving the pointer diagonally from a parent item to a submenu.
-- `PasswordInput` supports `visibilityToggleFocusable` to include the visibility toggle in the keyboard tab order.
-- `Checkbox` supports `readOnly` and `withErrorStyles`.
-- `Spoiler` supports `showAriaLabel` and `hideAriaLabel` to customize screen reader labels.
+- [ColorPicker](/components/colorpicker) supports `name` and `hiddenInputProps` for uncontrolled form submissions.
+- [ColorInput](/components/colorinput) supports `fullWidth` to make the dropdown match the input width.
+- [JsonInput](/components/jsoninput) supports `indentSpaces` to control JSON formatting indentation.
+- [Collapse](/components/collapse), [NavLink](/components/navlink), and `AccordionPanel` support `keepMounted=False` to unmount collapsed content.
+- [Stepper](/components/stepper), [Tabs](/components/tabs), and [Tree](/components/tree) support `keepMounted`.
+- [Tabs](/components/tabs) supports `keepMountedMode` to control how inactive panels are hidden when `keepMounted=True`. Use `"display-none"` to use `display: none` instead of the default `Activity` component.
+- [Menu](/components/menu) submenus use a safe polygon when moving the pointer diagonally from a parent item to a submenu.
+- [PasswordInput](/components/passwordinput) supports `visibilityToggleFocusable` to include the visibility toggle in the keyboard tab order.
+- [Checkbox](/components/checkbox) supports `readOnly` and `withErrorStyles`.
+- [Spoiler](/components/spoiler) supports `showAriaLabel` and `hideAriaLabel` to customize screen reader labels.
 
 ### Breaking and behavior changes
 

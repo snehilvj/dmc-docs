@@ -30,7 +30,6 @@ def create_version_menu():
                     size="xs",
                     leftSection=DashIconify(icon="mingcute:version-fill", width=15),
                     variant="outline",
-                  #  visibleFrom="md",
                 )
             ),
             dmc.MenuDropdown(

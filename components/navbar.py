@@ -78,7 +78,13 @@ def create_content(data, idtype):
                 href="/llms",
                 id={"type": idtype, "index": "/llms"},
             ),
-            dmc.Anchor("Mantine V9 docs", href="https://mantine.dev/", target="_blank", ml="lg", pt="md"),
+            dmc.Anchor("Mantine V9 docs", href="https://mantine.dev/", target="_blank", ml=24, pt="md"),
+            create_main_link(
+                icon="",
+                label="DMC v3 Release Notes",
+                href="/release-3-0-0",
+                id={"type": idtype, "index": "/release-3-0-0-temp"},
+            ),
         ],
     )
 
