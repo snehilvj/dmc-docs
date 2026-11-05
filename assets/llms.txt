@@ -19059,7 +19059,8 @@ component = dmc.Card(
                 src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png",
                 h=160,
                 alt="Norway",
-            )
+            ),
+             **{"data-orientation": "vertical"},
         ),
         dmc.Group(
             [
@@ -19090,6 +19091,26 @@ component = dmc.Card(
     w=350,
 )
 ```
+### Card Section
+
+CardSection is a special component that is used to remove Card padding from its children while other elements still have horizontal spacing. CardSection works the following way:
+
+1. If component is a first child in Card then it has negative top, left and right margins.
+2. If it is a last child in Card then it has negative bottom, left and right margins.
+3. If it is in the middle then only left and right margins will be negative.
+
+
+Note: In DMC v3.0, each `CardSection` requires a `data-orientation` attribute set to "vertical" or "horizontal" to ensure
+correct styling. 
+
+```python
+dmc.CardSection(
+    "Content",
+    **{"data-orientation": "vertical"}
+)
+```
+
+
 ### Horizontal Orientation 
 
 ```python
@@ -19141,6 +19162,7 @@ component = dmc.Card(
             inheritPadding=True,
             px="xs",
             withBorder=True,
+             **{"data-orientation": "horizontal"}
         ),
         dmc.CardSection(
             [
@@ -19157,7 +19179,7 @@ component = dmc.Card(
             inheritPadding=True,
             px="md",
             withBorder=True,
-            ml="lg"
+            **{"data-orientation": "horizontal"}
         ),
     ],
     padding="sm",
@@ -19166,14 +19188,6 @@ component = dmc.Card(
     w=400
 )
 ```
-### Card Section
-
-CardSection is a special component that is used to remove Card padding from its children while other elements still have horizontal spacing. CardSection works the following way:
-
-1. If component is a first child in Card then it has negative top, left and right margins.
-2. If it is a last child in Card then it has negative bottom, left and right margins.
-3. If it is in the middle then only left and right margins will be negative.
-
 ##### Border and Padding in CardSection
 
 `withBorder` property will add top and bottom border to CardSection depending on its position relative to other content and sections.
@@ -19208,6 +19222,7 @@ component = dmc.Card(
             withBorder=True,
             inheritPadding=True,
             py="xs",
+             **{"data-orientation": "vertical"}
         ),
         dmc.Box(
             children=[
@@ -19226,6 +19241,7 @@ component = dmc.Card(
                 src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png",
                 mt="sm",
             ),
+             **{"data-orientation": "vertical"}
         ),
         dmc.CardSection(
             children=[
@@ -19234,6 +19250,7 @@ component = dmc.Card(
             inheritPadding=True,
             mt="sm",
             pb="md",
+             **{"data-orientation": "vertical"}
         ),
     ],
     withBorder=True,
@@ -56341,6 +56358,7 @@ component = dmc.Card(
             inheritPadding=True,
             px="xs",
             withBorder=True,
+             **{"data-orientation": "horizontal"}
         ),
         dmc.CardSection(
             [
@@ -56357,7 +56375,7 @@ component = dmc.Card(
             inheritPadding=True,
             px="md",
             withBorder=True,
-            ml="lg"
+            **{"data-orientation": "horizontal"}
         ),
     ],
     padding="sm",

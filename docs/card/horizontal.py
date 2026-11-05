@@ -47,6 +47,7 @@ component = dmc.Card(
             inheritPadding=True,
             px="xs",
             withBorder=True,
+             **{"data-orientation": "horizontal"}
         ),
         dmc.CardSection(
             [
@@ -63,7 +64,7 @@ component = dmc.Card(
             inheritPadding=True,
             px="md",
             withBorder=True,
-            ml="lg"
+            **{"data-orientation": "horizontal"}
         ),
     ],
     padding="sm",
