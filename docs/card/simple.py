@@ -7,7 +7,8 @@ component = dmc.Card(
                 src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png",
                 h=160,
                 alt="Norway",
-            )
+            ),
+             **{"data-orientation": "vertical"},
         ),
         dmc.Group(
             [

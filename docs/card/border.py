@@ -26,6 +26,7 @@ component = dmc.Card(
             withBorder=True,
             inheritPadding=True,
             py="xs",
+             **{"data-orientation": "vertical"}
         ),
         dmc.Box(
             children=[
@@ -44,6 +45,7 @@ component = dmc.Card(
                 src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png",
                 mt="sm",
             ),
+             **{"data-orientation": "vertical"}
         ),
         dmc.CardSection(
             children=[
@@ -52,6 +54,7 @@ component = dmc.Card(
             inheritPadding=True,
             mt="sm",
             pb="md",
+             **{"data-orientation": "vertical"}
         ),
     ],
     withBorder=True,
