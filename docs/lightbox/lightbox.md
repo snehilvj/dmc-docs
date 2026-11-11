@@ -28,7 +28,8 @@ slides = [
         "src": "image.png",  # Image URL
         "alt": "Mountain lake",  # Alt text, always set it for screen readers
         "caption": "Mountain lake at sunrise",  # Caption displayed below the slide
-        "thumbSrc": "image-small.png",  # Custom thumbnail URL, src is used if not set        
+        "thumbSrc": "image-small.png",  # Custom thumbnail URL, src is used if not set    
+        "renderThumb": {"function": "customThumb"}, # Custom thumbnail component, see below
         "srcSet": "image-2x.png 2x",  # Optional srcset for responsive images
         "sizes": "(max-width: 600px) 100vw, 50vw",  # Optional sizes attribute
         "loading": "lazy",  # Optional loading attribute
@@ -40,7 +41,8 @@ slides = [
         "src": "video.mp4",
         "label": "Product demo",  # Accessible video label
         "poster": "poster.png",  # Poster image, also used as thumbnail
-        "thumbSrc": "poster-small.png",  # Custom thumbnail URL, poster is used if not set       
+        "thumbSrc": "poster-small.png",  # Custom thumbnail URL, poster is used if not set   
+        "renderThumb": {"function": "customThumb"}, # Custom thumbnail component, see below
         "autoPlay": True,  # Auto-play when the slide becomes active
         "tracks": [
             {
@@ -50,6 +52,14 @@ slides = [
                 "label": "English",
             }
         ],
+    },
+    
+     # Custom slide
+    {
+        "type": 'custom',
+        "render": {"function": "customSlide"},  # Custom slide component see below
+        "thumbSrc": 'thumb.png', # Custom thumbnail URL
+        "renderThumb": {"function": "customThumb"}, # Custom thumbnail component, see below
     },
 ]
 ```
@@ -178,6 +188,21 @@ dmc.Lightbox(
     closeOnClickOutside=True
 )
 ```
+
+### Custom Slides
+
+Set `type: 'custom'` and a render function to display any content in a slide. Custom slides do not have a default
+thumbnail, set `renderThumb` or `thumbSrc`:
+
+.. functions_as_props::
+
+.. exec::docs.lightbox.custom
+    :code: false
+
+.. sourcetabs::docs/lightbox/custom.py, assets/examples-js/lightbox.js
+    :defaultExpanded: true
+    :withExpandedButton: true
+
 
 
 ### Accessibility
