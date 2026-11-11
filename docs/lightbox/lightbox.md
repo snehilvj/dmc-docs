@@ -222,7 +222,7 @@ dmcfuncs.lightboxSlideLabel = function (index, total) {
 }
 
 dmcfuncs.lightboxThumbnailLabel = function (index) {
-    return (index) => `Zu Bild ${index} wechseln`;
+    return `Zu Bild ${index} wechseln`;
 }
 ```
 
