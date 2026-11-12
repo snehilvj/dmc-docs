@@ -8,7 +8,6 @@ component = dmc.Card(
                 h=160,
                 alt="Norway",
             ),
-             **{"data-orientation": "vertical"},
         ),
         dmc.Group(
             [
