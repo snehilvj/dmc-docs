@@ -11,29 +11,19 @@ category: Data Display
 
 ### Simple Example 
 
-Card component is a wrapper around Paper component with styles for CardSection component.
+`Card` component is a wrapper around `Paper` component with styles for `CardSection` component.
 
 .. exec::docs.card.simple
 
 
 ### Card Section
 
-CardSection is a special component that is used to remove Card padding from its children while other elements still have horizontal spacing. CardSection works the following way:
+`CardSection` is a special component that is used to remove `Card` padding from its children while other elements still have horizontal spacing. `CardSection` works the following way:
 
 1. If component is a first child in Card then it has negative top, left and right margins.
-2. If it is a last child in Card then it has negative bottom, left and right margins.
+2. If it is a last child in `Card` then it has negative bottom, left and right margins.
 3. If it is in the middle then only left and right margins will be negative.
 
-
-Note: In DMC v3.0, each `CardSection` requires a `data-orientation` attribute set to "vertical" or "horizontal" to ensure
-correct styling. 
-
-```python
-dmc.CardSection(
-    "Content",
-    **{"data-orientation": "vertical"}
-)
-```
 
 
 ### Horizontal Orientation 
@@ -44,8 +34,8 @@ dmc.CardSection(
 
 ##### Border and Padding in CardSection
 
-`withBorder` property will add top and bottom border to CardSection depending on its position relative to other content and sections.
-`inheritPadding` property will add the same left and right padding to CardSection as set in Card component.
+`withBorder` property will add top and bottom border to `CardSection` depending on its position relative to other content and sections.
+`inheritPadding` property will add the same left and right padding to `CardSection` as set in `Card` component.
 
 .. exec::docs.card.border
 
