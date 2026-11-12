@@ -28,6 +28,13 @@ Use the `date` and `view` prop to set the initial date and view, or update it in
 
 .. exec::docs.schedule.date_view
 
+### Event click data
+Use the `eventClickData` prop to access the event data when a user clicks an event in the Schedule. 
+
+This example displays the complete event data in a modal.
+
+
+.. exec::docs.schedule.eventclickdata
 
 
 ### View-specific props
