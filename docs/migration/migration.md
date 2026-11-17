@@ -123,6 +123,18 @@ New `fontWeights` property was added to the [theme object](https://www.dash-mant
 dmc.MantineProvider(theme={"fontWeights": {"medium": 500}})
 ```
 
+### HoverCard touch behavior and accessibility improvements
+
+* HoverCard now opens on keyboard focus, closes with `Escape` or a press outside, and is announced by screen readers. New `events`, `interactive`, `role` and `returnFocus` props, and `onDismiss` callback.
+* HoverCard no longer opens with a tap on touch devices. To restore the previous behavior:
+
+```python
+dmc.HoverCard(
+    events={"focus": False, "touch": True},
+    closeOnEscape=False,
+)
+```
+
 #### v3 Other changes
 
 - `Tree` no longer defines the `data-hovered` attribute for hover state. Apply hover styles with `&:hover` instead.

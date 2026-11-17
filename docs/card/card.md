@@ -24,9 +24,8 @@ CardSection is a special component that is used to remove Card padding from its 
 2. If it is a last child in Card then it has negative bottom, left and right margins.
 3. If it is in the middle then only left and right margins will be negative.
 
-
-Note: In DMC v3.0, each `CardSection` requires a `data-orientation` attribute set to "vertical" or "horizontal" to ensure
-correct styling. 
+Note: In DMC v3.0, each CardSection requires a data-orientation attribute set to "vertical" or "horizontal" to ensure correct styling. This attribute will be added automatically in DMC 
+v3.1, so it will no longer be necessary to set it manually.
 
 ```python
 dmc.CardSection(
