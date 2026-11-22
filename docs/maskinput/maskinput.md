@@ -66,6 +66,17 @@ uppercase, allowing lowercase letters to match the `A` token.
     :defaultExpanded: true
     :withExpandedButton: true
 
+### Mask List format
+
+For more control over the characters accepted at each position, use the list format for `mask`. Each item can be a string
+literal or a dictionary with a key of `regex` and value containing a regular expression pattern. This is useful for 
+defining formats that cannot be expressed with the built-in mask tokens.
+
+### Time (HH:MM)
+
+
+.. exec::docs.maskinput.mask_list
+
 
 ### value props
 
