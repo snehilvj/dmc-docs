@@ -28,6 +28,33 @@ See the [Mask Pattern Syntax](#mask-pattern-syntax) section below for more detai
     :code: false
 
 
+
+### value, maskedValue and complete props
+
+Use the `value` prop to set or retrieve the raw, unmasked value.
+
+Use the read-only `maskedValue` prop to retrieve the formatted text displayed in the input.
+
+Use the read-only `complete` prop to determine whether all required mask positions have been filled.
+
+.. exec::docs.maskinput.value
+
+
+### Success and Error states
+
+Use the `error` and `success` props to display validation feedback and apply the corresponding input styles.
+
+This example uses the `complete` prop to trigger a callback that updates the input's `error` and `success` styles and message.
+
+.. exec::docs.maskinput.input_validation
+
+You can also use the `n_submit` and `n_blur` props in a callback to trigger validation when the user presses Enter or leaves the input.
+
+.. exec::docs.maskinput.input_validation_2
+
+
+
+
 ### Dynamic Masks
 
 Use the `modify` option to change the mask based on the current input value. This example switches between standard and
@@ -72,35 +99,17 @@ For more control over the characters accepted at each position, use the list for
 literal or a dictionary with a key of `regex` and value containing a regular expression pattern. This is useful for 
 defining formats that cannot be expressed with the built-in mask tokens.
 
-### Time (HH:MM)
 
+se, allowing lowercase letters to match the `A` token.
 
-.. exec::docs.maskinput.mask_list
+.. functions_as_props::
 
+.. exec::docs.maskinput.regex_array
+    :code: false
 
-### value props
-
-`MaskInput` exposes the following props:
-
-- `value`: The raw, unmasked value.
-- `maskedValue`: Read-only. The formatted text displayed in the input.
-- `complete`: Indicates whether all required mask slots have been filled. (Read-only)
-
-.. exec::docs.maskinput.value
-
-
-### Validation and Input Feedback
-
-Use `complete` to determine whether the required mask slots have been filled.
-
-The `error` and `success` props display validation feedback and apply the corresponding input styles.
-
-.. exec::docs.maskinput.input_validation
-
-You can also use `n_submit` and `n_blur` to trigger validation when the user presses Enter or leaves the input.
-
-.. exec::docs.maskinput.input_validation_2
-
+.. sourcetabs::docs/maskinput/regex_array.py, assets/examples-js/time_mask.js
+    :defaultExpanded: true
+    :withExpandedButton: true
 
 ### Disabled State
 

@@ -1,4 +1,4 @@
-from dash import Input, Output, State, callback
+from dash import Input, Output, callback
 import dash_mantine_components as dmc
 
 component = dmc.MaskInput(
@@ -14,7 +14,7 @@ component = dmc.MaskInput(
     Output("mask-input-validation", "success"),
     Output("mask-input-validation", "error"),
     Input("mask-input-validation", "n_blur"),
-    State("mask-input-validation", "complete"),
+    Input("mask-input-validation", "complete"),
 )
 def mask_input_validation(n_blur, complete):
     if n_blur is None:

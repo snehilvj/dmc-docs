@@ -1,0 +1,30 @@
+
+"""
+optional way to support list of regex without having to use a function.
+
+in the componenet could be resloved like this:
+
+const regexMask = Array.isArray(mask)
+        ? mask.map((item) =>
+              typeof item === "object" && item !== null && "regex" in item
+                  ? new RegExp(item.regex)
+                  : item
+          )
+        : mask;
+
+
+"""
+
+import dash_mantine_components as dmc
+
+component = dmc.MaskInput(
+    label="Time (HH:MM)",
+    placeholder="__:__",
+    mask=[
+        {"regex": "[0-2]"},
+        {"regex": r"\d"},
+        ":",
+        {"regex": "[0-5]"},
+        {"regex": r"\d"},
+    ],
+)

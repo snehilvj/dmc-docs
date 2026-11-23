@@ -5,7 +5,8 @@ component = dmc.Stack([
     dmc.MaskInput(
         id="phone-mask",
         label="Phone number",
-        placeholder="(555) 123-4567",
+        placeholder="(___) ___-____",
+        w=300,
         mask="(999) 999-9999",
     ),
     dmc.Box(id="phone-mask-output"),
